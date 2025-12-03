@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="Upload_Error_Msg_bulk"
+      class="- topic/topic task/task "
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   ">
+   <title class="- topic/title ">Modifying Error Messages in Bulk through Excel Upload</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Yashshree</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-20+05:30" class="- topic/created "/>
+         <revised modified="2025-11-20+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="administrator,engineering,management,external contractors,analyst"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>error-message-configurator</indexterm>
+            <indexterm>bulk-upload-service</indexterm>
+            <indexterm>message-repository</indexterm>
+            <indexterm>csv-importer</indexterm>
+            <indexterm>message-editor</indexterm>
+            <!-- Process layer -->
+            <indexterm>upload-error-messages</indexterm>
+            <indexterm>bulk-upload</indexterm>
+            <indexterm>import-csv</indexterm>
+            <indexterm>map-fields</indexterm>
+            <indexterm>validate-upload</indexterm>
+            <!-- Context layer -->
+            <indexterm>bulk-file</indexterm>
+            <indexterm>csv-file</indexterm>
+            <indexterm>mapping-rules</indexterm>
+            <indexterm>admin-console</indexterm>
+            <indexterm>form-validation</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>Mind-Administration-Guide</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Uploading Error Messages in Bulk"/>
+         <othermeta name="shortdesc" content="Explains how to upload multiple error messages in bulk using CSV import, field mapping, and validation options."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="csv-file;mapping-rule;bulk-file;error-report;message-template"/>
+         <othermeta name="taxonomy" content="domain:capital-program-management;usecase:bulk-upload-error-messages;industry:glass-manufacturing"/>
+         <othermeta name="tags" content="bulk-upload,csv,field-mapping,validation,error-handling"/>
+         <othermeta name="usecase" content="bulk import and validation of error messages"/>
+      </metadata>
+   </prolog>
+   <taskbody>
+      <context class="- topic/section task/context ">You can import multiple error messages to the <uicontrol class="+ topic/ph ui-d/uicontrol ">ERROR MESSAGE CONFIGURATOR</uicontrol> page using a Microsoft Excel template workbook.<p class="- topic/p ">The high-level process of uploading error messages in bulk is as follows:<ol class="- topic/ol ">
+               <li class="- topic/li ">Export the template workbook.</li>
+               <li class="- topic/li ">Modify the error messages in the template workbook.</li>
+               <li class="- topic/li ">Import the updated workbook.</li>
+            </ol>
+         </p>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the module menu, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Administration</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">ADMINISTRATION</uicontrol> page is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the navigation pane, expand the <uicontrol class="+ topic/ph ui-d/uicontrol ">Configuration Toolkit</uicontrol> folder, and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">Error Message Configurator</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">ERROR MESSAGE CONFIGURATOR</uicontrol> list page is displayed.</info>
+         </step>
+         <step outputclass="break_avoid" class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Excel Import / Export</uicontrol>, and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">Excel Template with Data</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">An Excel workbook template with the details of all the available error messages in <ph conref="../../../../Warehouse/Product_Name_Warehouse.dita#reference-9043/product_name"
+                   class="- topic/ph "/> is downloaded to your local storage.<fig class="- topic/fig ">
+                  <title class="- topic/title "/>
+                  <image width="5in"
+                         href="../../../Icons/Screenshots_Icons/Excel_Import.jpg"
+                         class="- topic/image "
+                         placement="inline"/>
+               </fig>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To modify the error messages in the Excel workbook, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Open the Excel workbook.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Update the error message in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Value</uicontrol> column.</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <note class="- topic/note "> You can also modify the variables in the dynamic messages if you are familiar with the specific dynamic variables to be inserted. </note>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Save the Excel workbook with the modified error messages.</cmd>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To import the updated Excel workbook to <ph conref="../../../../Warehouse/Product_Name_Warehouse.dita#reference-9043/product_name"
+                   class="- topic/ph "/>, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Excel Import / Export</uicontrol>, and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">Excel Import</uicontrol>.</cmd>
+                  <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">IMPORT DETAILS FROM EXCEL FILE</uicontrol> page is displayed.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">To select the updated Excel workbook, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Choose File</uicontrol>.</cmd>
+                  <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Open</uicontrol> dialog box is displayed.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Browse and select the appropriate Excel workbook, and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">Open</uicontrol>.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Upload</uicontrol>.</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <ph conref="../../../../Warehouse/Product_Name_Warehouse.dita#reference-9043/product_name"
+                         class="- topic/ph "/> validates the information in the Excel workbook for any errors. <ul class="- topic/ul ">
+                        <li outputclass="break_avoid" class="- topic/li ">If there are any errors, an error log is generated that includes all the issues that must be resolved.<fig class="- topic/fig ">
+                              <title class="- topic/title "/>
+                              <image width="3in"
+                                     href="../../../Icons/Screenshots_Icons/BulkImport.jpg"
+                                     class="- topic/image "
+                                     placement="inline"/>
+                           </fig>
+                           <note class="- topic/note ">You can click <uicontrol class="+ topic/ph ui-d/uicontrol ">Error Log</uicontrol> in the toolbar to download the error log to your local storage.</note>
+                        </li>
+                        <li outputclass="break_avoid" class="- topic/li ">If no errors are found, <ph conref="../../../../Warehouse/Product_Name_Warehouse.dita#reference-9043/product_name"
+                               class="- topic/ph "/> detects the new messages that are not currently available in the application but created and uploaded through import with a GUID/Key and Culture. It displays those new messages in a separate grid. The existing messages that are updated are displayed in a separate grid, along with a comparison between the existing information in <ph conref="../../../../Warehouse/Product_Name_Warehouse.dita#reference-9043/product_name"
+                               class="- topic/ph "/> and the updated information uploaded in the Excel workbook. You can choose whether to update or retain the previous information by selecting or deselecting the check box.<fig class="- topic/fig ">
+                              <title class="- topic/title "/>
+                              <image href="../../../Icons/Screenshots_Icons/BulkImport_GUID.jpg"
+                                     class="- topic/image "
+                                     placement="inline"/>
+                           </fig>
+                        </li>
+                        <li outputclass="break_avoid" class="- topic/li ">If no errors are found, <ph conref="../../../../Warehouse/Product_Name_Warehouse.dita#reference-9043/product_name"
+                               class="- topic/ph "/> detects the new messages that are not currently available in the application but uploaded through import without a GUID/Key. In such cases, a GUID/Key is generated and assigned to each message, and displays them in a separate grid.<fig class="- topic/fig ">
+                              <title class="- topic/title "/>
+                              <image href="../../../Icons/Screenshots_Icons/BulkImport_GUID_generate.jpg"
+                                     class="- topic/image "
+                                     placement="inline"/>
+                           </fig>
+                        </li>
+                     </ul>
+                  </info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Save</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The updated error messages in the Excel workbook are uploaded to the <uicontrol class="+ topic/ph ui-d/uicontrol ">ERROR MESSAGE CONFIGURATOR</uicontrol> list page.</info>
+         </step>
+      </steps>
+   </taskbody>
+</task>

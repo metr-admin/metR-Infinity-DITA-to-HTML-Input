@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="AdminEnblMapFB"
+      class="- topic/topic task/task "
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   ">
+   <title class="- topic/title ">Enabling Map Control in a Form using Form Builder</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Yashshree</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-20+05:30" class="- topic/created "/>
+         <revised modified="2025-11-20+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="administrator,engineering,management,external contractors,analyst"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>form-builder</indexterm>
+            <indexterm>gis-map-control</indexterm>
+            <indexterm>map-widget</indexterm>
+            <indexterm>map-service</indexterm>
+            <indexterm>config-plus</indexterm>
+            <!-- Process layer -->
+            <indexterm>enable-map-control</indexterm>
+            <indexterm>configure-gis-settings</indexterm>
+            <indexterm>bind-map-to-form</indexterm>
+            <indexterm>manage-map-specifications</indexterm>
+            <indexterm>geo-coordinate-capture</indexterm>
+            <!-- Context layer -->
+            <indexterm>capital-program-management</indexterm>
+            <indexterm>geospatial-data-capture</indexterm>
+            <indexterm>field-data-collection</indexterm>
+            <indexterm>production-environment</indexterm>
+            <indexterm>web-platform</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>Mind-Administration-Guide</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Enabling Map Control in a Form using Form Builder"/>
+         <othermeta name="shortdesc" content="Guidance to enable and configure GIS map-control widgets in forms built with Form Builder to capture and display geospatial data."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="gis-map;map-control;coordinate;map-layer;map-configuration"/>
+         <othermeta name="taxonomy" content="domain:capital-program-management;usecase:map-control-in-forms;industry:software"/>
+         <othermeta name="tags" content="gis,map-control,geolocation,form-integration,configuration"/>
+         <othermeta name="usecase" content="enable-and-configure-gis-map-control"/>
+      </metadata>
+   </prolog>
+   <taskbody>
+      <prereq class="- topic/section task/prereq ">
+         <ul class="- topic/ul ">
+            <li class="- topic/li ">
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">GIS SETTINGS</uicontrol> page is configured. <ph product="Exclude_PG_Content" class="- topic/ph ">To configure GIS Settings, refer to <xref href="../../System_Configurations/GIS/GIS_Settings/GIS_Configuration.dita"
+                        class="- topic/xref ">GIS Settings</xref>.</ph>
+            </li>
+         </ul>
+      </prereq>
+      <context class="- topic/section task/context ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">GIS Map Control</uicontrol> feature facilitates to record and view the geo-location information in a form. Using <uicontrol class="+ topic/ph ui-d/uicontrol ">Form Builder</uicontrol>, you can enable one or more map controls in a form and manage unique specifications for each map control.</context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">DESIGN</uicontrol> tab, create a section. <ph product="Exclude_PG_Content" class="- topic/ph ">For information on creating a section, refer to <xref href="UsingFormBuilder.dita" class="- topic/xref ">Creating a Form Using Form Builder</xref>.</ph>
+            </cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the controls pane, expand the <uicontrol class="+ topic/ph ui-d/uicontrol ">ADVANCED CONTROLS</uicontrol> list, drag and drop the <uicontrol class="+ topic/ph ui-d/uicontrol ">Map</uicontrol> control into the section.The map control area is displayed.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Perform the following steps to enable the data mapping of location details in the application to ESRI Outfields:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the controls pane, expand the <uicontrol class="+ topic/ph ui-d/uicontrol ">ADVANCED CONTROLS</uicontrol> list, and drag and drop the <uicontrol class="+ topic/ph ui-d/uicontrol ">GISDataMapper</uicontrol> control into the section.</cmd>
+                  <info class="- topic/itemgroup task/info ">The selection dialog box is displayed.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Layer</uicontrol> drop-down list, select the required layer. </cmd>
+                  <info class="- topic/itemgroup task/info ">Available options are the editable layers that are configured in GIS Settings. <ph product="Exclude_PG_Content" class="- topic/ph ">For information on adding layers, refer to  <xref href="../../System_Configurations/GIS/GIS_Settings/GIS_Configuration.dita"
+                              class="- topic/xref ">Adding Layers</xref>.</ph>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Mapping Type</uicontrol> drop-down list, select the data type required to be mapped with the ESRI Outfields. </cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <note class="- topic/note "> It is mandatory to map the following data types for each layer:<ul class="- topic/ul ">
+                           <li class="- topic/li ">PID</li>
+                           <li class="- topic/li ">ParentID</li>
+                           <li class="- topic/li ">InstanceID</li>
+                           <li class="- topic/li ">ModuleID </li>
+                           <li class="- topic/li ">MapControlName</li>
+                           <li class="- topic/li ">GeometryID</li>
+                        </ul>
+                     </note>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Outfield Name</uicontrol> box, enter the name of the outfield attribute as defined in ArcGIS database.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">MW Field</uicontrol> drop-down list, select the MW field name corresponding to the outfield name.</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <note class="- topic/note "> MW Field for the mapping types <uicontrol class="+ topic/ph ui-d/uicontrol ">ModuleID</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">ControlName</uicontrol> are fetched within the application. </note>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">To continue mapping data for all data types, perform the following steps:</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <ol class="- topic/ol ">
+                        <li class="- topic/li ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Add</uicontrol>.<p class="- topic/p ">A row is created.</p>
+                        </li>
+                        <li class="- topic/li ">Repeat steps ato e.</li>
+                        <li class="- topic/li ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Ok.</uicontrol>
+                        </li>
+                     </ol>
+                  </info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To turn on the <uicontrol class="+ topic/ph ui-d/uicontrol ">GIS Map View</uicontrol> control in thelist page of the form, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">DESIGN</uicontrol> tab, click the <uicontrol class="+ topic/ph ui-d/uicontrol ">Attributes</uicontrol> tab.</cmd>
+                  <info class="- topic/itemgroup task/info ">The form attributes are displayed.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">ShowGISMapView</uicontrol>drop-down list, select <uicontrol class="+ topic/ph ui-d/uicontrol ">True.</uicontrol>
+                  </cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <note class="- topic/note "> This functionality is applicable only to forms that havelist pages.</note>
+                  </info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click the <uicontrol class="+ topic/ph ui-d/uicontrol ">Settings</uicontrol> tab to specify form details. </cmd>
+            <info class="- topic/itemgroup task/info ">The fields displayed in this pageare:<ul class="- topic/ul ">
+                  <li class="- topic/li ">
+                     <uicontrol class="+ topic/ph ui-d/uicontrol ">Form Id</uicontrol>: This determines the unique ID for the form. Rename the form according torequirements.</li>
+                  <li class="- topic/li ">
+                     <uicontrol class="+ topic/ph ui-d/uicontrol ">Header</uicontrol>: This denotes the text to be displayed as header to the form after being published.</li>
+                  <li class="- topic/li ">
+                     <uicontrol class="+ topic/ph ui-d/uicontrol ">Parent Module</uicontrol>: This determines the location where the XML form will be availablein the application.</li>
+               </ul>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Header</uicontrol> box, enter the name of the form.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Parent Module</uicontrol> list, select the parent module.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Save</uicontrol>. </cmd>
+            <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">FORMS LIST</uicontrol> page is displayed.</info>
+         </step>
+      </steps>
+      <postreq product="Exclude_PG_Content" class="- topic/section task/postreq ">The form must now be published to be made available in the application. Forinformation on publishing a form, refer to<xref href="PublishForm.dita" class="- topic/xref ">Publishing a Form</xref>.</postreq>
+   </taskbody>
+</task>

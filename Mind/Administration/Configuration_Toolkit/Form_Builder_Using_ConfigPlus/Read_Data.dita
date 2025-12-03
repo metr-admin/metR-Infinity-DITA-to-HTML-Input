@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="ReadData"
+         xml:lang="en-us"
+         class="- topic/topic concept/concept "
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   ">
+   <title class="- topic/title ">Read Data</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Yashshree</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-20+05:30" class="- topic/created "/>
+         <revised modified="2025-11-20+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="administrator, engineering, management, external contractors, analyst"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>read-data-block</indexterm>
+            <indexterm>data-source</indexterm>
+            <indexterm>api-endpoint</indexterm>
+            <indexterm>variable-target</indexterm>
+            <indexterm>response-mapper</indexterm>
+            <!-- Process layer -->
+            <indexterm>data-retrieval</indexterm>
+            <indexterm>api-fetch</indexterm>
+            <indexterm>deserialization</indexterm>
+            <indexterm>variable-population</indexterm>
+            <indexterm>error-handling</indexterm>
+            <!-- Context layer -->
+            <indexterm>mind-administration-guide</indexterm>
+            <indexterm>capital-program-management</indexterm>
+            <indexterm>form-builder</indexterm>
+            <indexterm>integration-points</indexterm>
+            <indexterm>runtime-fetch</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>Mind-Administration-Guide</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Read Data"/>
+         <othermeta name="shortdesc" content="Describes the Read Data block for retrieving information from sources, mapping results to variables and handling fetch errors."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="read-data-block;api;variable;payload;datasource"/>
+         <othermeta name="taxonomy" content="domain:capital-program-management;usecase:data-retrieval;industry:glass-manufacturing"/>
+         <othermeta name="tags" content="read-data,api,variable,fetch,integration"/>
+         <othermeta name="usecase" content="retrieve-and-map-data"/>
+      </metadata>
+   </prolog>
+   <conbody>
+      <p class="- topic/p ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Read Data</uicontrol> block enables you to get information from any form  in  <ph conref="../../../../Warehouse/Product_Name_Warehouse.dita#reference-9043/product_name"
+             class="- topic/ph "/>. You can configure the source form from where the information must be retrieved and specify the destination form to which the information must be updated. All blocks under <uicontrol class="+ topic/ph ui-d/uicontrol ">Read Data</uicontrol> block must be connected to a variable.</p>
+      <p id="SelectBlock" class="- topic/p ">
+         <uicontrol class="+ topic/ph ui-d/uicontrol ">Select Block</uicontrol>
+      </p>
+      <p class="- topic/p ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">SELECT</uicontrol> block enables you to configure the source form from where the information must be retrieved.<fig class="- topic/fig ">
+            <title class="- topic/title "/>
+            <image href="../../../Icons/Screenshots_Icons/SelectBlock.jpg"
+                   class="- topic/image "
+                   placement="inline"/>
+         </fig>
+      </p>
+      <p class="- topic/p ">The first part of the <uicontrol class="+ topic/ph ui-d/uicontrol ">SELECT</uicontrol> block enables you to specify the appropriate value for the following entities from where the information must be retrieved:<ul class="- topic/ul ">
+            <li class="- topic/li ">
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Module</uicontrol>: The name of the module.</li>
+            <li class="- topic/li ">
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Form</uicontrol>: The name of the form in the selected module.</li>
+            <li class="- topic/li ">
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Select Field</uicontrol>: The name of the fields in the selected form. It is a multi-select drop-down list and the information from all the specified fields is selected. </li>
+         </ul>
+      </p>
+      <p class="- topic/p ">You can also click <image href="../../../Icons/Screenshots_Icons/gear_icon.png"
+                class="- topic/image "
+                placement="inline"/> to use multiple advance options within the <uicontrol class="+ topic/ph ui-d/uicontrol ">SELECT</uicontrol> block.<ul class="- topic/ul ">
+            <li class="- topic/li ">
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Group By</uicontrol>:<p class="- topic/p "> The <uicontrol class="+ topic/ph ui-d/uicontrol ">GROUP BY</uicontrol> block enables you to group the information that is retrieved using the <uicontrol class="+ topic/ph ui-d/uicontrol ">SELECT</uicontrol> block by a common parameter. You can choose the appropriate module and drag and drop the <uicontrol class="+ topic/ph ui-d/uicontrol ">GROUP BY</uicontrol> block to connect it with the <uicontrol class="+ topic/ph ui-d/uicontrol ">WHERE</uicontrol> block.</p>
+               <p class="- topic/p ">Once this is done, you can specify the appropriate values in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Module</uicontrol>, <uicontrol class="+ topic/ph ui-d/uicontrol ">Form</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">Field</uicontrol> entities where the data must be grouped together.</p>
+            </li>
+            <li class="- topic/li ">
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Order By</uicontrol>:<p class="- topic/p ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">ORDER BY</uicontrol> block enables you to sort the resulting data set in a specific order. For example, ascending, alphabetical, and so on.</p>
+            </li>
+         </ul>
+      </p>
+      <p class="- topic/p ">The next part of the <uicontrol class="+ topic/ph ui-d/uicontrol ">SELECT</uicontrol> block is the <uicontrol class="+ topic/ph ui-d/uicontrol ">WHERE</uicontrol> block. It has two parts.<ul class="- topic/ul ">
+            <li class="- topic/li ">Input – In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Module</uicontrol>, <uicontrol class="+ topic/ph ui-d/uicontrol ">Form</uicontrol>, and <uicontrol class="+ topic/ph ui-d/uicontrol ">Select Field</uicontrol> entities, you can enter the values that act as input from which the records must be filtered. It can be based on a project or a field which has reference to a record.</li>
+            <li class="- topic/li ">Output – The output is the Resolver value that is entered after the operand and is equated with respect to the input. It can be either a hard-coded text value where you can enter a text or can use a resolver from the <uicontrol class="+ topic/ph ui-d/uicontrol ">Fields</uicontrol> drop-down list, or you can specify the module selector.</li>
+         </ul>
+      </p>
+      <p class="- topic/p ">
+         <uicontrol class="+ topic/ph ui-d/uicontrol ">Insert Block</uicontrol>
+      </p>
+      <p class="- topic/p ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">INSERT</uicontrol> block enables you to get information from any module, form, or field in <ph conref="../../../../Warehouse/Product_Name_Warehouse.dita#reference-9043/product_name"
+             class="- topic/ph "/> and create a new record or create a new row in the dynamic grid. The <uicontrol class="+ topic/ph ui-d/uicontrol ">INSERT</uicontrol> block must always be connected to a variable.<fig class="- topic/fig ">
+            <title class="- topic/title "/>
+            <image href="../../../Icons/Screenshots_Icons/Insert_Block.jpg"
+                   class="- topic/image "
+                   placement="inline"/>
+         </fig>
+      </p>
+      <p class="- topic/p ">The first part of the <uicontrol class="+ topic/ph ui-d/uicontrol ">INSERT</uicontrol> block is the select statement that you can configure in the same way as the <uicontrol class="+ topic/ph ui-d/uicontrol ">SELECT</uicontrol> block. For information on configuring the <uicontrol class="+ topic/ph ui-d/uicontrol ">SELECT</uicontrol> block, refer to <xref scope="local" href="#ReadData/SelectBlock" class="- topic/xref ">Select Block</xref>.</p>
+      <p class="- topic/p ">The second part of the <uicontrol class="+ topic/ph ui-d/uicontrol ">INSERT</uicontrol> block is the <uicontrol class="+ topic/ph ui-d/uicontrol ">INSERT INTO</uicontrol> block that enables you to configure the destination to which the information must be inserted. You can specify the <uicontrol class="+ topic/ph ui-d/uicontrol ">Module</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">Form</uicontrol> and define the <uicontrol class="+ topic/ph ui-d/uicontrol ">Field Mapping</uicontrol> for fields.<fig class="- topic/fig ">
+            <title class="- topic/title "/>
+            <image href="../../../Icons/Screenshots_Icons/Insert_Block_FiledMapping.jpg"
+                   class="- topic/image "
+                   placement="inline"/>
+         </fig>
+      </p>
+      <p class="- topic/p ">You can select the fields from the <uicontrol class="+ topic/ph ui-d/uicontrol ">Source Form</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">Source Field</uicontrol> that is defined in the select block and <uicontrol class="+ topic/ph ui-d/uicontrol ">Destination Field</uicontrol> to which this information must be mapped.</p>
+      <p class="- topic/p ">
+         <uicontrol class="+ topic/ph ui-d/uicontrol ">Update Block</uicontrol>
+      </p>
+      <p class="- topic/p ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">UPDATE</uicontrol> blocks enable you to select information from  <ph conref="../../../../Warehouse/Product_Name_Warehouse.dita#reference-9043/product_name"
+             class="- topic/ph "/> and update a specific field or set of fields in another form. The <uicontrol class="+ topic/ph ui-d/uicontrol ">UPDATE</uicontrol> blocks must always be connected to a variable.<fig class="- topic/fig ">
+            <title class="- topic/title "/>
+            <image href="../../../Icons/Screenshots_Icons/UpdateBlock.jpg"
+                   class="- topic/image "
+                   placement="inline"/>
+         </fig>
+      </p>
+      <p class="- topic/p ">The first part of the <uicontrol class="+ topic/ph ui-d/uicontrol ">UPDATE</uicontrol> block is the select statement that you can configure in the same way as the <uicontrol class="+ topic/ph ui-d/uicontrol ">SELECT</uicontrol> block. For information on configuring the <uicontrol class="+ topic/ph ui-d/uicontrol ">SELECT</uicontrol> block, refer to <xref scope="local" href="#ReadData/SelectBlock" class="- topic/xref ">Select Block</xref>.</p>
+      <p class="- topic/p ">The second part of the <uicontrol class="+ topic/ph ui-d/uicontrol ">UPDATE INTO</uicontrol> block is the <uicontrol class="+ topic/ph ui-d/uicontrol ">WHERE</uicontrol> block that enables you to specify the filtering conditions. The <uicontrol class="+ topic/ph ui-d/uicontrol ">WHERE</uicontrol> block is configured in the same way as the <uicontrol class="+ topic/ph ui-d/uicontrol ">SELECT</uicontrol> block. For information on configuring the <uicontrol class="+ topic/ph ui-d/uicontrol ">WHERE</uicontrol> block, refer to <xref scope="local" href="#ReadData/SelectBlock" class="- topic/xref ">Select Block</xref>.</p>
+   </conbody>
+</concept>

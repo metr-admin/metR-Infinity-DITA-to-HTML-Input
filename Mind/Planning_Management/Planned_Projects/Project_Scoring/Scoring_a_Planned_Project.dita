@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="ListPage_PRJSCNG"
+      class="- topic/topic task/task "
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   ">
+   <title class="- topic/title ">Scoring a Planned Project</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-21+05:30" class="- topic/created "/>
+         <revised modified="2025-11-21" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience type="role" otherprops="administrator,engineering,management,external contractors,analyst"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>planning-module</indexterm>
+            <indexterm>project-scoring</indexterm>
+            <indexterm>planning-dashboard</indexterm>
+            <indexterm>project-scoring-form</indexterm>
+            <indexterm>scoring-configuration</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>scoring-planned-projects</indexterm>
+            <indexterm>evaluating-projects</indexterm>
+            <indexterm>assigning-department-scores</indexterm>
+            <indexterm>calculating-weighted-score</indexterm>
+            <indexterm>submitting-scoring-record</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>capital-program-management</indexterm>
+            <indexterm>project-prioritization</indexterm>
+            <indexterm>infrastructure-planning</indexterm>
+            <indexterm>multi-department-evaluation</indexterm>
+            <indexterm>decision-support</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>Mind-Administration-Guide</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="Scoring a Planned Project"/>
+         <othermeta name="shortdesc" content="Steps to score planned projects by assigning criteria-based scores across departments, calculating weighted values, and prioritizing projects for program inclusion."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta name="entities" content="planned project;department;category;scoring criteria;weighted score;project scoring record;workflow status"/>
+         
+         <othermeta name="taxonomy" content="domain:capital-program-management;usecase:project-scoring;industry:glass-manufacturing"/>
+         
+         <othermeta name="tags" content="project-scoring,scoring-criteria,weighted-score,planned-projects,department-evaluation"/>
+         
+         <othermeta name="usecase" content="evaluate and score planned projects for prioritization"/>
+      </metadata>
+   </prolog>
+   
+   
+   <taskbody>
+      <prereq class="- topic/section task/prereq ">
+         <ul class="- topic/ul ">
+            <li class="- topic/li ">The role of the logged-in user should be one of the following: <p class="- topic/p ">
+                  <ul class="- topic/ul ">
+                     <li class="- topic/li ">Engineer of Record</li>
+                     <li class="- topic/li ">Director</li>
+                     <li class="- topic/li ">Fund Manager</li>
+                     <li class="- topic/li ">Manager</li>
+                     <li class="- topic/li ">Program Manager</li>
+                     <li class="- topic/li ">Project Manager</li>
+                  </ul>
+               </p>
+            </li>
+         </ul>
+      </prereq>
+      <context class="- topic/section task/context ">
+         <p class="- topic/p ">Project scoring enables you to evaluate and rank planned projects based on defined criteria. The planned projects are sorted from high to low priority based on the user score. This enables you to filter high-priority projects  to add them to a program.</p>
+         <p class="- topic/p ">A project is scored for each of the departments, and a score is provided for each of the criteria for the selected department. <ph product="Exclude_PG_Content" class="- topic/ph ">For information on scoring configuration, refer to<xref href="../../../Library_Management/Standard_Library_Catalogs/Planning/ScorConf.dita"
+                     class="- topic/xref ">Scoring Configuration</xref>.</ph>
+         </p>
+         <p class="- topic/p ">The project score (<uicontrol class="+ topic/ph ui-d/uicontrol ">Weighted Score</uicontrol>) is calculated as:</p>
+         <p class="- topic/p ">
+            <uicontrol class="+ topic/ph ui-d/uicontrol ">Weighted Score = Round [Σ{Department Score * Department Weightage (%)}]</uicontrol>
+         </p>
+         <p class="- topic/p ">where,<uicontrol class="+ topic/ph ui-d/uicontrol ">Department Score</uicontrol>is calculated as:</p>
+         <p class="- topic/p ">
+            <uicontrol class="+ topic/ph ui-d/uicontrol ">Department Score= Round [Σ{Category Score * Category Weightage (%)</uicontrol>}]</p>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the module menu, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Planning</uicontrol>. </cmd>
+            <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">PLANNING DASHBOARD</uicontrol> page is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the navigation pane, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Planned Projects</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">PLANNED PROJECTS</uicontrol> list page is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the list page, double-click the appropriate project. </cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the project navigation pane, expand the project folder, and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">Project Scoring</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">PROJECT SCORING</uicontrol> list page is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">New</uicontrol>. </cmd>
+            <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">PROJECT SCORING</uicontrol> page is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Scored by</uicontrol> drop-down list, select the user creating the record. The list comprises all users invited to the project and have permissions to the project scoring form. </cmd>
+            <info product="Exclude_PG_Content" class="- topic/itemgroup task/info ">For information on user role permissions, refer to <xref href="../../../Administration/User_Management/Security_Roles/AssignRoletoUsr.dita"
+                     class="- topic/xref ">Assigning a Role to Users</xref>.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Department</uicontrol> drop-down list, select the department to which the project is associated. </cmd>
+            <info class="- topic/itemgroup task/info ">Available options are departments defined in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Department</uicontrol> catalog of the library. Based on the <uicontrol class="+ topic/ph ui-d/uicontrol ">Department</uicontrol> selected, the associated criteria that are marked active for the selected department are displayed in the table. <ph product="Exclude_PG_Content" class="- topic/ph ">For information on departments, categories, and criteria, referto <xref href="../../../Library_Management/Standard_Library_Catalogs/Planning/ScorConf.dita"
+                        class="- topic/xref ">Scoring Configuration</xref>.</ph>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Scored on</uicontrol> calendar drop-down box, select the date on which the record is created. </cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Remarks</uicontrol> field, enter any additional information.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">PROJECT SCORING DETAILS</uicontrol> section, in the   <uicontrol class="+ topic/ph ui-d/uicontrol ">Score </uicontrol>column, for each criteria, click and enter the score for the project.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <note class="- topic/note "> Ensure the score for the criteria does not exceed the value displayed in the corresponding <uicontrol class="+ topic/ph ui-d/uicontrol ">Max Value</uicontrol> column.</note>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Save</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info "> The <uicontrol class="+ topic/ph ui-d/uicontrol ">Weighted Score</uicontrol> is calculated and displayed.</info>
+            <info product="Exclude_PG_Content" class="- topic/itemgroup task/info ">To perform workflow actions, refer to     <xref href="PrjScrWF.dita" class="- topic/xref ">Project Scoring Workflow</xref>. </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To submit the <uicontrol class="+ topic/ph ui-d/uicontrol ">Project Scoring</uicontrol> record, perform the following steps:</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <note class="- topic/note ">To perform this workflow action, ensure you are assigned the <uicontrol class="+ topic/ph ui-d/uicontrol ">Fund Manager</uicontrol> or <uicontrol class="+ topic/ph ui-d/uicontrol ">Program Manager</uicontrol> role.</note>
+            </info>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the  list page, select the appropriate record that is in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Draft</uicontrol> workflow status, and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">Select Actions</uicontrol>.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Submit</uicontrol>, and in the <ph conref="../../../../Warehouse/Product_Name_Warehouse.dita#reference-9043/product_name"
+                         class="- topic/ph "/> dialog box, click <uicontrol class="+ topic/ph ui-d/uicontrol ">OK</uicontrol>.</cmd>
+                  <info class="- topic/itemgroup task/info ">The workflow status of the record is set to <uicontrol class="+ topic/ph ui-d/uicontrol ">Submitted</uicontrol>.</info>
+               </substep>
+            </substeps>
+         </step>
+      </steps>
+   </taskbody>
+</task>

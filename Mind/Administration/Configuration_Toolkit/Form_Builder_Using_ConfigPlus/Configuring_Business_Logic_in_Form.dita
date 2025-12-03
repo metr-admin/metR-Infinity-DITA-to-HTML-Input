@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="Config_Business_Logic_in_Form"
+      class="- topic/topic task/task "
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   ">
+   <title class="- topic/title ">Configuring Business Logic in a Form</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Yashshree</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-20+05:30" class="- topic/created "/>
+         <revised modified="2025-11-20+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="administrator, engineering, management, external contractors, analyst"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>form-control</indexterm>
+            <indexterm>field-control</indexterm>
+            <indexterm>logic-block</indexterm>
+            <indexterm>event-handler</indexterm>
+            <indexterm>variable-control</indexterm>
+            <!-- Process layer -->
+            <indexterm>business-logic-configuration</indexterm>
+            <indexterm>field-rule-definition</indexterm>
+            <indexterm>event-mapping</indexterm>
+            <indexterm>variable-assignment</indexterm>
+            <indexterm>logic-sequencing</indexterm>
+            <!-- Context layer -->
+            <indexterm>mind-administration-guide</indexterm>
+            <indexterm>capital-program-management</indexterm>
+            <indexterm>software</indexterm>
+            <indexterm>web</indexterm>
+            <indexterm>infrastructure</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>Mind-Administration-Guide</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Configuring Business Logic in Form"/>
+         <othermeta name="shortdesc" content="Guides configuration of business logic within forms: field rules, blocks, events, variables and toolbar interactions."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="form;field;block;action;variable"/>
+         <othermeta name="taxonomy" content="domain:capital-program-management;usecase:form-builder;industry:glass-manufacturing"/>
+         <othermeta name="tags" content="business-logic,field,event,variable,toolbar"/>
+         <othermeta name="usecase" content="configure-and-manage-forms"/>
+      </metadata>
+   </prolog>
+   <taskbody>
+      <context class="- topic/section task/context ">This section explains the procedure to configure business logic in forms using the <uicontrol class="+ topic/ph ui-d/uicontrol ">FORM BUSINESS LOGIC</uicontrol> tab. The example fields and options selected in the procedure are for instructional purposes.<p class="- topic/p ">
+            <uicontrol class="+ topic/ph ui-d/uicontrol ">Business Scenario Used</uicontrol>
+         </p>
+         <p class="- topic/p ">In an <uicontrol class="+ topic/ph ui-d/uicontrol ">Expense</uicontrol> form, if <uicontrol class="+ topic/ph ui-d/uicontrol ">Direct Expenses</uicontrol> is selected,  it has a <uicontrol class="+ topic/ph ui-d/uicontrol ">Purchase Order No</uicontrol> associated to it. Once the <uicontrol class="+ topic/ph ui-d/uicontrol ">Purchase Order No</uicontrol> is selected, you want to update the <uicontrol class="+ topic/ph ui-d/uicontrol ">Total PO Cost</uicontrol> for the associated <uicontrol class="+ topic/ph ui-d/uicontrol ">Purchase Order</uicontrol>.</p>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Module</uicontrol> menu, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Administration</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">ADMINISTRATION</uicontrol> page is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the navigation pane, expand the<uicontrol class="+ topic/ph ui-d/uicontrol ">Configuration Toolkit</uicontrol>folder, and then click<uicontrol class="+ topic/ph ui-d/uicontrol ">Form Builder</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The<uicontrol class="+ topic/ph ui-d/uicontrol ">FORMS LIST</uicontrol>page is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Import XML</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">IMPORT FORM</uicontrol> page is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To import the <uicontrol class="+ topic/ph ui-d/uicontrol ">Expenses</uicontrol> form, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Select <uicontrol class="+ topic/ph ui-d/uicontrol ">Form Import</uicontrol>.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Select Form</uicontrol> box, search for <uicontrol class="+ topic/ph ui-d/uicontrol ">Expenses</uicontrol> form, and select it from the drop-down list.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Import</uicontrol>.</cmd>
+                  <info class="- topic/itemgroup task/info ">A form with the same <uicontrol class="+ topic/ph ui-d/uicontrol ">Form ID</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">Form Header</uicontrol> of the <uicontrol class="+ topic/ph ui-d/uicontrol ">Expenses</uicontrol> form is created and displayed in the <uicontrol class="+ topic/ph ui-d/uicontrol ">FORMS LIST</uicontrol> page.</info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To modify and update the <uicontrol class="+ topic/ph ui-d/uicontrol ">Expenses</uicontrol> form, select the form, and click <uicontrol class="+ topic/ph ui-d/uicontrol ">Edit</uicontrol>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the controls pane, click <uicontrol class="+ topic/ph ui-d/uicontrol ">SIMPLE INPUT CONTROLS</uicontrol>, and then drag and drop <uicontrol class="+ topic/ph ui-d/uicontrol ">Numeric</uicontrol> control to the design area.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Double-click the <uicontrol class="+ topic/ph ui-d/uicontrol ">Numeric</uicontrol> control and enter <uicontrol class="+ topic/ph ui-d/uicontrol ">Total PO Cost</uicontrol> for the text box.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To make the <uicontrol class="+ topic/ph ui-d/uicontrol ">FORM BUSINESS LOGIC</uicontrol> tab available, in the toolbar, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Switch to Advanced</uicontrol>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click the <uicontrol class="+ topic/ph ui-d/uicontrol ">FORM BUSINESS LOGIC</uicontrol> tab.</cmd>
+         </step>
+         <step outputclass="break_avoid" class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the controls pane, from the <uicontrol class="+ topic/ph ui-d/uicontrol ">Select Event</uicontrol> drop-down list, select the <uicontrol class="+ topic/ph ui-d/uicontrol ">Form Load</uicontrol> event.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <fig class="- topic/fig ">
+                  <title class="- topic/title "/>
+                  <image href="../../../Icons/Screenshots_Icons/FormLoad.jpg"
+                         class="- topic/image "
+                         placement="inline"/>
+               </fig>
+            </info>
+         </step>
+         <step outputclass="break_avoid" class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Expand the <uicontrol class="+ topic/ph ui-d/uicontrol ">DEFINITIONS</uicontrol> block and click the <uicontrol class="+ topic/ph ui-d/uicontrol ">Variables</uicontrol> block.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <fig class="- topic/fig ">
+                  <title class="- topic/title "/>
+                  <image href="../../../Icons/Screenshots_Icons/Config_BL_Form_Variable.jpg"
+                         class="- topic/image "
+                         placement="inline"/>
+               </fig>
+            </info>
+         </step>
+         <step outputclass="break_avoid" class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Create Variable</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">A pop-up message appears to provide the variable name.<fig class="- topic/fig ">
+                  <title class="- topic/title "/>
+                  <image href="../../../Icons/Screenshots_Icons/Config_BL_Form_CreateVariable.jpg"
+                         class="- topic/image "
+                         placement="inline"/>
+               </fig>
+            </info>
+         </step>
+         <step outputclass="break_avoid" class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">New variable name</uicontrol> field, enter the variable name as <msgph class="+ topic/ph sw-d/msgph ">POValue</msgph>, and click <uicontrol class="+ topic/ph ui-d/uicontrol ">OK</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The newly created variable is available in the variable list with the <uicontrol class="+ topic/ph ui-d/uicontrol ">set</uicontrol> operator.<fig class="- topic/fig ">
+                  <title class="- topic/title "/>
+                  <image href="../../../Icons/Screenshots_Icons/Config_BL_Form_Set_variable.jpg"
+                         class="- topic/image "
+                         placement="inline"/>
+               </fig>
+            </info>
+         </step>
+         <step outputclass="break_avoid" class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Drag and connect the <uicontrol class="+ topic/ph ui-d/uicontrol ">set</uicontrol> operator to the <uicontrol class="+ topic/ph ui-d/uicontrol ">Form Load</uicontrol> event.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <fig class="- topic/fig ">
+                  <title class="- topic/title "/>
+                  <image href="../../../Icons/Screenshots_Icons/set_opr_FormLoad.jpg"
+                         class="- topic/image "
+                         placement="inline"/>
+               </fig>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Expand the <uicontrol class="+ topic/ph ui-d/uicontrol ">DATA OPERATIONS</uicontrol> block and click the <uicontrol class="+ topic/ph ui-d/uicontrol ">Read Data</uicontrol> block.</cmd>
+            <info class="- topic/itemgroup task/info ">The available options of the <uicontrol class="+ topic/ph ui-d/uicontrol ">Read Data</uicontrol> block are displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Drag and connect the <uicontrol class="+ topic/ph ui-d/uicontrol ">SELECT</uicontrol> block to the <uicontrol class="+ topic/ph ui-d/uicontrol ">set</uicontrol> operator.</cmd>
+         </step>
+         <step outputclass="break_avoid" class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">SELECT</uicontrol> block, select the <uicontrol class="+ topic/ph ui-d/uicontrol ">Module</uicontrol> as <msgph class="+ topic/ph sw-d/msgph ">Project</msgph>, <uicontrol class="+ topic/ph ui-d/uicontrol ">Form</uicontrol> as <msgph class="+ topic/ph sw-d/msgph ">Purchase Order</msgph>, and <uicontrol class="+ topic/ph ui-d/uicontrol ">Field</uicontrol> as <msgph class="+ topic/ph sw-d/msgph ">Revised PO Value in {_LOC:LOC_CURRENCY_SYMBOL}:</msgph>.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <fig class="- topic/fig ">
+                  <title class="- topic/title "/>
+                  <image href="../../../Icons/Screenshots_Icons/Config_Form_SELECT_block.jpg"
+                         class="- topic/image "
+                         placement="inline"/>
+               </fig>
+            </info>
+         </step>
+         <step outputclass="break_avoid" class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">WHERE</uicontrol> block, select the <uicontrol class="+ topic/ph ui-d/uicontrol ">Module</uicontrol> as <msgph class="+ topic/ph sw-d/msgph ">Project</msgph>, <uicontrol class="+ topic/ph ui-d/uicontrol ">Form</uicontrol> as <msgph class="+ topic/ph sw-d/msgph ">Purchase Order</msgph>, and <uicontrol class="+ topic/ph ui-d/uicontrol ">Field</uicontrol> as <msgph class="+ topic/ph sw-d/msgph ">PR Ref Number</msgph>.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <fig class="- topic/fig ">
+                  <title class="- topic/title "/>
+                  <image href="../../../Icons/Screenshots_Icons/Config_Form_WHERE_block.jpg"
+                         class="- topic/image "
+                         placement="inline"/>
+               </fig>
+            </info>
+         </step>
+         <step outputclass="break_avoid" class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To equate the conditions of the <uicontrol class="+ topic/ph ui-d/uicontrol ">SELECT</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">WHERE</uicontrol> blocks, click the <uicontrol class="+ topic/ph ui-d/uicontrol ">GET</uicontrol> block under the <uicontrol class="+ topic/ph ui-d/uicontrol ">DATA OPERATIONS</uicontrol> block and drag and connect the <uicontrol class="+ topic/ph ui-d/uicontrol ">Get Value of</uicontrol> field to the <uicontrol class="+ topic/ph ui-d/uicontrol ">WHERE</uicontrol> block.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <fig class="- topic/fig ">
+                  <title class="- topic/title "/>
+                  <image href="../../../Icons/Screenshots_Icons/Config_Form_Get_block.jpg"
+                         class="- topic/image "
+                         placement="inline"/>
+               </fig>
+            </info>
+         </step>
+         <step outputclass="break_avoid" class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Select the value of the <uicontrol class="+ topic/ph ui-d/uicontrol ">Get Value of</uicontrol> field as <msgph class="+ topic/ph sw-d/msgph ">Purchase Order No:</msgph>.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <fig class="- topic/fig ">
+                  <title class="- topic/title "/>
+                  <image href="../../../Icons/Screenshots_Icons/Config_Form_Get_Value_of_block.jpg"
+                         class="- topic/image "
+                         placement="inline"/>
+               </fig>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Expand the <uicontrol class="+ topic/ph ui-d/uicontrol ">ACTIONS</uicontrol> block and click <uicontrol class="+ topic/ph ui-d/uicontrol ">Set</uicontrol> block.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Drag and connect the <uicontrol class="+ topic/ph ui-d/uicontrol ">Set Value of</uicontrol> field to the <uicontrol class="+ topic/ph ui-d/uicontrol ">Form Load</uicontrol> event.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Select the value of the <uicontrol class="+ topic/ph ui-d/uicontrol ">Set Value of</uicontrol> field as <msgph class="+ topic/ph sw-d/msgph ">Total PO Cost</msgph>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click the <uicontrol class="+ topic/ph ui-d/uicontrol ">GET</uicontrol> block under the <uicontrol class="+ topic/ph ui-d/uicontrol ">DATA OPERATIONS</uicontrol> block, and drag and connect the <uicontrol class="+ topic/ph ui-d/uicontrol ">Get Property of</uicontrol> to the <uicontrol class="+ topic/ph ui-d/uicontrol ">Set Value of</uicontrol> field.</cmd>
+         </step>
+         <step outputclass="break_avoid" class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Select the value of the <uicontrol class="+ topic/ph ui-d/uicontrol ">Get Property of</uicontrol> field as <msgph class="+ topic/ph sw-d/msgph ">POValue</msgph> and in the next drop-down list, select the value as <msgph class="+ topic/ph sw-d/msgph ">PurchaseOrder. Revised PO Value in {_LOC:LOC_CURRENCY_SYMBOL}:</msgph>.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <fig class="- topic/fig ">
+                  <title class="- topic/title "/>
+                  <image href="../../../Icons/Screenshots_Icons/Config_Form_Get_Property_of_block.jpg"
+                         class="- topic/image "
+                         placement="inline"/>
+               </fig>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Save</uicontrol>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Publish</uicontrol>.</cmd>
+         </step>
+      </steps>
+   </taskbody>
+</task>

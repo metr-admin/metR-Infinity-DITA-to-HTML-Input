@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="task-7778"
+      class="- topic/topic task/task "
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   ">
+   <title class="- topic/title ">Creating a Workflow Using Simple Mode</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Yashshree</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-20+05:30" class="- topic/created "/>
+         <revised modified="2025-11-20+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="administrator,engineering,management,external contractors,analyst"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>workflow-management</indexterm>
+            <indexterm>form</indexterm>
+            <indexterm>form-builder</indexterm>
+            <indexterm>list-page</indexterm>
+            <indexterm>workflow-engine</indexterm>
+            <!-- Process layer -->
+            <indexterm>create-workflow</indexterm>
+            <indexterm>use-template</indexterm>
+            <indexterm>define-basic-steps</indexterm>
+            <indexterm>assign-default-roles</indexterm>
+            <indexterm>validate-workflow</indexterm>
+            <!-- Context layer -->
+            <indexterm>mind-administration-guide</indexterm>
+            <indexterm>capital-program-management</indexterm>
+            <indexterm>web-platform</indexterm>
+            <indexterm>enterprise-deployment</indexterm>
+            <indexterm>infrastructure-software</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>Mind-Administration-Guide</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="CreateWFSimple"/>
+         <othermeta name="shortdesc" content="Simple workflow creation: step-by-step guide using templates and basic role assignments."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="workflow;template;form;roles;list-page"/>
+         <othermeta name="taxonomy" content="domain:Capital-program-management;usecase:workflow-management;industry:capital-program management"/>
+         <othermeta name="tags" content="create-workflow,use-template,assign-default-roles"/>
+         <othermeta name="usecase" content="create simple workflows using templates"/>
+      </metadata>
+   </prolog>
+   <taskbody>
+      <prereq class="- topic/section task/prereq ">
+         <ul class="- topic/ul ">
+            <li class="- topic/li ">The role of the logged in user has permission to create or edit a workflow.</li>
+         </ul>
+      </prereq>
+      <context class="- topic/section task/context ">This procedure describes the steps to add the following controls to a workflow.<ul class="- topic/ul ">
+            <li class="- topic/li ">Add a stage with two actions </li>
+            <li class="- topic/li ">Add a condition to the workflow using the conditions block </li>
+            <li class="- topic/li ">Configure the workflow to send a standard automated email notification to stakeholders when the associated form is transitioned from one workflow stage to the next workflow stage </li>
+            <li class="- topic/li ">Define conditions on the users performing a workflow action </li>
+         </ul>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <xref href="CreateWF.dita" class="- topic/xref ">Create a basic workflow.</xref>
+            </cmd>
+            <info class="- topic/itemgroup task/info ">Alternatively, <xref href="EditWF.dita" class="- topic/xref ">edit a workflow</xref>.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To add a stage to the workflow, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Actions</uicontrol> navigation pane, expand <uicontrol class="+ topic/ph ui-d/uicontrol ">STAGES</uicontrol>, and then drag the <uicontrol class="+ topic/ph ui-d/uicontrol ">Stage</uicontrol> action item to the <uicontrol class="+ topic/ph ui-d/uicontrol ">Workflow</uicontrol> tab.</cmd>
+                  <info class="- topic/itemgroup task/info ">The new stage item is displayed on the canvas.</info>
+                  <info class="- topic/itemgroup task/info ">Alternatively, to copy a stage, perform the following steps: <ol class="- topic/ol ">
+                        <li class="- topic/li ">Click the intermediate stage to be copied. </li>
+                        <li class="- topic/li ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Copy</uicontrol>.<p class="- topic/p ">The selected intermediate stage is copied.</p>
+                        </li>
+                        <li class="- topic/li ">Click an action element, and in the properties pane, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Delete</uicontrol>.<p class="- topic/p ">Similarly, delete all the other action elements.</p>
+                        </li>
+                     </ol>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Workflow</uicontrol> tab, click the stage.</cmd>
+                  <info class="- topic/itemgroup task/info ">The stage properties are displayed in the right pane, as illustrated in the following image:<fig class="- topic/fig ">
+                        <title class="- topic/title ">Workflow Stage Properties</title>
+                        <image href="../../Screenshots/WF5.png"
+                               class="- topic/image "
+                               placement="inline"/>
+                     </fig>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Intermediate Stage</uicontrol> properties pane, provide the required information in the fields, as described in the following table:</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <table colsep="1" rowsep="1" class="- topic/table ">
+                        <tgroup cols="2" class="- topic/tgroup ">
+                           <colspec colname="c1" colnum="1" colwidth="20%" class="- topic/colspec "/>
+                           <colspec colname="c2" colnum="2" colwidth="80%" class="- topic/colspec "/>
+                           <thead class="- topic/thead ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">Field Name</entry>
+                                 <entry class="- topic/entry ">Description</entry>
+                              </row>
+                           </thead>
+                           <tbody class="- topic/tbody ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">Name</entry>
+                                 <entry class="- topic/entry ">Enter the name of the stage. <p class="- topic/p ">For example, enter <uicontrol class="+ topic/ph ui-d/uicontrol ">In Review</uicontrol>.</p>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">Days to Complete</entry>
+                                 <entry class="- topic/entry ">
+                                    <p class="- topic/p ">Enter the number of days before which an action must be performed in the current workflow stage.</p>
+                                    <p class="- topic/p ">If the stakeholder does not perform an action in the specified number of days, an escalation email is sent to users in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Administrator</uicontrol> role.</p>
+                                    <p class="- topic/p ">By default, the number of days defined in the <uicontrol class="+ topic/ph ui-d/uicontrol ">WORKFLOW SETTINGS</uicontrol> page is displayed. <ph product="Exclude_PG_Content" class="- topic/ph ">For information on workflow settings, refer to <xref href="../../System_Configurations/WFSettings.dita"
+                                                class="- topic/xref ">Administration, Workflow Settings</xref>.</ph>
+                                    </p>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">Action Stake Holders</entry>
+                                 <entry class="- topic/entry ">Select the roles with which a user can perform the workflow action for the stage. The <uicontrol class="+ topic/ph ui-d/uicontrol ">Action Stake Holder</uicontrol> box lists all the roles that are assigned with the<uicontrol class="+ topic/ph ui-d/uicontrol ">Edit</uicontrol> permission at the form level. <ph product="Exclude_PG_Content" class="- topic/ph ">For information on roles, refer to <xref href="../../User_Management/Security_Roles/SecurityRoles.dita"
+                                             class="- topic/xref ">Security Roles</xref>.</ph>
+                                    <p class="- topic/p ">Also, if <uicontrol class="+ topic/ph ui-d/uicontrol ">Allow Workflow Action by All Stakeholders</uicontrol> is selected in the <uicontrol class="+ topic/ph ui-d/uicontrol ">General Details</uicontrol> tab, then all stakeholders with the<uicontrol class="+ topic/ph ui-d/uicontrol ">Edit</uicontrol> or <uicontrol class="+ topic/ph ui-d/uicontrol ">View</uicontrol> or both permissions at the form level are listed in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Action Stake Holders</uicontrol> drop-down list.</p>
+                                    <note class="- topic/note ">
+                                       <ul class="- topic/ul ">
+                                          <li class="- topic/li ">For a role to be available in the list of action stakeholders, the <uicontrol class="+ topic/ph ui-d/uicontrol ">Edit</uicontrol> permission must be enabled for the role at the form level. <ph product="Exclude_PG_Content" class="- topic/ph ">To modify permissions, refer to <xref href="../../User_Management/Security_Roles/EditRoleInfo.dita"
+                                                      class="- topic/xref ">Editing Role Information</xref>.</ph>
+                                          </li>
+                                          <li class="- topic/li ">Ensure that the stakeholders selected in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Action Stake Holders</uicontrol> box are also selected in the <uicontrol class="+ topic/ph ui-d/uicontrol ">View Stake Holders</uicontrol> box.</li>
+                                       </ul>
+                                    </note>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">View Stake Holders</entry>
+                                 <entry class="- topic/entry ">
+                                    <p class="- topic/p ">Select the roles with which a user can view the records that are in the workflow stage but not perform any workflow actions.</p>
+                                    <p class="- topic/p ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">View Stake Holders</uicontrol> box lists all the roles that are assigned with <uicontrol class="+ topic/ph ui-d/uicontrol ">View</uicontrol> permission at the form level.<ph product="Exclude_PG_Content" class="- topic/ph "> For information on roles, refer to <xref href="../../User_Management/Security_Roles/SecurityRoles.dita"
+                                                class="- topic/xref ">Security Roles</xref>.</ph>
+                                    </p>
+                                    <note class="- topic/note ">
+                                       <ul class="- topic/ul ">
+                                          <li class="- topic/li ">You can view the <uicontrol class="+ topic/ph ui-d/uicontrol ">View Stake Holders</uicontrol> box only if the <uicontrol class="+ topic/ph ui-d/uicontrol ">Configure View Permissions</uicontrol> check box is selected in the <uicontrol class="+ topic/ph ui-d/uicontrol ">General Details</uicontrol> tab.</li>
+                                          <li class="- topic/li ">If the role is not selected in the <uicontrol class="+ topic/ph ui-d/uicontrol ">View Stake Holders</uicontrol> box, then that role cannot view the record in the selected form list page.</li>
+                                       </ul>
+                                    </note>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">Allow Form Edit</entry>
+                                 <entry class="- topic/entry ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Yes</uicontrol>, to allow the user to edit the record in this stage. <p class="- topic/p ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">No</uicontrol>, to restrict the users from editing the record in this stage.</p>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">Select Visibility Of Form Divisions</entry>
+                                 <entry class="- topic/entry ">Sets the visibility of the various sections defined in the form. <p class="- topic/p ">Click any of the following:<ul class="- topic/ul ">
+                                          <li class="- topic/li ">
+                                             <uicontrol class="+ topic/ph ui-d/uicontrol ">Edit</uicontrol> - Enables stakeholders to edit the information in the section in the current workflow stage.</li>
+                                          <li class="- topic/li ">
+                                             <uicontrol class="+ topic/ph ui-d/uicontrol ">View</uicontrol> - Enables stakeholders to view information in the section in the current workflow stage.</li>
+                                          <li class="- topic/li ">
+                                             <uicontrol class="+ topic/ph ui-d/uicontrol ">Hide</uicontrol> – Hides the information in the section in the current workflow stage. Stakeholders at this workflow stage cannot view information in the section.</li>
+                                       </ul>
+                                    </p>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">Allow Delete</entry>
+                                 <entry class="- topic/entry ">Click either of the following options:<ul class="- topic/ul ">
+                                       <li class="- topic/li ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Yes</uicontrol>, to allow the users to delete the record in this stage.</li>
+                                       <li class="- topic/li ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">No</uicontrol>, to restrict the users from deleting the record in this stage.</li>
+                                    </ul>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">Send Email To Stakeholders</entry>
+                                 <entry class="- topic/entry ">Select the check box, to send a standard automated email notification to the action stakeholders of the subsequent stage whenever the workflow action is performed. <p class="- topic/p ">The email template is based on the default template selected in the <uicontrol class="+ topic/ph ui-d/uicontrol ">WORKFLOW SETTINGS</uicontrol> page. <ph product="Exclude_PG_Content" class="- topic/ph ">For information on workflow settings, refer to <xref href="../../System_Configurations/WFSettings.dita"
+                                                class="- topic/xref ">Administration, Workflow Settings</xref>.</ph>
+                                    </p>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">Show stage in Tasks</entry>
+                                 <entry class="- topic/entry ">Ensure the check box is selected, to list the subsequent workflow action in the <p class="- topic/p ">
+                                       <uicontrol class="+ topic/ph ui-d/uicontrol ">My Tasks</uicontrol> list of all stakeholders of the subsequent workflow stage.</p>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">Ball In Court Request Email Template</entry>
+                                 <entry class="- topic/entry ">Select the required email template to be used to send an automated notification to the user selected to receive form information using the <uicontrol class="+ topic/ph ui-d/uicontrol ">Ball in Court</uicontrol> feature. <p class="- topic/p ">Available templates are based on the form that is selected for the workflow.</p>
+                                    <p class="- topic/p ">Available options are templates defined for the form in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Mail Body Templates</uicontrol> catalog of the Library. <ph product="Exclude_PG_Content" class="- topic/ph ">For information on the <uicontrol class="+ topic/ph ui-d/uicontrol ">Ball in Court</uicontrol> feature, refer to <xref href="../../../Common_Application_Features/Ball_in_Court/BIC.dita"
+                                                class="- topic/xref ">Common Application Features, Ball in Court</xref>.</ph>
+                                    </p>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">Ball In Court Response Email Template</entry>
+                                 <entry class="- topic/entry ">Select the required email template to be used to send an automated response notification to the user who initiated the <uicontrol class="+ topic/ph ui-d/uicontrol ">Ball in Court</uicontrol> notification. <p class="- topic/p ">Available templates are based on the form that is selected for the workflow.</p>
+                                    <p class="- topic/p ">Available options are templates defined for the form in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Mail Body Templates</uicontrol> catalog of the Library. <ph product="Exclude_PG_Content" class="- topic/ph ">For information on the <uicontrol class="+ topic/ph ui-d/uicontrol ">Ball in Court</uicontrol> feature, refer to <xref href="../../../Common_Application_Features/Ball_in_Court/BIC.dita"
+                                                class="- topic/xref ">Common Application Features, Ball in Court</xref>.</ph>
+                                    </p>
+                                 </entry>
+                              </row>
+                           </tbody>
+                        </tgroup>
+                     </table>
+                  </info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To add an action to the workflow stage, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the right pane, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Add Action</uicontrol>.</cmd>
+                  <info class="- topic/itemgroup task/info ">Alternatively, right-click the new stage item in the canvas, and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">New Action</uicontrol>.</info>
+                  <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">New Action</uicontrol> box is displayed below the In Review stage as illustrated in the following image:<fig class="- topic/fig ">
+                        <title class="- topic/title ">Workflow New Action</title>
+                        <image href="../../Screenshots/WF6.png"
+                               class="- topic/image "
+                               placement="inline"/>
+                     </fig>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Workflow</uicontrol> tab, click the <uicontrol class="+ topic/ph ui-d/uicontrol ">New Action</uicontrol> item.</cmd>
+                  <info class="- topic/itemgroup task/info ">The properties of the action item are displayed in the right pane.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Name</uicontrol> box, enter the name of the new action. For example, enter <uicontrol class="+ topic/ph ui-d/uicontrol ">Review Complete</uicontrol>.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Select <uicontrol class="+ topic/ph ui-d/uicontrol ">Make Comments Mandatory</uicontrol> check box to ensure comments are provided mandatorily in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Notes</uicontrol> box before performing the next workflow action.</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <note class="- topic/note "> To delete an action, right-click the action item, and click <uicontrol class="+ topic/ph ui-d/uicontrol ">Delete Action</uicontrol>.</note>
+                  </info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">You can add a condition to the workflow using the conditions block. To add a <uicontrol class="+ topic/ph ui-d/uicontrol ">Simple Conditions Block</uicontrol> action item to the workflow, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Actions</uicontrol> pane, expand <uicontrol class="+ topic/ph ui-d/uicontrol ">SIMPLE ACTIVITIES</uicontrol>, and then drag the <uicontrol class="+ topic/ph ui-d/uicontrol ">Conditions Block</uicontrol> action item to the <uicontrol class="+ topic/ph ui-d/uicontrol ">Workflow</uicontrol> tab. </cmd>
+                  <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Conditions Block</uicontrol> item is displayed on the canvas. </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Workflow</uicontrol> tab, click the <uicontrol class="+ topic/ph ui-d/uicontrol ">Conditions Block</uicontrol> item. </cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the right pane, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Add Condition</uicontrol>. </cmd>
+                  <info class="- topic/itemgroup task/info ">Alternatively, right-click the <uicontrol class="+ topic/ph ui-d/uicontrol ">Conditions Block</uicontrol> item in the canvas, and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">New If Else Branch</uicontrol>. </info>
+                  <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">If Else Branch</uicontrol> is displayed below the conditions block item. </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Workflow</uicontrol> tab, click the <uicontrol class="+ topic/ph ui-d/uicontrol ">If Else Branch</uicontrol> item. </cmd>
+                  <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">If Else Branch</uicontrol> properties are displayed in the right pane, as illustrated in the following image: <fig class="- topic/fig ">
+                        <title class="- topic/title ">Workflow Conditions Block</title>
+                        <image href="../../Screenshots/WF7.png"
+                               class="- topic/image "
+                               placement="inline"/>
+                     </fig>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Name</uicontrol> box, enter the name for the condition. </cmd>
+                  <info class="- topic/itemgroup task/info ">For example, enter <uicontrol class="+ topic/ph ui-d/uicontrol ">Amount Greater than 1000</uicontrol>. </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Conditions</uicontrol> field, click <image href="../../../Icons/select.png"
+                            class="- topic/image "
+                            placement="inline">
+                        <alt class="- topic/alt ">List</alt>
+                     </image>.</cmd>
+                  <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">RESOURCES</uicontrol> dialog box is displayed. </info>
+                  <info class="- topic/itemgroup task/info ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">RESOURCES</uicontrol> dialog box, two sections are displayed as illustrated in the following image: </info>
+                  <info class="- topic/itemgroup task/info ">Using the first section, you can create workflow conditions with the fields of the form selected in the<uicontrol class="+ topic/ph ui-d/uicontrol "> General Details</uicontrol> tab. Using the second section, you can create workflow conditions with the fields of the <uicontrol class="+ topic/ph ui-d/uicontrol ">Project Details</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">Contract Details</uicontrol> forms. <fig class="- topic/fig ">
+                        <title class="- topic/title ">Form Attributes</title>
+                        <image href="../../Screenshots/WF8.png"
+                               class="- topic/image "
+                               placement="inline"/>
+                     </fig>
+                  </info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To create a rule or group of rules and define conditions for the workflow, in the <uicontrol class="+ topic/ph ui-d/uicontrol ">RESOURCES</uicontrol> dialog box, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Add rule</uicontrol>. </cmd>
+                  <info class="- topic/itemgroup task/info "> A new row with a drop-down list is added. <note class="- topic/note "> The <uicontrol class="+ topic/ph ui-d/uicontrol ">AND</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">OR</uicontrol> buttons present at the top are unavailable.</note>
+                  </info>
+                  <info class="- topic/itemgroup task/info ">Alternatively, to create a group of rules with a combination of multiple AND and OR conditions, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Add Group</uicontrol>. <p class="- topic/p ">A new row with a drop-down list is added.</p>
+                     <note class="- topic/note "> The <uicontrol class="+ topic/ph ui-d/uicontrol ">AND</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">OR</uicontrol> present at the top are enabled.</note>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">From the drop-down list, select the required form field. </cmd>
+                  <info class="- topic/itemgroup task/info ">For example, select <uicontrol class="+ topic/ph ui-d/uicontrol ">Amount in $</uicontrol>. </info>
+                  <info class="- topic/itemgroup task/info ">Available fields are associated with the form selected in the <uicontrol class="+ topic/ph ui-d/uicontrol ">General Details</uicontrol> tab. </info>
+                  <info class="- topic/itemgroup task/info ">When a form field is selected, two new fields are added to the row. The second field is a drop-down list and based on the form field selected, the third field can be any of the following. <ul class="- topic/ul ">
+                        <li class="- topic/li ">Drop-down list </li>
+                        <li class="- topic/li ">Option list</li>
+                        <li class="- topic/li ">Text box</li>
+                        <li class="- topic/li ">Numeric text box</li>
+                        <li class="- topic/li ">Calendar drop-down box </li>
+                     </ul>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">From the second drop-down list, select the operator. </cmd>
+                  <info class="- topic/itemgroup task/info ">For example, select greater than &gt;.</info>
+                  <info class="- topic/itemgroup task/info ">The operator creates the condition between the form field you select in the first drop-down list and the value that you enter or select in the third field. </info>
+                  <info class="- topic/itemgroup task/info ">From the second drop-down list, if you select either between or not between, the third and the fourth fields appear, which can be one of the following: <ul class="- topic/ul ">
+                        <li class="- topic/li ">Numeric text box </li>
+                        <li class="- topic/li ">Calendar drop-down box </li>
+                     </ul>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Based on the form field you select in the first field, enter or select a value in the third field. For example, enter <uicontrol class="+ topic/ph ui-d/uicontrol ">1000</uicontrol>. </cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Optionally, to add multiple rules to the workflow or group, repeat the above steps 1 to 4. </cmd>
+                  <info class="- topic/itemgroup task/info ">When you add more than one rule, then the <uicontrol class="+ topic/ph ui-d/uicontrol ">AND</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">OR</uicontrol> buttons present at the top are enabled. Based on the workflow condition, click either of the following:<ul class="- topic/ul ">
+                        <li class="- topic/li ">If all the rules must be true to execute the workflow condition, click <uicontrol class="+ topic/ph ui-d/uicontrol ">AND</uicontrol>.<p class="- topic/p ">For example, <uicontrol class="+ topic/ph ui-d/uicontrol ">Amount in $ &gt; 1000 AND Remaining Amount in $ &lt; 500</uicontrol>.</p>
+                           <p class="- topic/p ">The subsequent workflow stage is<uicontrol class="+ topic/ph ui-d/uicontrol "> In Review</uicontrol> if the amount entered in the field <uicontrol class="+ topic/ph ui-d/uicontrol ">Amount in $</uicontrol> is greater than <uicontrol class="+ topic/ph ui-d/uicontrol ">1000</uicontrol> and the amount entered in the field <uicontrol class="+ topic/ph ui-d/uicontrol ">Remaining Amount in $</uicontrol> is less than <uicontrol class="+ topic/ph ui-d/uicontrol ">500</uicontrol>.</p>
+                        </li>
+                        <li class="- topic/li ">If any one of the rules must be true to execute the workflow condition, click <uicontrol class="+ topic/ph ui-d/uicontrol ">OR</uicontrol>.<p class="- topic/p ">For example, <uicontrol class="+ topic/ph ui-d/uicontrol ">Amount in $ &gt; 1000 OR Remaining Amount in $ &lt; 500</uicontrol>. </p>
+                           <p class="- topic/p ">The subsequent workflow stage is <uicontrol class="+ topic/ph ui-d/uicontrol ">In Review</uicontrol> if the amount entered in the field <uicontrol class="+ topic/ph ui-d/uicontrol ">Amount in $</uicontrol> is greater than <uicontrol class="+ topic/ph ui-d/uicontrol ">1000</uicontrol> or the amount entered in the field <uicontrol class="+ topic/ph ui-d/uicontrol ">Remaining Amount in $</uicontrol> is less than <uicontrol class="+ topic/ph ui-d/uicontrol ">500</uicontrol>.</p>
+                        </li>
+                     </ul>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Optionally, in the second row, create workflow conditions using the fields of the <uicontrol class="+ topic/ph ui-d/uicontrol ">Project</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">Contract Details</uicontrol> forms. </cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Optionally, to delete a row, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Delete</uicontrol> corresponding to the appropriate row. </cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Save</uicontrol>.</cmd>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To add another condition, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Workflow</uicontrol> tab, click the <uicontrol class="+ topic/ph ui-d/uicontrol ">Conditions Block</uicontrol> item. </cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the right pane, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Add Condition</uicontrol>. Alternatively, right-click the <uicontrol class="+ topic/ph ui-d/uicontrol ">Conditions Block</uicontrol> item in the canvas, and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">New If Else Branch</uicontrol>. </cmd>
+                  <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">If Else Branch</uicontrol> is displayed below the <uicontrol class="+ topic/ph ui-d/uicontrol ">Amount Greater than 1000</uicontrol> item as illustrated in the following image:<fig class="- topic/fig ">
+                        <title class="- topic/title ">Workflow If Else Branch</title>
+                        <image href="../../Screenshots/WF9.png"
+                               class="- topic/image "
+                               placement="inline"/>
+                     </fig>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Workflow</uicontrol> tab, click the <uicontrol class="+ topic/ph ui-d/uicontrol ">If Else Branch</uicontrol> item. </cmd>
+                  <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">If Else Branch</uicontrol> properties are displayed in the right pane.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Name</uicontrol> box, enter the name for the condition.</cmd>
+                  <info class="- topic/itemgroup task/info ">For example, enter <uicontrol class="+ topic/ph ui-d/uicontrol ">Else</uicontrol>.</info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">You can send a standard automated email notification to stakeholders when the associated form is transitioned from one workflow stage to the next workflow stage. To customize workflow email notifications, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Actions</uicontrol> navigation pane, expand <uicontrol class="+ topic/ph ui-d/uicontrol ">SIMPLE ACTIVITIES</uicontrol>, and then drag the <uicontrol class="+ topic/ph ui-d/uicontrol ">Send Email Notification</uicontrol> action item to the <uicontrol class="+ topic/ph ui-d/uicontrol ">Workflow</uicontrol> tab.</cmd>
+                  <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Send Email Notification</uicontrol> item is displayed on the canvas.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Workflow</uicontrol> tab, click the <uicontrol class="+ topic/ph ui-d/uicontrol ">Send Email Notification</uicontrol> item.</cmd>
+                  <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Send Email Notification</uicontrol> properties are displayed in the right pane, as illustrated in the following image:<fig class="- topic/fig ">
+                        <title class="- topic/title ">Workflow Email Notification</title>
+                        <image href="../../Screenshots/WF10.png"
+                               class="- topic/image "
+                               placement="inline"/>
+                     </fig>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Send Email Notification</uicontrol> properties pane, provide the required information in the fields, as described in the following table:</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <table colsep="1" rowsep="1" class="- topic/table ">
+                        <tgroup cols="2" class="- topic/tgroup ">
+                           <colspec colname="c1" colnum="1" colwidth="20%" class="- topic/colspec "/>
+                           <colspec colname="c2" colnum="2" colwidth="80%" class="- topic/colspec "/>
+                           <thead class="- topic/thead ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">Field Name</entry>
+                                 <entry class="- topic/entry ">Description</entry>
+                              </row>
+                           </thead>
+                           <tbody class="- topic/tbody ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">Name</entry>
+                                 <entry class="- topic/entry "> Enter the name of the stage. the default stage name is displayed as <uicontrol class="+ topic/ph ui-d/uicontrol ">Send Email Notification</uicontrol>. If required, enter a new name for the action item.</entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> To </entry>
+                                 <entry class="- topic/entry "> Select the required role the email notification will be sent to. <p class="- topic/p ">Available options in the list are roles that are defined in the application with necessary permissions. </p>
+                                    <p class="- topic/p ">Optionally, you can type the required email address (For example, <i class="+ topic/ph hi-d/i ">john@Mind.com</i>). </p>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> CC </entry>
+                                 <entry class="- topic/entry "> Select the required roles a copy of the email notification will be sent to. <p class="- topic/p ">Available options in the list are roles that are defined in the application with necessary permissions. </p>
+                                    <p class="- topic/p ">Optionally, you can type the required email address. For example, <i class="+ topic/ph hi-d/i ">john@Mind.com</i>. </p>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> Select Mail Body Template</entry>
+                                 <entry class="- topic/entry ">Select the required mail body template that must be sent to the stakeholders. <p class="- topic/p ">Available templates are based on the form that is selected for the workflow. </p>
+                                    <p class="- topic/p ">Available options are templates defined for the form in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Mail Body Templates</uicontrol> catalog of the library. </p>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> Attachments </entry>
+                                 <entry class="- topic/entry ">
+                                    <ul class="- topic/ul ">
+                                       <li class="- topic/li ">
+                                          <uicontrol class="+ topic/ph ui-d/uicontrol ">Form Attachment(s)</uicontrol> – Select the check box to send the notification with the files that are attached to the record for which the workflow action is performed.</li>
+                                       <li class="- topic/li ">
+                                          <uicontrol class="+ topic/ph ui-d/uicontrol ">Workflow Comment Attachment(s)</uicontrol> – Select the check box to send the notification with the files that are attached to the workflow comments. </li>
+                                       <li class="- topic/li ">
+                                          <uicontrol class="+ topic/ph ui-d/uicontrol ">Mail Merge</uicontrol> – Select the required mail merge template. Available options are mail merge templates configured for the selected form. <ph product="Exclude_PG_Content" class="- topic/ph ">For information on Mail Merge, refer to <xref href="../../../Common_Application_Features/Mail_Merge/MailMerge.dita"
+                                                   class="- topic/xref ">Common Application Features, Mail Merge</xref>.</ph>
+                                       </li>
+                                    </ul>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> Notify through Email </entry>
+                                 <entry class="- topic/entry "> Click the required option:<ul class="- topic/ul ">
+                                       <li class="- topic/li ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Any user completes action</uicontrol> to specify that if any of the action stakeholders transition the record to the next workflow stage, the email notification is sent to the selected stakeholders. </li>
+                                       <li class="- topic/li ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">All user(s) complete action</uicontrol> to specify that all the action stakeholders must transition the record to the next workflow stage to send the email notification to the selected stakeholders. </li>
+                                    </ul>
+                                 </entry>
+                              </row>
+                           </tbody>
+                        </tgroup>
+                     </table>
+                  </info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To connect workflow items to complete the business process, click the port at the item, and drag the port to the port of the required item as illustrated in the following image:</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <fig class="- topic/fig ">
+                  <title class="- topic/title ">Edit Workflow</title>
+                  <image href="../../Screenshots/WF11.png"
+                         class="- topic/image "
+                         placement="inline"/>
+               </fig>
+               <note class="- topic/note "> By default, the port is located on the right of the box. To change the location of the port, right-click the new action item and select <uicontrol class="+ topic/ph ui-d/uicontrol ">Reverse Port</uicontrol>.</note>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To define conditions on the users performing a workflow action, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Click the required port.</cmd>
+                  <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Workflow Connection</uicontrol> properties are displayed on the right pane.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Perform Operation After</uicontrol> section, click the required option:</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <ul class="- topic/ul ">
+                        <li class="- topic/li ">
+                           <uicontrol class="+ topic/ph ui-d/uicontrol ">Any user completes action</uicontrol>: To specify that if any of the action stakeholders transition the record to the next workflow stage, the record moves to the next workflow stage.</li>
+                        <li class="- topic/li ">
+                           <uicontrol class="+ topic/ph ui-d/uicontrol ">All user(s) complete action</uicontrol>: To specify that all the action stakeholders must transition the record to the next workflow stage for the record to move to the next workflow stage.</li>
+                     </ul>
+                  </info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Save</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The workflow is saved and listed on the <uicontrol class="+ topic/ph ui-d/uicontrol ">WORKFLOW LIST</uicontrol> page. </info>
+         </step>
+      </steps>
+      <postreq class="- topic/section task/postreq ">The workflow must now be published to be made available in the application. <ph product="Exclude_PG_Content" class="- topic/ph ">For information on publishing a workflow, refer to <xref href="PublishWF.dita" class="- topic/xref ">Publishing a Workflow</xref>.</ph>
+      </postreq>
+   </taskbody>
+</task>

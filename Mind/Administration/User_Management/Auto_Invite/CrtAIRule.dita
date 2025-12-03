@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="Form_AUTOINV_New"
+      class="- topic/topic task/task "
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   ">
+   <title class="- topic/title ">Creating an Auto Invite Rule</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Yashshree</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-20+05:30" class="- topic/created "/>
+         <revised modified="2025-11-20" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="administrator,engineering,management,external contractors,analyst"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>approval-rule</indexterm>
+            <indexterm>ai-rule</indexterm>
+            <indexterm>rule-creator</indexterm>
+            <indexterm>rule-editor</indexterm>
+            <indexterm>configuration</indexterm>
+            <!-- Process layer -->
+            <indexterm>create-rule</indexterm>
+            <indexterm>validate-rule</indexterm>
+            <indexterm>save-rule</indexterm>
+            <indexterm>test-rule</indexterm>
+            <indexterm>publish-rule</indexterm>
+            <!-- Context layer -->
+            <indexterm>mind-administration-guide</indexterm>
+            <indexterm>capital-program-management</indexterm>
+            <indexterm>workflow-automation</indexterm>
+            <indexterm>infrastructure-software</indexterm>
+            <indexterm>approval-compliance</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>Mind-Administration-Guide</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Create AI Rule"/>
+         <othermeta name="shortdesc" content="Steps to create a new AI/approval rule: define conditions, actions, validate, and publish for use in workflows."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="approval rule;ai rule;rule creator;conditions;actions"/>
+         <othermeta name="taxonomy" content="domain:Capital-program-management;usecase:create-ai-rule;industry:capital-program management"/>
+         <othermeta name="tags" content="create,rule,ai,validate,publish"/>
+         <othermeta name="usecase" content="create-ai-rule"/>
+      </metadata>
+   </prolog>
+   <taskbody>
+      <context class="- topic/section task/context ">You can create an auto invite rule and define filter conditions related to projects, contracts, and users.</context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the module menu, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Administration</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">ADMINISTRATION</uicontrol> page is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the navigation pane, expand <uicontrol class="+ topic/ph ui-d/uicontrol ">User Management</uicontrol>, and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">Auto Invite</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">AUTO INVITE </uicontrol> list page is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">New</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">AUTO INVITE </uicontrol> page is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Rule Name</uicontrol> box, enter the required rule name.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Description </uicontrol> box, enter the description for the rule.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Ensure the <uicontrol class="+ topic/ph ui-d/uicontrol ">Active</uicontrol> check box is selected, to specify that the rule is active and available for use.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To create a project filter, in the <uicontrol class="+ topic/ph ui-d/uicontrol ">PROJECT FILTER</uicontrol> section, perform either of the following:</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <ul class="- topic/ul ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">To automatically invite users of selected roles to all projects, select the <uicontrol class="+ topic/ph ui-d/uicontrol ">Select All Projects</uicontrol> check box.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">To automatically invite users of selected roles to projects that adhere to specified conditions, create a project rule and define the conditions.</p>
+                     <p class="- topic/p ">
+                        <table colsep="1" rowsep="1" class="- topic/table ">
+                           <tgroup cols="2" class="- topic/tgroup ">
+                              <colspec colname="c1" colnum="1" class="- topic/colspec "/>
+                              <colspec colname="c2" colnum="2" class="- topic/colspec "/>
+                              <thead class="- topic/thead ">
+                                 <row class="- topic/row ">
+                                    <entry class="- topic/entry ">To create a project rule, perform the following steps:</entry>
+                                    <entry class="- topic/entry ">To create a group of rules with a combination of multiple AND and OR conditions, perform the following steps:</entry>
+                                 </row>
+                              </thead>
+                              <tbody class="- topic/tbody ">
+                                 <row class="- topic/row ">
+                                    <entry class="- topic/entry ">
+                                       <ol class="- topic/ol ">
+                                          <li class="- topic/li ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Add Rule</uicontrol>.<p class="- topic/p ">A new row with a drop-down list is added. </p>
+                                             <p class="- topic/p ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">AND</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">OR</uicontrol> buttons present at the top are unavailable.</p>
+                                          </li>
+                                          <li class="- topic/li ">From the drop-down list, select the required project field.<p class="- topic/p ">For example, select <uicontrol class="+ topic/ph ui-d/uicontrol ">Program Year</uicontrol>.</p>
+                                             <p class="- topic/p ">Available options are fields in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Project Details</uicontrol> form.</p>
+                                             <p class="- topic/p ">When a project field is selected, two new fields are added to the row. The second field is a drop-down list and based on the project field selected, the third field can be any of the following:<ul class="- topic/ul ">
+                                                   <li class="- topic/li ">Drop-down list</li>
+                                                   <li class="- topic/li ">Option list</li>
+                                                   <li class="- topic/li ">Text box</li>
+                                                   <li class="- topic/li ">Numeric text box</li>
+                                                   <li class="- topic/li ">Calendar drop-down box</li>
+                                                </ul>
+                                             </p>
+                                          </li>
+                                          <li class="- topic/li ">From the second drop-down list, select the operator.<p class="- topic/p ">For example, select equal.</p>
+                                             <p class="- topic/p ">The operator creates the condition between the project field you select in the first drop-down list and the value that you enter or select in the third field.</p>
+                                             <p class="- topic/p ">From the second drop-down list, if you select either <uicontrol class="+ topic/ph ui-d/uicontrol ">between</uicontrol> or <uicontrol class="+ topic/ph ui-d/uicontrol ">not between</uicontrol>, the third and the fourth fields appear, which can be one of the following:<ul class="- topic/ul ">
+                                                   <li class="- topic/li ">Numeric text box</li>
+                                                   <li class="- topic/li ">Calendar drop-down box</li>
+                                                </ul>
+                                             </p>
+                                          </li>
+                                          <li class="- topic/li ">Based on the project field you select in the first field, enter or select a value in the third field. For example, select 2020.</li>
+                                          <li class="- topic/li ">Optionally, to add multiple rules to the project filter, repeat steps 1 to 4. <p class="- topic/p ">When you add more than one rule, then the <uicontrol class="+ topic/ph ui-d/uicontrol ">AND</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">OR</uicontrol> buttons present at the top are enabled. Based on the condition to invite users to a project, click either of the following: <ul class="- topic/ul ">
+                                                   <li class="- topic/li ">If all the project rules must be true to execute the auto invite rule, click <uicontrol class="+ topic/ph ui-d/uicontrol ">AND</uicontrol>. For example, Program Year = 2020 and Project Score = 90. The user is automatically invited to the project if the year selected in the field Program Year is 2020 and the Project Score is 90.</li>
+                                                   <li class="- topic/li ">If any one of the project rules must be true to execute the auto invite rule, click <uicontrol class="+ topic/ph ui-d/uicontrol ">OR</uicontrol>. For example, Program Year = 2020 OR Project Score = 90. The user is automatically invited to the project if the year selected in the field Program Year is 2020 or the score entered in the field Project Score is 90.</li>
+                                                </ul>
+                                             </p>
+                                          </li>
+                                          <li class="- topic/li ">Optionally, to delete a row, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Delete</uicontrol> corresponding to the appropriate row.</li>
+                                       </ol>
+                                    </entry>
+                                    <entry class="- topic/entry ">
+                                       <ol class="- topic/ol ">
+                                          <li class="- topic/li ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Add Group</uicontrol>.<p class="- topic/p ">A new row with a drop-down list is added. </p>
+                                             <p class="- topic/p ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">AND</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">OR</uicontrol> buttons present at the top are available.</p>
+                                          </li>
+                                          <li class="- topic/li ">From the drop-down list, select the required project field. For example, select <uicontrol class="+ topic/ph ui-d/uicontrol ">Project Value</uicontrol>.<p class="- topic/p ">Available options are fields in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Project Details</uicontrol> form.</p>
+                                             <p class="- topic/p ">
+                                                <ul class="- topic/ul ">
+                                                   <li class="- topic/li ">Drop-down list</li>
+                                                   <li class="- topic/li ">Option list</li>
+                                                   <li class="- topic/li ">Text box</li>
+                                                   <li class="- topic/li ">Numeric text box</li>
+                                                   <li class="- topic/li ">Calendar drop-down box</li>
+                                                </ul>
+                                             </p>
+                                          </li>
+                                          <li class="- topic/li ">From the second drop-down list, select the operator.<p class="- topic/p ">For example, select greater than.</p>
+                                             <p class="- topic/p ">The operator creates the condition between the project field you select in the first drop-down field and the value you enter or select in the third field.</p>
+                                             <p class="- topic/p ">From the second drop-down list, if you select either <uicontrol class="+ topic/ph ui-d/uicontrol ">between</uicontrol> or <uicontrol class="+ topic/ph ui-d/uicontrol ">not between</uicontrol>, the third and the fourth fields appear, which can be one of the following:</p>
+                                             <p class="- topic/p ">
+                                                <ul class="- topic/ul ">
+                                                   <li class="- topic/li ">Numeric text box</li>
+                                                   <li class="- topic/li ">Calendar drop-down box</li>
+                                                </ul>
+                                             </p>
+                                          </li>
+                                          <li class="- topic/li ">Based on the project field you select in the first field, enter or select a value in the third field. For example, enter 10000.</li>
+                                          <li class="- topic/li ">Optionally, to add multiple rules to the group, repeat the above steps 1 to 4.<p class="- topic/p ">When you add more than one rule, then the AND and OR buttons present at the top of the group are enabled. Based on the condition to invite the user to the project, click either of the following:<ul class="- topic/ul ">
+                                                   <li class="- topic/li ">If all the project rules defined in the group must be true to execute the auto invite rule, click <uicontrol class="+ topic/ph ui-d/uicontrol ">AND</uicontrol>. For example, Project Value &gt; 10000 AND Status = Planning. The user is automatically invited to the project if the value entered in the field Project Value is greater than 10000 and the option selected in the field Status is Planning.</li>
+                                                   <li class="- topic/li ">If any one of the project rules defined in the group must be true to execute the auto invite, click <uicontrol class="+ topic/ph ui-d/uicontrol ">OR</uicontrol>. For example, Project Value &gt; 10000 AND Status = Planning. The user is automatically invited to the project if the value entered in the field Project Value is greater than 10000 or the option selected in the field Status is Planning.</li>
+                                                </ul>
+                                             </p>
+                                          </li>
+                                          <li class="- topic/li ">Optionally, to create a sub-group under a group, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Add Group</uicontrol>.</li>
+                                          <li class="- topic/li ">Optionally, to delete a row, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Delete</uicontrol> corresponding to the appropriate row.</li>
+                                       </ol>
+                                    </entry>
+                                 </row>
+                              </tbody>
+                           </tgroup>
+                        </table>
+                     </p>
+                  </li>
+               </ul>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To create a contract filter, in the <uicontrol class="+ topic/ph ui-d/uicontrol ">CONTRACT FILTER</uicontrol> section, perform either of the following:</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <ul class="- topic/ul ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">To automatically invite users of selected roles to all contracts of the projects selected in the <uicontrol class="+ topic/ph ui-d/uicontrol ">PROJECT FILTER</uicontrol> section, select the <uicontrol class="+ topic/ph ui-d/uicontrol ">Select All Contracts</uicontrol>.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">To automatically invite users of a selected roles to contracts of the projects selected in the <uicontrol class="+ topic/ph ui-d/uicontrol ">PROJECT FILTER</uicontrol> that adhere to specified conditions, create a contract rule and define the conditions.</p>
+                     <p class="- topic/p ">
+                        <table colsep="1" rowsep="1" class="- topic/table ">
+                           <tgroup cols="2" class="- topic/tgroup ">
+                              <colspec colname="c1" colnum="1" class="- topic/colspec "/>
+                              <colspec colname="c2" colnum="2" class="- topic/colspec "/>
+                              <thead class="- topic/thead ">
+                                 <row class="- topic/row ">
+                                    <entry class="- topic/entry ">To create a contract rule, perform the following steps:</entry>
+                                    <entry class="- topic/entry ">To create a group of rules with a combination of multiple AND and OR conditions, perform the following steps:</entry>
+                                 </row>
+                              </thead>
+                              <tbody class="- topic/tbody ">
+                                 <row class="- topic/row ">
+                                    <entry class="- topic/entry ">
+                                       <ol class="- topic/ol ">
+                                          <li class="- topic/li ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Add Rule</uicontrol>. A new row with a drop-down list is added.<p class="- topic/p ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">AND</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">OR</uicontrol> buttons present at the top are unavailable.</p>
+                                          </li>
+                                          <li class="- topic/li ">From the drop-down list, select the appropriate contract field.<p class="- topic/p ">For example, select Contract Name.</p>
+                                             <p class="- topic/p ">Available options are fields in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Contract Details</uicontrol> form.</p>
+                                             <p class="- topic/p ">When a contract field is selected, two new fields are added to the row. The second field is a drop-down list and based on the project field selected, the third field can be any of the following:</p>
+                                             <p class="- topic/p ">
+                                                <ul class="- topic/ul ">
+                                                   <li class="- topic/li ">Drop-down list</li>
+                                                   <li class="- topic/li ">Option list</li>
+                                                   <li class="- topic/li ">Text box</li>
+                                                   <li class="- topic/li ">Numeric text box</li>
+                                                   <li class="- topic/li ">Calendar drop-down box</li>
+                                                </ul>
+                                             </p>
+                                          </li>
+                                          <li class="- topic/li ">From the second drop-down list, select the operator.<p class="- topic/p ">For example, select contains.</p>
+                                             <p class="- topic/p ">The operator creates the condition between the contract field you select in the first filed and the value that you enter or select in the third field.</p>
+                                          </li>
+                                          <li class="- topic/li ">Based on the contract field you select in the first field, enter or select a value in the third field.<p class="- topic/p ">For example, enter Design.</p>
+                                          </li>
+                                          <li class="- topic/li ">Optionally, to add multiple rules to the contract filter, repeat the above steps 1 to 4.<p class="- topic/p ">When you add more than one rule, then the AND and OR buttons present at the top are enabled. Based on the condition to invite users to a contract, click either of the following:</p>
+                                             <p class="- topic/p ">
+                                                <ul class="- topic/ul ">
+                                                   <li class="- topic/li ">If all the contract rules must be true to execute the auto invite rule, click <uicontrol class="+ topic/ph ui-d/uicontrol ">AND</uicontrol>. For example, Contract Name = Design AND Created Date &gt; 09/24/2020. Users are automatically invited to the contract if the name entered in the field Contract Name contains Design and the date selected in the field Created Date is after 09/24/2020.</li>
+                                                   <li class="- topic/li ">If any one of the contract rules must be true to execute the auto invite rule, click <uicontrol class="+ topic/ph ui-d/uicontrol ">OR</uicontrol>. For example, Contract Name = Design AND Created Date &gt; 09/24/2020. The user is automatically invited to the contract if the name entered in the field Contract Name contains Design and the date selected in the field Created Date is greater than 09/24/2020.</li>
+                                                </ul>
+                                             </p>
+                                          </li>
+                                          <li class="- topic/li ">Optionally, to delete a row, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Delete</uicontrol> corresponding to the appropriate row.</li>
+                                       </ol>
+                                    </entry>
+                                    <entry class="- topic/entry ">
+                                       <ol class="- topic/ol ">
+                                          <li class="- topic/li ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Add Group</uicontrol>. A new row with a drop-down list is added.<p class="- topic/p ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">AND</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">OR</uicontrol> buttons present at the top are enabled.</p>
+                                          </li>
+                                          <li class="- topic/li ">From the drop-down list, select the appropriate contract field.<p class="- topic/p ">For example, select <uicontrol class="+ topic/ph ui-d/uicontrol ">Measurement System</uicontrol>.</p>
+                                             <p class="- topic/p ">When a contract field is selected, two new fields are added to the row. The second field is a drop-down list and based on the project field selected, the third field can be any of the following:</p>
+                                             <p class="- topic/p ">
+                                                <ul class="- topic/ul ">
+                                                   <li class="- topic/li ">Drop-down list</li>
+                                                   <li class="- topic/li ">Option list</li>
+                                                   <li class="- topic/li ">Text box</li>
+                                                   <li class="- topic/li ">Numeric text box</li>
+                                                   <li class="- topic/li ">Calendar drop-down box</li>
+                                                </ul>
+                                             </p>
+                                          </li>
+                                          <li class="- topic/li ">From the second drop-down list, select the operator.<p class="- topic/p ">For example, select not equal.</p>
+                                             <p class="- topic/p ">The operator creates the condition between the contract field you select in the first field and the value you enter or select in the third field.</p>
+                                          </li>
+                                          <li class="- topic/li ">Based on the contract field you select in the first field, enter or select a value in the third field. <p class="- topic/p ">For example, select IS System.</p>
+                                          </li>
+                                          <li class="- topic/li ">Optionally, to add multiple rules to the group, repeat the above steps 1 to 4. <p class="- topic/p ">When you add more than one rule, then the AND and OR buttons present at the top of the group are enabled. Based on the condition to invite users to a contract, click either of the following:</p>
+                                             <p class="- topic/p ">
+                                                <ul class="- topic/ul ">
+                                                   <li class="- topic/li ">If all the contract rules defined in the group must be true to execute the auto invite rule, click <uicontrol class="+ topic/ph ui-d/uicontrol ">AND</uicontrol>. For example, Measurement System ≠ IS System AND Type = Design Firm. The user is automatically invited to the contract if the option selected in the field Measurement System is not equal to IS System AND the option selected in the field Type is Design Firm.</li>
+                                                   <li class="- topic/li ">If any one of the contract rules defined in the group must be true to execute the auto invite, click <uicontrol class="+ topic/ph ui-d/uicontrol ">OR</uicontrol>. For example, Measurement System ≠ IS System AND Type = Design Firm. The user is automatically invited to the contract if the option selected in the field Measurement System is not equal to IS System or the option selected in the field Type is Design Firm.</li>
+                                                </ul>
+                                             </p>
+                                          </li>
+                                          <li class="- topic/li ">Optionally, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Add Group</uicontrol> to create a sub-group under a group. <note class="- topic/note "> The contract filter is required only when multiple contracts are associated with a project. If only one contract is associated with a project, then a user who is invited to the project is also invited to the associated contract.</note>
+                                          </li>
+                                          <li class="- topic/li ">Optionally, to delete a row, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Delete</uicontrol> corresponding to the appropriate row.</li>
+                                       </ol>
+                                    </entry>
+                                 </row>
+                              </tbody>
+                           </tgroup>
+                        </table>
+                     </p>
+                  </li>
+               </ul>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To create a user filter, in the <uicontrol class="+ topic/ph ui-d/uicontrol ">USER FILTER</uicontrol> section, perform either of the following: </cmd>
+            <info class="- topic/itemgroup task/info ">
+               <ul class="- topic/ul ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">To automatically invite all users of selected roles to projects selected in the <uicontrol class="+ topic/ph ui-d/uicontrol ">PROJECT FILTER</uicontrol> section and contracts selected in the <uicontrol class="+ topic/ph ui-d/uicontrol ">CONTRACT FILTER</uicontrol> section, select the <uicontrol class="+ topic/ph ui-d/uicontrol ">Select All Users</uicontrol> check box.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">To automatically invite users of a selected roles that adhere to specified conditions to projects selected in the <uicontrol class="+ topic/ph ui-d/uicontrol ">PROJECT FILTER</uicontrol> section and contracts selected in the <uicontrol class="+ topic/ph ui-d/uicontrol ">CONTRACT FILTER</uicontrol> section, create a user rule and define the conditions.</p>
+                     <p class="- topic/p ">
+                        <table colsep="1" rowsep="1" class="- topic/table ">
+                           <tgroup cols="2" class="- topic/tgroup ">
+                              <colspec colname="c1" colnum="1" class="- topic/colspec "/>
+                              <colspec colname="c2" colnum="2" class="- topic/colspec "/>
+                              <thead class="- topic/thead ">
+                                 <row class="- topic/row ">
+                                    <entry class="- topic/entry ">To create a user rule, perform the following steps:</entry>
+                                    <entry class="- topic/entry ">To create a group of rules with a combination of multiple AND and OR conditions, perform the following steps:</entry>
+                                 </row>
+                              </thead>
+                              <tbody class="- topic/tbody ">
+                                 <row class="- topic/row ">
+                                    <entry class="- topic/entry ">
+                                       <ol class="- topic/ol ">
+                                          <li class="- topic/li ">Click <image href="../../../Icons/select.png"
+                                                    class="- topic/image "
+                                                    placement="inline">
+                                                <alt class="- topic/alt ">List</alt>
+                                             </image>. <p class="- topic/p ">A new row with a drop-down list is added.</p>
+                                             <p class="- topic/p ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">AND</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">OR</uicontrol> buttons present at the top are unavailable.</p>
+                                          </li>
+                                          <li class="- topic/li ">From the drop-down list box, select the appropriate user field.<p class="- topic/p ">For example, select <uicontrol class="+ topic/ph ui-d/uicontrol ">Status</uicontrol>.</p>
+                                             <p class="- topic/p ">Available options are fields in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Add User</uicontrol> form.</p>
+                                             <p class="- topic/p ">When a user field is selected, two new fields are added to the row. The second field is a drop-down list and based on the project field selected, the third field can be any of the following:<ul class="- topic/ul ">
+                                                   <li class="- topic/li ">Drop-down list</li>
+                                                   <li class="- topic/li ">Option list</li>
+                                                   <li class="- topic/li ">Text box</li>
+                                                   <li class="- topic/li ">Numeric text box</li>
+                                                   <li class="- topic/li ">Calendar drop-down box</li>
+                                                </ul>
+                                             </p>
+                                          </li>
+                                          <li class="- topic/li ">From the second drop-down list, select the operator.<p class="- topic/p ">For example, select equal.</p>
+                                             <p class="- topic/p ">The operator creates the condition between the user field you select in the first field and the value you enter or select in the third field.</p>
+                                          </li>
+                                          <li class="- topic/li ">Based on the user field you select in the first field, enter or select a value in the third field. <p class="- topic/p ">For example, select Active.</p>
+                                          </li>
+                                          <li class="- topic/li ">Optionally, to add multiple rules to the user filter, repeat the above steps 1 to 4. <p class="- topic/p ">When you add more than one rule, then the <uicontrol class="+ topic/ph ui-d/uicontrol ">AND</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">OR</uicontrol> buttons present at the top are enabled. Based on the conditions to invite users to projects and contracts, click either of the following:<ul class="- topic/ul ">
+                                                   <li class="- topic/li ">If all the user rules must be true to execute the auto invite rule, click <uicontrol class="+ topic/ph ui-d/uicontrol ">AND</uicontrol>. For example, Status = Active AND User Type = External. The user is automatically invited to the project and contract if the option selected in the field Status is Active AND the option selected in the field User Type is External.</li>
+                                                   <li class="- topic/li ">If any one of the user rules must be true to execute the auto invite rule, click <uicontrol class="+ topic/ph ui-d/uicontrol ">OR</uicontrol>. For example, Status = Active AND User Type = External. The user is automatically invited to the project and contract if the option selected in the field Status is Active or the option selected in the field User Type is External.</li>
+                                                </ul>
+                                             </p>
+                                          </li>
+                                          <li class="- topic/li ">Optionally, to delete a row, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Delete</uicontrol> corresponding to the appropriate row.</li>
+                                       </ol>
+                                    </entry>
+                                    <entry class="- topic/entry ">
+                                       <ol class="- topic/ol ">
+                                          <li class="- topic/li ">Click <image href="../../../Icons/select.png"
+                                                    class="- topic/image "
+                                                    placement="inline">
+                                                <alt class="- topic/alt ">List</alt>
+                                             </image>. <p class="- topic/p ">A new row with a drop-down list is added.</p>
+                                             <p class="- topic/p ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">AND</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">OR</uicontrol> buttons present at the top are enabled.</p>
+                                          </li>
+                                          <li class="- topic/li ">From the drop-down list, select the appropriate user field.<p class="- topic/p ">For example, select <uicontrol class="+ topic/ph ui-d/uicontrol ">Assign Roles-Role</uicontrol>.</p>
+                                             <p class="- topic/p ">Available options are fields in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Add User</uicontrol> form.</p>
+                                             <p class="- topic/p ">When a user field is selected, two new fields are added in the row. The second field is a drop-down list and based on the project field selected, the third field can be any of the following:<ul class="- topic/ul ">
+                                                   <li class="- topic/li ">Drop-down list</li>
+                                                   <li class="- topic/li ">Option list</li>
+                                                   <li class="- topic/li ">Text box</li>
+                                                   <li class="- topic/li ">Numeric text box</li>
+                                                   <li class="- topic/li ">Calendar drop-down box</li>
+                                                </ul>
+                                             </p>
+                                          </li>
+                                          <li class="- topic/li ">From the second drop-down list, select the operator..<p class="- topic/p ">For example, select equal</p>
+                                             <p class="- topic/p ">The operator creates the condition between the user field you select in the first field and the value you enter or select in the third field.</p>
+                                          </li>
+                                          <li class="- topic/li ">Based on the user field you select in the first field, enter or select a value in the third field.<p class="- topic/p ">For example, select Project Manager.</p>
+                                          </li>
+                                          <li class="- topic/li ">Optionally, to add multiple rules to the group, repeat the above steps 1 to 4. <p class="- topic/p ">When you add more than one rule, then the AND and OR buttons present at the top of the group are enabled. Based on the conditions to invite users to projects and contracts, click either of the following:<ul class="- topic/ul ">
+                                                   <li class="- topic/li ">If all the user rules defined in the group must be true to execute the auto invite rule, click <uicontrol class="+ topic/ph ui-d/uicontrol ">AND</uicontrol>. For example, Assign Roles-Role = Project Manager AND City = Boston. The user is automatically invited to the project and contract if the role assigned to the user is Project Manager AND the value entered in the field City is Boston</li>
+                                                   <li class="- topic/li ">If any one of the user rules defined in the group must be true to execute the auto invite rule, click <uicontrol class="+ topic/ph ui-d/uicontrol ">OR</uicontrol>. For example, Assign Roles-Role = Project Manager AND City = Boston. The user is automatically invited to the project and contract if the role assigned to the user is Project Manager or the value entered in the field City is Boston.</li>
+                                                </ul>
+                                             </p>
+                                          </li>
+                                          <li class="- topic/li ">Optionally, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Add Group</uicontrol> to create a sub-group under a group. <p class="- topic/p ">
+                                                <note class="- topic/note "> To create an auto invite rule, you must define a minimum one project and one user filter.</note>
+                                             </p>
+                                          </li>
+                                          <li class="- topic/li ">Optionally, to delete a row, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Delete</uicontrol> corresponding to the appropriate row.</li>
+                                       </ol>
+                                    </entry>
+                                 </row>
+                              </tbody>
+                           </tgroup>
+                        </table>
+                     </p>
+                  </li>
+               </ul>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To define the roles to be auto invited to projects selected in the <uicontrol class="+ topic/ph ui-d/uicontrol ">PROJECT FILTER</uicontrol> section and contracts selected in the <uicontrol class="+ topic/ph ui-d/uicontrol ">CONTRACT FILTER</uicontrol> section, in the <uicontrol class="+ topic/ph ui-d/uicontrol ">ROLES TO BE INVITED</uicontrol> section, perform either of the following:</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <ul class="- topic/ul ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">To invite users of all roles to selected projects and contracts, select the <uicontrol class="+ topic/ph ui-d/uicontrol ">All Roles </uicontrol>check box.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">To select roles to be automatically invited to selected projects and contracts, from the <uicontrol class="+ topic/ph ui-d/uicontrol ">Select Role(s)</uicontrol> drop-down list, select the required user roles. Available roles are based on the user's parameter selected in the <uicontrol class="+ topic/ph ui-d/uicontrol ">USER FILTER</uicontrol> drop-down list, select the required user roles.</p>
+                     <p class="- topic/p ">Available roles are based on the user's parameter selected in the <uicontrol class="+ topic/ph ui-d/uicontrol ">USER FILTER</uicontrol> section.</p>
+                     <p class="- topic/p ">The users associated with the selected roles are automatically invited to the defined projects and contracts created in <ph conref="../../../../Warehouse/Product_Name_Warehouse.dita#reference-9043/product_name"
+                            class="- topic/ph "/>.</p>
+                  </li>
+               </ul>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Save</uicontrol> to save the auto invite rule.</cmd>
+            <info class="- topic/itemgroup task/info ">Alternatively, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Save &amp; Run</uicontrol> to run the newly created auto invite rule. </info>
+            <info class="- topic/itemgroup task/info ">Based on the conditions defined for projects, contracts, users, and roles, all appropriate users are invited to the selected projects and contracts.<p class="- topic/p ">
+                  <note class="- topic/note "> The auto invite feature does not invite users who are already invited to that project or contract.</note>
+               </p>
+            </info>
+            <info class="- topic/itemgroup task/info ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">AUTO INVITE</uicontrol> list page, the <uicontrol class="+ topic/ph ui-d/uicontrol ">Status</uicontrol> column displays the current status of an auto invite rule and the <uicontrol class="+ topic/ph ui-d/uicontrol ">Last Executed Time</uicontrol> column displays the time when the rule was last executed. <p class="- topic/p ">The following are the various statuses of an auto invite rule:<table colsep="1" rowsep="1" class="- topic/table ">
+                     <tgroup cols="2" class="- topic/tgroup ">
+                        <colspec colname="c1" colnum="1" colwidth="30%" class="- topic/colspec "/>
+                        <colspec colname="c2" colnum="2" colwidth="70%" class="- topic/colspec "/>
+                        <thead class="- topic/thead ">
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">Status</entry>
+                              <entry class="- topic/entry ">Description</entry>
+                           </row>
+                        </thead>
+                        <tbody class="- topic/tbody ">
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">Queued</entry>
+                              <entry class="- topic/entry ">The rule is triggered for execution and is waiting to be executed.</entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry "> In Progress</entry>
+                              <entry class="- topic/entry "> The rule is currently under execution.</entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">Completed</entry>
+                              <entry class="- topic/entry ">The rule was executed successfully. </entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">Failed</entry>
+                              <entry class="- topic/entry "> The rule failed during execution.</entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">Blank</entry>
+                              <entry class="- topic/entry "> The rule has never been executed.</entry>
+                           </row>
+                        </tbody>
+                     </tgroup>
+                  </table>
+               </p>
+            </info>
+         </step>
+      </steps>
+   </taskbody>
+</task>

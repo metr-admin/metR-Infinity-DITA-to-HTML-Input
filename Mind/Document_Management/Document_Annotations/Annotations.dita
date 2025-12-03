@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="DMAnnotations"
+         xml:lang="en-us"
+         class="- topic/topic concept/concept "
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   ">
+   <title class="- topic/title ">Annotations</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Yashshree</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-21+05:30" class="- topic/created "/>
+         <revised modified="2025-11-21+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="administrator, engineering, management, external contractors, analyst"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>document-annotations</indexterm>
+            <indexterm>annotations-service</indexterm>
+            <indexterm>annotation-editor</indexterm>
+            <indexterm>annotation-files</indexterm>
+            <indexterm>annotation-storage</indexterm>
+            <indexterm>annotations-ui</indexterm>
+            <indexterm>annotation-api</indexterm>
+            <indexterm>document-management</indexterm>
+            <!-- Process layer -->
+            <indexterm>create-annotation</indexterm>
+            <indexterm>edit-annotation</indexterm>
+            <indexterm>delete-annotation</indexterm>
+            <indexterm>search-annotations</indexterm>
+            <indexterm>manage-annotation-permissions</indexterm>
+            <indexterm>annotation-lifecycle</indexterm>
+            <indexterm>publish-annotation</indexterm>
+            <indexterm>annotate-workflow</indexterm>
+            <!-- Context layer -->
+            <indexterm>mind-administration-guide</indexterm>
+            <indexterm>capital-program-management</indexterm>
+            <indexterm>infrastructure-software</indexterm>
+            <indexterm>web</indexterm>
+            <indexterm>enterprise-environment</indexterm>
+            <indexterm>document-management</indexterm>
+            <indexterm>collaboration</indexterm>
+            <indexterm>compliance</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>Mind-Administration-Guide</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Annotations"/>
+         <othermeta name="shortdesc" content="Overview of the annotation model, supported operations (create/edit/delete/search), and governance considerations."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="annotation;file;attribute;attachment;user;group;version;document"/>
+         <othermeta name="taxonomy" content="domain:capital-program-management;usecase:document-annotation-management;industry:glass-manufacturing"/>
+         <othermeta name="tags" content="document-annotations,annotation-operations,annotation-model,governance,annotation-api"/>
+         <othermeta name="usecase" content="document-annotation-management"/>
+      </metadata>
+   </prolog>
+   <conbody>
+      <p class="- topic/p ">You can add annotations to files of various formats in <ph conref="../../../Warehouse/Product_Name_Warehouse.dita#reference-9043/product_name"
+             class="- topic/ph "/>. Annotations added to a file do not affect the original file. A file with annotations is saved as an annotated copy of the original file. You can also consolidate the annotations provided by multiple stakeholders into a single document.</p>
+      <p class="- topic/p ">You can annotate the following files:</p>
+      <ul class="- topic/ul ">
+         <li class="- topic/li ">
+            <xref href="AnnotateFile.dita" class="- topic/xref ">Files in the document folders of the Documents module</xref>
+         </li>
+         <li class="- topic/li ">
+            <xref href="AnnotateAtts.dita" class="- topic/xref ">Files attached to various form records in the application</xref>
+         </li>
+      </ul>
+      <p class="- topic/p ">You can access the following files:</p>
+      <ul class="- topic/ul ">
+         <li class="- topic/li ">
+            <xref href="Accessing_Annotated_Files/AccessAnnFilesCopies.dita"
+                  class="- topic/xref ">Annotated files</xref>
+         </li>
+         <li product="Exclude_PG_Content" class="- topic/li ">
+            <xref href="Accessing_Annotated_Attachments/AccessAnnAtts.dita"
+                  class="- topic/xref ">Annotated attachment files</xref>
+         </li>
+      </ul>
+      <note class="- topic/note "> You cannot delete or edit annotations created by other users. <ph product="Exclude_PG_Content" class="- topic/ph ">For information on editing annotations, refer to<xref href="EditAnns.dita" class="- topic/xref ">Editing Annotations</xref>.</ph>
+      </note>
+      <section id="Annotationlist" class="- topic/section ">
+         <title class="- topic/title ">Annotations for document or image files:</title>
+         <p class="- topic/p ">The table below provides a quick reference to the list of annotations that are available for annotations.</p>
+         <p class="- topic/p ">
+            <table colsep="1" rowsep="1" class="- topic/table ">
+               <tgroup align="left" cols="3" class="- topic/tgroup ">
+                  <colspec align="left"
+                           colname="c1"
+                           colnum="1"
+                           colwidth="20"
+                           class="- topic/colspec "/>
+                  <colspec align="left"
+                           colname="c2"
+                           colnum="2"
+                           colwidth="20"
+                           class="- topic/colspec "/>
+                  <colspec colname="c3" colnum="3" colwidth="60" class="- topic/colspec "/>
+                  <thead class="- topic/thead ">
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Term</entry>
+                        <entry class="- topic/entry ">Icon</entry>
+                        <entry class="- topic/entry ">Function</entry>
+                     </row>
+                  </thead>
+                  <tbody class="- topic/tbody ">
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Select</entry>
+                        <entry class="- topic/entry ">
+                           <image href="../../Icons/AN_select.jpg"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To select and manage annotation objects</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Line</entry>
+                        <entry class="- topic/entry ">
+                           <image href="../../Icons/AN_line.jpg"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry "> To draw a simple line</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Rectangle</entry>
+                        <entry class="- topic/entry ">
+                           <image href="../../Icons/AN_rectangle.jpg"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To draw a rectangle. <p class="- topic/p ">To make a square annotation, hold down the Shift key and draw the rectangle.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Ellipse</entry>
+                        <entry class="- topic/entry ">
+                           <image href="../../Icons/AN_ellipse.jpg"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To draw an ellipse. <p class="- topic/p ">To make a circle annotation, hold down the Shift key and draw the ellipse.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Polyline</entry>
+                        <entry class="- topic/entry ">
+                           <image href="../../Icons/AN_polyline.jpg"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To draw a series of points that create a sequence of lines joined </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Polygon</entry>
+                        <entry class="- topic/entry ">
+                           <image href="../../Icons/AN_polygon.jpg"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To draw a series of points that create a sequence of lines joined in the shape of a polygon </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Pointer</entry>
+                        <entry class="- topic/entry ">
+                           <image href="../../Icons/AN_pointer.jpg"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To draw a pointed line </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Freehand</entry>
+                        <entry class="- topic/entry ">
+                           <image href="../../Icons/AN_freehand.jpg"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To draw a series of points that create a sequence of lines joined </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Text</entry>
+                        <entry class="- topic/entry ">
+                           <image href="../../Icons/AN_text.jpg"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To enter text in the rectangular dialog box. <p class="- topic/p ">To make a square dialog box, hold down the Shift key and draw the rectangle.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Text Pointer</entry>
+                        <entry class="- topic/entry ">
+                           <image href="../../Icons/AN_text_pointer.jpg"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To enter text in the rectangular dialog box with the line pointing to the object in the viewer window. <p class="- topic/p ">To make a square dialog box, hold down the Shift key and draw the rectangle.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Note</entry>
+                        <entry class="- topic/entry ">
+                           <image href="../../Icons/AN_note.jpg"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To add notes in the viewer window. <p class="- topic/p ">To make a square dialog box, hold down the Shift key and draw the rectangle.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Stamp</entry>
+                        <entry class="- topic/entry ">
+                           <image href="../../Icons/AN_stamp.jpg"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To add stamp annotations </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry "> Rubber Stamp</entry>
+                        <entry class="- topic/entry ">
+                           <image href="../../Icons/AN_rubberstamp.jpg"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To add a specific authentication to the viewing object </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry "> Ruler</entry>
+                        <entry class="- topic/entry ">
+                           <image href="../../Icons/AN_ruler.jpg"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To add a line that can measure the distance between two points of the viewing object </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Poly Ruler</entry>
+                        <entry class="- topic/entry ">
+                           <image href="../../Icons/AN_polyruler.jpg"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To measure the distance of an irregularly shaped object, a series of points that create a sequence of joined rulers. <p class="- topic/p ">You can modify the length, add, or remove the ruler segments; a running total of the distance is displayed.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Text Strikeout</entry>
+                        <entry class="- topic/entry ">
+                           <image href="../../Icons/AN_textstrikeout.jpg"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To strikeout the text annotation </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Text Underline</entry>
+                        <entry class="- topic/entry ">
+                           <image href="../../Icons/AN_text_underline.jpg"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To underline the text annotation </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Comment</entry>
+                        <entry class="- topic/entry ">
+                           <image href="../../Icons/annotation-comment.jpg"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <ul class="- topic/ul ">
+                              <li class="- topic/li ">To add comments to an annotation </li>
+                              <li class="- topic/li ">To add responses to comments on an annotation </li>
+                              <li class="- topic/li ">To add responses to responses on comments on an annotation </li>
+                              <li class="- topic/li ">To set the status of responses to an annotation </li>
+                           </ul>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Properties</entry>
+                        <entry class="- topic/entry ">-</entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Right-click an annotation to:</p>
+                           <ul class="- topic/ul ">
+                              <li class="- topic/li ">Format an annotation by: <ul class="- topic/ul ">
+                                    <li class="- topic/li ">Filling the annotation </li>
+                                    <li class="- topic/li ">Striking the annotation </li>
+                                    <li class="- topic/li ">Adding a hyperlink to the annotation </li>
+                                 </ul>
+                              </li>
+                              <li class="- topic/li ">View and add comments and responses </li>
+                           </ul>
+                        </entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+         </p>
+      </section>
+      <section product="Forge_Viewer" class="- topic/section ">
+         <title class="- topic/title ">Annotations for 2D and 3D drawing files:</title>
+         <p class="- topic/p ">The table below provides a quick reference to the list of annotations that are available for annotations.</p>
+         <p class="- topic/p ">
+            <table colsep="1" rowsep="1" class="- topic/table ">
+               <tgroup cols="3" class="- topic/tgroup ">
+                  <colspec colname="c1" colnum="1" colwidth="20" class="- topic/colspec "/>
+                  <colspec colname="c2" colnum="2" colwidth="20" class="- topic/colspec "/>
+                  <colspec colname="c3" colnum="3" colwidth="60" class="- topic/colspec "/>
+                  <thead class="- topic/thead ">
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Term</entry>
+                        <entry class="- topic/entry ">Icon</entry>
+                        <entry class="- topic/entry ">Function</entry>
+                     </row>
+                  </thead>
+                  <tbody class="- topic/tbody ">
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Arrow</entry>
+                        <entry class="- topic/entry ">
+                           <image width=".6cm"
+                                  href="../../Icons/FV-image39.png"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To draw an arrow line. </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Rectangle</entry>
+                        <entry class="- topic/entry ">
+                           <image width=".6cm"
+                                  href="../../Icons/FV-image40.png"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To draw a rectangle. </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Circle</entry>
+                        <entry class="- topic/entry ">
+                           <image width=".6cm"
+                                  href="../../Icons/FV-image41.png"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To draw a circle. </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Text</entry>
+                        <entry class="- topic/entry ">
+                           <image width=".6cm"
+                                  href="../../Icons/FV-image42.png"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To enter text in the rectangular dialog box. </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Callout</entry>
+                        <entry class="- topic/entry ">
+                           <image width=".6cm"
+                                  href="../../Icons/FV-image43.png"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To add a visual cue. </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Cloud</entry>
+                        <entry class="- topic/entry ">
+                           <image width=".6cm"
+                                  href="../../Icons/FV-image44.png"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To draw a cloud-like shape in the drawing. </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Polyline</entry>
+                        <entry class="- topic/entry ">
+                           <image width=".6cm"
+                                  href="../../Icons/FV-image45.png"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To draw a series of points that create a sequence of lines joined together. </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Poly Cloud</entry>
+                        <entry class="- topic/entry ">
+                           <image width=".6cm"
+                                  href="../../Icons/FV-image46.png"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To draw a series of points that create a sequence of cloud-like lines joined together. </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Free Hand</entry>
+                        <entry class="- topic/entry ">
+                           <image width=".6cm"
+                                  href="../../Icons/FV-image47.png"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To draw a free-form line. </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Highlight</entry>
+                        <entry class="- topic/entry ">
+                           <image width=".6cm"
+                                  href="../../Icons/FV-image48.png"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To highlight the contents in a bright color. </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Dimension</entry>
+                        <entry class="- topic/entry ">
+                           <image width=".6cm"
+                                  href="../../Icons/FV-image49.png"
+                                  class="- topic/image "
+                                  placement="inline"/>
+                        </entry>
+                        <entry class="- topic/entry ">To add dimensions to the drawing. <p class="- topic/p ">To edit the default dimension, double-click and enter the appropriate dimension.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Properties</entry>
+                        <entry class="- topic/entry ">-</entry>
+                        <entry class="- topic/entry ">Right-click an annotation to change the properties. </entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+         </p>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Files in folders in the Documents module:</title>
+         <p class="- topic/p ">The following tables describe the permissions required to add annotations to a file.</p>
+         <p class="- topic/p ">
+            <table colsep="1" rowsep="1" class="- topic/table ">
+               <tgroup cols="2" class="- topic/tgroup ">
+                  <colspec colname="c1" colnum="1" colwidth="30%" class="- topic/colspec "/>
+                  <colspec colname="c2" colnum="2" colwidth="70%" class="- topic/colspec "/>
+                  <thead class="- topic/thead ">
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Permissions</entry>
+                        <entry class="- topic/entry ">Activity</entry>
+                     </row>
+                  </thead>
+                  <tbody class="- topic/tbody ">
+                     <row class="- topic/row ">
+                        <entry morerows="1" class="- topic/entry ">View</entry>
+                        <entry class="- topic/entry ">Create annotations.</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry "> View annotations created by you and other users.</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Edit</entry>
+                        <entry class="- topic/entry ">Edit annotations created by you.<note product="Forge_Viewer" class="- topic/note "> If a document's file type is mapped to a viewer supporting drawing files, then you cannot edit or update the annotations after the file is saved.</note>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Delete</entry>
+                        <entry class="- topic/entry ">Delete annotations created by you.</entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+         </p>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Files as attachments in forms without workflows:</title>
+         <p class="- topic/p ">The following tables describe the permissions required to add annotations to a file.</p>
+         <p class="- topic/p ">
+            <table colsep="1" rowsep="1" class="- topic/table ">
+               <tgroup cols="2" class="- topic/tgroup ">
+                  <colspec colname="c1" colnum="1" colwidth="30%" class="- topic/colspec "/>
+                  <colspec colname="c2" colnum="2" colwidth="70%" class="- topic/colspec "/>
+                  <thead class="- topic/thead ">
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Permissions</entry>
+                        <entry class="- topic/entry ">Activity</entry>
+                     </row>
+                  </thead>
+                  <tbody class="- topic/tbody ">
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Edit</entry>
+                        <entry class="- topic/entry ">Create annotations.</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">View</entry>
+                        <entry class="- topic/entry ">View annotations created by you and other users.</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Delete</entry>
+                        <entry class="- topic/entry ">Delete annotations created by you.</entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+         </p>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Files as attachments in forms with workflows:</title>
+         <p class="- topic/p ">The following tables describe the permissions required to add annotations to a file.</p>
+         <p class="- topic/p ">
+            <table colsep="1" rowsep="1" class="- topic/table ">
+               <tgroup cols="2" class="- topic/tgroup ">
+                  <colspec colname="c1" colnum="1" colwidth="30%" class="- topic/colspec "/>
+                  <colspec colname="c2" colnum="2" colwidth="70%" class="- topic/colspec "/>
+                  <thead class="- topic/thead ">
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">Stakeholder Type</entry>
+                        <entry class="- topic/entry ">Activity</entry>
+                     </row>
+                  </thead>
+                  <tbody class="- topic/tbody ">
+                     <row class="- topic/row ">
+                        <entry morerows="1" class="- topic/entry ">Action Stakeholder</entry>
+                        <entry class="- topic/entry ">Create annotations.</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">View annotations created by you and other users.</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">View Stakeholder</entry>
+                        <entry class="- topic/entry ">View annotations created by you and other users.</entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+         </p>
+      </section>
+   </conbody>
+</concept>

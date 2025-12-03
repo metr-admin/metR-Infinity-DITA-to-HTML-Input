@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="GnrtUsrAccReps"
+      class="- topic/topic task/task "
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   ">
+   <title class="- topic/title ">Generating User Accounts Reports</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-20+05:30" class="- topic/created "/>
+         <revised modified="2025-11-20+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="administrator,engineering,management,external contractors,analyst"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>mind-reporting</indexterm>
+            <indexterm>user-account-module</indexterm>
+            <indexterm>report-export</indexterm>
+            <indexterm>dashboard</indexterm>
+            <indexterm>web-portal</indexterm>
+            <indexterm>data-store</indexterm>
+            <!-- Process layer -->
+            <indexterm>generate-user-account-reports</indexterm>
+            <indexterm>filter-and-export-reports</indexterm>
+            <indexterm>scheduled-reporting</indexterm>
+            <indexterm>ad-hoc-query</indexterm>
+            <indexterm>report-distribution</indexterm>
+            <indexterm>audit-reporting</indexterm>
+            <!-- Context layer -->
+            <indexterm>mind-administration-guide</indexterm>
+            <indexterm>capital-program-management</indexterm>
+            <indexterm>compliance-reporting</indexterm>
+            <indexterm>user-provisioning</indexterm>
+            <indexterm>management-insights</indexterm>
+            <indexterm>operations</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>Mind-Administration-Guide</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Generate user account reports"/>
+         <othermeta name="shortdesc" content="You can generate various reports for information on user accounts. In the module menu, click Administration."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="reporting-engine;user-account;filters;export-format;dashboard;audit-log"/>
+         <othermeta name="taxonomy" content="domain:reporting;usecase:user-account-insights;industry:capital-program management"/>
+         <othermeta name="tags" content="reporting,export,analytics,audit,filters"/>
+         <othermeta name="usecase" content="generate-and-export-user-reports"/>
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <context class="- topic/section task/context ">You can generate various reports for information on user accounts.</context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the module menu, click<uicontrol class="+ topic/ph ui-d/uicontrol ">Administration</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The<uicontrol class="+ topic/ph ui-d/uicontrol ">ADMINISTRATION</uicontrol>page is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the navigation pane, expand<uicontrol class="+ topic/ph ui-d/uicontrol ">User Management</uicontrol>, and then click<uicontrol class="+ topic/ph ui-d/uicontrol ">User Accounts</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The<uicontrol class="+ topic/ph ui-d/uicontrol ">USER ACCOUNTS</uicontrol>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click<uicontrol class="+ topic/ph ui-d/uicontrol ">Reports</uicontrol>, and then click the required report.</cmd>
+         </step>
+      </steps>
+      <result class="- topic/section task/result ">
+         <p class="- topic/p ">You can generate the following reports:<ul class="- topic/ul ">
+               <li class="- topic/li ">
+                  <xref scope="local"
+                        href="#GnrtUsrAccReps/UsrDetailsRep"
+                        class="- topic/xref ">User Details Report</xref>
+               </li>
+               <li class="- topic/li ">
+                  <xref href="#GnrtUsrAccReps/UsrAccessDetsRep" class="- topic/xref ">User Access Details Report</xref>
+               </li>
+               <li class="- topic/li ">
+                  <xref scope="local"
+                        href="#GnrtUsrAccReps/WeeklyAccessSummaryRep"
+                        class="- topic/xref ">Weekly Access Summary</xref>
+               </li>
+               <li class="- topic/li ">
+                  <xref scope="local"
+                        href="#GnrtUsrAccReps/UsrAcc-LogsRep"
+                        class="- topic/xref ">User Account - Logs</xref>
+               </li>
+               <li class="- topic/li ">
+                  <xref scope="local"
+                        href="#GnrtUsrAccReps/LoginLogsRep"
+                        class="- topic/xref ">Login - Logs</xref>
+               </li>
+            </ul>
+         </p>
+         <p id="UsrDetailsRep" class="- topic/p ">
+            <uicontrol class="+ topic/ph ui-d/uicontrol ">User Details Report</uicontrol>
+         </p>
+         <p class="- topic/p ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">User Details Report</uicontrol> displays basic information of all the users of the enterprise, the number of active users, inactive users, user registrations pending approval, and the total number of users in the enterprise.</p>
+         <p class="- topic/p ">The following user information is displayed:</p>
+         <ul class="- topic/ul ">
+            <li class="- topic/li ">Active Users - Total number of active users in the application.</li>
+            <li class="- topic/li ">Inactive Users - Total number of inactive users in the application.</li>
+            <li class="- topic/li ">Pending Registrations - Total number of users who have requested to get access to the application.</li>
+            <li class="- topic/li ">Total Users - Total number of users in the application.</li>
+            <li class="- topic/li ">Last Name - Last name of the user.</li>
+            <li class="- topic/li ">First Name - First name of the user.</li>
+            <li class="- topic/li ">User Name - User name of the user.</li>
+            <li class="- topic/li ">Active - Displays <uicontrol class="+ topic/ph ui-d/uicontrol ">Yes</uicontrol> if the user is active.</li>
+            <li class="- topic/li ">Locked - Displays <uicontrol class="+ topic/ph ui-d/uicontrol ">Yes</uicontrol> if the user account is locked. The user cannot access the application until the user account is unlocked. <ph product="Exclude_PG_Content" class="- topic/ph ">For additional information on unlocking, refer to <xref href="UnlockUsrAcc.dita" class="- topic/xref ">Unlocking a User Account</xref>.</ph>
+            </li>
+            <li class="- topic/li ">Pending For Registration - Displays <uicontrol class="+ topic/ph ui-d/uicontrol ">Yes</uicontrol> if the user is waiting to get access to the application and the administrator must grant access.</li>
+            <li class="- topic/li ">Role - Roles of the user in the application.</li>
+         </ul>
+         <p id="UsrAccessDetsRep" class="- topic/p ">
+            <uicontrol class="+ topic/ph ui-d/uicontrol ">User Access Details Report</uicontrol>
+         </p>
+         <p class="- topic/p ">This report displays the list of users with their login time and logout time.</p>
+         <p class="- topic/p ">You can filter information in this report using the following filter criteria:</p>
+         <ul class="- topic/ul ">
+            <li class="- topic/li ">Start Date</li>
+            <li class="- topic/li ">End Date</li>
+            <li class="- topic/li ">Users</li>
+         </ul>
+         <p class="- topic/p ">The following information is displayed:</p>
+         <ul class="- topic/ul ">
+            <li class="- topic/li ">Login Date - Date of login into the application.</li>
+            <li class="- topic/li ">User Name - Name of the user whose access details are displayed.</li>
+            <li class="- topic/li ">Login Time - Time of login into the application.</li>
+            <li class="- topic/li ">IP- IP Address of the logged-in user.</li>
+            <li class="- topic/li ">Module- The module accessed.</li>
+            <li class="- topic/li ">URL - The form accessed.</li>
+            <li class="- topic/li ">No. of Pages Visited - The total number of pages accessed.</li>
+            <li class="- topic/li ">First login - The time the user accessed the application first time on that day.</li>
+            <li class="- topic/li ">Last logout - The time the user accessed the application last time on that day.</li>
+            <li class="- topic/li ">Duration - Session duration.</li>
+         </ul>
+         <p id="WeeklyAccessSummaryRep" class="- topic/p ">
+            <uicontrol class="+ topic/ph ui-d/uicontrol ">Weekly Access Summary</uicontrol>
+         </p>
+         <p class="- topic/p ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Weekly Access Summary</uicontrol> report displays statistics of the number of pages the users of the application visited that day, the number of users who logged into the application, the number of users who did not login to the application, the time of first and last login, and the total time duration the user was logged into the application.</p>
+         <p class="- topic/p ">You can filter information in this report using the following filter criteria:</p>
+         <ul class="- topic/ul ">
+            <li class="- topic/li ">Start Date</li>
+            <li class="- topic/li ">User Name</li>
+         </ul>
+         <p class="- topic/p ">The following information is displayed:</p>
+         <ul class="- topic/ul ">
+            <li class="- topic/li ">Department - The department or business unit the user belongs to.</li>
+            <li class="- topic/li ">User Name - Name of the user who accessed the application.</li>
+            <li class="- topic/li ">Date - Date the user accessed the application.</li>
+            <li class="- topic/li ">Pages Visited - Total number of pages accessed by the user.</li>
+            <li class="- topic/li ">First Access - Time of first access by the user.</li>
+            <li class="- topic/li ">Last Access - Time of last access by the user.</li>
+            <li class="- topic/li ">Duration (min) - Duration of the session.</li>
+         </ul>
+         <p id="UsrAcc-LogsRep" class="- topic/p ">
+            <uicontrol class="+ topic/ph ui-d/uicontrol ">User Account - Logs</uicontrol>
+         </p>
+         <p class="- topic/p ">This report displays the date and time user accounts were created or modified.You can filter information in this report using the following filter criteria:</p>
+         <ul class="- topic/ul ">
+            <li class="- topic/li ">Start Date</li>
+            <li class="- topic/li ">End Date</li>
+            <li class="- topic/li ">Action</li>
+         </ul>
+         <p class="- topic/p ">The following information is displayed:</p>
+         <ul class="- topic/ul ">
+            <li class="- topic/li ">Action - The action performed.</li>
+            <li class="- topic/li ">User Name - User name of the user whose account details were changed.</li>
+            <li class="- topic/li ">Full Name - Full name of the user whose account details were changed.</li>
+            <li class="- topic/li ">Action By - User name of the user who made the changes.</li>
+            <li class="- topic/li ">Date Time - Date and time when the change was made.</li>
+            <li class="- topic/li ">Field Name - Name of the field that was modified.</li>
+            <li class="- topic/li ">Previous Value - The value of the field before modification.</li>
+            <li class="- topic/li ">Current Value - New value in the field.</li>
+         </ul>
+         <p id="LoginLogsRep" class="- topic/p ">
+            <uicontrol class="+ topic/ph ui-d/uicontrol ">Login - Logs</uicontrol>
+         </p>
+         <p class="- topic/p ">This report displays the success or failure of login attempts, the login attempt date and time, user name, first name and last name of the user, and information if the user account is locked and if the user is an active user. The information displayed in the report is grouped on the user's login ID; the latest login attempts are recorded in reverse chronological order. The report also displays the number of successful and unsuccessful login attempts in the selected date range.</p>
+         <p class="- topic/p ">You can filter information in this report using the following filter criteria:</p>
+         <ul class="- topic/ul ">
+            <li class="- topic/li ">Start Date</li>
+            <li class="- topic/li ">End Date</li>
+            <li class="- topic/li ">Include Failed</li>
+         </ul>
+         <p class="- topic/p ">The following information is displayed:</p>
+         <ul class="- topic/ul ">
+            <li class="- topic/li ">Login Id - The user name of the user.</li>
+            <li class="- topic/li ">First Name - First name of the user.</li>
+            <li class="- topic/li ">Last Name - Last name of the user.</li>
+            <li class="- topic/li ">Is Locked? – Displays <uicontrol class="+ topic/ph ui-d/uicontrol ">Yes</uicontrol> if the user account of the user is locked.</li>
+            <li class="- topic/li ">Is Active? - Displays <uicontrol class="+ topic/ph ui-d/uicontrol ">Yes</uicontrol> if the user account of the user is marked as active.</li>
+            <li class="- topic/li ">Login Date Time - The date and time the user logged in or attempted to login.</li>
+            <li class="- topic/li ">Success? - Displays if the login attempt was successful or not.</li>
+            <li class="- topic/li ">Total number of successful logins - Total number of successful login attempts within the specified date range.</li>
+            <li class="- topic/li ">Total number of failed logins - Total number of failed login attempts within the specified date range.</li>
+         </ul>
+      </result>
+   </taskbody>
+</task>

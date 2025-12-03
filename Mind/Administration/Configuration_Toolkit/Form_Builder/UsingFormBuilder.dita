@@ -1,0 +1,934 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="XmlFormBuilder_FRMBLDR"
+      class="- topic/topic task/task "
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   ">
+   <title class="- topic/title ">Creating a Form Using Form Builder</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Yashshree</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-20+05:30" class="- topic/created "/>
+         <revised modified="2025-11-20+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="administrator,engineering,management,external contractors,analyst"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>form-builder</indexterm>
+            <indexterm>form-designer</indexterm>
+            <indexterm>config-plus</indexterm>
+            <indexterm>form-library</indexterm>
+            <indexterm>preview-service</indexterm>
+            <!-- Process layer -->
+            <indexterm>designing-forms</indexterm>
+            <indexterm>adding-questions</indexterm>
+            <indexterm>setting-validation-rules</indexterm>
+            <indexterm>preview-and-test</indexterm>
+            <indexterm>saving-and-publishing</indexterm>
+            <!-- Context layer -->
+            <indexterm>capital-program-management</indexterm>
+            <indexterm>end-user-forms</indexterm>
+            <indexterm>testing-environment</indexterm>
+            <indexterm>business-logic</indexterm>
+            <indexterm>web-platform</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>Mind-Administration-Guide</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Using Form Builder"/>
+         <othermeta name="shortdesc" content="How to use the Form Builder interface: create questions, set validation, preview forms and prepare them for publishing."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="question;validation-rule;preview;form-template;publish-button"/>
+         <othermeta name="taxonomy" content="domain:capital-program-management;usecase:form-design-and-testing;industry:software"/>
+         <othermeta name="tags" content="design,validation,preview,save,publish"/>
+         <othermeta name="usecase" content="design-test-and-prepare-forms"/>
+      </metadata>
+   </prolog>
+   <taskbody>
+      <context class="- topic/section task/context ">The following procedure describes the steps to create a sample form for recording employee information. The example fields and options selected in the procedure are for instructional purposes.<p class="- topic/p ">The example illustrates the following controls:</p>
+         <ul class="- topic/ul ">
+            <li class="- topic/li ">Section </li>
+            <li class="- topic/li ">Automatically generated sequential numbers </li>
+            <li class="- topic/li ">Text box </li>
+            <li class="- topic/li ">Option buttons </li>
+            <li class="- topic/li ">Drop-down list with options defined from a Library catalog </li>
+            <li class="- topic/li ">Condition based form controls </li>
+            <li class="- topic/li ">Static grid</li>
+            <li class="- topic/li ">Set</li>
+            <li class="- topic/li ">Picker and Picker Trigger </li>
+         </ul>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the module menu, click<uicontrol class="+ topic/ph ui-d/uicontrol ">Administration</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The<uicontrol class="+ topic/ph ui-d/uicontrol ">ADMINISTRATION</uicontrol> page is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the navigation pane, expand the<uicontrol class="+ topic/ph ui-d/uicontrol ">Configuration Toolkit</uicontrol>folder, and then click<uicontrol class="+ topic/ph ui-d/uicontrol ">Form Builder</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The<uicontrol class="+ topic/ph ui-d/uicontrol ">FORMS LIST</uicontrol>page is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click<uicontrol class="+ topic/ph ui-d/uicontrol ">New</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">Two tabs,<uicontrol class="+ topic/ph ui-d/uicontrol ">GENERAL</uicontrol>and<uicontrol class="+ topic/ph ui-d/uicontrol ">DESIGN</uicontrol>are displayed. <p class="- topic/p ">The<uicontrol class="+ topic/ph ui-d/uicontrol ">GENERAL</uicontrol> tab enables you to define the form name (Header), and the module (Parent Module) where the form must be available in the application at runtime. </p>
+               <p class="- topic/p ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">DESIGN</uicontrol> tab displays the form structure. The  tab is divided into 3 panes, the left pane, center pane, and the right pane. The left pane lists the controls to design the form, the center pane displays the form structure and design of the form, and the right pane displays the control attributes.</p>
+               <fig class="- topic/fig ">
+                  <title class="- topic/title ">Form Builder</title>
+                  <image href="../../Screenshots/FormBuilder.png"
+                         class="- topic/image "
+                         placement="inline"/>
+               </fig>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">GENERAL</uicontrol> tab specify the form details. </cmd>
+            <info class="- topic/itemgroup task/info ">
+               <table colsep="1" rowsep="1" class="- topic/table ">
+                  <tgroup cols="2" class="- topic/tgroup ">
+                     <colspec colname="c1" colnum="1" colwidth="30%" class="- topic/colspec "/>
+                     <colspec colname="c2" colnum="2" colwidth="70%" class="- topic/colspec "/>
+                     <thead class="- topic/thead ">
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">Field</entry>
+                           <entry class="- topic/entry ">Description</entry>
+                        </row>
+                     </thead>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "> Form ID </entry>
+                           <entry class="- topic/entry "> This determines the unique ID for the form. Rename the form according to the requirements.<note class="- topic/note "> The <uicontrol class="+ topic/ph ui-d/uicontrol ">Form ID</uicontrol> should have seven unique alphanumeric characters.</note>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "> Header </entry>
+                           <entry class="- topic/entry "> This denotes the text to be displayed as a Header to the form after being published. <p class="- topic/p ">For example, enter<uicontrol class="+ topic/ph ui-d/uicontrol ">Employee Details</uicontrol>.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "> Parent Module </entry>
+                           <entry class="- topic/entry "> This determines the module in the application where the XML form will be available. <p class="- topic/p ">For example, if the field is to be a library catalog, then select <uicontrol class="+ topic/ph ui-d/uicontrol ">Library</uicontrol> form from the <uicontrol class="+ topic/ph ui-d/uicontrol ">Parent Module</uicontrol> list.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "> Folder </entry>
+                           <entry class="- topic/entry "> This determines the folder location where the XML form will be available in the application. <p class="- topic/p ">Type the complete path of the folder using the '/' separator. </p>
+                              <p class="- topic/p ">If the folder exists, then the form will be available under the existing folder. Otherwise, a New Folder will be created, and the form will be placed under that folder. </p>
+                              <p class="- topic/p ">For example, you can enter <uicontrol class="+ topic/ph ui-d/uicontrol ">Resources/Employees</uicontrol> in the<uicontrol class="+ topic/ph ui-d/uicontrol ">Folder</uicontrol> box. This creates two folders named<uicontrol class="+ topic/ph ui-d/uicontrol ">Resources</uicontrol>and<uicontrol class="+ topic/ph ui-d/uicontrol ">Employees</uicontrol>. The<uicontrol class="+ topic/ph ui-d/uicontrol ">Employees</uicontrol>folder is created in the<uicontrol class="+ topic/ph ui-d/uicontrol ">Resources</uicontrol> folder in the<uicontrol class="+ topic/ph ui-d/uicontrol ">Library</uicontrol>module. </p>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click the <uicontrol class="+ topic/ph ui-d/uicontrol ">DESIGN</uicontrol> tab.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">DESIGN</uicontrol> tab, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Switch to Advanced</uicontrol>. </cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To view or modify the form attributes, click in the design area.</cmd>
+            <info class="- topic/itemgroup task/info ">The form attributes are displayed. </info>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">COMMON ATTRIBUTES</uicontrol> section, the form attributes are displayed as described in the following table.</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <table colsep="1" rowsep="1" class="- topic/table ">
+                        <tgroup cols="2" class="- topic/tgroup ">
+                           <colspec colname="c1" colnum="1" colwidth="30%" class="- topic/colspec "/>
+                           <colspec colname="c2" colnum="2" colwidth="70%" class="- topic/colspec "/>
+                           <thead class="- topic/thead ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">Attribute</entry>
+                                 <entry class="- topic/entry ">Description</entry>
+                              </row>
+                           </thead>
+                           <tbody class="- topic/tbody ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">Name</entry>
+                                 <entry class="- topic/entry ">This specifies the form identification number/name. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> PrimaryKeyName </entry>
+                                 <entry class="- topic/entry "> This is a default value for the form and should not be modified in normal circumstances. <p class="- topic/p ">The primary key for this database container. This usually is an auto increment integer. When using the SmartFormGenerator, this field is autogenerated. </p>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> AllowAttachments</entry>
+                                 <entry class="- topic/entry "> This enables users to upload files to the form, if it is set to True. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> Header</entry>
+                                 <entry class="- topic/entry "> This is the text to be displayed as the header of the form. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> ExcelFileName </entry>
+                                 <entry class="- topic/entry "> Specify the name of the template Excel file for bulk import or export of form information. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> ParentModuleID</entry>
+                                 <entry class="- topic/entry "> This determines the module ID where the form needs to be published. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> AllowExcelExport </entry>
+                                 <entry class="- topic/entry "> Allows export of form information into an Excel workbook, if set to True. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> ShowDetailsReport </entry>
+                                 <entry class="- topic/entry "> If set to <uicontrol class="+ topic/ph ui-d/uicontrol ">True</uicontrol>, the <uicontrol class="+ topic/ph ui-d/uicontrol ">Detail Report</uicontrol> menu is added to the <uicontrol class="+ topic/ph ui-d/uicontrol ">Reports</uicontrol> menu option. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> ShowListPageReport </entry>
+                                 <entry class="- topic/entry "> If set to <uicontrol class="+ topic/ph ui-d/uicontrol ">True</uicontrol>, the <uicontrol class="+ topic/ph ui-d/uicontrol ">List Page Report</uicontrol> menu is added to the <uicontrol class="+ topic/ph ui-d/uicontrol ">Reports</uicontrol> menu option. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> ShowGISMapView</entry>
+                                 <entry class="- topic/entry "> If this is marked as <uicontrol class="+ topic/ph ui-d/uicontrol ">True</uicontrol>, then a button to show <uicontrol class="+ topic/ph ui-d/uicontrol ">Map View</uicontrol> on the list page is available. This functionality is applicable only to List pages associated to forms enabled with Map controls. <ph product="Exclude_PG_Content" class="- topic/ph ">For information on enabling map controls, refer to<xref href="EnblMapCntrl.dita" class="- topic/xref ">Enabling Map Control in a Form Using Form Builder</xref>.</ph>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> Width </entry>
+                                 <entry class="- topic/entry "> The width of the form. The default is to resize the form based on its contents; however, pixel values can be used. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> EnableAuditLog </entry>
+                                 <entry class="- topic/entry "> If set to <uicontrol class="+ topic/ph ui-d/uicontrol ">True</uicontrol>, the audit log is enabled on a form. This is used for auditing purposes. </entry>
+                              </row>
+                           </tbody>
+                        </tgroup>
+                     </table>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">ADVANCED ATTRIBUTES</uicontrol> section, the form attributes are displayed as described in the following table.</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <note class="- topic/note "> These attributes are available only when you are in the advanced mode.</note>
+                  </info>
+                  <info class="- topic/itemgroup task/info ">
+                     <table colsep="1" rowsep="1" class="- topic/table ">
+                        <tgroup cols="2" class="- topic/tgroup ">
+                           <colspec colname="c1" colnum="1" colwidth="30%" class="- topic/colspec "/>
+                           <colspec colname="c2" colnum="2" colwidth="70%" class="- topic/colspec "/>
+                           <thead class="- topic/thead ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">Attribute</entry>
+                                 <entry class="- topic/entry ">Description</entry>
+                              </row>
+                           </thead>
+                           <tbody class="- topic/tbody ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> TableName </entry>
+                                 <entry class="- topic/entry "> Every time a form is created, a table is also created in the database. This is the name of the table that can be specified for identification. If not specified, then the system generates a unique table name. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> Attributes </entry>
+                                 <entry class="- topic/entry "> Define style attributes for formatting. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> AttachmentsVisibility </entry>
+                                 <entry class="- topic/entry "> This attribute sets the “default” visibility (collapsed / expanded) for the attachment control. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> CollapsibleAttachments </entry>
+                                 <entry class="- topic/entry "> Attribute to decide whether the attachments are collapsible. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> MinimumNumberOfAttachments </entry>
+                                 <entry class="- topic/entry "> This attribute sets the minimum number of files that must be attached to a form. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> ValidateAttachmentOnAction </entry>
+                                 <entry class="- topic/entry "> This attribute enables you to set an action that validates the minimum number of attachments in a form. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> CaptionStyle </entry>
+                                 <entry class="- topic/entry "> This attribute changes the caption style for all control containers in the form. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> DropIfExists </entry>
+                                 <entry class="- topic/entry "> This deletes the corresponding table in the database while publishing a form if it’s set to True. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> LinkToControlViewName </entry>
+                                 <entry class="- topic/entry "> Specify the name of the database to reference for the link control. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> IsActive </entry>
+                                 <entry class="- topic/entry "> This creates a node in the navigation pane with the Header mentioned above if it’s set to True. If set to False, the system will not display this form in the user interface, however, it will still be available for APIs.</entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> IsSearchable </entry>
+                                 <entry class="- topic/entry "> When set to True, information in the form can be searched from the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enterprise Search</uicontrol> utility in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Home</uicontrol> module. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> IsTemplate </entry>
+                                 <entry class="- topic/entry "> This attribute is marked True when creating Document metadata. For other forms, the attribute is generally marked as False. If set to True, this form will not be available in the UI. This setting is used for forms that are only utilized in APIs.</entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> ShowInMyReports </entry>
+                                 <entry class="- topic/entry "> If set to False, the form will not be accessible to the <uicontrol class="+ topic/ph ui-d/uicontrol ">Ad-hoc Reports</uicontrol> feature. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> ShowInStages </entry>
+                                 <entry class="- topic/entry "> ShowInStages is the basis for integrating the form into workflow. If ShowInStages is set to True then sections can be disabled based on the approval stage a form is in. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> GroupBy</entry>
+                                 <entry class="- topic/entry "> Based on the parameter specified here, the records in the list page will be grouped together. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> DisplayNew</entry>
+                                 <entry class="- topic/entry "> If the <uicontrol class="+ topic/ph ui-d/uicontrol ">New</uicontrol> icon needs to be made visible, then it should be set to True. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> DisplayEdit </entry>
+                                 <entry class="- topic/entry "> If the <uicontrol class="+ topic/ph ui-d/uicontrol ">Edit</uicontrol> icon needs to be made visible, then it should be set to True. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> DisplayView </entry>
+                                 <entry class="- topic/entry "> If the <uicontrol class="+ topic/ph ui-d/uicontrol ">View</uicontrol> icon needs to be made visible, then it should be set to True. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> DisplayDelete </entry>
+                                 <entry class="- topic/entry "> If the <uicontrol class="+ topic/ph ui-d/uicontrol ">Delete</uicontrol> icon needs to be made visible, then it should be set to True. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> AllowExcelImport </entry>
+                                 <entry class="- topic/entry "> Allows import of form information from an Excel workbook, if set to True. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> AllowExcelExportTemplateWithData </entry>
+                                 <entry class="- topic/entry "> Allows export of form information into an Excel workbook template, if set to True. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> ControlCaptionWidth </entry>
+                                 <entry class="- topic/entry "> Defines the width of all field captions in this form. The default is 150 pixels. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> FormKey </entry>
+                                 <entry class="- topic/entry "> This is used to specify what needs to be shown in the details column of <uicontrol class="+ topic/ph ui-d/uicontrol ">My Tasks</uicontrol>. This will be used only if a workflow for the form is enabled. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> ShowValidationSummary </entry>
+                                 <entry class="- topic/entry "> If set to True, on saving a form, displays all the validation messages in an alert box, instead of showing next to the control. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> AllowOffline </entry>
+                                 <entry class="- topic/entry "> This attribute permits a form to go as offline. By marking the attribute True, the form can be made offline. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> ShowInPermissions </entry>
+                                 <entry class="- topic/entry "> Select True to enable permission settings on the form. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> EnableMailMerge </entry>
+                                 <entry class="- topic/entry "> Select True if mail merge should be enabled for the form. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> ReportPageOrientation </entry>
+                                 <entry class="- topic/entry "> This attribute sets the layout for the Details Page report. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> ReportPageSize </entry>
+                                 <entry class="- topic/entry "> This attribute sets page size as “A4” or “Letter” for <uicontrol class="+ topic/ph ui-d/uicontrol ">Details Page</uicontrol> report. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> ListReportPageSize </entry>
+                                 <entry class="- topic/entry "> Select the report size of <uicontrol class="+ topic/ph ui-d/uicontrol ">List Page</uicontrol> report. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> ExportReportFileName </entry>
+                                 <entry class="- topic/entry "> This attribute specifies the name of the file which is downloaded from a form page. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> EnableCopyAndEdit </entry>
+                                 <entry class="- topic/entry "> Select True to enable users to copy and edit the form. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> HideInAuditLog</entry>
+                                 <entry class="- topic/entry "> Select False to enable audit log on the form. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">SingleInstance</entry>
+                                 <entry class="- topic/entry ">Select True to display a single instance of this form.<p class="- topic/p ">If False is selected, a list page is displayed for this form.</p>
+                                 </entry>
+                              </row>
+                           </tbody>
+                        </tgroup>
+                     </table>
+                  </info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To design the layout of the form, first create a section. A section provides a boundary in the design area to add controls.</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the controls pane, expand <uicontrol class="+ topic/ph ui-d/uicontrol ">GROUP LAYOUT</uicontrol>, and then drag and drop <uicontrol class="+ topic/ph ui-d/uicontrol ">Section</uicontrol> to the design area. </cmd>
+                  <info class="- topic/itemgroup task/info ">The label <uicontrol class="+ topic/ph ui-d/uicontrol ">SECTION &lt;number&gt;</uicontrol> is displayed in the design area.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the design area, click <uicontrol class="+ topic/ph ui-d/uicontrol ">SECTION &lt;number&gt;</uicontrol>.</cmd>
+                  <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">COMMON ATTRIBUTES</uicontrol> pane displays the attributes for the <uicontrol class="+ topic/ph ui-d/uicontrol ">SECTION &lt;number&gt;</uicontrol> section control.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">To define the attributes of the section, enter information in the <uicontrol class="+ topic/ph ui-d/uicontrol ">COMMON ATTRIBUTES</uicontrol> section, as described in the following table.</cmd>
+                  <stepresult class="- topic/itemgroup task/stepresult ">
+                     <table colsep="1" rowsep="1" class="- topic/table ">
+                        <tgroup cols="2" class="- topic/tgroup ">
+                           <colspec colname="c1" colnum="1" colwidth="30%" class="- topic/colspec "/>
+                           <colspec colname="c2" colnum="2" colwidth="70%" class="- topic/colspec "/>
+                           <thead class="- topic/thead ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">Attribute</entry>
+                                 <entry class="- topic/entry ">Description</entry>
+                              </row>
+                           </thead>
+                           <tbody class="- topic/tbody ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> Caption </entry>
+                                 <entry class="- topic/entry "> This denotes the display name of the section. <p class="- topic/p ">For example, you can enter <uicontrol class="+ topic/ph ui-d/uicontrol ">Employee Details</uicontrol> for the section name to be changed from <uicontrol class="+ topic/ph ui-d/uicontrol ">SECTION &lt;number&gt;</uicontrol> to <uicontrol class="+ topic/ph ui-d/uicontrol ">Employee Details</uicontrol>.</p>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> Name </entry>
+                                 <entry class="- topic/entry "> This is an automatically generated name to identify the section and need not be modified. <p class="- topic/p ">This is also the name of the column in the database, and is used to derive the name of the HTML item that is rendered. </p>
+                                    <p class="- topic/p ">For example, you can enter <uicontrol class="+ topic/ph ui-d/uicontrol ">EmployeeDetails</uicontrol> to change the name from <uicontrol class="+ topic/ph ui-d/uicontrol ">Section&lt;number&gt;</uicontrol> to <uicontrol class="+ topic/ph ui-d/uicontrol ">EmployeeDetails</uicontrol>. <note class="- topic/note "> No spacing is allowed in the entered name. </note>
+                                    </p>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> HelpToolTip </entry>
+                                 <entry class="- topic/entry "> You can enter the tool tip that should be displayed while mouse hover on the field's Help (‘?’) icon. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> HelpDescription </entry>
+                                 <entry class="- topic/entry "> You can enter the description that should be displayed when the field's Help (‘?’) icon is clicked. </entry>
+                              </row>
+                           </tbody>
+                        </tgroup>
+                     </table>
+                  </stepresult>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Perform the following steps to add a text box.</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the controls pane, click <uicontrol class="+ topic/ph ui-d/uicontrol ">SIMPLE INPUT CONTROLS</uicontrol>, and then drag and drop <uicontrol class="+ topic/ph ui-d/uicontrol ">Single Line Text</uicontrol> into the section.</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <note class="- topic/note "> Drop a control within the confines of the section for the control to be displayed in the design area.</note>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Double-click the <uicontrol class="+ topic/ph ui-d/uicontrol ">TextBox &lt;number&gt; </uicontrol> control and enter a title for the text box. For example, enter <uicontrol class="+ topic/ph ui-d/uicontrol ">Employee Name</uicontrol>. </cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <p class="- topic/p ">The various attributes of the control are listed below:</p>
+                     <table colsep="1" rowsep="1" class="- topic/table ">
+                        <tgroup cols="2" class="- topic/tgroup ">
+                           <colspec colname="c1" colnum="1" colwidth="30%" class="- topic/colspec "/>
+                           <colspec colname="c2" colnum="2" colwidth="70%" class="- topic/colspec "/>
+                           <thead class="- topic/thead ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">Attribute </entry>
+                                 <entry class="- topic/entry ">Description </entry>
+                              </row>
+                           </thead>
+                           <tbody class="- topic/tbody ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> Caption </entry>
+                                 <entry class="- topic/entry "> This denotes the display name of the control. The name to render on the display surface. If the caption is not set, then the default caption is set to the Name attribute of the control. To set a control with no title, delete the caption. <p class="- topic/p ">For example, you can enter <uicontrol class="+ topic/ph ui-d/uicontrol ">Employee Name</uicontrol>.</p>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> Name </entry>
+                                 <entry class="- topic/entry "> This is a system generated name to denote the control. You need not modify this field; however, normally a form designer provides names that represent the meaning of the data in the field. Name attributes should not have spaces in them, and they must be unique throughout the form. The name field is used to create the underlying database column name and to derive the name of the rendered HTML item.</entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> HelpToolTip </entry>
+                                 <entry class="- topic/entry "> You can enter the tool tip that should be displayed on mouse hover on the field's Help (‘?’) icon. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> HelpDescription </entry>
+                                 <entry class="- topic/entry "> You can enter the description that should be displayed when the field's Help (‘?’) icon is clicked. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> Width </entry>
+                                 <entry class="- topic/entry "> This is used to set the width of a control in the user interface. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> Type </entry>
+                                 <entry class="- topic/entry "> This determines the options to select the type of control required in the form. For example, you can add a text box to a section and later change it to a drop-down list.</entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry morerows="15" class="- topic/entry "> Value </entry>
+                                 <entry class="- topic/entry "> You can specify a default value to be displayed in the control. Also, you can use the <uicontrol class="+ topic/ph ui-d/uicontrol ">Value</uicontrol> field to retrieve system level information during display processing. The supported format values include the following: </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> {CURRENTUSER} - Displays the user name of the logged in user. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> {CURRENTUSERNAME} - Displays the first name of the logged in user. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> {CURRENTDATE} - Displays the current date. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> {CURRENTDATETIME} - Displays the current date and time. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> {CURRENTTIME} - Displays the current time. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> {PROJECTNAME} - Displays the name of the project. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> {PROJECTCODE} - Displays the project code. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> {CONTRACTNAME} - Displays the name of the contract </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> {CONTRACTCODE} - Displays the contract code. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> {PRIMECONTRACTOR} - Displays the prime contractor of the contract. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> {_FORMULA: formula} </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> {_REQUEST: state info field} </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> {_DB: db expression} </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> {_Picker: [name of the picker that is defined in this xml]}</entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> "any static text" - Displays the text entered here. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> ReadOnly</entry>
+                                 <entry class="- topic/entry "> If set to True, the data in the form is made read only and the data cannot be modified by the end user. </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "> MaxLength </entry>
+                                 <entry class="- topic/entry "> Sets the maximum number of characters that can be entered in the text box. </entry>
+                              </row>
+                           </tbody>
+                        </tgroup>
+                     </table>
+                  </info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To add a Radio Button, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the controls pane, click <uicontrol class="+ topic/ph ui-d/uicontrol ">SIMPLE INPUT CONTROLS</uicontrol>, and then drag and drop <uicontrol class="+ topic/ph ui-d/uicontrol ">Radio Button List</uicontrol> into the section. </cmd>
+                  <info class="- topic/itemgroup task/info ">By default, two radio buttons are displayed.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Click the radio button group. </cmd>
+                  <info class="- topic/itemgroup task/info ">The attribute pane displays the radio button control attributes.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Attributes</uicontrol> pane, in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Caption</uicontrol> attribute, enter a title for button set. For example, you might enter <uicontrol class="+ topic/ph ui-d/uicontrol ">Gender</uicontrol>.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Attributes</uicontrol> pane, in the <uicontrol class="+ topic/ph ui-d/uicontrol ">DataSource</uicontrol>, click <image href="../../../Icons/select.png"
+                            class="- topic/image "
+                            placement="inline">
+                        <alt class="- topic/alt ">List</alt>
+                     </image>. </cmd>
+                  <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Data Source Editor</uicontrol> dialog box is displayed. <ol class="- topic/ol ">
+                        <li class="- topic/li ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Display</uicontrol> column, enter title for each button option. <p class="- topic/p ">For example, you might label <uicontrol class="+ topic/ph ui-d/uicontrol ">Option 1</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">Option 2</uicontrol> as <uicontrol class="+ topic/ph ui-d/uicontrol ">Male</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">Female</uicontrol> respectively.</p>
+                        </li>
+                        <li class="- topic/li ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Value</uicontrol> column, enter value for each option. For example, you might enter <uicontrol class="+ topic/ph ui-d/uicontrol ">Male</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">Female</uicontrol> for <uicontrol class="+ topic/ph ui-d/uicontrol ">Option 1</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">Option 2</uicontrol> respectively.</li>
+                        <li class="- topic/li ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">OK</uicontrol>. </li>
+                     </ol>
+                  </info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Perform the following steps to add a text box with a large layout. For example, you might use one to allow users to type in an address.</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the controls pane, click <uicontrol class="+ topic/ph ui-d/uicontrol ">SIMPLE INPUT CONTROLS</uicontrol>, and then drag and drop <uicontrol class="+ topic/ph ui-d/uicontrol ">Multi Line Text</uicontrol> into the section.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">TextArea &lt;number&gt;</uicontrol> in the design area.</cmd>
+                  <info class="- topic/itemgroup task/info ">The attribute pane displays the text area control attributes.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Double-click <uicontrol class="+ topic/ph ui-d/uicontrol ">TextArea &lt;number&gt;</uicontrol>, and then enter a title.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Attributes</uicontrol> pane, in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Height</uicontrol> attribute, enter desired height. For example, you might enter <uicontrol class="+ topic/ph ui-d/uicontrol ">250px</uicontrol> for the address.</cmd>
+                  <info class="- topic/itemgroup task/info ">The text area is increased. Similarly, the width can also be specified.</info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Perform the following steps to add a drop-down list. </cmd>
+            <info class="- topic/itemgroup task/info ">You can specify the options for the drop-down list (using options) or retrieve from a data source, such as using the <uicontrol class="+ topic/ph ui-d/uicontrol ">Resource Types</uicontrol> catalog of the library.</info>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the controls pane, click <uicontrol class="+ topic/ph ui-d/uicontrol ">SIMPLE INPUT CONTROLS</uicontrol>, and then drag and drop into the <uicontrol class="+ topic/ph ui-d/uicontrol ">Employee Details</uicontrol> section. Drop the control within the confines of the section for the control to be displayed in the design area.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">DropDownList &lt;number&gt;</uicontrol> in the design area. </cmd>
+                  <info class="- topic/itemgroup task/info ">The attribute pane displays the drop-down control attributes.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Double-click <uicontrol class="+ topic/ph ui-d/uicontrol ">DropDownList &lt;number&gt;</uicontrol>, and enter a title for the list. </cmd>
+                  <info class="- topic/itemgroup task/info ">Alternatively, in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Attributes</uicontrol> pane, in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Caption</uicontrol> attribute, enter a title for the list.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Attributes</uicontrol> pane, in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Name</uicontrol> attribute, enter a reference title for the database.</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <note class="- topic/note "> No spacing is allowed in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Name</uicontrol> attribute and it must be unique for this form.</note>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Attributes</uicontrol> pane, in the <uicontrol class="+ topic/ph ui-d/uicontrol ">DataSource</uicontrol> attribute, click <image href="../../../Icons/select.png"
+                            class="- topic/image "
+                            placement="inline"/>. </cmd>
+                  <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Data Source Editor</uicontrol> dialog box is displayed.<ol class="- topic/ol ">
+                        <li class="- topic/li ">To specify any options, update the <uicontrol class="+ topic/ph ui-d/uicontrol ">Display</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">Value</uicontrol> options in the <uicontrol class="+ topic/ph ui-d/uicontrol ">ListItems</uicontrol> section. </li>
+                        <li class="- topic/li ">Optionally, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Add</uicontrol> button to add rows.</li>
+                        <li class="- topic/li ">
+                           <p class="- topic/p ">To pull information from a data source, perform the following actions:<ol class="- topic/ol ">
+                                 <li class="- topic/li ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Select a Module</uicontrol> drop-down list, select the module, such as <uicontrol class="+ topic/ph ui-d/uicontrol ">Library</uicontrol>. </li>
+                                 <li class="- topic/li ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Select a Form</uicontrol> drop-down list, select the form, such as <uicontrol class="+ topic/ph ui-d/uicontrol ">Resource Types</uicontrol>. </li>
+                                 <li class="- topic/li ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Select Display</uicontrol> drop-down list, select the display, such as <uicontrol class="+ topic/ph ui-d/uicontrol ">ResourceType</uicontrol>. </li>
+                                 <li class="- topic/li ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Select Value</uicontrol> drop-down list, select the value, such as <uicontrol class="+ topic/ph ui-d/uicontrol ">Description</uicontrol>. <p class="- topic/p ">The string, such as <uicontrol class="+ topic/ph ui-d/uicontrol ">LIBRARYResourceType;ResourceType;Description</uicontrol>, is displayed in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Query String</uicontrol> box. </p>
+                                    <p class="- topic/p ">In this example, data is imported from the <uicontrol class="+ topic/ph ui-d/uicontrol ">LIBRARYResourceType</uicontrol> table (data source).</p>
+                                    <p class="- topic/p ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">ResourceType</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">Description</uicontrol> are the display and the value columns for the table respectively. </p>
+                                 </li>
+                                 <li class="- topic/li ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">OK</uicontrol>.<p class="- topic/p ">The drop-down list is displayed in the form.</p>
+                                 </li>
+                              </ol>
+                           </p>
+                        </li>
+                     </ol>
+                  </info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To make a field required to be completed before allowing save on the form, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the design area, select the field.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the toolbar, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Switch to Advanced</uicontrol> to make <uicontrol class="+ topic/ph ui-d/uicontrol ">Advanced Attributes</uicontrol> pane available.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Expand the <uicontrol class="+ topic/ph ui-d/uicontrol ">Advanced Attributes</uicontrol> pane.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Validations</uicontrol> attribute, enter <uicontrol class="+ topic/ph ui-d/uicontrol ">Required</uicontrol>.</cmd>
+                  <info class="- topic/itemgroup task/info ">Alternatively,<p class="- topic/p ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Validations</uicontrol> attribute, click <image href="../../../Icons/select.png"
+                               class="- topic/image "
+                               placement="inline">
+                           <alt class="- topic/alt ">List</alt>
+                        </image>, and in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Editor</uicontrol> dialog box, enter <uicontrol class="+ topic/ph ui-d/uicontrol ">Required</uicontrol>, and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">OK</uicontrol>. </p>
+                     <p class="- topic/p ">A '*' mark is displayed corresponding to the field indicating it is a mandatory field.</p>
+                  </info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Perform the following steps to create a control within the form that is visible based on specific conditions. For example, wanting to record years of experience for an employee, but only if the employee is experienced.</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">First introduce a <uicontrol class="+ topic/ph ui-d/uicontrol ">Radio Button List</uicontrol> control.</cmd>
+                  <info class="- topic/itemgroup task/info ">In this example it is to specify if the employee is experienced.</info>
+                  <info class="- topic/itemgroup task/info ">
+                     <ol class="- topic/ol ">
+                        <li class="- topic/li ">In the controls pane, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Simple Input Controls</uicontrol>, and then drag and drop <uicontrol class="+ topic/ph ui-d/uicontrol ">Radio Button List</uicontrol> into the section.</li>
+                        <li class="- topic/li ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Radio Button List</uicontrol> in the design area. <p class="- topic/p ">The attribute pane displays the radio button control attributes. </p>
+                        </li>
+                        <li class="- topic/li ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Attributes</uicontrol> pane, in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Name</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">Caption</uicontrol> attributes, enter a title. For example, enter <uicontrol class="+ topic/ph ui-d/uicontrol ">Experienced</uicontrol>. </li>
+                        <li class="- topic/li ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Attributes</uicontrol> pane, in the <uicontrol class="+ topic/ph ui-d/uicontrol ">DataSource</uicontrol> attribute, click <image href="../../../Icons/select.png"
+                                  class="- topic/image "
+                                  placement="inline">
+                              <alt class="- topic/alt ">List</alt>
+                           </image>. <p class="- topic/p ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Data Source Editor</uicontrol> dialog box is displayed.</p>
+                        </li>
+                        <li class="- topic/li ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Display</uicontrol> column, enter the appropriate options. <p class="- topic/p ">For example, enter <uicontrol class="+ topic/ph ui-d/uicontrol ">Yes</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">No</uicontrol> for <uicontrol class="+ topic/ph ui-d/uicontrol ">Option 1</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">Option 2</uicontrol> respectively.</p>
+                        </li>
+                        <li class="- topic/li ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">OK</uicontrol>. </li>
+                     </ol>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Perform the following steps to create a numeric text box control. For our example, it enables the user to enter the number of years of experience.</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <ol class="- topic/ol ">
+                        <li class="- topic/li ">In the controls pane, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Simple Input Controls</uicontrol>, and then drag and drop <uicontrol class="+ topic/ph ui-d/uicontrol ">Numeric</uicontrol> to the design area and within the confines of the section. </li>
+                        <li class="- topic/li ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Numeric</uicontrol> in the design area. <p class="- topic/p ">The attribute pane displays the numeric control attributes.</p>
+                        </li>
+                        <li class="- topic/li ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Attributes</uicontrol> pane, in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Caption</uicontrol> attribute, enter a title for the field. For example, enter <uicontrol class="+ topic/ph ui-d/uicontrol ">Years of Experience</uicontrol>.</li>
+                        <li class="- topic/li ">In the toolbar, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Switch to Advanced</uicontrol>. </li>
+                        <li class="- topic/li ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Advanced Attributes</uicontrol> pane, scroll down to <uicontrol class="+ topic/ph ui-d/uicontrol ">VisibleIf</uicontrol>, and then type $&lt;control name&gt;=&lt;value&gt;. For our example, enter <uicontrol class="+ topic/ph ui-d/uicontrol ">$Experienced=1</uicontrol>. <p class="- topic/p ">This implies if the value of the Radio Button control named <uicontrol class="+ topic/ph ui-d/uicontrol ">Experienced</uicontrol> is selected as <uicontrol class="+ topic/ph ui-d/uicontrol ">Yes</uicontrol>, that is assigned a value of 1, then the control <uicontrol class="+ topic/ph ui-d/uicontrol ">Years of Experience</uicontrol> will be visible.</p>
+                        </li>
+                     </ol>
+                  </info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Perform the following steps to insert a <uicontrol class="+ topic/ph ui-d/uicontrol ">Static Grid</uicontrol> control: </cmd>
+            <info class="- topic/itemgroup task/info ">
+               <note class="- topic/note "> In a static grid the number of rows and columns are fixed and are used in scenarios where data to be entered can be limited to the available numbers of rows and columns. For example, if you wanted two references for an employee.</note>
+            </info>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the controls pane, click <uicontrol class="+ topic/ph ui-d/uicontrol ">CHILD DATA CONTAINERS</uicontrol>, and then drag and drop <uicontrol class="+ topic/ph ui-d/uicontrol ">Static Grid</uicontrol> to the design area and outside the confines of the section. </cmd>
+                  <info class="- topic/itemgroup task/info ">A dialog box to specify the number of rows and columns is displayed.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Enter the numbers for the number of rows and columns, and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">OK</uicontrol>. </cmd>
+                  <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Static Grid</uicontrol> is inserted.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">STATICGRID &lt;number&gt;</uicontrol> in the design area. </cmd>
+                  <info class="- topic/itemgroup task/info ">The attribute pane displays the static grid control attributes.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Double-click <uicontrol class="+ topic/ph ui-d/uicontrol ">STATICGRID &lt;number&gt;</uicontrol> in the design area, and then enter a grid title. For example, enter <uicontrol class="+ topic/ph ui-d/uicontrol ">References</uicontrol>.</cmd>
+                  <info class="- topic/itemgroup task/info ">Alternatively, <p class="- topic/p ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Attributes</uicontrol> pane, in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Caption</uicontrol> attribute, enter a grid title.</p>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Double-click each column name in the static grid and enter column headers. For example, enter <uicontrol class="+ topic/ph ui-d/uicontrol ">Name</uicontrol>, <uicontrol class="+ topic/ph ui-d/uicontrol ">Company</uicontrol>, <uicontrol class="+ topic/ph ui-d/uicontrol ">Designation</uicontrol>, and <uicontrol class="+ topic/ph ui-d/uicontrol ">Contact Information</uicontrol> for the <uicontrol class="+ topic/ph ui-d/uicontrol ">Reference</uicontrol> example.</cmd>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To create a picker to the form, first you must add a <uicontrol class="+ topic/ph ui-d/uicontrol ">Picker</uicontrol> and then add a <uicontrol class="+ topic/ph ui-d/uicontrol ">Set</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">Picker Trigger</uicontrol>. To add a <uicontrol class="+ topic/ph ui-d/uicontrol ">Picker</uicontrol>, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the controls pane, click <uicontrol class="+ topic/ph ui-d/uicontrol ">CHILD DATA CONTAINERS</uicontrol>, and then drag and drop the <uicontrol class="+ topic/ph ui-d/uicontrol ">Picker</uicontrol> into the <uicontrol class="+ topic/ph ui-d/uicontrol ">Form</uicontrol> area (not within any section).</cmd>
+                  <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Data Source Editor</uicontrol> dialog box is displayed.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Select a Module</uicontrol> drop-down list, select a module. For example, select <uicontrol class="+ topic/ph ui-d/uicontrol ">Library</uicontrol>.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Select a Form</uicontrol> drop-down list, select the form that the data will be drawn from. For example, select <uicontrol class="+ topic/ph ui-d/uicontrol ">Enterprise Resource Directory</uicontrol>.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Display Column</uicontrol>, select the column for data selection. For example, select <uicontrol class="+ topic/ph ui-d/uicontrol ">Name</uicontrol>.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Key Column</uicontrol> drop-down list, select the column for data selection. For example, select <uicontrol class="+ topic/ph ui-d/uicontrol ">Name</uicontrol>.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Add Column To Display</uicontrol> drop down list, select columns to display in picker. For example, select <uicontrol class="+ topic/ph ui-d/uicontrol ">ID</uicontrol>, <uicontrol class="+ topic/ph ui-d/uicontrol ">Name</uicontrol>, <uicontrol class="+ topic/ph ui-d/uicontrol ">Resource Type</uicontrol>, and <uicontrol class="+ topic/ph ui-d/uicontrol ">Working Hours</uicontrol>.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Add Columns To Sort By</uicontrol>, select the columns in the order they should display in the picker. For example, select <uicontrol class="+ topic/ph ui-d/uicontrol ">ID</uicontrol>, <uicontrol class="+ topic/ph ui-d/uicontrol ">Name</uicontrol>, <uicontrol class="+ topic/ph ui-d/uicontrol ">Resource Type</uicontrol>, and <uicontrol class="+ topic/ph ui-d/uicontrol ">Working Hours</uicontrol>.</cmd>
+                  <info class="- topic/itemgroup task/info ">Based on the options selected, in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Query String</uicontrol> field, a string is displayed.</info>
+                  <info class="- topic/itemgroup task/info ">Based on the examples, <uicontrol class="+ topic/ph ui-d/uicontrol ">{Table:LIBRARYEnterpriseResourceDirectory;ID,Name,ResourceType,WorkingHours}</uicontrol> is displayed. </info>
+                  <info class="- topic/itemgroup task/info ">In this example, the data is imported from the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enterprise Resource Directory</uicontrol> table. </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">OK</uicontrol>. </cmd>
+                  <info class="- topic/itemgroup task/info ">Picker reference appears in form section.</info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To add a <uicontrol class="+ topic/ph ui-d/uicontrol ">Set and a Picker Trigger</uicontrol> inside the <uicontrol class="+ topic/ph ui-d/uicontrol ">Set</uicontrol>, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the controls pane, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Advanced Controls</uicontrol>, then drag and drop the <uicontrol class="+ topic/ph ui-d/uicontrol ">Set</uicontrol> into a section.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Double-click on <uicontrol class="+ topic/ph ui-d/uicontrol ">Set 000</uicontrol> and enter the title. For example, enter <uicontrol class="+ topic/ph ui-d/uicontrol ">Resource Name</uicontrol>. </cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Common Attributes</uicontrol>, click on the <uicontrol class="+ topic/ph ui-d/uicontrol ">SetTitlesToLeft</uicontrol>, and then select <uicontrol class="+ topic/ph ui-d/uicontrol ">True</uicontrol>. </cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Value</uicontrol> attribute, click <image href="../../../Icons/select.png"
+                            class="- topic/image "
+                            placement="inline">
+                        <alt class="- topic/alt ">List</alt>
+                     </image> . </cmd>
+                  <info class="- topic/itemgroup task/info ">A <uicontrol class="+ topic/ph ui-d/uicontrol ">Value Editor</uicontrol> dialog box is displayed.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Select Resolver</uicontrol> drop-down list, select <uicontrol class="+ topic/ph ui-d/uicontrol ">Picker</uicontrol>.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Select Picker</uicontrol> field, select the previously created picker. </cmd>
+                  <info class="- topic/itemgroup task/info ">For our example, select <uicontrol class="+ topic/ph ui-d/uicontrol ">Picker000</uicontrol>.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Select Column</uicontrol> field, select any of the fields added in the selected picker. </cmd>
+                  <info class="- topic/itemgroup task/info ">For example, select <uicontrol class="+ topic/ph ui-d/uicontrol ">Picker000.Name</uicontrol>.</info>
+                  <info class="- topic/itemgroup task/info ">Based on the selections, a <uicontrol class="+ topic/ph ui-d/uicontrol ">Resolver</uicontrol> string is displayed.</info>
+                  <info class="- topic/itemgroup task/info ">In our example, <uicontrol class="+ topic/ph ui-d/uicontrol ">{_Picker:Picker000.Name}</uicontrol> is displayed. </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">OK</uicontrol>.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">To edit the <uicontrol class="+ topic/ph ui-d/uicontrol ">TextBox ###</uicontrol> information, click on the field square.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Common Attributes</uicontrol>, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Caption</uicontrol> to edit the title. </cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the controls pane, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Advanced Controls</uicontrol>, then drag and drop the <uicontrol class="+ topic/ph ui-d/uicontrol ">Picker Trigger</uicontrol> into the section below the set.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Common Attributes</uicontrol>, select <uicontrol class="+ topic/ph ui-d/uicontrol ">PickerName</uicontrol>, and then click <image href="../../../Icons/select.png"
+                            class="- topic/image "
+                            placement="inline"/>.</cmd>
+                  <info class="- topic/itemgroup task/info "> The <uicontrol class="+ topic/ph ui-d/uicontrol ">Select Picker</uicontrol> dialog box is displayed. </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Select Picker</uicontrol> field, select the picker. For our example, select <uicontrol class="+ topic/ph ui-d/uicontrol ">Picker000</uicontrol>.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Select Unique Column ID</uicontrol> field, select a column. For our example, select <uicontrol class="+ topic/ph ui-d/uicontrol ">ID</uicontrol>. </cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <note class="- topic/note "> The field selected must have unique records, such as the <uicontrol class="+ topic/ph ui-d/uicontrol ">ID</uicontrol> field.</note>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">OK</uicontrol>.</cmd>
+                  <info class="- topic/itemgroup task/info ">The form page is displayed.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">PickerButtonText</uicontrol> attribute, enter … (three dots).</cmd>
+                  <info class="- topic/itemgroup task/info ">The picker trigger should now show the same in the design area. </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Drag the <uicontrol class="+ topic/ph ui-d/uicontrol ">Picker Trigger</uicontrol> and place it inside the <uicontrol class="+ topic/ph ui-d/uicontrol ">Set</uicontrol>. </cmd>
+                  <info class="- topic/itemgroup task/info ">The picker trigger of <image href="../../../Icons/select.png"
+                            class="- topic/image "
+                            placement="inline">
+                        <alt class="- topic/alt ">List</alt>
+                     </image> button is displayed at end of <uicontrol class="+ topic/ph ui-d/uicontrol ">Set</uicontrol> field.</info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To create an automatically generated code with a sequential number, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the controls pane, click <uicontrol class="+ topic/ph ui-d/uicontrol ">SIMPLE INPUT CONTROLS</uicontrol>, and then drag and drop <uicontrol class="+ topic/ph ui-d/uicontrol ">Auto Generated</uicontrol> into the section.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Double-click <uicontrol class="+ topic/ph ui-d/uicontrol ">AutoIncrement &lt;number&gt;</uicontrol> and enter a title. For example, enter <uicontrol class="+ topic/ph ui-d/uicontrol ">Record ID</uicontrol>.</cmd>
+                  <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Attributes</uicontrol> pane displays the auto-generated attributes.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">To provide a format for the field entry, perform the following steps:</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <ol class="- topic/ol ">
+                        <li class="- topic/li ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Attributes</uicontrol> pane, in the <uicontrol class="+ topic/ph ui-d/uicontrol ">NumberingLogic</uicontrol>, click <image href="../../../Icons/select.png"
+                                  class="- topic/image "
+                                  placement="inline">
+                              <alt class="- topic/alt ">List</alt>
+                           </image>.<p class="- topic/p ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Numbering Logic Editor</uicontrol> dialog box is displayed.</p>
+                        </li>
+                        <li class="- topic/li ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Number of Digits</uicontrol> box, enter the number of digits for the auto-generated number.<p class="- topic/p ">For example, selecting <uicontrol class="+ topic/ph ui-d/uicontrol ">3</uicontrol> will show auto-generated section numbering in three digits, such as <uicontrol class="+ topic/ph ui-d/uicontrol ">001</uicontrol>.</p>
+                        </li>
+                        <li class="- topic/li ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Interval </uicontrol>box, enter the interval of numbers to be generated. For example, an interval of <uicontrol class="+ topic/ph ui-d/uicontrol ">2</uicontrol> generates numbers in sequence like 2, 4, 6, and so on.</li>
+                        <li class="- topic/li ">
+                           <p class="- topic/p ">To identify a column that if the value is changed should trigger a reset back to starting number, open a drop-down in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Reset Number</uicontrol> field, and then select the column name. For example, if you had two <uicontrol class="+ topic/ph ui-d/uicontrol ">Resource Types</uicontrol> of <uicontrol class="+ topic/ph ui-d/uicontrol ">Full-time</uicontrol> and<uicontrol class="+ topic/ph ui-d/uicontrol "> Part-time</uicontrol>, you might want each type's numbering to start at 1.</p>
+                        </li>
+                     </ol>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">To provide additional elements, such as a static prefix or suffix to the auto-generated number, perform the following steps: </cmd>
+                  <info class="- topic/itemgroup task/info ">for example <uicontrol class="+ topic/ph ui-d/uicontrol ">EMP-&lt;&lt;ResourceType&gt;&gt;-&lt;&lt;1&gt;&gt;</uicontrol>
+                  </info>
+                  <info class="- topic/itemgroup task/info ">
+                     <ol class="- topic/ol ">
+                        <li class="- topic/li ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Add</uicontrol>.</li>
+                        <li class="- topic/li ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Type</uicontrol> column, select the type of element. <uicontrol class="+ topic/ph ui-d/uicontrol ">Fixed</uicontrol> is a static text. Autopopulated would pull information from an identified data source. Autogenerated would be the numbering identified in this editor.</li>
+                        <li class="- topic/li ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Value</uicontrol> column, enter or select the value for type. <p class="- topic/p ">This displays <uicontrol class="+ topic/ph ui-d/uicontrol ">EMP</uicontrol> as the beginning of the employee code.</p>
+                        </li>
+                        <li class="- topic/li ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Separator</uicontrol> column, select the required separator. <p class="- topic/p ">For the example above, you can fill the table as:<ul class="- topic/ul ">
+                                 <li class="- topic/li ">First row: Type = Fixed, Value = EMP, Separator = - </li>
+                                 <li class="- topic/li ">Second row: Type = Autopopulated, Value = ResourceType, Separator = -</li>
+                                 <li class="- topic/li ">Third row: Type = Autogenerated, Value = 1 [or alternative starting number], Separator = -</li>
+                              </ul>
+                           </p>
+                        </li>
+                        <li class="- topic/li ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">OK</uicontrol>. </li>
+                     </ol>
+                  </info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Save</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">FORMS LIST</uicontrol> page is displayed. </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the list page, select the appropriate form, and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">Publish</uicontrol>. </cmd>
+            <info class="- topic/itemgroup task/info ">The form is now available in the application.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To verify if the form is published, perform the following steps: </cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Navigate to the module where the form is published; <uicontrol class="+ topic/ph ui-d/uicontrol ">Library</uicontrol> for the example described here. </cmd>
+                  <info class="- topic/itemgroup task/info ">The form is available in the navigation pane.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the navigation pane, click the form. </cmd>
+                  <info class="- topic/itemgroup task/info ">The form list page is displayed.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">New</uicontrol> to display a new form.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Enter the details, and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">Save</uicontrol> to save the form.</cmd>
+                  <info class="- topic/itemgroup task/info ">After a form is created and published: <ul class="- topic/ul ">
+                        <li class="- topic/li ">
+                           <p class="- topic/p ">You can associate a workflow to the form.</p>
+                           <p product="Exclude_PG_Content" class="- topic/p ">For information on associating a workflow to the form, refer to <xref href="../../../Common_Application_Features/Workflow_Management/AssociateWF.dita"
+                                    class="- topic/xref "/>.</p>
+                        </li>
+                        <li class="- topic/li ">
+                           <p class="- topic/p ">You will need to assign permissions to the form.</p>
+                           <p product="Exclude_PG_Content" class="- topic/p ">For information on defining role-based permissions to the form, refer to <xref href="../../User_Management/Permissions/ConfigRolePerms.dita"
+                                    class="- topic/xref ">Configuring Role Permissions</xref>.</p>
+                        </li>
+                     </ul>
+                  </info>
+                  <info class="- topic/itemgroup task/info ">
+                     <note class="- topic/note "> If the form is located in the library, you do not need to assign permissions as all library catalogs have the same permissions.</note>
+                  </info>
+               </substep>
+            </substeps>
+         </step>
+      </steps>
+   </taskbody>
+</task>

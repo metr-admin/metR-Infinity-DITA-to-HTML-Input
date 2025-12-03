@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="Config_BL_Workflow"
+      class="- topic/topic task/task "
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   ">
+   <title class="- topic/title ">Configuring Business Logic in Workflow</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Yashshree</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-20+05:30" class="- topic/created "/>
+         <revised modified="2025-11-20+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="administrator,engineering,management,external contractors,analyst"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>workflow</indexterm>
+            <indexterm>form</indexterm>
+            <indexterm>workflow-management</indexterm>
+            <indexterm>business-logic</indexterm>
+            <indexterm>form-builder</indexterm>
+            <!-- Process layer -->
+            <indexterm>configure-business-logic</indexterm>
+            <indexterm>validate-workflow</indexterm>
+            <indexterm>deploy-workflow</indexterm>
+            <indexterm>publish-workflow</indexterm>
+            <indexterm>manage-approvals</indexterm>
+            <!-- Context layer -->
+            <indexterm>mind-administration-guide</indexterm>
+            <indexterm>capital-program-management</indexterm>
+            <indexterm>infrastructure-software</indexterm>
+            <indexterm>web-platform</indexterm>
+            <indexterm>enterprise-deployment</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>Mind-Administration-Guide</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="ConfigBusinLogWF"/>
+         <othermeta name="shortdesc" content="Configuration steps and considerations for business-logic in workflows, including permissions and conref links."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="workflow;form;business-logic;form-builder;manage-approvals"/>
+         <othermeta name="taxonomy" content="domain:Capital-program-management;usecase:workflow-management;industry:glass-manufacturing"/>
+         <othermeta name="tags" content="workflow,form,form-builder,configure-business-logic,manage-approvals"/>
+         <othermeta name="usecase" content="configure business logic for workflows"/>
+      </metadata>
+   </prolog>
+   <taskbody>
+      <context class="- topic/section task/context ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Business Logic</uicontrol> in <uicontrol class="+ topic/ph ui-d/uicontrol ">Workflow Management</uicontrol> form enables you to configure business logic in <ph conref="../../../../Warehouse/Product_Name_Warehouse.dita#reference-9043/product_name"
+             class="- topic/ph "/> workflows using deep integration with Blockly.  <p class="- topic/p ">This section describes the steps to configure a workflow using the <uicontrol class="+ topic/ph ui-d/uicontrol ">BUSINESS LOGIC</uicontrol> item. The <uicontrol class="+ topic/ph ui-d/uicontrol ">BUSINESS LOGIC</uicontrol> item receive input from the <uicontrol class="+ topic/ph ui-d/uicontrol ">DATA OPERATIONS</uicontrol> block.</p>
+         <p class="- topic/p ">
+            <uicontrol class="+ topic/ph ui-d/uicontrol ">Business Scenario Used</uicontrol>
+         </p>
+         <p class="- topic/p ">The XML Form has discussion control with a hierarchical workflow status such as <uicontrol class="+ topic/ph ui-d/uicontrol ">Draft</uicontrol>, <uicontrol class="+ topic/ph ui-d/uicontrol ">Submitted</uicontrol>, and <uicontrol class="+ topic/ph ui-d/uicontrol ">Approved</uicontrol>.<ul class="- topic/ul ">
+               <li class="- topic/li ">If the status of the form is <uicontrol class="+ topic/ph ui-d/uicontrol ">Submitted</uicontrol>, then the workflow action <uicontrol class="+ topic/ph ui-d/uicontrol ">Approve</uicontrol> must be validated for all the items in the discussion control of the form record.</li>
+               <li class="- topic/li ">If the status of all items in the discussion control of the form is <uicontrol class="+ topic/ph ui-d/uicontrol ">Closed</uicontrol>, then the workflow action must be moved to <uicontrol class="+ topic/ph ui-d/uicontrol ">Approved</uicontrol>.</li>
+               <li class="- topic/li ">If the status of any item in the discussion control of the form is not <uicontrol class="+ topic/ph ui-d/uicontrol ">Closed</uicontrol>, then the next workflow action must be stopped along with a warning message.</li>
+            </ul>
+         </p>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the module menu, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Administration</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">ADMINISTRATIONS</uicontrol> page is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the navigation pane, expand <uicontrol class="+ topic/ph ui-d/uicontrol ">Configuration Toolkit</uicontrol>, and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">Workflow Management</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">WORKFLOW LIST</uicontrol> page is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">New</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">NEW WORKFLOW</uicontrol> page is displayed. </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To add information about the workflow, in the <uicontrol class="+ topic/ph ui-d/uicontrol ">General Details</uicontrol> tab, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Name</uicontrol> box, enter the name of the workflow.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Description</uicontrol> box, enter a description of the workflow.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Select Form</uicontrol> drop-down list, select the form for which the workflow is being created. </cmd>
+                  <info class="- topic/itemgroup task/info ">Alternatively, type the name of the form, and then select the appropriate form.</info>
+                  <info class="- topic/itemgroup task/info ">The available options are all forms available in the application.For example, to create a workflow for <uicontrol class="+ topic/ph ui-d/uicontrol ">Project Fund Transaction</uicontrol>, you must select the <uicontrol class="+ topic/ph ui-d/uicontrol ">Project Fund Transaction</uicontrol> form from the <uicontrol class="+ topic/ph ui-d/uicontrol ">Select Form</uicontrol> drop-down list. To create a new business process, the first step is to create the form, and then create the workflow.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Select the <uicontrol class="+ topic/ph ui-d/uicontrol ">Configure View Permissions</uicontrol>, <uicontrol class="+ topic/ph ui-d/uicontrol ">Enable Editing by Non Action Stakeholders</uicontrol>, and <uicontrol class="+ topic/ph ui-d/uicontrol ">Allow Workflow Action by All Stakeholders</uicontrol> check boxes as required.</cmd>
+                  <info class="- topic/itemgroup task/info ">For example, you can enable this check box when you want to specifically allow or deny view of the record to a user role at any stage of the workflow.<note class="- topic/note ">
+                        <ul class="- topic/ul ">
+                           <li class="- topic/li ">You cannot select or clear the <uicontrol class="+ topic/ph ui-d/uicontrol ">Configure View Permissions</uicontrol> check box after clicking <uicontrol class="+ topic/ph ui-d/uicontrol ">Apply</uicontrol> in the <uicontrol class="+ topic/ph ui-d/uicontrol ">General Details</uicontrol> tab.</li>
+                           <li class="- topic/li ">You can select or clear the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enable Editing by Non Action Stakeholders</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">Allow Workflow Action by All Stakeholders</uicontrol> check boxes at any time while creating or editing the workflow.</li>
+                        </ul>
+                     </note>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Apply</uicontrol>.</cmd>
+                  <info class="- topic/itemgroup task/info ">A workflow with three-stage workflow status – <uicontrol class="+ topic/ph ui-d/uicontrol ">Draft</uicontrol>, <uicontrol class="+ topic/ph ui-d/uicontrol ">Submitted</uicontrol>, and <uicontrol class="+ topic/ph ui-d/uicontrol ">Approved</uicontrol> is displayed in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Workflow</uicontrol> tab. By default, the workflow is created in simple mode.</info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To load the <uicontrol class="+ topic/ph ui-d/uicontrol ">ADVANCED ACTIVITIES</uicontrol> list, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Switch to Advanced</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">A new activity called <uicontrol class="+ topic/ph ui-d/uicontrol ">Business Logic</uicontrol> is displayed at the bottom of the <uicontrol class="+ topic/ph ui-d/uicontrol ">ADVANCED ACTIVITIES</uicontrol> list.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd outputclass="break_avoid" class="- topic/ph task/cmd ">Drag and drop the <uicontrol class="+ topic/ph ui-d/uicontrol ">Business Logic</uicontrol> item in the center pane design area where you can configure the logic.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <fig class="- topic/fig ">
+                  <title class="- topic/title "/>
+                  <image href="../../../Icons/Screenshots_Icons/Business_Logic_select.jpg"
+                         class="- topic/image "
+                         placement="inline"/>
+               </fig>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To load the configuration settings at the right side of the page, click the <uicontrol class="+ topic/ph ui-d/uicontrol ">Business Logic</uicontrol> item in the design pane area.</cmd>
+            <info outputclass="break_avoid" class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Business Logic</uicontrol> propertied are displayed at the right pane of the page.<fig class="- topic/fig ">
+                  <title class="- topic/title "/>
+                  <image href="../../../Icons/Screenshots_Icons/Business_Logic_tab.jpg"
+                         class="- topic/image "
+                         placement="inline"/>
+               </fig>
+            </info>
+            <info class="- topic/itemgroup task/info "/>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Name</uicontrol> field, enter a name for the <uicontrol class="+ topic/ph ui-d/uicontrol ">Business Logic</uicontrol> item.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To configure the business logic with Blockly interface, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep outputclass="break_avoid" class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd "> In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Business Logic</uicontrol> field, click <image href="../../../Icons/Screenshots_Icons/select.png"
+                            class="- topic/image "
+                            placement="inline"/>.</cmd>
+                  <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Business Logic</uicontrol> dialog box is displayed.<fig class="- topic/fig ">
+                        <title class="- topic/title "/>
+                        <image href="../../../Icons/Screenshots_Icons/Business_Logic_dialog_box.jpg"
+                               class="- topic/image "
+                               placement="inline"/>
+                     </fig>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">To configure the business logic that must be executed, drag and drop the appropriate blocks to the design area. For information on configuring blocks, refer to <xref href="../Form_Builder_Using_ConfigPlus/Configuring_Business_Logic_in_Form.dita"
+                           class="- topic/xref "/>.</cmd>
+                  <info class="- topic/itemgroup task/info ">The default block <uicontrol class="+ topic/ph ui-d/uicontrol ">Workflow Resource</uicontrol> has two default variables.<ul class="- topic/ul ">
+                        <li class="- topic/li ">
+                           <msgph class="+ topic/ph sw-d/msgph ">IsSuccess</msgph>: It is a flag variable. The default value is True. This helps to validate whether the business logic that is executed is successful or not. </li>
+                        <li class="- topic/li ">
+                           <msgph class="+ topic/ph sw-d/msgph ">Message</msgph>: It is a string variable. The default value is with the executed result message.</li>
+                     </ul>
+                  </info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To read the appropriate data (discussion control data ) from the selected form and store it as a variable, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep outputclass="break_avoid" class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Expand the <uicontrol class="+ topic/ph ui-d/uicontrol ">DEFINITIONS</uicontrol> block and click the <uicontrol class="+ topic/ph ui-d/uicontrol ">Variables</uicontrol> block.</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <fig class="- topic/fig ">
+                        <image href="../../../Icons/Screenshots_Icons/BL_WF_Create_Variable.jpg"
+                               class="- topic/image "
+                               placement="inline"/>
+                     </fig>
+                  </info>
+               </substep>
+               <substep outputclass="break_avoid" class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol "> Create Variable</uicontrol>.</cmd>
+                  <info class="- topic/itemgroup task/info ">A pop-up message appears to provide the variable name.</info>
+               </substep>
+               <substep outputclass="break_avoid" class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">New variable name</uicontrol> field, enter the variable name as <msgph class="+ topic/ph sw-d/msgph ">QueryResult</msgph>, and click <uicontrol class="+ topic/ph ui-d/uicontrol ">OK</uicontrol>.</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <fig class="- topic/fig ">
+                        <title class="- topic/title "/>
+                        <image href="../../../Icons/Screenshots_Icons/BL_WF_Create_VariableName.jpg"
+                               class="- topic/image "
+                               placement="inline"/>
+                     </fig>
+                     <p class="- topic/p ">The newly created variable is available in the variable list with the <uicontrol class="+ topic/ph ui-d/uicontrol ">set</uicontrol> operator.</p>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd outputclass="break_avoid" class="- topic/ph task/cmd ">Drag and drop the <uicontrol class="+ topic/ph ui-d/uicontrol ">set</uicontrol> operator to the design area.</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <fig class="- topic/fig ">
+                        <title class="- topic/title "/>
+                        <image href="../../../Icons/Screenshots_Icons/Set_Variable_Created.jpg"
+                               class="- topic/image "
+                               placement="inline"/>
+                     </fig>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Expand the <uicontrol class="+ topic/ph ui-d/uicontrol ">DATA OPERATIONS</uicontrol> block and click the <uicontrol class="+ topic/ph ui-d/uicontrol ">Read Data</uicontrol> block.</cmd>
+                  <info outputclass="break_avoid" class="- topic/itemgroup task/info ">The available options of the <uicontrol class="+ topic/ph ui-d/uicontrol ">Read Data</uicontrol> block are displayed.<fig class="- topic/fig ">
+                        <title class="- topic/title "/>
+                        <image href="../../../Icons/Screenshots_Icons/BL_WF_ReadData_Options.jpg"
+                               class="- topic/image "
+                               placement="inline"/>
+                     </fig>
+                  </info>
+               </substep>
+               <substep outputclass="break_avoid" class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Drag and connect the <uicontrol class="+ topic/ph ui-d/uicontrol ">SELECT</uicontrol> block to the <uicontrol class="+ topic/ph ui-d/uicontrol ">set</uicontrol> operator.</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <fig class="- topic/fig ">
+                        <title class="- topic/title "/>
+                        <image href="../../../Icons/Screenshots_Icons/SetOperator_SelectBlock.jpg"
+                               class="- topic/image "
+                               placement="inline"/>
+                     </fig>
+                  </info>
+               </substep>
+               <substep outputclass="break_avoid" class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Expand the <uicontrol class="+ topic/ph ui-d/uicontrol ">DATA OPERATIONS</uicontrol> block and click the   <uicontrol class="+ topic/ph ui-d/uicontrol ">Fields</uicontrol> block.</cmd>
+                  <info outputclass="break_avoid" class="- topic/itemgroup task/info ">The available options of the <uicontrol class="+ topic/ph ui-d/uicontrol ">Fields</uicontrol> block are displayed.<fig class="- topic/fig ">
+                        <title class="- topic/title "/>
+                        <image href="../../../Icons/Screenshots_Icons/BL_WF_ReadData_FieldOptions.jpg"
+                               class="- topic/image "
+                               placement="inline"/>
+                     </fig>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd outputclass="break_avoid" class="- topic/ph task/cmd ">To add the parameter resolver value that must be equivalent for the query execution, drag and connect the <uicontrol class="+ topic/ph ui-d/uicontrol ">Workflow Data Of</uicontrol> block to the <uicontrol class="+ topic/ph ui-d/uicontrol ">SELECT</uicontrol> block. </cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <fig class="- topic/fig ">
+                        <title class="- topic/title "/>
+                        <image href="../../../Icons/Screenshots_Icons/BL_WF_SELECT_WFData.jpg"
+                               class="- topic/image "
+                               placement="inline"/>
+                     </fig>
+                     <note class="- topic/note "> The <uicontrol class="+ topic/ph ui-d/uicontrol ">SELECT</uicontrol> block executes the database query and stores the result in the <uicontrol class="+ topic/ph ui-d/uicontrol ">set</uicontrol> operator variable <msgph class="+ topic/ph sw-d/msgph ">Query Result</msgph>.</note>
+                  </info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To validate the retrieved information in a loop for each information retrieved, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Expand the <uicontrol class="+ topic/ph ui-d/uicontrol ">CONDITIONS</uicontrol> block and click the <uicontrol class="+ topic/ph ui-d/uicontrol ">Loops</uicontrol> block.</cmd>
+               </substep>
+               <substep outputclass="break_avoid" class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Drag and connect the <uicontrol class="+ topic/ph ui-d/uicontrol ">for loop</uicontrol> block below the <uicontrol class="+ topic/ph ui-d/uicontrol ">set</uicontrol> operator.</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <fig class="- topic/fig ">
+                        <title class="- topic/title "/>
+                        <image href="../../../Icons/Screenshots_Icons/BL_WF_ForLoop.jpg"
+                               class="- topic/image "
+                               placement="inline"/>
+                     </fig>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Expand the <uicontrol class="+ topic/ph ui-d/uicontrol ">DEFINITIONS</uicontrol> block and click the <uicontrol class="+ topic/ph ui-d/uicontrol ">Variables</uicontrol> block.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd outputclass="break_avoid" class="- topic/ph task/cmd ">Drag and connect the <msgph class="+ topic/ph sw-d/msgph ">Query Result</msgph> variable to the <uicontrol class="+ topic/ph ui-d/uicontrol ">for loop</uicontrol> block.</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <fig class="- topic/fig ">
+                        <title class="- topic/title "/>
+                        <image href="../../../Icons/Screenshots_Icons/BL_WF_ForLoop_QueryResult.jpg"
+                               class="- topic/image "
+                               placement="inline"/>
+                     </fig>
+                     <note class="- topic/note ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">for loop</uicontrol> block creates a default variable <msgph class="+ topic/ph sw-d/msgph ">i</msgph> for the increment of a loop for values passed.</note>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Expand the <uicontrol class="+ topic/ph ui-d/uicontrol ">CONDITIONS</uicontrol> block, then expand the <uicontrol class="+ topic/ph ui-d/uicontrol ">Logic</uicontrol> block, and click the <uicontrol class="+ topic/ph ui-d/uicontrol ">If</uicontrol> block.</cmd>
+               </substep>
+               <substep outputclass="break_avoid" class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Drag and connect the <uicontrol class="+ topic/ph ui-d/uicontrol ">If</uicontrol> block to the <uicontrol class="+ topic/ph ui-d/uicontrol ">for loop</uicontrol> block.</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <fig class="- topic/fig ">
+                        <title class="- topic/title "/>
+                        <image href="../../../Icons/Screenshots_Icons/BL_WF_IfBlock.jpg"
+                               class="- topic/image "
+                               placement="inline"/>
+                     </fig>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Expand the <uicontrol class="+ topic/ph ui-d/uicontrol ">DATA OPERATIONS</uicontrol> block and click the <uicontrol class="+ topic/ph ui-d/uicontrol ">Get</uicontrol> block.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Drag and connect the <uicontrol class="+ topic/ph ui-d/uicontrol ">Get</uicontrol> block to the <uicontrol class="+ topic/ph ui-d/uicontrol ">If</uicontrol> Block.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Get Property of</uicontrol> block, define the values as follows:</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <ol class="- topic/ol ">
+                        <li outputclass="break_avoid" class="- topic/li ">From the drop-down list of <uicontrol class="+ topic/ph ui-d/uicontrol ">Select Variable</uicontrol> entity, select <msgph class="+ topic/ph sw-d/msgph ">i</msgph>.<fig class="- topic/fig ">
+                              <title class="- topic/title "/>
+                              <image href="../../../Icons/Screenshots_Icons/BL_WF_GetPropertyOf.jpg"
+                                     class="- topic/image "
+                                     placement="inline"/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">From the drop-down list of <uicontrol class="+ topic/ph ui-d/uicontrol ">Select Property</uicontrol> entity, select <msgph class="+ topic/ph sw-d/msgph ">Status</msgph>.</li>
+                        <li class="- topic/li ">From the drop-down list of <uicontrol class="+ topic/ph ui-d/uicontrol ">Operator</uicontrol> entity, select <uicontrol class="+ topic/ph ui-d/uicontrol ">≠</uicontrol>.</li>
+                     </ol>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Expand the <uicontrol class="+ topic/ph ui-d/uicontrol ">UPDATE</uicontrol> block, and then click the <uicontrol class="+ topic/ph ui-d/uicontrol ">Text</uicontrol> block.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Drag and attach the empty string block to the <uicontrol class="+ topic/ph ui-d/uicontrol ">≠</uicontrol> operator entity of the <uicontrol class="+ topic/ph ui-d/uicontrol ">Get Property of</uicontrol> block and mention the resolver value as <msgph class="+ topic/ph sw-d/msgph ">Closed</msgph>.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">If the resolver condition fails, to update the variable <msgph class="+ topic/ph sw-d/msgph ">Is_success</msgph> to <msgph class="+ topic/ph sw-d/msgph ">false</msgph>, drag and connect the <uicontrol class="+ topic/ph ui-d/uicontrol ">set</uicontrol> block to the <uicontrol class="+ topic/ph ui-d/uicontrol ">Get Property of</uicontrol> block.</cmd>
+               </substep>
+               <substep outputclass="break_avoid" class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Set the value of the variable <msgph class="+ topic/ph sw-d/msgph ">Message</msgph> to <msgph class="+ topic/ph sw-d/msgph ">{Action Item name} is not Closed. Request Denied</msgph>.</cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <fig class="- topic/fig ">
+                        <title class="- topic/title "/>
+                        <image href="../../../Icons/Screenshots_Icons/ConfigBL_UpdateBlock_Save.jpg"
+                               class="- topic/image "
+                               placement="inline"/>
+                     </fig>
+                  </info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Save</uicontrol>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd outputclass="break_avoid" class="- topic/ph task/cmd ">To validate the <msgph class="+ topic/ph sw-d/msgph ">Is_Success</msgph> flag variable of the <uicontrol class="+ topic/ph ui-d/uicontrol ">Business Logic</uicontrol> item, drag and drop the <uicontrol class="+ topic/ph ui-d/uicontrol ">Advanced Conditional Block</uicontrol> item to the design area.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <fig class="- topic/fig ">
+                  <title class="- topic/title "/>
+                  <image href="../../../Icons/Screenshots_Icons/BL_WF_AdvConditionBlock.jpg"
+                         class="- topic/image "
+                         placement="inline"/>
+               </fig>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">If the condition fails, to display the <uicontrol class="+ topic/ph ui-d/uicontrol ">Business Logic</uicontrol> message, perform the following steps:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Drag and drop <uicontrol class="+ topic/ph ui-d/uicontrol ">Display Message</uicontrol> item to the design area.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">To load the configuration settings at the right side of the page, select the <uicontrol class="+ topic/ph ui-d/uicontrol ">Display Message</uicontrol> item in the design pane area.</cmd>
+                  <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Display Message</uicontrol> tab is displayed at the right pane of the page.</info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">In the <uicontrol class="+ topic/ph ui-d/uicontrol ">Name</uicontrol> field, enter a name for the <uicontrol class="+ topic/ph ui-d/uicontrol ">Display Message</uicontrol> item.</cmd>
+               </substep>
+               <substep outputclass="break_avoid" class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">To configure the display message logic, click <image href="../../../Icons/Screenshots_Icons/select.png"
+                            class="- topic/image "
+                            placement="inline"/>
+                  </cmd>
+                  <info outputclass="break_avoid" class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Resources</uicontrol> dialog box is displayed.<fig class="- topic/fig ">
+                        <title class="- topic/title "/>
+                        <image href="../../../Icons/Screenshots_Icons/BL_WF_DisplayMsgBlock.jpg"
+                               class="- topic/image "
+                               placement="inline"/>
+                     </fig>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Click the <uicontrol class="+ topic/ph ui-d/uicontrol ">Workflow Data</uicontrol> button and from the drop-down list, select <uicontrol class="+ topic/ph ui-d/uicontrol ">Business Logic : message</uicontrol>.</cmd>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Save</uicontrol>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Publish</uicontrol>.</cmd>
+         </step>
+      </steps>
+   </taskbody>
+</task>

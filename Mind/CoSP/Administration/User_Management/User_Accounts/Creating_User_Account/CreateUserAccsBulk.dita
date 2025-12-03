@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="AdminCrtMulUsrAccs"
+      class="- topic/topic task/task "
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   ">
+   <title class="- topic/title ">Creating Multiple User Accounts in Bulk</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-20+05:30" class="- topic/created "/>
+         <revised modified="2025-11-20+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="administrator,engineering,management,external contractors,analyst"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>mind-user-management</indexterm>
+            <indexterm>bulk-import-module</indexterm>
+            <indexterm>excel-template</indexterm>
+            <indexterm>user-directory-sync</indexterm>
+            <indexterm>access-control</indexterm>
+            <indexterm>web-portal</indexterm>
+            <!-- Process layer -->
+            <indexterm>create-user-accounts-in-bulk</indexterm>
+            <indexterm>bulk-user-import</indexterm>
+            <indexterm>validate-import-template</indexterm>
+            <indexterm>map-excel-fields</indexterm>
+            <indexterm>mass-provisioning</indexterm>
+            <indexterm>import-audit</indexterm>
+            <!-- Context layer -->
+            <indexterm>mind-administration-guide</indexterm>
+            <indexterm>capital-program-management</indexterm>
+            <indexterm>user-provisioning</indexterm>
+            <indexterm>enterprise-operations</indexterm>
+            <indexterm>onboarding-wave</indexterm>
+            <indexterm>data-quality</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>Mind-Administration-Guide</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Create multiple user accounts (bulk import)"/>
+         <othermeta name="shortdesc" content="You can create multiple user accounts at once by importing a predefined Excel template; the template and import process are documented here."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="excel-template;user-account;import-engine;validation-rules;audit-log;business-unit"/>
+         <othermeta name="taxonomy" content="domain:administration;usecase:bulk-provisioning;industry:capital-program management"/>
+         <othermeta name="tags" content="bulk-import,excel-template,provisioning,validation,automation"/>
+         <othermeta name="usecase" content="bulk-create-user-accounts"/>
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <context class="- topic/section task/context ">
+         <p class="- topic/p ">You can create multiple user accounts at once by importing a Microsoft Excel file that contains user details. The high-level process of bulk uploading of user account details is as follows:</p>
+         <ol class="- topic/ol ">
+            <li class="- topic/li ">Download the predefined Excel template from <ph conref="../../../../../../Warehouse/Product_Name_Warehouse.dita#reference-9043/product_name"
+                   class="- topic/ph "/>. The Excel template contains  user information required for user account creation as columns.</li>
+            <li class="- topic/li ">Enter user account details in the template workbook.</li>
+            <li class="- topic/li ">Import the workbook with user details to <ph conref="../../../../../../Warehouse/Product_Name_Warehouse.dita#reference-9043/product_name"
+                   class="- topic/ph "/>.</li>
+         </ol>
+         <p class="- topic/p ">The password for user accounts created by importing account information using an Excel file is set to <uicontrol class="+ topic/ph ui-d/uicontrol ">Mind@123</uicontrol>. All users with accounts created using the bulk import feature can log in to the application with their username and the default password <uicontrol class="+ topic/ph ui-d/uicontrol ">Mind@123</uicontrol>. Users are prompted to reset their password on the first login. </p>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the module menu, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Administration</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">ADMINISTRATION</uicontrol> page is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the navigation pane, expand <uicontrol class="+ topic/ph ui-d/uicontrol ">User Management</uicontrol>, and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">User Accounts</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">USER ACCOUNTS</uicontrol> list page is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Excel Import / Export</uicontrol>, and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">Excel Template</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The template is saved to your local storage.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Open the saved Excel template workbook.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Enter information for each of the columns, as described in the following table.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <table colsep="1" rowsep="1" class="- topic/table ">
+                  <tgroup cols="2" class="- topic/tgroup ">
+                     <colspec colname="c1" colnum="1" colwidth="30%" class="- topic/colspec "/>
+                     <colspec colname="c2" colnum="2" colwidth="70%" class="- topic/colspec "/>
+                     <thead class="- topic/thead ">
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">Field Name</entry>
+                           <entry class="- topic/entry ">Description</entry>
+                        </row>
+                     </thead>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "> InternalID </entry>
+                           <entry class="- topic/entry "> Do not enter information in the <uicontrol class="+ topic/ph ui-d/uicontrol ">InternalID</uicontrol> column. <p class="- topic/p ">When you import the  Excel workbook, a unique identification code for the corresponding user record is automatically generated.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">UserName </entry>
+                           <entry class="- topic/entry ">Enter a unique alphanumeric name to identify the user. </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "> FirstName </entry>
+                           <entry class="- topic/entry "> Enter the first name of the user. </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">MiddleName </entry>
+                           <entry class="- topic/entry ">Enter the middle name of the user. </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "> LastName </entry>
+                           <entry class="- topic/entry "> Enter the last name of the user. </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">CompanyName </entry>
+                           <entry class="- topic/entry ">Enter the company name of the user. </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">Address1, Address2, and Address3 </entry>
+                           <entry class="- topic/entry ">Enter the address of the user. </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "> City </entry>
+                           <entry class="- topic/entry "> Enter the name of the city where the user resides. </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "> State </entry>
+                           <entry class="- topic/entry "> Enter the name of the state where the user resides. </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "> Country </entry>
+                           <entry class="- topic/entry "> Enter the name of the country where the user resides. </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "> Zipcode </entry>
+                           <entry class="- topic/entry "> Enter the zip code for the address  where the user resides. </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "> Telephone </entry>
+                           <entry class="- topic/entry "> Enter the telephone number of the user. </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">Email </entry>
+                           <entry class="- topic/entry ">Enter the email address of the user for email communication. </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "> Fax </entry>
+                           <entry class="- topic/entry "> Enter the fax number of the user for facsimile communication. </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "> CertNo</entry>
+                           <entry class="- topic/entry "> Enter the access certificate number assigned to the user. </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">Type</entry>
+                           <entry class="- topic/entry ">Enter either of the following options: <ul class="- topic/ul ">
+                                 <li class="- topic/li ">
+                                    <uicontrol class="+ topic/ph ui-d/uicontrol ">Internal</uicontrol> - Enter this option if the user belongs to the organization.</li>
+                                 <li class="- topic/li ">
+                                    <uicontrol class="+ topic/ph ui-d/uicontrol ">External</uicontrol> - Enter this option if the user belongs to a different organization. For example, contractors.</li>
+                              </ul>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">Vendor</entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">If the <uicontrol class="+ topic/ph ui-d/uicontrol ">Type</uicontrol> is <uicontrol class="+ topic/ph ui-d/uicontrol ">External</uicontrol>, then enter the vendor associated with the user.</p>
+                              <p class="- topic/p ">To view the list of vendors, refer to  the <uicontrol class="+ topic/ph ui-d/uicontrol ">Vendors</uicontrol> catalog of the library.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">IsActive </entry>
+                           <entry class="- topic/entry ">Enter <uicontrol class="+ topic/ph ui-d/uicontrol ">YES</uicontrol> to specify that the user is active. <p class="- topic/p ">Enter <uicontrol class="+ topic/ph ui-d/uicontrol ">NO</uicontrol> to deny application access to the user. <note class="- topic/note "> To revoke application access from a user, change the status of the user to Inactive. <ph product="Exclude_PG_Content" class="- topic/ph ">For information on changing the status of a user, refer to <xref href="../Changing_the_Status_of_a_User_Account/DeActUserAcc.dita"
+                                             class="- topic/xref ">Deactivating a User Account</xref>.</ph>
+                                 </note>
+                              </p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">MobileNo </entry>
+                           <entry class="- topic/entry ">Enter the mobile number of the user. </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">AccountExpiryDate </entry>
+                           <entry class="- topic/entry ">Enter the date until which the account will be active. <p class="- topic/p ">Enter the date in the format as defined in the <ph product="Include_PG_Content" class="- topic/ph ">
+                                    <uicontrol class="+ topic/ph ui-d/uicontrol ">USER SETTINGS</uicontrol>
+                                 </ph>
+                                 <ph product="Exclude_PG_Content" class="- topic/ph ">
+                                    <xref href="../../../../../Administration/User_Management/UsrAcctn_config.dita"
+                                          class="- topic/xref ">USER SETTINGS</xref>
+                                 </ph> page. The user is denied access to the application after this date. </p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "> SendEmail</entry>
+                           <entry class="- topic/entry "> Enter <uicontrol class="+ topic/ph ui-d/uicontrol ">YES</uicontrol> for the user to receive an email notification with login details on user account creation. </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">Roles </entry>
+                           <entry class="- topic/entry ">Enter the role names for the user separated by a comma. Ensure the role names entered here are as defined in the application. <p class="- topic/p ">To view the list of role names defined in the application, in the Administration navigation pane, expand <uicontrol class="+ topic/ph ui-d/uicontrol ">User Management</uicontrol>, and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">Security Roles</uicontrol>.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">Business Unit </entry>
+                           <entry class="- topic/entry ">Enter the business units to which the user belongs. Enter the business unit names separated by a comma. Ensure the business unit names entered here are as defined in the application. <p class="- topic/p ">To view the list of business unit names defined in the application, in the navigation pane, expand <uicontrol class="+ topic/ph ui-d/uicontrol ">Functional Configuration</uicontrol>, and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">Business Units</uicontrol>.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">IsADUser</entry>
+                           <entry class="- topic/entry ">
+                              <note class="- topic/note "> This column is available only  if the option selected in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Login Mode</uicontrol> field in the <uicontrol class="+ topic/ph ui-d/uicontrol ">AUTHENTICATION &amp; LOGIN SETTINGS</uicontrol> page is <uicontrol class="+ topic/ph ui-d/uicontrol ">External IDP</uicontrol> or <uicontrol class="+ topic/ph ui-d/uicontrol ">Mixed</uicontrol>.</note>Enter <uicontrol class="+ topic/ph ui-d/uicontrol ">YES</uicontrol> if the user is registered in the External Identity Provider. Else, enter <uicontrol class="+ topic/ph ui-d/uicontrol ">No</uicontrol>.</entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To import the Excel workbook with user details, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Excel Import / Export</uicontrol>, and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">Excel Import</uicontrol>. </cmd>
+            <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">IMPORT DETAILS FROM EXCEL FILE</uicontrol> page is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Choose File</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Open</uicontrol> dialog box is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Select the workbook with the updated information,and then click <uicontrol class="+ topic/ph ui-d/uicontrol ">Open</uicontrol>
+               <b class="+ topic/ph hi-d/b ">.</b>
+            </cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Upload</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The information in the Excel file is displayed.</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Save</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">The information in the Excel file is imported to <ph conref="../../../../../../Warehouse/Product_Name_Warehouse.dita#reference-9043/product_name"
+                   class="- topic/ph "/>.</info>
+         </step>
+      </steps>
+   </taskbody>
+</task>

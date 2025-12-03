@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="ListPage_WORKFLW"
+         xml:lang="en-us"
+         class="- topic/topic concept/concept "
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   ">
+   <title class="- topic/title ">Workflow Management</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Yashshree</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-20+05:30" class="- topic/created "/>
+         <revised modified="2025-11-20+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="administrator,engineering,management,external contractors,analyst"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>workflow-management</indexterm>
+            <indexterm>workflow-engine</indexterm>
+            <indexterm>form-builder</indexterm>
+            <indexterm>approval-engine</indexterm>
+            <indexterm>list-page</indexterm>
+            <!-- Process layer -->
+            <indexterm>manage-workflows</indexterm>
+            <indexterm>grant-approvals</indexterm>
+            <indexterm>define-clearances</indexterm>
+            <indexterm>monitor-workflow-health</indexterm>
+            <indexterm>audit-workflow-events</indexterm>
+            <!-- Context layer -->
+            <indexterm>capital-program-management</indexterm>
+            <indexterm>mind-administration-guide</indexterm>
+            <indexterm>enterprise-deployment</indexterm>
+            <indexterm>web-platform</indexterm>
+            <indexterm>infrastructure-software</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>Mind-Administration-Guide</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="WFMgmt"/>
+         <othermeta name="shortdesc" content="Overview of workflow management: list pages, approvals, clearances and the processes for granting approvals."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="workflow;approval-engine;list-page;clearances;audit"/>
+         <othermeta name="taxonomy" content="domain:Capital-program-management;usecase:workflow-management;industry:capital-program management"/>
+         <othermeta name="tags" content="manage-workflows,grant-approvals,monitor-workflow-health"/>
+         <othermeta name="usecase" content="manage workflow lifecycle and approvals"/>
+      </metadata>
+   </prolog>
+   <conbody>
+      <p class="- topic/p ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Workflow Management</uicontrol> feature enables you to perform the following: </p>
+      <ul class="- topic/ul ">
+         <li class="- topic/li ">Automate business processes for granting approvals andclearances using pre-defined templates and configurable workflows to eliminate inconsistencies and errors. You can also change a pre-defined business process to suit your organizationalneeds.</li>
+         <li class="- topic/li ">Integrate with the Form Builder or XML, allowing you to automate any businessprocess. </li>
+         <li class="- topic/li ">Define new workflows and modify existing workflowsfor custom-created XML forms and in-built forms. </li>
+      </ul>
+      <p class="- topic/p ">User role permission is defined at two levels. The first level of permission is given at the form level, and the second level of permission is given at the workflow level. </p>
+      <ul class="- topic/ul ">
+         <li class="- topic/li ">Workflow-level permissions are given on top of form-level permissions. For example, a user role with <uicontrol class="+ topic/ph ui-d/uicontrol ">Edit</uicontrol> permission at the form level and action stakeholder permission at the workflow level can only perform workflow action. A user role with <uicontrol class="+ topic/ph ui-d/uicontrol ">Edit</uicontrol> permission at the form level and view stakeholder permission at the workflow level cannot perform workflow action and can only view the record. A user role that does not have <uicontrol class="+ topic/ph ui-d/uicontrol ">Edit</uicontrol> permission at the form level can still perform workflow action if the workflow is enabled for <uicontrol class="+ topic/ph ui-d/uicontrol ">Allow Workflow Action by All Stakeholders</uicontrol>.<note class="- topic/note "> If a role is not selected as view or action stakeholder, then that role will not be able to view any records irrespective of their form level permission.</note>
+         </li>
+         <li class="- topic/li ">Workflow level permission options (action/view stakeholder) allow you to configure user role access at every workflow stage based on the business process requirement.</li>
+      </ul>
+      <p class="- topic/p ">The <xref scope="local"
+               href="#ListPage_WORKFLW/WFTerminologies"
+               class="- topic/xref ">Terminologies Used in Workflow Builder</xref>sectiondescribes in detailthe various features of the <ph conref="../../../../Warehouse/Product_Name_Warehouse.dita#reference-9043/product_name"
+             class="- topic/ph "/>workflow engine.</p>
+      <p class="- topic/p ">The <xref href="CreateWF.dita" class="- topic/xref ">Creating a Workflow</xref> section describes the procedure to create a basic workflow.</p>
+      <p class="- topic/p ">Post creating a basic workflow, based on the complexity of the business process, you can use either of the following ways  to create a workflow:</p>
+      <ul class="- topic/ul ">
+         <li class="- topic/li ">
+            <xref href="CreateWFSimple.dita" class="- topic/xref ">Create a workflow using simple mode</xref> – The simple mode has limited functionality to create a workflow. Using simple mode, you can customize a pre-created workflow, add the required additional stages, define conditions, validations, and so on. </li>
+         <li class="- topic/li ">
+            <xref href="CreateWFAdv.dita" class="- topic/xref ">Create a workflow using advanced mode</xref> – Using advanced mode, you can create a complex workflow. Advanced mode enables you to use advanced features such as expressions, condition block, morph workflow, get form data, set form data, create  a new form, call form resource, set form status, set due date, set stakeholders, and so on.</li>
+      </ul>
+      <p product="Exclude_PG_Content" class="- topic/p ">The following section describes the procedure to configure business logic within a workflow:</p>
+      <ul product="Exclude_PG_Content" class="- topic/ul ">
+         <li class="- topic/li ">
+            <xref href="ConfigBusinLogWF.dita" class="- topic/xref "/>
+         </li>
+      </ul>
+      <section id="WFTerminologies" class="- topic/section ">
+         <title class="- topic/title ">Before You Begin - Terminologies Used in Workflow Management</title>
+         <p class="- topic/p ">You can easily use the Workflow Management utility to create workflows for various forms. However, before you start creating them, here are some terminologies you should be familiar with:</p>
+         <ul class="- topic/ul ">
+            <li class="- topic/li ">
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Stage</uicontrol>: A stage forms the building block of a workflow. A workflow can be broadly defined as a collection of stages logically associated with each other with predefined actions defined at every stage. There is no limit to the number of stages you can have in a workflow and the numberof actions that can be associated with them. Stages can be broadly classified into three types: Start stage, Intermediate stage, and End stage. It is important to define stages and associate them with their respective stages in a workflow for ease of use.</li>
+            <li class="- topic/li ">
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Simple Activities</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">Dynamic Activities</uicontrol>: An activity enables you to plug any action into the <ph conref="../../../../Warehouse/Product_Name_Warehouse.dita#reference-9043/product_name"
+                   class="- topic/ph "/> workflow engine. The configurable actions include flow control blocks such as <uicontrol class="+ topic/ph ui-d/uicontrol ">if</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">if-else</uicontrol>. Actions enable you to change the value of business objects, create new business objects, and so on.  <ph conref="../../../../Warehouse/Product_Name_Warehouse.dita#reference-9043/product_name"
+                   class="- topic/ph "/> enables you to configure various events or actions through activities. In the Advanced mode, you can access these events or actions using the <uicontrol class="+ topic/ph ui-d/uicontrol ">Call Form Resource</uicontrol> Activity in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Workflow</uicontrol> tab of the <uicontrol class="+ topic/ph ui-d/uicontrol ">NEW WORKFLOW</uicontrol> or <uicontrol class="+ topic/ph ui-d/uicontrol ">EDIT WORKFLOW</uicontrol>.</li>
+            <li class="- topic/li ">
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Action Stake Holders</uicontrol>: An action stakeholder is a user who can go and perform an action on the form. For a role to be available in the list of action stakeholders, the <uicontrol class="+ topic/ph ui-d/uicontrol ">Edit</uicontrol> permission must be enabled at the form level. Action stakeholder can be assigned at every stage of a workflow. For a role to perform an action on the form, role should have both <uicontrol class="+ topic/ph ui-d/uicontrol ">Edit</uicontrol> permission at the form level and selected as action stakeholder at the workflow stage level. Also, if a workflow is enabled for <uicontrol class="+ topic/ph ui-d/uicontrol ">Allow Workflow Action by All Stakeholders</uicontrol>, then all stakeholders with <uicontrol class="+ topic/ph ui-d/uicontrol ">Edit</uicontrol> or <uicontrol class="+ topic/ph ui-d/uicontrol ">View </uicontrol>or both permissions at the form level can perform workflow action.</li>
+            <li class="- topic/li ">
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">View Stake Holders</uicontrol>: A view stakeholder is a user who can only view the form and cannot perform any action on the form. View stakeholders can be assigned at every stage of a workflow. If a workflow is enabled for <uicontrol class="+ topic/ph ui-d/uicontrol ">Allow Workflow Action by All Stakeholders</uicontrol>, then all stakeholders including the view stakeholders can perform workflow action. </li>
+            <li class="- topic/li ">
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Days to Complete</uicontrol>: This determines the number of days due for the nextaction to be performed by the next action stakeholder.</li>
+            <li class="- topic/li ">
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Action</uicontrol>: An action defined within a stage is a button that performs a set of actions,one of which can be transitioning a form from one stage to another. </li>
+            <li class="- topic/li ">
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Status</uicontrol>: The status is the name of the current workflowstage of the form. </li>
+            <li class="- topic/li ">
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Validation</uicontrol>: Workflows that are marked as <uicontrol class="+ topic/ph ui-d/uicontrol ">Validation</uicontrol> cannot be modified. You can create a copy of these workflows and then modify the copy as per your business needs. </li>
+            <li class="- topic/li ">
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Mark as Default</uicontrol>: In the <uicontrol class="+ topic/ph ui-d/uicontrol ">WORKFLOW LIST</uicontrol> page, you can set the selected workflow as the default workflow for a form. There could be more than one workflow defined for a single form, but only one workflow can be marked as default for a single form. When a workflow is not associated to a form, then that form will start using the workflow marked as default. </li>
+            <li class="- topic/li ">
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Pending On Role(s)</uicontrol>: This determines the user roles associated with the workflow that areyet to perform the next workflow action. In every stage, roles are displayed in the<uicontrol class="+ topic/ph ui-d/uicontrol ">Pending On</uicontrol>
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Role(s)</uicontrol> column in the form list page, except the final stage. When the workflow is in the final stage, the <uicontrol class="+ topic/ph ui-d/uicontrol ">Pending On Role(s)</uicontrol> column is displayed as <uicontrol class="+ topic/ph ui-d/uicontrol ">None</uicontrol>.</li>
+            <li class="- topic/li ">
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Pending On User(s)</uicontrol>: This shows the names of the users that are assigned with the roles associated with the workflow that are yet to perform the next workflow action. In every stage, user names are displayed in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Pending On User(s)</uicontrol> column in the form list page, except the final stage. When the workflow is in the final stage, the <uicontrol class="+ topic/ph ui-d/uicontrol ">Pending On User(s)</uicontrol> column is displayed as <uicontrol class="+ topic/ph ui-d/uicontrol ">None</uicontrol>.<note class="- topic/note "> The <uicontrol class="+ topic/ph ui-d/uicontrol ">Pending On User(s)</uicontrol> column is not displayed in the form list by default, you can click <uicontrol class="+ topic/ph ui-d/uicontrol ">Show Pending On User(s)</uicontrol> in the list page ribbon to display <uicontrol class="+ topic/ph ui-d/uicontrol ">Pending On User(s)</uicontrol> column in the form's list page.</note>
+            </li>
+         </ul>
+      </section>
+   </conbody>
+</concept>
