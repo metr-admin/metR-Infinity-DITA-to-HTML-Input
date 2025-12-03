@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xml:lang="en-us"
+           id="r202BDB2-BB02-11F0-1241-09173F13E4C5"
+           ditaarch:DITAArchVersion="1.3"
+           domains="(topic reference)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+           class="- topic/topic       reference/reference ">
+   <title class="- topic/title ">Procedure</title>
+   <prolog class="- topic/prolog ">
+      <author class="- topic/author ">Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-10+05:30"/>
+         <revised modified="2025-11-10+05:30"/>
+      </critdates>
+      <metadata class="- topic/metadata ">
+         <audience type="role" otherprops="maintenance,engineering,operations,network"/>
+         <keywords>
+            <!-- Product -->
+            <indexterm>integrity-fsc-server</indexterm>
+            <indexterm>PIC-PRS</indexterm>
+            <indexterm>COM-SOC II boot</indexterm>
+            <indexterm>telnet-access</indexterm>
+            <indexterm>JES-integration</indexterm>
+            <!-- Process -->
+            <indexterm>pre-change-checklist</indexterm>
+            <indexterm>backup-configuration</indexterm>
+            <indexterm>perform-network-change</indexterm>
+            <indexterm>verify-services-JES-and-telnet</indexterm>
+            <indexterm>COM-SOC-II-boot-procedure</indexterm>
+            <indexterm>capture-logs-and-validate</indexterm>
+            <indexterm>rollback-procedure</indexterm>
+            <!-- Context -->
+            <indexterm>maintenance-window</indexterm>
+            <indexterm>production-impact-assessment</indexterm>
+            <indexterm>operator-confirmation</indexterm>
+            <indexterm>change-ticket (MOC)</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-FES-Space</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Procedure"/>
+         <othermeta name="shortdesc" content="Procedures for safe network/config changes, COM-SOC II booting and post-change verification including JES and Telnet validation."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="internal-network"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="COM-SOC II;Telnet;JES;MOC ticket;system logs;backup configs"/>
+         <othermeta name="taxonomy" content="domain:operations;usecase:maintenance-procedure;industry:glass-manufacturing"/>
+         <othermeta name="tags" content="procedure,COM-SOC-II,network-change,telnet,JES"/>
+         <othermeta name="usecase" content="perform-config-changes-and-validate-boot-and-services"/>
+      </metadata>
+   </prolog>
+   <refbody class="- topic/body        reference/refbody ">
+      <section class="- topic/section ">
+         <ol class="- topic/ol ">
+            <li class="- topic/li ">TCP/IP Configuration<ol class="- topic/ol ">
+                  <li id="li_v4y_hkt_qzb" class="- topic/li ">Connect to the Management Port and then connect to the
+                     Console.</li>
+                  <li class="- topic/li ">Log on as username SYSTEM</li>
+                  <li class="- topic/li ">Start the TCP/IP configuration utility. Command:   @tcpip$config</li>
+                  <li class="- topic/li ">When the first menu displays (Figure <xref href="#r202BDB2-BB02-11F0-1241-09173F13E4C5/fig_iws_jht_qzb" class="- topic/xref ">1</xref>), select <b class="+ topic/ph hi-d/b ">
+                        <i class="+ topic/ph hi-d/i ">Core environment</i>
+                     </b> by typing a
+                        ‘<userinput class="+ topic/ph sw-d/userinput ">1</userinput>’ and pressing <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol>.</li>
+                  <li class="- topic/li ">Set the Domain name by typing ‘<userinput class="+ topic/ph sw-d/userinput ">1</userinput>’ and
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> to begin the dialog. (See Figure <xref href="#r202BDB2-BB02-11F0-1241-09173F13E4C5/fig_ibc_4ht_qzb" class="- topic/xref ">2</xref>.) At the prompt, you can type in a
+                     new domain name to replace “na.Space.intra”. If you wish to leave it alone, just
+                     press <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> and no change will be made. <fig id="fig_iws_jht_qzb" class="- topic/fig ">
+                        <title class="- topic/title "> Figure 1: TCPIP$CONFIG Main Menu</title>
+                        <image href="media/image3.jpg"
+                               placement="break"
+                               id="image_jws_jht_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                     <fig id="fig_ibc_4ht_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 2: TCPIP$CONFIG Core Environment Menu</title>
+                        <image href="media/image4.jpg"
+                               placement="break"
+                               id="image_jbc_4ht_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">To begin changing the IP address, type ‘<userinput class="+ topic/ph sw-d/userinput ">2</userinput>’ and
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> when the Core Environment Menu (Figure <xref href="#r202BDB2-BB02-11F0-1241-09173F13E4C5/fig_ibc_4ht_qzb" class="- topic/xref ">2</xref>) is displayed. Figure <xref href="#r202BDB2-BB02-11F0-1241-09173F13E4C5/fig_ejw_43t_qzb" class="- topic/xref ">3</xref> shows the menu for OpenVMS 8.4. If
+                     your operating system is version 8.3, the choice “0” will be absent. <fig id="fig_ejw_43t_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 3: Interface &amp; Address Configuration Menu</title>
+                        <image href="media/image5.jpg"
+                               placement="break"
+                               id="image_fjw_43t_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Type the number ‘<userinput class="+ topic/ph sw-d/userinput ">2</userinput>’ in the <i class="+ topic/ph hi-d/i ">Interface and Address
+                        Configuration Menu</i>. This selects the pre-configured IP address. The
+                     result will be the menu shown in Figure <xref href="#r202BDB2-BB02-11F0-1241-09173F13E4C5/fig_kq1_w3t_qzb" class="- topic/xref ">4</xref>. <fig id="fig_kq1_w3t_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 4: Address Configuration Menu</title>
+                        <image href="media/image6.jpg"
+                               placement="break"
+                               id="image_lq1_w3t_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">To change the address, type the number ‘<userinput class="+ topic/ph sw-d/userinput ">1</userinput>’ in the <i class="+ topic/ph hi-d/i ">Address
+                        Configuration Menu</i>. The utility will begin a dialog immediately below
+                     the last prompt. An example is shown in Figure <xref href="#r202BDB2-BB02-11F0-1241-09173F13E4C5/fig_vgt_y3t_qzb" class="- topic/xref ">5</xref>. <fig id="fig_vgt_y3t_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 5: Address Configuration Dialog</title>
+                        <image href="media/image7.jpg"
+                               placement="break"
+                               id="image_xgt_y3t_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                     <ol id="ol_zkq_qgt_qzb" class="- topic/ol ">
+                        <li class="- topic/li ">
+                           <note id="note_qgz_rgt_qzb" class="- topic/note ">
+                              <p class="- topic/p ">The first question is always “NO” and can be answered by just
+                                 pressing <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol>. Prompts where there is a
+                                 value in [brackets] will use the enclosed answer as the default by
+                                 pressing only the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key to answer.</p>
+                           </note>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">If you made an error in the information, answering “n” will restart the dialog so
+                     that you can enter corrections. Once you are satisfied, press
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol>.</li>
+                  <li class="- topic/li ">Answer the next two questions with “y” as shown in Figure <xref href="#r202BDB2-BB02-11F0-1241-09173F13E4C5/fig_vgt_y3t_qzb" class="- topic/xref ">5</xref> to complete the IP changes. The menu
+                     shown in Figure <xref href="#r202BDB2-BB02-11F0-1241-09173F13E4C5/fig_ejw_43t_qzb" class="- topic/xref ">3</xref> will be presented
+                     again with the updated information.</li>
+                  <li class="- topic/li ">Type a “<userinput class="+ topic/ph sw-d/userinput ">2</userinput>” to choose the IP <i class="+ topic/ph hi-d/i ">Address Configuration Menu</i>
+                     again. This time the menu in Figure <xref href="#r202BDB2-BB02-11F0-1241-09173F13E4C5/fig_kq1_w3t_qzb" class="- topic/xref ">4</xref> will show the new hostname in option #2.</li>
+                  <li class="- topic/li ">Choose the option #2 Set “&lt;newhostname&gt;” as the default hostname where
+                     &lt;newhostname&gt; is the name you used in the previous change. This will
+                     result in the prompts shown in Figure <xref href="#r202BDB2-BB02-11F0-1241-09173F13E4C5/fig_v1n_fjt_qzb" class="- topic/xref ">6</xref> (below). <fig id="fig_v1n_fjt_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 6: Address Configuration Dialog</title>
+                        <image href="media/image8.jpg"
+                               placement="break"
+                               id="image_w1n_fjt_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Type “<userinput class="+ topic/ph sw-d/userinput ">E</userinput>” to leave the IP <i class="+ topic/ph hi-d/i ">Address Configuration Menu</i>.
+                     This will place you back in the Core Environment Menu (Figure <xref href="#r202BDB2-BB02-11F0-1241-09173F13E4C5/fig_ibc_4ht_qzb" class="- topic/xref ">2</xref>).</li>
+                  <li id="li_qxk_ljt_qzb" class="- topic/li ">Type “<userinput class="+ topic/ph sw-d/userinput ">3</userinput>” (Routing) for the next choice in
+                     the Core Environment Menu. This will cause a long explanation to print out
+                     followed by the question: <p class="- topic/p ">* Do you want to configure dynamic ROUTED or GATED
+                        routing [NO]:</p>
+                  </li>
+                  <li id="li_vwp_ljt_qzb" class="- topic/li ">Answer “no” by just pressing <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol>. The
+                     dialog in Figure <xref href="#r202BDB2-BB02-11F0-1241-09173F13E4C5/fig_n22_3jt_qzb" class="- topic/xref ">7</xref> shows how to add
+                     the correct Default Gateway <fig id="fig_n22_3jt_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 7: Default Gateway Dialog</title>
+                        <image href="media/image9.jpg"
+                               placement="break"
+                               id="image_o22_3jt_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">To confirm whether the gateway address changed, repeat steps <xref href="#r202BDB2-BB02-11F0-1241-09173F13E4C5/li_qxk_ljt_qzb" class="- topic/xref ">14</xref> and <xref href="#r202BDB2-BB02-11F0-1241-09173F13E4C5/li_vwp_ljt_qzb" class="- topic/xref ">15</xref> to see the new address. You can
+                     answer “no” to the prompt that follows the report.</li>
+                  <li class="- topic/li ">This completes the changes to be done in the TCPIP$CONFIG utility. Type the letter
+                        <userinput class="+ topic/ph sw-d/userinput ">E</userinput> and <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> to exit from the
+                     menus to the command line prompt.</li>
+                  <li class="- topic/li ">Start the utility TCPIP by just typing the name “<userinput class="+ topic/ph sw-d/userinput ">tcpip</userinput>” and
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol>.</li>
+                  <li class="- topic/li ">Type the command “show config name” to display the currently configured Domain Name
+                     Services (DNS). If the configuration is OK, you can simply exit (type
+                        ‘<userinput class="+ topic/ph sw-d/userinput ">exit’</userinput>).</li>
+                  <li class="- topic/li ">The next few commands in Figure <xref href="#r202BDB2-BB02-11F0-1241-09173F13E4C5/fig_zc1_wjt_qzb" class="- topic/xref ">8</xref> show
+                     how to change the configuration. <ol class="- topic/ol ">
+                        <li class="- topic/li ">The command switch /nopath= and /noserver= allow you to remove those
+                           parameters. Use the switch /path= to establish one for each potential
+                           domain that exists in your network. Use the switch /server=(IP) to
+                           identify each alternative server where the FSC can try <ol class="- topic/ol ">
+                              <li class="- topic/li ">Tip: Start with the local plant server so that it might work in
+                                 spite of a wide area network problem, and then add the non-local
+                                 servers. (For Space plants, reference SOP-16-001-A for recommended
+                                 DNS servers.)</li>
+                           </ol>
+                        </li>
+                        <li class="- topic/li ">When a user connects to the FSC, the operating system automatically
+                           tries to learn the hostname by asking each reachable DNS server if it
+                           knows. If DNS is not set up correctly, this will result in long waits for
+                           the user while the process times out before it will complete the
+                           connection “anonymously.” <fig id="fig_zc1_wjt_qzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 8: Default Gateway Dialog</title>
+                              <image href="media/image10.jpg"
+                                     placement="break"
+                                     id="image_ad1_wjt_qzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">To put this all into complete effect, reboot the FSC. From the command line prompt,
+                     try typing “<userinput class="+ topic/ph sw-d/userinput ">reboot</userinput>” and
+                     <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol>.</li>
+               </ol>
+            </li>
+            <li class="- topic/li ">DECnet Setup 
+         <ol class="- topic/ol ">
+                  <li class="- topic/li ">If you are using DECnet based COM-SOC II, or will be installing the FSC on a network with other DECnet systems (PIC, MCS), then you should configure the DECnet network.</li>
+                  <li class="- topic/li ">The COM-SOC II will identify the FSC by the DECnet node name and displays this on a screen in the COM-SOC II.  </li>
+                  <li class="- topic/li ">The default setup for DECnet has the node name set to TEMP99 and the address as 1.10  (Area 1, address 10). If you already have a DECnet node running at this address, it will be necessary to change to an address that is not being used.</li>
+                  <li class="- topic/li ">To change the DECnet address, type the following command: <p class="- topic/p ">MC NCP DEFINE EXEC
+                     ADDRESS 1.xxxx</p>
+                     <p class="- topic/p ">(where xxxx is any number between 1 and 1023)</p>
+                  </li>
+                  <li class="- topic/li ">Note that if this FSC is in an Space plant, and replacing an existing FSC, the node names must match to allow the global downtime reporting to continue to function. However, if this is not a replacement FSC, a new name must picked for this computer (skip to part b.).
+            <ol class="- topic/ol ">
+                        <li class="- topic/li ">To view the current DECnet node name on the original FSC, use the command: <fig class="- topic/fig ">
+                              <title class="- topic/title ">MC NCP LIST EXEC</title>
+                              <image href="media/image11.jpg"
+                                     placement="break"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">To change the DECnet node name, use the command below. Note that the name is
+                           limited to 6 letters and numbers and must start with a letter: <p class="- topic/p ">MC NCP
+                              DEFINE EXEC NAME XXXXX</p>
+                           <p class="- topic/p ">where XXXXX is the name of the original
+                              FSC (IDEV99 in the example screen capture) and xxxx is the address of
+                              the Executor. If you changed the Executor address in step <xref href="#r202BDB2-BB02-11F0-1241-09173F13E4C5/li_v4y_hkt_qzb" class="- topic/xref ">1</xref>, use that number, otherwise
+                              it will be 1.10. Note that this address is also displayed with the
+                              command shown in part a above (examples shows 1.16).</p>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">To enable booting of RTVAX-based COM-SOC II, the following is necessary: <p class="- topic/p ">MC NCP
+                        SHOW KNOWN CIRCUIT</p>
+                     <ol class="- topic/ol ">
+                        <li class="- topic/li ">Use the output of this command to identify the supported service circuit
+                           of the system. The following table shows the expected values <simpletable relcolwidth="1* 1*"
+                                        id="simpletable_bzn_hht_qzb"
+                                        class="- topic/simpletable ">
+                              <strow class="- topic/strow ">
+                                 <stentry class="- topic/stentry ">
+                                    <p class="- topic/p ">
+                                       <b class="+ topic/ph hi-d/b ">System Type</b>
+                                    </p>
+                                 </stentry>
+                                 <stentry class="- topic/stentry ">
+                                    <p class="- topic/p ">
+                                       <b class="+ topic/ph hi-d/b ">Expected Circuit</b>
+                                    </p>
+                                 </stentry>
+                              </strow>
+                              <strow class="- topic/strow ">
+                                 <stentry class="- topic/stentry ">
+                                    <p class="- topic/p ">rx2620</p>
+                                 </stentry>
+                                 <stentry class="- topic/stentry ">
+                                    <p class="- topic/p ">EIA-0</p>
+                                 </stentry>
+                              </strow>
+                              <strow class="- topic/strow ">
+                                 <stentry class="- topic/stentry ">
+                                    <p class="- topic/p ">rx2660</p>
+                                 </stentry>
+                                 <stentry class="- topic/stentry ">
+                                    <p class="- topic/p ">EWA-0</p>
+                                 </stentry>
+                              </strow>
+                              <strow class="- topic/strow ">
+                                 <stentry class="- topic/stentry ">
+                                    <p class="- topic/p ">rx2800</p>
+                                 </stentry>
+                                 <stentry class="- topic/stentry ">
+                                    <p class="- topic/p ">EIA-0</p>
+                                 </stentry>
+                              </strow>
+                           </simpletable>
+                        </li>
+                        <li class="- topic/li ">Once the service circuit has been identified, use the following command
+                           to enable booting (note: substitute &lt;circuit&gt; with the correct
+                           service circuit as identified in part a: <p class="- topic/p ">MC NCP DEFINE CIRCUIT
+                              &lt;circuit&gt; SERVICE ENABLED</p>
+                        </li>
+                        <li class="- topic/li ">If you are supporting COM-SOC II on DECnet, the following command is
+                           recommended to provide faster diagnosis by the FSC programs when there is
+                           a communication problem with the machine sections. This command sets the
+                           FSC to be a DECnet router. Please note that using the feature requires a
+                           full-function DECnet license to be loaded on the computer (Product Name:
+                           DVNETEXT). Normally, one VMS system is the router within a plant. <p class="- topic/p ">MC
+                              NCP DEFINE EXEC TYPE ROUTING IV</p>
+                        </li>
+                        <li class="- topic/li ">Once all the changes are made, reboot the FSC to make them take
+                           effect.</li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </section>
+   </refbody>
+</reference>

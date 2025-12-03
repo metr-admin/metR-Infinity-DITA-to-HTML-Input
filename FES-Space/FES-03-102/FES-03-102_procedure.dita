@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xml:lang="en-us"
+           id="r1FBFD5A-BB01-11F0-1440-09173F13E4C5"
+           ditaarch:DITAArchVersion="1.3"
+           domains="(topic reference)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+           class="- topic/topic       reference/reference ">
+   <title class="- topic/title ">Procedure</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates>
+         <created date="2025-11-07+05:30"/>
+         <revised modified="2025-11-07"/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,engineering,safety"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metR-FES-Space</indexterm>
+            <indexterm>forming-supervisory-computer</indexterm>
+            <indexterm>fsc</indexterm>
+            <indexterm>integrity-server</indexterm>
+            <indexterm>recovery-console</indexterm>
+            <!-- Process layer -->
+            <indexterm>pre-tuning-checklist</indexterm>
+            <indexterm>execute-performance-tuning</indexterm>
+            <indexterm>verify-system-integrity</indexterm>
+            <indexterm>post-tuning-validation</indexterm>
+            <indexterm>rollback-and-restoration</indexterm>
+            <!-- Context layer -->
+            <indexterm>glass-manufacturing</indexterm>
+            <indexterm>production-restart</indexterm>
+            <indexterm>low-latency-control</indexterm>
+            <indexterm>operational-safety</indexterm>
+            <indexterm>compliance-records</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-FES-Space</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="FES-03-102 — Procedure"/>
+         <othermeta name="shortdesc" content="Step-by-step procedure for integrity checks and performance tuning on FSC integrity servers, including verification and rollback."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="Pre-tuning Checklist;Tuning Job;Validation Report;Rollback Plan;Restore Point"/>
+         <othermeta name="taxonomy" content="domain:operations;usecase:fsc-integrity-tuning;industry:glass-manufacturing"/>
+         <othermeta name="tags" content="procedure,tuning,validation"/>
+         <othermeta name="usecase" content="procedure"/>
+      </metadata>
+   </prolog>
+   <refbody class="- topic/body        reference/refbody ">
+      <section class="- topic/section ">
+         <ol class="- topic/ol ">
+            <li class="- topic/li ">In order to improve FSC Integrity server performance follow these steps:<ol class="- topic/ol ">
+                  <li class="- topic/li ">If the FSC is a DEC MicroVAX or Compaq Alphaserver, use the console terminal or
+                     PC terminal emulator connected to the console port. The console device is
+                     typically in the immediate vicinity of the FSC. Go to step <xref href="#r1FBFD5A-BB01-11F0-1440-09173F13E4C5/li_qnl_j5x_pzb" class="- topic/xref ">5</xref> when you have identified the console
+                     device. For an Integrity, proceed to step <xref href="#r1FBFD5A-BB01-11F0-1440-09173F13E4C5/li_mfc_j5x_pzb" class="- topic/xref ">2</xref>.</li>
+                  <li id="li_mfc_j5x_pzb" class="- topic/li ">If the FSC is an HP Integrity Server, either use the console
+                     device next to the FSC, or use a terminal emulator to connect to the Integrity
+                     Server Management Port.</li>
+                  <li class="- topic/li ">If necessary, log on as user “Oper” with the password “console”.</li>
+                  <li class="- topic/li ">At the Management Port Main Menu, type “<userinput class="+ topic/ph sw-d/userinput ">co</userinput>” and press
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> to connect to the VMS Console.</li>
+                  <li id="li_qnl_j5x_pzb" class="- topic/li ">Test whether you have keyboard control by typing
+                        <userinput class="+ topic/ph sw-d/userinput ">Ctrl-w</userinput>. If there is a message saying that you have
+                     read-only access, perform the following three-character sequence shown in
+                     parentheses to take control (Ctrl-e, c, f). Hold the Ctrl key down only when
+                     typing the letter “<userinput class="+ topic/ph sw-d/userinput ">e</userinput>”. Type all three characters in the
+                     time it would take to say them out loud.</li>
+                  <li id="li_gbq_lzx_pzb" class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key to test the
+                     response. The console could be logged off in which case you will be prompted
+                     for a Username, or the console could be logged onto the FSC menu by the person
+                     responsible for backups.<ol id="ol_hbq_lzx_pzb" class="- topic/ol ">
+                        <li class="- topic/li ">It is also possible that the console might be still logged on as a
+                           privileged VMS user. If so, type “<userinput class="+ topic/ph sw-d/userinput ">log</userinput>” and press
+                              <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> to log off and then proceed to step <xref href="#r1FBFD5A-BB01-11F0-1440-09173F13E4C5/li_gbq_lzx_pzb" class="- topic/xref ">6</xref>.</li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">If the console was not logged in, type “<userinput class="+ topic/ph sw-d/userinput ">fsc</userinput>” at the
+                     username prompt to log in. Then navigate to the Backup Menu and perform the
+                     appropriate backup within the capabilities of the FSC server model. If the FSC
+                     is an HP Integrity Server with FSC version 6.1-0 or later installed, one option
+                     is to clone the system drive to the backup drive as described in
+                     FES-03-101</li>
+                  <li class="- topic/li ">If the console is already running the FSC user application menu, it might already be at the Backup menu or still waiting for a typed response to complete a backup.  In the case of the latter, respond appropriately to navigate to the Backup menu so that you can start a new backup.    <ol class="- topic/ol ">
+                        <li class="- topic/li ">
+                           <note id="note_iwc_pzx_pzb" class="- topic/note ">
+                              <p class="- topic/p ">If a reliable backup cannot be performed, resolve this problem
+                                 before trying to run AUTOGEN.</p>
+                           </note>
+                        </li>
+                        <li class="- topic/li ">
+                           <note id="note_ebx_rzx_pzb" class="- topic/note ">
+                              <p class="- topic/p ">If you do not have a password to access the Backup procedure and
+                                 there is no one already assigned to make backups, use MOC to add a
+                                 new user and password with the appropriate privilege for
+                                 Backup.</p>
+                           </note>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">Upon making a successful image backup, exit from the FSC user account and start a new session with the SYSTEM username.</li>
+                  <li class="- topic/li ">At the command line prompt (a.k.a. DCL prompt), type the command: <p class="- topic/p ">show
+                     system/sub</p>
+                  </li>
+                  <li class="- topic/li ">Examine the first line reported to ensure that it has been more than seven
+               days since the system was last rebooted. The following example shows a
+               system that has been operating 32 days, 4 hours, 48 minutes, and 36 seconds
+               (the Uptime).
+               <p class="- topic/p ">FSCISX&gt;&gt; show system/sub</p>
+                  </li>
+                  <li class="- topic/li ">If the Uptime is sufficient, initiate the AUTOGEN procedure by typing the following
+                     command at the DCL prompt: <i class="+ topic/ph hi-d/i ">@sys$</i>
+                     <i class="+ topic/ph hi-d/i ">update:autogen</i>
+                     <i class="+ topic/ph hi-d/i ">savparams</i>
+                     <i class="+ topic/ph hi-d/i ">setparams</i>
+                  </li>
+                  <li class="- topic/li ">Monitor all the messages to look for any that have “–E– “ or “–F– “ in the middle of
+                     the all capital letters part of the message. These are indications of problems
+                     which may require expert assistance to resolve. An example of a successful
+                     tuning execution, looks like the following log. The DCL prompt for this system
+                     is “FSCISX&gt;&gt;”. <p class="- topic/p ">FSCISX&gt;&gt; @sys$update:autogen savparams
+                        setparams</p>
+                     <p class="- topic/p ">%AUTOGEN-I-BEGIN, SAVPARAMS phase is
+                        beginning.</p>
+                     <p class="- topic/p ">%AUTOGEN-I-FEEDBACK, Gathering
+                        feedback</p>
+                     <p class="- topic/p ">%DCL-I-IGNQUAL, qualifiers appearing before this item were
+                        ignored</p>
+                     <p class="- topic/p "> \SYMBOL\</p>
+                     <p class="- topic/p ">%AUTOGEN-I-NEWFILE, A new version of
+                        SYS$SYSTEM:AGEN$FEEDBACK.DAT</p>
+                     <p class="- topic/p ">has been created. You may wish to purge
+                        this file.</p>
+                     <p class="- topic/p ">%AUTOGEN-I-END, SAVPARAMS phase has successfully
+                        completed.</p>
+                     <p class="- topic/p ">%AUTOGEN-I-BEGIN, GETDATA phase is
+                        beginning.</p>
+                     <p class="- topic/p ">%RENAME-I-RENAMED, SYS$SYSROOT:[SYSEXE]PARAMS.TMP;1 renamed
+                        to SYS$SYSROOT:[SYSEXE]PARAMS.DAT;6</p>
+                     <p class="- topic/p ">%AUTOGEN-I-NEWFILE, A new version
+                        of SYS$SYSTEM:PARAMS.DAT has been created. </p>
+                     <p class="- topic/p ">You may wish to purge this
+                        file.</p>
+                     <p class="- topic/p ">%AUTOGEN-I-END, GETDATA phase has successfully
+                        completed.</p>
+                     <p class="- topic/p ">%AUTOGEN-I-BEGIN, GENPARAMS phase is
+                        beginning.</p>
+                     <p class="- topic/p ">%AUTOGEN-I-NEWFILE, A new version of
+                        SYS$MANAGER:VMSIMAGES.DAT has been created.</p>
+                     <p class="- topic/p ">You may wish to purge this
+                        file.</p>
+                     <p class="- topic/p ">%AUTOGEN-I-NEWFILE, A new version of SYS$SYSTEM:SETPARAMS.DAT
+                        has been created.</p>
+                     <p class="- topic/p ">You may wish to purge this file.</p>
+                     <p class="- topic/p ">
+                        %AUTOGEN-I-END, GENPARAMS phase has successfully
+                        completed.</p>
+                     <p class="- topic/p ">%AUTOGEN-I-BEGIN, GENFILES phase is
+                        beginning.</p>
+                     <p class="- topic/p ">Computed size: 1743854; current size:
+                        989928</p>
+                     <p class="- topic/p ">%SYSGEN-I-EXTENDED, DKA100:[SYS0.SYSEXE]SYSDUMP.DMP;2
+                        extended</p>
+                     <p class="- topic/p ">%SYSGEN-I-EXTENDED, DKA100:[SYS0.SYSEXE]SYSDUMP.DMP;2
+                        extended</p>
+                     <p class="- topic/p ">Computed size: 86100; current size:
+                        107800</p>
+                     <p class="- topic/p ">%SYSGEN-I-CREATED, SYS$SYSROOT:[SYSEXE]SWAPFILE.SYS;3
+                        created</p>
+                     <p class="- topic/p ">%AUTOGEN-I-REPORT, AUTOGEN has produced some informational
+                        messages which</p>
+                     <p class="- topic/p ">have been stored in the file
+                        SYS$SYSTEM:AGEN$PARAMS.REPORT. You may</p>
+                     <p class="- topic/p ">wish to review the information
+                        in that file.</p>
+                     <p class="- topic/p ">%AUTOGEN-I-END, GENFILES phase has successfully
+                        completed.</p>
+                     <p class="- topic/p ">%AUTOGEN-I-BEGIN, SETPARAMS phase is
+                        beginning.</p>
+                     <p class="- topic/p ">%AUTOGEN-I-SYSGEN, parameters
+                        modified</p>
+                     <p class="- topic/p ">%AUTOGEN-I-END, SETPARAMS phase has successfully
+                        completed.</p>
+                     <p class="- topic/p ">FSCISX&gt;&gt;</p>
+                  </li>
+                  <li class="- topic/li ">If the tuning was successful, log off the session and coordinate with the users to schedule a system reboot.</li>
+                  <li class="- topic/li ">To reboot the system, first log onto the console terminal as user “fsc”. Then
+                     navigate to the Utilities menu and select the<uicontrol class="+ topic/ph ui-d/uicontrol "> Shutdown/Reboot
+                        System</uicontrol> option.</li>
+               </ol>
+            </li>
+         </ol>
+      </section>
+   </refbody>
+</reference>

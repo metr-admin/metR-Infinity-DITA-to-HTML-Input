@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xml:lang="en-us"
+           id="r206A130-BB02-11F0-1728-09173F13E4C5"
+           ditaarch:DITAArchVersion="1.3"
+           domains="(topic reference)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+           class="- topic/topic       reference/reference ">
+   <title class="- topic/title ">Procedure</title>
+   <prolog class="- topic/prolog ">
+      <author class="- topic/author ">Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-10+05:30"/>
+         <revised modified="2025-11-10+05:30"/>
+      </critdates>
+      <metadata class="- topic/metadata ">
+         <audience type="role" otherprops="maintenance,engineering,operations,network"/>
+         <keywords>
+            <!-- Product -->
+            <indexterm>forming-machine-server-configuration</indexterm>
+            <indexterm>SCS-0716-GR01</indexterm>
+            <indexterm>machine-ID-assignment</indexterm>
+            <indexterm>I/O-mapping</indexterm>
+            <indexterm>firmware-apply</indexterm>
+            <!-- Process -->
+            <indexterm>factory-default-restore</indexterm>
+            <indexterm>configure-network-interfaces</indexterm>
+            <indexterm>import-parameter-set</indexterm>
+            <indexterm>calibrate-I/O</indexterm>
+            <indexterm>validate-communication-links</indexterm>
+            <indexterm>restart-services</indexterm>
+            <indexterm>record-configuration-checksum</indexterm>
+            <indexterm>operational-acceptance-test (OAT)</indexterm>
+            <!-- Context -->
+            <indexterm>commissioning-window</indexterm>
+            <indexterm>production-readiness</indexterm>
+            <indexterm>SOP-referenced-reset</indexterm>
+            <indexterm>plant-network-integration</indexterm>
+            <indexterm>machine-startup</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-FES-Space</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Procedure"/>
+         <othermeta name="shortdesc" content="Step-by-step configuration: restore factory defaults (if required), set IPs, assign machine ID, import parameter sets, calibrate I/O, validate links, run OAT and record checksums."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="internal-network"/>
+         <othermeta name="entities" content="configuration files;I/O modules;network interfaces;service daemons;checksum logs"/>
+         <othermeta name="taxonomy" content="domain:operations;usecase:configuration-procedure;industry:glass-manufacturing"/>
+         <othermeta name="tags" content="procedure,configuration,network,IO,validation"/>
+         <othermeta name="usecase" content="execute-machine-server-configuration-and-validation"/>
+      </metadata>
+   </prolog>
+   <refbody class="- topic/body        reference/refbody ">
+      <section class="- topic/section ">
+         <ol class="- topic/ol ">
+            <li class="- topic/li ">In The initial configuration of the server (SCS-0716 or equivalent) is a “generic” setup. For this reason, when a server is sent to a factory, additional specific configuration is required. Any modifications done to the server that are not described in this procedure can result in complications which might affect functionality. It is not recommended to change the regional settings of Windows.</li>
+            <li class="- topic/li ">The following configuration checklist presents the steps necessary to configure the Forming Machine Server for operation (as presented in this document):<ol class="- topic/ol ">
+                  <li class="- topic/li ">Configuration Checklist<ol class="- topic/ol ">
+                        <li class="- topic/li ">Connect the server to the plant network and the machine network.</li>
+                        <li class="- topic/li ">Run MSDiagnostics to change the IP address and the computer name.</li>
+                        <li class="- topic/li ">Verify DHCP is functional</li>
+                        <li class="- topic/li ">Change the website bindings (Windows Server 2003 systems only).</li>
+                        <li class="- topic/li ">Install and activate the application software (SOP-06-007-C).</li>
+                        <li class="- topic/li ">Install the virus scan software (SOP-15-004-C) (Space Plants only).</li>
+                        <li class="- topic/li ">Install necessary Windows Updates</li>
+                        <li class="- topic/li ">Run the SCS setup program.</li>
+                        <li class="- topic/li ">Set the correct time, date, and time zone.</li>
+                        <li class="- topic/li ">Register ActiveX Controls.</li>
+                        <li class="- topic/li ">Run the backup configuration utility (not performed on the backup server).</li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+            <li class="- topic/li ">
+               <b class="+ topic/ph hi-d/b ">Connect the Server to the Plant Network and the Machine Network</b>
+               <ol class="- topic/ol ">
+                  <li class="- topic/li ">Plug one end of an Ethernet cable into port 1 (on the left) at the back of the
+                     server (see REF _Ref435793918 \h \* MERGEFORMAT Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_yqm_yzy_qzb" class="- topic/xref ">1</xref> and REF _Ref435794015 \h \*
+                     MERGEFORMAT Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_t5z_11z_qzb" class="- topic/xref ">2</xref>), and
+                     plug the other end into the network drop which is connected to the plant-wide
+                     network. <note id="note_br3_lcz_qzb" class="- topic/note ">
+                        <p class="- topic/p ">The drop must be active.</p>
+                     </note>
+                  </li>
+                  <li class="- topic/li ">Plug one end of another Ethernet cable into port 2 (on the right) at the back of the server, and plug the other end into any port of the multi-port switch.</li>
+                  <li class="- topic/li ">Plug in the power cable of the switch. <fig id="fig_yqm_yzy_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 1: Machine Server Network Connections </title>
+                        <image href="media/image1.jpg"
+                               placement="break"
+                               id="image_arm_yzy_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                     <fig id="fig_t5z_11z_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 2: Machine Server Network Connections for SEP-3-562</title>
+                        <image href="media/image2.jpg"
+                               placement="break"
+                               id="image_u5z_11z_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                     <note class="- topic/note ">
+                        <p class="- topic/p ">Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_yqm_yzy_qzb" class="- topic/xref ">1</xref> is valid for
+                           SCS-3-414-D and SCS-3-414-E. Older servers have an add-on board for the
+                           machine network located below the connections shown. Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_t5z_11z_qzb" class="- topic/xref ">2</xref> shows the ports on
+                           SEP-3-562. The machine network connection has a yellow network  cable</p>
+                     </note>
+                  </li>
+               </ol>
+            </li>
+            <li class="- topic/li ">
+               <b class="+ topic/ph hi-d/b ">Run MSDiagnostics to Change the IP Address and the Computer Name</b>
+               <ol class="- topic/ol ">
+                  <li class="- topic/li ">Log onto the obsetup account (password <b class="+ topic/ph hi-d/b ">SetupServer</b>).</li>
+                  <li class="- topic/li ">Enter the MSDiagnostics program by clicking on <b class="+ topic/ph hi-d/b ">Start&gt; Machine Server
+                        Applications&gt; MSDiagnostics</b>.</li>
+                  <li class="- topic/li ">The MSDiagnostics window will open, prompting for a password. Type
+                           <b class="+ topic/ph hi-d/b ">
+                        <userinput class="+ topic/ph sw-d/userinput ">scsgolden</userinput>
+                     </b> and press the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key.</li>
+                  <li class="- topic/li ">The Machine Server Diagnostics window will be displayed, as shown in REF
+                     _Ref435794113 \h \* MERGEFORMAT Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_tv4_h1z_qzb" class="- topic/xref ">3</xref>. Click on the
+                        ‘<uicontrol class="+ topic/ph ui-d/uicontrol ">Initial MDMS Setup</uicontrol>’ tab and enter a unique name to
+                     identify the server (for example: <b class="+ topic/ph hi-d/b ">A3MachineServer)</b> in the field labeled
+                     ‘New Computer Name.’</li>
+                  <li class="- topic/li ">Click on the network adapter that is connected to the Machine Network (this
+                     will be the first network adapter radio button, labeled <b class="+ topic/ph hi-d/b ">Adapter
+                     #1</b>).</li>
+                  <li class="- topic/li ">Enter the <userinput class="+ topic/ph sw-d/userinput ">IP address</userinput> that has been assigned for the
+                     server in the IP Address fields. Enter the <userinput class="+ topic/ph sw-d/userinput ">Default Gateway field
+                        address</userinput> as the same first three octets used for the Plant
+                     Network IP address. The fourth (last) octet will be <b class="+ topic/ph hi-d/b ">1</b>(numeral one). For
+                     example, if the Plant IP address is 10.126.12.101, then the Default Gateway IP
+                     address will be 10.126.12.1.</li>
+                  <li class="- topic/li ">Obtain the IP addresses for the Primary and Secondary DNS Servers and enter
+                     them into the appropriate boxes. <note class="- topic/note ">
+                        <p class="- topic/p ">This step is necessary for anti-virus updates to function.</p>
+                     </note>
+                     <fig id="fig_tv4_h1z_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 3: Initial MDMS Network Setup Screen</title>
+                        <image href="media/image3.jpg"
+                               placement="break"
+                               id="image_vv4_h1z_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">When finished, click on the <uicontrol class="+ topic/ph ui-d/uicontrol ">APPLY SETTINGS</uicontrol> button.</li>
+                  <li class="- topic/li ">A status window will display the progress of the changes being made. When the
+                     changes are completed, the bottom line will display the message: ‘<b class="+ topic/ph hi-d/b ">MDMS
+                        CONFIGURATION COMPLETE</b>,’ as shown in REF _Ref435794876 \h \* MERGEFORMAT
+                     Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_w4b_k1z_qzb" class="- topic/xref ">4</xref>.<fig id="fig_w4b_k1z_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 4: Network Settings Being Applied</title>
+                        <image href="media/image4.jpg"
+                               placement="break"
+                               id="image_x4b_k1z_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Click on the <uicontrol class="+ topic/ph ui-d/uicontrol ">Close</uicontrol> button, which will display the main
+                     page.</li>
+                  <li class="- topic/li ">Click on the <uicontrol class="+ topic/ph ui-d/uicontrol ">Exit</uicontrol> Button located on the main page (see
+                     REF _Ref435794981 \h \* MERGEFORMAT Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_qhn_n1z_qzb" class="- topic/xref ">5</xref>). <fig id="fig_qhn_n1z_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 5: Exit Button on the Main Page</title>
+                        <image href="media/image5.jpg"
+                               placement="break"
+                               id="image_shn_n1z_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Clicking the <uicontrol class="+ topic/ph ui-d/uicontrol ">Exit</uicontrol> button initiates a process that
+                     displays several command line windows while the controls are being registered
+                     and enabled on the system. Once the controls are registered and enabled, the
+                     system then automatically starts several forming system’s applications (for
+                     example FSC2COMSOC.exe, MSGAgent.exe, MDB_Agent.exe, and BDSAgent.exe).<note id="note_ov2_jdz_qzb" class="- topic/note ">
+                        <p class="- topic/p "> This is new behavior associated with Software Set 222</p>
+                     </note>
+                  </li>
+                  <li class="- topic/li ">It will now be necessary to stop the automatically started forming system
+                     applications and close their setup windows. Wait several minutes to insure that
+                     the command windows have all completed their execution (see REF _Ref435795121
+                     \h \* MERGEFORMAT Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_sgk_t1z_qzb" class="- topic/xref ">8</xref>),
+                     and then stop and close each application window one-by-one. As an example, REF
+                     _Ref435795033 \h \* MERGEFORMAT Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_llj_p1z_qzb" class="- topic/xref ">6</xref> shows the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Stop</uicontrol> button that is used for stopping the
+                     FSC2COMSOC.exe application. <fig id="fig_llj_p1z_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 6: Stopping a Forming Systems Application.</title>
+                        <image href="media/image6.jpg"
+                               placement="break"
+                               id="image_mlj_p1z_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Once each application has been stopped, close the associated setup window by
+                     clicking the <uicontrol class="+ topic/ph ui-d/uicontrol ">X</uicontrol> located in the upper right-hand corner of
+                     the title bar (see REF _Ref435795158 \h \* MERGEFORMAT Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_pps_r1z_qzb" class="- topic/xref ">7</xref>) <fig id="fig_pps_r1z_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 7: Exiting a Forming Systems Application</title>
+                        <image href="media/image7.jpg"
+                               placement="break"
+                               id="image_qps_r1z_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                     <note class="- topic/note ">
+                        <p class="- topic/p ">Confirm that all command windows are displaying prompts similar to those
+                           shown in Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_sgk_t1z_qzb" class="- topic/xref ">8</xref>,
+                           indicating that the command has been fully executed and the controls have
+                           been registered and enabled before closing them. Closing command prompt
+                           windows before their commands have executed completely prevents that
+                           control from being registered and enabled.</p>
+                     </note>
+                     <fig id="fig_sgk_t1z_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 8: Completed DOS window</title>
+                        <image href="media/image8.jpg"
+                               placement="break"
+                               id="image_tgk_t1z_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Next, a pop-up window will be displayed prompting for a server reboot. Click
+                     on the <uicontrol class="+ topic/ph ui-d/uicontrol ">OK</uicontrol> button (see REF _Ref435795247 \h \*
+                     MERGEFORMAT Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_yff_v1z_qzb" class="- topic/xref ">9</xref>) <fig id="fig_yff_v1z_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 9: Reboot Prompt</title>
+                        <image href="media/image9.jpg"
+                               placement="break"
+                               id="image_zff_v1z_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Consult SOP-16-002-A (Updating DNS Information to the Current Space Global
+                     Standard) to ensure DNS services are properly configured.</li>
+               </ol>
+            </li>
+            <li class="- topic/li ">
+               <b class="+ topic/ph hi-d/b ">Verify DHCP is Functional</b>
+               <ol class="- topic/ol ">
+                  <li class="- topic/li ">After the reboot, log out of <b class="+ topic/ph hi-d/b ">Obop</b> and log back in as <b class="+ topic/ph hi-d/b ">Obdev</b>.</li>
+                  <li class="- topic/li ">Enter the MSDiagnostics program by clicking on <uicontrol class="+ topic/ph ui-d/uicontrol ">Start&gt; Machine Server
+                        Applications&gt; MSDiagnostics</uicontrol>.</li>
+                  <li class="- topic/li ">The MSDiagnostics window will open, prompting for a password. Type
+                           <b class="+ topic/ph hi-d/b ">
+                        <userinput class="+ topic/ph sw-d/userinput ">scsgolden</userinput>
+                     </b> and press the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key.</li>
+                  <li class="- topic/li ">Navigate to the DHCP tab to check operation of the DHCP server. Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_vsr_x1z_qzb" class="- topic/xref ">10</xref> below shows a broken DHCP
+                     configuration. <fig id="fig_vsr_x1z_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 10: Failed DHCP</title>
+                        <image href="media/image10.jpg"
+                               placement="break"
+                               id="image_wsr_x1z_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">If the DHCP tab shows “<b class="+ topic/ph hi-d/b ">No Information Available</b>,” as shown in Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_vsr_x1z_qzb" class="- topic/xref ">10</xref>, then click the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Configure</uicontrol> button to restore the DHCP configuration. <note class="- topic/note ">
+                        <p class="- topic/p ">MS Diagnostics will not give any indication while it is correcting the
+                           DHCP configuration. DHCP is functional when the DHCP tab appears, as
+                           shown in Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_c2n_cbz_qzb" class="- topic/xref ">11</xref>
+                        </p>
+                     </note>
+                     <fig id="fig_c2n_cbz_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 11: Functional DHCP</title>
+                        <image href="media/image11.jpg"
+                               placement="break"
+                               id="image_d2n_cbz_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+               </ol>
+            </li>
+            <li class="- topic/li ">
+               <b class="+ topic/ph hi-d/b ">Change the Website Bindings (Windows Server 2003 Systems Only)</b>
+               <note class="- topic/note ">
+                  <p class="- topic/p ">This section pertains to Server 2003 installations, only.</p>
+               </note>
+               <ol class="- topic/ol ">
+                  <li class="- topic/li ">If logged onto the operator account, log out of <b class="+ topic/ph hi-d/b ">Obop</b> and log back in as
+                        <b class="+ topic/ph hi-d/b ">Obdev</b>. Check the webserver bindings (important for the operation of
+                     the Space Servo Control System) by clicking the <uicontrol class="+ topic/ph ui-d/uicontrol ">Internet Explorer
+                        icon</uicontrol> on the Start menu. If the Website does not display, it will
+                     be necessary to manually change the webserver bindings. To do this, browse to
+                     Start Menu, Programs, Administrative Tools, and then then double-click on
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">IIS Services Manager</uicontrol>.</li>
+                  <li class="- topic/li ">Expand the <b class="+ topic/ph hi-d/b ">Internet
+                        Information Services Node</b>. Expand the <b class="+ topic/ph hi-d/b ">Server Node</b>. Then, expand <b class="+ topic/ph hi-d/b ">Web Sites</b>.
+                     Right-click on the <uicontrol class="+ topic/ph ui-d/uicontrol ">SpaceRemote
+                        Website</uicontrol> (displayed on the right) and then display the <b class="+ topic/ph hi-d/b ">SpaceRemote Properties</b>. Click on the
+                        “<uicontrol class="+ topic/ph ui-d/uicontrol ">Advanced…</uicontrol>” button
+                     next to IP Address to modify the bindings (see REF _Ref435796581 \h \*
+                     MERGEFORMAT). </li>
+                  <li class="- topic/li ">Confirm that 10.126.10.XX (the plant network) is displayed
+                     first in the listing, and 192.168.167. </li>
+                  <li class="- topic/li ">If the display order is not correct, remove 192.168.167.48 and then re-add it
+                     with the Add/Edit Web Site Identification menu (see REF _Ref435796709 \h \*
+                     MERGEFORMAT Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_oqw_hbz_qzb" class="- topic/xref ">14</xref>). This
+                     should now display it as the second listing in the box. <fig id="fig_oqw_hbz_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 14: Adding Binding Information</title>
+                        <image href="media/image14.jpg"
+                               placement="break"
+                               id="image_pqw_hbz_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Now, highlight the <b class="+ topic/ph hi-d/b ">SpaceRemote Website</b> in the Internet Information Services Manager. Click
+                     the <uicontrol class="+ topic/ph ui-d/uicontrol ">Stop</uicontrol> radio button
+                     and then click the <uicontrol class="+ topic/ph ui-d/uicontrol ">Start
+                        radio</uicontrol> button to restart the website. <note id="note_hy5_v2z_qzb" class="- topic/note ">
+                        <p class="- topic/p ">An alternate method is to open a command prompt
+                           window, type <b class="+ topic/ph hi-d/b ">
+                              <userinput class="+ topic/ph sw-d/userinput ">iisrestart</userinput>
+                           </b>, and then press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key.</p>
+                     </note>
+                  </li>
+               </ol>
+            </li>
+            <li id="li_opd_kgz_qzb" class="- topic/li ">
+               <b class="+ topic/ph hi-d/b ">Install and Activate the Application Software (SCS-0237)</b>
+               <ol id="ol_tpd_kgz_qzb" class="- topic/ol ">
+                  <li class="- topic/li ">Execute document FES-03-115 to install and activate the latest version of the
+                     Machine Server software (SCS-0237).</li>
+               </ol>
+            </li>
+            <li class="- topic/li ">
+               <b class="+ topic/ph hi-d/b ">Install the Virus Scan Software (SOP-15-004-C) (Space
+                  Plants only)</b>
+               <ol class="- topic/ol ">
+                  <li class="- topic/li ">Execute SOP-15-004-C to install Antivirus Software. <note class="- topic/note ">
+                        <p class="- topic/p ">This procedure is intended for Space Plants only. The
+                           expectation is that Licensee plants will install antivirus software at
+                           this time, per instructions and with licenses provided by their IT
+                           departments. </p>
+                     </note>
+                  </li>
+               </ol>
+            </li>
+            <li class="- topic/li ">
+               <b class="+ topic/ph hi-d/b ">Install necessary Windows Updates</b>
+               <ol class="- topic/ol ">
+                  <li class="- topic/li ">Review relevant process control bulletins (example PCB-17-003) for any Windows Server OS patches that must be installed to protect the company’s network.  Alternatively, the Windows Updates top level folder of the Space Manufacturing Software Download Site can be reviewed for updates to be applied. As of September 2018, there are two that are still relevant for the Machine Server, Conficker (Windows Server 2003 only) and WannaCrypt (applies to Windows Server 2003 and 2008).</li>
+               </ol>
+            </li>
+            <li class="- topic/li ">
+               <b class="+ topic/ph hi-d/b ">Run the SCS Setup Program</b>
+               <ol class="- topic/ol ">
+                  <li class="- topic/li ">The SCS Setup program is used to accurately configure which forming electronic systems are on the machine for the Machine Server to load. Consult the Machine Server User’s Manual (SCS-0288) for instructions on using SCS Setup.</li>
+               </ol>
+            </li>
+            <li class="- topic/li ">
+               <b class="+ topic/ph hi-d/b ">Set the Correct Time, Date, and Time Zone</b>
+               <ol class="- topic/ol ">
+                  <li class="- topic/li ">Log onto the Administrator account.</li>
+                  <li class="- topic/li ">Double-click on the time/date display in the bottom-right corner of the screen and set the time, the date, and the time zone for the desired location</li>
+               </ol>
+            </li>
+            <li class="- topic/li ">
+               <b class="+ topic/ph hi-d/b ">Register ActiveX Controls</b>
+               <ol class="- topic/ol ">
+                  <li class="- topic/li ">Check the status of the ActiveX controls used by the NUI by opening the webpage
+                     and then selecting the monitor in the lower left of the screen (see REF
+                     _Ref435796797 \h \* MERGEFORMAT Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_t3r_jbz_qzb" class="- topic/xref ">15</xref>). <fig id="fig_t3r_jbz_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 15: NUI Webpage</title>
+                        <image href="media/image15.jpg"
+                               placement="break"
+                               id="image_u3r_jbz_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Next, press the <uicontrol class="+ topic/ph ui-d/uicontrol ">ActiveX Verification</uicontrol> tab and the screen
+                     will be shown as in REF _Ref435797322 \h \* MERGEFORMAT Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_dxr_zbz_qzb" class="- topic/xref ">16</xref>. If the screen appears as
+                     shown in REF _Ref435797835 \h \* MERGEFORMAT Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_yxc_gcz_qzb" class="- topic/xref ">20</xref>, the ActiveX controls are
+                     properly registered and no further action is necessary for this section <fig id="fig_dxr_zbz_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 16: NUI Webpage Showing ActiveX Not Installed</title>
+                        <image href="media/image16.jpg"
+                               placement="break"
+                               id="image_exr_zbz_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">On the “Information Bar” popup, click the “<uicontrol class="+ topic/ph ui-d/uicontrol ">Don’t show this message
+                        again box</uicontrol>” and press the <uicontrol class="+ topic/ph ui-d/uicontrol ">close</uicontrol> button to
+                     get rid of the popup, which will leave the screen in the state shown in REF
+                     _Ref435797387 \h \* MERGEFORMAT Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_cgg_bcz_qzb" class="- topic/xref ">17</xref>. <fig id="fig_cgg_bcz_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 17: NUI Webpage Showing ActiveX Not Installed</title>
+                        <image href="media/image17.jpg"
+                               placement="break"
+                               id="image_dgg_bcz_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Left-click in the left-hand white box, and select “<b class="+ topic/ph hi-d/b ">Install ActiveX
+                        Control…</b>” (also shown in REF _Ref435797387 \h \* MERGEFORMAT Figure
+                        <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_cgg_bcz_qzb" class="- topic/xref ">17</xref>). Once this is done,
+                     the first step of installing ActiveX will be completed, and the NUI Webpage
+                     will return to the page shown in REF _Ref435796797 \h \* MERGEFORMAT Figure
+                        <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_t3r_jbz_qzb" class="- topic/xref ">15</xref>. Return to the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">ActiveX Status</uicontrol> tab again to complete the
+                     installation, as shown in REF _Ref435797739 \h \* MERGEFORMAT Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_jmv_ccz_qzb" class="- topic/xref ">18</xref>. <fig id="fig_jmv_ccz_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 18: Completing the ActiveX Installation</title>
+                        <image href="media/image18.jpg"
+                               placement="break"
+                               id="image_kmv_ccz_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Click the <uicontrol class="+ topic/ph ui-d/uicontrol ">install</uicontrol> buttons as they are displayed (see REF
+                     _Ref435797822 \h \* MERGEFORMAT Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_lfk_2cz_qzb" class="- topic/xref ">19</xref> and REF _Ref435797835 \h \*
+                     MERGEFORMAT Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_yxc_gcz_qzb" class="- topic/xref ">20</xref>). <fig id="fig_lfk_2cz_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 19: Completing the ActiveX Installation, Part 2</title>
+                        <image href="media/image19.jpg"
+                               placement="break"
+                               id="image_mfk_2cz_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                     <fig id="fig_yxc_gcz_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 20: Completing the ActiveX Installation, Part 3</title>
+                        <image href="media/image20.jpg"
+                               placement="break"
+                               id="image_zxc_gcz_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Finally, click the <uicontrol class="+ topic/ph ui-d/uicontrol ">X</uicontrol> on the Microsoft License Manager to
+                     skip its installation, and then click on the <uicontrol class="+ topic/ph ui-d/uicontrol ">home</uicontrol> button
+                     to return to the main NUI webpage. Display the <b class="+ topic/ph hi-d/b ">ActiveX Status</b> tab to
+                     verify that the ActiveX controls have been properly installed. The screen
+                     should appear as shown in REF _Ref435797890 \h \* MERGEFORMAT Figure <xref href="#r206A130-BB02-11F0-1728-09173F13E4C5/fig_fcr_hcz_qzb" class="- topic/xref ">21</xref> if the ActiveX controls were
+                     successfully installed. <fig id="fig_fcr_hcz_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 21: ActiveX Controls Correctly Installed</title>
+                        <image href="media/image21.jpg"
+                               placement="break"
+                               id="image_gcr_hcz_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+               </ol>
+            </li>
+            <li class="- topic/li ">
+               <b class="+ topic/ph hi-d/b ">Run the Backup Configuration Utility (not performed on the Backup Server)</b>
+               <ol class="- topic/ol ">
+                  <li class="- topic/li ">Consult the Machine Server User’s Manual (SCS-0288) for instructions on configuring the Machine Server Backups.
+                  <note class="- topic/note ">
+                        <p class="- topic/p ">This procedure is not performed on the backup Machine Server.</p>
+                     </note>
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </section>
+   </refbody>
+</reference>

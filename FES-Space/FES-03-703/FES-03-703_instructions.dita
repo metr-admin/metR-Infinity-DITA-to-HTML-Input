@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xml:lang="en-us"
+           id="r2169F6F-BB02-11F0-1354-09173F13E4C5"
+           ditaarch:DITAArchVersion="1.3"
+           domains="(topic reference)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+           class="- topic/topic       reference/reference ">
+   <title class="- topic/title ">Instructions</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates>
+         <created date="2025-11-11+05:30"/>
+         <revised modified="2025-11-11+05:30"/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>ois-03261-installation</indexterm>
+            <indexterm>feeder-bracket-mount</indexterm>
+            <indexterm>servo-encoder-sync</indexterm>
+            <indexterm>signal-conditioning-module</indexterm>
+            <indexterm>plc-digital-input</indexterm>
+            <indexterm>m12-shielded-cable</indexterm>
+            <indexterm>alignment-jig-usage</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>stepwise-mounting-sequence</indexterm>
+            <indexterm>sensor-orientation-adjustment</indexterm>
+            <indexterm>gap-setting-procedure</indexterm>
+            <indexterm>sync-pulse-verification</indexterm>
+            <indexterm>trigger-threshold-configuration</indexterm>
+            <indexterm>debounce-parameter-tuning</indexterm>
+            <indexterm>final-operational-check</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>shear-cut-synchronization</indexterm>
+            <indexterm>gob-timing-verification</indexterm>
+            <indexterm>production-startup-checklist</indexterm>
+            <indexterm>line-acceptance-criteria</indexterm>
+            <indexterm>in-situ-calibration</indexterm>
+            <indexterm>on-machine-verification</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-FES-Space</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Instructions"/>
+         <othermeta name="shortdesc" content="Step-by-step work instruction for mounting, aligning, wiring, configuring and verifying the OIS-03261 proximity sensor for gob/shear synchronization."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="mounting hardware;alignment procedure;plc inputs;signal parameters;debounce settings;test checklist"/>
+         <othermeta name="taxonomy" content="domain:industrial-procedures;usecase:sensor-installation;industry:glass-manufacturing"/>
+         <othermeta name="tags" content="step-by-step,instruction,alignment-procedure,signal-configuration,verification-checks"/>
+         <othermeta name="usecase" content="Provide precise installation and verification steps to ensure correct sensor alignment and timing"/>
+      </metadata>
+   </prolog>
+   <refbody class="- topic/body        reference/refbody ">
+      <section class="- topic/section ">
+         <ol class="- topic/ol ">
+            <li class="- topic/li ">Before starting the work instruction activity, perform the following steps:<ol class="- topic/ol ">
+                  <li class="- topic/li ">Do not begin these tasks without confirmation that personnel directly involved have completed the required training associated with the work instruction activity and have reviewed this document.</li>
+                  <li class="- topic/li ">Gather necessary tools and equipment as identified below in the Equipment Section</li>
+                  <li class="- topic/li ">Wear and use additional Personal Protective Equipment (PPE) and safety equipment required for this specific work instruction. </li>
+                  <li class="- topic/li ">Obey all applicable safety requirements and procedures.</li>
+                  <li class="- topic/li ">Follow all Lockout/Tagout procedures when work instruction activity requires isolating energy in the designated area. Verify energy is isolated before starting work.</li>
+               </ol>
+            </li>
+            <li id="li_dmt_zkg_rzb" class="- topic/li ">For a Servo Gob Distributor with a mechanical feeder mechanism and
+               a mechanical shear mechanism, perform the following steps: <note id="note_emt_zkg_rzb" class="- topic/note ">
+                  <p class="- topic/p ">If the Servo Gob Distributor has a mechanical feeder mechanism and a Servo
+                     Parallel Shears mechanism, use Section <xref href="#r2169F6F-BB02-11F0-1354-09173F13E4C5/li_apx_5kg_rzb" class="- topic/xref ">3.3</xref>
+                  </p>
+               </note>
+               <ol id="ol_fmt_zkg_rzb" class="- topic/ol ">
+                  <li class="- topic/li ">Mount the target, sensor, and bracket on the feeder mechanism. Refer to
+                     drawing OIS-03261</li>
+                  <li id="li_a31_xkg_rzb" class="- topic/li ">Rotate the feeder mechanism until the "0" degree line of
+                     the shear cam is directly perpendicular to the lever arm cam follower
+                     roller.</li>
+                  <li id="li_egk_xkg_rzb" class="- topic/li ">Rotate the target around the shear cam shaft in the
+                     direction of normal rotation until the sensor senses the target, and the red
+                     LED just starts to turn on.</li>
+                  <li class="- topic/li ">Verify that the cam and cam follower did not move from its proper relationship
+                     while rotating the target. <ol id="ol_gmt_zkg_rzb" class="- topic/ol ">
+                        <li class="- topic/li ">If movement occurred, repeat steps <xref href="#r2169F6F-BB02-11F0-1354-09173F13E4C5/li_a31_xkg_rzb" class="- topic/xref ">2</xref> and <xref href="#r2169F6F-BB02-11F0-1354-09173F13E4C5/li_egk_xkg_rzb" class="- topic/xref ">3</xref>.</li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">When everything is in the proper position, tighten down the target.</li>
+               </ol>
+            </li>
+            <li id="li_apx_5kg_rzb" class="- topic/li ">For a Servo Gob Distributor with a mechanical feeder mechanism and
+               a Servo Parallel Shears mechanism, perform the following steps: <note id="note_dpx_5kg_rzb" class="- topic/note ">
+                  <p class="- topic/p ">If the Servo Gob Distributor has a mechanical feeder mechanism and a mechanical
+                     shear mechanism, use Section <xref href="#r2169F6F-BB02-11F0-1354-09173F13E4C5/li_dmt_zkg_rzb" class="- topic/xref ">3.2</xref>.
+                  </p>
+               </note>
+               <ol id="ol_epx_5kg_rzb" class="- topic/ol ">
+                  <li class="- topic/li ">Mount the target, sensor, and bracket on the feeder mechanism. Refer to
+                     drawing OIS-03261.</li>
+                  <li class="- topic/li ">Display the Motor/Resolver Test Menu for the Servo Parallel Shears. <ol id="ol_fpx_5kg_rzb" class="- topic/ol ">
+                        <li class="- topic/li ">At the Main Operator Display Station, select the Servo Parallel Shears
+                           Main Menu.</li>
+                        <li class="- topic/li ">Press the<uicontrol class="+ topic/ph ui-d/uicontrol "> UTILITY MENU</uicontrol> button. The Utility Menu
+                           will appear.</li>
+                        <li class="- topic/li ">Select the FIELD I/O TEST menu in the Utility Menu. Then, press the
+                              <uicontrol class="+ topic/ph ui-d/uicontrol ">ENTER</uicontrol> button. The Field I/O Test Menu will
+                           appear.</li>
+                        <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">MOTOR &amp; RESOLVER</uicontrol> button. The
+                           Motor/Resolver Test Menu will appear</li>
+                     </ol>
+                  </li>
+                  <li id="li_x2d_2lg_rzb" class="- topic/li ">Rotate the feeder mechanism until the master resolver
+                     reads 180 degrees on the Motor/Resolver Test Menu for the Servo Parallel
+                     Shears.</li>
+                  <li id="li_zhg_2lg_rzb" class="- topic/li ">Rotate the target around the shear cam shaft in the
+                     direction of normal rotation until the sensor senses the target, and the red
+                     LED just starts to turn on.</li>
+                  <li class="- topic/li ">Verify that the master resolver still shows 180 degrees on the Menu screen.
+                        <ol id="ol_gpx_5kg_rzb" class="- topic/ol ">
+                        <li class="- topic/li ">If movement occurred, repeat steps <xref href="#r2169F6F-BB02-11F0-1354-09173F13E4C5/li_x2d_2lg_rzb" class="- topic/xref ">3</xref> and <xref href="#r2169F6F-BB02-11F0-1354-09173F13E4C5/li_zhg_2lg_rzb" class="- topic/xref ">4</xref>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">When everything is in the proper position, tighten down the target.</li>
+               </ol>
+            </li>
+            <li class="- topic/li ">Upon completion of tasks, perform the following steps:
+         <ol class="- topic/ol ">
+                  <li class="- topic/li ">After the designated work area is confirmed clear and personnel are aware of the pending restart, follow all Lockout/Tagout procedures to restart energy supplied to the designated area. Verify energy is active.</li>
+                  <li class="- topic/li ">Notify appropriate personnel that the work instruction activity has been completed.</li>
+                  <li class="- topic/li ">Record and report findings and results</li>
+                  <li class="- topic/li ">Follow appropriate instructions for notification of findings and results relating to specifications, targets and/or reaction limits.</li>
+               </ol>
+            </li>
+         </ol>
+      </section>
+   </refbody>
+</reference>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xml:lang="en-us"
+           id="r2159BD3-BB02-11F0-8408-09173F13E4C5"
+           ditaarch:DITAArchVersion="1.3"
+           domains="(topic reference)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+           class="- topic/topic       reference/reference ">
+   <title class="- topic/title ">Instructions</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates>
+         <created date="2025-11-11+05:30"/>
+         <revised modified="2025-11-11+05:30"/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="technician,maintenance,operations,engineer"/>
+         <keywords>
+            <!-- Product -->
+            <indexterm>metR-fes-space</indexterm>
+            <indexterm>pneumatic-chute</indexterm>
+            <indexterm>solenoid-valve</indexterm>
+            <indexterm>pressure-regulator</indexterm>
+            <indexterm>filter-replacement</indexterm>
+            <!-- Process -->
+            <indexterm>stepwise-instructions</indexterm>
+            <indexterm>power-down-sequence</indexterm>
+            <indexterm>pressure-bleed</indexterm>
+            <indexterm>valve-adjustment</indexterm>
+            <indexterm>flow-calibration</indexterm>
+            <indexterm>sensor-check</indexterm>
+            <indexterm>return-to-service</indexterm>
+            <indexterm>hmi-commands</indexterm>
+            <!-- Context -->
+            <indexterm>production-ops</indexterm>
+            <indexterm>maintenance-window</indexterm>
+            <indexterm>operator-guidance</indexterm>
+            <indexterm>shift-coordination</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-FES-Space</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Instructions"/>
+         <othermeta name="shortdesc" content="Detailed operational and maintenance instructions for the pneumatic chute: shutdown, bleed, valve adjustment, filter replacement, flow calibration, and HMI commands."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="shutdown-sequence;bleed-valve;valve-adjust;filter-change;flow-calibration;HMI"/>
+         <othermeta name="taxonomy" content="domain:glass-manufacturing;usecase:pneumatic-chute-instructions;industry:glass-manufacturing"/>
+         <othermeta name="tags" content="instructions,shutdown,bleed,valve,filter,flow,hmi"/>
+         <othermeta name="usecase" content="Provide step-by-step instructions for testing and maintaining the pneumatic chute control system"/>
+      </metadata>
+   </prolog>
+   <refbody class="- topic/body        reference/refbody ">
+      <section class="- topic/section ">
+         <ol class="- topic/ol ">
+            <li class="- topic/li ">Before starting the work instruction activity, perform the following steps:<ol class="- topic/ol ">
+                  <li class="- topic/li ">Do not begin these tasks without confirmation that personnel directly involved have completed the required training associated with the work instruction activity and have reviewed this document.</li>
+                  <li class="- topic/li ">Gather necessary tools and equipment as identified below in the Equipment Section</li>
+                  <li class="- topic/li ">Wear and use additional Personal Protective Equipment (PPE) and safety equipment required for this specific work instruction. </li>
+                  <li class="- topic/li ">Obey all applicable safety requirements and procedures.</li>
+                  <li class="- topic/li ">Follow all Lockout/Tagout procedures when work instruction activity requires isolating energy in the designated area. Verify energy is isolated before starting work.</li>
+               </ol>
+            </li>
+            <li class="- topic/li ">To ensure the functionality of the chute control system, perform the following steps: <note class="- topic/note ">
+                  <p class="- topic/p ">These steps should be performed during preventative maintenance, shutdowns, job
+                     changes, and/or production down time. These checks should be done often to
+                     ensure the functionality of the chute control system.</p>
+               </note>
+               <p class="- topic/p ">Refer to drawings OIS-01410, OIS-01263, OIS-03002, OIS-03394,
+                  OIS-03429</p>
+               <p class="- topic/p ">A maintenance record has also been provided in the <xref href="FES-03-702_appendix.dita" class="- topic/xref ">Appendix</xref> to aid in logging operating
+                  parameters and work performed on the pneumatic chute control system</p>
+               <ol class="- topic/ol ">
+                  <li class="- topic/li ">Verify that the chute air supply is high pressure, dry (instrument) air. <note class="- topic/note ">
+                        <p class="- topic/p ">On old installation drawings, 3.4 bar (50 psi) was specified. The new
+                           standard is to supply 6.9 bar (100 psi) for chute air. </p>
+                     </note>
+                  </li>
+                  <li class="- topic/li ">Verify that the air pressure switch tubing is connected prior to the check
+                     valve and receiver tank (Reference the “L-P” airline on the above mentioned
+                     drawings). <ol class="- topic/ol ">
+                        <li class="- topic/li ">Calibrate and set the pressure switch to 3.1 bar (45 psi).</li>
+                        <li class="- topic/li ">Adjust the regulator to operate at 3.8 to 4.1 Bar (55 to 60 psi).</li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">Verify that the air hoses are not cut or damaged. <p class="- topic/p ">
+                        <note id="note_mvn_c3g_rzb" class="- topic/note ">
+                           <p class="- topic/p ">Use braided stainless steel supply hoses, not rubber hoses.</p>
+                        </note>
+                     </p>
+                  </li>
+                  <li class="- topic/li ">Repair or replace the following solenoid valves, pressure switches, and
+                     proximity switches once per year. The quantity and part number for each
+                     component are shown below. <ol id="ol_jfd_rhg_rzb" class="- topic/ol ">
+                        <li class="- topic/li ">1 shear lockout solenoid valve 115 VAC (HF-3556)</li>
+                        <li class="- topic/li ">4 pressure switches 115 VAC (chute air, machine air, pilot air)
+                           (OIS-204-665)</li>
+                        <li class="- topic/li ">1 chute solenoid valve (OIS-204-499)</li>
+                        <li class="- topic/li ">3 double pilot-operated 4-way valves (OIS-204-714)</li>
+                        <li class="- topic/li ">2 Ross normally-closed poppet valves (OIS-204-1105-A)</li>
+                        <li class="- topic/li ">1 direct solenoid actuated valve (OIS-204-1237)</li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">On the MICC 5480, MICC Laser, Flexdrive II, and Flexdrive III, there are two
+                     ammeter relays: one for the feeder, and one for the gob distributor. There is a
+                     high current trip, and a low current trip. <ol id="ol_ozf_shg_rzb" class="- topic/ol ">
+                        <li class="- topic/li ">Approximate guidelines for the feeder: The high current setpoint should
+                           be at 3 amps above the operating current, and the low current setpoint
+                           should be at 3 amps below the operating current.</li>
+                        <li class="- topic/li ">Approximate guidelines for the gob distributor: The high current
+                           setpoint should be at 2 amps above the operating current, and the low
+                           current setpoint should be at 2 amps below the operating current.</li>
+                        <li class="- topic/li ">These setpoints can be adjusted to be closer to, or farther from, the
+                           operating current depending on the mechanical cam and the motor current
+                           variation.</li>
+                        <li class="- topic/li ">The operating current should be observed and the setpoints set, based on
+                           the amount of fluctuation in the current.</li>
+                        <li class="- topic/li ">Adjustments may be required due to shear cam changes during job
+                           changes</li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">If there are Servo Needles, Servo Shears, and/or Servo Gob Distributor
+                     installed, there is a chute enable relay on the SDFL Interface board
+                     (SCS-0314). This relay enables the chute to go up if the Needles, Shears, or
+                     Gob Distributor stop for any reason. <ol id="ol_nl2_thg_rzb" class="- topic/ol ">
+                        <li class="- topic/li ">There is also a pressure switch (OIS-204-665) used to monitor the air
+                           supplied to the lockout solenoid valve. Calibrate test this switch, and
+                           then set it at 3.1 bar (45 psi).</li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+            <li class="- topic/li ">To test the chute control system, perform the following steps:
+         <ol class="- topic/ol ">
+                  <li class="- topic/li ">Lower the tube down to shut off the glass flow.  Then plug the orifice to ensure that glass will not flow.</li>
+                  <li class="- topic/li ">Start the feeder, shears, and gob distributor</li>
+                  <li id="li_dnz_23g_rzb" class="- topic/li ">Place the chute control system in operating mode. To operate the
+                     chute control system in operating mode, perform the following sequence <ol id="ol_gnz_23g_rzb" class="- topic/ol ">
+                        <li class="- topic/li ">Bring the funnels into the glass.</li>
+                        <li class="- topic/li ">Bring the reject cylinder into the glass.</li>
+                        <li class="- topic/li ">Bring the chute down.</li>
+                        <li class="- topic/li ">Bring the gob accelerator into the glass (if applicable).</li>
+                     </ol>
+                  </li>
+                  <li id="li_tsq_43g_rzb" class="- topic/li ">Stop the feeder. When the feeder stops, the gob accelerator will
+                     retract, the chute will come up, the reject cylinder will retract, and the
+                     guide funnels will retract. <ol id="ol_usq_43g_rzb" class="- topic/ol ">
+                        <li class="- topic/li ">Restart the feeder, shears, and gob distributor.</li>
+                        <li class="- topic/li ">Repeat step <xref href="#r2159BD3-BB02-11F0-8408-09173F13E4C5/li_dnz_23g_rzb" class="- topic/xref ">3</xref> above, then go
+                           to step <xref href="#r2159BD3-BB02-11F0-8408-09173F13E4C5/li_nzk_43g_rzb" class="- topic/xref ">5</xref> below</li>
+                     </ol>
+                  </li>
+                  <li id="li_nzk_43g_rzb" class="- topic/li ">Stop the shears. When the shears stop, the gob accelerator will
+                     retract, the chute will come up, the reject cylinder will retract, and the
+                     guide funnels will retract. <ol id="ol_ozk_43g_rzb" class="- topic/ol ">
+                        <li class="- topic/li ">Restart the shears.</li>
+                        <li class="- topic/li ">Repeat step <xref href="#r2159BD3-BB02-11F0-8408-09173F13E4C5/li_dnz_23g_rzb" class="- topic/xref ">3</xref> above, then go
+                           to step <xref href="#r2159BD3-BB02-11F0-8408-09173F13E4C5/li_pwf_43g_rzb" class="- topic/xref ">6</xref> below</li>
+                     </ol>
+                  </li>
+                  <li id="li_pwf_43g_rzb" class="- topic/li ">With the gob distributor run/setup switch in the run position,
+                     stop the gob distributor. When the gob distributor stops, the gob accelerator
+                     will retract, the chute will come up, the reject cylinder will retract, and the
+                     guide funnels will retract. <ol id="ol_qwf_43g_rzb" class="- topic/ol ">
+                        <li class="- topic/li ">Repeat step <xref href="#r2159BD3-BB02-11F0-8408-09173F13E4C5/li_dnz_23g_rzb" class="- topic/xref ">3</xref> above, then go
+                           to step <xref href="#r2159BD3-BB02-11F0-8408-09173F13E4C5/li_u41_43g_rzb" class="- topic/xref ">7</xref> below</li>
+                     </ol>
+                  </li>
+                  <li id="li_u41_43g_rzb" class="- topic/li ">With the gob distributor run/setup switch in the setup position,
+                     start the gob distributor. Stop the gob distributor. When it stops the chute
+                     should not come up. Remember to put the switch back in the run position when
+                     loading glass <ol id="ol_v41_43g_rzb" class="- topic/ol ">
+                        <li class="- topic/li ">Restart the gob distributor.</li>
+                        <li class="- topic/li ">Repeat step <xref href="#r2159BD3-BB02-11F0-8408-09173F13E4C5/li_dnz_23g_rzb" class="- topic/xref ">3</xref> above, then go
+                           to step <xref href="#r2159BD3-BB02-11F0-8408-09173F13E4C5/li_pgx_n3g_rzb" class="- topic/xref ">8</xref> below</li>
+                     </ol>
+                  </li>
+                  <li id="li_pgx_n3g_rzb" class="- topic/li ">Push the <uicontrol class="+ topic/ph ui-d/uicontrol ">chute-up</uicontrol> button on the main
+                     panel. This will cause the gob accelerator to retract, the chute to come up,
+                     and the funnels and reject cylinders to retract. <ol id="ol_qgx_n3g_rzb" class="- topic/ol ">
+                        <li class="- topic/li ">Repeat step <xref href="#r2159BD3-BB02-11F0-8408-09173F13E4C5/li_dnz_23g_rzb" class="- topic/xref ">3</xref> above, then go
+                           to step <xref href="#r2159BD3-BB02-11F0-8408-09173F13E4C5/li_gns_n3g_rzb" class="- topic/xref ">9</xref> below</li>
+                     </ol>
+                  </li>
+                  <li id="li_gns_n3g_rzb" class="- topic/li ">Push the <uicontrol class="+ topic/ph ui-d/uicontrol ">chute-up</uicontrol> button on the main
+                     panel that retracts the reject cylinder out of the glass. This will cause the
+                     gob accelerator to retract, the chute to come up, and the funnel and reject
+                     cylinders to retract. <ol id="ol_ins_n3g_rzb" class="- topic/ol ">
+                        <li class="- topic/li ">Repeat step <xref href="#r2159BD3-BB02-11F0-8408-09173F13E4C5/li_dnz_23g_rzb" class="- topic/xref ">3</xref> above, then go
+                           to step <xref href="#r2159BD3-BB02-11F0-8408-09173F13E4C5/li_h24_n3g_rzb" class="- topic/xref ">10</xref> below.</li>
+                     </ol>
+                  </li>
+                  <li id="li_h24_n3g_rzb" class="- topic/li ">Individually test and calibrate the chute air, machine air, and
+                     pilot air pressure switches. <ol id="ol_i24_n3g_rzb" class="- topic/ol ">
+                        <li class="- topic/li ">Rotate the dial to a setpoint higher than the operating pressure.</li>
+                        <li class="- topic/li ">When the set point on the dial goes above the operating pressure, the
+                           gob accelerator will retract, the chute will come up, the reject cylinder
+                           will retract, and the guide funnels will retract.</li>
+                        <li class="- topic/li ">At the point that the pressure switch trips, pull off the dial and set
+                           it at the proper position determined by the chute air pressure
+                           gauge.</li>
+                        <li class="- topic/li ">Then adjust the dial to be 0.34-0.69 bar (5-10 psi) below the operating
+                           pressure <note id="note_j24_n3g_rzb" class="- topic/note ">
+                              <p class="- topic/p ">For machines that change processes, the pressure switches must be
+                                 set for the proper pressure.</p>
+                           </note>
+                           <note id="note_k24_n3g_rzb" class="- topic/note ">
+                              <p class="- topic/p ">To save production time, pre-calibrate the spare pressure switches
+                                 before use. This can be done by using a calibrated air source.</p>
+                           </note>
+                        </li>
+                        <li class="- topic/li ">Repeat step <xref href="#r2159BD3-BB02-11F0-8408-09173F13E4C5/li_dnz_23g_rzb" class="- topic/xref ">3</xref> above, then go
+                           to step <xref href="#r2159BD3-BB02-11F0-8408-09173F13E4C5/li_xcp_m3g_rzb" class="- topic/xref ">11</xref> below.</li>
+                     </ol>
+                  </li>
+                  <li id="li_xcp_m3g_rzb" class="- topic/li ">Adjust the speed screws, located on the solenoid valves (which
+                     are used for regulating how quickly the funnel cylinder, reject cylinder, gob
+                     accelerator cylinder, and chute cylinder move), to a proper setting. <ol id="ol_ycp_m3g_rzb" class="- topic/ol ">
+                        <li class="- topic/li ">The mechanisms should extend and retract fast enough to provide adequate
+                           safety conditions, yet not so fast so that the mechanisms are slamming.
+                           Slamming causes the cylinders to stick in an unsafe condition.</li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">Refer to the <xref href="FES-03-702_appendix.dita" class="- topic/xref ">Appendix</xref> for s a setup and
+                     maintenance record for the plant engineer and/or machine repair supervisor to
+                     insure that proper testing, repair, and operation of the chute control are
+                     completed for each machine.</li>
+               </ol>
+            </li>
+            <li class="- topic/li ">Upon completion of tasks, perform the following steps
+         <ol class="- topic/ol ">
+                  <li class="- topic/li ">After the designated work area is confirmed clear and personnel are aware of the pending restart, follow all Lockout/Tagout procedures to restart energy supplied to the designated area. Verify energy is active.</li>
+                  <li class="- topic/li ">Notify appropriate personnel that the work instruction activity has been completed.</li>
+                  <li class="- topic/li ">Record and report findings and results</li>
+                  <li class="- topic/li ">Follow appropriate instructions for notification of findings and results relating to specifications, targets and/or reaction limits.</li>
+               </ol>
+            </li>
+         </ol>
+      </section>
+   </refbody>
+</reference>

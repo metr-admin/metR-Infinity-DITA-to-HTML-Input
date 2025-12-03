@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xml:lang="en-us"
+           id="r20B23C2-BB02-11F0-7096-09173F13E4C5"
+           ditaarch:DITAArchVersion="1.3"
+           domains="(topic reference)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+           class="- topic/topic       reference/reference ">
+   <title class="- topic/title ">Procedure</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates>
+         <created date="2025-11-10+05:30"/>
+         <revised modified="2025-11-10+05:30"/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="maintenance,production,engineering,quality,management"/>
+         <keywords>
+            <!-- Product -->
+            <indexterm>metR-fes-space</indexterm>
+            <indexterm>machine-server</indexterm>
+            <indexterm>backup-server</indexterm>
+            <indexterm>primary-server</indexterm>
+            <indexterm>fes-module</indexterm>
+            <!-- Process -->
+            <indexterm>manual-backup-trigger</indexterm>
+            <indexterm>backup-scheduler-check</indexterm>
+            <indexterm>backup-log-review</indexterm>
+            <indexterm>verification-step</indexterm>
+            <indexterm>rollback-procedure</indexterm>
+            <!-- Context -->
+            <indexterm>glass-manufacturing</indexterm>
+            <indexterm>production-line-uptime</indexterm>
+            <indexterm>system-recovery</indexterm>
+            <indexterm>data-integrity-validation</indexterm>
+            <indexterm>maintenance-window</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-FES-Space</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Procedure: Manually Triggering a Machine Server Backup"/>
+         <othermeta name="shortdesc" content="Step-by-step procedure to manually start a Machine Server backup, verify completion, and validate data synchronization between primary and backup servers."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="machine-server;backup-server;backup-scheduler;backup-logs;verification-script"/>
+         <othermeta name="taxonomy" content="domain:server-backup;usecase:manual-backup-procedure;industry:glass-manufacturing"/>
+         <othermeta name="tags" content="procedure,manual-backup,verification,logs,rollback,backup-scheduler"/>
+         <othermeta name="usecase" content="manually start and verify a Machine Server backup to ensure synchronized backups and readiness after changes"/>
+      </metadata>
+   </prolog>
+   <refbody class="- topic/body        reference/refbody ">
+      <section class="- topic/section ">
+         <ol class="- topic/ol ">
+            <li class="- topic/li ">Log off the <b class="+ topic/ph hi-d/b ">obop</b> account (using the sequence Start-&gt;Shutdown-&gt;Log Off).</li>
+            <li class="- topic/li ">Log onto the Machine Server with the administrator account (password: scsgolden).</li>
+            <li id="li_n2g_rnz_qzb" class="- topic/li ">Trigger the scheduled tasks.<note id="note_bkx_4nz_qzb" class="- topic/note ">
+                  <p class="- topic/p ">This step is for Windows Server 2003 systems only. If using Windows Server 2008
+                     (SCS-0716 GR04 or greater), use step <xref href="#r20B23C2-BB02-11F0-7096-09173F13E4C5/li_g2r_qnz_qzb" class="- topic/xref ">4</xref> instead.</p>
+               </note>
+               <ol id="ol_o2g_rnz_qzb" class="- topic/ol ">
+                  <li class="- topic/li ">Navigate to the Control Panel (Start -&gt; Settings -&gt; Control Panel or see
+                     Figure <xref href="#r20B23C2-BB02-11F0-7096-09173F13E4C5/fig_zsz_1nz_qzb" class="- topic/xref ">1</xref> below). <fig id="fig_zsz_1nz_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 1: Navigating to the Control Panel (Windows Server 2003
+                           Systems)</title>
+                        <image href="media/image1.jpg"
+                               placement="break"
+                               id="image_atz_1nz_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Locate the Scheduled Tasks control and double-click it (see Figure <xref href="#r20B23C2-BB02-11F0-7096-09173F13E4C5/fig_c2v_cnz_qzb" class="- topic/xref ">2</xref>). <fig id="fig_c2v_cnz_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 2: Scheduled Tasks Control (Windows Server 2003)</title>
+                        <image href="media/image2.jpg"
+                               placement="break"
+                               id="image_d2v_cnz_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">The scheduled tasks will now be displayed. Right-click each of the following
+                     scheduled tasks (in order), and then select <b class="+ topic/ph hi-d/b ">Run</b>: <ol id="ol_p2g_rnz_qzb" class="- topic/ol ">
+                        <li class="- topic/li ">DBBackup.</li>
+                        <li class="- topic/li ">DBMonitorBackup.</li>
+                        <li class="- topic/li ">BackupFiles <note id="note_q2g_rnz_qzb" class="- topic/note ">
+                              <p class="- topic/p ">Wait for the system to stop displaying the message “<b class="+ topic/ph hi-d/b ">Running</b>”
+                                 prior to moving onto the next one. (See Figure <xref href="#r20B23C2-BB02-11F0-7096-09173F13E4C5/fig_mpf_lnz_qzb" class="- topic/xref ">3</xref> for an example of a
+                                 running scheduled task).</p>
+                           </note>
+                           <fig id="fig_mpf_lnz_qzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 3: Scheduled Tasks Window</title>
+                              <p class="- topic/p ">
+                                 <i class="+ topic/ph hi-d/i ">
+                                    <b class="+ topic/ph hi-d/b ">(Note that the DBBackup Task is Currently
+                                 Running)</b>
+                                 </i>
+                              </p>
+                              <image href="media/image3.jpg"
+                                     placement="break"
+                                     id="image_qpf_lnz_qzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">When the BackupFiles scheduled task is complete, the backup will have been
+                     copied to the backup server.</li>
+               </ol>
+            </li>
+            <li id="li_g2r_qnz_qzb" class="- topic/li ">Trigger the scheduled tasks. This step is for Windows Server 2008
+               systems only. If using Windows Server 2003 (SCS-0716 GR03 or prior), use step <xref href="#r20B23C2-BB02-11F0-7096-09173F13E4C5/li_n2g_rnz_qzb" class="- topic/xref ">3</xref> instead. <ol id="ol_h2r_qnz_qzb" class="- topic/ol ">
+                  <li class="- topic/li ">Open the Server Manager by clicking on the <uicontrol class="+ topic/ph ui-d/uicontrol ">Start</uicontrol> Menu,
+                     then right-clicking the <uicontrol class="+ topic/ph ui-d/uicontrol ">Computer</uicontrol> icon, and then
+                     selecting <b class="+ topic/ph hi-d/b ">Manage</b> (see Figure <xref href="#r20B23C2-BB02-11F0-7096-09173F13E4C5/fig_r5t_lnz_qzb" class="- topic/xref ">4</xref>). <fig id="fig_r5t_lnz_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 4: Opening Server Manager (Windows Server 2008)</title>
+                        <image href="media/image4.jpg"
+                               placement="break"
+                               id="image_s5t_lnz_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">When Server Manager opens, navigate to the task scheduler library as shown in
+                     Figure <xref href="#r20B23C2-BB02-11F0-7096-09173F13E4C5/fig_elf_nnz_qzb" class="- topic/xref ">5</xref>. <fig id="fig_elf_nnz_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 5: Scheduled Tasks (WindowsServer 2008) DBBackup
+                           Running</title>
+                        <image href="media/image5.jpg"
+                               placement="break"
+                               id="image_flf_nnz_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">The scheduled tasks will now be displayed. Right-click each of the following
+                     scheduled tasks (in order) and then select “<b class="+ topic/ph hi-d/b ">Run</b>.” <ol id="ol_i2r_qnz_qzb" class="- topic/ol ">
+                        <li class="- topic/li ">DBBackup</li>
+                        <li class="- topic/li ">DBMonitorBackup</li>
+                        <li class="- topic/li ">BackupFiles <note id="note_j2r_qnz_qzb" class="- topic/note ">
+                              <p class="- topic/p ">Wait for the system to stop displaying the message “
+                                 <b class="+ topic/ph hi-d/b ">Running</b>” prior to moving onto the next task. With Windows
+                                 Server 2008, the task status does not automatically refresh, and
+                                 the <uicontrol class="+ topic/ph ui-d/uicontrol ">F5</uicontrol> key must be pressed to refresh the
+                                 task status.</p>
+                           </note>
+                           <note id="note_k2r_qnz_qzb" class="- topic/note ">
+                              <p class="- topic/p ">See Figure <xref href="#r20B23C2-BB02-11F0-7096-09173F13E4C5/fig_elf_nnz_qzb" class="- topic/xref ">5</xref> for an
+                                 example of a running scheduled task </p>
+                           </note>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">When the BackupFiles scheduled task is complete, the backup will have been
+                     copied to the backup server. </li>
+               </ol>
+            </li>
+            <li class="- topic/li ">Follow the instructions in FES-03-117 <i class="+ topic/ph hi-d/i ">Verifying Machine Server Backups</i> to validate that the backup worked correctly</li>
+         </ol>
+      </section>
+   </refbody>
+</reference>

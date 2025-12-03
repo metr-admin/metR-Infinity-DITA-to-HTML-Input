@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xml:lang="en-us"
+           id="r1FCF9E8-BB01-11F0-1940-09173F13E4C5"
+           ditaarch:DITAArchVersion="1.3"
+           domains="(topic reference)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+           class="- topic/topic       reference/reference ">
+   <title class="- topic/title ">Procedure</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates>
+         <created date="2025-11-10+05:30"/>
+         <revised modified="2025-11-10+05:30"/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="maintenance,engineering,production,quality,safety,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-fes-space</indexterm>
+            <indexterm>furnace-control-system</indexterm>
+            <indexterm>fsc-procedure</indexterm>
+            <indexterm>fsc-checklist</indexterm>
+            <indexterm>fsc-testing-tools</indexterm>
+            <indexterm>test-fixture</indexterm>
+            <indexterm>oscilloscope</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>setup-and-indexing</indexterm>
+            <indexterm>loopback-test</indexterm>
+            <indexterm>calibration-procedure</indexterm>
+            <indexterm>validation-checks</indexterm>
+            <indexterm>safe-isolation</indexterm>
+            <indexterm>result-logging</indexterm>
+            <indexterm>step-by-step-procedure</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>production-maintenance</indexterm>
+            <indexterm>furnace-automation</indexterm>
+            <indexterm>plant-safety</indexterm>
+            <indexterm>operational-checks</indexterm>
+            <indexterm>quality-validation</indexterm>
+            <indexterm>commissioning</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-FES-Space</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Procedure"/>
+         <othermeta name="shortdesc" content="Step-by-step procedures for performing FES operations, tests (including loopback), calibrations, and validations."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="test-rig;fsc-module;field-wiring;control-switches;test-ports"/>
+         <othermeta name="taxonomy" content="domain:maintenance-procedures;usecase:testing-validation;industry:glass-manufacturing"/>
+         <othermeta name="tags" content="procedure,test,validation,calibration,checklist"/>
+         <othermeta name="usecase" content="procedural"/>
+      </metadata>
+   </prolog>
+   <refbody class="- topic/body        reference/refbody ">
+      <section class="- topic/section ">
+         <ol class="- topic/ol ">
+            <li class="- topic/li ">In order to improve perform a loopback test on the FSC, follow these steps:<ol class="- topic/ol ">
+                  <li class="- topic/li ">To perform a loop-back test, first log on to the FSC, either directly on the terminal connected to the FSC server, or by a program like Telnet or Reflections on a computer connected to the same network as the FSC.</li>
+                  <li class="- topic/li ">Determine which machine you want to test. This can be done by <ol class="- topic/ol ">
+                        <li class="- topic/li ">Logging on to the FSC with the MOC program.</li>
+                        <li class="- topic/li ">From the <b class="+ topic/ph hi-d/b ">main screen</b>, click on <uicontrol class="+ topic/ph ui-d/uicontrol ">Utilities</uicontrol> at
+                           the top, and click on <uicontrol class="+ topic/ph ui-d/uicontrol ">Configure Machine</uicontrol>.</li>
+                        <li class="- topic/li ">From the Configure Machine screen, look at the Communications Port for the
+                           machine that you are testing. For this example, we are testing <b class="+ topic/ph hi-d/b ">B3</b>,
+                           which is on communications port <b class="+ topic/ph hi-d/b ">TXA4</b>. This port is the Terminal
+                           Block TB5 in the Serial Distribution Panel. <fig class="- topic/fig ">
+                              <image href="media/image1.jpg"
+                                     placement="break"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">Connect the transmit wires and receive wires at various locations in the
+                     communication link between the DCMC and the FSC. <fig class="- topic/fig ">
+                        <image href="media/image2.jpg"
+                               placement="break"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Now return to the <b class="+ topic/ph hi-d/b ">FSC</b> menu. From the main menu, select 4)
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Utilities</uicontrol>. <fig class="- topic/fig ">
+                        <image href="media/image3.jpg"
+                               placement="break"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Now select 7) <uicontrol class="+ topic/ph ui-d/uicontrol ">Serial I/O Loopback Test</uicontrol>. Enter the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">FSC</uicontrol> password when prompted <fig class="- topic/fig ">
+                        <image href="media/image4.jpg"
+                               placement="break"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Type in the name of the communication port that you want to test. <fig class="- topic/fig ">
+                        <image href="media/image5.jpg"
+                               placement="break"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">The program will ask for confirmation. Type ‘<userinput class="+ topic/ph sw-d/userinput ">y</userinput>’ for yes, and
+                     hit Enter.</li>
+                  <li class="- topic/li ">If the communications are good, it will display:
+                        <b class="+ topic/ph hi-d/b ">abcdefghijklmnopqrstuvwSpace0123456789</b>
+                  </li>
+                  <li class="- topic/li ">If the communications fail, it will display: <b class="+ topic/ph hi-d/b ">Device timeout</b>. Loopback
+                     failed.</li>
+               </ol>
+            </li>
+         </ol>
+      </section>
+   </refbody>
+</reference>

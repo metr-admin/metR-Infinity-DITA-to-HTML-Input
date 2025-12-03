@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xml:lang="en-us"
+           id="r1FE4E97-BB01-11F0-5244-09173F13E4C5"
+           ditaarch:DITAArchVersion="1.3"
+           domains="(topic reference)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+           class="- topic/topic       reference/reference ">
+   <title class="- topic/title ">Procedure</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates>
+         <created date="2025-11-10+05:30"/>
+         <revised modified="2025-11-10+05:30"/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="maintenance,engineering,safety,production"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metR-FES-Space</indexterm>
+            <indexterm>ds15-mcs-system</indexterm>
+            <indexterm>fsc-module</indexterm>
+            <indexterm>hmi-console</indexterm>
+            <indexterm>control-wiring</indexterm>
+            <!-- Process layer -->
+            <indexterm>shutdown-sequence</indexterm>
+            <indexterm>hardware-replacement</indexterm>
+            <indexterm>configuration-migration</indexterm>
+            <indexterm>firmware-update</indexterm>
+            <indexterm>post-conversion-commissioning</indexterm>
+            <!-- Context layer -->
+            <indexterm>plant-maintenance</indexterm>
+            <indexterm>safety-procedures</indexterm>
+            <indexterm>quality-verification</indexterm>
+            <indexterm>production-handover</indexterm>
+            <indexterm>maintenance-log</indexterm>
+            <indexterm>i-o-mapping</indexterm>
+            <indexterm>ladder-logic</indexterm>
+            <indexterm>pid-tuning</indexterm>
+            <indexterm>sensor-calibration</indexterm>
+            <indexterm>thermocouple</indexterm>
+            <indexterm>modbus-rtu</indexterm>
+            <indexterm>fieldbus-architecture</indexterm>
+            <indexterm>emergency-stop</indexterm>
+            <indexterm>safety-interlock</indexterm>
+            <indexterm>backup-restore</indexterm>
+            <indexterm>firmware-image</indexterm>
+            <indexterm>bootloader</indexterm>
+            <indexterm>ip-addressing</indexterm>
+            <indexterm>vlan-configuration</indexterm>
+            <indexterm>checksum-validation</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-FES-Space</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Procedure — FES-03-104"/>
+         <othermeta name="shortdesc" content="Step-by-step procedure for converting DS15 MCS to FSC including pre-checks, execution steps, and commissioning tests; includes I/O mapping, firmware update and safety interlocks."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="control-cabinet;terminal-blocks;backup-server;network-switch;safety-interlocks;thermocouples;hmi-panels"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:system-migration-procedure;industry:glass-manufacturing"/>
+         <othermeta name="tags" content="procedure,step-by-step,commissioning,validation,backup,io-mapping,pid-tuning,firmware"/>
+         <othermeta name="usecase" content="provide-procedural-steps-for-safe-and-validated-ds15-to-fsc-conversion"/>
+      </metadata>
+   </prolog>
+   <refbody class="- topic/body        reference/refbody ">
+      <section class="- topic/section ">
+         <ol class="- topic/ol ">
+            <li class="- topic/li ">With the system powered off, connect a spare disk to the MCS system. <p class="- topic/p ">This new disk
+                  can be mounted under the optical drive. </p>
+               <p class="- topic/p ">Screws to secure the drive were
+                  typically included with the server (and taped in the spare drive location in a
+                  zip-lock bag).</p>
+               <p class="- topic/p ">Some re-routing of cabling may be necessary, including
+                  shifting what connectors are in use on the SCSI ribbon cable or the power
+                  cables.</p>
+               <p class="- topic/p ">The AlphaServer hardware manual (see <xref href="FES-03-104_references.dita" class="- topic/xref ">Reference Documents</xref>) can be
+                  helpful.</p>
+               <p class="- topic/p ">Note that the new drive needs to be jumpered to have a unique SCSI
+                  address in the system.</p>
+            </li>
+            <li class="- topic/li ">Create a full system backup of the MCS system to the spare disk. If possible, also use
+               the MCS menus to create a tape backup.<note id="note_b3r_hsr_qzb" class="- topic/note ">
+                  <p class="- topic/p ">It is important to have a backup of the system in its original configuration in
+                     case the conversion goes wrong.</p>
+               </note>
+            </li>
+            <li class="- topic/li ">Change the <b class="+ topic/ph hi-d/b ">DS15</b> to use console rather than <b class="+ topic/ph hi-d/b ">graphics</b> mode. The MCS used
+               the console graphics, but these are not used by the FSC. <p class="- topic/p ">Boot the system to the
+                  &gt;&gt;&gt; prompt.</p>
+               <p class="- topic/p ">&gt;&gt;&gt; set console serial.</p>
+               <fig class="- topic/fig ">
+                  <image href="media/image1.jpg"
+                         placement="break"
+                         align="center"
+                         class="- topic/image "/>
+               </fig>
+               <p class="- topic/p ">Reset power on the system.</p>
+               <p class="- topic/p ">Reference section 5.20.2 of the hardware manual
+                  (see <xref href="FES-03-104_references.dita" class="- topic/xref ">Reference Documents</xref>).</p>
+               <p class="- topic/p ">At
+                  this point, you may unhook the VGA monitor and keyboard and mouse that are plugged
+                  directly into the DS15 as part of the MCS configuration.</p>
+            </li>
+            <li class="- topic/li ">Reboot the system.</li>
+            <li class="- topic/li ">At this point, or later on during the configuration, there may be an error starting
+               TCPWARE (<b class="+ topic/ph hi-d/b ">%TCPWARE_NETCU-E-IVIA</b> as shown below). If so, do the following. <fig class="- topic/fig ">
+                  <image href="media/image2.jpg"
+                         placement="break"
+                         align="center"
+                         class="- topic/image "/>
+               </fig>
+               <p class="- topic/p ">CREATE SYS$COMMON:[TCPWARE]ROUTING.COM</p>
+               <p class="- topic/p ">CTRL-Z</p>
+               <p class="- topic/p ">This creates a new
+                  version of routing.com that does not do anything and therefore does not cause
+                  TCPWARE to crash.</p>
+            </li>
+            <li class="- topic/li ">Reconfigure TCPWARE (if necessary) to change the IP address. Also, remove any configuration for the second network adapter, and if NTP (automatically adjust time…) is operational, shut that off as well.
+            <p class="- topic/p ">@TCPWARE:CNFNET MENU</p>
+            </li>
+            <li class="- topic/li ">Install the FSC kit. (See SOP-17-007.) You may skip the steps on creating a backup since that work has already been completed.</li>
+            <li class="- topic/li ">
+               <note id="note_t5x_ksr_qzb" class="- topic/note ">
+                  <p class="- topic/p ">Due to different account quotas between systems, the FSC installation kit may
+                     ask for the installation to be restarted after logging off and logging back in.
+                     If this is displayed, follow the instructions provided by the installation
+                     kit.</p>
+               </note>
+               <fig class="- topic/fig ">
+                  <image href="media/image3.jpg"
+                         placement="break"
+                         align="center"
+                         class="- topic/image "/>
+               </fig>
+            </li>
+            <li class="- topic/li ">Reboot the system.<p class="- topic/p ">@sys$system:shutdown (answer prompts as appropriate).</p>
+            </li>
+            <li class="- topic/li ">Change the system password. </li>
+            <li class="- topic/li ">After the system reboots, log on as system again.<p class="- topic/p ">Enter the following command: <b class="+ topic/ph hi-d/b ">set </b>
+                  <b class="+ topic/ph hi-d/b ">password</b>
+               </p>
+               <p class="- topic/p ">Enter the <uicontrol class="+ topic/ph ui-d/uicontrol ">MCS</uicontrol> password, followed by the FSC standard
+                  system password (twice).</p>
+            </li>
+            <li class="- topic/li ">Change the login banner. <p class="- topic/p ">Templates can be obtained from IDEV99.</p>
+               <p class="- topic/p ">EDIT
+               SYS$MANAGER:ANNOUNCE.PIC</p>
+            </li>
+            <li class="- topic/li ">Disable the second network port in DECNET. <p class="- topic/p ">MC NCP DEFINE LINE EIA-1 STATE
+               OFF</p>
+               <p class="- topic/p ">MC NCP SET LINE EIA-1 STATE OFF</p>
+            </li>
+            <li class="- topic/li ">Clean up the MCS directories. Candidates are:
+               <p class="- topic/p ">SYS$SYSDEVICE:[AHL]</p>
+               <p class="- topic/p ">SYS$SYSDEVICE:[GAERKE]</p>
+               <p class="- topic/p ">SYS$SYSDEVICE:[GCC]</p>
+               <p class="- topic/p ">SYS$SYSDEVICE:[GERITY]</p>
+               <p class="- topic/p ">SYS$SYSDEVICE:[MCSOPC]</p>
+               <p class="- topic/p ">SYS$SYSDEVICE:[PANYARD]</p>
+               <p class="- topic/p ">SYS$SYSDEVICE:[PROCESS]</p>
+               <p class="- topic/p ">SYS$SYSDEVICE:[PRODUCTS]</p>
+               <p class="- topic/p ">SYS$SYSDEVICE:[ROVISYS]</p>
+               <p class="- topic/p ">SYS$SYSDEVICE:[STACY]</p>
+               <p class="- topic/p ">SYS$SYSDEVICE:[SUNG]</p>
+            </li>
+            <li class="- topic/li ">Remove MCS specific accounts. <p class="- topic/p ">MC AUTHORIZE</p>
+               <p class="- topic/p ">UAF&gt; REMOVE &lt;ACCOUNT NAME;
+                  see list below part D.&gt;</p>
+               <fig class="- topic/fig ">
+                  <image href="media/image4.jpg"
+                         placement="break"
+                         align="center"
+                         class="- topic/image "/>
+               </fig>
+               <p class="- topic/p ">Type <userinput class="+ topic/ph sw-d/userinput ">Exit</userinput> and press <uicontrol class="+ topic/ph ui-d/uicontrol ">return</uicontrol>
+                  when complete.</p>
+               <p class="- topic/p ">List of MCS accounts to
+                  remove.</p>
+               <p class="- topic/p ">AHL</p>
+               <p class="- topic/p ">COMPILE</p>
+               <p class="- topic/p ">CONSOLE</p>
+               <p class="- topic/p ">FOREHEARTH</p>
+               <p class="- topic/p ">FURNACE</p>
+               <p class="- topic/p ">GAERKE</p>
+               <p class="- topic/p ">GERITY</p>
+               <p class="- topic/p ">MSCOPC</p>
+               <p class="- topic/p ">MONITOR</p>
+               <p class="- topic/p ">OPERATOR_FH</p>
+               <p class="- topic/p ">PANYARD</p>
+               <p class="- topic/p ">PROCESS</p>
+               <p class="- topic/p ">RECORD</p>
+               <p class="- topic/p ">STACY</p>
+               <p class="- topic/p ">SUNG</p>
+            </li>
+            <li class="- topic/li ">Install a COM-SOC II kit. (Refer to SOP-03-005-A and SOP-06-006-A for instructions.)</li>
+            <li class="- topic/li ">Backup the system again once proper operation has been confirmed. Do attempt to keep the backup of the system as an MCS computer.</li>
+         </ol>
+      </section>
+   </refbody>
+</reference>

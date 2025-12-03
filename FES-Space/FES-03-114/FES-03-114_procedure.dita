@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xml:lang="en-us"
+           id="r2045A33-BB02-11F0-1595-09173F13E4C5"
+           ditaarch:DITAArchVersion="1.3"
+           domains="(topic reference)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+           class="- topic/topic       reference/reference ">
+   <title class="- topic/title ">Procedure</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates>
+         <created date="2025-11-10+05:30"/>
+         <revised modified="2025-11-10+05:30"/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="maintenance,engineering,production,operations"/>
+         <keywords>
+            <!-- Product -->
+            <indexterm>metR-fes-space</indexterm>
+            <indexterm>integrity-fsc-server</indexterm>
+            <indexterm>machine-server</indexterm>
+            <indexterm>backup-server</indexterm>
+            <indexterm>swset-223-software</indexterm>
+            <!-- Process -->
+            <indexterm>backup-activation-steps</indexterm>
+            <indexterm>shutdown-primary-server</indexterm>
+            <indexterm>load-backup-configuration</indexterm>
+            <indexterm>restore-services</indexterm>
+            <indexterm>verify-network-links</indexterm>
+            <indexterm>post-activation-validation</indexterm>
+            <indexterm>log-review</indexterm>
+            <!-- Context -->
+            <indexterm>redundant-operation</indexterm>
+            <indexterm>glass-production-continuity</indexterm>
+            <indexterm>industrial-control-system</indexterm>
+            <indexterm>maintenance-window</indexterm>
+            <indexterm>system-availability-testing</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-FES-Space</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Procedure"/>
+         <othermeta name="shortdesc" content="Detailed steps to deactivate the running Machine Server and activate the backup server using SWSet 223, including verification and validation checks."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="Machine Server; Backup Server; Integrity FSC Server; configuration files; network services"/>
+         <othermeta name="taxonomy" content="domain:operations;usecase:backup-activation;industry:glass-manufacturing"/>
+         <othermeta name="tags" content="procedure,backup,activation,swset-223,verification"/>
+         <othermeta name="usecase" content="perform-server-switchover-and-validation"/>
+      </metadata>
+   </prolog>
+   <refbody class="- topic/body        reference/refbody ">
+      <section class="- topic/section ">
+         <ol class="- topic/ol ">
+            <li class="- topic/li ">This procedure assumes that a backup machine server has been configured using the instructions in document FES-03-118 <i class="+ topic/ph hi-d/i ">Configuring Machine Server Backups.</i>
+            </li>
+            <li class="- topic/li ">Verify that the Machine Server backups are current using the instructions in document FES-03-117 <i class="+ topic/ph hi-d/i ">Verifying Machine Server Backups.</i>
+            </li>
+            <li class="- topic/li ">Verify that the active software set on the backup server is the same as the primary server.</li>
+            <li class="- topic/li ">Restore the backup of the primary server onto the backup server.<ol class="- topic/ol ">
+                  <li class="- topic/li ">Log off the <b class="+ topic/ph hi-d/b ">obop</b> account (using the sequence Start-&gt;Shutdown-&gt;Log Off).</li>
+                  <li class="- topic/li ">Log onto the Machine Server as obsetup (password: <b class="+ topic/ph hi-d/b ">SetupServer</b>).</li>
+                  <li class="- topic/li ">Access the Restore Machine Server utility (see Figure <xref href="#r2045A33-BB02-11F0-1595-09173F13E4C5/fig_hs4_pst_qzb" class="- topic/xref ">1</xref>). <fig id="fig_hs4_pst_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 1: Restore Machine Server Utility</title>
+                        <image href="media/image1.jpg"
+                               placement="break"
+                               align="center"
+                               id="image_is4_pst_qzb"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Using the drop-down box, select the <b class="+ topic/ph hi-d/b ">Machine Server</b> to be restored (see Figure
+                        <xref href="#r2045A33-BB02-11F0-1595-09173F13E4C5/fig_bjw_pst_qzb" class="- topic/xref ">2</xref>).<fig id="fig_bjw_pst_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 2: Selecting Machine Server to be Restored</title>
+                        <image href="media/image2.jpg"
+                               placement="break"
+                               align="center"
+                               id="image_cjw_pst_qzb"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Click the <b class="+ topic/ph hi-d/b ">
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Restore</uicontrol>
+                     </b> button.</li>
+                  <li class="- topic/li ">Carefully read the resulting popup message. <b class="+ topic/ph hi-d/b ">Warning</b>: There is no way to
+                     reverse the restore process after clicking the <uicontrol class="+ topic/ph ui-d/uicontrol ">OK</uicontrol> button
+                     on the popup message. Click the <b class="+ topic/ph hi-d/b ">
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">OK</uicontrol>
+                     </b> button to
+                     continue (if desired).</li>
+                  <li class="- topic/li ">A series of two black DOS command windows will be displayed, with commands scrolling by as they complete their work.</li>
+                  <li class="- topic/li ">Once the restore process is complete, an information window will be displayed that
+                     the server is going to be rebooted (see Figure <xref href="#r2045A33-BB02-11F0-1595-09173F13E4C5/fig_vrt_zst_qzb" class="- topic/xref ">3</xref>). Click the <b class="+ topic/ph hi-d/b ">OK</b> button. <fig id="fig_vrt_zst_qzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 3: Reboot Message</title>
+                        <image href="media/image3.jpg"
+                               placement="break"
+                               align="center"
+                               id="image_wrt_zst_qzb"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">When the server reboot completes, it will have all the operating parameters of the original server.</li>
+               </ol>
+            </li>
+            <li class="- topic/li ">Power down the backup machine server (Start -&gt; Shutdown).</li>
+            <li class="- topic/li ">Disconnect the backup machine server, and move it to the same room as the primary server.</li>
+            <li class="- topic/li ">Power down the primary server (Start-&gt;Shutdown).</li>
+            <li class="- topic/li ">Move all of the connections from the primary server to the backup server.  This will include the following connections:
+         <ol class="- topic/ol ">
+                  <li class="- topic/li ">Power.</li>
+                  <li class="- topic/li ">Video.</li>
+                  <li class="- topic/li ">Keyboard and Mouse.</li>
+                  <li class="- topic/li ">Plant and Machine Network. </li>
+                  <li class="- topic/li ">MSG<ol id="ol_m1d_lst_qzb" class="- topic/ol ">
+                        <li class="- topic/li ">Note that the serial adapter for the MSG cable maybe screwed to the
+                           Machine Server. If this is the case, a small flat-head screwdriver will
+                           be required to disconnect the cable.</li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+            <li class="- topic/li ">Power up the backup server.</li>
+            <li class="- topic/li ">Follow the instructions in SOP-06-008-B (Changing the MDMS IP Address) to change the IP address of the backup server to that of the primary server.</li>
+            <li class="- topic/li ">Re-run <b class="+ topic/ph hi-d/b ">SCS Setup</b> on the backup server.</li>
+            <li class="- topic/li ">Make any necessary repairs to the primary machine server and put it back into use as a backup</li>
+         </ol>
+      </section>
+   </refbody>
+</reference>

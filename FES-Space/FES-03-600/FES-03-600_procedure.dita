@@ -1,0 +1,1266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xml:lang="en-us"
+           id="r20D9500-BB02-11F0-1597-09173F13E4C5"
+           ditaarch:DITAArchVersion="1.3"
+           domains="(topic reference)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+           class="- topic/topic       reference/reference ">
+   <title class="- topic/title ">Procedure</title>
+   <prolog class="- topic/prolog ">
+      <author class="- topic/author ">Metapercept</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-05+05:30" class="- topic/created "/>
+         <revised modified="2025-05-05" class="- topic/revised "/>
+      </critdates>
+      <metadata class="- topic/metadata ">
+         <audience type="role"
+                   platform="web"
+                   product="metR-FES-Space"
+                   class="- topic/audience "/>
+         <keywords class="- topic/keywords ">
+            <keyword class="- topic/keyword "/>
+            <indexterm class="- topic/indexterm "/>
+            <indexterm class="- topic/indexterm "/>
+         </keywords>
+         <othermeta name="title" content="" class="- topic/othermeta "/>
+         <othermeta name="shortdesc" content="" class="- topic/othermeta "/>
+      </metadata>
+      <resourceid appid=""
+                  appname=""
+                  id=""
+                  ux-source-priority="topic-and-map"
+                  class="- topic/resourceid "/>
+   </prolog>
+   <refbody class="- topic/body        reference/refbody ">
+      <section class="- topic/section ">
+         <ol class="- topic/ol ">
+            <li class="- topic/li ">Procedures for Installing Tapeless Backup<ol class="- topic/ol ">
+                  <li class="- topic/li ">These general steps are used to install and configure tapeless backup on an MCS system, regardless of the server model or operating system:</li>
+                  <li class="- topic/li ">Identify the server models.</li>
+                  <li class="- topic/li ">Determine the part number for the backup disk drive recommended for the particular server model.</li>
+                  <li class="- topic/li ">Purchase the hard disk drive.</li>
+                  <li class="- topic/li ">Purchase a “WinZip” license (Windows only – If required).</li>
+                  <li class="- topic/li ">Copy all required files to the MCS server.</li>
+                  <li class="- topic/li ">Install the disk drive in the MCS server.</li>
+                  <li class="- topic/li ">Configure the files.</li>
+                  <li class="- topic/li ">Run a backup.</li>
+                  <li class="- topic/li ">Use Backup Tools to verify the integrity of the backed-up file.</li>
+                  <li class="- topic/li ">Create Scheduled Tasks.</li>
+                  <li class="- topic/li ">After a week has passed, and periodically thereafter, use FES-03-601 to verify that the backup is occurring</li>
+               </ol>
+            </li>
+            <li class="- topic/li ">Installing Tapeless Backup on VMS-based Servers<ol class="- topic/ol ">
+                  <li class="- topic/li ">
+                     <note id="note_t33_gg1_rzb" class="- topic/note ">
+                        <p class="- topic/p ">Before starting this procedure, verify that there is a recent successful
+                           backup of the targeted server.</p>
+                     </note>
+                  </li>
+                  <li class="- topic/li ">
+                     <note id="note_ymd_hg1_rzb" class="- topic/note ">
+                        <p class="- topic/p ">In the typed commands shown in this section, the # character is always
+                           used to denote a typed blank space.</p>
+                     </note>
+                  </li>
+               </ol>
+            </li>
+            <li class="- topic/li ">Copying the Backup Software to a VMS Server<ol class="- topic/ol ">
+                  <li id="li_zxm_wg1_rzb" class="- topic/li ">Log onto the Windows Server.</li>
+                  <li class="- topic/li ">Use the Reflections shortcut (MCSAdmin) to access the VMS Server command line.</li>
+                  <li class="- topic/li ">Log in with the username process.</li>
+                  <li class="- topic/li ">When you reach the “PC” prompt, type <userinput class="+ topic/ph sw-d/userinput ">KING</userinput>, and then press
+                     the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. This will display the “<b class="+ topic/ph hi-d/b ">$$</b>”
+                     prompt.</li>
+                  <li id="li_lwy_wg1_rzb" class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">COM</userinput>, and then press the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key.</li>
+                  <li class="- topic/li ">File transfer steps (text to be entered is in bold)</li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">FTP#IDEV99.NA.Space.INTRA</userinput>
+                  </li>
+                  <li class="- topic/li ">
+                     <note id="note_x1y_lg1_rzb" class="- topic/note ">
+                        <p class="- topic/p ">If this fails, use the IP address 10.126.128.65 instead</p>
+                     </note>
+                  </li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">KITFTP</userinput> for the username</li>
+                  <li class="- topic/li ">Password is NEWVERSION</li>
+                  <li class="- topic/li ">CD#MCS.TAPELESS</li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">TYPE BINARY</userinput>
+                  </li>
+                  <li class="- topic/li ">The following depends on the VMS Server’s hardware model<ol class="- topic/ol ">
+                        <li class="- topic/li ">For Integrity RX2660: GET#TAPELESS_2660.BCK</li>
+                        <li class="- topic/li ">For Alpha DS15: GET#TAPELESS_DS15.BCK</li>
+                        <li class="- topic/li ">For Alpha DS20: GET#TAPELESS_DS20.BCK</li>
+                        <li class="- topic/li ">For Alpha Server 1200/4000: GET#TAPELESS_40_12.BCK</li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">bye</userinput> and press <uicontrol class="+ topic/ph ui-d/uicontrol ">enter</uicontrol> to exit
+                     FTP.</li>
+                  <li class="- topic/li ">When the “<b class="+ topic/ph hi-d/b ">PC</b>” prompt is displayed, type:
+                        <userinput class="+ topic/ph sw-d/userinput ">@COPY_TAPELESS_FILES_TO_SERVER</userinput>, and then press the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key.</li>
+                  <li class="- topic/li ">When prompted, enter the number corresponding to the targeted “VMS server type”
+                     and “IP address,” and then press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key.</li>
+                  <li class="- topic/li ">A “<b class="+ topic/ph hi-d/b ">successful transfer</b>” message will be displayed when the backup software
+                     files have been successfully transferred to the targeted VMS server, as show in
+                     REF _Ref417306284 \h \* MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_n2n_pb1_rzb" class="- topic/xref ">1</xref>.</li>
+                  <li class="- topic/li ">Proceed to the next section depending on the hardware model of the VMS Server.
+                     These steps assume that you are already logged onto the VMS server following
+                     steps 3.3.<xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/li_zxm_wg1_rzb" class="- topic/xref ">A</xref>-<xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/li_lwy_wg1_rzb" class="- topic/xref ">E</xref> above<ol class="- topic/ol ">
+                        <li class="- topic/li ">For the Integrity RX2660 – 3.4</li>
+                        <li class="- topic/li ">For the Alpha DS15 – 3.5</li>
+                        <li class="- topic/li ">For the Alpha DS20 – 3.6</li>
+                        <li class="- topic/li ">For the Alpha Server 1200/4000 – 3.7 <fig id="fig_n2n_pb1_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 1: Successful Transfer Message</title>
+                              <image href="media/image52.jpg"
+                                     placement="break"
+                                     id="image_p2n_pb1_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">If difficulties are encountered in copying this file, contact your Process Control Country Group Regional Network Leader.</li>
+               </ol>
+            </li>
+            <li class="- topic/li ">HP Integrity rx2660 VMS Server<ol class="- topic/ol ">
+                  <li class="- topic/li ">As supplied, the MCS Integrity rx2660 VMS server contains two hard disk drives which are configured to operate in tandem as a RAID1 (Redundant Array of Independent Disks) system drive.  These two disk drives are physically installed in slots 7 and 8. This system is configured to perform image backups from the RAID1disk to a tape drive.  </li>
+                  <li class="- topic/li ">Follow these specific steps to add hard disk drive backup to an Integrity rx2600 server.</li>
+                  <li class="- topic/li ">Install an HP Integrity 146GB Disk Drive (Space part number “SEP-3-177”) in Slot 6.  NOTE: there must be no empty slots between installed drives.</li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">DIR#TAPELESS*</userinput>, and then press the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. The file named “Tapeless_2660.bck” should
+                     be listed, along with its size and date.</li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">BACKUP##TAPELESS_2660.BCK/SAV###*/BY_OWN=PAREN</userinput>, and
+                     then press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key, which will “unpack” the
+                     procedure file.</li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">@CONFIG_TAPELESS_BACKUP_2660</userinput>, and then press the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. This will start the execution of the main
+                     procedure, which will take several minutes to complete.</li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">SHOW#DEV#D</userinput>, and then press the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. Confirm that “<b class="+ topic/ph hi-d/b ">dka600:</b>” is displayed
+                     on the list (indicating that step 7 was successful) before proceeding.</li>
+                  <li id="li_bgl_131_rzb" class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">MOUN/OVER=ID#DKA600:</userinput> and press
+                     the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. This will mount the newly installed
+                     drive. The procedure will be successful when a message is displayed confirming
+                     that “xxxBACKUP” has been mounted.</li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">DISM#DKA600:</userinput>, and then press the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. This will dismount “xxxBACKUP.”</li>
+                  <li class="- topic/li ">Use a text editor to add a definition to the “SYSINI:LOGICAL_INIT.COM” file.
+                        <note id="note_u4q_lh1_rzb" class="- topic/note ">
+                        <p class="- topic/p ">This editing must be performed very carefully because any incorrect
+                           changes will prevent the MCS server from starting the next time it is
+                           turned on or restarted.</p>
+                     </note>
+                     <ol class="- topic/ol ">
+                        <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">SET#DEF#SYSINI</userinput>, and then press the
+                              <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key.</li>
+                        <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">EVE#LOGICAL_INIT.COM</userinput>, and then press the
+                              <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key.</li>
+                        <li class="- topic/li ">Use the Down Arrow key to move the cursor down until you see the lines
+                           displayed in REF _Ref417306251 \h \* MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_u1r_sb1_rzb" class="- topic/xref ">2</xref>. <fig id="fig_u1r_sb1_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 2: Logical_Init.com file (opened in Text Editor)</title>
+                              <image href="media/image4.jpg"
+                                     placement="break"
+                                     id="image_v1r_sb1_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">Position the cursor at the very beginning of the blank line:<ol class="- topic/ol ">
+                        <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">$</userinput>
+                        </li>
+                        <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">TAB</uicontrol> key</li>
+                        <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">DEFINE/SYSTEM</userinput>
+                        </li>
+                        <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">TAB</uicontrol> key</li>
+                        <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">MCS_BACKUP_DISK#DKA600:</userinput>
+                        </li>
+                        <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key</li>
+                        <li class="- topic/li ">Confirm that the line is typed exactly as shown to the left of the arrow in
+                           REF _Ref417306240 \h \* MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_z4j_zb1_rzb" class="- topic/xref ">4</xref> before proceeding <fig id="fig_mkg_vb1_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 3: Definition added to the Logical_Init.com file</title>
+                              <image href="media/image5.jpg"
+                                     placement="break"
+                                     id="image_nkg_vb1_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">The changes made to the file must now either be saved or discarded.  <ol class="- topic/ol ">
+                        <li class="- topic/li ">To save the changes:</li>
+                        <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">DO</uicontrol> key (or, if using Reflection, press the
+                           key that is mapped to DO), which will display a “<b class="+ topic/ph hi-d/b ">Command</b>:” prompt
+                           at the bottom left-hand corner of the screen.</li>
+                        <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">EXIT</userinput>.</li>
+                        <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. </li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">If you made a mistake and need to discard the changes:<ol class="- topic/ol ">
+                        <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">DO</uicontrol> key (or, if using Reflection, press the
+                           key that is mapped to DO), which will display a “<b class="+ topic/ph hi-d/b ">Command</b>:” prompt
+                           at the bottom left-hand corner of the screen.</li>
+                        <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">Quit</userinput>.</li>
+                        <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. </li>
+                        <li class="- topic/li ">Go back to step <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/li_bgl_131_rzb" class="- topic/xref ">8</xref> to re-edit the
+                           file.</li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">LO</userinput> (for log out) and then press the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key.</li>
+                  <li class="- topic/li ">Use the MCS User Interface screen to start a VMS/Integrity backup.  Check for successful completion. Reference the MCSII Operators Manual (PCS-0372) for more details.</li>
+                  <li class="- topic/li ">MCS Integrity server backups must be manually requested by an operator unless the associated Windows server has also been configured for tapeless backup. If configured, the Windows server will automatically request VMS backups according to the recommended schedule. Operators should periodically confirm that backups are completing successfully.</li>
+               </ol>
+            </li>
+            <li class="- topic/li ">HP Alpha DS15 Server<ol class="- topic/ol ">
+                  <li class="- topic/li ">As supplied, the MCS Alpha DS15 VMS server uses a single disk drive to serve as its “system” drive. This server is configured to perform image backups from this system disk drive to an internal tape drive.</li>
+                  <li class="- topic/li ">Follow these steps to add tapeless backup capability to this server.  </li>
+                  <li class="- topic/li ">
+                     <note id="note_swd_231_rzb" class="- topic/note ">
+                        <p class="- topic/p ">In the typed commands shown in this section, the # character is always
+                           used to denote a typed blank space.</p>
+                     </note>
+                  </li>
+                  <li class="- topic/li ">Install an HP 72GB 10K Disk Drive (HP Part “DS-RZ3GA-WA” or its equivalent) in the spare internal slot. This will require powering the system down. Reference the MCSII Operators Manual as required.</li>
+                  <li class="- topic/li ">Log in to the targeted MCS Alpha server with the Username Process and the appropriate password.</li>
+                  <li class="- topic/li ">At the “PC” prompt, type <userinput class="+ topic/ph sw-d/userinput ">KING</userinput>, and the press the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. This will display a “<b class="+ topic/ph hi-d/b ">$$</b>”
+                     prompt.</li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">COM</userinput> and press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol>
+                     key.</li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">BACKUP##TAPELESS_DS15.BCK/SAV###*/BY_OWN=PAREN</userinput>, and
+                     press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key, which will “unpack” the procedure
+                     file.</li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">@CONFIG_TAPELESS_BACKUP_DS15</userinput> and press the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. This will start the execution of the main
+                     procedure, which will take several minutes to complete.</li>
+                  <li id="li_p5m_t31_rzb" class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">SHOW#DEV#D</userinput>, and then press the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. Confirm that <b class="+ topic/ph hi-d/b ">dka100:</b> is displayed
+                     in the list before proceeding.</li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">MOUN/OVER=ID#DKA100:</userinput>, and press the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. This will mount the newly installed drive.
+                     The procedure will be successful when a message is displayed confirming that
+                     “xxxBACKUP” has been mounted.</li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">DISM#DKA100:</userinput> and press the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. This will dismount “xxxBACKUP.”</li>
+                  <li class="- topic/li ">Use a text editor to add a definition to the “SYSINI:LOGICAL_INIT.COM” file.<note id="note_ocr_l31_rzb" class="- topic/note ">
+                        <p class="- topic/p ">This editing must be performed very carefully because any incorrect
+                           changes will prevent the MCS server from starting the next time it is
+                           turned on or restarted.</p>
+                     </note>
+                  </li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">SET#DEF#SYSINI</userinput>, and then press the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key.</li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">EVE#LOGICAL_INIT.COM</userinput>, and then press the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key.</li>
+                  <li class="- topic/li ">The text at the top of the file will be displayed. Use the Down Arrow key to move
+                     the cursor down until you see the lines displayed in REF _Ref417306214 \h \*
+                     MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_z4j_zb1_rzb" class="- topic/xref ">4</xref>. <fig id="fig_z4j_zb1_rzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 4: Logical_Init.com file (opened in Text Editor)</title>
+                        <image href="media/image6.jpg"
+                               placement="break"
+                               id="image_apj_zb1_rzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Position the cursor at the very beginning of the blank line:</li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">$</userinput>
+                  </li>
+                  <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">TAB</uicontrol> key</li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">DEFINE/SYSTEM</userinput>
+                  </li>
+                  <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">TAB</uicontrol> key</li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">MCS_BACKUP_DISK#DKA100:</userinput>
+                  </li>
+                  <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key</li>
+                  <li class="- topic/li ">Confirm that the line is typed exactly as shown to the left of the arrow in REF
+                     _Ref417306202 \h \* MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_cjp_bc1_rzb" class="- topic/xref ">5</xref> before proceeding <fig id="fig_cjp_bc1_rzb" class="- topic/fig ">
+                        <title class="- topic/title ">Figure 5: Definition added to the Logical_Init.com file</title>
+                        <image href="media/image7.jpg"
+                               placement="break"
+                               id="image_ejp_bc1_rzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">The changes made to the file must now either be saved or discarded.  </li>
+                  <li class="- topic/li ">To save the changes:</li>
+                  <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">DO</uicontrol> key (or, if using Reflection, press the key
+                     that is mapped to DO), which will display a “<b class="+ topic/ph hi-d/b ">Command</b>:” prompt at the
+                     bottom left-hand corner of the screen.</li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">EXIT</userinput>.</li>
+                  <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. </li>
+                  <li class="- topic/li ">If you made a mistake and need to discard the changes:</li>
+                  <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">DO</uicontrol> key (or, if using Reflection, press the key
+                     that is mapped to DO), which will display a “<b class="+ topic/ph hi-d/b ">Command</b>:” prompt at the
+                     bottom left-hand corner of the screen.</li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">Quit</userinput>.</li>
+                  <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. </li>
+                  <li class="- topic/li ">Go back to Step <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/li_p5m_t31_rzb" class="- topic/xref ">10</xref> to re-edit the file.<ol class="- topic/ol ">
+                        <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">LO</userinput> (for log out) and then press the
+                              <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key.</li>
+                        <li class="- topic/li ">Navigate to the MCS user interface screen and start a VMS/Alpha
+                           backup.</li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">Check for successful completion with the MCS Backup Tools. Reference the MCSII Operators Manual (PCS-0372) for more details. If issues are noted, contact MCS Support.</li>
+                  <li class="- topic/li ">
+                     <note id="note_fnx_w31_rzb" class="- topic/note ">
+                        <p class="- topic/p ">MCS Alpha server backups must be manually requested by an operator unless
+                           an associated Windows server has also been configured for tapeless
+                           backup. If the Windows server has been configured for tapeless backup,
+                           the Windows server will automatically request VMS backups according to
+                           the recommended schedule. Operators should periodically confirm that
+                           backups are completing successfully.</p>
+                     </note>
+                  </li>
+               </ol>
+            </li>
+            <li class="- topic/li ">HP Alpha DS20 Server<ol class="- topic/ol ">
+                  <li class="- topic/li ">As supplied, the MCS Alpha DS20 VMS server uses a single disk drive installed in slot 1 to serve as its “system” drive. This system is configured to perform image backups from the system disk to an attached tape drive.</li>
+                  <li class="- topic/li ">To implement tapeless backup, a backup disk must be installed in slot 4 of this server.</li>
+                  <li class="- topic/li ">
+                     <note id="note_psh_z31_rzb" class="- topic/note ">
+                        <p class="- topic/p ">Some systems may already have a spare disk installed in slot 2. If this
+                           is the case, do not move it. It is acceptable to have empty slots between
+                           drives on this server. The backup drive typically should have a minimum
+                           capacity of at least 72GB.</p>
+                     </note>
+                  </li>
+                  <li class="- topic/li ">Follow these steps to add tapeless backup capability to this server. <ol class="- topic/ol ">
+                        <li class="- topic/li ">
+                           <note id="note_kkg_1j1_rzb" class="- topic/note ">
+                              <p class="- topic/p ">In the typed commands shown in this section, the # character is
+                                 always used to denote a typed blank space.</p>
+                           </note>
+                        </li>
+                        <li class="- topic/li ">Install an HP 72GB 10K Disk Drive (HP Part “3R-A6419-AA”) in internal slot 4. Empty slots are permitted between drives. Some systems may have a spare disk already installed in slot 2 -- do not move any existing spare disk drives.</li>
+                        <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">BACKUP##TAPELESS_DS20.BCK/SAV###*/BY_OWN=PAREN</userinput>,
+                           and press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key, which will “unpack” the
+                           procedure file.</li>
+                        <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">@CONFIG_TAPELESS_BACKUP_DS20</userinput>, and then press
+                           the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. This will start the execution of
+                           the main procedure, which will take several minutes to complete.</li>
+                        <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">SHOW#DEV#D</userinput>, and press the
+                              <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. Confirm that <b class="+ topic/ph hi-d/b ">dka300:</b> is
+                           displayed in the list before proceeding.</li>
+                        <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">MOUN/OVER=ID DKA300:</userinput>, and press the
+                              <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. This will mount the newly installed
+                           drive. The procedure will be successful when a message is displayed
+                           confirming that “xxxBACKUP” has been mounted</li>
+                        <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">DISM#DKA300:</userinput> and press the
+                              <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. This will dismount xxxBACKUP.</li>
+                        <li class="- topic/li ">Use a text editor to add a definition to the “SYSINI:LOGICAL_INIT.COM”
+                           file. <note id="note_fml_fj1_rzb" class="- topic/note ">
+                              <p class="- topic/p ">This editing must be performed very carefully because any incorrect
+                                 changes will prevent the MCS server from starting the next time it
+                                 is turned on or restarted.</p>
+                           </note>
+                           <ol id="ol_vdh_3j3_pzb" class="- topic/ol ">
+                              <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">SET#DEF#SYSINI</userinput>, and then press the
+                                    <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key.</li>
+                              <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">EVE#LOGICAL_INIT.COM</userinput>, and then press
+                                 the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key.</li>
+                              <li class="- topic/li ">The text at the top of the file will be displayed. Use the Down
+                                 Arrow key to move the cursor down until you see the lines displayed
+                                 in Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_wdf_hc1_rzb" class="- topic/xref ">6</xref>. <fig id="fig_wdf_hc1_rzb" class="- topic/fig ">
+                                    <title class="- topic/title ">Figure 6: Logical_Init.com file (opened in Text
+                                       Editor)</title>
+                                    <image href="media/image8.jpg"
+                                           placement="break"
+                                           id="image_ydf_hc1_rzb"
+                                           align="center"
+                                           class="- topic/image "/>
+                                 </fig>
+                              </li>
+                           </ol>
+                        </li>
+                        <li class="- topic/li ">Position the cursor at the very beginning of the blank line:<ol id="ol_ipw_kj3_pzb" class="- topic/ol ">
+                              <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">$</userinput>
+                              </li>
+                              <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">TAB</uicontrol> key</li>
+                              <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">DEFINE/SYSTEM</userinput>
+                              </li>
+                              <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">TAB</uicontrol> key</li>
+                              <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">MCS_BACKUP_DISK#DKA300:</userinput>
+                              </li>
+                              <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key</li>
+                              <li class="- topic/li ">Confirm that the line is typed exactly as shown to the left of the
+                                 arrow in Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_vpx_jc1_rzb" class="- topic/xref ">7</xref> before
+                                 proceeding <fig id="fig_vpx_jc1_rzb" class="- topic/fig ">
+                                    <title class="- topic/title ">Figure 7: Definition added to the Logical_Init.com
+                                       file</title>
+                                    <image href="media/image9.jpg"
+                                           placement="break"
+                                           id="image_wpx_jc1_rzb"
+                                           align="center"
+                                           class="- topic/image "/>
+                                 </fig>
+                              </li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">The changes made to the file must now either be saved or discarded.<ol class="- topic/ol ">
+                        <li class="- topic/li ">To save the changes:<ol id="ol_rlm_nj3_pzb" class="- topic/ol ">
+                              <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">DO</uicontrol> key (or, if using Reflection,
+                                 press the key that is mapped to DO), which will display a
+                                    “<b class="+ topic/ph hi-d/b ">Command</b>:” prompt at the bottom left-hand corner of the
+                                 screen.</li>
+                              <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">EXIT</userinput>.</li>
+                              <li class="- topic/li "> Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. </li>
+                           </ol>
+                        </li>
+                        <li class="- topic/li ">If you made a mistake and need to discard the changes:<ol id="ol_m2d_qj3_pzb" class="- topic/ol ">
+                              <li class="- topic/li ">Press the <userinput class="+ topic/ph sw-d/userinput ">DO</userinput> key (or, if using Reflection,
+                                 press the key that is mapped to DO), which will display a
+                                    “<b class="+ topic/ph hi-d/b ">Command</b>:” prompt at the bottom left-hand corner of the
+                                 screen.</li>
+                              <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">Quit</userinput>.</li>
+                              <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. </li>
+                              <li class="- topic/li ">Go back to step 7 to re-edit the file.</li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">LO</userinput> (for log out) and then press the
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key.</li>
+                  <li class="- topic/li ">Use the MCS User Interface screen to start a VMS/Alpha backup.  Check for successful completion. Reference the MCSII Operators Manual (PCS-0372) for more details. If issues are encountered, contact the MCS Support.</li>
+                  <li class="- topic/li ">MCS Alpha server backups must be manually requested by an operator unless the associated Windows server has also been configured for tapeless backup. If configured, the Windows server will automatically request VMS backups according to the recommended schedule. Operators should periodically confirm that backups are completing successfully.</li>
+               </ol>
+            </li>
+            <li class="- topic/li ">HP Alpha 1200 and 4000 Servers<ol class="- topic/ol ">
+                  <li class="- topic/li ">As supplied, the MCS Alpha 4000 and 1200 VMS servers both have single disk drives installed in slot 1 which serve as their “system” drives. These servers are configured to perform image backups from their system disks to an internal tape drive.</li>
+                  <li class="- topic/li ">Follow these steps to add tapeless backup capability to these two servers.  </li>
+                  <li class="- topic/li ">
+                     <note id="note_isy_tj1_rzb" class="- topic/note ">
+                        <p class="- topic/p ">In the typed commands shown in this section, the # character is always
+                           used to denote a typed blank space.</p>
+                     </note>
+                     <ol class="- topic/ol ">
+                        <li class="- topic/li ">Install a backup disk in a spare slot. REF _Ref413670586 \h \*
+                           MERGEFORMAT Required/Suggested Equipment Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_n2n_pb1_rzb" class="- topic/xref ">1</xref>: Suggested Hard Drives for
+                           Tapeless Backup provides a listing of the suggested disk for each
+                              server.<ol id="ol_ixt_rj3_pzb" class="- topic/ol ">
+                              <li class="- topic/li ">For MCS Alpha 1200 servers, install the backup disk in slot number
+                                 4.</li>
+                              <li class="- topic/li ">For MCS Alpha 4000 servers, also install the backup disk in slot
+                                 number 4, but do not count the slot with the power supply.</li>
+                           </ol>
+                        </li>
+                        <li class="- topic/li ">
+                           <note id="note_w55_vj1_rzb" class="- topic/note ">
+                              <p class="- topic/p ">Some systems may already have a spare disk installed in slot 2. If
+                                 this is the case, do not move it. Install the backup drive in slot
+                                 4. It is allowable to have empty slots between installed
+                                 drives.</p>
+                           </note>
+                        </li>
+                        <li class="- topic/li ">The backup drive typically has a capacity of at least 9GB for the 4000,
+                           and 18GB for the 1200. When installing a drive, first check carefully to
+                           confirm that the connector is aligned correctly before attempting to seat
+                           the drive.</li>
+                        <li class="- topic/li ">Type
+                              <userinput class="+ topic/ph sw-d/userinput ">BACKUP##TAPELESS_40_12.BCK/SAV###*/BY_OWN=PAREN</userinput>,
+                           and then press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key, which will “unpack”
+                           the procedure file.</li>
+                        <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">$$ @CONFIG_TAPELESS_BACKUP_40_12</userinput>, and then
+                           press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. This will start the execution
+                           of the main procedure, which will take several minutes to complete.</li>
+                        <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">SHOW#DEV#D</userinput> and then press the
+                              <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. Confirm that “<b class="+ topic/ph hi-d/b ">dkb300:</b>” is
+                           displayed in the list before proceeding.</li>
+                        <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">MOUN/OVER=ID#DKB300:</userinput> and then press the
+                              <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. This will mount the newly installed
+                           drive. The procedure will be successful when a message is displayed
+                           confirming that “xxxBACKUP” has been mounted.</li>
+                        <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">DISM#DKB300:</userinput>, and then press the
+                              <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key. This will dismount “xxxBACKUP.”</li>
+                        <li class="- topic/li ">Use a text editor to add a definition to the “SYSINI:LOGICAL_INIT.COM”
+                           file. <note id="note_ur1_dk1_rzb" class="- topic/note ">
+                              <p class="- topic/p ">This editing must be performed very carefully because any incorrect
+                                 changes will prevent the MCS server from booting up successfully
+                                 the next time it is turned on or restarted:</p>
+                           </note>
+                           <ol id="ol_qjg_tj3_pzb" class="- topic/ol ">
+                              <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">SET#DEF#SYSINI</userinput>, and then press the
+                                    <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key.</li>
+                              <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">EVE#LOGICAL_INIT.COM</userinput>, and then press
+                                 the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key.</li>
+                              <li class="- topic/li ">The text at the top of the file will be displayed. Use the Down
+                                 Arrow key to move the cursor down until the lines shown in Figure
+                                    <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_h5k_nc1_rzb" class="- topic/xref ">8</xref> are displayed. <fig id="fig_h5k_nc1_rzb" class="- topic/fig ">
+                                    <title class="- topic/title ">Figure 8: Logical_Init.com file (opened in Text
+                                       Editor)</title>
+                                    <image href="media/image10.jpg"
+                                           placement="break"
+                                           id="image_j5k_nc1_rzb"
+                                           align="center"
+                                           class="- topic/image "/>
+                                 </fig>
+                              </li>
+                              <li class="- topic/li ">Position the cursor at the very beginning of the blank line:<ol id="ul_oyj_zj3_pzb" class="- topic/ol ">
+                                    <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">$</userinput>
+                                    </li>
+                                    <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">TAB</uicontrol> key</li>
+                                    <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">DEFINE/SYSTEM</userinput>
+                                    </li>
+                                    <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">TAB</uicontrol> key</li>
+                                    <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">MCS_BACKUP_DISK#DKB300:</userinput>
+                                    </li>
+                                    <li class="- topic/li "> Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key</li>
+                                    <li class="- topic/li ">Confirm that the line is typed exactly as shown to the left
+                                       of the arrow in Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_z1k_pc1_rzb" class="- topic/xref ">9</xref> before proceeding <fig id="fig_z1k_pc1_rzb" class="- topic/fig ">
+                                          <title class="- topic/title ">Figure 9: Definition added to the Logical_Init.com
+                                             file</title>
+                                          <image href="media/image11.jpg"
+                                                 placement="break"
+                                                 id="image_bbk_pc1_rzb"
+                                                 align="center"
+                                                 class="- topic/image "/>
+                                       </fig>
+                                    </li>
+                                 </ol>
+                              </li>
+                           </ol>
+                        </li>
+                        <li class="- topic/li ">The changes made to the file must now either be saved or discarded.<ol id="ol_e42_dk3_pzb" class="- topic/ol ">
+                              <li class="- topic/li ">To save the changes:<ol id="ul_f42_dk3_pzb" class="- topic/ol ">
+                                    <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">DO</uicontrol> key (or if using
+                                       Reflection, press the key that is mapped to DO), which will
+                                       display a “<b class="+ topic/ph hi-d/b ">Command</b>:” prompt in the bottom left-hand
+                                       corner of the screen.</li>
+                                    <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">EXIT</userinput>.</li>
+                                    <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key.</li>
+                                 </ol>
+                              </li>
+                              <li class="- topic/li ">To discard the changes:<ol id="ul_g42_dk3_pzb" class="- topic/ol ">
+                                    <li class="- topic/li ">Press the <userinput class="+ topic/ph sw-d/userinput ">DO</userinput> key (or if using
+                                       Reflection, press the key that is mapped to DO), which will
+                                       display a “<b class="+ topic/ph hi-d/b ">Command</b>:” prompt at the bottom left-hand
+                                       corner of the screen.</li>
+                                    <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">QUIT</userinput>.</li>
+                                    <li class="- topic/li ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key.</li>
+                                    <li class="- topic/li ">Go back to Step 7 to re-edit the file.</li>
+                                 </ol>
+                              </li>
+                           </ol>
+                        </li>
+                        <li class="- topic/li ">Type <userinput class="+ topic/ph sw-d/userinput ">LO</userinput> (for log out) and then press the
+                              <uicontrol class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> key.</li>
+                        <li class="- topic/li ">Use the MCS user interface screen to start a VMS/Alpha backup session.
+                           Check for successful completion. Reference the MCSII Operators Manual
+                           (PCS-0372) for more details. If issues are encountered, contact MCS
+                           Support.</li>
+                        <li class="- topic/li ">
+                           <note id="note_cjs_zk1_rzb" class="- topic/note ">
+                              <p class="- topic/p ">MCS Alpha server backups must be manually requested by an operator
+                                 unless the associated Windows server has also been configured for
+                                 tapeless backup. If configured, the Windows server will
+                                 automatically request VMS backups according to the recommended
+                                 schedule. Operators should periodically confirm that backups are
+                                 completing successfully.</p>
+                           </note>
+                        </li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+            <li class="- topic/li ">Installing Tapeless Backup on Windows Based Servers<ol class="- topic/ol ">
+                  <li class="- topic/li ">
+                     <note id="note_i32_bl1_rzb" class="- topic/note ">
+                        <p class="- topic/p ">Before starting this procedure, verify that there is a recent successful
+                           backup of the targeted server.</p>
+                     </note>
+                  </li>
+                  <li class="- topic/li ">Copying the Backup Software to a Windows Server<ol class="- topic/ol ">
+                        <li class="- topic/li ">Log onto the MCS Windows Server as Administrator.</li>
+                        <li class="- topic/li ">The backup files are located on the Space Manufacturing Software Site, in the
+                        “Process Control\Tapeless” directory. Reference FES-03-500 for connecting
+                        the MCS server to the Manufacturing Software Site.</li>
+                        <li class="- topic/li ">Copy MCS3 Backup Files.zip to the desktop.</li>
+                        <li class="- topic/li ">When the save operation completes, right-click the “<uicontrol class="+ topic/ph ui-d/uicontrol ">MCS Backup
+                              Files.zip</uicontrol>” file displayed on the MCSII_Server share, and
+                           then select WinZip followed by Extract To (see REF _Ref417306614 \h \*
+                           MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_wnk_tc1_rzb" class="- topic/xref ">10</xref>). <fig id="fig_wnk_tc1_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 10: Extract All… Drop Down</title>
+                              <image href="media/image12.jpg"
+                                     placement="break"
+                                     id="image_xnk_tc1_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">You will be prompted to “Select a Destination and Extract Files,” (see REF
+                           _Ref417306805 \h \* MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_tkk_vc1_rzb" class="- topic/xref ">11</xref>). Navigate to D:\MSCII_Server
+                           as shown. Click on the <uicontrol class="+ topic/ph ui-d/uicontrol ">Extract</uicontrol> button start the
+                           extraction process to unzip all of the MCS backup files into the MCS3
+                           Backup files folder. <fig id="fig_tkk_vc1_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 11: Extraction Folder Selection</title>
+                              <image href="media/image13.jpg"
+                                     placement="break"
+                                     id="image_vkk_vc1_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+            <li class="- topic/li ">When the process is successful, the new directory will be created, as shown in REF
+               _Ref417308145 \h \* MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_wxz_xc1_rzb" class="- topic/xref ">12</xref>.
+                  <fig id="fig_wxz_xc1_rzb" class="- topic/fig ">
+                  <title class="- topic/title ">Figure 12: Successfully Created MCS3 Backup Folder</title>
+                  <image href="media/image53.jpg"
+                         placement="break"
+                         id="image_yxz_xc1_rzb"
+                         align="center"
+                         class="- topic/image "/>
+               </fig>
+               <ol class="- topic/ol ">
+                  <li class="- topic/li ">WinZip Version Confirmation<ol class="- topic/ol ">
+                        <li class="- topic/li ">The file compression/decompression software “WinZip” is used to
+                           decompress the server backup files after they have been copied to the
+                           server. Also, it is needed to compress the MCS Backup file for storage
+                           and/or transfer. Because early versions of “WinZip” have limitations on
+                           the size of the files they can compress and decompress, it is necessary
+                           to confirm that the version installed on the targeted server is version
+                           9.0 (or greater) before attempting this procedure.</li>
+                        <li class="- topic/li ">To check the version, select <uicontrol class="+ topic/ph ui-d/uicontrol ">Start/Programs</uicontrol> as
+                           shown in REF _Ref417308330 \h \* MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_ywd_bd1_rzb" class="- topic/xref ">13</xref>. If the version is not shown
+                           on the drop-down menu listing, then open “WinZip,” select Help, and then
+                           select About WinZip. <fig id="fig_ywd_bd1_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 13: WinZip Version Listing</title>
+                              <image href="media/image20.jpg"
+                                     placement="break"
+                                     id="image_axd_bd1_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">If the “WinZip” version is 9.0 or higher, then you can proceed directly
+                           to Section C, WinZip Command-Line Add-On.</li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">Updating WinZip to Version 11.0<ol class="- topic/ol ">
+                        <li class="- topic/li ">If the “WinZip” version is 8.0 (or less), it will be necessary to
+                           upgrade the “WinZip” program on the targeted server to version 11.0
+                           before proceeding. Because “WinZip” software is a licensed product, it is
+                           necessary to purchase a single user license/copy for the most current
+                           version before updating the version on the server. <note id="note_efq_rl1_rzb" class="- topic/note ">
+                              <p class="- topic/p ">It is easiest to purchase the required “WinZip” license along with
+                                 the hard disk drive. Once a license has been purchased, the actual
+                                 program file can be copied from the Space collaboration website,
+                                 using the following steps:</p>
+                           </note>
+                        </li>
+                        <li class="- topic/li ">After a current “WinZip” Version license has been acquired, the software
+                           can be downloaded to the targeted MCS server. (<note id="note_vld_tl1_rzb" class="- topic/note ">
+                              <p class="- topic/p ">MCSII will use WinZip version 11.0, regardless of the current
+                                 available version.)</p>
+                           </note>
+                        </li>
+                        <li class="- topic/li ">The “WinZip” installation folder (WinZip11Pro.zip) can be copied from
+                           the using the same procedures described Section 1.2.1, Copying the Backup
+                           Software to a Windows Server.<ol id="ol_n3x_2v3_pzb" class="- topic/ol ">
+                              <li class="- topic/li ">Once the “WinZip” software has been copied, use Add/Remove
+                                 Programs to uninstall WinZip V8 (Figure 14).</li>
+                              <li class="- topic/li ">Use <b class="+ topic/ph hi-d/b ">Add/Remove Programs</b> to install WinZip V11. Browse to
+                                 D:\MCSII_Server\WinZip11Pro. </li>
+                              <li class="- topic/li ">
+                                 <note id="note_whz_vl1_rzb" class="- topic/note ">
+                                    <p class="- topic/p ">Be sure to direct the installation to the “D:\Program Files”
+                                       drive and folder, and not to the default C:\ drive.</p>
+                                 </note>
+                                 <fig id="fig_wlh_dd1_rzb" class="- topic/fig ">
+                                    <title class="- topic/title ">Figure 14: WinZip Removal Screen</title>
+                                    <image href="media/image54.jpg"
+                                           placement="break"
+                                           id="image_ylh_dd1_rzb"
+                                           align="center"
+                                           class="- topic/image "/>
+                                 </fig>
+                              </li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">WinZip Command-Line Add-On <ol class="- topic/ol ">
+                        <li class="- topic/li ">To operate properly, servers using “WinZip” versions greater than 8.0
+                           must have an add-on command line copied to their D:\Program Files\WinZip
+                           folder. To do this:<ol id="ol_trx_mv3_pzb" class="- topic/ol ">
+                              <li class="- topic/li ">Open Windows Explorer and navigate to D:\MCSII_Server\MCS3 Backup
+                                 Files\ WinZipAddons (and the Version folder that corresponds to the
+                                 version of “WinZip” that is installed on the targeted server).
+                                    <note id="note_zhh_xl1_rzb" class="- topic/note ">
+                                    <p class="- topic/p ">These add-on files were copied to the server along with the
+                                       other tapeless backup files.</p>
+                                 </note>
+                              </li>
+                              <li class="- topic/li ">Open another Windows Explorer window and navigate to D:\Program
+                                 Files\WinZip. Copy the files from the correct version folder and
+                                 paste them in the D:\Program Files\WinZip folder. Available
+                                 versions are shown in Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_hqw_nd1_rzb" class="- topic/xref ">15</xref>. <fig id="fig_hqw_nd1_rzb" class="- topic/fig ">
+                                    <title class="- topic/title ">Figure 15: WinZip Add-On Files Available</title>
+                                    <image href="media/image19.jpg"
+                                           placement="break"
+                                           id="image_jqw_nd1_rzb"
+                                           align="center"
+                                           class="- topic/image "/>
+                                 </fig>
+                              </li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">Physically Installing Backup Disk Drives in Windows Servers<ol class="- topic/ol ">
+                        <li class="- topic/li ">Configuring the Disk Array for Windows G4, G5, G6 and G7 Servers<ol id="ol_fsf_rv3_pzb" class="- topic/ol ">
+                              <li class="- topic/li ">The disk drives used in these servers are all “hot-pluggable,” so
+                                 it is not necessary to power down a server when installing a disk
+                                 drive. <note id="note_bsy_yl1_rzb" class="- topic/note ">
+                                    <p class="- topic/p ">Figure 1 provides a listing of suggested disks for each
+                                       server.Hard drive installation directions can typically be
+                                       found on the drive manufacturer’s web site.</p>
+                                 </note>
+                              </li>
+                              <li class="- topic/li ">To configure a Windows G4, G5, G6, or G7 server, follow these
+                                 steps:</li>
+                              <li class="- topic/li ">Physically install the hard disk drive into Drive Bay 3 of the
+                                 Windows Server, and then if the server is not already running, turn
+                                 it on and let it boot-up completely.</li>
+                              <li class="- topic/li ">Start the Array Configuration Utility (ACU) by using Windows
+                                 Explorer to browse to the HP Array Configuration Utility listing
+                                 (see Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_rly_rd1_rzb" class="- topic/xref ">16</xref>). <fig id="fig_rly_rd1_rzb" class="- topic/fig ">
+                                    <title class="- topic/title ">Figure 16: HP Array Configuration Utility Startup for G4,
+                                       G5, G6, and G7 Servers</title>
+                                    <image href="media/image20.jpg"
+                                           placement="break"
+                                           id="image_tly_rd1_rzb"
+                                           align="center"
+                                           class="- topic/image "/>
+                                 </fig>
+                              </li>
+                              <li class="- topic/li ">Double-click on <uicontrol class="+ topic/ph ui-d/uicontrol ">HP Array Configuration
+                                    Utility</uicontrol>. This will display the HP Array
+                                 Configuration Utility Available Device screen (see Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_tql_5d1_rzb" class="- topic/xref ">17</xref>).</li>
+                              <li class="- topic/li ">Select the device by clicking as indicated. <fig id="fig_tql_5d1_rzb" class="- topic/fig ">
+                                    <title class="- topic/title ">Figure 17: HP Array Configuration Utility Smart Array
+                                       Selection Screen</title>
+                                    <image href="media/image21.jpg"
+                                           placement="break"
+                                           id="image_vql_5d1_rzb"
+                                           align="center"
+                                           class="- topic/image "/>
+                                 </fig>
+                              </li>
+                              <li class="- topic/li ">Click on the <uicontrol class="+ topic/ph ui-d/uicontrol ">Down Arrow</uicontrol> key and choose
+                                 Physical View to display the available devices. Then, double-click
+                                 on <uicontrol class="+ topic/ph ui-d/uicontrol ">Smart Array P410i in Embedded Slot</uicontrol> to
+                                 display the array. Click once on <uicontrol class="+ topic/ph ui-d/uicontrol ">Unassigned Drives
+                                    (1)</uicontrol> which will be listed as an “Unassigned Drive.”
+                                 This will display the HP Array Configuration Utility Unassigned
+                                 Drives screen, (see Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_m5l_wd1_rzb" class="- topic/xref ">18</xref>). <fig id="fig_m5l_wd1_rzb" class="- topic/fig ">
+                                    <title class="- topic/title ">Figure 18: HP Array Configuration Utility Unassigned
+                                       Drives Screen</title>
+                                    <image href="media/image22.jpg"
+                                           placement="break"
+                                           id="image_o5l_wd1_rzb"
+                                           align="center"
+                                           class="- topic/image "/>
+                                 </fig>
+                              </li>
+                              <li class="- topic/li ">Click on the <uicontrol class="+ topic/ph ui-d/uicontrol ">Unassigned Drive</uicontrol> to highlight
+                                 it, and then click on the <uicontrol class="+ topic/ph ui-d/uicontrol ">Create Array</uicontrol>
+                                 button (see Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_cvp_yd1_rzb" class="- topic/xref ">19</xref>).
+                                 This will start the array configuration process and display the
+                                 Create Array Unassigned drives screen, as shown in Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_tpm_b21_rzb" class="- topic/xref ">20</xref>. <fig id="fig_cvp_yd1_rzb" class="- topic/fig ">
+                                    <title class="- topic/title ">Figure 19: HP Array Configuration Utility Unassigned
+                                       Drives Selection Screen</title>
+                                    <image href="media/image23.jpg"
+                                           placement="break"
+                                           id="image_evp_yd1_rzb"
+                                           align="center"
+                                           class="- topic/image "/>
+                                 </fig>
+                              </li>
+                              <li class="- topic/li ">When the Physical Drive Selection screen is displayed (see Figure
+                                    <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_tpm_b21_rzb" class="- topic/xref ">20</xref>), click on the
+                                 newly installed drive (in this case Bay 3) to highlight it, and
+                                 then click on the <uicontrol class="+ topic/ph ui-d/uicontrol ">OK</uicontrol> button to start the
+                                 configuration process. <fig id="fig_tpm_b21_rzb" class="- topic/fig ">
+                                    <title class="- topic/title ">Figure 20: Physical Drive Selection Screen</title>
+                                    <image href="media/image24.jpg"
+                                           id="image_vpm_b21_rzb"
+                                           align="center"
+                                           placement="inline"
+                                           class="- topic/image "/>
+                                 </fig>
+                              </li>
+                              <li class="- topic/li ">When the <b class="+ topic/ph hi-d/b ">Create Logical Drive</b> screen is displayed (see
+                                 Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_gzk_d21_rzb" class="- topic/xref ">21</xref>), highlight
+                                 the targeted drive and click on the <uicontrol class="+ topic/ph ui-d/uicontrol ">Create Logical
+                                    Drive</uicontrol> button. This will initiate the drive creation
+                                 process and display a drive parameter confirmation screen (see
+                                 Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_d3b_f21_rzb" class="- topic/xref ">22</xref>). <fig id="fig_gzk_d21_rzb" class="- topic/fig ">
+                                    <title class="- topic/title ">Figure 21: Create Logical Drive Selection Screen</title>
+                                    <image href="media/image25.jpg"
+                                           placement="break"
+                                           align="center"
+                                           class="- topic/image "/>
+                                 </fig>
+                                 <fig id="fig_d3b_f21_rzb" class="- topic/fig ">
+                                    <title class="- topic/title ">Figure 22: Drive Parameter Confirmation Screen</title>
+                                    <image href="media/image26.jpg"
+                                           placement="break"
+                                           id="image_f3b_f21_rzb"
+                                           align="center"
+                                           class="- topic/image "/>
+                                 </fig>
+                              </li>
+                              <li class="- topic/li ">Accept the default values displayed on this screen by clicking on
+                                 the <uicontrol class="+ topic/ph ui-d/uicontrol ">Save</uicontrol> button. The system will complete
+                                 the drive creation process and display the system status screen,
+                                 showing the status of the newly configured drive (see Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_n1h_h21_rzb" class="- topic/xref ">23</xref>). <fig id="fig_n1h_h21_rzb" class="- topic/fig ">
+                                    <title class="- topic/title ">Figure 23: System Status Screen</title>
+                                    <image href="media/image27.jpg"
+                                           placement="break"
+                                           id="image_o1h_h21_rzb"
+                                           align="center"
+                                           class="- topic/image "/>
+                                 </fig>
+                              </li>
+                              <li class="- topic/li ">Pressing the <uicontrol class="+ topic/ph ui-d/uicontrol ">Exit ACU</uicontrol> button will complete
+                                 the configuration process and exit you from the array configuration
+                                 utility program.</li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">Configuring a Disk Array for a Windows G3 Server<ol class="- topic/ol ">
+                        <li class="- topic/li ">The disk drives used in this server are all “hot-pluggable,” so it is
+                           not necessary to power down the server when installing a disk drive. REF
+                           _Ref413670586 \h \* MERGEFORMAT Required/Suggested Equipment Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_n2n_pb1_rzb" class="- topic/xref ">1</xref>: Suggested Hard Drives for
+                           Tapeless Backup provides a listing of suggested disks for each server.
+                           Hard drive installation directions can typically be found on the drive
+                           manufacturer’s web site.</li>
+                        <li class="- topic/li ">
+                           <note id="note_qbq_4m1_rzb" class="- topic/note ">
+                              <p class="- topic/p ">The screens used during the configuration of G3 disk arrays are
+                                 very similar to those used when configuring G4, G5, G6 and G7
+                                 arrays. However, some minor differences do exist. See Section
+                                 1.2.5.1, Configuring the Disk Array for Windows G4, G5, G6 and G7
+                                 Servers for representative examples of the screens that will be
+                                 encountered during the configuration of G3 arrays.</p>
+                           </note>
+                        </li>
+                        <li class="- topic/li ">To configure a Windows G3 server, follow these steps. <ol id="ul_arj_sw3_pzb" class="- topic/ol ">
+                              <li class="- topic/li ">Physically install the hard disk drive into Drive Bay 2 of the MCS
+                                 G3 Windows Server, and then if the server is not already running,
+                                 turn it on and let it boot-up completely. <note id="note_v1t_pm1_rzb" class="- topic/note ">
+                                    <p class="- topic/p ">Figure 1 provides a listing of suggested disks for each
+                                       server. Hard drive installation directions can typically be
+                                       found on the drive manufacturer’s web site.</p>
+                                 </note>
+                                 <ol id="ul_brj_sw3_pzb" class="- topic/ol ">
+                                    <li class="- topic/li ">Click on <uicontrol class="+ topic/ph ui-d/uicontrol ">Start Programs</uicontrol>.</li>
+                                    <li class="- topic/li ">Click on <uicontrol class="+ topic/ph ui-d/uicontrol ">Compaq System Tools</uicontrol>.</li>
+                                    <li class="- topic/li ">Click on <uicontrol class="+ topic/ph ui-d/uicontrol ">HP Array Configuration
+                                          Utility</uicontrol>.</li>
+                                    <li class="- topic/li ">Click (again) on <uicontrol class="+ topic/ph ui-d/uicontrol ">HP Array Configuration
+                                          Utility</uicontrol> (see Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_jhq_j21_rzb" class="- topic/xref ">24</xref>). <fig id="fig_jhq_j21_rzb" class="- topic/fig ">
+                                          <title class="- topic/title ">Figure 24: HP Array Configuration Utility Startup
+                                             Selection, G3 Server</title>
+                                          <image href="media/image28.jpg"
+                                                 placement="break"
+                                                 id="image_mhq_j21_rzb"
+                                                 align="center"
+                                                 class="- topic/image "/>
+                                       </fig>
+                                    </li>
+                                    <li class="- topic/li ">Select the <uicontrol class="+ topic/ph ui-d/uicontrol ">Device</uicontrol> (the newly
+                                       installed hard drive).</li>
+                                    <li class="- topic/li ">Select <uicontrol class="+ topic/ph ui-d/uicontrol ">Physical View</uicontrol>. The newly
+                                       installed drive will be displayed as the “<b class="+ topic/ph hi-d/b ">Unassigned
+                                          Drive</b>.” Click on the “<uicontrol class="+ topic/ph ui-d/uicontrol ">Unassigned
+                                          Drive</uicontrol>” line to highlight it.</li>
+                                    <li class="- topic/li ">Select <uicontrol class="+ topic/ph ui-d/uicontrol ">Create Array</uicontrol> (accept all the
+                                       default values).</li>
+                                    <li class="- topic/li ">Click on <uicontrol class="+ topic/ph ui-d/uicontrol ">Save</uicontrol>.</li>
+                                    <li class="- topic/li ">Click on <uicontrol class="+ topic/ph ui-d/uicontrol ">Exit</uicontrol>, which will shut down
+                                       the ACU.</li>
+                                 </ol>
+                              </li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">Configuring a Disk Array for a Windows G2 Server<ol class="- topic/ol ">
+                        <li class="- topic/li ">
+                           <note id="note_edy_5m1_rzb" class="- topic/note ">
+                              <p class="- topic/p ">The screens used during the configuration of a G2 disk array are
+                                 very similar to those used when configuring G4, G5, G6 and G7
+                                 arrays. However, some minor differences do exist. See Section
+                                 1.2.5.1, Configuring the Disk Array for Windows G4, G5, G6 and G7
+                                 Servers for representative examples of the screens that will be
+                                 encountered during the configuration of G2 arrays.</p>
+                           </note>
+                        </li>
+                        <li class="- topic/li ">The disk drives used in this server are all “hot-pluggable,” so it is
+                           not necessary to power down the server when installing a disk drive.</li>
+                        <li class="- topic/li ">To configure a Windows G2 Server, follow these steps:<ol id="ol_a11_bx3_pzb" class="- topic/ol ">
+                              <li class="- topic/li ">Physically install the hard disk drive into Drive Bay 2 of the MCS
+                                 G2 Windows Server, and then if the server is not already running,
+                                 turn it on and let it boot-up completely. Required/Suggested
+                                 Equipment Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_n2n_pb1_rzb" class="- topic/xref ">1</xref>:
+                                 Suggested Hard Drives for Tapeless Backup provides a listing of
+                                 suggested disks for each server. Hard drive installation directions
+                                 can typically be found on the drive manufacturer’s web site.</li>
+                              <li class="- topic/li ">Start the Array Configuration Utility (ACU) by navigating to the
+                                 Start/Programs/Compaq System Tools/HP Array Configuration Utility/
+                                 HP Array Configuration Utility.</li>
+                              <li class="- topic/li ">Click on <uicontrol class="+ topic/ph ui-d/uicontrol ">Start Programs</uicontrol>.</li>
+                              <li class="- topic/li ">Click on <uicontrol class="+ topic/ph ui-d/uicontrol ">Compaq System Tools</uicontrol>.</li>
+                              <li class="- topic/li ">Click on <uicontrol class="+ topic/ph ui-d/uicontrol ">HP Array Configuration Utility</uicontrol>
+                                 (see Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_czv_l21_rzb" class="- topic/xref ">25</xref>). <fig id="fig_czv_l21_rzb" class="- topic/fig ">
+                                    <title class="- topic/title ">Figure 25: HP Array Configuration Utility Startup, G2
+                                       Server</title>
+                                    <image href="media/image29.jpg"
+                                           placement="break"
+                                           id="image_ezv_l21_rzb"
+                                           align="center"
+                                           class="- topic/image "/>
+                                 </fig>
+                              </li>
+                              <li class="- topic/li ">Select the <uicontrol class="+ topic/ph ui-d/uicontrol ">Device</uicontrol> (the newly installed hard
+                                 drive).</li>
+                              <li class="- topic/li ">Select <uicontrol class="+ topic/ph ui-d/uicontrol ">Physical View</uicontrol>. The newly installed
+                                 drive will be displayed as the <b class="+ topic/ph hi-d/b ">Unassigned Drive</b>. Click on
+                                 the <uicontrol class="+ topic/ph ui-d/uicontrol ">Unassigned Drive</uicontrol> line to highlight
+                                 it.</li>
+                              <li class="- topic/li ">Select <uicontrol class="+ topic/ph ui-d/uicontrol ">Create Array</uicontrol> (choose all the default
+                                 values).</li>
+                              <li class="- topic/li ">Click on <uicontrol class="+ topic/ph ui-d/uicontrol ">Save</uicontrol>.</li>
+                              <li class="- topic/li ">Click on <uicontrol class="+ topic/ph ui-d/uicontrol ">Exit</uicontrol>, which will shut down the
+                                 ACU.</li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">Initializing Windows Backup Disk Drives<ol class="- topic/ol ">
+                        <li class="- topic/li ">Right-click on the <uicontrol class="+ topic/ph ui-d/uicontrol ">My Computer</uicontrol> icon to highlight
+                           it and display a <b class="+ topic/ph hi-d/b ">drop-down</b> menu.</li>
+                        <li class="- topic/li ">Select <uicontrol class="+ topic/ph ui-d/uicontrol ">Manage</uicontrol>. This will display the <b class="+ topic/ph hi-d/b ">Computer
+                              Management</b> screen, as shown in Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_x3y_v21_rzb" class="- topic/xref ">31</xref>.</li>
+                        <li class="- topic/li ">Select <uicontrol class="+ topic/ph ui-d/uicontrol ">Disk Management</uicontrol>. </li>
+                        <li class="- topic/li ">Right-click on the <uicontrol class="+ topic/ph ui-d/uicontrol ">Disk1</uicontrol> tab to highlight the
+                           disk listing and display a <b class="+ topic/ph hi-d/b ">drop-down</b> menu.</li>
+                        <li class="- topic/li ">Select <uicontrol class="+ topic/ph ui-d/uicontrol ">Initialize Disk</uicontrol> (see REF _Ref417309637 \h
+                           \* MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_t45_n21_rzb" class="- topic/xref ">26</xref>).
+                           When the initialization process is complete, the “<b class="+ topic/ph hi-d/b ">Disk Management</b>”
+                           screen will be redisplayed, as shown in REF _Ref417309668 \h \*
+                           MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_zcd_p21_rzb" class="- topic/xref ">27</xref>, <fig id="fig_t45_n21_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 26: Initialize Disk Selection</title>
+                              <image href="media/image30.jpg"
+                                     placement="break"
+                                     id="image_w45_n21_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">Right-click on the name of the initialized disk (to highlight it and
+                           display a <b class="+ topic/ph hi-d/b ">drop-down</b> menu) and select <uicontrol class="+ topic/ph ui-d/uicontrol ">New
+                              Partition</uicontrol> (see REF _Ref417309668 \h \* MERGEFORMAT Figure
+                              <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_zcd_p21_rzb" class="- topic/xref ">27</xref>). <fig id="fig_zcd_p21_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 27: New Partition Selection</title>
+                              <image href="media/image31.jpg"
+                                     placement="break"
+                                     id="image_bdd_p21_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">
+                           <note id="note_a4l_3n1_rzb" class="- topic/note ">
+                              <p class="- topic/p ">Make sure the initialized disk is listed as “Primary,” see REF
+                                 _Ref417309716 \h \* MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_xwb_r21_rzb" class="- topic/xref ">28</xref>.</p>
+                           </note>
+                           <fig id="fig_xwb_r21_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 28: Select Partition Type Screen</title>
+                              <image href="media/image32.jpg"
+                                     placement="break"
+                                     id="image_axb_r21_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">Click on the <uicontrol class="+ topic/ph ui-d/uicontrol ">Next</uicontrol> button. You will be prompted to
+                              “<b class="+ topic/ph hi-d/b ">Specify Partition Size</b>,” (see REF _Ref417309755 \h \*
+                           MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_znz_s21_rzb" class="- topic/xref ">29</xref>). <fig id="fig_znz_s21_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 29: Default Partition Parameters Selection
+                                 Screen</title>
+                              <image href="media/image33.jpg"
+                                     placement="break"
+                                     id="image_c4z_s21_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">Accept the default values by clicking the <uicontrol class="+ topic/ph ui-d/uicontrol ">Next</uicontrol>
+                           button. This will display a prompt to “<b class="+ topic/ph hi-d/b ">Assign a Drive Letter or
+                              Path</b>,” see REF _Ref417311229 \h \* MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_u5j_521_rzb" class="- topic/xref ">30</xref>. <fig id="fig_u5j_521_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 30: Assign a Drive Letter Screen</title>
+                              <image href="media/image34.jpg"
+                                     placement="break"
+                                     id="image_x5j_521_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">Select <uicontrol class="+ topic/ph ui-d/uicontrol ">G</uicontrol>: as the drive letter and click on the
+                              <uicontrol class="+ topic/ph ui-d/uicontrol ">Next</uicontrol> button, which will display the “<b class="+ topic/ph hi-d/b ">Format
+                              Partition</b>” selection screen (see REF _Ref417370536 \h \*
+                           MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_x3y_v21_rzb" class="- topic/xref ">31</xref>). <fig id="fig_x3y_v21_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 31: Select Defaults and Format Partition Screen</title>
+                              <image href="media/image35.jpg"
+                                     placement="break"
+                                     id="image_ajy_v21_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">Click on the <uicontrol class="+ topic/ph ui-d/uicontrol ">Next</uicontrol> button to use the defaults to
+                           start formatting the partition.</li>
+                        <li class="- topic/li ">When the partition formatting process is completed, the “<b class="+ topic/ph hi-d/b ">Completing
+                              the New Partition Wizard</b> Screen will be displayed (with the
+                           currently selected settings), as shown in REF _Ref417370584 \h \*
+                           MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_h34_x21_rzb" class="- topic/xref ">32</xref>. To
+                           accept these settings and complete the partitioning operation, click on
+                           the <uicontrol class="+ topic/ph ui-d/uicontrol ">Finish</uicontrol> button. <fig id="fig_h34_x21_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 32: Completing the New Partition Wizard Screen</title>
+                              <image href="media/image36.jpg"
+                                     placement="break"
+                                     id="image_k34_x21_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">When the partitioning process is complete, the “<b class="+ topic/ph hi-d/b ">Disk Management</b>”
+                           screen will be redisplayed, as shown in REF _Ref417370606 \h \*
+                           MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_cvf_z21_rzb" class="- topic/xref ">33</xref>. <fig id="fig_cvf_z21_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 33: Disk Management Screen</title>
+                              <image href="media/image37.jpg"
+                                     placement="break"
+                                     id="image_fvf_z21_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">Right-click on the initialized disk once to highlight it and display the
+                           drop-down menu, and then select Properties.</li>
+                        <li class="- topic/li ">Click on the <uicontrol class="+ topic/ph ui-d/uicontrol ">General</uicontrol> Tab to display the general
+                           volume information, and then type the new volume name Backups, (see REF
+                           _Ref417370631 \h \* MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_sxc_bf1_rzb" class="- topic/xref ">34</xref>). <fig id="fig_sxc_bf1_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 34: General Properties Tab</title>
+                              <image href="media/image38.jpg"
+                                     id="image_vxc_bf1_rzb"
+                                     placement="inline"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">Click on the <uicontrol class="+ topic/ph ui-d/uicontrol ">Sharing</uicontrol> tab to display the sharing
+                           information screen (see REF _Ref417370659 \h \* MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_h33_cf1_rzb" class="- topic/xref ">35</xref>). <fig id="fig_h33_cf1_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 35: New Share Button on Sharing Tab</title>
+                              <image href="media/image39.jpg"
+                                     placement="break"
+                                     id="image_k33_cf1_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">On the <uicontrol class="+ topic/ph ui-d/uicontrol ">Sharing</uicontrol> Tab, click the <uicontrol class="+ topic/ph ui-d/uicontrol ">New
+                              Share</uicontrol> button. This will display the “<b class="+ topic/ph hi-d/b ">New Share</b>”
+                           naming prompt, (see REF _Ref417370742 \h \* MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_ec1_2f1_rzb" class="- topic/xref ">36</xref>). <fig id="fig_ec1_2f1_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 36: New Share Naming Prompt Screen</title>
+                              <image href="media/image40.jpg"
+                                     placement="break"
+                                     id="image_hc1_2f1_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">When prompted to provide a “Share name,” Type <userinput class="+ topic/ph sw-d/userinput ">G</userinput>,
+                           and then click on the <uicontrol class="+ topic/ph ui-d/uicontrol ">OK</uicontrol> button. This will update
+                           the new share information and return you to the “<b class="+ topic/ph hi-d/b ">Sharing</b>” tab (see
+                           REF _Ref417370782 \h \* MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_cvn_ff1_rzb" class="- topic/xref ">37</xref>). <fig id="fig_cvn_ff1_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 37: Sharing Tab</title>
+                              <image href="media/image41.jpg"
+                                     placement="break"
+                                     id="image_fvn_ff1_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">Clicking the <uicontrol class="+ topic/ph ui-d/uicontrol ">Apply</uicontrol> button will create the new
+                           share and return you to the Disk Management Screen where information will
+                           be displayed for the targeted disk drive (see REF _Ref417370819 \h \*
+                           MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_a4b_hf1_rzb" class="- topic/xref ">38</xref>). <fig id="fig_a4b_hf1_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 38: Disk Management Screen</title>
+                              <image href="media/image42.jpg"
+                                     placement="break"
+                                     id="image_d4b_hf1_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">
+                           <note id="note_khl_141_rzb" class="- topic/note ">
+                              <p class="- topic/p ">The backup drive should now be configured as RAID 0 (zero), Simple,
+                                 NTFS, Primary Partition, defined as G:, named Backups, and
+                                 Shared.</p>
+                           </note>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">Copying the Backups Folder and Files<ol class="- topic/ol ">
+                        <li class="- topic/li ">The Backups file folder downloaded earlier and extracted to the D:\
+                           drive (D:\MCSII_Server\MCS3 Backup Files\Backups -- see REF _Ref417370868
+                           \h \* MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_bvr_3f1_rzb" class="- topic/xref ">39</xref>)
+                           must now be copied to the new G: drive.</li>
+                        <li class="- topic/li ">Open Windows Explorer.</li>
+                        <li class="- topic/li ">Highlight D:\ MCSII_Server\MCS3 Backup Files\Backups (see REF
+                           _Ref417370868 \h \* MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_bvr_3f1_rzb" class="- topic/xref ">39</xref>). <fig id="fig_bvr_3f1_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 39: Copy Backups Folder from this Location</title>
+                              <image href="media/image43.jpg"
+                                     placement="break"
+                                     id="image_evr_3f1_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">Right-click, and then select <uicontrol class="+ topic/ph ui-d/uicontrol ">Copy</uicontrol>.</li>
+                        <li class="- topic/li ">Navigate to G:\</li>
+                        <li class="- topic/li ">Right-click, and then select <uicontrol class="+ topic/ph ui-d/uicontrol ">Paste</uicontrol>. The Backups
+                           folder and its contents should be copied to the G: drive (see REF
+                           _Ref417370901 \h \* MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_rbh_lf1_rzb" class="- topic/xref ">40</xref>). <fig id="fig_rbh_lf1_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 40: Paste Backups Folder to this Location</title>
+                              <image href="media/image44.jpg"
+                                     placement="break"
+                                     id="image_vbh_lf1_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">Older installations using SQL Server 2000 will require the copying of
+                           alternate backup-related files to handle communications with older
+                           versions of the VMS operating system.</li>
+                        <li class="- topic/li ">Verify the SQL version of a server by inspecting the icon on the Admin
+                           desktop. SQL Server 2005 icons are titled “SQL Server Management Studio.”
+                           SQL Server 2000 installation icons are titled “SQL2K Enterprise Manager.”
+                           Step b. is only done for SQL Server 2000 systems.</li>
+                        <li class="- topic/li ">If the system operates with SQL Server 2000, it will be necessary to
+                           copy the separate files located in the folder named “D:\MCSII_Server\MCS3
+                           Backup Files\Replacement Files for Older Alpha Systems” to the
+                           “G:\Backups” folder (replacing the files in that folder which have the
+                           same names).</li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">How to Create Scheduled Tasks<ol class="- topic/ol ">
+                        <li class="- topic/li ">
+                           <note id="note_imd_241_rzb" class="- topic/note ">
+                              <p class="- topic/p ">Before creating tasks, verify that there is a recent successful
+                                 backup of the server.</p>
+                           </note>
+                        </li>
+                        <li class="- topic/li ">Two scheduled tasks (both running as Administrator) must be set up on
+                           the server to run the backup routine automatically:</li>
+                        <li class="- topic/li ">Click on <uicontrol class="+ topic/ph ui-d/uicontrol ">Programs</uicontrol>.</li>
+                        <li class="- topic/li ">Click on <uicontrol class="+ topic/ph ui-d/uicontrol ">Accessories</uicontrol>.</li>
+                        <li class="- topic/li ">Click on <uicontrol class="+ topic/ph ui-d/uicontrol ">System Tools</uicontrol>.</li>
+                        <li class="- topic/li ">Right-click on <uicontrol class="+ topic/ph ui-d/uicontrol ">Scheduled Tasks</uicontrol> (see REF
+                           _Ref417370964 \h \* MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_y5y_nf1_rzb" class="- topic/xref ">41</xref>), and then drag the cursor to
+                           an open spot on the desktop. When you release the right
+                              <uicontrol class="+ topic/ph ui-d/uicontrol ">mouse</uicontrol> button, you will be prompted to
+                              “<b class="+ topic/ph hi-d/b ">Create a Shortcut</b>.” <fig id="fig_y5y_nf1_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 41: Scheduled Tasks</title>
+                              <image href="media/image45.jpg"
+                                     placement="break"
+                                     id="image_bvy_nf1_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">Select <uicontrol class="+ topic/ph ui-d/uicontrol ">Create Shortcut Here</uicontrol>.</li>
+                        <li class="- topic/li ">Double-click the icon you just created to open Scheduled Tasks.</li>
+                        <li class="- topic/li ">Select <uicontrol class="+ topic/ph ui-d/uicontrol ">Add Scheduled Task</uicontrol> to open the
+                           Wizard.</li>
+                        <li class="- topic/li ">Browse to the G:\ drive and select G:\Backups\Runbackup.cmd. <note id="note_mcs_341_rzb" class="- topic/note ">
+                              <p class="- topic/p ">The task name should default to the name of the CMD file.</p>
+                           </note>
+                        </li>
+                        <li class="- topic/li ">Confirm that the settings on the Task Tab match those shown in REF
+                           _Ref417371028 \h \* MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_e5z_tf1_rzb" class="- topic/xref ">42</xref>
+                           <fig id="fig_e5z_tf1_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 42: Run Backup Task Screen</title>
+                              <image href="media/image46.jpg"
+                                     placement="break"
+                                     id="image_i5z_tf1_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">Set the schedule, as shown in REF _Ref417371063 \h \* MERGEFORMAT Figure
+                              <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_ls5_wf1_rzb" class="- topic/xref ">43</xref>. <fig id="fig_ls5_wf1_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 43: Run Backup Schedule Screen</title>
+                              <image href="media/image47.jpg"
+                                     placement="break"
+                                     id="image_ps5_wf1_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">The tasks must run under the Administrator account. When prompted,
+                           supply the username MCSxxS0\Administrator, and then enter the
+                           Administrator Password.</li>
+                        <li class="- topic/li ">Repeat the process to schedule the other task. </li>
+                        <li class="- topic/li ">Select <uicontrol class="+ topic/ph ui-d/uicontrol ">Add Scheduled Task</uicontrol> to open the
+                           Wizard.</li>
+                        <li class="- topic/li ">Browse to the G:\ drive and select G:\Backups\StartVMSbackup.bat. <note id="note_ixp_l41_rzb" class="- topic/note ">
+                              <p class="- topic/p ">The task name should default to the name of the “.bat file.”</p>
+                           </note>
+                        </li>
+                        <li class="- topic/li ">Confirm that the settings on the Task Tab match those shown in REF
+                           _Ref417371101 \h \* MERGEFORMAT Figure <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_h2s_zf1_rzb" class="- topic/xref ">44</xref>. <fig id="fig_h2s_zf1_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 44: Start VMS Backup Task Screen</title>
+                              <image href="media/image48.jpg"
+                                     placement="break"
+                                     id="image_l2s_zf1_rzb"
+                                     align="center"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">Set the schedule as shown in REF _Ref417371135 \h \* MERGEFORMAT Figure
+                              <xref href="#r20D9500-BB02-11F0-1597-09173F13E4C5/fig_rfd_dg1_rzb" class="- topic/xref ">45</xref>. <fig id="fig_rfd_dg1_rzb" class="- topic/fig ">
+                              <title class="- topic/title ">Figure 45: Start VMS Backup Schedule Screen</title>
+                              <image href="media/image49.jpg"
+                                     placement="break"
+                                     align="center"
+                                     id="image_vfd_dg1_rzb"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">The tasks must run under the Administrator account. When prompted,
+                           supply the username MCSxxS0\Administrator, and then enter the
+                           Administrator Password.</li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </section>
+   </refbody>
+</reference>

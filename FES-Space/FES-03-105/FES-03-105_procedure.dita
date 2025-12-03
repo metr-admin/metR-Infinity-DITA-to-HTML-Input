@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xml:lang="en-us"
+           id="r1FF5B5E-BB01-11F0-6626-09173F13E4C5"
+           ditaarch:DITAArchVersion="1.3"
+           domains="(topic reference)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+           class="- topic/topic       reference/reference ">
+   <title class="- topic/title ">Procedure</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates>
+         <created date="2025-11-10+05:30"/>
+         <revised modified="2025-11-10+05:30"/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="maintenance,engineering,safety,production"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-fes-space</indexterm>
+            <indexterm>fsc-module</indexterm>
+            <indexterm>plc-controller</indexterm>
+            <indexterm>hmi-console</indexterm>
+            <indexterm>sensor-hardware</indexterm>
+            <!-- Process layer -->
+            <indexterm>pre-start-checks</indexterm>
+            <indexterm>shutdown-sequence</indexterm>
+            <indexterm>hardware-replacement</indexterm>
+            <indexterm>configuration-migration</indexterm>
+            <indexterm>post-install-commissioning</indexterm>
+            <!-- Context layer -->
+            <indexterm>plant-maintenance</indexterm>
+            <indexterm>safety-interlocks</indexterm>
+            <indexterm>quality-verification</indexterm>
+            <indexterm>production-handover</indexterm>
+            <indexterm>maintenance-log</indexterm>
+            <indexterm>i-o-mapping</indexterm>
+            <indexterm>ladder-logic</indexterm>
+            <indexterm>pid-tuning</indexterm>
+            <indexterm>sensor-calibration</indexterm>
+            <indexterm>thermocouple</indexterm>
+            <indexterm>modbus-rtu</indexterm>
+            <indexterm>fieldbus-topology</indexterm>
+            <indexterm>alarm-configuration</indexterm>
+            <indexterm>hmi-screen-ids</indexterm>
+            <indexterm>firmware-image</indexterm>
+            <indexterm>bootloader-sequence</indexterm>
+            <indexterm>backup-restore</indexterm>
+            <indexterm>ip-addressing</indexterm>
+            <indexterm>vlan-configuration</indexterm>
+            <indexterm>checksum-validation</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-FES-Space</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Procedure — FES-03-105"/>
+         <othermeta name="shortdesc" content="Stepwise procedure for FES-03-105 covering pre-checks, configuration migration, firmware actions, and commissioning tests including I/O mapping and PID tuning."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="control-cabinet;hmi-panels;thermocouples;fieldbus-gateway;backup-server"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:system-migration-procedure;industry:glass-manufacturing"/>
+         <othermeta name="tags" content="procedure,io-mapping,pid-tuning,firmware,commissioning"/>
+         <othermeta name="usecase" content="execute-and-validate-system-change-with-safety-and-quality-controls"/>
+      </metadata>
+   </prolog>
+   <refbody class="- topic/body        reference/refbody ">
+      <section class="- topic/section ">
+         <ol class="- topic/ol ">
+            <li id="li_ump_qbs_qzb" class="- topic/li ">Check the Power Supply (<note id="note_bvk_hbs_qzb" class="- topic/note ">
+                  <p class="- topic/p ">All of the following pictures were taken with the same failing power supply and
+                     Edgeport.)</p>
+               </note>
+               <ol id="ol_xmp_qbs_qzb" class="- topic/ol ">
+                  <li class="- topic/li ">In open circuit, it is possible for the supply to appear to be good despite
+                     not functioning under load. This example shows a no-load power output of
+                        <b class="+ topic/ph hi-d/b ">5.17</b>VDC <fig id="fig_ymp_qbs_qzb" class="- topic/fig ">
+                        <image href="media/image3.jpg"
+                               placement="break"
+                               align="center"
+                               id="image_zmp_qbs_qzb"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Therefore, it is recommended that at this point, the Edgeport be disassembled
+                     on a non-conductive surface. Please note that only one of the screws of the 19
+                     inch rack mount brackets must be removed. The other screw should be loosened
+                     only slightly so that the metal plate that the bracket screws into is retained
+                     in the Edgeport shell <ol id="ol_anp_qbs_qzb" class="- topic/ol ">
+                        <li class="- topic/li ">Alternatively, a 2.5 Ohm, 5W or greater preferably 15W, load resister
+                           can be used to simulate a 2 Amp load on the power supply. If this method
+                           is chosen, caution is urged as the resister will heat up.</li>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">Even when connected to the Edgeport, the power supply can still appear to be
+                     functioning, as shown below. Note that the back side of the Edgeport PCB is
+                     being probed. <fig id="fig_bnp_qbs_qzb" class="- topic/fig ">
+                        <image href="media/image4.jpg"
+                               placement="break"
+                               id="image_cnp_qbs_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+                  <li class="- topic/li ">Therefore, to observe the Edgeport under full load, the USB cable to the
+                     Integrity server must also be connected. The FSC may need to be rebooted to
+                     force the Integrity to reconnect to the Edgeport. Otherwise, there will still
+                     be no load on the Edgeport (reference FES-03-106 for the reboot process). The
+                     image on the left shows the USB connected, but the Integrity not communicating.
+                     The image on the right shows the Integrity connected and communicating to the
+                     Edgeport (even at only slightly over 4V). <fig id="fig_dnp_qbs_qzb" class="- topic/fig ">
+                        <image href="media/image5.jpg"
+                               placement="break"
+                               id="image_enp_qbs_qzb"
+                               align="center"
+                               class="- topic/image "/>
+                     </fig>
+                  </li>
+               </ol>
+            </li>
+            <li class="- topic/li ">If the power supply delivers less than 4.5VDC under load, it should be considered to be failing. If it delivers under 4.75VDC, it is suspect. Obtain a replacement power supply using the specifications or part numbers above.</li>
+            <li class="- topic/li ">Reassemble the Edgeport.</li>
+            <li class="- topic/li ">Reconnect the Edgeport to the FSC Integrity computer. Use a new power supply if
+               indicated by the tests in Step <xref href="#r1FF5B5E-BB01-11F0-6626-09173F13E4C5/li_ump_qbs_qzb" class="- topic/xref ">1</xref>.</li>
+            <li class="- topic/li ">Reboot the FSC Integrity computer (see FES-03-106) to re-establish communications with the FSC.</li>
+         </ol>
+      </section>
+   </refbody>
+</reference>
