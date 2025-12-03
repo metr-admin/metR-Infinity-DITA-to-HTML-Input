@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="t296354E-BDF2-11F0-4210-09173F13E4C5"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">To release a document lock</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates>
+         <created date="2025-11-24T17:43:00+05:30"/>
+         <revised modified="2025-11-24T17:43:00+05:30"/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="contract-administrator,legal-counsel,it-admin,revops"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-contractmac-power</indexterm>
+            <indexterm>x-author-contracts</indexterm>
+            <indexterm>power-x-author-mac</indexterm>
+            <indexterm>document-locking-service</indexterm>
+            <indexterm>clm-platform</indexterm>
+            <!-- Process layer -->
+            <indexterm>release-document-lock</indexterm>
+            <indexterm>force-unlock</indexterm>
+            <indexterm>check-in-procedure</indexterm>
+            <indexterm>unlock-notification</indexterm>
+            <indexterm>conflict-resolution</indexterm>
+            <!-- Context layer -->
+            <indexterm>stale-lock-recovery</indexterm>
+            <indexterm>document-check-in-process</indexterm>
+            <indexterm>user-session-termination</indexterm>
+            <indexterm>salesforce-integrated-documents</indexterm>
+            <indexterm>legal-operations</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-contractmac-Power</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Release a document lock"/>
+         <othermeta name="shortdesc" content="Procedure to release or force-release a document lock to allow other users to edit."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="document-lock;user-session;admin-console;force-unlock-log;audit-trail"/>
+         <othermeta name="taxonomy" content="domain:revenue-lifecycle-management;usecase:lock-management;industry:financial-services"/>
+         <othermeta name="tags" content="unlock,force-unlock,lock-management,audit"/>
+         <othermeta name="usecase" content="release locks to resolve edit contention and restore editing access"/>
+      </metadata>
+   </prolog>
+   <taskbody>
+      <context class="- topic/section task/context ">
+         <p class="- topic/p ">Before you can release a lock on a document, it must be checked out. Releasing a lock reverts the check-out of the document you are working on <i class="+ topic/ph hi-d/i ">without checking it in</i>. You can only release a lock when you have the document open in X-Author.</p>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">From the X-Author pane, click on the <image placement="inline"
+                      width="16"
+                      href="../attachments/45220101/49676309.png"
+                      id="image_cp1_gkn_12c"
+                      class="- topic/image "/>
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Lock Status</uicontrol> tab icon.</cmd>
+            <stepresult class="- topic/itemgroup task/stepresult ">
+               <p class="- topic/p ">The Lock Status page shows agreement details and information on the current
+                  document lock.</p>
+               <fig id="fig_lgl_r4j_12c" class="- topic/fig ">
+                  <image height="400"
+                         placement="break"
+                         href="../attachments/45220101/49676310.png"
+                         id="image_mgl_r4j_12c"
+                         class="- topic/image "/>
+               </fig>
+            </stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Release Lock</uicontrol> on the Lock Status page.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">If you chose to release the lock, the document check-out is reverted. Any changes
+               you made while the document was checked out are not saved.</cmd>
+            <stepresult class="- topic/itemgroup task/stepresult ">
+               <p class="- topic/p "> The page refreshes to reflect unlocked status and most menu options are
+                  disabled.</p>
+               <fig id="fig_px2_m2q_12c" class="- topic/fig ">
+                  <image height="400"
+                         placement="break"
+                         href="../attachments/45220101/49676311.png"
+                         id="image_rx2_m2q_12c"
+                         class="- topic/image "/>
+               </fig>
+            </stepresult>
+         </step>
+      </steps>
+      <postreq class="- topic/section task/postreq ">
+         <note type="note" class="- topic/note ">
+            <p class="- topic/p ">If you release a document lock in error and want to continue working with the document, go to the Lock Status page and click <uicontrol class="+ topic/ph ui-d/uicontrol ">Acquire Lock</uicontrol>.</p>
+         </note>
+      </postreq>
+   </taskbody>
+</task>

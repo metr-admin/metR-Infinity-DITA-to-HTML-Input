@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="t276D0AE-BDF2-11F0-1611-09173F13E4C5"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">Configuring OAuth for an Application in Adobe Sign</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates>
+         <created date="2025-11-24T18:00:00+05:30"/>
+         <revised modified="2025-11-24T18:00:00+05:30"/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="integration-engineer,security-architect,dev-ops,it-admin,implementation-consultant"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-cesign-power</indexterm>
+            <indexterm>adobe-sign-oauth</indexterm>
+            <indexterm>oauth-configuration</indexterm>
+            <indexterm>api-application</indexterm>
+            <indexterm>connector-security</indexterm>
+            <!-- Process layer -->
+            <indexterm>configure-oauth</indexterm>
+            <indexterm>register-application</indexterm>
+            <indexterm>generate-client-secret</indexterm>
+            <indexterm>set-redirect-uri</indexterm>
+            <indexterm>validate-token-refresh</indexterm>
+            <!-- Context layer -->
+            <indexterm>secure-authentication</indexterm>
+            <indexterm>provider-integration</indexterm>
+            <indexterm>compliance-and-security</indexterm>
+            <indexterm>enterprise-deployment</indexterm>
+            <indexterm>identity-management</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-Cesign-Power</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Configuring OAuth for an Application in Adobe Sign"/>
+         <othermeta name="shortdesc" content="Instructions to configure OAuth for an API application in Adobe Sign so the connector can authenticate and call provider APIs."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="oauth-client;client-id;client-secret;auth-endpoint;access-token"/>
+         <othermeta name="taxonomy" content="domain:electronic-signature;usecase:oauth-configuration;industry:enterprise-software"/>
+         <othermeta name="tags" content="oauth,adobe-sign,authentication,api,security"/>
+         <othermeta name="usecase" content="configure-oauth-for-adobe-app"/>
+      </metadata>
+   </prolog>
+   <taskbody>
+      <context class="- topic/section task/context ">
+         <p class="- topic/p ">After creating an API application in your Adobe Sign account, configure OAuth for that application.</p>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Log in to your Adobe Sign account as an administrator.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Navigate to the Account tab.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click<menucascade class="+ topic/ph ui-d/menucascade ">
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Acrobat Sign API</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">API Applications</uicontrol>
+               </menucascade>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Select the relevant API application from the list.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Configure OAuth for Application</uicontrol>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Enter redirect URI: <codeph class="+ topic/ph pr-d/codeph ">{Power Platform Instance Url}/Poweradmin/integrations/details/AdobeSign</codeph>
+            </cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Check the Enabled check-box for all scopes. Keep the account option in the Modifier field.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Save</uicontrol>.</cmd>
+         </step>
+      </steps>
+   </taskbody>
+</task>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="c25BF2E3-BDF2-11F0-1545-09173F13E4C5"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Program Lifecycle</title>
+   <prolog>
+      <author>Yashshree</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-26+05:30" class="- topic/created "/>
+         <revised modified="2025-11-26+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-cim-power</indexterm>
+            <indexterm>program-manager</indexterm>
+            <indexterm>agreement-engine</indexterm>
+            <indexterm>payout-engine</indexterm>
+            <indexterm>program-lifecycle-service</indexterm>
+            <indexterm>compensation-calculator</indexterm>
+            <!-- Process layer -->
+            <indexterm>program-creation</indexterm>
+            <indexterm>program-activation</indexterm>
+            <indexterm>program-amendment</indexterm>
+            <indexterm>program-completion</indexterm>
+            <indexterm>program-date-management</indexterm>
+            <indexterm>payout-generation</indexterm>
+            <!-- Context layer -->
+            <indexterm>revenue-lifecycle-management</indexterm>
+            <indexterm>revenue-operations</indexterm>
+            <indexterm>incentive-compensation</indexterm>
+            <indexterm>enterprise-software</indexterm>
+            <indexterm>partner-management</indexterm>
+            <indexterm>agreement-life-cycle</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-CIM-Power</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Program Lifecycle"/>
+         <othermeta name="shortdesc" content="A Program Manager or a Program Analyst can create, activate, amend and complete programs; agreements and programs are tracked as part of the agreement lifecycle."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="program;agreement;payout-schedule;qualification-rule;effective-date;audit-log;analyst;program-version"/>
+         <othermeta name="taxonomy" content="domain:revenue-operations;usecase:documentation-access;industry:revenue-lifecycle-management"/>
+         <othermeta name="tags" content="program-lifecycle,agreement-management,payout-scheduling,amendments,activation,completion"/>
+         <othermeta name="usecase" content="manage program lifecycle including creation, activation, amendment and completion"/>
+      </metadata>
+   </prolog>
+   <conbody>
+      <p class="- topic/p ">A Program Manager or a Program Analyst or any user who has permission to create a program can create or manage the program from the contract or from a stand-alone program. Billing Programs are associated with agreements and managed as part of the agreement life cycle. Programs are associated with an agreement. When agreements are activated, programs are activated.</p>
+      <p class="- topic/p ">Agreement life cycle statuses supported in conjunction with the program are as follows:</p>
+      <p class="- topic/p ">
+         <b class="+ topic/ph hi-d/b ">Agreement Status</b>
+      </p>
+      <p class="- topic/p ">
+         <table class="- topic/table ">
+            <tgroup cols="3" class="- topic/tgroup ">
+               <colspec colname="col1" class="- topic/colspec "/>
+               <colspec colname="col2" class="- topic/colspec "/>
+               <colspec colname="col3" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Status</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Transition</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Description</p>
+                     </entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Request</p>
+                     </entry>
+                     <entry class="- topic/entry "/>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">New Agreement.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">In Amendment</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">From Activated</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Programs are amended independently from Agreements.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Activated</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">From Request or after Amendment</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">When the Agreement is Activated/Approved the Program is Activated.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Terminated</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">From Activated</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Is manually set on the agreement. The versioned (original) Agreement status. Status Category is set to Superseded.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Cancel</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">From In Amendment </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">When the agreement is In Amendment, it can be canceled. The In Amendment version is deleted and the agreement Being Amended is re-activated along with originally activated programs.</p>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </p>
+      <p class="- topic/p ">When you create a program from an agreement, the program will inherit all the above <b class="+ topic/ph hi-d/b ">Status</b> from the Agreement alongside, <b class="+ topic/ph hi-d/b ">Account</b>, <b class="+ topic/ph hi-d/b ">Start Date </b>and<b class="+ topic/ph hi-d/b "> End Date</b>. For example, if a user performs <b class="+ topic/ph hi-d/b ">Generate</b> action and the Status category is <b class="+ topic/ph hi-d/b ">Request,</b> the program inherits the same Status as <b class="+ topic/ph hi-d/b ">Request</b> from the Contract.</p>
+      <p class="- topic/p ">As soon as the contract is in <b class="+ topic/ph hi-d/b ">Activate</b> action, the system will automatically update the Status of a Program to <b class="+ topic/ph hi-d/b ">Activated.</b>
+      </p>
+      <p class="- topic/p ">After the Contract is activated and the Program is in <b class="+ topic/ph hi-d/b ">In Effect/Activated</b> status, a user cannot edit the attributes.</p>
+      <note type="note" class="- topic/note ">
+         <p class="- topic/p ">Only <b class="+ topic/ph hi-d/b ">Amending Changes</b> (like <b class="+ topic/ph hi-d/b ">Add Participants</b>) are allowed on the contract.</p>
+      </note>
+      <p class="- topic/p ">Programs have their own statuses which are managed through the Agreement Life Cycle and through jobs that are scheduled as needed.</p>
+      <p class="- topic/p ">
+         <fig class="- topic/fig ">
+            <image placement="break"
+                   width="700"
+                   href="../attachments/102432692/102432751.png"
+                   class="- topic/image "/>
+         </fig>
+      </p>
+      <p class="- topic/p ">
+         <b class="+ topic/ph hi-d/b ">Program Status</b>
+      </p>
+      <p class="- topic/p ">
+         <table class="- topic/table ">
+            <tgroup cols="3" class="- topic/tgroup ">
+               <colspec colname="col1" class="- topic/colspec "/>
+               <colspec colname="col2" class="- topic/colspec "/>
+               <colspec colname="col3" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">Status</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">Transition</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">Description</b>
+                        </p>
+                     </entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Draft</p>
+                     </entry>
+                     <entry class="- topic/entry "/>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <ul class="- topic/ul ">
+                              <li class="- topic/li ">New Program being set up or</li>
+                              <li class="- topic/li ">The new version of an Active program</li>
+                           </ul>
+                        </p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Activated</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">From Draft</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Program is reviewed and approved.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">In Amendment</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">From Activated</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Program is being edited.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Terminated</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">From Agreement Termination</p>
+                        <p class="- topic/p ">or</p>
+                        <p class="- topic/p ">Next program version is activated</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The New copy of the amended program is Activated (older version is terminated)</p>
+                        <p class="- topic/p ">Agreement or Program is terminated.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Completed</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">From Active</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Program cycle is complete: end date (+ grace period) is reached and all schedules are closed.</p>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </p>
+   </conbody>
+</concept>

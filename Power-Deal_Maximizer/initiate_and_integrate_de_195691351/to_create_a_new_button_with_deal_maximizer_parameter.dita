@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="t2731137-BDF2-11F0-1815-09173F13E4C5"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">To create a new button with Deal Maximizer parameter</title>
+   <prolog>
+      <author>Yashshree</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-25+05:30" class="- topic/created "/>
+         <revised modified="2025-11-25" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>deal-maximizer-parameter</indexterm>
+            <indexterm>ui-button</indexterm>
+            <indexterm>quote-proposal</indexterm>
+            <indexterm>object-creation</indexterm>
+            <indexterm>button-configuration</indexterm>
+            <indexterm>action-parameter</indexterm>
+            <!-- Process layer -->
+            <indexterm>create-new-button</indexterm>
+            <indexterm>set-deal-maximizer-parameter</indexterm>
+            <indexterm>map-button-to-flow</indexterm>
+            <indexterm>test-button-action</indexterm>
+            <indexterm>remove-legacy-configuration</indexterm>
+            <indexterm>deploy-button-change</indexterm>
+            <!-- Context layer -->
+            <indexterm>sales-quote-process</indexterm>
+            <indexterm>shopping-cart-integration</indexterm>
+            <indexterm>web-ui-configuration</indexterm>
+            <indexterm>deal-optimization-usecase</indexterm>
+            <indexterm>enterprise-sales-workflow</indexterm>
+            <indexterm>revenue-operations</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-deal-Power</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="To create a new button with Deal Maximizer parameter"/>
+         <othermeta name="shortdesc" content="Steps to create a new UI button and assign the Deal Maximizer parameter so users can invoke deal optimization from the quote/cart flows."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="ui-button;deal-maximizer-parameter;quote-object;button-configuration;flow-mapping;legacy-configurations"/>
+         <othermeta name="taxonomy" content="domain:revenue-operations;usecase:documentation-access;industry:revenue-lifecycle-management"/>
+         <othermeta name="tags" content="create-button,deal-maximizer,button-parameter,ui-configuration,quote-flow,remove-legacy-config"/>
+         <othermeta name="usecase" content="create-button-with-deal-maximizer-parameter"/>
+      </metadata>
+   </prolog>
+   <taskbody>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Go to <menucascade class="+ topic/ph ui-d/menucascade ">
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Setup</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">App Setup</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Create</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Objects</uicontrol>
+               </menucascade> and select <uicontrol class="+ topic/ph ui-d/uicontrol ">Quote/Proposal</uicontrol>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Go to <uicontrol class="+ topic/ph ui-d/uicontrol ">Custom Fields &amp; Relationships</uicontrol> and click
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Edit</uicontrol> for the Configure Products (Power Quote Configuration
+               Integration) formula.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <codeph class="+ topic/ph pr-d/codeph ">IF ( LEN( Apttus_QPConfig__PriceListId__c ) &gt; 0 ,
+                  HYPERLINK("/apex/Apttus_QPConfig__ProposalConfiguration?id=" &amp;Id,
+                  IMAGE("/resource/Apttus_QPConfig__Button_Configure", "Configure
+                  Products"),"_self"), NULL)</codeph>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Copy that formula code and return to the <uicontrol class="+ topic/ph ui-d/uicontrol ">Custom Fields &amp;
+                  Relationships</uicontrol> and click <uicontrol class="+ topic/ph ui-d/uicontrol ">New</uicontrol> to display the New
+               Custom Field page.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Select <uicontrol class="+ topic/ph ui-d/uicontrol ">Formula</uicontrol> and click <uicontrol class="+ topic/ph ui-d/uicontrol ">Next</uicontrol>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Enter a <uicontrol class="+ topic/ph ui-d/uicontrol ">Field Label</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">Field Name</uicontrol>,
+               select <uicontrol class="+ topic/ph ui-d/uicontrol ">Text</uicontrol>, and click <uicontrol class="+ topic/ph ui-d/uicontrol ">Next</uicontrol>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Paste the formula code copied in Step 3 into the text field and add the parameter
+                  <i class="+ topic/ph hi-d/i ">"&amp;useDealOptimizer=true" </i>to use Deal Maximizer.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <codeph class="+ topic/ph pr-d/codeph ">IF ( LEN( Apttus_QPConfig__PriceListId__c ) &gt; 0 ,
+                  HYPERLINK("/apex/Apttus_QPConfig__ProposalConfiguration?id="
+                  &amp;Id&amp;"&amp;flow=Default&amp;useDealOptimizer=true" ,
+                  IMAGE("/resource/Apttus_QPConfig__Button_Configure", "Configure
+                  Products"),"_self"), NULL)</codeph>
+               <note type="note" class="- topic/note ">
+                  <p class="- topic/p ">The parameter <i class="+ topic/ph hi-d/i ">useDealOptimizer </i>is case-sensitive. The parameter does not
+                     work if the case is not correct.</p>
+               </note>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Next</uicontrol> and select which profiles can access the formula
+               and click <uicontrol class="+ topic/ph ui-d/uicontrol ">Next</uicontrol>. </cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Select which page layouts the formula field will be automatically added to and
+               click <uicontrol class="+ topic/ph ui-d/uicontrol ">Save</uicontrol>.</cmd>
+         </step>
+      </steps>
+      <result id="result_ygq_xh3_rcc" class="- topic/section task/result ">The Configure button is now available on the selected
+         Quote/Proposal pages and can be used to launch production configuration and display a
+         shopping cart that will have the <uicontrol class="+ topic/ph ui-d/uicontrol ">Analyze Deal</uicontrol> button
+         available.</result>
+      <postreq class="- topic/section task/postreq ">
+         <p class="- topic/p ">The formula above uses the default flow. You can change the flow based on the name of your flow. You can edit the page layouts to display the Configuration action in the desired location on the page and also remove any existing configuration action you no longer need.</p>
+      </postreq>
+   </taskbody>
+</task>

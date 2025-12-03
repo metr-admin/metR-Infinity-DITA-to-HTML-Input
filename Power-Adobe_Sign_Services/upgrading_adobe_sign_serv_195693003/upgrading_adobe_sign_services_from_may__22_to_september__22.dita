@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="t240BED6-BDF2-11F0-1799-09173F13E4C5"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">Upgrading Adobe Sign Services from May '22 to September '22</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-24+05:30" class="- topic/created "/>
+         <revised modified="2025-11-24" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>adobe-sign-services</indexterm>
+            <indexterm>metR-asign-power</indexterm>
+            <indexterm>salesforce-installed-packages</indexterm>
+            <indexterm>power-base-library</indexterm>
+            <indexterm>power-contract-lifecycle-management</indexterm>
+            <indexterm>power-quote-management</indexterm>
+            <indexterm>echosign-integration</indexterm>
+            <indexterm>adobe-sign-managed-packages</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>upgrade-validation</indexterm>
+            <indexterm>package-version-check</indexterm>
+            <indexterm>dependency-verification</indexterm>
+            <indexterm>managed-package-upgrade</indexterm>
+            <indexterm>installation-procedure-alignment</indexterm>
+            <indexterm>post-install-configuration</indexterm>
+            <indexterm>feature-enhancement-review</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>revenue-lifecycle-management</indexterm>
+            <indexterm>enterprise-software</indexterm>
+            <indexterm>digital-agreement-management</indexterm>
+            <indexterm>salesforce-environment</indexterm>
+            <indexterm>deployment-governance</indexterm>
+            <indexterm>upgrade-readiness-assessment</indexterm>
+            <indexterm>enterprise-esignature-orchestration</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-Asign-Power</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="Upgrading Adobe Sign Services from May ’22 and December ’21 to September ’22"/>
+         <othermeta name="shortdesc" content="Describes the required Salesforce packages, version prerequisites, upgrade steps, and post-install tasks for moving Adobe Sign Services from May ’22 or December ’21 releases to the September ’22 release."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta name="entities" content="salesforce-installed-packages;power-base-library;power-contract-lifecycle-management;power-quote-management;echosign-integration;adobe-sign;package-version-table;upgrade-procedure;post-install-configuration"/>
+         
+         <othermeta name="taxonomy" content="domain:enterprise-software;usecase:managed-package-upgrade;industry:revenue-life-cycle-management"/>
+         
+         <othermeta name="tags" content="package-upgrade,version-check,dependency-validation,adobe-sign,echosign-integration,salesforce-packages,post-install,managed-package"/>
+         <othermeta name="usecase" content="validate-and-perform-adobe-sign-services-upgrade"/>
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Go to <menucascade class="+ topic/ph ui-d/menucascade ">
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Setup</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Installed Packages</uicontrol>
+               </menucascade> and ensure that your current Salesforce org has the following May '22
+               packages installed. Also, ensure that you have the following packages and dependent
+               packages to upgrade to September '22. These packages are required to utilize the new
+               features and enhancements of September '22.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <p class="- topic/p ">
+                  <table class="- topic/table ">
+                     <tgroup cols="3" class="- topic/tgroup ">
+                        <colspec colname="col1" class="- topic/colspec "/>
+                        <colspec colname="col2" class="- topic/colspec "/>
+                        <colspec colname="col3" class="- topic/colspec "/>
+                        <thead class="- topic/thead ">
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">Product</p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">May '22</p>
+                                 <p class="- topic/p ">Upgrade Version (Name | Number)</p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">September '22</p>
+                                 <p class="- topic/p ">Upgrade Version (Name | Number)</p>
+                              </entry>
+                           </row>
+                        </thead>
+                        <tbody class="- topic/tbody ">
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">Power Base Library</p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">3.1.235 | 3.235</p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">3.1.238 | 3.238</p>
+                              </entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">Power Contract Lifecycle Management</p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">13.1.683 | 13.683</p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">13.1.683 | 13.683</p>
+                              </entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">Power Quote Management </p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">11.0.0242 | 11.242</p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">11.0.0242 | 11.242</p>
+                              </entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">Adobe Sign</p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">24.2</p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">24.2</p>
+                              </entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">Power CLM EchoSign Integration </p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">10.1.73 | 10.73</p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">10.1.73 | 10.73</p>
+                              </entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">Power Quote EchoSign Integration</p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">2.0.0014 | 2.14</p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">2.0.0014 | 2.14</p>
+                              </entry>
+                           </row>
+                        </tbody>
+                     </tgroup>
+                  </table>
+               </p>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Perform the upgrade. The upgrade procedure is the same as the installation procedure. For detailed information on installing Adobe Sign Services managed packages, see <xref href="../installing_adobe_sign_pac_143887799/143887799.dita"
+                     format="dita"
+                     class="- topic/xref ">Installing Adobe Sign Services Packages</xref>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">After the upgrade is complete, perform the <xref href="../post_installation_configu_143887800/143887800.dita"
+                     format="dita"
+                     class="- topic/xref ">Post-Install Configuration</xref> tasks.</cmd>
+         </step>
+      </steps>
+   </taskbody>
+</task>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="t279EBF5-BDF2-11F0-1779-09173F13E4C5"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">Integrate DocuSign with the Power eSignature Service</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates>
+         <created date="2025-11-26T17:00:00+05:30"/>
+         <revised modified="2025-11-26T17:00:00+05:30"/>
+      </critdates>
+      
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-cesign-power</indexterm>
+            <indexterm>docusign</indexterm>
+            <indexterm>oauth-integration</indexterm>
+            <indexterm>esignature-service</indexterm>
+            <indexterm>docusign-configuration</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>create-docusign-config</indexterm>
+            <indexterm>generate-consent-url</indexterm>
+            <indexterm>authorize-docusign</indexterm>
+            <indexterm>configure-auth-code</indexterm>
+            <indexterm>put-configurations</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>esignature-workflow</indexterm>
+            <indexterm>oauth-authorization-flow</indexterm>
+            <indexterm>provider-integration</indexterm>
+            <indexterm>transaction-setup</indexterm>
+            <indexterm>enterprise-esignature-integration</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-Cesign-Power</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="Integrate DocuSign with the Power eSignature Service"/>
+         <othermeta name="shortdesc" content="Learn how to integrate DocuSign with the Power eSignature service using a two-step OAuth process involving configuration setup and auth code registration."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta name="entities" content="docusign;integration-key;secret-key;redirect-uri;auth-code;configuration-endpoint;consent-url;oauth-flow"/>
+         
+         <othermeta name="taxonomy" content="domain:e-signature;usecase:integrate-docusign;industry:enterprise-software"/>
+         
+         <othermeta name="tags" content="docusign,oauth-integration,configuration,esignature,api"/>
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <context class="- topic/section task/context ">
+         <p class="- topic/p ">Integrating DocuSign with the Power eSignature service is a two-step OAuth process:</p>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Create a configuration for DocuSign, which returns a consent URL. Open the consent URL in a browser, log in to your DocuSign account, and grant consent. After giving consent, you are redirected to the configured redirect URL in a new browser window. This URL contains an auth code. Copy the auth code from the URL. To create the configuration, call the following API:</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <p class="- topic/p ">
+                  <table class="- topic/table ">
+                     <tgroup cols="2" class="- topic/tgroup ">
+                        <tbody class="- topic/tbody ">
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">
+                                    <uicontrol class="+ topic/ph ui-d/uicontrol ">Method</uicontrol>
+                                 </p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">PUT</p>
+                              </entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">
+                                    <uicontrol class="+ topic/ph ui-d/uicontrol ">Endpoint</uicontrol>
+                                 </p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">/configurations</p>
+                              </entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">
+                                    <uicontrol class="+ topic/ph ui-d/uicontrol ">Request Body</uicontrol>
+                                 </p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <pre xml:space="preserve" class="- topic/pre ">{
+    "signProvider": "DocuSign",
+        "value": "{\"integrationKey\":\"&lt;integrationKey&gt;\",
+              \"secretKey\":\"&lt;secretKey&gt;\",
+              \"redirectUri\":\"&lt;redirectUri&gt;\"}"
+        "default": false,
+        "active": true,      
+}</pre>
+                                 <p class="- topic/p ">Replace &lt;integration key&gt;, &lt;secret key&gt;, and &lt;redirect URI&gt; with the exact values.</p>
+                              </entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">
+                                    <uicontrol class="+ topic/ph ui-d/uicontrol ">Response</uicontrol>
+                                 </p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">A 200 response code with a consent URL.</p>
+                              </entry>
+                           </row>
+                        </tbody>
+                     </tgroup>
+                  </table>
+               </p>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Configure the auth code using the following API:</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <p class="- topic/p ">
+                  <table class="- topic/table ">
+                     <tgroup cols="2" class="- topic/tgroup ">
+                        <colspec colname="col1" class="- topic/colspec "/>
+                        <colspec colname="col2" class="- topic/colspec "/>
+                        <tbody class="- topic/tbody ">
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">
+                                    <uicontrol class="+ topic/ph ui-d/uicontrol ">Method</uicontrol>
+                                 </p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">PUT</p>
+                              </entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">
+                                    <uicontrol class="+ topic/ph ui-d/uicontrol ">Endpoint</uicontrol>
+                                 </p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">/configurations/codes</p>
+                              </entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">
+                                    <uicontrol class="+ topic/ph ui-d/uicontrol ">Request Parameter</uicontrol>
+                                 </p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">signProvider: Select DocuSign from the drop-down list.</p>
+                              </entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">
+                                    <uicontrol class="+ topic/ph ui-d/uicontrol ">Request Body</uicontrol>
+                                 </p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <pre xml:space="preserve" class="- topic/pre ">{
+  "code": "string"
+}</pre>
+                                 <p class="- topic/p ">Replace the string with the auth code.</p>
+                              </entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">
+                                    <uicontrol class="+ topic/ph ui-d/uicontrol ">Response</uicontrol>
+                                 </p>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <p class="- topic/p ">A 204 response code.</p>
+                              </entry>
+                           </row>
+                        </tbody>
+                     </tgroup>
+                  </table>
+               </p>
+            </info>
+         </step>
+      </steps>
+   </taskbody>
+</task>

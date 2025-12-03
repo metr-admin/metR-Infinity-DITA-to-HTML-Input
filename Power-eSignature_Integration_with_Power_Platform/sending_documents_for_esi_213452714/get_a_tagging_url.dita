@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="c279B915-BDF2-11F0-1062-09173F13E4C5"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Get a tagging URL</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates>
+         <created date="2025-11-26T17:00:00+05:30"/>
+         <revised modified="2025-11-26T17:00:00+05:30"/>
+      </critdates>
+      
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-cesign-power</indexterm>
+            <indexterm>docusign</indexterm>
+            <indexterm>tagging-url</indexterm>
+            <indexterm>esignature-service</indexterm>
+            <indexterm>transaction-endpoint</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>get-tagging-url</indexterm>
+            <indexterm>api-request-parameters</indexterm>
+            <indexterm>open-tagging-page</indexterm>
+            <indexterm>add-recipient-fields</indexterm>
+            <indexterm>send-document</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>esignature-workflow</indexterm>
+            <indexterm>recipient-signing-flow</indexterm>
+            <indexterm>tagging-page-behavior</indexterm>
+            <indexterm>transaction-processing</indexterm>
+            <indexterm>document-preparation</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-Cesign-Power</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="Get a tagging URL"/>
+         <othermeta name="shortdesc" content="Learn how to generate a tagging URL and access the tagging page to add fields before sending a document for eSignature."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta name="entities" content="tagging-url;transaction-id;recipient-id;document-id;sign-provider;tagging-page;embedded-signing"/>
+         
+         <othermeta name="taxonomy" content="domain:e-signature;usecase:get-tagging-url;industry:enterprise-software"/>
+         
+         <othermeta name="tags" content="tagging-url,transaction,esignature,docusign,api"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">Call the following API to get the tagging URL:</p>
+      <p class="- topic/p ">
+         <table class="- topic/table ">
+            <tgroup cols="2" class="- topic/tgroup ">
+               <colspec colname="col1" class="- topic/colspec "/>
+               <colspec colname="col2" class="- topic/colspec "/>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <uicontrol class="+ topic/ph ui-d/uicontrol ">Method</uicontrol>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">GET</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <uicontrol class="+ topic/ph ui-d/uicontrol ">Endpoint</uicontrol>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">/transaction/{transactionId}/taggingurls</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <uicontrol class="+ topic/ph ui-d/uicontrol ">Request Parameters</uicontrol>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ul id="ul_m44_f2g_vcc" class="- topic/ul ">
+                           <li class="- topic/li ">transactionId: Enter a transaction ID.</li>
+                           <li class="- topic/li ">signProvider: Select DocuSign from the drop-down list.</li>
+                        </ul>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <uicontrol class="+ topic/ph ui-d/uicontrol ">Response</uicontrol>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">This API returns a tagging URL, transaction ID, recipient ID and Document
+                           ID.</p>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </p>
+      <p class="- topic/p ">Open the tagging URL in a browser to view the tagging page, which enables you to add fields
+         for each recipient to your document. Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Send</uicontrol> to send the document
+         for eSignature. If you set the embeddedSigning parameter value to false when creating a
+         transaction, the recipient receives an invitation email to review and sign the document.
+         The recipient can open the document from the email and sign it.</p>
+   </conbody>
+</concept>

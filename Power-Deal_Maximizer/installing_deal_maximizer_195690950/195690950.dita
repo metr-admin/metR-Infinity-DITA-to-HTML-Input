@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="c273283A-BDF2-11F0-6068-09173F13E4C5"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Installing Deal Maximizer</title>
+   <prolog>
+      <author>Yashshree</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-25+05:30" class="- topic/created "/>
+         <revised modified="2025-11-25" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>deal-maximizer-deployment-module</indexterm>
+            <indexterm>installation-verification-component</indexterm>
+            <indexterm>package-artifact-bundle</indexterm>
+            <indexterm>power-platform-install-interface</indexterm>
+            <indexterm>deployment-status-panel</indexterm>
+            <indexterm>module-operational-state-object</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>initiate-module-deployment</indexterm>
+            <indexterm>verify-installation-integrity</indexterm>
+            <indexterm>update-deployment-configuration</indexterm>
+            <indexterm>monitor-operational-state</indexterm>
+            <indexterm>resolve-deployment-conflicts</indexterm>
+            <indexterm>execute-deployment-finalization</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>enterprise-sales-workflow</indexterm>
+            <indexterm>revenue-operations</indexterm>
+            <indexterm>enterprise-deployment-framework</indexterm>
+            <indexterm>module-validation-environment</indexterm>
+            <indexterm>operational-governance-layer</indexterm>
+            <indexterm>system-setup-lifecycle</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-deal-Power</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="195690950.dita"/>
+         <othermeta name="shortdesc" content="This topic describes how to deploy and validate the Deal Maximizer module package after installation, including status checks and configuration updates."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta name="entities" content="deployment-module;status-panel;config-update;validation-environment;artifact-bundle"/>
+         <othermeta name="taxonomy" content="domain:revenue-operations;usecase:documentation-access;industry:revenue-lifecycle-management"/>
+         <othermeta name="tags" content="deploy,validate,monitor,configuration,conflicts,finalization"/>
+         <othermeta name="usecase" content="documentation-access"/>
+      </metadata>
+   </prolog>
+   <conbody>
+      <p class="- topic/p ">Multiple packages must be installed to implement the complete Deal Maximizer solution. Packages for Deal Maximizer must be installed in the order indicated in this section, with integration to CPQ, Advanced Approvals, and Contract Management. You begin with the Power base packages and then install the integration packages that enable various products to function together.</p>
+      <note type="caution" class="- topic/note ">
+         <p class="- topic/p "> You must download and upgrade Power packages in a Salesforce sandbox <b class="+ topic/ph hi-d/b ">before</b>
+            installing them in your production environment. For information on installing and
+            upgrading in a sandbox, please contact Power Support before you install any
+            packages.</p>
+      </note>
+      <note type="tip" class="- topic/note ">
+         <p class="- topic/p ">The Power Push Upgrade is an automated tool that upgrades packages available in your Salesforce org (Production or Sandbox) to the latest versions. In addition, It ensures all the Power published managed packages are on the latest versions for the registered orgs. To register your org for push upgrade, see <xref href="../registering_for_Power_upg_195691192/195691192.dita"
+                  format="dita"
+                  class="- topic/xref ">Registering for Power Upgrade Program</xref>.</p>
+      </note>
+      <p class="- topic/p ">You must install the packages in the following order before you install Deal Maximizer packages:</p>
+      <p class="- topic/p ">
+         <table class="- topic/table ">
+            <tgroup cols="5" class="- topic/tgroup ">
+               <colspec colname="col1" class="- topic/colspec "/>
+               <colspec colname="col2" class="- topic/colspec "/>
+               <colspec colname="col3" class="- topic/colspec "/>
+               <colspec colname="col4" class="- topic/colspec "/>
+               <colspec colname="col5" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Order</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Package</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Install Center tab to access the package</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Required?</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Install this package only if you also have...</p>
+                     </entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">1</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Power Base Library</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Contract Management</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Y</p>
+                     </entry>
+                     <entry class="- topic/entry "/>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">2</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Power Contract Lifecycle Management</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Contract Management</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Y</p>
+                     </entry>
+                     <entry class="- topic/entry "/>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">3</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Power Quote Management</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">CPQ</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Y</p>
+                     </entry>
+                     <entry class="- topic/entry "/>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">4</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Power Approvals</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Approvals</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">N</p>
+                     </entry>
+                     <entry class="- topic/entry "/>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Power Configuration &amp; Pricing</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">CPQ</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Y</p>
+                     </entry>
+                     <entry class="- topic/entry "/>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">6</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Power Quote Configuration Integration</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Integrations</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Y</p>
+                     </entry>
+                     <entry class="- topic/entry "/>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">7</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Power Quote Asset Integration</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Integrations</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Y</p>
+                     </entry>
+                     <entry class="- topic/entry "/>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">8</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Power CPQ Api</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">CPQ</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Y</p>
+                     </entry>
+                     <entry class="- topic/entry "/>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">9</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Power Quote Approvals</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Approvals</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">N</p>
+                     </entry>
+                     <entry class="- topic/entry "/>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">10</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Power CLM Configuration Integration</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Integrations</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">N</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Contract Management</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">11</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Power Quote CLM Integration</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Integrations</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">N</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Contract Management</p>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </p>
+      <note type="note" class="- topic/note ">
+         <p class="- topic/p ">For more information on the package versions, refer to the latest Power CPQ and Deal Maximizer<i class="+ topic/ph hi-d/i ">Release Notes</i>.</p>
+      </note>
+      <p class="- topic/p ">Install the following Deal Maximizer packages after you install the above-mentioned packages:</p>
+      <p class="- topic/p ">
+         <table class="- topic/table ">
+            <tgroup cols="4" class="- topic/tgroup ">
+               <colspec colname="col1" class="- topic/colspec "/>
+               <colspec colname="col2" class="- topic/colspec "/>
+               <colspec colname="col3" class="- topic/colspec "/>
+               <colspec colname="col4" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Order</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Package</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Install Center tab to access the package</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Required?</p>
+                     </entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">1</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Power Deal Maximizer Setup</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Deal Maximizer</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Y</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">2</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Power Deal Maximizer</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Deal Maximizer</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Y</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">3</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Power Approvals</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Approvals</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Y</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">4</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Power CPQ Approvals</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Approvals</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Y</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Power CPQ Maximizer</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Deal Maximizer</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Y</p>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </p>
+      <note type="note" class="- topic/note ">
+         <p class="- topic/p ">You must have Power provided login credentials to the Power Community Portal to be able to download packages.</p>
+      </note>
+   </conbody>
+</concept>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="t2776418-BDF2-11F0-8795-09173F13E4C5"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">To add an application</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates>
+         <created date="2025-11-26T17:00:00+05:30"/>
+         <revised modified="2025-11-26T17:00:00+05:30"/>
+      </critdates>
+      
+      <metadata>
+         <audience 
+            type="role" 
+            otherprops="production,maintenance,quality,safety,engineering,management"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-cesign-power</indexterm>
+            <indexterm>custom-application</indexterm>
+            <indexterm>webhook-configuration</indexterm>
+            <indexterm>docusign-webhooks</indexterm>
+            <indexterm>power-platform-esignature</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>add-application</indexterm>
+            <indexterm>configure-webhook-events</indexterm>
+            <indexterm>include-oauth-settings</indexterm>
+            <indexterm>save-configuration</indexterm>
+            <indexterm>select-triggering-events</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>workflow-integration</indexterm>
+            <indexterm>envelope-events</indexterm>
+            <indexterm>esignature-notification-flow</indexterm>
+            <indexterm>administration-settings</indexterm>
+            <indexterm>enterprise-esignature-environment</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-Cesign-Power</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="To add an application"/>
+         <othermeta name="shortdesc" content="Add a new custom application configuration and enable required webhook events in the Power Platform."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta 
+            name="entities" 
+            content="application;custom-configuration;webhook-url;envelope-events;recipient-events;oauth-setting;configuration-save;power-platform-instance-url"/>
+         
+         <othermeta 
+            name="taxonomy" 
+            content="domain:e-signature;usecase:add-custom-application;industry:enterprise-software"/>
+         
+         <othermeta 
+            name="tags" 
+            content="application,configuration,webhook,oauth,docusign"/>
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Navigate to the Applications tab.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Add Configurations </uicontrol>and select
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Custom</uicontrol> from the pull-down menu.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Enter the name of the application in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Name</uicontrol> field.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Enter <codeph class="+ topic/ph pr-d/codeph ">{Power Platform Instance Url}/api/esign/v1/webhook/docusign</codeph> in the <uicontrol class="+ topic/ph ui-d/uicontrol ">URL to Publish </uicontrol>field.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Select the following Envelope and Recipients triggering events:</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <ol class="- topic/ol ">
+                  <li class="- topic/li ">Envelope Sent</li>
+                  <li class="- topic/li ">Envelope Signed/Completed</li>
+                  <li class="- topic/li ">Envelope Declined</li>
+                  <li class="- topic/li ">Envelope Voided</li>
+               </ol>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">In the Integration and Security Settings, select <uicontrol class="+ topic/ph ui-d/uicontrol ">Include OAuth (Recommended)</uicontrol>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Save Configuration</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <note type="note" id="note_aj1_5t2_vcc" class="- topic/note ">
+                  <p class="- topic/p ">Keep the default options in the remaining fields.</p>
+               </note>
+            </info>
+         </step>
+      </steps>
+   </taskbody>
+</task>

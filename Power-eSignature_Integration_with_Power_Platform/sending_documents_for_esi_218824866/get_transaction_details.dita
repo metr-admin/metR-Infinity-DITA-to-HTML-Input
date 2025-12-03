@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+           id="r27CBD33-BDF2-11F0-7337-09173F13E4C5"
+           xml:lang="en"
+           ditaarch:DITAArchVersion="1.3"
+           domains="(topic reference)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+           class="- topic/topic       reference/reference ">
+   <title class="- topic/title ">Get transaction details</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-26T17:00:00+05:30" class="- topic/created "/>
+         <revised modified="2025-11-26T17:00:00+05:30" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-cesign-power</indexterm>
+            <indexterm>transaction-service</indexterm>
+            <indexterm>esign-provider-integration</indexterm>
+            <indexterm>transaction-details-api</indexterm>
+            <indexterm>workflow-tracking-module</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>get-transaction-details</indexterm>
+            <indexterm>query-transaction-status</indexterm>
+            <indexterm>retrieve-recipient-data</indexterm>
+            <indexterm>validate-transaction-response</indexterm>
+            <indexterm>inspect-payload-fields</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>enterprise-esignature-workflow</indexterm>
+            <indexterm>contract-lifecycle-management</indexterm>
+            <indexterm>audit-and-compliance</indexterm>
+            <indexterm>procurement-documentation</indexterm>
+            <indexterm>legal-operational-tracking</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-Cesign-Power</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="Get Transaction Details"/>
+         <othermeta name="shortdesc" content="Describes how to retrieve transaction details from the eSignature provider, including status, recipient data, and payload field metadata."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta name="entities" content="transaction id;recipient list;transaction object;status;payload fields;api response"/>
+         <othermeta name="taxonomy" content="domain:e-signature;usecase:get-transaction-details;industry:enterprise-software"/>
+         <othermeta name="tags" content="transaction,details,status,recipient,api,workflow"/>
+         <othermeta name="usecase" content="retrieve-esignature-transaction-details"/>
+      </metadata>
+   </prolog>
+   
+   <refbody>
+      <section class="- topic/section ">
+         <p class="- topic/p ">Call the following API to get the transaction ID, recipient ID, and document ID:</p>
+         <p class="- topic/p ">
+            <table class="- topic/table ">
+               <tgroup cols="2" class="- topic/tgroup ">
+                  <colspec colname="col1" class="- topic/colspec "/>
+                  <colspec colname="col2" class="- topic/colspec "/>
+                  <tbody class="- topic/tbody ">
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">
+                              <uicontrol class="+ topic/ph ui-d/uicontrol ">Method</uicontrol>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">GET</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">
+                              <uicontrol class="+ topic/ph ui-d/uicontrol ">Endpoint</uicontrol>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">/transaction/{transactionId}</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">
+                              <uicontrol class="+ topic/ph ui-d/uicontrol ">Request Parameters</uicontrol>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <ul id="ul_wnw_tjg_vcc" class="- topic/ul ">
+                              <li class="- topic/li ">transactionId: Enter a transaction ID.</li>
+                              <li class="- topic/li ">signProvider: Select Sertifi from the drop-down list.</li>
+                           </ul>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">
+                              <uicontrol class="+ topic/ph ui-d/uicontrol ">Response</uicontrol>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">This API returns transaction details such as recipient details, document details, and reminder and expiration settings.</p>
+                        </entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+         </p>
+      </section>
+   </refbody>
+</reference>

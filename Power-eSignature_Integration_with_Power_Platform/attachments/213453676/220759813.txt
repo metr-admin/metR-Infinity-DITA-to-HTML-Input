@@ -1,0 +1,1560 @@
+{
+  "x-generator": "NSwag v13.15.0.0 (NJsonSchema v10.6.2.0 (Newtonsoft.Json v12.0.0.0))",
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Power eSignature Integration",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://coreapps-rlsprod.Powercloud.com/api/esignature"
+    }
+  ],
+  "paths": {
+    "/v1/configurations": {
+      "put": {
+        "tags": [
+          "ESignature"
+        ],
+        "summary": "Create or update a configuration for a sign provider",
+        "description": "Creates or updates the configuration for a sign provider. This configuration enables Power Platform to communicate with underlying eSignature services. To get a list of supported sign providers, see \"List supported sign providers\". \n\nConfiguring the Adobe Sign and DocuSign eSignature services is a two-step OAuth process:  \n1. Create the configuration for Adobe Sign and DocuSign, which returns a consent URL. Open the consent URL in a browser and grant consent. When you grant consent, an auth code is generated in the configured redirect URL.\n2. Configure the sign provider's auth code (PUT /configurations/codes).",
+        "operationId": "ESignature_CreateUpdateConfiguration",
+        "requestBody": {
+          "x-name": "configuration",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Configuration"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": ""
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "ESignature"
+        ],
+        "summary": "Get sign provider configurations",
+        "description": "Retrieves all configuration details for a sign provider. \nWhen no sign provider is specified in the request parameters, returns a list of configuration details for all configured sign providers without returning the value field.",
+        "operationId": "ESignature_GetConfiguration",
+        "parameters": [
+          {
+            "name": "signProvider",
+            "in": "query",
+            "schema": {
+              "nullable": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/SignProvider"
+                }
+              ]
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Configuration"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "ESignature"
+        ],
+        "summary": "Delete a sign provider configuration",
+        "description": "Deletes the configuration for a specified sign provider.",
+        "operationId": "ESignature_DeleteConfiguration",
+        "parameters": [
+          {
+            "name": "signProvider",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/SignProvider"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "204": {
+            "description": ""
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/v1/configurations/codes": {
+      "put": {
+        "tags": [
+          "ESignature"
+        ],
+        "summary": "Configure the sign provider's auth code",
+        "description": "Configures the auth code for the Adobe Sign or DocuSign sign provider, which is required to complete OAuth.\n            \nConfiguring the Adobe Sign and DocuSign eSignature services is a two-step OAuth process: \n1. Create the configuration for Adobe Sign and DocuSign using the \"Create or update a configuration for a sign provider\" API (PUT /v1/configurations), which returns a consent URL. Open the consent URL in a browser and grant consent. When you grant consent, an auth code is generated in the configured redirect URL.\n2. Add the sign provider's auth code to the request body.",
+        "operationId": "ESignature_CreateUpdateAuthCode",
+        "parameters": [
+          {
+            "name": "signProvider",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/SignProvider"
+            },
+            "x-position": 1
+          }
+        ],
+        "requestBody": {
+          "x-name": "authCode",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthCode"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 2
+        },
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "204": {
+            "description": ""
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/v1/configurations/callbacks": {
+      "put": {
+        "tags": [
+          "ESignature"
+        ],
+        "summary": "Create or update a sign provider callback",
+        "description": "Creates or updates a callback for a sign provider. A callback is a notification that the sign provider generates when an event occurs on a transaction. \nThis endpoint configures a callback URL for a sign provider. \nAdobeSign, DocuSign, Power Sign and OneSpan support notifications. Sertifi and WetSign do not support callback notifications.",
+        "operationId": "ESignature_CreateUpdateCallback",
+        "requestBody": {
+          "x-name": "callback",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CallBack"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "204": {
+            "description": ""
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "ESignature"
+        ],
+        "summary": "Get a sign provider's callback configuration",
+        "description": "Retrieves the callback configuration for a specified sign provider.",
+        "operationId": "ESignature_GetCallback",
+        "parameters": [
+          {
+            "name": "signProvider",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/SignProvider"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "200": {
+            "description": "Either a callback object or `204 No Content` if the sign provider does not support callbacks.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CallBack"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "Either a callback object or `204 No Content` if the sign provider does not support callbacks."
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "ESignature"
+        ],
+        "summary": "Delete a sign provider's callback configuration",
+        "description": "Deletes the callback configuration for a specified sign provider.",
+        "operationId": "ESignature_DeleteCallback",
+        "parameters": [
+          {
+            "name": "signProvider",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/SignProvider"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "204": {
+            "description": ""
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/v1/transactions": {
+      "post": {
+        "tags": [
+          "ESignature"
+        ],
+        "summary": "Create a transaction for a sign provider",
+        "description": "Creates a transaction for a specified sign provider. The request body contains three fields: Sign Provider, Payload, and File.  \nTo get the exact transaction payload field data required for a sign provider, see \"Get a sign provider's transaction settings\".\nThis endpoint returns the transaction ID, which you can use to send the transaction to the recipients. ",
+        "operationId": "ESignature_CreateTransaction",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "SignProvider": {
+                    "$ref": "#/components/schemas/SignProvider"
+                  },
+                  "Payload": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "File": {
+                    "type": "array",
+                    "nullable": true,
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "200": {
+            "description": "Either a transaction ID or `204 No Content` if the sign provider does not support a transaction ID.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Transaction"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "Either a transaction ID or `204 No Content` if the sign provider does not support a transaction ID."
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/v1/transactions/{transactionId}": {
+      "post": {
+        "tags": [
+          "ESignature"
+        ],
+        "summary": "Send a transaction for a sign provider",
+        "description": "For a specified transaction ID and sign provider, sends the transaction to the recipients, \nif it has not been manually sent through the sign provider tagging interface. \nThe transaction ID is the package ID obtained during transaction creation. ",
+        "operationId": "ESignature_SendTransaction",
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "signProvider",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/SignProvider"
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "204": {
+            "description": ""
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "ESignature"
+        ],
+        "summary": "Get transaction details",
+        "description": "Retrieves the transaction details for a specified transaction ID and sign provier. \nThe transaction ID is the package ID obtained during transaction creation.",
+        "operationId": "ESignature_GetTransaction",
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "signProvider",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/SignProvider"
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "200": {
+            "description": "Either a transaction object or `204 No Content` if the sign provider does not support retrieving the transaction details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Transaction"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "Either a transaction object or `204 No Content` if the sign provider does not support retrieving the transaction details."
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/v1/transactions/{transactionId}/taggingurls": {
+      "get": {
+        "tags": [
+          "ESignature"
+        ],
+        "summary": "Get the transaction-tagging URL for a sign provider",
+        "description": "Retrieves the transaction-tagging URL, transaction ID, recipient ID, and document ID for a specified transaction ID and sign provider. \nOpen the tagging URL in a browser to view the tagging page, which enables you to add fields for each recipient to your document. \nYou can send the transaction from the tagging page if the sign provider supports it. \nIf the sign provider does not support sending the transaction from the tagging page, you can send the transaction using \"Send a transaction for a sign provider\" API (POST /transactions/transactionId).",
+        "operationId": "ESignature_GetTransactionTaggingUrls",
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "signProvider",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/SignProvider"
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "200": {
+            "description": "Either an array of link objects or `204 No Content` if the sign provider does not support tagging URLs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Link"
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "Either an array of link objects or `204 No Content` if the sign provider does not support tagging URLs."
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/v1/transactions/{transactionId}/recipients/{recipientId}/signingurls": {
+      "get": {
+        "tags": [
+          "ESignature"
+        ],
+        "summary": "Get the signing URL",
+        "description": "Retrieves the signing URL for a specified transaction ID, recipient ID, and sign provider. \nThe transaction ID is the package ID obtained during transaction creation. \nTo get the recipient ID, see \"Get transaction details\".",
+        "operationId": "ESignature_GetTransactionSigningUrls",
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "recipientId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "signProvider",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/SignProvider"
+            },
+            "x-position": 3
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "200": {
+            "description": "Either an array of link objects or `204 No Content` if the sign provider does not support signing URLs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Link"
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "Either an array of link objects or `204 No Content` if the sign provider does not support signing URLs."
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/v1/transactions/{transactionId}/documents": {
+      "get": {
+        "tags": [
+          "ESignature"
+        ],
+        "summary": "Get transaction documents",
+        "description": "Retrieves zipped transaction documents for a specified transaction ID and sign provider. \nThe transaction ID is the package ID obtained during transaction creation.",
+        "operationId": "ESignature_GetTransactionDocuments",
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "signProvider",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/SignProvider"
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "200": {
+            "description": "Either a string representation of the zip file or `204 No Content` if the sign provider does not support retrieving the zip file.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "Either a string representation of the zip file or `204 No Content` if the sign provider does not support retrieving the zip file."
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/v1/transactions/{transactionId}/documents/{documentId}": {
+      "get": {
+        "tags": [
+          "ESignature"
+        ],
+        "summary": "Get a sign provider's transaction document",
+        "description": "Retrieves a PDF-formatted transaction document for a specified transaction ID, document ID, and sign provider. \nThe transaction ID is the package ID obtained during transaction creation. \nTo get the document IDs for a transaction, see \"Get transaction details\". ",
+        "operationId": "ESignature_GetTransactionDocument",
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "documentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "signProvider",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/SignProvider"
+            },
+            "x-position": 3
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "200": {
+            "description": "Either a string representation of the document or `204 No Content` if the sign provider does not support retrieving the document.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "Either a string representation of the document or `204 No Content` if the sign provider does not support retrieving the document."
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/v1/signproviders": {
+      "get": {
+        "tags": [
+          "ESignature"
+        ],
+        "summary": "List supported sign providers",
+        "description": "Retrieves a list of supported sign providers.",
+        "operationId": "ESignature_GetSignProviders",
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "200": {
+            "description": "A string array of options.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/v1/signertypes": {
+      "get": {
+        "tags": [
+          "ESignature"
+        ],
+        "summary": "List allowed signer types",
+        "description": "Retrieves a specified sign provider's allowed signer types.",
+        "operationId": "ESignature_GetSignerTypes",
+        "parameters": [
+          {
+            "name": "signProvider",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/SignProvider"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "200": {
+            "description": "A string array of options.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/v1/reminderfrequencies": {
+      "get": {
+        "tags": [
+          "ESignature"
+        ],
+        "summary": "List supported reminder frequencies",
+        "description": "Retrieves a list of supported reminder frequencies for the specified sign provider. This is only supported for Adobe Sign.",
+        "operationId": "ESignature_GetReminderFrequencies",
+        "parameters": [
+          {
+            "name": "signProvider",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/SignProvider"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "200": {
+            "description": "Either a string array of options or `204 No Content` if the sign provider does not support reminder frequency options.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "Either a string array of options or `204 No Content` if the sign provider does not support reminder frequency options."
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/v1/settings": {
+      "get": {
+        "tags": [
+          "ESignature"
+        ],
+        "summary": "Get a sign provider's transaction settings",
+        "description": "Retrieves a sign provider's transaction object, with each field's settings. \nYou can use the transaction object to create a transaction.\nThe transaction settings include the following fields:\n1. **Required**: Indicates whether the field is required when creating a transaction.\n * If \"true\", the field's value is required and supported.\n * If \"false\", the field may or may not be supported.\n2. **Supported**: Indicates whether the field is supported or not.\n * If \"true\", the field can be populated and the value is used.\n * If \"false\", the field is not used. When the field is retrieved, it returns either null or a system-generated value.\n3. **Type**: The type of value. If Required or Supported is \"true\", the value type is returned. Valid values are:\n * STRING: Alphanumeric string.\n * NUMBER_AS_STRING: Number as a string.\n * BOOLEAN_AS_STRING: Boolean as a string. It can be \"true\" or \"false\".\n * DATE_TIME_UTC_AS_STRING: DateTime in UTC format. Format should be yyyy-MM-dd'T'HH:mm:ssZ. For example, e.g 2023-05-25T18:46:19Z represents UTC time.\n * OPTION_VALUE_AS_STRING: A value from a list of options. Retrieve the values from other restful endpoints.\n4. **Name**: Name of the field.\n5. **Description**: Description of the field.",
+        "operationId": "ESignature_GetTransactionSettings",
+        "parameters": [
+          {
+            "name": "signProvider",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/SignProvider"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "200": {
+            "description": "A transaction object with each field's \"settings\" described by the values defined above.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Transaction"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ProblemDetails": {
+        "type": "object",
+        "additionalProperties": {
+          "nullable": true
+        },
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Configuration": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "signProvider": {
+            "$ref": "#/components/schemas/SignProvider"
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "default": {
+            "type": "boolean"
+          },
+          "active": {
+            "type": "boolean"
+          }
+        }
+      },
+      "SignProvider": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "AdobeSign",
+          "PowerSign",
+          "DocuSign",
+          "OneSpan",
+          "Sertifi",
+          "WetSign"
+        ],
+        "enum": [
+          "AdobeSign",
+          "PowerSign",
+          "DocuSign",
+          "OneSpan",
+          "Sertifi",
+          "WetSign"
+        ]
+      },
+      "AuthCode": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "CallBack": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "signProvider": {
+            "$ref": "#/components/schemas/SignProvider"
+          },
+          "callbackUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "bearerToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "authType": {
+            "$ref": "#/components/schemas/AuthType"
+          },
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "AuthType": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "BEARER",
+          "BASIC",
+          "NONE"
+        ],
+        "enum": [
+          "BEARER",
+          "BASIC",
+          "NONE"
+        ]
+      },
+      "Transaction": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "recipients": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Recipient"
+            }
+          },
+          "documents": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/Document"
+            }
+          },
+          "reminder": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Reminder"
+              }
+            ]
+          },
+          "expiration": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Expiration"
+              }
+            ]
+          },
+          "email": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Email"
+              }
+            ]
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Recipient": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "signerType": {
+            "type": "string"
+          },
+          "index": {
+            "type": "string"
+          }
+        }
+      },
+      "Document": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Reminder": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "reminderDelay": {
+            "type": "string",
+            "nullable": true
+          },
+          "reminderFrequency": {
+            "type": "string",
+            "nullable": true
+          },
+          "reminderCount": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Expiration": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "expireAfter": {
+            "type": "string",
+            "nullable": true
+          },
+          "expireWarn": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Email": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "subject": {
+            "type": "string",
+            "nullable": true
+          },
+          "body": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Link": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "url": {
+            "type": "string",
+            "nullable": true
+          },
+          "transactionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentId": {
+            "type": "string",
+            "nullable": true
+          },
+          "recipientId": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "JWT": {
+        "type": "apiKey",
+        "description": "Provide oauth authentication",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "JWT": []
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="c237979E-BDF2-11F0-8854-09173F13E4C5"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">About REST API Guide</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-24+05:30" class="- topic/created "/>
+         <revised modified="2025-11-24" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>rest-api</indexterm>
+            <indexterm>api-endpoint</indexterm>
+            <indexterm>oauth2-client</indexterm>
+            <indexterm>api-gateway</indexterm>
+            <indexterm>signed-requests</indexterm>
+            <!-- Process layer -->
+            <indexterm>authenticate-oauth2</indexterm>
+            <indexterm>call-endpoint</indexterm>
+            <indexterm>handle-responses</indexterm>
+            <indexterm>error-handling</indexterm>
+            <indexterm>rate-limiting</indexterm>
+            <!-- Context layer -->
+            <indexterm>integration-development</indexterm>
+            <indexterm>backend-services</indexterm>
+            <indexterm>secure-api</indexterm>
+            <indexterm>enterprise-software</indexterm>
+            <indexterm>developer-operations</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-Asign-Power</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="About REST API Guide"/>
+         <othermeta name="shortdesc" content="API guidance for authenticating, calling, and handling Adobe Sign REST endpoints including OAuth2 and error handling patterns."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="endpoints;access-token;client-id;api-responses;headers;oauth2-server"/>
+         <othermeta name="taxonomy" content="domain:revenue-lifecycle-management;usecase:rest-api-integration-and-authentication;industry:revenue-life-cycle-management"/>
+         <othermeta name="tags" content="api-guide,rest,oauth2,integration,developer"/>
+         <othermeta name="usecase" content="provide-rest-api-guidance-for-adobe-sign-and-integration"/>
+      </metadata>
+   </prolog>
+   <conbody>
+      <p class="- topic/p ">Adobe Sign Services REST API Guide explains the REST APIs provided by Power Adobe Sign
+         integration. </p>
+      <p class="- topic/p ">
+         <table class="- topic/table ">
+            <tgroup cols="2" class="- topic/tgroup ">
+               <colspec colname="col1" class="- topic/colspec "/>
+               <colspec colname="col2" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Topic</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Description</p>
+                     </entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">What's Covered</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">This guide walks the API developers through the complete list of REST APIs provided by Power Adobe Sign integration.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Primary Audience</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">REST API Developer</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">IT Environment</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Refer to the latest Adobe Sign Services <xref href="https://documentation.Power.com/display/ESIGN/.Spring+%2721+Release+Notes+vDecember-21"
+                                 format="html"
+                                 scope="external"
+                                 class="- topic/xref ">
+                              <u class="+ topic/ph hi-d/u ">Release Notes</u>
+                           </xref> for information on System Requirements and Supported Platforms.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Updates</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">For a comprehensive list of updates to this guide for each release, refer to the topic.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Other Resources</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <ul class="- topic/ul ">
+                              <li class="- topic/li ">
+                                 <i class="+ topic/ph hi-d/i ">Adobe Sign Services User Guide</i>: Refer to this guide for information on using Adobe Sign Services.</li>
+                              <li class="- topic/li ">
+                                 <i class="+ topic/ph hi-d/i ">Adobe Sign Services Administrator Guide</i>: Refer to this guide for information on setting-up Adobe Sign.</li>
+                           </ul>
+                        </p>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </p>
+      <p class="- topic/p ">This guide describes the following API:</p>
+      <ul class="- topic/ul ">
+         <li class="- topic/li ">
+            <p class="- topic/p ">sendForESignature</p>
+         </li>
+      </ul>
+      <p class="- topic/p ">Before using Adobe Sign Services, you must be familiar with the following:</p>
+      <ul class="- topic/ul ">
+         <li class="- topic/li ">Basic Salesforce administration</li>
+         <li class="- topic/li ">Salesforce and Power terms and definitions</li>
+      </ul>
+      <p class="- topic/p ">If you are new to Adobe Sign Services, begin here: <xref href="https://documentation.Power.com/display/DSIGNSPR21/Overview"
+               format="html"
+               scope="external"
+               class="- topic/xref ">.</xref>
+      </p>
+      <p class="- topic/p ">DOC ID: ESIGNSPR21RESTAPI20210302</p>
+   </conbody>
+</concept>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="t23E1A3F-BDF2-11F0-1522-09173F13E4C5"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">Customizing Action Button</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-24+05:30" class="- topic/created "/>
+         <revised modified="2025-11-24" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>action-button</indexterm>
+            <indexterm>custom-action-button</indexterm>
+            <indexterm>agreement-object</indexterm>
+            <indexterm>metr-asign-power</indexterm>
+            <indexterm>power-ui</indexterm>
+            <indexterm>salesforce-integration</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>customize-action-button</indexterm>
+            <indexterm>create-custom-field</indexterm>
+            <indexterm>update-page-layout</indexterm>
+            <indexterm>configure-object-manager</indexterm>
+            <indexterm>add-relationship-field</indexterm>
+            <indexterm>ui-customization</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>enterprise-software</indexterm>
+            <indexterm>crm-configurations</indexterm>
+            <indexterm>revenue-lifecycle-management</indexterm>
+            <indexterm>digital-agreement-lifecycle</indexterm>
+            <indexterm>workflow-optimization</indexterm>
+            <indexterm>user-interface-design</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-Asign-Power</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="Customizing Action Button"/>
+         <othermeta name="shortdesc" content="Explains how to customize the Action Button by configuring fields, layouts, and settings within the Agreement object in Salesforce."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta name="entities" content="agreement-object;action-button;custom-field;page-layout;relationship-field;object-manager;ui-component;crm-object-model"/>
+         
+         <othermeta name="taxonomy" content="domain:revenue-lifecycle-management;usecase:ui-customization;industry:enterprise-software"/>
+         
+         <othermeta name="tags" content="action-button,ui-customization,agreement-object,custom-field,page-layout,salesforce-configuration"/>
+         
+         <othermeta name="usecase" content="ui-customization"/>
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <context class="- topic/section task/context ">
+         <p class="- topic/p ">To show the<uicontrol class="+ topic/ph ui-d/uicontrol "> Send For Echosign</uicontrol> custom button in the Action Panel
+            in Lightning Mode, you need to configure the <uicontrol class="+ topic/ph ui-d/uicontrol ">SendForEchosign_Custom
+               action</uicontrol> button. For using your own customized buttons in the action panel,
+            you need to create custom formula fields with the required logic and add them to the
+            agreement layout. To create a custom formula field for action, follow the naming
+            convention outlined as under:</p>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Go to <menucascade class="+ topic/ph ui-d/menucascade ">
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Setup</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol "> Object Manager</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol "> Agreement</uicontrol>
+               </menucascade> object.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">Fields and Relationships</uicontrol> from the left navigation panel.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click <uicontrol class="+ topic/ph ui-d/uicontrol ">New </uicontrol>to create a new custom field.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Select <uicontrol class="+ topic/ph ui-d/uicontrol ">Formula</uicontrol> data type and click <uicontrol class="+ topic/ph ui-d/uicontrol ">Next</uicontrol>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">For <uicontrol class="+ topic/ph ui-d/uicontrol ">Field Label</uicontrol>, enter <i class="+ topic/ph hi-d/i ">&lt;action_name&gt;_Custom</i>.
+               For example, to create a <uicontrol class="+ topic/ph ui-d/uicontrol ">Send For Echosign</uicontrol> button, enter
+               SendForEchosign_Custom.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">The value in the field label is automatically copied as <uicontrol class="+ topic/ph ui-d/uicontrol ">Field Name</uicontrol> when you click anywhere outside the field.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Select the <uicontrol class="+ topic/ph ui-d/uicontrol ">Formula Return Type</uicontrol> as Text and click
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Next.</uicontrol>
+            </cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Enter the formula for the action button as per your requirement.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <p class="- topic/p ">The following is an example of the formula. If you want to see the Lightning user interface when working in Lightning mode, configure the <uicontrol class="+ topic/ph ui-d/uicontrol ">Apttus_Echosign__LightningSelectAttachment</uicontrol> page in the formula.</p>
+               <note type="note" class="- topic/note ">
+                  <p class="- topic/p ">
+                     <b class="+ topic/ph hi-d/b ">Example</b>
+                  </p>
+                  <p class="- topic/p ">IF(OR(ISPICKVAL(Apttus__Status_Category__c,"In Authoring"),
+                     AND(ISPICKVAL(Apttus__Status_Category__c,"In Signatures"),
+                     ISPICKVAL(Apttus__Status__c,"Ready for Signatures")),
+                     AND(ISPICKVAL(Apttus__Status_Category__c,"In Signatures"),
+                     ISPICKVAL(Apttus__Status__c,"Signature Declined"))),
+                        <b class="+ topic/ph hi-d/b ">IF(OR($User.UIThemeDisplayed == 'Theme4d', $User.UIThemeDisplayed ==
+                        'Theme4t', $User.UIThemeDisplayed == 'Theme4u'),
+                        HYPERLINK("/apex/Apttus_Echosign__LightningSelectAttachment?targetPageURL=/apex/Apttus_Echosign__EchoSignInfoEdit&amp;id="&amp;Id,
+                        IMAGE("/resource/Apttus_Echosign__eSignature","Send To Other Party For
+                        eSignatures"), "_self"),
+                        HYPERLINK("/apex/Apttus_Echosign__SelectAttachment?targetPageURL=/apex/Apttus_Echosign__EchoSignInfoEdit&amp;id="&amp;Id,
+                        IMAGE("/resource/Apttus_Echosign__eSignature","Send To Other Party For
+                        eSignatures"), "_self")</b>), NULL)</p>
+               </note>
+               <note type="note" class="- topic/note ">
+                  <p class="- topic/p ">To display an action button in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Action Panel</uicontrol>, make
+                     sure that the formula entered for the custom formula field returns a non-null
+                     value. If the formula returns a Null value, the action button or field would be
+                     hidden in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Action Panel</uicontrol>.</p>
+               </note>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Apply the field's access setting and page layout and click <uicontrol class="+ topic/ph ui-d/uicontrol ">Save</uicontrol>. Your action button is created.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <p class="- topic/p ">To learn how to create custom fields, refer to Salesforce Help <xref href="https://help.salesforce.com/articleView?id=adding_fields.htm&amp;type=0"
+                        format="html"
+                        scope="external"
+                        class="- topic/xref ">
+                     <u class="+ topic/ph hi-d/u ">Custom Fields | Salesforce</u>
+                  </xref>.</p>
+            </info>
+         </step>
+      </steps>
+   </taskbody>
+</task>

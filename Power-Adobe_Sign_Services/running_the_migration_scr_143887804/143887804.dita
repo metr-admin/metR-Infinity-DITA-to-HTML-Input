@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="c23FCBEC-BDF2-11F0-5273-09173F13E4C5"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Running the Migration Script</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-24+05:30" class="- topic/created "/>
+         <revised modified="2025-11-24" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>migration-script</indexterm>
+            <indexterm>adobe-sign</indexterm>
+            <indexterm>salesforce-apex</indexterm>
+            <indexterm>metr-asign-power</indexterm>
+            <indexterm>agreement-object</indexterm>
+            <indexterm>echosign-integration</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>run-migration-script</indexterm>
+            <indexterm>field-mapping</indexterm>
+            <indexterm>data-cleanup</indexterm>
+            <indexterm>update-agreement-records</indexterm>
+            <indexterm>validate-mapped-fields</indexterm>
+            <indexterm>upgrade-metadata-structure</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>revenue-lifecycle-management</indexterm>
+            <indexterm>enterprise-software</indexterm>
+            <indexterm>contract-data-migration</indexterm>
+            <indexterm>crm-integrations</indexterm>
+            <indexterm>automation-governance</indexterm>
+            <indexterm>system-upgrade-readiness</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-Asign-Power</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="Running the Migration Script"/>
+         <othermeta name="shortdesc" content="Describes how to run the migration script to update Adobe Sign agreement fields and align old records with the new data model."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta name="entities" content="apex-class;agreement-record;attachment-id-field;status-field;update-operation;soql-query;crm-object;field-mapping-script"/>
+         
+         <othermeta name="taxonomy" content="domain:revenue-lifecycle-management;usecase:data-migration;industry:enterprise-software"/>
+         
+         <othermeta name="tags" content="migration-script,data-migration,apex,agreement-update,crm-integration,field-mapping"/>
+         
+         <othermeta name="usecase" content="data-migration"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">As an existing customer, if you are upgrading to the current release, you must run a post-install script manually through the developer console. </p>
+      <codeblock id="codeblock_c2d_4rk_rcc" xml:space="preserve" class="+ topic/pre pr-d/codeblock ">List&lt;echosign_dev1__SIGN_Agreement__c&gt; lstAgreements = [SELECT Id,
+														echosign_dev1__Attachment_ID_Order2__c,
+														echosign_dev1__Attachment_ID_Order__c
+														FROM echosign_dev1__SIGN_Agreement__c
+														WHERE echosign_dev1__Status__c != 'Signed'];
+
+if(!lstAgreements.isEmpty()) {
+	for(echosign_dev1__SIGN_Agreement__c agmt : lstAgreements) {
+		agmt.echosign_dev1__Attachment_ID_Order2__c = agmt.echosign_dev1__Attachment_ID_Order__c;
+	}
+	update lstAgreements;
+}</codeblock>
+   </conbody>
+</concept>

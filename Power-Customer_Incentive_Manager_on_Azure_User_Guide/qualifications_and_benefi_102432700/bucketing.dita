@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="t25D5B5B-BDF2-11F0-1276-09173F13E4C5"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">Bucketing</title>
+   <prolog>
+      <author>Yashshree</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-26+05:30" class="- topic/created "/>
+         <revised modified="2025-11-26" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>bucketing-service</indexterm>
+            <indexterm>qualification-engine</indexterm>
+            <indexterm>tiering-service</indexterm>
+            <indexterm>bucket-policy-engine</indexterm>
+            <indexterm>allocation-service</indexterm>
+            <indexterm>bucket-definitions</indexterm>
+            <!-- Process layer -->
+            <indexterm>define-buckets</indexterm>
+            <indexterm>apply-bucketing-rules</indexterm>
+            <indexterm>assign-deals-to-buckets</indexterm>
+            <indexterm>compute-bucket-allocations</indexterm>
+            <indexterm>validate-bucket-logic</indexterm>
+            <indexterm>configure-bucket-thresholds</indexterm>
+            <!-- Context layer -->
+            <indexterm>revenue-lifecycle-management</indexterm>
+            <indexterm>deal-management</indexterm>
+            <indexterm>sales-operations</indexterm>
+            <indexterm>quota-allocation</indexterm>
+            <indexterm>enterprise-software</indexterm>
+            <indexterm>revenue-operations</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-CIM-Power</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Bucketing"/>
+         <othermeta name="shortdesc" content="Explains bucketing logic and procedures: how deals are placed into buckets, bucket thresholds, and step-by-step bucket application."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="buckets;bucket-thresholds;deals;allocation-rules;bucket-steps;qualification-steps"/>
+         <othermeta name="taxonomy" content="domain:revenue-operations;usecase:documentation-access;industry:revenue-lifecycle-management"/>
+         <othermeta name="tags" content="bucketing,allocation,buckets,thresholds,deal-assignment,quota"/>
+         <othermeta name="usecase" content="define-and-apply-bucketing-for-deals"/>
+      </metadata>
+   </prolog>
+   <taskbody>
+      <context class="- topic/section task/context ">
+         <p class="- topic/p ">Data source specified in the program header determines the type of transaction data. It can be:</p>
+      </context>
+      <steps-unordered class="- topic/ul task/steps-unordered ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Order line item</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Line item</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Sales line item</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Invoice line item</cmd>
+         </step>
+      </steps-unordered>
+      <postreq class="- topic/section task/postreq ">
+         <p class="- topic/p ">Not all transaction data loaded in the system is qualified to be used in calculating the qualification amount and benefit amount.</p>
+         <p class="- topic/p ">The following filtering logic applies:</p>
+         <ul class="- topic/ul ">
+            <li class="- topic/li ">
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Filtered by program dates:</uicontrol> If the transaction line is of type Order Line Item, <uicontrol class="+ topic/ph ui-d/uicontrol ">Pricing Date</uicontrol> of the order line item must fall between the program start date and end date.</li>
+            <li class="- topic/li ">
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Filtered by filters specified in program scope</uicontrol>
+            </li>
+            <li class="- topic/li ">
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Filtered by-products included and excluded: </uicontrol>
+               <ul class="- topic/ul ">
+                  <li class="- topic/li ">If the program definition has categories defined, filtered by products that are part of the category.</li>
+                  <li class="- topic/li ">Filtering logic is independent among programs, which means one transaction line can be potentially bucketed into multiple payout schedules and be counted more than once.</li>
+               </ul>
+            </li>
+         </ul>
+         <p class="- topic/p ">New "Type" field value for the Q&amp;B page_CIM441 (It is applicable for MEB, RSP, PKG, BUNDLE, PRSP) </p>
+         <ol class="- topic/ol ">
+            <li class="- topic/li ">Add a new value "Product Group" if the benefit line is for a product group</li>
+            <li class="- topic/li ">Change CPG type to be "CPG". It is "All" in R1.</li>
+         </ol>
+      </postreq>
+   </taskbody>
+</task>

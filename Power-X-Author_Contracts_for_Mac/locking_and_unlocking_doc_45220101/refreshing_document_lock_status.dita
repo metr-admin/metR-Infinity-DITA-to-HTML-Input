@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="c2961DB4-BDF2-11F0-1685-09173F13E4C5"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Refreshing document lock status</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates>
+         <created date="2025-11-24T17:43:00+05:30"/>
+         <revised modified="2025-11-24T17:43:00+05:30"/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="legal-counsel,contract-manager,contract-administrator,it-admin"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-contractmac-power</indexterm>
+            <indexterm>x-author-contracts</indexterm>
+            <indexterm>power-x-author-mac</indexterm>
+            <indexterm>salesforce-integration</indexterm>
+            <indexterm>clm-system</indexterm>
+            <!-- Process layer -->
+            <indexterm>refresh-document-lock-status</indexterm>
+            <indexterm>check-out-check-in-workflow</indexterm>
+            <indexterm>lock-status-refresh</indexterm>
+            <indexterm>sync-lock-state</indexterm>
+            <indexterm>alert-and-notification</indexterm>
+            <!-- Context layer -->
+            <indexterm>contract-editing-workflow</indexterm>
+            <indexterm>document-lock-management</indexterm>
+            <indexterm>concurrent-editing-controls</indexterm>
+            <indexterm>salesforce-org</indexterm>
+            <indexterm>legal-team-collaboration</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-contractmac-Power</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Refreshing document lock status"/>
+         <othermeta name="shortdesc" content="How to refresh and verify the lock status of a contract document to avoid edit conflicts."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="contract-document;document-lock;user-session;salesforce-record;check-out-metadata"/>
+         <othermeta name="taxonomy" content="domain:revenue-lifecycle-management;usecase:document-locking;industry:financial-services"/>
+         <othermeta name="tags" content="document-lock,concurrent-editing,refresh,status-check"/>
+         <othermeta name="usecase" content="ensure document lock state is current to prevent conflicting edits"/>
+      </metadata>
+   </prolog>
+   <conbody>
+      <p class="- topic/p ">Because more than one user may have access to agreement documents on an agreement record,
+         you may come across a situation where another user has checked out the document. </p>
+      <p class="- topic/p ">From the Lock Status tab, you can click the <uicontrol class="+ topic/ph ui-d/uicontrol ">Refresh Lock</uicontrol> button at
+         any time to display the current lock status for the open document (except for when you have
+         checked out the document already). If the document is checked out by another user, the only
+         actions you can take are to <b class="+ topic/ph hi-d/b ">List Agreements</b> and Refresh Lock. </p>
+      <p class="- topic/p ">Consider the following example:</p>
+      <note type="note" id="note_afc_rkn_12c" class="- topic/note ">
+         <p class="- topic/p ">Use Case: Reacquiring the document lock from another user</p>
+         <p class="- topic/p ">You have opened a contract document version from the agreement's Document Version
+            Details in Microsoft Word. Another user checks out the document before you.</p>
+         <p class="- topic/p ">A message is displayed showing that the other user controls the lock.</p>
+         <fig id="fig_hd5_hpj_12c" class="- topic/fig ">
+            <image height="400"
+                   placement="break"
+                   href="../attachments/45220101/49676312.png"
+                   id="image_id5_hpj_12c"
+                   class="- topic/image "/>
+         </fig>
+         <p class="- topic/p ">The document cannot be checked out, because another user has already locked it. </p>
+         <p class="- topic/p ">You click on the <uicontrol class="+ topic/ph ui-d/uicontrol ">Lock Status</uicontrol> tab to view the current lock status.
+            The "Document locked by" field shows the document is locked by another user.</p>
+         <fig id="fig_pmh_lpj_12c" class="- topic/fig ">
+            <image height="400"
+                   placement="break"
+                   href="../attachments/45220101/49676313.png"
+                   id="image_qmh_lpj_12c"
+                   class="- topic/image "/>
+         </fig>
+         <p class="- topic/p ">The other user releases the document lock or checks in a new version. You click
+               <uicontrol class="+ topic/ph ui-d/uicontrol ">Refresh Lock</uicontrol> to refresh the current lock status. The pane
+            refreshes, showing updated lock status details.</p>
+         <fig id="fig_vn4_npj_12c" class="- topic/fig ">
+            <image height="400"
+                   placement="break"
+                   href="../attachments/45220101/49676311.png"
+                   id="image_wn4_npj_12c"
+                   class="- topic/image "/>
+         </fig>
+         <p class="- topic/p ">You click <uicontrol class="+ topic/ph ui-d/uicontrol ">Acquire Lock</uicontrol> to lock the document and start working.
+            All menu items are enabled.</p>
+      </note>
+   </conbody>
+</concept>
