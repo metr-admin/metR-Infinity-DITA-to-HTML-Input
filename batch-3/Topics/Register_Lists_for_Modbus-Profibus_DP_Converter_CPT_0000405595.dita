@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="RegisterListsForModbus-ProfibusDPCo-B52F281C"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Register Lists</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates>
+         <created date="2025-12-04+05:30"/>
+         <revised modified="2025-12-04"/>
+      </critdates>
+      
+      <metadata>
+         
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>modbus-profibus-converter</indexterm>
+            <indexterm>gateway-converter-setup</indexterm>
+            <indexterm>pew-distribution-solution</indexterm>
+            <indexterm>sdc-distribution-solution</indexterm>
+            <indexterm>im400-device</indexterm>
+            <indexterm>ifl12mc-device</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>register-configuration</indexterm>
+            <indexterm>byte-order-format</indexterm>
+            <indexterm>unsigned-integer-parameter</indexterm>
+            <indexterm>signal-monitoring</indexterm>
+            <indexterm>channel-monitoring</indexterm>
+            <indexterm>alarm-grouping</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>big-endian-format</indexterm>
+            <indexterm>distribution-line-monitoring</indexterm>
+            <indexterm>breaker-supervision</indexterm>
+            <indexterm>modbus-device-context</indexterm>
+            <indexterm>system-signal-context</indexterm>
+            <indexterm>ups-distribution-environment</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="Register Lists"/>
+         <othermeta name="shortdesc" content="Describes register lists used in Modbus and Profibus gateway converter setups for PEW and SDC solutions, including byte order formats, channel monitoring rules and alarm grouping."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta name="entities" content="gateway converter setup;pew distribution; sdc distribution;im400;ifl12mc;register parameters;breaker monitoring;alarm channels"/>
+         
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:register-list-interpretation;industry:uninterruptible power supply systems"/>
+         
+         <othermeta name="tags" content="modbus,profibus,registers,gateway,byte-order,monitoring,alarms"/>
+         <othermeta name="usecase" content="register-list-interpretation"/>
+         
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">The PEW distribution A/B solutions contains three gateway converter
+setups (the second and third setups are identical):<ul class="- topic/ul ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <xref href="PEW-Distribution-A_B-Setup_LUFP7_A060_CPT_0000405594.dita"
+                        scope="local"
+                        type="concept"
+                        class="- topic/xref "/>
+               </p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <xref href="PEW-Distribution-A_B-Setup_LUFP7_A062_CPT_0000405593.dita"
+                        scope="local"
+                        type="concept"
+                        class="- topic/xref "/>
+               </p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <xref href="PEW-Distribution-A_B-Setup_LUFP7_A064_CPT_0000405611.dita"
+                        scope="local"
+                        type="concept"
+                        class="- topic/xref "/>
+               </p>
+            </li>
+         </ul>
+      </p>
+      <p class="- topic/p ">The SDC solutions contains one gateway converter setup:<ul class="- topic/ul ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <xref href="SDC-Distribution-A_B-Setup_LUFP7_A060_CPT_0000415299.dita"
+                        scope="local"
+                        type="concept"
+                        class="- topic/xref "/>
+               </p>
+            </li>
+         </ul>
+      </p>
+      <p class="- topic/p ">The parameter has the format unsigned integer (byte). The byte
+order is the same for all parameters and follows the big-endian format:<ul class="- topic/ul ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <b class="+ topic/ph hi-d/b ">Unit32:</b> High byte, mid-high byte, mid-low byte, low
+byte.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <b class="+ topic/ph hi-d/b ">Unit16:</b> High byte, low byte.</p>
+            </li>
+         </ul>
+      </p>
+      <p class="- topic/p ">Additional information about the parameters and descriptions:<ul class="- topic/ul ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">Reality refers to the secondary Modbus devices (IM400/IFL12MC)
+and relate to the device itself.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">System refers to the setup and relate to signals, communication
+or other inputs.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Each channel monitors the distribution line for the mentioned
+breaker. If no breaker is mentioned, the channel is reserved/not used.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Some alarms monitor multiple different alarms and can be seen
+as a common alarm, for example the Reality state (IM400/IFL12MC) or
+the insulation alarm (IM400).</p>
+            </li>
+         </ul>
+      </p>
+   </conbody>
+</concept>

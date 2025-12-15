@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="SingleSystemWithStaticSwitchesAndEx-54BE34E9"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Single System with Static Switches and External Manual Bypass</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-01+05:30" class="- topic/created "/>
+         <revised modified="2025-12-01" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience 
+            type="role"
+            otherprops="engineering,operations,system architect,maintenance,technical support,commissioning"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>single system configuration</indexterm>
+            <indexterm>static switches</indexterm>
+            <indexterm>manual bypass switch</indexterm>
+            <indexterm>external bypass</indexterm>
+            <indexterm>inverter module</indexterm>
+            <indexterm>rectifier module</indexterm>
+            <indexterm>load output path</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>bypass operation workflow</indexterm>
+            <indexterm>static switch operation</indexterm>
+            <indexterm>manual bypass procedure</indexterm>
+            <indexterm>load transfer between paths</indexterm>
+            <indexterm>fault response sequence</indexterm>
+            <indexterm>system mode interaction</indexterm>
+            <indexterm>configuration validation</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>UPS topology</indexterm>
+            <indexterm>power path architecture</indexterm>
+            <indexterm>critical load protection</indexterm>
+            <indexterm>industrial power systems</indexterm>
+            <indexterm>redundancy and reliability context</indexterm>
+            <indexterm>facility power routing</indexterm>
+            <indexterm>continuous operation requirements</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta 
+            name="title"
+            content="Single System with Static Switches and External Manual Bypass"/>
+         
+         <othermeta 
+            name="shortdesc"
+            content="Explains the configuration and operation of a single UPS system equipped with static switches and an external manual bypass switch, including power path behavior and operational modes."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta
+            name="entities"
+            content="static switch; manual bypass switch; inverter; rectifier; load bus; bypass path; control logic"/>
+         
+         <othermeta 
+            name="taxonomy"
+            content="domain:power system architecture;usecase:system-configuration-description;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta
+            name="tags"
+            content="static switch,manual bypass,system configuration,UPS topology,power routing"/>
+         
+         <othermeta
+            name="usecase"
+            content="Describe the behavior and structure of a single UPS system using static switches and an external manual bypass"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">In an inverter system an inverter converts direct current (DC)
+to alternating current (AC) that supplies the load.</p>
+      <p class="- topic/p ">A bypass adds an optional way to supply the load if the inverter
+is inoperable. The static switch EN is always used together with a
+bypass. The static switch EN makes it possible to switch over to bypass
+operation automatically without interruption. </p>
+      <p class="- topic/p ">The static switch EA is used to help isolate the system in bypass
+operation, so there is no feedback from the static bypass to the inverter.
+It also makes the switch between the inverter and bypass more controlled.</p>
+      <p class="- topic/p ">A external manual bypass switch is used to isolate the inverter
+for maintenance while supplying the load from the bypass mains. When
+the manual bypass switch is in <b class="+ topic/ph hi-d/b ">UPS</b> position the system can
+automatically switch between normal operation and bypass operation
+without interruption. The <b class="+ topic/ph hi-d/b ">Bypass</b> position is used to isolate
+sections for maintenances or troubleshooting.</p>
+      <fig class="- topic/fig ">
+         <image href="../../Images/1220236_FD_WxW_Configuration-Options_Configuration_DD00542590.svg"
+                placement="inline"
+                class="- topic/image "/>
+      </fig>
+   </conbody>
+</concept>

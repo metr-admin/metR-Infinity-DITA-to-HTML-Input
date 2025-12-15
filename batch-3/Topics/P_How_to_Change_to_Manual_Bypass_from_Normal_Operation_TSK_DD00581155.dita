@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="HowToChangeToManualBypassFromNormal-7413E814"
+      translate="yes"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">How to Change to Manual Bypass from Normal Operation</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-04+05:30" class="- topic/created "/>
+         <revised modified="2025-12-04" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         
+         <keywords>
+            
+            <!-- Product layer -->
+            <indexterm>manual-bypass-breaker</indexterm>
+            <indexterm>static-switch</indexterm>
+            <indexterm>inverter-module</indexterm>
+            <indexterm>ups-system</indexterm>
+            <indexterm>system-display</indexterm>
+            <indexterm>bypass-path</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>activate-manual-bypass</indexterm>
+            <indexterm>transfer-load-to-bypass</indexterm>
+            <indexterm>check-synchronization-status</indexterm>
+            <indexterm>open-inverter-breaker</indexterm>
+            <indexterm>verify-manual-bypass-engagement</indexterm>
+            <indexterm>confirm-load-supply-from-bypass</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>maintenance-bypass-operation</indexterm>
+            <indexterm>system-transition-procedure</indexterm>
+            <indexterm>load-protection-environment</indexterm>
+            <indexterm>onsite-electrical-maintenance</indexterm>
+            <indexterm>safety-control-environment</indexterm>
+            <indexterm>power-transfer-operations</indexterm>
+            
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="How to Change to Manual Bypass from Normal Operation"/>
+         
+         <othermeta name="shortdesc" content="Explains how to switch the UPS from normal inverter operation to manual bypass, including breaker operations, load transfer, and bypass verification steps."/> 
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta name="entities" content="manual bypass breaker; static switch; inverter module; ups system; system display; bypass path"/>
+         
+         <othermeta name="taxonomy" content="domain:system-operation-modes;usecase:change-to-manual-bypass-from-normal-operation;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta name="tags" content="manual bypass, load transfer, inverter breaker, bypass operation, system display, maintenance mode"/>
+         
+         <othermeta name="usecase" content="guide operators in transferring the ups load to manual bypass during maintenance or operational transitions"/>
+         
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <context class="- topic/section task/context ">
+         <hazardstatement id="HazardousVoltagesAtSomeTerminals-7F7C858A"
+                          type="danger"
+                          class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard ">HAZARD OF ELECTRIC SHOCK, EXPLOSION, OR ARC FLASH</typeofhazard>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid ">Hazardous voltages are present at some circuits, terminals
+and switches when the system is in manual bypass.</howtoavoid>
+            </messagepanel>
+         </hazardstatement>
+         <hazardstatement id="LOSSOFBatteryBackupWhenTheIsClosedT-7F7C8747"
+                          type="notice"
+                          class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard ">LOSS OF BATTERY BACKUP</typeofhazard>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid ">When the <ph conkeyref="Breakers/PB_xx005" class="- topic/ph "/> is closed
+there is no backup from the battery in case the bypass mains becomes
+unavailable.</howtoavoid>
+            </messagepanel>
+         </hazardstatement>
+         <note id="ThisModeIsATemporaryModeAndShouldNo-8695221D"
+               type="important"
+               class="- topic/note ">This mode is a temporary mode and should not be used for an extended
+period of time.</note>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">On the <uicontrol class="+ topic/ph ui-d/uicontrol ">Display</uicontrol> check that the inverter
+is supplying the load, and that the bypass is available and within
+tolerance.</cmd>
+         </step>
+         <step conref="P_How_to_Turn_On_the_System_TSK_DD00542944.dita#HowToTurnOnTheSystem-57B429E6/PressTheSwitchOperationIconInTheSta-8614C86A"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step conref="P_How_to_Change_to_Forced_Static_Switch_Operation_TSK_DD00581156.dita#HowToChangeToForcedStaticSwitchOper-7413AC65/PressTheForceBypassOperationButton.-779B7358"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Close the <ph conkeyref="Breakers/PB_xx005" class="- topic/ph "/>.</cmd>
+         </step>
+         <step id="OnTheDisplayCheckThatThePowerFlowIn-7CE5C7B8"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Press
+the <uicontrol class="+ topic/ph ui-d/uicontrol ">Home</uicontrol> icon and check that the power flow
+indicates manual bypass and that the <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Unit
+state</uicontrol> is <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Manual bypass mains</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <fig class="- topic/fig ">
+                  <image href="../Images/Prime_Mimic_Manual-bypass_DD00598551.png"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </info>
+         </step>
+         <step conref="P_How_to_Turn_On_the_System_TSK_DD00542944.dita#HowToTurnOnTheSystem-57B429E6/PressTheSwitchOperationIconInTheSta-8614C86A"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step id="PressTheSwitchSystemOffButton.Confi-7CE6086A"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Press
+the <uicontrol class="+ topic/ph ui-d/uicontrol ">Switch system off</uicontrol> button. Confirm the change.</cmd>
+         </step>
+         <step conref="P_How_to_Turn_Off_the_System_TSK_DD00543418.dita#HowToTurnOffTheSystem-57D41C78/OpenThe.-8691FC24"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step conref="P_How_to_Turn_Off_the_System_TSK_DD00543418.dita#HowToTurnOffTheSystem-57D41C78/OpenTheToDisconnectTheBattery.-86920120"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step conref="P_How_to_Turn_Off_the_System_TSK_DD00543418.dita#HowToTurnOffTheSystem-57D41C78/OpenTheToDisconnectTheRectifierMain-86920791"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step conref="P_How_to_Turn_Off_the_System_TSK_DD00543418.dita#HowToTurnOffTheSystem-57D41C78/OpenTheToIsolateTheStaticSwitchFrom-8691F9CC"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+      </steps>
+      <result class="- topic/section task/result ">The system is in manual bypass operation, the load is supplied
+from the bypass. The rectifier and inverter are turned off.</result>
+   </taskbody>
+</task>

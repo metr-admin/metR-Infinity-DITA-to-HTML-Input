@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="EqualizingCharge-EF59E838"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Equalization Charge</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-06T19:06:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-06T19:06:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- product layer -->
+            <indexterm>metr-pxc-reality</indexterm>
+            <indexterm>battery-management-system</indexterm>
+            <indexterm>dc-charger</indexterm>
+            <indexterm>battery-bank</indexterm>
+            <indexterm>equalizing-resistor-module</indexterm>
+            <!-- process layer -->
+            <indexterm>equalizing-charge-procedure</indexterm>
+            <indexterm>measure-cell-voltage</indexterm>
+            <indexterm>isolation-check</indexterm>
+            <indexterm>charge-balancing</indexterm>
+            <indexterm>battery-commissioning</indexterm>
+            <!-- context layer -->
+            <indexterm>data-centre-battery-rooms</indexterm>
+            <indexterm>mining-station-battery-banks</indexterm>
+            <indexterm>oil-and-gas-instrumentation-power</indexterm>
+            <indexterm>battery-maintenance-schedule</indexterm>
+            <indexterm>industrial-ups-installation</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Equalizing Charge"/>
+         <othermeta name="shortdesc" content="Procedure for performing equalizing charge on battery banks to balance cell voltages and extend battery life."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="battery;battery-cell;equalizing-resistor;dc-charger;battery-management-system"/>
+         <othermeta name="taxonomy" content="domain:power-systems;usecase:commissioning;industry:uninterruptible-power-supply"/>
+         <othermeta name="tags" content="equalizing-charge,battery-balancing,cell-voltage,commissioning"/>
+         <othermeta name="usecase" content="perform-equalizing-charge-to-balance-battery-cells"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <div class="- topic/div ">
+         <hazardstatement id="HighOutputVoltageBeforeChangingToEq-FEC789C7"
+                          type="notice"
+                          class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard ">High output voltage AND REDUCED CURRENT</typeofhazard>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid ">Never enable equalization charge mode with a load connected
+to the DC output.</howtoavoid>
+               <howtoavoid platform="Modular-AC" class="+ topic/li hazard-d/howtoavoid ">Never enable equalization charge
+mode with the inverter modules in operation.</howtoavoid>
+            </messagepanel>
+         </hazardstatement>
+         <p class="- topic/p ">Equalization charge mode uses
+a high output voltage to overcharge the battery. Equalization charge
+is mainly used to condition the battery during its commissioning.</p>
+         <p conref="M_Boost_Charge_CPT_0000735394.dita#BoostCharge-EF574918/ThisModeIsATemporaryModeAndIsOnlyUs-01467D53"
+            class="- topic/p ">This mode is a temporary mode and is only used for a short period
+of time.</p>
+         <note platform="Modular-AC" type="important" class="- topic/note ">Never have
+the inverter modules in operation during equalization charge. Make
+sure the manual bypass switch is turned to the bypass output position,
+see <xref href="M_How_to_Change_to_Manual_Bypass_from_Static_Switch_Operation_TSK_0001086583.dita"
+                  scope="local"
+                  type="task"
+                  class="- topic/xref "/>.</note>
+         <note class="- topic/note ">Equalization charge can only be activated manually.</note>
+         <note id="ItIsPossibleToInhibitEqualizingChar-FECA9B56" class="- topic/note ">It is possible
+to inhibit equalization charge. If equalization charge is inhibited,
+the rectifier modules cannot manually change to equalization charge.
+Equalization charge can be inhibited permanently (not available for
+the system) or by an external signal.</note>
+         <fig class="- topic/fig ">
+            <image href="../Images/Modular-DC_Operating_Modes_Equalizing_Charge_0000735332.svg"
+                   platform="Modular-DC Modular-DCDC-Converter"
+                   placement="inline"
+                   class="- topic/image "/>
+            <image href="../Images/Modular-DC_Operating_Modes_Equalizing_Charge_UPS_0001094890.svg"
+                   platform="Modular-AC"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+      </div>
+      <table class="- topic/table ">
+         <tgroup cols="2" class="- topic/tgroup ">
+            <colspec colname="col1" colwidth="1*" class="- topic/colspec "/>
+            <colspec colname="col2" colwidth="3*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/Part-EF55D815"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/Status-EF55DA6E"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/RectifierMains-EF55DD82"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/AvailableAndWithinTheToleranceRange-EF57139D"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/RectifierMainsBreaker-EF55E0E0"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/Closed-EF55EA6C"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/RectifierModules-EF55E31C"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Running at a higher voltage setting to intentionally overcharge and
+condition the batteries.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/Battery-EF55E539"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Charging at a higher volt.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/BatteryBreaker-EF55E6D8"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/Closed-EF55EA6C"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/Output-EF55E87E"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Off_CPT_0000735388.dita#Off-EF5C76B3/UnavailableTheLoadIsNotSupplied.-F918E4A4"
+                         platform="Modular-DC Modular-DCDC-Converter"
+                         class="- topic/ph "/>
+                     <ph platform="Modular-AC" class="- topic/ph ">Available but make sure no load is connected
+and no inverter modules are in operation.</ph>
+                  </entry>
+               </row>
+               <row platform="Modular-DC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/OutputBreaker-00DCE8F2"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Off_CPT_0000735388.dita#Off-EF5C76B3/Open-F918DC1E"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </conbody>
+</concept>

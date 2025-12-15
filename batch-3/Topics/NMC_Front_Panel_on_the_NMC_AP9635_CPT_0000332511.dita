@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="FrontPanelOnTheNMCAP9635-5E23C00D"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Connections on the Network Management Card (AP9635)</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-05+05:30" class="- topic/created "/>
+         <revised modified="2025-12-05" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>network-management-card</indexterm>
+            <indexterm>nmc-ap9635</indexterm>
+            <indexterm>ap9635</indexterm>
+            <indexterm>front-panel-assembly</indexterm>
+            <indexterm>indicator-leds</indexterm>
+            <indexterm>serial-console-port</indexterm>
+            <!-- Process layer -->
+            <indexterm>interpret-led-indications</indexterm>
+            <indexterm>read-front-panel-status</indexterm>
+            <indexterm>troubleshoot-front-panel</indexterm>
+            <indexterm>access-serial-console</indexterm>
+            <indexterm>perform-visual-inspection</indexterm>
+            <indexterm>report-faults</indexterm>
+            <!-- Context layer -->
+            <indexterm>ups-installation</indexterm>
+            <indexterm>remote-management</indexterm>
+            <indexterm>industrial-plant-environment</indexterm>
+            <indexterm>production-floor-operations</indexterm>
+            <indexterm>maintenance-checklist</indexterm>
+            <indexterm>fault-diagnosis-usecase</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Front panel on the NMC AP9635"/>
+         <othermeta name="shortdesc" content="Describes the front panel components and LED indicators on the network management card AP9635, and how to interpret status and fault conditions."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="network management card AP9635; front panel assembly; indicator leds; serial console port; ethernet port; status sensors"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:front-panel-status-and-diagnostics; industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="front-panel,leds,status,diagnostics,nmc,ap9635"/>
+         <othermeta name="usecase" content="identify-and-interpret-front-panel-status-for-maintenance"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <section class="- topic/section ">
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">The NMC allows for multiple different remote
+and local connection options.<note class="- topic/note ">Not all connection options are
+supported by Reality.</note>
+            </p>
+            <fig class="- topic/fig ">
+               <image href="../Images/NMC_Ports_0000354409.jpg"
+                      placement="inline"
+                      class="- topic/image "/>
+            </fig>
+         </sectiondiv>
+         <table class="- topic/table ">
+            <tgroup cols="3" class="- topic/tgroup ">
+               <colspec colname="col1" colwidth="20.00mm" class="- topic/colspec "/>
+               <colspec colname="col2" colwidth="40.00mm" class="- topic/colspec "/>
+               <colspec colname="col3" colwidth="3.00*" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">
+                        <p class="- topic/p ">Position</p>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <p class="- topic/p ">Part</p>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <p class="- topic/p ">Description</p>
+                     </entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(A)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">USB ports</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <ph id="USBPort" class="- topic/ph "> Can only be used for NMC firmware updates.</ph>
+                        </p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(B)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Serial console port</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <ph id="SerialConsolePort" class="- topic/ph ">Can be used to connect the NMC directly
+to a computer with a serial cable. Used for a local connection to
+the command line interface (CLI) or for NMC firmware updates.</ph>
+                        </p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(C)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Universal I/O
+sensor port</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <ph id="UniversalIO" class="- topic/ph ">Can be used to connect a relay input/output accessory
+connector. The Dry Contact I/O Accessory (<xref href="https://www.schneider-electric.com/en/Reality/AP9810_APC/apc-dry-contact-i-o-accessory/"
+                                    scope="external"
+                                    class="- topic/xref "
+                                    format="html">AP9810</xref>) has two input contacts and one output
+relay.</ph>
+                        </p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(D)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Modem Port<fn class="- topic/fn "> Reality does not recommend using the port and
+does not provide support for the port/connection.</fn>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <ph id="ModemPort" class="- topic/ph "> Can be used to connect the NMC to a
+dial-up network.</ph>
+                        </p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(E)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Modbus connector</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <ph id="ModbusConnector" class="- topic/ph ">Can be used to connect the NMC
+to a 2-wire or 4-wire RS485 Modbus protocol network.</ph>
+                        </p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(F)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Link-RX/TX (10/100)
+LED</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Indicates the
+status of the network. For details see section <xref href="#./Link-LED"
+                                 scope="local"
+                                 type="section"
+                                 class="- topic/xref "/>.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(G)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">10/100 Base-T connector</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <ph id="EthernetPort" class="- topic/ph ">Can be used to connect the NMC to an Ethernet
+network.</ph>
+                        </p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(H)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Status LED</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Indicates the status of the NMC. For details see section <xref href="#./Status-LED"
+                                 scope="local"
+                                 type="section"
+                                 class="- topic/xref "/>.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(I)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Reset button</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Reboot/Reset:
+Press one time to reboot the NMC.Hard reset: Press
+and hold for a long time to reset the NMC to the default settings.</p>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+      <section id="Status-LED" class="- topic/section ">
+         <title class="- topic/title ">Status LED</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">The
+status LED <b class="+ topic/ph hi-d/b ">(H)</b> indicates the status of the NMC by changing
+color and how it lights up (constant, flashing, flickering).</p>
+            <table class="- topic/table ">
+               <tgroup cols="2" class="- topic/tgroup ">
+                  <colspec colname="col1" colwidth="40.00mm" class="- topic/colspec "/>
+                  <colspec colname="col2" colwidth="2.00*" class="- topic/colspec "/>
+                  <thead class="- topic/thead ">
+                     <row class="- topic/row ">
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">LED Light Condition</p>
+                        </entry>
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">Description</p>
+                        </entry>
+                     </row>
+                  </thead>
+                  <tbody class="- topic/tbody ">
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Off</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">One of the two reasons:<ul class="- topic/ul ">
+                                 <li class="- topic/li ">
+                                    <p class="- topic/p ">The NMC does not receive any power. Make sure that the power
+is connected and on.</p>
+                                 </li>
+                                 <li class="- topic/li ">
+                                    <p class="- topic/p ">The NMC does not operate properly. Make sure that the NMC is
+installed correctly in the system.</p>
+                                 </li>
+                              </ul>If the problem is still not resolved, see the chapter <xref href="NMC_Troubleshooting_for_the_Network_Management_Card_CPT_0000334030.dita"
+                                    scope="local"
+                                    type="concept"
+                                    class="- topic/xref "/> for
+more information.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Constant green</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">The NMC has valid TCP/IP settings.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Constant orange</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">A hardware issue has been detected on the NMC. Contact <xref conref="../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/Reality_service_centers"
+                                    class="- topic/xref "/>.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Flashing green</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">The NMC does not have valid TCP/IP settings.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Flashing orange</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">The NMC makes
+BOOTP requests.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Flickering orange</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">The NMC is in the boot monitor mode.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Flashing and alternating between green
+an orange</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">If the LED is flashing slowly, the NMC is making DCHP requests.</p>
+                           <p class="- topic/p ">If the LED is flashing quickly, the NMC is starting up.</p>
+                        </entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+         </sectiondiv>
+      </section>
+      <section id="Link-LED" class="- topic/section ">
+         <title class="- topic/title ">Link-RX/TX (10/100) LED</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">The Link-RX/TX (10/100) LED <b class="+ topic/ph hi-d/b ">(F)</b> indicates the status of
+the Ethernet network connection by changing color and how it lights
+up (constant, flashing, flickering).</p>
+            <table class="- topic/table ">
+               <tgroup cols="2" class="- topic/tgroup ">
+                  <colspec colname="col1" colwidth="40.00mm" class="- topic/colspec "/>
+                  <colspec colname="col2" colwidth="2.00*" class="- topic/colspec "/>
+                  <thead class="- topic/thead ">
+                     <row class="- topic/row ">
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">LED Light Condition</p>
+                        </entry>
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">Description</p>
+                        </entry>
+                     </row>
+                  </thead>
+                  <tbody class="- topic/tbody ">
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Off</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">One of the following reasons:<ul class="- topic/ul ">
+                                 <li class="- topic/li ">
+                                    <p class="- topic/p ">The NMC is not receiving any power. Make sure that the power
+is connected and on.</p>
+                                 </li>
+                                 <li class="- topic/li ">
+                                    <p class="- topic/p ">The NMC is not connected to the network. Make sure that the
+network cable is connected.</p>
+                                 </li>
+                                 <li class="- topic/li ">
+                                    <p class="- topic/p ">The device that connects the NMC to the network is turned off
+or inoperable. Check the network device.</p>
+                                 </li>
+                                 <li class="- topic/li ">
+                                    <p class="- topic/p ">The NMC is not operating properly. Make sure that the NMC is
+installed correctly in the system.</p>
+                                 </li>
+                              </ul>If the problem is still not resolved, see the chapter <xref href="NMC_Troubleshooting_for_the_Network_Management_Card_CPT_0000334030.dita"
+                                    scope="local"
+                                    type="concept"
+                                    class="- topic/xref "/> for
+more information.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Constant green</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">The NMC is connected
+to a network operating at 10 Megabits per second (Mbps).</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Constant orange</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">The NMC is connected to a network operating at 100 Mbps.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Flashing green</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">The NMC receives or transmits data packets at 10 Mbps.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Flashing orange</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">The NMC receives or transmits data packets at 100 Mbps.</p>
+                        </entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+         </sectiondiv>
+      </section>
+   </conbody>
+</concept>

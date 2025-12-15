@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="HowToTestTheEPO-A272660C"
+      translate="yes"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">How to Test the EPO</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-04+05:30" class="- topic/created "/>
+         <revised modified="2025-12-04" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         
+         <keywords>
+            
+            <!-- Product layer -->
+            <indexterm>epo-circuit</indexterm>
+            <indexterm>ups-system</indexterm>
+            <indexterm>rectifier-module</indexterm>
+            <indexterm>inverter-module</indexterm>
+            <indexterm>system-display</indexterm>
+            <indexterm>system-breakers</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>test-epo-function</indexterm>
+            <indexterm>trigger-epo-signal</indexterm>
+            <indexterm>verify-system-shutdown</indexterm>
+            <indexterm>check-rectifier-interruption</indexterm>
+            <indexterm>reset-system-after-test</indexterm>
+            <indexterm>confirm-epo-status</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>emergency-power-off</indexterm>
+            <indexterm>safety-testing-procedure</indexterm>
+            <indexterm>system-protection-environment</indexterm>
+            <indexterm>fault-simulation</indexterm>
+            <indexterm>operational-safety-compliance</indexterm>
+            <indexterm>maintenance-testing</indexterm>
+            
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="How to Test the EPO"/>
+         
+         <othermeta name="shortdesc" content="Provides instructions for triggering and verifying the EPO function, confirming shutdown behavior, and restoring the system after completing the test."/> 
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta name="entities" content="epo circuit; rectifier module; inverter module; system display; system breakers; ups system"/>
+         
+         <othermeta name="taxonomy" content="domain:emergency-procedures;usecase:test-epo-functionality;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta name="tags" content="epo test, emergency shutdown, system safety, rectifier interruption, inverter interruption, system reset"/>
+         
+         <othermeta name="usecase" content="test emergency power off behavior and ensure correct shutdown and recovery sequence"/>
+         
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <prereq class="- topic/section task/prereq ">
+         <hazardstatement conref="P_Emergency_Power_Off_CPT_DD00628005.dita#EmergencyPowerOff-982E0367/Prime-EPO-ABC8B8B0"
+                          class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+            </messagepanel>
+         </hazardstatement>
+         <hazardstatement conref="M_How_to_Test_the_EPO_TSK_0000913487.dita#HowToTestTheEPO-71A000DF/LossOFOUTPUTVOLTAGEAlwaysCoordinate-A69BEF41"
+                          class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+            </messagepanel>
+         </hazardstatement>
+      </prereq>
+      <steps class="- topic/ol task/steps ">
+         <step conref="M_How_to_Test_the_EPO_TSK_0000913487.dita#HowToTestTheEPO-71A000DF/VerifyThatItIsApprovedToTurnOffTheO-A69C4070"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step conref="M_How_to_Test_the_EPO_TSK_0000913487.dita#HowToTestTheEPO-71A000DF/TriggerTheEPOByTheExternalEPOSignal-A69C41B3"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Check that the EPO signal was triggered and that the rectifier,
+the inverter and the static switch has turned off.</cmd>
+         </step>
+         <step conref="M_How_to_Test_the_EPO_TSK_0000913487.dita#HowToTestTheEPO-71A000DF/DeactivateTheEPOSignal.-A69C430B"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+      </steps>
+      <result class="- topic/section task/result ">The EPO has been tested. To restart the system after the EPO
+test continue with the section <xref href="P_How_to_Reset_the_System_After_EPO_TSK_DD00636666.dita"
+               scope="local"
+               type="task"
+               class="- topic/xref "/>.</result>
+   </taskbody>
+</task>

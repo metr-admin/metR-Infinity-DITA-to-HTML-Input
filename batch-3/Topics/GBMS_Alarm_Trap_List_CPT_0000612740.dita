@@ -1,0 +1,886 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="AlarmTrapList-A0F82D60"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Alarm Trap List</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-05T11:00:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-05T11:00:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- product layer -->
+            <indexterm>snmp-trap-list</indexterm>
+            <indexterm>alarm-trap</indexterm>
+            <indexterm>gbms-oid</indexterm>
+            <indexterm>event-notification</indexterm>
+            <indexterm>trap-destination</indexterm>
+            <!-- process layer -->
+            <indexterm>trap-configuration</indexterm>
+            <indexterm>trap-filtering</indexterm>
+            <indexterm>trap-testing</indexterm>
+            <indexterm>trap-mapping-to-scada</indexterm>
+            <indexterm>notification-rules</indexterm>
+            <!-- context layer -->
+            <indexterm>network-management-system</indexterm>
+            <indexterm>remote-monitoring</indexterm>
+            <indexterm>data-center-operations</indexterm>
+            <indexterm>maintenance-alerting</indexterm>
+            <indexterm>plant-automation-integration</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="GBMS alarm trap list"/>
+         <othermeta name="shortdesc" content="Catalogue of SNMP traps and alarm events emitted by GBMS modules, with trap identifiers and handling guidance."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="snmp-trap; gbms-event; oid; nm-management; trap-receiver"/>
+         <othermeta name="taxonomy" content="monitoring:integration:ups-systems"/>
+         <othermeta name="tags" content="snmp,traps,monitoring,notification,scada-integration"/>
+         <othermeta name="usecase" content="system-integration-and-monitoring-setup"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <note id="MakeSureATrapReceiverIsCorrectlyCon-A109C51E" class="- topic/note ">Make sure
+a trap receiver is correctly configured to receive notification when
+the trap is active.</note>
+      <table id="OIDAddressSNMPTraps1.3.6.1.2.1.33.5-8DE56229"
+             pgwide="1"
+             class="- topic/table ">
+         <title class="- topic/title ">OID Address (SNMP Traps): <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3</ph> / OID Name: <ph translate="no" class="- topic/ph ">bacsWellKnownAlarms</ph>
+         </title>
+         <tgroup cols="3" class="- topic/tgroup ">
+            <colspec colname="1" colwidth="2.5*" class="- topic/colspec "/>
+            <colspec colname="2" colwidth="2*" class="- topic/colspec "/>
+            <colspec colname="3" colwidth="7*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">OID Address</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">OID Name</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Description</ph>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.1</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmSystemError</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">This object
+indicates a communication problem from the webmanager to one or more
+of the battery modules.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.2</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmResistWarn</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">This object
+indicates that the internal resistance of one or more batteries is
+above the warning level.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.3</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmResistAlarm</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">This object
+indicates that the internal resistance of one or more batteries is
+above the alarm level.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.4</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmVoltage</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">This object
+indicates that the voltage of one or more batteries is outside the
+defined rage.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.5</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmTemperature</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">This object
+indicates that the temperature of one or more batteries is outside
+the defined range.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.6</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmVoltageHigh</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">This object
+indicates that the voltage of one or more batteries is higher than
+the defined range.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.7</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmVoltageLow</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">This object
+indicates that the voltage of one or more batteries is lower than
+the defined range.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.8</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmTemperatureHigh</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">This object
+indicates that the temperature of one or more batteries is higher
+than the defined range.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.9</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmTemperatureLow</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">This object
+indicates that the temperature of one or more batteries is lower than
+the defined range.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.10</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmResistAlarmHigh</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">This object
+indicates that the internal resistance of one or more batteries is
+above the alarm level.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.11</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmResistAlarmLow</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">This object
+indicates that the internal resistance of one or more batteries is
+below the alarm level.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.12</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmEqualizing</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">This object
+indicates that the equalizing is not operating correctly.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.13</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmVoltageWarnHigh</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">This object
+indicates that the voltage of one or more batteries is higher than
+the defined warning range.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.14</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmVoltageWarnLow</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">This object
+indicates that the voltage of one or more batteries is lower than
+the defined warning range.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.15</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmTemperatureWarnHigh</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">This object
+indicates that the temperature of one or more batteries is higher
+than the defined warning range.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.16</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmTemperatureWarnLow</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">This object
+indicates that the temperature of one or more batteries is lower than
+the defined warning range.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.17</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmResistWarnHigh</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">This object
+indicates that the internal resistance of one or more batteries is
+higher than the defined warning range.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.18</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmResistWarnLow</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">This object
+indicates that the internal resistance of one or more batteries is
+lower than the defined warning range.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.19</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmInitializing</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">The webmanager
+is initializing.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.20</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmCommunicationLost</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">BACS bus
+communication is lost.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.21</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmBatteryBreakerOpen</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Battery
+breaker is open.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.22</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmThermalRunaway</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Thermal
+runaway detected.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.23</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmSensorCommunicationLost</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Sensor
+communication is lost.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.24</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmDischarging</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Batteries
+are being discharged.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.25</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmDischargingStopped</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Batteries
+are no longer being discharged.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.26</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmMaxVoltageDiff</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">The voltage difference is too
+high.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.27</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmStringVoltHigh</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The battery string voltage is above
+the configured alarm threshold.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.28</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmStringVoltLow</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The battery string voltage is below
+the configured alarm threshold.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.29</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmStringVoltHighWarn</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The battery string voltage is above
+the configured warning threshold.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.30</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmStringVoltLowWarn</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The battery string voltage is below
+the configured warning threshold.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.31</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmStringCurrentHigh</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The battery string current is above
+the configured alarm threshold.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.32</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmStringCurrentLow</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The battery string current is below
+the configured alarm threshold.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.33</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmStringCurrentHighWarn</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The battery string current is above
+the configured warning threshold.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.34</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmStringCurrentLowWarn</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The battery string current is below
+the configured warning threshold.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.35</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmStringEqualizingDisabled</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The battery string equalizing is
+disabled.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.36</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmStringCurrDeviationCharge</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The charge current difference between
+the battery strings is above the configured alarm threshold.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.37</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmStringCurrDeviationDischarge</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The discharge current difference
+between the battery strings is above the configured alarm threshold.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.38</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmStringCurrDeviationChargeWarn</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The charge current difference between
+the battery strings is above the configured warning threshold.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.3.3.39</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsAlarmStringCurrDeviationDischargeWarn</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The discharge current difference
+between the battery strings is above the configured warning threshold.</ph>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </conbody>
+</concept>

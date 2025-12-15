@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="InstallWebmanagerWithSplittingBox-5334A929"
+      translate="yes"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">Install the Webmanager and any Splitting Boxes</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-05T00:00:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-05T00:00:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>webmanager</indexterm>
+            <indexterm>webmanager-software</indexterm>
+            <indexterm>embedded-webserver</indexterm>
+            <indexterm>remote-monitoring</indexterm>
+            <indexterm>control-cabinetless-deployment</indexterm>
+            <!-- Process layer -->
+            <indexterm>software-installation</indexterm>
+            <indexterm>headless-deployment</indexterm>
+            <indexterm>network-provisioning</indexterm>
+            <indexterm>ssl-configuration</indexterm>
+            <indexterm>user-access-configuration</indexterm>
+            <!-- Context layer -->
+            <indexterm>edge-deployment</indexterm>
+            <indexterm>field-installation-without-cabinet</indexterm>
+            <indexterm>remote-operations</indexterm>
+            <indexterm>transportation-and-rail</indexterm>
+            <indexterm>water-and-wastewater-site</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Install webmanager without control cabinet"/>
+         <othermeta name="shortdesc" content="Steps to deploy the webmanager in environments without a control cabinet, including network and security configuration."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="webmanager;network-switch;mounting-bracket;power-supply;captive-screws"/>
+         <othermeta name="taxonomy" content="domain:deployment;usecase:webmanager-deployment;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="webmanager,headless-deployment,edge"/>
+         <othermeta name="usecase" content="deploy webmanager in cabinetless field sites"/>
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <context class="- topic/section task/context ">
+         <p class="- topic/p ">Before attaching the bus cables:<ul class="- topic/ul ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Consider what bus cable lengths to use, the cables are available
+in multiple lengths to avoid unnecessary cable length.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Check the information and maximum distances for the bus cable
+installation in the chapter <xref href="GBMS_Bus_Cable_Length_and_Wiring_Details_CPT_0000511676.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">If a repeater is needed because the maximum distance is exceeded,
+install the repeater less than 100 m (328 ft) from the webmanager.
+The maximum distances are then calculated from the repeater instead
+of the webmanager.</p>
+               </li>
+            </ul>
+         </p>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Mount the webmanager or the control cabinet with the webmanager
+inside.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">If applicable, mount the splitting box(es).</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <b class="+ topic/ph hi-d/b ">Only for solutions without splitting box(es): </b>
+            </cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Attach the bus cable <b class="+ topic/ph hi-d/b ">(A)</b> from the closest module
+to the webmanager.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd id="AttachThePowerSupplyCableCToTheWebm-7E7CC2F6"
+                       class="- topic/ph task/cmd ">Attach
+the power supply cable <b class="+ topic/ph hi-d/b ">(C)</b> to the webmanager.</cmd>
+               </substep>
+            </substeps>
+            <info class="- topic/itemgroup task/info ">
+               <note id="AlwaysUseASecurePowerSourceAsThePow-58F5FF56"
+                     type="important"
+                     class="- topic/note ">Always use a secure power source as the power supply
+to the webmanager.</note>
+            </info>
+            <stepresult class="- topic/itemgroup task/stepresult ">
+               <fig class="- topic/fig ">
+                  <image href="../Images/GBMS_Install-Webmanager_cables_without_splitting-box_0000564998.svg"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <b class="+ topic/ph hi-d/b ">Only for solutions with splitting box(es): </b>
+            </cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Attach the bus cable(s) <b class="+ topic/ph hi-d/b ">(A)</b> from the closest
+module(s) to the splitting box(es).</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">If applicable, attach the bus cables <b class="+ topic/ph hi-d/b ">(A)</b> between
+any additional splitting boxes.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Attach the bus cable <b class="+ topic/ph hi-d/b ">(B)</b> from the closest splitting
+box to the webmanager.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd conref="#./AttachThePowerSupplyCableCToTheWebm-7E7CC2F6"
+                       class="- topic/ph task/cmd "/>
+               </substep>
+            </substeps>
+            <info class="- topic/itemgroup task/info ">
+               <note conref="#./AlwaysUseASecurePowerSourceAsThePow-58F5FF56"
+                     class="- topic/note "/>
+            </info>
+            <stepresult class="- topic/itemgroup task/stepresult ">
+               <fig class="- topic/fig ">
+                  <image href="../Images/GBMS_Install-Webmanager_cables_with_splitting-box_0000564997.svg"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </stepresult>
+         </step>
+      </steps>
+   </taskbody>
+</task>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+           id="OperationModesForUPSSystemWithASBSA-95639A44"
+           translate="yes"
+           xml:lang="en"
+           ditaarch:DITAArchVersion="1.3"
+           domains="(topic reference)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+           class="- topic/topic       reference/reference ">
+   <title class="- topic/title ">Operation Modes</title>
+   <shortdesc class="- topic/shortdesc ">
+      <keyword class="- topic/keyword ">Reality EMEA 10–80 kVA</keyword>
+   </shortdesc>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-18+05:30" class="- topic/created "/>
+         <revised modified="2025-11-18" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="[production, maintenance, quality, safety, engineering, management]"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-pxc-reality</indexterm>
+            <indexterm>manual-bypass-switch</indexterm>
+            <indexterm>bypass-contactors</indexterm>
+            <indexterm>transfer-switch</indexterm>
+            <indexterm>input-breaker</indexterm>
+            <indexterm>output-breaker</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>operation-mode-switching</indexterm>
+            <indexterm>switch-to-bypass</indexterm>
+            <indexterm>switch-to-normal</indexterm>
+            <indexterm>safe-isolation</indexterm>
+            <indexterm>maintenance-mode-activation</indexterm>
+            <indexterm>emergency-transfer-procedure</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>maintenance</indexterm>
+            <indexterm>service-procedure</indexterm>
+            <indexterm>scheduled-downtime</indexterm>
+            <indexterm>parallel-operation</indexterm>
+            <indexterm>plant-safety</indexterm>
+            <indexterm>commissioning</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Operation modes UPS System with 2-Position Manual Bypass Switch"/>
+         <othermeta name="shortdesc" content="Explains UPS operation modes for systems with a 2-position manual bypass switch and safe switching sequences for maintenance."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="manual-bypass-switch; bypass-contactors; transfer-switch; input-breaker; output-breaker"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:operation-and-maintenance;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="operation-modes, manual-bypass, switching-procedure, safety, maintenance"/>
+         <othermeta name="usecase" content="operation-and-maintenance"/>
+      </metadata>
+   </prolog>
+   
+   <refbody>
+      <section class="- topic/section ">
+         <indexterm class="- topic/indexterm ">manual bypass switch</indexterm>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">The manual bypass switch (Q601) offers the possibility of setting
+the system volt-free when performing work inside the system, e.g.
+service and maintenance. There is no interruption to the load when
+the switch is switched over. Two positions are available:<ul class="- topic/ul ">
+                  <li class="- topic/li ">
+                     <ph translate="no" class="- topic/ph ">AUTO</ph>: In this position, the load is supplied
+by the UPS.<indexterm class="- topic/indexterm ">manual bypass switch<indexterm class="- topic/indexterm ">AUTO position</indexterm>
+                     </indexterm>
+                  </li>
+                  <li class="- topic/li ">
+                     <ph translate="no" class="- topic/ph ">BYPASS</ph>: In this position the load is supplied
+directly from the bypass mains.<indexterm class="- topic/indexterm ">manual bypass switch<indexterm class="- topic/indexterm ">BYPASS position</indexterm>
+                     </indexterm>
+                  </li>
+               </ul>
+            </p>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Normal Operation</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">In normal operation, the manual bypass switch must be in the position <ph translate="no" class="- topic/ph ">AUTO</ph>.</p>
+            <p class="- topic/p ">During normal operation, the UPS supports
+the load with conditioned power.</p>
+            <p class="- topic/p ">While the UPS is in normal
+operation, the status LED <ph translate="no" class="- topic/ph ">Normal operation</ph> is green.</p>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Battery Operation</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">In battery
+operation, the manual bypass switch must be in the position <ph translate="no" class="- topic/ph ">AUTO</ph>.</p>
+            <p class="- topic/p ">If the input source becomes unavailable
+or outside the specified limits, the UPS transfers to battery operation
+and supports the load with conditioned power from the DC source.</p>
+            <p class="- topic/p ">If the input source is recovered, the system is automatically
+transferred back to normal operation.</p>
+            <p class="- topic/p ">While the UPS system is
+in battery operation, the status LED <ph translate="no" class="- topic/ph ">Battery operation</ph> is yellow. </p>
+            <p class="- topic/p ">If the battery discharge limit is approached an
+alarm is activated. If the batteries are depleted, the system transfers
+to bypass operation if the bypass source is available and within tolerance.
+If the input source or the bypass source are still unavailable, the
+UPS system will turn off and stop supplying the load, but if <uicontrol class="+ topic/ph ui-d/uicontrol ">Auto Start</uicontrol> is configured for the UPS system, then the
+UPS will automatically restart and return to normal operation again
+as soon as the input source is recovered.<indexterm class="- topic/indexterm ">Auto Start</indexterm>
+            </p>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Temporary Static Bypass Operation</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <note id="TheStaticBypassOperationModeIsConsi-4D0D4E21"
+                  type="important"
+                  class="- topic/note ">The static bypass operation modes are considered
+as non-usual and non-repetitive operation modes.</note>
+            <p class="- topic/p ">In temporary
+static bypass operation, the manual bypass switch must be in the position <ph translate="no" class="- topic/ph ">AUTO</ph>.</p>
+            <p class="- topic/p ">The UPS is in temporary static bypass
+following an event in the UPS system (inverter inoperable, no input
+source available, no battery runtime available). During temporary
+static bypass operation, the load is supplied by the bypass source.
+When the cause of the automatic transfer is no longer present, the
+system automatically transfers back to normal operation without interruption.</p>
+            <p class="- topic/p ">While the UPS system is in temporary static bypass operation,
+the status LED <ph translate="no" class="- topic/ph ">Bypass operation</ph> is yellow.</p>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Requested Static Bypass Operation</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <note conref="#OperationModesForUPSSystemWithASBSA-95639A44/TheStaticBypassOperationModeIsConsi-4D0D4E21"
+                  type="-dita-use-conref-target"
+                  class="- topic/note "/>
+            <p class="- topic/p ">In requested static bypass
+operation, the manual bypass switch must be in the position <ph translate="no" class="- topic/ph ">AUTO</ph>.</p>
+            <p class="- topic/p ">The UPS can be transferred to requested
+static bypass following a command from the display. During static
+bypass operation, the load is supplied from the bypass source. To
+avoid interruptions during the transfer, the voltage, frequency and
+phase relation of the UPS system must be synchronized to the bypass
+source. The UPS will transfer to normal or battery operation if the
+bypass source becomes unavailable.</p>
+            <p class="- topic/p ">While the UPS system is in
+requested static bypass, the status LED <ph translate="no" class="- topic/ph ">Bypass
+operation</ph> is yellow. </p>
+         </sectiondiv>
+      </section>
+      <section otherprops="UL" class="- topic/section ">
+         <title class="- topic/title ">ECO Mode</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">In
+ECO mode, the manual bypass switch must be in the position <ph translate="no" class="- topic/ph ">AUTO</ph>. The UPS can be transferred to ECO mode following
+a command from the display or when enabled the system will automatically
+switch to ECO mode after system has been running for one minute in
+normal operation and the bypass voltage quality is above the acceptable
+limits. ECO mode will transfer the system to static bypass operation.
+In this operation mode the total system efficiency is increased. During
+static bypass operation, the load is supplied from the bypass source.
+To avoid interruptions during the transfer, the voltage, frequency
+and phase relation of the UPS system must be synchronized to the bypass
+source. The UPS will transfer to normal or battery operation if the
+bypass source becomes unavailable or if the bypass voltage quality
+drops below the acceptable limits. While the UPS system is in requested
+static bypass, the status LED <ph translate="no" class="- topic/ph ">Bypass operation</ph> is yellow.</p>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Manual Bypass Operation</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">For
+repair and maintenance work or work inside the system, the manual
+bypass switch must be set to <ph translate="no" class="- topic/ph ">BYPASS</ph>.</p>
+            <p class="- topic/p ">In manual bypass operation, the load is supplied with unconditioned
+power from the bypass input via the manual bypass switch. The batteries
+are not available as an alternate power source in manual bypass operation.</p>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Charger Only</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">When the UPS is
+in charger mode, the UPS does not supply the connected load with power.</p>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Standby</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">When the UPS is in standby
+mode, the UPS is OFF and does not supply the connected load with power,
+and the batteries are not charged.</p>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">OFF</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">When the UPS is in OFF mode,
+the UPS does not supply the connected load with power, and the batteries
+are not charged.</p>
+         </sectiondiv>
+      </section>
+   </refbody>
+</reference>

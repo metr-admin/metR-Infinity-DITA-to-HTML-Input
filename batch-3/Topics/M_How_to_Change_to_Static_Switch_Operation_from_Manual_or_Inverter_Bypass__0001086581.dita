@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="HowToChangeToStaticSwitchOperationF-FA99B6FD"
+      translate="yes"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">How to Change Back to Static Switch Output from Bypass or Inverter
+Output</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-06T19:12:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-06T19:12:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>static-switch-operation</indexterm>
+            <indexterm>manual-bypass</indexterm>
+            <indexterm>inverter-bypass</indexterm>
+            <indexterm>transfer-logic</indexterm>
+            <indexterm>display-interface</indexterm>
+            <!-- Process layer -->
+            <indexterm>change-to-static-switch</indexterm>
+            <indexterm>verify-no-alarm</indexterm>
+            <indexterm>select-output-source</indexterm>
+            <indexterm>monitor-transfer</indexterm>
+            <indexterm>return-to-bypass</indexterm>
+            <!-- Context layer -->
+            <indexterm>maintenance-operations</indexterm>
+            <indexterm>planned-transfer</indexterm>
+            <indexterm>industrial-power-management</indexterm>
+            <indexterm>critical-load-protection</indexterm>
+            <indexterm>site-service</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="How to Change Back to Static Switch Output from Bypass or Inverter Output"/>
+         <othermeta name="shortdesc" content="Steps to restore static switch output from manual bypass or inverter bypass with checks for alarms and supply availability."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="static switch; manual bypass switch; inverter bypass; alarms; supply sources"/>
+         <othermeta name="taxonomy" content="domain:output-management/usecase:restore-static-switch/industry:uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="restore-static-switch, output-transfer, alarm-checks"/>
+         <othermeta name="usecase" content="return system output to static switch operation"/>
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <context conref="M_How_to_Change_to_Manual_Bypass_from_Static_Switch_Operation_TSK_0001086583.dita#HowToChangeToManualBypassFromStatic-FA99853D/ManualBypassSwitchMBSPositions0SSWO-FDB927FC"
+               class="- topic/section task/context "/>
+      <steps class="- topic/ol task/steps ">
+         <step id="OnTheDisplayPressTheStaticSwitchIco-1D2B37EA"
+               platform="Modular-Inverter Modular-AC"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <ph platform="Modular-AC" class="- topic/ph ">On the <uicontrol class="+ topic/ph ui-d/uicontrol ">Display</uicontrol> check that no alarm LED is
+active.</ph>
+               <ph platform="Modular-Inverter" class="- topic/ph ">On the <uicontrol class="+ topic/ph ui-d/uicontrol ">Display</uicontrol> check that no alarm LED is active except the <uicontrol class="+ topic/ph ui-d/uicontrol ">Manual bypass
+active</uicontrol> and <uicontrol class="+ topic/ph ui-d/uicontrol ">SBS Fault</uicontrol>, if they are
+used.</ph>
+            </cmd>
+            <info class="- topic/itemgroup task/info ">
+               <note class="- topic/note ">There will be a warning triangle on the <uicontrol class="+ topic/ph ui-d/uicontrol ">Static
+switch icon</uicontrol> that indicates the SSW is in bypass or inverter
+output.</note>
+            </info>
+         </step>
+         <step id="OnTheDisplayCheckThatThePowerFlowIn-1D2923DC"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">On the <uicontrol class="+ topic/ph ui-d/uicontrol ">Display</uicontrol> check that the power flow indicates either bypass
+output or inverter output.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <table class="- topic/table ">
+                  <tgroup cols="2" class="- topic/tgroup ">
+                     <colspec colname="col1" class="- topic/colspec "/>
+                     <colspec colname="col2" class="- topic/colspec "/>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry colsep="0" class="- topic/entry ">
+                              <image href="../Images/UPS-Bypass_output_0001157875.png"
+                                     platform="Modular-AC"
+                                     placement="inline"
+                                     class="- topic/image "/>
+                              <image href="../Images/INV_Bypass_output_DD00609912.jpg"
+                                     platform="Modular-Inverter"
+                                     scope="local"
+                                     placement="inline"
+                                     class="- topic/image "/>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <image href="../Images/UPS-Inverter_output_0001157874.png"
+                                     platform="Modular-AC"
+                                     placement="inline"
+                                     class="- topic/image "/>
+                              <image href="../Images/INV_UPS_Inverter_ouput_DD00609911.jpg"
+                                     platform="Modular-Inverter"
+                                     scope="local"
+                                     placement="inline"
+                                     class="- topic/image "/>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </info>
+         </step>
+         <step id="OpenTheDoorAndRotateTheManualBypass-1D2921A9"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Open
+the door and rotate the manual bypass switch to the static switch
+output position (Position 0).</cmd>
+         </step>
+         <step conref="M_How_to_Change_to_Manual_Bypass_from_Static_Switch_Operation_TSK_0001086583.dita#HowToChangeToManualBypassFromStatic-FA99853D/CloseTheDoor.-FDBB7092"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Close the door.</cmd>
+         </step>
+         <step conref="M_How_to_Change_to_Manual_Bypass_from_Static_Switch_Operation_TSK_0001086583.dita#HowToChangeToManualBypassFromStatic-FA99853D/CheckThatTheMBSIsInPosition0.-FDB92B6D"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+      </steps>
+      <result class="- topic/section task/result ">The system is in SSW output mode and will automatically switch
+between inverter or bypass as needed, depending on the available supply.</result>
+   </taskbody>
+</task>

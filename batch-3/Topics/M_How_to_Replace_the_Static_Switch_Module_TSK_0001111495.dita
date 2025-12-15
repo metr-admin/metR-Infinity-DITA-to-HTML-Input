@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="HowToReplaceTheStaticSwitchModule-0910C73E"
+      translate="yes"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">How to Replace the Static Switch Module</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-06T19:12:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-06T19:12:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>static-switch-module</indexterm>
+            <indexterm>static-switch</indexterm>
+            <indexterm>transfer-relay</indexterm>
+            <indexterm>control-board</indexterm>
+            <indexterm>power-electronics</indexterm>
+            <!-- Process layer -->
+            <indexterm>replace-static-switch</indexterm>
+            <indexterm>module-removal</indexterm>
+            <indexterm>isolation-procedure</indexterm>
+            <indexterm>prestart-checks</indexterm>
+            <indexterm>post-replacement-verification</indexterm>
+            <!-- Context layer -->
+            <indexterm>site-maintenance</indexterm>
+            <indexterm>maintenance-shutdown</indexterm>
+            <indexterm>industrial-ups-service</indexterm>
+            <indexterm>safety-compliance</indexterm>
+            <indexterm>electrical-hazard-control</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="How to Replace the Static Switch Module"/>
+         <othermeta name="shortdesc" content="Procedures and safety warnings for removing and replacing the static switch module and verifying system operation."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="static switch module; display indicators; manual bypass switch; connector pins; grounding points"/>
+         <othermeta name="taxonomy" content="domain:power-systems/usecase:module-replacement/industry:uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="static-switch, module replacement, safety-warnings, post-replacement test"/>
+         <othermeta name="usecase" content="replace faulty static switch module"/>
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <context class="- topic/section task/context ">
+         <hazardstatement conref="M_Replace_Module_TSK_0000708918.dita#ReplaceModule-E7FEDDA3/ReplacePowerModuleLIVE-10C80C0F"
+                          class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+            </messagepanel>
+         </hazardstatement>
+         <hazardstatement type="warning" class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard ">Falling module and sharp edges</typeofhazard>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid ">
+                  <sl class="- topic/sl ">
+                     <sli class="- topic/sli ">Always wear protective gloves when handling modules.</sli>
+                     <sli class="- topic/sli ">If installing modules above shoulder height always use a hard
+hat.</sli>
+                     <sli class="- topic/sli ">If needed use an appropriate platform ladder to reach the rack.</sli>
+                     <sli class="- topic/sli ">Always follow your site's safety recommendations and any local
+laws and regulations.</sli>
+                  </sl>
+               </howtoavoid>
+            </messagepanel>
+         </hazardstatement>
+         <hazardstatement type="warning" class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard ">Loss of output voltage</typeofhazard>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid ">Make sure the static switch has the right settings (pre-programmed).</howtoavoid>
+            </messagepanel>
+         </hazardstatement>
+         <note type="important" class="- topic/note ">If it is not
+possible to verify that the static switch has the correct settings,
+please contact your local <xref conref="../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/Reality_service_centers"
+                  scope="local"
+                  class="- topic/xref "/>.</note>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step conref="M_How_to_Change_to_Manual_Bypass_from_Static_Switch_Operation_TSK_0001086583.dita#HowToChangeToManualBypassFromStatic-FA99853D/OnTheDisplayPressXToCheckY.-1674D46A"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step conref="M_How_to_Change_to_Manual_Bypass_from_Static_Switch_Operation_TSK_0001086583.dita#HowToChangeToManualBypassFromStatic-FA99853D/CheckThatTheMBSIsInPosition0.-FDB92B6D"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step conref="M_How_to_Change_to_Manual_Bypass_from_Static_Switch_Operation_TSK_0001086583.dita#HowToChangeToManualBypassFromStatic-FA99853D/RotateTheMBSToPosition1.-1674D146"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step conref="M_How_to_Replace_or_Rotate_an_Inverter_Module_TSK_0001111496.dita#HowToReplaceOrRotateAnInverterModul-0906067A/SwitchOffTheSupplyToTheInverterModu-1D25131F"
+               platform="Modular-AC"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Switch off the supply to the inverter modules
+by either:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">
+                     <b class="+ topic/ph hi-d/b ">If the system has an inverter input breaker:</b> Open
+the inverter input breaker.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">
+                     <b class="+ topic/ph hi-d/b ">If the system does not have an inverter input breaker:</b> Open the rectifier mains breaker(s) and the battery breaker.</cmd>
+               </substep>
+            </substeps>
+         </step>
+         <step conref="M_How_to_Replace_or_Rotate_an_Inverter_Module_TSK_0001111496.dita#HowToReplaceOrRotateAnInverterModul-0906067A/WaitUntilTheLEDsOnTheInverterModule-1D9C3EF4"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd conref="M_Replace_Module_TSK_0000708918.dita#ReplaceModule-E7FEDDA3/LoosenTheScrewAOfTheModule.-10C87055"
+                 class="- topic/ph task/cmd ">Loosen the screw <b class="+ topic/ph hi-d/b ">(A)</b> of the module.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <image href="../Images/Modular_AC-Modules_Replace-SSW-1_0001129867.svg"
+                      placement="inline"
+                      class="- topic/image "/>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd conref="M_Replace_Module_TSK_0000708918.dita#ReplaceModule-E7FEDDA3/RemoveTheModuleBCompletelyWithBothH-10C8A414"
+                 class="- topic/ph task/cmd "/>
+            <info class="- topic/itemgroup task/info ">
+               <image href="../Images/Modular_AC-Modules_Replace-SSW-2_0001129866.svg"
+                      placement="inline"
+                      class="- topic/image "/>
+            </info>
+         </step>
+         <step id="CorrectlyDisposeOfTheModuleAccordin-3D864996"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Correctly
+dispose of the module according to your local laws and regulations.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd conref="M_Replace_Module_TSK_0000708918.dita#ReplaceModule-E7FEDDA3/CarefullyInsertTheNewModuleBWithBot-10C8C0B3"
+                 class="- topic/ph task/cmd "/>
+            <info class="- topic/itemgroup task/info ">
+               <image href="../Images/Modular_AC-Modules_Replace-SSW-3_0001129865.svg"
+                      placement="inline"
+                      class="- topic/image "/>
+            </info>
+         </step>
+         <step conref="M_Insert_Modules_in_the_Cabinet_TSK_0000667029.dita#InsertModulesInTheCabinet-CA415A6F/MakeSureThatTheModuleIsFullyInserte-1246B66F"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd conref="M_Replace_Module_TSK_0000708918.dita#ReplaceModule-E7FEDDA3/TightenTheScrewAAtTheBottomByHand.-10C8CD4F"
+                 class="- topic/ph task/cmd "/>
+            <info class="- topic/itemgroup task/info ">
+               <image href="../Images/Modular_AC-Modules_Replace-SSW-4_0001129864.svg"
+                      placement="inline"
+                      class="- topic/image "/>
+            </info>
+         </step>
+         <step conref="M_How_to_Replace_or_Rotate_an_Inverter_Module_TSK_0001111496.dita#HowToReplaceOrRotateAnInverterModul-0906067A/SwitchBackTheSupplyToTheInverterMod-1D267D83"
+               platform="Modular-AC"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step platform="Modular-AC" class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Close the inverter input breaker.</cmd>
+            <stepresult class="- topic/itemgroup task/stepresult ">When the module is initializing both the red LED and the
+green LED flashes fast. When the module is operating correctly only
+the green LED is illuminated.</stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Close the door.</cmd>
+         </step>
+         <step conref="M_How_to_Change_to_Static_Switch_Operation_from_Manual_or_Inverter_Bypass__0001086581.dita#HowToChangeToStaticSwitchOperationF-FA99B6FD/OnTheDisplayPressTheStaticSwitchIco-1D2B37EA"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step conref="M_How_to_Change_to_Manual_Bypass_from_Static_Switch_Operation_TSK_0001086583.dita#HowToChangeToManualBypassFromStatic-FA99853D/OnTheDisplayCheckThatThePowerFlowIn-2B8F04E7"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">On the display check that the power flow indicate bypass output.</cmd>
+            <info class="- topic/itemgroup task/info ">(screen shot)</info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Check the system settings in <uicontrol class="+ topic/ph ui-d/uicontrol ">Settings &gt; Reality
+Modular AC &gt; System settings</uicontrol> before rotating the manual
+bypass switch.</cmd>
+         </step>
+         <step conref="M_How_to_Change_to_Static_Switch_Operation_from_Manual_or_Inverter_Bypass__0001086581.dita#HowToChangeToStaticSwitchOperationF-FA99B6FD/OpenTheDoorAndRotateTheManualBypass-1D2921A9"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd conref="M_How_to_Replace_or_Rotate_an_Inverter_Module_TSK_0001111496.dita#HowToReplaceOrRotateAnInverterModul-0906067A/CloseTheDoorAndCheckThatTheDisplayi-94E43453"
+                 class="- topic/ph task/cmd "/>
+         </step>
+      </steps>
+   </taskbody>
+</task>

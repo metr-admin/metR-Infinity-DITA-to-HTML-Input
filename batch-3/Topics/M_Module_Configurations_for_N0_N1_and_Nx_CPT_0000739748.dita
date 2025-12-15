@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="ModuleConfigurationsForN0N1AndNX-F262C691"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Module Configuration for N + 0, N + 1 and N + x</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-06+05:30" class="- topic/created "/>
+         <revised modified="2025-12-06" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- product layer -->
+            <indexterm>module-configuration-n0</indexterm>
+            <indexterm>module-configuration-n1</indexterm>
+            <indexterm>module-configuration-nx</indexterm>
+            <indexterm>configuration-dip-switch</indexterm>
+            <indexterm>module-parameter-set</indexterm>
+            <!-- process layer -->
+            <indexterm>configuration-parameterization</indexterm>
+            <indexterm>mapping-module-addresses</indexterm>
+            <indexterm>backup-and-restore-config</indexterm>
+            <indexterm>firmware-configuration-sync</indexterm>
+            <indexterm>configuration-validation-test</indexterm>
+            <!-- context layer -->
+            <indexterm>parallel-operation-setup</indexterm>
+            <indexterm>redundancy-mode-selection</indexterm>
+            <indexterm>site-specific-configuration</indexterm>
+            <indexterm>commissioning-configuration</indexterm>
+            <indexterm>service-configuration-guidance</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="M Module Configurations for N0 N1 and Nx"/>
+         <othermeta name="shortdesc" content="Configuration options and step-by-step parameter settings for N0, N1 and Nx module topologies."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="configuration-database;dip-switches;module-address;redundancy-controller;pairing-cable"/>
+         <othermeta name="taxonomy" content="domain:system-configuration;usecase:module-topology-setup;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="configuration;n0;n1;nx;commissioning"/>
+         <othermeta name="usecase" content="guide-module-configuration-for-different-topologies"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p platform="Modular-Inverter" class="- topic/p ">The module configuration redundancy
+only applies to inverter modules and not static switch or manual bypass
+modules. </p>
+      <p platform="Modular-AC" class="- topic/p ">The module configuration redundancy only
+applies to rectifier and inverter modules and not static switch or
+manual bypass modules. </p>
+      <section class="- topic/section ">
+         <title class="- topic/title ">N + 0 Configuration</title>
+         <p platform="Modular-DC Modular-AC" class="- topic/p ">No redundancy of modules. The system
+has exactly as many modules installed as it needs to supply the full
+load and charge the battery.</p>
+         <p platform="Modular-Inverter Modular-DCDC-Converter Modular-DCDC-Converter-LV"
+            class="- topic/p ">No redundancy of modules. The system has exactly as many modules
+installed as it needs to supply the full load.</p>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">N + 1 Configuration</title>
+         <p platform="Modular-DC Modular-AC" class="- topic/p ">One redundant module. The recommended
+and standard configuration. If one module becomes inoperable or needs
+to be replaced, the remaining modules can still supply the full load
+and charge the battery.</p>
+         <p platform="Modular-Inverter Modular-DCDC-Converter Modular-DCDC-Converter-LV"
+            class="- topic/p ">One redundant module. The recommended and standard configuration.
+If one module becomes inoperable or needs to be replaced, the remaining
+modules can still supply the full load.</p>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">N + x Configuration</title>
+         <p platform="Modular-DC Modular-AC" class="- topic/p "> A specified number of redundant
+modules. In case additional redundancy is requested, x additional
+modules can be added. If x number of modules becomes inoperable, the
+remaining modules can still supply the full load and charge the battery.</p>
+         <p platform="Modular-Inverter Modular-DCDC-Converter Modular-DCDC-Converter-LV"
+            class="- topic/p "> A specified number of redundant modules. In case additional redundancy
+is requested, x additional modules can be added. If x number of modules
+becomes inoperable, the remaining modules can still supply the full
+load.</p>
+      </section>
+      <section class="- topic/section ">
+         <fig platform="Modular-DC Modular-AC" class="- topic/fig ">
+            <title class="- topic/title ">Rectifier Module Configuration for N + 0, N + 1 and N + x</title>
+            <image href="../Images/Modular-DC_Configuration-Options_N0-N1-Nx_0000735329.svg"
+                   platform="Modular-DC"
+                   placement="inline"
+                   class="- topic/image "/>
+            <image href="../Images/Modular-DC_Configuration-Options_N0-N1-Nx_wOB_0001094893.svg"
+                   platform="Modular-AC"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <fig platform="Modular-Inverter Modular-AC" class="- topic/fig ">
+            <title class="- topic/title ">Inverter Module Configuration for N + 0, N + 1 and N + x</title>
+            <image href="../Images/Modular-AC_Configuration-Options_Inverter_0001083823.svg"
+                   platform="Modular-Inverter"
+                   placement="inline"
+                   class="- topic/image "/>
+            <image href="../Images/Modular-AC_Configuration-Options_Inverter-UPS_0001094892.svg"
+                   platform="Modular-AC"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <fig platform="Modular-Inverter" class="- topic/fig ">
+            <title class="- topic/title ">Inverter Module Configuration for N + 0, N + 1 and N + x (without
+static switch or manual bypass)</title>
+            <image href="../Images/Modular-AC_Configuration-Options_Inverter-noByp_0001083822.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <fig platform="Modular-DCDC-Converter Modular-DCDC-Converter-LV"
+              class="- topic/fig ">
+            <title class="- topic/title ">DC/DC Converter Module Configuration for N + 0, N + 1 and N
++ x</title>
+            <image href="../Images/Modular-DC_Configuration-Options_DCDCconverter_0000735328.svg"
+                   scope="local"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+      </section>
+   </conbody>
+</concept>

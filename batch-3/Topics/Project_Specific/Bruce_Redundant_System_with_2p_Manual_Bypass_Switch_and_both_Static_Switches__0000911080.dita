@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="RedundantSystemWith2pManualBypassSw-7112F3E7"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Redundant System with 2p Manual Bypass Switch and both Static
+Switches</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-28+05:30" class="- topic/created "/>
+         <revised modified="2025-11-28" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience type="role" otherprops="engineering,commissioning,operations,maintenance,design,field technician"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>Bruce UPS redundant system</indexterm>
+            <indexterm>2-pole manual bypass switch</indexterm>
+            <indexterm>static switches (dual)</indexterm>
+            <indexterm>redundant inverter paths</indexterm>
+            <indexterm>battery subsystem</indexterm>
+            <indexterm>UPS distribution bus</indexterm>
+            <indexterm>metR-PXC-Reality configuration metadata</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>redundant power routing</indexterm>
+            <indexterm>manual bypass operation</indexterm>
+            <indexterm>static switching logic</indexterm>
+            <indexterm>redundancy validation</indexterm>
+            <indexterm>configuration verification</indexterm>
+            <indexterm>load transfer procedures</indexterm>
+            <indexterm>system topology analysis</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>N+1 redundancy</indexterm>
+            <indexterm>critical load environments</indexterm>
+            <indexterm>industrial power systems</indexterm>
+            <indexterm>multiple UPS configuration</indexterm>
+            <indexterm>emergency switching environment</indexterm>
+            <indexterm>high-availability infrastructure</indexterm>
+            <indexterm>redundant architecture mapping</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="Redundant System with 2-P Manual Bypass and Both Static Switches"/>
+         <othermeta 
+            name="shortdesc" 
+            content="Explains the architecture and power flow of a redundant Bruce UPS system using a 2-pole manual bypass switch and both static switches for load transfer."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta 
+            name="entities" 
+            content="manual bypass switch; static switches; redundant inverter; rectifier path; battery bank; load bus; synchronization lines"/>
+         <othermeta 
+            name="taxonomy" 
+            content="domain:industrial automation;usecase:redundant-configuration;industry:uninterruptible power supply (UPS) systems)"/>
+         <othermeta 
+            name="tags" 
+            content="redundant system,manual bypass,static switches,power routing,UPS topology"/>
+         <othermeta 
+            name="usecase" 
+            content="Describe redundant operation with manual and static bypass switches in a Bruce UPS configuration"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <div class="- topic/div ">
+         <hazardstatement type="notice" class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard ">loss of output voltage</typeofhazard>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid ">When the manual bypass switch is in <b class="+ topic/ph hi-d/b ">Bypass</b> position, <ph platform="PxW" class="- topic/ph ">there is no backup from the battery</ph>
+                  <ph platform="WxW" class="- topic/ph ">it is not possible for the system to automatically
+switch back to inverter operation</ph> in case the bypass mains becomes
+unavailable.</howtoavoid>
+            </messagepanel>
+         </hazardstatement>
+         <p class="- topic/p ">A manual bypass switch is used
+to isolate sections for maintenance while supplying the load from
+the bypass mains. A 2-position manual bypass switch have the positions: <sl class="- topic/sl ">
+               <sli class="- topic/sli ">In <b class="+ topic/ph hi-d/b ">Normal</b> position the system can automatically switch
+between normal operation and bypass operation without interruption.</sli>
+               <sli class="- topic/sli ">
+                  <b class="+ topic/ph hi-d/b ">Bypass </b> position is used to isolate sections for maintenances
+or troubleshooting.</sli>
+            </sl>
+         </p>
+      </div>
+      <p class="- topic/p ">The static switch EN makes it possible to switch over to bypass
+operation automatically without interruption.</p>
+      <p class="- topic/p ">The static switch EA is used to help isolate the system in bypass
+operation, so there is no feedback from the static bypass to the inverter.
+It also makes the switch between the inverter and bypass more controlled.</p>
+      <image href="../../Images/FD_WEW_1170112_Bruce_Redundant_2pMBS_0000911089.svg"
+             placement="inline"
+             class="- topic/image "/>
+   </conbody>
+</concept>

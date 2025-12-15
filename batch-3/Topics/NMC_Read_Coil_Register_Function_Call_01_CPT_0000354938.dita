@@ -1,0 +1,3401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="ReadCoilRegisterFunctionCall01-8032D385"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Modbus Read Coil Register (Function Call 01)</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-05+05:30" class="- topic/created "/>
+         <revised modified="2025-12-05" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-pxc-reality</indexterm>
+            <indexterm>modbus-coil-register</indexterm>
+            <indexterm>modbus-protocol</indexterm>
+            <indexterm>nmc-modbus</indexterm>
+            <indexterm>function-01</indexterm>
+            <indexterm>digital-input-map</indexterm>
+            <!-- Process layer -->
+            <indexterm>read-coil-register</indexterm>
+            <indexterm>modbus-request</indexterm>
+            <indexterm>pdu-construction</indexterm>
+            <indexterm>response-parsing</indexterm>
+            <indexterm>register-mapping</indexterm>
+            <indexterm>diagnostic-codes</indexterm>
+            <!-- Context layer -->
+            <indexterm>field-telemetry</indexterm>
+            <indexterm>controller-integration</indexterm>
+            <indexterm>hardware-interfacing</indexterm>
+            <indexterm>measurement-systems</indexterm>
+            <indexterm>commissioning</indexterm>
+            <indexterm>ups-network-management</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Modbus Read Coil Register (Function Call 01)"/>
+         <othermeta name="shortdesc" content="Reference for Modbus Read Coil (function 01) showing coil addresses, usage and typical responses used for digital status monitoring."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="coil-register; modbus-pdu; slave-address; function-code; status-bit; diagnostic-code"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:modbus-coil-read-and-integration;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="modbus,coil,read,function-01,telemetry,register"/>
+         <othermeta name="usecase" content="use Modbus function 01 to read digital coil status for monitoring and integration"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">The read coil register contains digital information, the parameters
+are either 1 (true) or 0 (false). True indicates that the alarm/indication
+is active and present in the system.</p>
+      <p class="- topic/p ">The data is stored as Boolean. This information can be used to
+trigger alarms, actions or other events.</p>
+      <note class="- topic/note ">It is recommended that the delay poll is more than 10 seconds
+because the refresh rate of the register is about 10 seconds.</note>
+      <note platform="PxW WxW SDC" class="- topic/note ">All coil registers between 00001-00071
+are reserved even if not listed in the table.</note>
+      <table pgwide="1" platform="PxW WxW" class="- topic/table ">
+         <title class="- topic/title ">Modbus Read Coil Register List</title>
+         <tgroup cols="3" class="- topic/tgroup ">
+            <colspec colname="1" colwidth="20.00mm" class="- topic/colspec "/>
+            <colspec colname="2" colwidth="40.00mm" class="- topic/colspec "/>
+            <colspec colname="3" colwidth="3.00*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Coil Register</p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Parameter</p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Description</p>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00001</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Output is
+out of tolerance detected</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Indicates
+that the output voltage of the UPS is out of tolerance. The system
+will transfer to bypass if the bypass mains is within tolerance, if
+not the system will shut down.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00002</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Battery
+operation</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The system
+is in battery operation mode.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00003</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Bypass operation</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The system
+is in static bypass operation mode.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00004</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Low DC shutdown</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The supply
+to the inverter is too low and the inverter will turn off. The system
+will transfer to bypass if the bypass mains is within tolerance, if
+not the system will shut down.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00005</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">High DC
+shutdown</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The output
+of the rectifier is too high, and the rectifier will turn off. The
+system will transfer to battery operation if possible. Else the system
+will transfer to bypass if the bypass mains is within tolerance, if
+not the system will shut down.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00006</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Common alarm</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The common
+alarm is active in the system.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00007</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Overload
+&gt; 100%</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The system
+is overloaded. After some time, the system will transfer to bypass
+if the bypass mains is within tolerance, if not the system will shut
+down.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00008</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">SSW temp
+warning/shutdown</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">One of the
+static switches are overheated. The system will transfer to an operating
+mode that does not use the overheated static switch if possible, or
+it will shut down.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00009</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">System pushed
+on</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Indicates
+that the <b class="+ topic/ph hi-d/b ">ON button</b> was pushed.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00010</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Inverter
+out of tolerance</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00011</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Inverter
+not synchronized to bypass</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00012</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Battery
+charge current is being limited by UPS</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The battery
+current limiter is active. Does not trigger the common alarm.</p>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00016</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Battery
+test active</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">A battery
+monitor test or a battery capacity test is running.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00021</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Low DC warning</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Warning
+signal that shut down is imminent when running in battery operation.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00023</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Inverter
+or output overload</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The inverter
+is overloaded, the current limiter is active.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00025</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Bypass voltage
+(average) is out of tolerance </p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00027</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Digital
+input 1</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Restored
+the local network management interface-to-integrated environmental
+monitor (Universal I/O at Port 1) communication.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00028</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Digital
+input 2</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Restored
+the local network management interface-to-integrated environmental
+monitor (Universal I/O at Port 1) communication.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00035</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Inverter
+fuse blown</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">One or more
+of the inverter fuses have blown (F021 on A071: X003:1). The inverter
+turns off. The system switches to bypass if possible or it shuts down.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00037</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Aux 1 Error</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Possibly
+one or more of the following: rectifier fuse blown, battery breaker
+(Q004) disconnected, DC earth fault (Option 1), Option 2..6, manual
+bypass switch.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00038</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Fan inoperable</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">One or more
+fans are inoperable.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00039</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">High DC
+warning</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The DC is
+above the high DC warning level.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00040</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Inverter
+voltage out of tolerance</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The inverter
+voltage before the static switch EA is about &lt;85% of the reference
+voltage. If the inverter turns on or if system is in bypass operation
+the static switch EA is blocked.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00043</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">PSU1 AC/DC
+not working</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">A fault
+is detected in one of the two internal power supplies.</p>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00048</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Rectifier
+magnetics temp warning</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The charger
+magnetic temperature is too high.</p>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00049</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">High battery temperature</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The battery temperature is too high.
+Only available if optional battery temperature sensor is installed
+at the battery</p>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00050</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Battery monitor warning</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Only available if optional Reality battery
+ABM is installed in the system.</p>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00051</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Battery
+monitor alarm</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Only available
+if optional Reality battery ABM is installed in the system.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00052</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">System locked
+in operation mode</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The system
+is locked in an operation mode. The system was changing operation
+mode too frequently.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00054</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Calibration
+stack entered by user</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">A login
+to the level 2 (configuration stack) occurred. Will not trigger a
+common alarm.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00055</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Inverter
+PM block 1 (L1, L2, L3) temperature shutdown</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">A temperature
+shutdown alarm is active in one of the system inverter power modules.</p>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00056</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Charger
+temperature warning</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">A temperature
+warning is active in one of the system charger modules.</p>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00057</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Charger
+temperature shutdown</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">A temperature
+shutdown alarm is active in one of the system charger modules.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00058</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Output voltage is out of tolerance</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00059</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Static switch EA temperature warning
+or static switch EN temperature warning detected</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">One of the system static switch modules
+(EA or EN) has a temperature warning signal pending.</p>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00060</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Total DC
+current limit</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The system
+charger operates in total DC current limit mode.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00061</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">AC capacitors
+CB03 current warning</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The current
+in the AC capacitors is below the low warning limit value.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00063</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">No redundancy
+operation</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Only available
+for redundant systems.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00065</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">AC capacitors
+CB03 current shutdown</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The current
+in the AC capacitors is below the low shutdown limit value.</p>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00066</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Mains out
+of tolerance</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The rectifier
+mains is out of tolerance.</p>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00069</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Charger
+temperature warning or shutdown</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p "> The temperature
+is to high in one of the system charger modules.</p>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table pgwide="1" platform="SDC" class="- topic/table ">
+         <title class="- topic/title ">Modbus Read Coil Register List</title>
+         <tgroup cols="3" class="- topic/tgroup ">
+            <colspec colname="1" colwidth="20.00mm" class="- topic/colspec "/>
+            <colspec colname="2" colwidth="40.00mm" class="- topic/colspec "/>
+            <colspec colname="3" colwidth="3.00*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Coil Register</p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Parameter</p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Description</p>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00001</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">High DC
+warning</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The rectifier
+output DC voltage is above the high DC warning level.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00002</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Battery
+operation</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The system
+is running on batteries.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00004</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Low DC warning</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The DC output
+voltage after the serial diode is below DC warning level.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00005</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">High DC
+warning</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The rectifier
+output DC voltage is above the high DC warning/shutdown level.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00006</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Common alarm</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The common
+alarm is active in the system.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00017</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Battery
+breaker open</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00018</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Battery
+temperature warning</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Battery
+temperature out of range or sensor fault.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00021</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Low DC warning</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The rectifier
+output DC is below low DC warning level.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00027</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Digital
+input 1</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Restored
+the local network management interface-to-integrated Environmental
+Monitor (Universal I/O at Port 1) communication.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00028</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Digital
+input 2</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Restored
+the local network management interface-to-integrated Environmental
+Monitor (Universal I/O at Port 1) communication.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00035</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Rectifier
+mains failure</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Phase order
+not correct, or mains voltage is out of tolerance window, or mains
+is out of frequency window, or at least one phase is missing. Charger
+will shut down.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00036</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Load breaker
+open</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00037</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Mains input
+breaker open</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00040</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">DC fuse
+blown</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The rectifier
+DC fuse has blown.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00041</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Total DC
+current limit</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Current
+limiter for the total DC current is active.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00042</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Parallel
+error</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Load sharing
+differs more than ± 10%. Only available for redundant systems.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00043</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Battery
+defective</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Only available
+if optional Reality battery ABM is installed in the system.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00044</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Battery
+breaker open</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00045</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Earth fault
+on positive pole</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Earth current
+is running to positive pole or earth current is running to ground
+pole.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00047</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Internal
+PSU fault</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The DC or
+AC circuit of the redundant PSU is inoperable.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00048</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">High temp
+transformer</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The temperature
+is too high at the transformer.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00049</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Fan inoperable</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Fan 1,2,3,4,5,6,7
+or 8 is rotating to slowly, the tan pulse signal is less than 20 Hz.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00051</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Option 1
+fault</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00052</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Option 2
+fault</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00053</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Option 3
+fault</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00054</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Option 4
+fault</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00055</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Option 5
+fault</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00056</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Option 6
+fault</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00057</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Option 7
+fault</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00058</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Option 8
+fault</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00059</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Battery
+symmetry fault</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Half of
+the battery voltage is outside of the tolerance window. Only available
+if an advances battery monitor (ABM) is installed.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00060</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Battery
+weak</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Only available
+if an advances battery monitor (ABM) is installed.</p>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table pgwide="1" platform="PXP" class="- topic/table ">
+         <title class="- topic/title ">Modbus Read Coil Register List</title>
+         <tgroup cols="3" class="- topic/tgroup ">
+            <colspec colname="1" colwidth="20.00mm" class="- topic/colspec "/>
+            <colspec colname="COLSPEC7" colwidth="40.00mm" class="- topic/colspec "/>
+            <colspec colname="COLSPEC6" colwidth="3.00*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Coil Register</p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Parameter</p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Description</p>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00023</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">System switched on</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The system is switched on.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00024</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Standby</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">1 = the system is in standby operation.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00025</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Normal operation</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">1 = the system is in normal operation.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00026</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Battery operation</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">1 = the system is in battery operation.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00027</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Bypass operation</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Static bypass is switched on.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00028</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Initial charge</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The battery charger has been set to
+initial charge mode. The batteries are charged with an initial charge
+voltage.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00029</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Float charge</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The battery charger has been set to
+float charge state. The batteries are charged with a float charge
+voltage.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00030</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Boost charge</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The battery charger has been set to
+boost charge mode. The batteries are charged with a boost charge voltage.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00031</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Cyclic charge</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The battery charger has been set to
+cyclic charge mode. The batteries are charged with a cyclic charge
+voltage.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00039</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Temporary static bypass</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The system is in static bypass operation
+due to a fault.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00040</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Requested static bypass</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The system is in static bypass operation
+due to a user request.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00041</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">SBS inoperable</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">SBS inoperable.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00054</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Q001 closed</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The rectifier mains input switch Q001
+is closed.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00056</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Q201 closed</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The battery switch Q201 is closed.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00057</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Q501 closed</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The bypass mains input switch Q501
+is closed.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00058</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Q502 closed</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The bypass transformer output switch
+Q502 is closed.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00060</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Q611 closed</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The load output switch Q611 is closed.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00062</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Q691 closed</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The SBS input switch Q691 is closed.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00063</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Q692 closed</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The UPS output switch Q692 is closed.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00065</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">MBS: TEST</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The manual bypass switch Q601 in the
+test position.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00066</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">MBS: BYPASS</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The manual bypass switch Q601 in the
+bypass position.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00067</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">MBS: AUTO</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The manual bypass switch Q601 in the
+auto position.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00068</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Overtemperature</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">An overtemperature at a PM or a transformer
+is detected (if available).</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00071</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">T001 overtemperature</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">An overtemperature at the rectifier
+mains transformer is detected.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00072</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">T401 overtemperature</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">An overtemperature at the output transformer
+is detected.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00073</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">T501 overtemperature</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">An overtemperature at the bypass transformer
+is detected.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00074</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Battery temperature warning</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The battery temperature exceeds the
+programmed warning level.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00075</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Battery temperature shutdown</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The battery temperature exceeds the
+programmed shutdown level.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00076</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Temperature 1 warning</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The temperature sensor, connected
+to the external connection board, is over the temperature warning
+level.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00077</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Temperature 2 warning</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The temperature sensor, connected
+to the external connection board, is over the temperature warning
+level.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00078</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Temperature 3 warning</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The temperature sensor, connected
+to the external connection board, is over the temperature warning
+level.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00079</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">T001 temperature sensor fault</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The mains input transformer temperature
+sensor PT100 is not connected or shorted.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00080</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">T401 temperature sensor fault</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The output transformer temperature
+sensor PT100 is not connected or shorted.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00081</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">T501 temperature sensor fault</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The bypass transformer temperature
+sensor PT100 is not connected or shorted.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00082</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Fan inoperable</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The transformer, SBS or power module
+fan is inoperable.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00089</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Emergency power off (EPO)</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The digital input of emergency power
+off (EPO) is activated (contact open) or the EPO wiring is disconnected.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00091</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">PSU fault</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">One or more PSU faults are detected.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00092</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">General mains fault</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">One or more mains faults are detected.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00093</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Mains RMS fault</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The rectifier mains voltage is out
+of tolerance.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00094</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Mains input RMS fault</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The rectifier mains voltage on primary
+side of the input transformer is out of tolerance. This event is only
+active if a transformer is installed.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00101</p>
+                     <p class="- topic/p "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">General bypass fault</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">One or more bypass faults are detected.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00102</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Bypass RMS fault</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The bypass voltage is out of tolerance.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00103</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Bypass input RMS fault</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The bypass mains voltage on the primary
+side of bypass transformer is out of tolerance. This event is only
+active if a transformer and the bypass measurement is installed.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00108</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">General output fault</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">One or more output faults are detected.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00109</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Output RMS fault</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The output voltage on the secondary
+side of the output transformer is out of tolerance.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00110</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Inverter output RMS fault</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The UPS output voltage is out of tolerance.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00116</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Output overloaded</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The UPS output is overloaded (&gt;100%)
+or the inverter current limiter is active.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00119</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Battery current positive</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">0 = the battery is discharged.1 = the battery is charged.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00121</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Battery warning or error</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The battery voltage is out of tolerance
+or the runtime is too short.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00122</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Battery earth fault</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The interface has detected a battery
+earth fault (if available).</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00123</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">High battery shutdown</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Battery voltage above the high battery
+shutdown level.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00124</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">High battery warning</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Battery voltage above the high battery
+warning level (no warning in battery operation).</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00125</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Low battery warning voltage</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Battery voltage below the low battery
+warning level.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00126</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Battery discharged (Low battery shutdown
+voltage)</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Battery voltage below low battery
+shutdown level.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00127</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Battery earth fault positive</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The interface has detected a battery
+positive earth fault (if available).</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00128</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Battery earth fault negative</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The interface has detected a battery
+negative earth fault (if available).</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00140</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Rectifier fault / error</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The rectifier turned off because a
+fault was detected.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00141</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Inverter fault / error</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The inverter turned off because a
+fault was detected.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00154</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Input closed Ecb 1</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00155</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Input closed Ecb 2</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00156</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB1.1 input closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00157</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB1.2 input closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00158</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB1.3 input closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00159</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB1.4 input closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00160</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB1.5 input closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00161</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB1.6 input closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00162</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB1.7 input closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00163</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB1.8 input closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00172</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">HMI alarm LED 1 active</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00173</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">HMI alarm LED 2 active</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00174</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">HMI alarm LED 3 active</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00175</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">HMI alarm LED 4 active</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00176</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">HMI alarm LED 5 active</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00177</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">HMI alarm LED 6 active</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00178</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">HMI alarm LED 7 active</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00179</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">HMI alarm LED 8 active</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00180</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">HMI alarm LED 9 active</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00181</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">HMI alarm LED 10 active</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00182</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">HMI alarm LED 11 active</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00183</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">HMI alarm LED 12 active</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00184</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">HMI alarm LED 13 active</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00185</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">HMI alarm LED 14 active</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00186</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">HMI alarm LED 15 active</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00187</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">ECB common alarm active</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00188</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">ECB output 1 closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00189</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">ECB output 2 closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00190</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB1.1 output closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00191</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB 1.2 output closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00192</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB 1.3 output closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00193</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB 1.4 output closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00194</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB 1.5 output closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00195</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB 1.6 output closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00196</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB 1.7 output closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00197</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB 1.8 output closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00198</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB 1.9 output closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00199</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB 1.10 output closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00200</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB 1.11 output closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00201</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB 1.12 output closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00202</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB 1.13 output closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00203</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB 1.14 output closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00204</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB 1.15 output closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">00205</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">RB 1.16 output closed</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </conbody>
+</concept>

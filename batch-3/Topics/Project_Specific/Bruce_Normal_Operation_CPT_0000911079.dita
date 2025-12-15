@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="NormalOperation-711708B1"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Normal Operation</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-28+05:30" class="- topic/created "/>
+         <revised modified="2025-11-28" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience type="role" otherprops="operations,engineering,maintenance,commissioning,monitoring,field technician"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>Bruce UPS system</indexterm>
+            <indexterm>inverter subsystem</indexterm>
+            <indexterm>rectifier subsystem</indexterm>
+            <indexterm>battery subsystem</indexterm>
+            <indexterm>bypass path</indexterm>
+            <indexterm>control and monitoring panel</indexterm>
+            <indexterm>metR-PXC-Reality operational interface</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>normal operating mode</indexterm>
+            <indexterm>energy conversion workflow</indexterm>
+            <indexterm>battery charging process</indexterm>
+            <indexterm>load support procedure</indexterm>
+            <indexterm>status monitoring</indexterm>
+            <indexterm>alarm condition interpretation</indexterm>
+            <indexterm>performance verification</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>critical load environment</indexterm>
+            <indexterm>industrial power continuity</indexterm>
+            <indexterm>UPS operational state</indexterm>
+            <indexterm>normal-mode behavior</indexterm>
+            <indexterm>electrical stability environment</indexterm>
+            <indexterm>incoming mains conditions</indexterm>
+            <indexterm>bypass readiness state</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="Normal Operation"/>
+         <othermeta 
+            name="shortdesc" 
+            content="Explains the normal operating mode of the Bruce UPS, including power flow, inverter behavior, battery charging, and monitoring requirements."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta 
+            name="entities" 
+            content="inverter; rectifier; battery strings; bypass line; load bus; monitoring indicators; mains input"/>
+         <othermeta 
+            name="taxonomy" 
+            content="domain:industrial automation;usecase:normal-operation;industry:uninterruptible power supply (UPS) systems)"/>
+         <othermeta 
+            name="tags" 
+            content="normal operation,inverter,rectifier,battery charging,UPS monitoring"/>
+         <othermeta 
+            name="usecase" 
+            content="Describe the system behavior and monitoring requirements during normal operation of the Bruce UPS"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <div class="- topic/div ">
+         <p platform="PxW" class="- topic/p ">In normal operation the rectifier supplies
+the inverter and charges the battery. The inverter supplies the load.</p>
+         <p platform="WxW" class="- topic/p ">In normal operation the inverter supplies the load.</p>
+         <p platform="PxW" class="- topic/p ">The rectifier mains input feeds the phase angle
+controlled rectifier via a matching transformer and converts the AC
+to DC. The rectifier maintains a constant DC by compensating for both
+variations in the input voltage and load.</p>
+         <p class="- topic/p ">The inverter converts
+the DC to AC with optimized sine wave pulse width control (PWM).</p>
+         <p otherprops="2pMBS 3pMBS noMBS" class="- topic/p "> If the inverter is unavailable
+or overloaded (by default, load at 150% for more than 1 minute or
+load at 125% for more than 10 minutes), the system will change to
+bypass operation. For more information see chapter <xref href="Bruce_Bypass_Operation_Static_Bypass_CPT_0000915954.dita"
+                  format="dita"
+                  scope="local"
+                  type="concept"
+                  class="- topic/xref "/>.</p>
+         <p otherprops="2pMBS 3pMBS" class="- topic/p "> When the load is supplied in normal operation
+the manual bypass switch is always in <b class="+ topic/ph hi-d/b ">Normal</b> position.</p>
+         <fig platform="PxW" class="- topic/fig "/>
+         <fig otherprops="typeR 2pMBS" platform="WxW" class="- topic/fig ">
+            <image href="../../Images/FD_WEW_1170112_Operating_Modes_Bruce_R_2pMBS_Normal_Operation_0000911088.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <fig otherprops="noByp" platform="WxW" class="- topic/fig ">
+            <image href="../../Images/WEW_Operating_Modes_NoByp_Normal_Operation_0000935541.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <table class="- topic/table ">
+            <tgroup cols="2" class="- topic/tgroup ">
+               <colspec colname="col1" colwidth="40.00mm" class="- topic/colspec "/>
+               <colspec colname="col2" colwidth="2.00*" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">
+                        <p class="- topic/p ">Part</p>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <p class="- topic/p ">Status</p>
+                     </entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p platform="PxW" class="- topic/p ">Rectifier mains</p>
+                        <p platform="WxW" class="- topic/p ">DC input
+power</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Available and within the tolerance range.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p platform="PxW" class="- topic/p ">Rectifier mains breaker(s)</p>
+                        <p platform="WxW" class="- topic/p ">Inverter input switches</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Closed</p>
+                     </entry>
+                  </row>
+                  <row otherprops="2pMBS 3pMBS noMBS" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Bypass mains</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Available and can be either within or outside the tolerance
+range.</p>
+                     </entry>
+                  </row>
+                  <row otherprops="2pMBS 3pMBS noMBS" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Bypass mains breaker</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Closed</p>
+                     </entry>
+                  </row>
+                  <row otherprops="2pMBS 3pMBS noMBS" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Manual bypass switch</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">In <b class="+ topic/ph hi-d/b ">Normal</b> position.</p>
+                     </entry>
+                  </row>
+                  <row platform="PxW" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Battery</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">If charged, available and within the tolerance range.</p>
+                     </entry>
+                  </row>
+                  <row platform="PxW" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Battery breaker(s)</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Closed</p>
+                     </entry>
+                  </row>
+                  <row platform="PxW" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Rectifier</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">On</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Inverter</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">On</p>
+                     </entry>
+                  </row>
+                  <row otherprops="2pMBS 3pMBS noMBS" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Static switch EN</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Off, but available.</p>
+                     </entry>
+                  </row>
+                  <row otherprops="2pMBS 3pMBS noMBS" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Bypass isolation (EN input) switches</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Closed</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Static switch EA</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">On</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Output isolation switches</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Closed</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Output</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Available and within the tolerance range. The load is supplied.</p>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </div>
+   </conbody>
+</concept>

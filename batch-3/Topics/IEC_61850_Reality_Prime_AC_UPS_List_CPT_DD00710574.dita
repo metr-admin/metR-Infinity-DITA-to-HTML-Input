@@ -1,0 +1,2775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="IEC61850RealityPrimeACUPSList-CF12AE7D"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">IEC 61850 Reality Prime AC UPS List</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-06T18:00:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-06T18:00:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- product layer -->
+            <indexterm>reality-modular-ac-ups</indexterm>
+            <indexterm>ups-inverter-module</indexterm>
+            <indexterm>static-bypass-switch</indexterm>
+            <indexterm>power-factor-correction-module</indexterm>
+            <indexterm>iec-61850-node</indexterm>
+            <!-- process layer -->
+            <indexterm>ac-ups-installation</indexterm>
+            <indexterm>load-transfer-testing</indexterm>
+            <indexterm>maintenance-schedule</indexterm>
+            <indexterm>firmware-upgrade-procedure</indexterm>
+            <indexterm>event-logging-configuration</indexterm>
+            <!-- context layer -->
+            <indexterm>industrial-ac-power-systems</indexterm>
+            <indexterm>transportation-power-supply</indexterm>
+            <indexterm>water-treatment-plant-integration</indexterm>
+            <indexterm>data-center-n+1-architecture</indexterm>
+            <indexterm>mission-critical-operations</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="IEC 61850 Reality Modular AC UPS List CPT DD00544734"/>
+         <othermeta name="shortdesc" content="Component and IEC 61850 mapping list for Reality modular AC UPS systems, including bypass and inverter modules."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="inverter-modules;static-bypass-switches;control-boards;iec-61850-interfaces;distribution-contactors"/>
+         <othermeta name="taxonomy" content="domain:power-systems;usecase:component-listing;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="ac-ups,static-bypass,iec-61850,inverter,commissioning"/>
+         <othermeta name="usecase" content="hardware-reference-and-integration"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">The default logical device (LD) for all IEC tags for Reality Prime
+AC UPS is “i61PRIMEACUPS_LD1”.</p>
+      <p class="- topic/p ">The IEC tag path format is LN$FC$DO$DA.<ul class="- topic/ul ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">Logical node (LN)</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Functional constraint (FC)</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Data object (DO)</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Data attribute (DA)</p>
+            </li>
+         </ul>
+      </p>
+      <note id="TheModbusRegisterListedInTheTableIs-6A68BC4B" class="- topic/note ">The Data Type
+for Status is Boolean and for Analog is UINT32 (2).</note>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Status</title>
+         <table pgwide="1" class="- topic/table ">
+            <tgroup cols="5" class="- topic/tgroup ">
+               <colspec colname="COLSPEC5" colwidth="2.48*" class="- topic/colspec "/>
+               <colspec colname="col1" colwidth="1.39*" class="- topic/colspec "/>
+               <colspec colname="COLSPEC1" colwidth="1.65*" class="- topic/colspec "/>
+               <colspec colname="COLSPEC7" colwidth="2.34*" class="- topic/colspec "/>
+               <colspec colname="col3" colwidth="4.41*" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">
+                        <ph class="- topic/ph ">Name</ph>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <ph class="- topic/ph ">Modbus
+Register</ph>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <ph class="- topic/ph ">Protocol</ph>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <ph class="- topic/ph ">IEC Tag Path</ph>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <ph class="- topic/ph ">Description [Unit of Measurement]</ph>
+                     </entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry nameend="col3" namest="COLSPEC5" class="- topic/entry ">
+                        <ph class="- topic/ph ">
+                           <b class="+ topic/ph hi-d/b ">General
+status</b>
+                        </ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-6"
+                            conkeyref="LEDs/N_P-Modbus-6"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">6</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-6"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZSYS1$ST$ComAlm$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-6"
+                            conkeyref="LEDs/D_P-Modbus-6"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-7"
+                            conkeyref="LEDs/N_P-Modbus-7"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">7</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-7"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZSYS1$ST$UrgEvent$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-7"
+                            conkeyref="LEDs/D_P-Modbus-7"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-8"
+                            conkeyref="LEDs/N_P-Modbus-8"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">8</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-8"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZSYS1$ST$NonUrgEvent$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-8"
+                            conkeyref="LEDs/D_P-Modbus-8"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P_Modbus-1408"
+                            conkeyref="LEDs/N_P_Modbus-1408"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1408</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1408"
+                            class="- topic/ph ">Unit failure</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZSYS1$ST$HwSrcFlt$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P_Modbus-1408"
+                            conkeyref="LEDs/D_P_Modbus-1408"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1409"
+                            conkeyref="LEDs/N_P-Modbus-1409"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1409</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1409"
+                            class="- topic/ph ">Internal fault</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZSYS1$ST$SwSrcFlt$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P_Modbus-1409"
+                            conkeyref="LEDs/D_P_Modbus-1409"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P_Modbus-1410"
+                            conkeyref="LEDs/N_P_Modbus-1410"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1410</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1410"
+                            class="- topic/ph ">Communication error</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZSYS1$ST$ComSrcFlt$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P_Modbus-1410"
+                            conkeyref="LEDs/D_P_Modbus-1410"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1411"
+                            conkeyref="LEDs/N_P-Modbus-1411"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1411</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1411"
+                            class="- topic/ph ">Mains warning</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZRCT1$ST$Wrn$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1411"
+                            conkeyref="LEDs/D_P-Modbus-1411"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1412"
+                            conkeyref="LEDs/N_P-Modbus-1412"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1412</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1412"
+                            class="- topic/ph ">Rectifier warning</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZINV1$ST$Wrn$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1412"
+                            conkeyref="LEDs/D_P-Modbus-1412"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1413"
+                            conkeyref="LEDs/N_P-Modbus-1413"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1413</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1413"
+                            class="- topic/ph ">Inverter warning</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZBBF1$ST$InLimVExc$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1413"
+                            conkeyref="LEDs/D_P-Modbus-1413"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1414"
+                            conkeyref="LEDs/N_P-Modbus-1414"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1414</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1414"
+                            class="- topic/ph ">Bypass input out of tolerance</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZSSW1$ST$Wrn$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1414"
+                            conkeyref="LEDs/D_P-Modbus-1414"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1415"
+                            conkeyref="LEDs/N_P-Modbus-1415"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1415</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1415"
+                            class="- topic/ph ">Bypass warning</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZDBF1$ST$LoDcWrn$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1415"
+                            conkeyref="LEDs/D_P-Modbus-1415"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1416"
+                            conkeyref="LEDs/N_P-Modbus-1416"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1416</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1416"
+                            class="- topic/ph ">DC voltage low</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZDBF1$ST$LoDcTr$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1416"
+                            conkeyref="LEDs/D_P-Modbus-1416"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1417"
+                            conkeyref="LEDs/N_P-Modbus-1417"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1417</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1417"
+                            class="- topic/ph ">DC undervoltage</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZDBF1$ST$HiDcWrn$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1417"
+                            conkeyref="LEDs/D_P-Modbus-1417"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1418"
+                            conkeyref="LEDs/N_P-Modbus-1418"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1418</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1418"
+                            class="- topic/ph ">DC voltage high</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZDBF1$ST$HiDcTr$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1418"
+                            conkeyref="LEDs/D_P-Modbus-1418"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1419"
+                            conkeyref="LEDs/N_P-Modbus-1419"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1419</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1419"
+                            class="- topic/ph ">DC link overvoltage shutdown</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZBAT1$ST$BatDsch$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1419"
+                            conkeyref="LEDs/D_P-Modbus-1419"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1420"
+                            conkeyref="LEDs/N_P-Modbus-1420"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1420</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1420"
+                            class="- topic/ph ">Discharging battery</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZBAT1$ST$BatAlm$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1420"
+                            conkeyref="LEDs/D_P-Modbus-1420"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1421"
+                            conkeyref="LEDs/N_P-Modbus-1421"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1421</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1421"
+                            class="- topic/ph ">Battery failure</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZBAT1$ST$BatWrn$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1421"
+                            conkeyref="LEDs/D_P-Modbus-1421"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1422"
+                            conkeyref="LEDs/N_P-Modbus-1422"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1422</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1422"
+                            class="- topic/ph ">Battery warning</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZBAT1$ST$TmpLimExc$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1422"
+                            conkeyref="LEDs/D_P-Modbus-1422"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1423"
+                            conkeyref="LEDs/N_P-Modbus-1423"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1423</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1423"
+                            class="- topic/ph ">Battery temp. out of range</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOBF1$ST$OutAlm$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1423"
+                            conkeyref="LEDs/D_P-Modbus-1423"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1424"
+                            conkeyref="LEDs/N_P-Modbus-1424"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1424</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1424"
+                            class="- topic/ph ">Mains failure</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZMBF1$ST$InWrn$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1424"
+                            conkeyref="LEDs/D_P-Modbus-1424"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1425"
+                            conkeyref="LEDs/N_P-Modbus-1425"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1425</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1425"
+                            class="- topic/ph ">Rectifier fault</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZRCT1$ST$Alm$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1425"
+                            conkeyref="LEDs/D_P-Modbus-1425"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1426"
+                            conkeyref="LEDs/N_P-Modbus-1426"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1426</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1426"
+                            class="- topic/ph ">Inverter fault</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZINV1$ST$Alm$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1426"
+                            conkeyref="LEDs/D_P-Modbus-1426"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1427"
+                            conkeyref="LEDs/N_P-Modbus-1427"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1427</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1427"
+                            class="- topic/ph ">Inverter overload</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZINV1$ST$HiLod$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1427"
+                            conkeyref="LEDs/D_P-Modbus-1427"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1428"
+                            conkeyref="LEDs/N_P-Modbus-1428"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1428</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1428"
+                            class="- topic/ph ">Sync error</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZINV1$ST$SynAlm$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1428"
+                            conkeyref="LEDs/D_P-Modbus-1428"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1429"
+                            conkeyref="LEDs/N_P-Modbus-1429"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1429</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1429"
+                            class="- topic/ph ">Bypass fault</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZSSW1$ST$Alm$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1429"
+                            conkeyref="LEDs/D_P-Modbus-1429"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1430"
+                            conkeyref="LEDs/N_P-Modbus-1430"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1430</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1430"
+                            class="- topic/ph ">Static bypass overload</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZSSW1$ST$HiLod$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1430"
+                            conkeyref="LEDs/D_P-Modbus-1430"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1431"
+                            conkeyref="LEDs/N_P-Modbus-1431"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1431</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1431"
+                            class="- topic/ph ">Auxiliary power supply 00 failure</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61GMODACUPS_LD1/ZRCT1$ST$BatCurLimOn$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1431"
+                            conkeyref="LEDs/D_P-Modbus-1431"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1432"
+                            conkeyref="LEDs/N_P-Modbus-1432"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1432</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1432"
+                            class="- topic/ph ">Fan fault</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZCBF1$ST$PsuFlt$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1432"
+                            conkeyref="LEDs/D_P-Modbus-1432"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1433"
+                            conkeyref="LEDs/N_P-Modbus-1433"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1433</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1433"
+                            class="- topic/ph ">Float charge</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPM1$ST$FloatChaOp$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1433"
+                            conkeyref="LEDs/D_P-Modbus-1433"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1434"
+                            conkeyref="LEDs/N_P-Modbus-1434"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1434</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1434"
+                            class="- topic/ph ">Boost charge</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPM1$ST$BoostChaOp$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1434"
+                            conkeyref="LEDs/D_P-Modbus-1434"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1435"
+                            conkeyref="LEDs/N_P-Modbus-1435"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1435</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1435"
+                            class="- topic/ph ">Equalization charge</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPM1$ST$EqChaOp$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1435"
+                            conkeyref="LEDs/D_P-Modbus-1435"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1436"
+                            conkeyref="LEDs/N_P-Modbus-1436"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1436</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1436"
+                            class="- topic/ph ">Battery operation</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPM1$ST$BatOp$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1436"
+                            conkeyref="LEDs/D_P-Modbus-1436"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1437"
+                            conkeyref="LEDs/N_P-Modbus-1437"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1437</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1437"
+                            class="- topic/ph ">Alarm 80</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPT1$ST$DelGaOPT1$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1437"
+                            conkeyref="LEDs/D_P-Modbus-1437"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1438"
+                            conkeyref="LEDs/N_P-Modbus-1438"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1438</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1438"
+                            class="- topic/ph ">Alarm 81</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPT1$ST$DelGaOPT2$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1438"
+                            conkeyref="LEDs/D_P-Modbus-1438"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1439"
+                            conkeyref="LEDs/N_P-Modbus-1439"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1439</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1439"
+                            class="- topic/ph ">Alarm 82</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPT1$ST$DelGaOPT3$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1439"
+                            conkeyref="LEDs/D_P-Modbus-1439"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1451"
+                            conkeyref="LEDs/N_P-Modbus-1451"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1451</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1451"
+                            class="- topic/ph ">Alarm 90</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPT1$ST$GSRGaOPT1$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1451"
+                            conkeyref="LEDs/D_P-Modbus-1451"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1452"
+                            conkeyref="LEDs/N_P-Modbus-1452"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1452</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1452"
+                            class="- topic/ph ">Alarm 91</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPT1$ST$GSRGaOPT2$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1452"
+                            conkeyref="LEDs/D_P-Modbus-1452"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1453"
+                            conkeyref="LEDs/N_P-Modbus-1453"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1453</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1453"
+                            class="- topic/ph ">Alarm 92</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPT1$ST$GSRGaOPT3$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1453"
+                            conkeyref="LEDs/D_P-Modbus-1453"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1454"
+                            conkeyref="LEDs/N_P-Modbus-1454"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1454</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1454"
+                            class="- topic/ph ">Alarm 93</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPT1$ST$GSRGaOPT4$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1454"
+                            conkeyref="LEDs/D_P-Modbus-1454"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1455"
+                            conkeyref="LEDs/N_P-Modbus-1455"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1455</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1455"
+                            class="- topic/ph ">Alarm 94</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPT1$ST$GSRGaOPT5$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1455"
+                            conkeyref="LEDs/D_P-Modbus-1455"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1456"
+                            conkeyref="LEDs/N_P-Modbus-1456"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1456</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1456"
+                            class="- topic/ph ">Output alarm</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOBF1$ST$OutWrn$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1456"
+                            conkeyref="LEDs/D_P-Modbus-1456"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1457"
+                            conkeyref="LEDs/N_P-Modbus-1457"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1457</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1457"
+                            class="- topic/ph ">Output warning</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZTMP1$ST$MagnTmpAlm$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1457"
+                            conkeyref="LEDs/D_P-Modbus-1457"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1458"
+                            conkeyref="LEDs/N_P-Modbus-1458"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1458</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1458"
+                            class="- topic/ph ">Transformer temperature XX too high</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZTMP1$ST$PmTmpAlm$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1458"
+                            conkeyref="LEDs/D_P-Modbus-1458"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1459"
+                            conkeyref="LEDs/N_P-Modbus-1459"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1459</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1459"
+                            class="- topic/ph ">Equipment temperature XX too high</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPM1$ST$UpsOnOp$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1459"
+                            conkeyref="LEDs/D_P-Modbus-1459"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1460"
+                            conkeyref="LEDs/N_P-Modbus-1460"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1460</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1460"
+                            class="- topic/ph ">System switched off</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPM1$ST$NormOp$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1460"
+                            conkeyref="LEDs/D_P-Modbus-1460"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1461"
+                            conkeyref="LEDs/N_P-Modbus-1461"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1461</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1461"
+                            class="- topic/ph ">Normal operation</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPM1$ST$StaticBypMod$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1461"
+                            conkeyref="LEDs/D_P-Modbus-1461"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1462"
+                            conkeyref="LEDs/N_P-Modbus-1462"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1462</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1462"
+                            class="- topic/ph ">SBS mains operation</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPM1$ST$MbsInBypMod$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1462"
+                            conkeyref="LEDs/D_P-Modbus-1462"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1463"
+                            conkeyref="LEDs/N_P-Modbus-1463"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1463</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1463"
+                            class="- topic/ph ">Manual bypass UPS</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPM1$ST$ForcedInvMod$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1463"
+                            conkeyref="LEDs/D_P-Modbus-1463"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1464"
+                            conkeyref="LEDs/N_P-Modbus-1464"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1464</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1464"
+                            class="- topic/ph ">Manual bypass UPS</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPM1$ST$ForcedInvMod$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1464"
+                            conkeyref="LEDs/D_P-Modbus-1464"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1467"
+                            conkeyref="LEDs/N_P-Modbus-1467"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1467</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1467"
+                            class="- topic/ph ">Alarm 70</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPT1$ST$LogGaOPT1$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1467"
+                            conkeyref="LEDs/D_P-Modbus-1467"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1468"
+                            conkeyref="LEDs/N_P-Modbus-1468"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1468</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1468"
+                            class="- topic/ph ">Alarm 71</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPT1$ST$LogGaOPT2$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1468"
+                            conkeyref="LEDs/D_P-Modbus-1468"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1469"
+                            conkeyref="LEDs/N_P-Modbus-1469"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1469</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1469"
+                            class="- topic/ph ">Alarm 72</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPT1$ST$LogGaOPT3$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1469"
+                            conkeyref="LEDs/D_P-Modbus-1469"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1470"
+                            conkeyref="LEDs/N_P-Modbus-1470"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1470</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1470"
+                            class="- topic/ph ">Alarm 73</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPT1$ST$LogGaOPT4$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1470"
+                            conkeyref="LEDs/D_P-Modbus-1470"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1471"
+                            conkeyref="LEDs/N_P-Modbus-1471"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1471</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-1471"
+                            class="- topic/ph ">Alarm 74</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPT1$ST$LogGaOPT5$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1471"
+                            conkeyref="LEDs/D_P-Modbus-1471"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-4100"
+                            conkeyref="LEDs/N_P-Modbus-4100"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">4100</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-4100"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/GGIO3$ST$Ind1$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-4100"
+                            conkeyref="LEDs/D_P-Modbus-4100"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-4101"
+                            conkeyref="LEDs/N_P-Modbus-4101"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">4101</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-4101"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/GGIO3$ST$Ind2$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-4101"
+                            conkeyref="LEDs/D_P-Modbus-4101"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-4102"
+                            conkeyref="LEDs/N_P-Modbus-4102"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">4102</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-4102"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/GGIO3$ST$Ind3$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-4102"
+                            conkeyref="LEDs/D_P-Modbus-4102"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-4103"
+                            conkeyref="LEDs/N_P-Modbus-4103"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">4103</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-4103"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/GGIO3$ST$Ind4$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-4103"
+                            conkeyref="LEDs/D_P-Modbus-4103"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-4104"
+                            conkeyref="LEDs/N_P-Modbus-4104"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">4104</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-4104"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/GGIO3$ST$Ind5$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-4104"
+                            conkeyref="LEDs/D_P-Modbus-4104"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-4105"
+                            conkeyref="LEDs/N_P-Modbus-4105"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">4105</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-4105"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/GGIO3$ST$Ind6$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-4105"
+                            conkeyref="LEDs/D_P-Modbus-4105"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-4106"
+                            conkeyref="LEDs/N_P-Modbus-4106"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">4106</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-4106"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/GGIO3$ST$Ind7$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-4106"
+                            conkeyref="LEDs/D_P-Modbus-4106"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-4107"
+                            conkeyref="LEDs/N_P-Modbus-4107"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">4107</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-4107"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/GGIO3$ST$Ind8$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-4107"
+                            conkeyref="LEDs/D_P-Modbus-4107"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-4108"
+                            conkeyref="LEDs/N_P-Modbus-4108"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">4108</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-4108"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/GGIO3$ST$Ind9$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-4108"
+                            conkeyref="LEDs/D_P-Modbus-4108"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-4109"
+                            conkeyref="LEDs/N_P-Modbus-4109"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">4109</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-4109"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/GGIO3$ST$Ind10$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-4109"
+                            conkeyref="LEDs/D_P-Modbus-4109"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-4110"
+                            conkeyref="LEDs/N_P-Modbus-4110"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">4110</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-4110"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/GGIO3$ST$Ind11$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-4110"
+                            conkeyref="LEDs/D_P-Modbus-4110"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-4111"
+                            conkeyref="LEDs/N_P-Modbus-4111"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">4111</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-4111"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/GGIO3$ST$Ind12$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-4111"
+                            conkeyref="LEDs/D_P-Modbus-4111"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-4112"
+                            conkeyref="LEDs/N_P-Modbus-4112"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">4112</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-4112"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/GGIO2$ST$Ind1$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-4112"
+                            conkeyref="LEDs/D_P-Modbus-4112"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-4113"
+                            conkeyref="LEDs/N_P-Modbus-4113"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">4113</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-4113"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/GGIO2$ST$Ind2$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-4113"
+                            conkeyref="LEDs/D_P-Modbus-4113"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-4114"
+                            conkeyref="LEDs/N_P-Modbus-4114"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">4114</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-4114"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/GGIO2$ST$Ind3$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-4114"
+                            conkeyref="LEDs/D_P-Modbus-4114"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-4115"
+                            conkeyref="LEDs/N_P-Modbus-4115"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">4115</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-4115"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/GGIO2$ST$Ind4$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-4115"
+                            conkeyref="LEDs/D_P-Modbus-4115"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-4116"
+                            conkeyref="LEDs/N_P-Modbus-4116"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">4116</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-4116"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/GGIO2$ST$Ind5$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-4116"
+                            conkeyref="LEDs/D_P-Modbus-4116"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-4117"
+                            conkeyref="LEDs/N_P-Modbus-4117"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">4117</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/P_P_Modbus-4117"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/GGIO2$ST$Ind6$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-4117"
+                            conkeyref="LEDs/D_P-Modbus-4117"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-ST_MdbStatus"
+                            conkeyref="LEDs/N_P-ST_MdbStatus"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">—</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">—</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZMDB1$ST$MdbStatus$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-ST_MdbStatus"
+                            conkeyref="LEDs/D_P-ST_MdbStatus"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Proxy_stVal"
+                            conkeyref="LEDs/N_P-Proxy_stVal"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">—</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">—</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/LPHD1$ST$Proxy$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Proxy_stVal"
+                            conkeyref="LEDs/N_P-Proxy_stVal"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-PhyHealth_stVal"
+                            conkeyref="LEDs/N_P-PhyHealth_stVal"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">—</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">—</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/LPHD1$ST$PhyHealth$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-PhyHealth_stVal"
+                            conkeyref="LEDs/N_P-PhyHealth_stVal"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Health_stVal"
+                            conkeyref="LEDs/N_P-Health_stVal"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">—</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">—</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/LLN0$ST$Health$]stVal:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Health_stVal"
+                            conkeyref="LEDs/N_P-Health_stVal"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Analog</title>
+         <table pgwide="1" class="- topic/table ">
+            <tgroup cols="5" class="- topic/tgroup ">
+               <colspec colname="COLSPEC5" colwidth="2.23*" class="- topic/colspec "/>
+               <colspec colname="col1" colwidth="1.24*" class="- topic/colspec "/>
+               <colspec colname="COLSPEC0" colwidth="1.50*" class="- topic/colspec "/>
+               <colspec colname="COLSPEC7" colwidth="2.10*" class="- topic/colspec "/>
+               <colspec colname="col3" colwidth="3.97*" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">
+                        <ph class="- topic/ph ">Name</ph>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <ph class="- topic/ph ">Modbus
+Register</ph>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <ph class="- topic/ph ">Data Type
+(Length / Number of Registers)</ph>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <ph class="- topic/ph ">IEC Tag Path</ph>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <ph class="- topic/ph ">Description [Unit of Measurement]</ph>
+                     </entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-64"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">64</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU3$MX$PNV$phsA$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-64"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-66"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">66</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU3$MX$PNV$phsB$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-66"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-68"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">68</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU3$MX$PNV$phsC$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-68"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-76"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">76</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU3$MX$A$phsA$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-76"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-78"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">78</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU3$MX$A$phsB$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-78"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-80"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">80</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU3$MX$A$phsC$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-80"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-82"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">82</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU3$MX$VA$phsA$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-82"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-84"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">84</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU3$MX$VA$phsB$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-84"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-86"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">86</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU3$MX$VA$phsC$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-86"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-88"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">88</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU3$MX$W$phsA$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-88"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-90"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">90</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU3$MX$W$phsB$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-90"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-92"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">92</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU3$MX$W$phsC$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-92"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-94"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">94</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU3$MX$Var$phsA$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-94"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-96"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">96</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU3$MX$Var$phsB$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-96"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-98"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">98</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU3$MX$Var$phsC$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-98"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-100"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">100</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU3$MX$Hz$]mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-100"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-102"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">102</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU3$MX$PF$phsA$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-102"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-104"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">104</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU3$MX$PF$phsB$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-104"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-106"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">106</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU3$MX$PF$phsC$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-106"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-108"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">108</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOUT1$MX$PctVA1$]mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-108"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-110"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">110</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p translate="no" class="- topic/p ">[i61PRIMEACUPS_LD1/ZOUT1$MX$PctVA2$]mag$f:q:t</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-110"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-112"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">112</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p translate="no" class="- topic/p ">[i61PRIMEACUPS_LD1/ZOUT1$MX$PctVA3$]mag$f:q:t</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-112"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-120"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">120</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU1$MX$PPV$phsAB$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-120"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-122"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">122</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU1$MX$PPV$phsBC$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-122"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-124"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">124</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU1$MX$PPV$phsCA$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-124"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-126"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">126</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU1$MX$A$phsA$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-126"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-128"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">128</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU1$MX$A$phsB$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-128"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-130"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">130</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU1$MX$A$phsC$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-130"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-138"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">138</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU1$MX$Hz$]mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-138"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-146"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">146</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU2$MX$PNV$phsA$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-146"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-148"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">148</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU2$MX$PNV$phsB$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-148"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-150"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">150</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU2$MX$PNV$phsC$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-150"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-152"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">152</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU2$MX$PPV$phsAB$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-152"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-154"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">154</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU2$MX$PPV$phsBC$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-154"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-156"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">156</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU2$MX$PPV$phsCA$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-156"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-158"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">158</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU2$MX$A$phsA$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-158"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-160"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">160</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU2$MX$A$phsB$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-160"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-162"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">162</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU2$MX$A$phsC$]cVal$mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-162"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-170"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">170</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/MMXU2$MX$Hz$]mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-170"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-204"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">204</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZBAT1$MX$SoC$]mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-204"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1762"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1762</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPT1$MX$OutRippleVol$]mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1762"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1814"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1814</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPT1$MX$AlgOPT1$]mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1814"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1816"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1816</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPT1$MX$AlgOPT2$]mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1816"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1818"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1818</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPT1$MX$AlgOPT3$]mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1818"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1820"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1820</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPT1$MX$AlgOPT4$]mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1820"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1822"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1822</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPT1$MX$AlgOPT5$]mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1822"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1824"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1824</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZOPT1$MX$AlgOPT6$]mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1824"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1916"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1916</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZRCT1$MX$PctRatKWAmp$]mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1916"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1950"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1950</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZBAT1$MX$Amp$]mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1950"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/N_P-Modbus-1952"
+                            class="- topic/ph "/>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1952</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">UINT32 (2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">[i61PRIMEACUPS_LD1/ZBAT1$MX$Vol$]mag$f:q:t</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conref="../Library/Prime_Signal_List_Library_REF_DD00542006.dita#PrimeSignalList-56C9A353/D_P-Modbus-1952"
+                            class="- topic/ph "/>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+   </conbody>
+</concept>

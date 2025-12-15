@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="IndependentStaticBypassSwitchISBS-6749BA8E"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Independent Static Bypass Switch (ISBS)</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-28+05:30" class="- topic/created "/>
+         <revised modified="2025-11-28" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience type="role" otherprops="engineering,maintenance,operations,commissioning,field technician,support"/>
+         
+         <keywords>
+            <!-- Product layer (≥6) -->
+            <indexterm>Independent Static Bypass Switch (ISBS)</indexterm>
+            <indexterm>Bruce UPS system</indexterm>
+            <indexterm>bypass switching module</indexterm>
+            <indexterm>UPS control electronics</indexterm>
+            <indexterm>power conversion subsystem</indexterm>
+            <indexterm>Bruce inverter and rectifier path</indexterm>
+            <indexterm>metR-PXC-Reality UPS integration</indexterm>
+            
+            <!-- Process layer (≥6) -->
+            <indexterm>bypass switching operation</indexterm>
+            <indexterm>automatic switchover sequence</indexterm>
+            <indexterm>ISBS protection activation</indexterm>
+            <indexterm>load transfer workflow</indexterm>
+            <indexterm>fault-handling procedure</indexterm>
+            <indexterm>switching logic interpretation</indexterm>
+            <indexterm>diagnostic evaluation of ISBS states</indexterm>
+            
+            <!-- Context layer (≥6) -->
+            <indexterm>critical load continuity</indexterm>
+            <indexterm>redundant power path</indexterm>
+            <indexterm>industrial UPS infrastructure</indexterm>
+            <indexterm>emergency power routing</indexterm>
+            <indexterm>safe transfer conditions</indexterm>
+            <indexterm>grid-to-inverter interactions</indexterm>
+            <indexterm>power quality stabilization</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="Independent Static Bypass Switch (ISBS) Overview"/>
+         <othermeta 
+            name="shortdesc" 
+            content="Describes the function, operation, and protection logic of the Independent Static Bypass Switch (ISBS) used in the Bruce UPS system for load transfer and fault handling."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta
+            name="entities"
+            content="bypass switch; inverter output; static switching components; load bus; protection circuits; control logic; transfer signals"/>
+         <othermeta
+            name="taxonomy"
+            content="domain:industrial automation;usecase:bypass-operation;industry:uninterruptible power supply (UPS) systems)"/>
+         <othermeta
+            name="tags"
+            content="ISBS,bypass switch,load transfer,static bypass,UPS routing,fault handling"/>
+         <othermeta
+            name="usecase"
+            content="Explain the operational role and protection mechanisms of the Independent Static Bypass Switch (ISBS) in the Bruce UPS system"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">The independent static bypass switch (ISBS) is an option with independent
+power supply for systems with a bypass and a manual bypass switch.
+It provides a backup for the automatic transfer to static bypass in
+case the main controller cannot turn on the static switch EN.</p>
+      <p class="- topic/p ">The ISBS monitors the system output and the status of the main
+controller to determine if a switch to static bypass if needed. When
+the switch over to static bypass is triggered by the ISBS it is called
+ISBS operation and is indicated in the display as ISBS fired independent.
+In ISBS operation the system is locked in static bypass.</p>
+      <p class="- topic/p ">As an option, in addition to the system alarms in the display,
+two relays can be added <b class="+ topic/ph hi-d/b ">(K701)</b> and <b class="+ topic/ph hi-d/b ">(K702)</b> to indicate:<ul class="- topic/ul ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <b class="+ topic/ph hi-d/b ">ISBS status ok</b>: The status of the ISBS.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <b class="+ topic/ph hi-d/b ">ISBS operation active</b>: The ISBS has fired independently
+and switched over the system to ISBS operation.</p>
+            </li>
+         </ul>The same information can also be seen on the board. The status
+and activation of the ISBS is also indicated by the LEDs STATUS_2
+and STATUS_3 respectively. For more detailed information of the LEDs
+on the board see <xref href="1220236_Troubleshoot_the_ISBS_CPT_DD00562620.dita"
+               scope="local"
+               type="concept"
+               class="- topic/xref "/>.</p>
+   </conbody>
+</concept>

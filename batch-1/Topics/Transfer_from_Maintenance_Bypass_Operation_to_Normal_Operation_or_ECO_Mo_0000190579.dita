@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="TransferFromMaintenanceBypassOperat-6A1AE05C"
+      translate="yes"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">Transfer from Maintenance Bypass Operation to Normal Operation
+or ECO Mode – Redundant Parallel UPS System N+1</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-18+05:30" class="- topic/created "/>
+         <revised modified="2025-11-18" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>redundant-parallel-ups-n-plus-1</indexterm>
+            <indexterm>unit-input-breaker-uib</indexterm>
+            <indexterm>static-switch-input-breaker-ssib</indexterm>
+            <indexterm>kirk-key-solenoid-interlock</indexterm>
+            <indexterm>maintenance-bypass-breaker-mbb</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>transfer-from-maintenance-bypass</indexterm>
+            <indexterm>close-breakers-and-initialize-ups</indexterm>
+            <indexterm>manage-bypass-to-normal-transition</indexterm>
+            <indexterm>perform-parallel-ups-synchronization</indexterm>
+            <indexterm>enable-or-verify-eco-mode</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>redundant-ups-operation</indexterm>
+            <indexterm>eco-mode-operation</indexterm>
+            <indexterm>industrial-production-floor</indexterm>
+            <indexterm>bypass-operation-environment</indexterm>
+            <indexterm> uninterruptible power supply (UPS) systems-industry</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta 
+            name="title" 
+            content="Transfer from Maintenance Bypass Operation to Normal Operation or ECO Mode – Redundant Parallel UPS System N+1"/>
+         
+         <othermeta 
+            name="shortdesc" 
+            content="Provides step-by-step instructions to transfer an N+1 redundant UPS system from maintenance bypass operation to normal or ECO mode, including breaker sequencing and interlock operations."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta 
+            name="entities" 
+            content="UIB;SSIB;battery breaker BB;unit output breaker UOB;maintenance bypass breaker MBB;parallel UPS system;Kirk key solenoid interlock;System Control menu;Bypass Control menu;ECO mode"/>
+         
+         <othermeta 
+            name="taxonomy" 
+            content="domain:industrial-engineering;usecase:transfer-from-maintenance-bypass-operation-to-normal-operation;industry: uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta 
+            name="tags" 
+            content="maintenance-bypass,normal-operation,eco-mode,parallel-ups,breaker-sequencing,interlock-operation"/>
+         
+         <othermeta name="usecase" content="transfer-from-maintenance-bypass-operation-to-normal-operation"/>
+         
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Perform the following steps on both UPS1 and UPS2.</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Close the unit input breaker UIB.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Close the static switch input breaker SSIB (only in
+configurations where SSIB is present).</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Press the ON button on the display to turn on the UPS.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Close the battery breaker BB.</cmd>
+                  <stepresult class="- topic/itemgroup task/stepresult ">
+                     <note class="- topic/note ">If ECO mode is enabled, the UPSs will transfer to
+ECO mode 1 minute after the units have turned ON.</note>
+                  </stepresult>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Main Menu</uicontrol>, select <menucascade class="+ topic/ph ui-d/menucascade ">
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">System Control</uicontrol>
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Bypass Control</uicontrol>
+                     </menucascade> using the UP/DOWN keys and the ENTER key.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">If the units are running in normal operation, select <uicontrol class="+ topic/ph ui-d/uicontrol ">YES, UPS into Bypass</uicontrol>. This action releases the key from
+the kirk key solenoid interlock.</cmd>
+                  <stepxmp class="- topic/itemgroup task/stepxmp ">
+                     <table outputclass="font:10" class="- topic/table ">
+                        <tgroup cols="1" class="- topic/tgroup ">
+                           <colspec colname="col1" class="- topic/colspec "/>
+                           <tbody class="- topic/tbody ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <screen xml:space="preserve" class="+ topic/pre ui-d/screen ">Confirm action:UPS into Bypass NO, Abort►YES, UPS into Bypass</screen>
+                                 </entry>
+                              </row>
+                           </tbody>
+                        </tgroup>
+                     </table>
+                     <p class="- topic/p ">The following message will appear on the display:</p>
+                     <table outputclass="font:10" class="- topic/table ">
+                        <tgroup cols="1" class="- topic/tgroup ">
+                           <colspec colname="col1" class="- topic/colspec "/>
+                           <tbody class="- topic/tbody ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <screen xml:space="preserve" class="+ topic/pre ui-d/screen ">The load is supplied via the static bypass switch</screen>
+                                 </entry>
+                              </row>
+                           </tbody>
+                        </tgroup>
+                     </table>
+                  </stepxmp>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">If ECO mode is enabled, verify that the units are running
+in ECO mode.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Unlock and remove the key from the kirk key solenoid
+interlock KS.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Insert the key into the unit output breaker UOB. Unlock
+and close the unit output breaker UOB. The key is now trapped.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Open the maintenance bypass breaker MBB and lock the
+breaker in this position with its key. Remove the key.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Insert the key into the kirk key solenoid interlock
+KS and lock it.</cmd>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Main Menu</uicontrol> on one of the
+UPSs, select <menucascade class="+ topic/ph ui-d/menucascade ">
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">System Control</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Bypass Control</uicontrol>
+               </menucascade> using the UP/DOWN
+keys and the ENTER key.</cmd>
+            <choices class="- topic/ul task/choices ">
+               <choice class="- topic/li task/choice ">
+                  <b class="+ topic/ph hi-d/b ">With ECO mode enabled: </b>Select <uicontrol class="+ topic/ph ui-d/uicontrol ">YES, UPS out
+of ECO Mode</uicontrol> to transfer both UPSs to normal operation.<table outputclass="font:10" class="- topic/table ">
+                     <tgroup cols="1" class="- topic/tgroup ">
+                        <colspec colname="col1" class="- topic/colspec "/>
+                        <tbody class="- topic/tbody ">
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <screen xml:space="preserve" class="+ topic/pre ui-d/screen ">Confirm action:UPS out of ECO Mode NO, Abort►YES, UPS out of ECO Mode</screen>
+                              </entry>
+                           </row>
+                        </tbody>
+                     </tgroup>
+                  </table>
+               </choice>
+               <choice class="- topic/li task/choice ">
+                  <b class="+ topic/ph hi-d/b ">With ECO mode disabled: </b> Select <uicontrol class="+ topic/ph ui-d/uicontrol ">YES, UPS
+out of Bypass</uicontrol> to transfer both UPSs to normal operation.<table outputclass="font:10" class="- topic/table ">
+                     <tgroup cols="1" class="- topic/tgroup ">
+                        <colspec colname="col1" class="- topic/colspec "/>
+                        <tbody class="- topic/tbody ">
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <screen xml:space="preserve" class="+ topic/pre ui-d/screen ">Confirm action:UPS out of Bypass NO, Abort►YES, UPS out of Bypass</screen>
+                              </entry>
+                           </row>
+                        </tbody>
+                     </tgroup>
+                  </table>
+               </choice>
+            </choices>
+            <stepresult class="- topic/itemgroup task/stepresult ">
+               <p class="- topic/p ">The UPS system is now in normal operation.</p>
+            </stepresult>
+         </step>
+      </steps>
+   </taskbody>
+</task>

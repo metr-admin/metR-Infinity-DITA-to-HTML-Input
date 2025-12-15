@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="HowToTurnOnTheSystem-57B429E6"
+      translate="yes"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">How to Turn On the System</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-04+05:30" class="- topic/created "/>
+         <revised modified="2025-12-04" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         
+         <keywords>
+            
+            <!-- Product layer -->
+            <indexterm>ups-system</indexterm>
+            <indexterm>rectifier-breaker</indexterm>
+            <indexterm>inverter-breaker</indexterm>
+            <indexterm>static-switch-breaker</indexterm>
+            <indexterm>system-display</indexterm>
+            <indexterm>load-output</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>turn-on-system</indexterm>
+            <indexterm>close-breakers</indexterm>
+            <indexterm>energize-rectifier</indexterm>
+            <indexterm>activate-inverter</indexterm>
+            <indexterm>verify-system-startup</indexterm>
+            <indexterm>ensure-load-energization</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>system-startup-procedure</indexterm>
+            <indexterm>initial-power-up</indexterm>
+            <indexterm>commissioning-process</indexterm>
+            <indexterm>operator-safety</indexterm>
+            <indexterm>electrical-energization</indexterm>
+            <indexterm>onsite-operational-checks</indexterm>
+            
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="How to Turn On the System"/>
+         
+         <othermeta name="shortdesc" content="Provides instructions for turning on the system safely by closing the rectifier, inverter, and static switch breakers and confirming that the system output is energized."/> 
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta name="entities" content="ups system; rectifier breaker; inverter breaker; static switch breaker; system display; load output"/>
+         
+         <othermeta name="taxonomy" content="domain:system-startup;usecase:turn-on-ups-system;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta name="tags" content="startup procedure, breaker closing, rectifier on, inverter on, system energization, operator instructions"/>
+         
+         <othermeta name="usecase" content="guide operators through the safe and correct process of turning on the ups system"/>
+         
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <prereq class="- topic/section task/prereq ">
+         <hazardstatement type="note" class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard ">HIGH CURRENT FLOW</typeofhazard>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid ">Only close the rectifier breaker when the internal bus
+has been energized by the bypass.</howtoavoid>
+            </messagepanel>
+         </hazardstatement>
+         <p class="- topic/p ">Prerequisites:</p>
+         <ul class="- topic/ul ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">The system has been commissioned.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">The batteries have been commissioned and are ready to be connected.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">The rectifier mains is available and within tolerance.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">The bypass mains is available and within tolerance.</p>
+            </li>
+         </ul>
+         <note class="- topic/note ">Read the complete procedure before you turn on the system.</note>
+      </prereq>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Check that all main breakers are open and that the load
+is disconnected.</cmd>
+         </step>
+         <step id="CloseTheToEnergizeTheInternalSupply-86148257"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Close
+the <ph conkeyref="Breakers/PB_xx051" class="- topic/ph "/> to energize the internal
+supply.</cmd>
+         </step>
+         <step id="TheDisplayStartsAndAfterAFewMoments-861128E1"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">The <uicontrol class="+ topic/ph ui-d/uicontrol ">Display</uicontrol> starts and after a few moments and shows the <uicontrol class="+ topic/ph ui-d/uicontrol ">Home screen</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <note conref="M_How_to_Turn_On_the_System_TSK_0000740153.dita#HowToTurnOnTheSystem-F2D713FB/IfActiveTurnOfTheAudibleBuzzerByPre-ADF3D180"
+                     class="- topic/note "/>
+            </info>
+         </step>
+         <step id="CloseTheToTurnOnThePowerSupplyToThe-86142A5E"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Close
+the <ph conkeyref="Breakers/PB_xx001" class="- topic/ph "/> to turn on the power supply
+to the rectifier.</cmd>
+         </step>
+         <step id="PressTheSwitchOperationIconInTheSta-8614C86A"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Press
+the <uicontrol class="+ topic/ph ui-d/uicontrol ">Switch operation icon</uicontrol> in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Status bar</uicontrol>.</cmd>
+         </step>
+         <step id="PressTheSwitchSystemOnButton.Confir-86149926"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Press
+the <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Switch system on</uicontrol> button.
+Confirm the change.</cmd>
+         </step>
+         <step id="CheckThatTheDCVoltageIsInRange.IfTh-86145D29"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Check
+that the DC voltage is in range. If the DC voltage is within tolerance,
+close the <ph conkeyref="Breakers/PB_xx004" class="- topic/ph "/>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">If the output is ready to be energized, close the <ph conkeyref="Breakers/PB_xx052" class="- topic/ph "/>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "> If available, close any output feeders.</cmd>
+         </step>
+         <step id="CheckThatTheSystemIsInNormalOperati-86191627"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Check
+that the system is in normal operation and that there are no active
+warnings or alarms on the <uicontrol class="+ topic/ph ui-d/uicontrol ">Display</uicontrol>.</cmd>
+         </step>
+      </steps>
+      <result id="TheSystemIsNowTurnedOnAndTheSystemO-9EEA2354"
+              class="- topic/section task/result ">The system
+is now turned on and the system output is energized.</result>
+   </taskbody>
+</task>

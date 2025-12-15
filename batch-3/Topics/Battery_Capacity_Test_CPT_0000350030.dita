@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="BatteryCapacityTest-774C09D1"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Battery Capacity Test</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-04T10:00:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-04T10:00:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- product layer -->
+            <indexterm>battery-string</indexterm>
+            <indexterm>capacity-tester</indexterm>
+            <indexterm>discharge-rig</indexterm>
+            <indexterm>battery-monitor</indexterm>
+            <indexterm>bms</indexterm>
+            <!-- process layer -->
+            <indexterm>battery-capacity-test</indexterm>
+            <indexterm>full-discharge-test</indexterm>
+            <indexterm>run-time-measurement</indexterm>
+            <indexterm>test-reporting</indexterm>
+            <indexterm>soh-calculation</indexterm>
+            <!-- context layer -->
+            <indexterm>data-center-battery-validation</indexterm>
+            <indexterm>power-backup-verification</indexterm>
+            <indexterm>operational-readiness</indexterm>
+            <indexterm>preventive-maintenance</indexterm>
+            <indexterm>service-certification</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Battery capacity test"/>
+         <othermeta name="shortdesc" content="Controlled discharge test to measure battery capacity, run time, and state of health for service validation."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="battery-string;capacity-tester;discharge-rig;battery-monitor;logger"/>
+         <othermeta name="taxonomy" content="domain:industrial-electrical;usecase:testing-and-validation;industry: uninterruptible power supply systems"/>
+         <othermeta name="tags" content="capacity-test,discharge,soh"/>
+         <othermeta name="usecase" content="perform-battery-capacity-and-run-time-testing"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <hazardstatement conref="../Library/Warnings_Library_0000325173.dita#war_lib/after_battery_test"
+                       class="+ topic/note hazard-d/hazardstatement ">
+         <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+            <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+            <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+         </messagepanel>
+      </hazardstatement>
+      <p class="- topic/p ">The battery capacity test estimates the available battery runtime
+by temporarily reducing the rectifier output to discharge the batteries.
+When the test is completed the rectifier output automatically returns
+to the defined level.</p>
+      <note type="important" class="- topic/note ">It is recommended to perform the battery capacity
+test (with the designed load) to evaluate the current condition of
+the batteries.</note>
+      <note class="- topic/note ">The automatic switch over to battery operation does not interrupt
+the output.</note>
+      <p class="- topic/p ">To start the battery capacity test:<ol class="- topic/ol ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">Make sure the batteries are fully charged and the rectifier
+is running in float charge.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Hash key</b> to enter the <b class="+ topic/ph hi-d/b ">User stack</b>.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Use the <b class="+ topic/ph hi-d/b ">Arrow keys</b> to navigate until the <b class="+ topic/ph hi-d/b ">Display</b> show <codeph class="+ topic/ph pr-d/codeph ">Battery capacity test :xxx</codeph>, where “xxx”
+is the runtime of the last test in minutes.<fn class="- topic/fn ">
+                     <p class="- topic/p ">If a test is interrupted
+or no test has been performed before, the <b class="+ topic/ph hi-d/b ">Display</b> will show <codeph class="+ topic/ph pr-d/codeph ">Battery capacity test :???</codeph> instead of the runtime from the
+last test.</p>
+                  </fn>
+               </p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Clock/number 1 key</b> to start the test. The <b class="+ topic/ph hi-d/b ">Display</b> now shows <codeph class="+ topic/ph pr-d/codeph ">Batt. operation time &gt; ...min</codeph>. <note class="- topic/note ">The remaining runtime will only be shown if advanced battery
+monitor is installed.</note>
+               </p>
+               <p class="- topic/p ">If you need to interrupt the test
+while it is running, press the <b class="+ topic/ph hi-d/b ">Back key</b> to stop the test. An
+interrupted test will not give any test result.<note class="- topic/note ">If a mains fault
+occurs during the test, the test will end immediately without any
+test result.</note>
+               </p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">The test is completed when the display shows <codeph platform="PxW WxW" class="+ topic/ph pr-d/codeph ">Normal operation load power ...%</codeph>
+                  <codeph platform="SDC" class="+ topic/ph pr-d/codeph ">Float charge load ...%</codeph> and an alarm has been
+activated.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">To view the result of the test:<ol class="- topic/ol ">
+                     <li class="- topic/li ">
+                        <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Hash key</b> to enter the <b class="+ topic/ph hi-d/b ">User stack</b>.</p>
+                     </li>
+                     <li class="- topic/li ">
+                        <p class="- topic/p ">Use the <b class="+ topic/ph hi-d/b ">Arrow keys</b> to navigate until the <b class="+ topic/ph hi-d/b ">Display</b> show <codeph class="+ topic/ph pr-d/codeph ">Battery capacity test :xxx</codeph>, where “xxx”
+is the runtime of the last test in minutes.<fn class="- topic/fn ">
+                              <p class="- topic/p ">If a test is interrupted
+or no test has been performed before, the <b class="+ topic/ph hi-d/b ">Display</b> will show <codeph class="+ topic/ph pr-d/codeph ">Battery capacity test :???</codeph> instead of the runtime from the
+last test.</p>
+                           </fn>
+                        </p>
+                     </li>
+                  </ol>
+               </p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Back key</b> or wait 30 seconds to exit the <b class="+ topic/ph hi-d/b ">User stack</b>.</p>
+            </li>
+         </ol>
+      </p>
+   </conbody>
+</concept>

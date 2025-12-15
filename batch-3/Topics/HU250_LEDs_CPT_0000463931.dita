@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="HU250LEDOverview-0502F5F1"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Front Panel LEDs</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-06T17:00:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-06T17:00:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,service,engineering,quality"/>
+         <keywords>
+            <!-- product layer -->
+            <indexterm>status-led-array</indexterm>
+            <indexterm>alarm-led</indexterm>
+            <indexterm>fault-indicator-led</indexterm>
+            <indexterm>network-activity-led</indexterm>
+            <indexterm>led-driver-board</indexterm>
+            <!-- process layer -->
+            <indexterm>led-interpretation-guide</indexterm>
+            <indexterm>led-replacement-procedure</indexterm>
+            <indexterm>fault-diagnosis-using-leds</indexterm>
+            <indexterm>panel-led-calibration</indexterm>
+            <indexterm>led-wiring-checks</indexterm>
+            <!-- context layer -->
+            <indexterm>on-site-troubleshooting</indexterm>
+            <indexterm>commissioning-status-verification</indexterm>
+            <indexterm>remote-support-triage</indexterm>
+            <indexterm>routine-inspection</indexterm>
+            <indexterm>service-ticket-diagnostics</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="LEDs"/>
+         <othermeta name="shortdesc" content="LED meanings, diagnostic patterns, and replacement guidance for Reality UPS status and alarm indicators."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="led indicators;led driver;panel connector;status-schematics;alarm-codes"/>
+         <othermeta name="taxonomy" content="domain:diagnostics;usecase:visual-diagnostics;industry:uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="leds,diagnostics,alarms,indicators,maintenance"/>
+         <othermeta name="usecase" content="help technicians interpret panel leds during maintenance and troubleshooting"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">In the Reality solution not all options in the HU250 are active,
+so not all LEDs are relevant.</p>
+      <note class="- topic/note ">The LEDs <b class="+ topic/ph hi-d/b ">O</b> and <b class="+ topic/ph hi-d/b ">P</b> are customizable and programed
+specifically for the Reality solution.</note>
+      <fig class="- topic/fig ">
+         <image href="../Images/IEC_HU250_LED_overview_0000463921.png"
+                scope="local"
+                placement="inline"
+                class="- topic/image "/>
+      </fig>
+      <table pgwide="1" class="- topic/table ">
+         <tgroup cols="5" class="- topic/tgroup ">
+            <colspec colname="col1" colwidth="2*" class="- topic/colspec "/>
+            <colspec colname="COLSPEC2" colwidth="2*" class="- topic/colspec "/>
+            <colspec colname="col2" colwidth="4.5*" class="- topic/colspec "/>
+            <colspec colname="COLSPEC0" colwidth="4.5*" class="- topic/colspec "/>
+            <colspec colname="COLSPEC1" colwidth="4.5*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Position</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Section</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Name</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Description</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Status</ph>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(A)</b>
+                     </ph>
+                  </entry>
+                  <entry align="center"
+                         morerows="3"
+                         valign="middle"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">HU250 state</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">HU250 operating</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Indicates overall status of the HU250</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">Red (flashing): </b> Boot<b class="+ topic/ph hi-d/b ">Red (constant): </b> Fault<b class="+ topic/ph hi-d/b ">Orange: </b> Com
+fault<b class="+ topic/ph hi-d/b ">Green: </b> OK</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(B)</b>
+                     </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">T300 equipment status</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Indicates the device status of the
+HU250 and other T300 modules.</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">Red: </b>Major fault<b class="+ topic/ph hi-d/b ">Orange: </b>Minor fault<b class="+ topic/ph hi-d/b ">Off: </b>OK</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(C)</b>
+                     </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Wi-Fi status</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Wi-Fi access during operation</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">Red: </b>Fault<b class="+ topic/ph hi-d/b ">Orange: </b>In progress<b class="+ topic/ph hi-d/b ">Green: </b>Active, local
+access on<b class="+ topic/ph hi-d/b ">Off: </b>Off, no local access</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(D)</b>
+                     </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Communication status with other T300
+modules</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">(Not relevant for Reality solution)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">Red: </b>Fault<b class="+ topic/ph hi-d/b ">Off: </b>OK</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(E)</b>
+                     </ph>
+                  </entry>
+                  <entry align="center"
+                         morerows="4"
+                         valign="middle"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">External supply (PS50) status</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Mains supply (PS50)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">(Not relevant for Reality solution)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">Red: </b> AC off<b class="+ topic/ph hi-d/b ">Green: </b>AC on</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(F)</b>
+                     </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Motor pack power supply (PS50)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">(Not relevant for Reality solution)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">Red: </b> Unavailable/fault<b class="+ topic/ph hi-d/b ">Green: </b> OK</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(G)</b>
+                     </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Transmission equipment power supply
+(PS50)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">(Not relevant for Reality solution)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">Red: </b> Unavailable/fault<b class="+ topic/ph hi-d/b ">Green: </b> OK</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(H)</b>
+                     </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Over consumption on Transmission
+equipment power supply (PS50)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">(Not relevant for Reality solution)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">Red: </b> Unavailable/fault<b class="+ topic/ph hi-d/b ">Green: </b> OK</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(I)</b>
+                     </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Battery status (PS50)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">(Not relevant for Reality solution)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">Red: </b> Unavailable/fault<b class="+ topic/ph hi-d/b ">Green: </b> OK</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(J)</b>
+                     </ph>
+                  </entry>
+                  <entry align="center"
+                         morerows="1"
+                         valign="middle"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Access mode</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Local</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Only local access to the HU250 is
+possible.</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">Red: </b>Local mode active<b class="+ topic/ph hi-d/b ">Off: </b>Off</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(K)</b>
+                     </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Remote</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Only remote access to the HU250 is
+possible.</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">Green: </b>Remote mode active<b class="+ topic/ph hi-d/b ">Off: </b>Off</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(L)</b>
+                     </ph>
+                  </entry>
+                  <entry align="center"
+                         morerows="2"
+                         valign="middle"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">ATS function</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Automatic control enabled</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">(Not relevant for Reality solution)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">Green: </b> Enabled<b class="+ topic/ph hi-d/b ">Off: </b>Disabled</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(M)</b>
+                     </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Automatic control disabled</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">(Not relevant for Reality solution)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">Red: </b>Disabled<b class="+ topic/ph hi-d/b ">Off: </b>Enabled</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(N)</b>
+                     </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Automatic control locked</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">(Not relevant for Reality solution)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">Orange: </b>Locked<b class="+ topic/ph hi-d/b ">Off: </b>Unlocked</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(O)</b>
+                     </ph>
+                  </entry>
+                  <entry align="center"
+                         morerows="2"
+                         valign="middle"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Customized</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph platform="PXP PxW WxW SDC" class="- topic/ph ">Common
+alarm</ph>
+                     <ph platform="Modular-DC Modular-Inverter Modular-AC Prime-UPS"
+                         class="- topic/ph ">Modbus
+status</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph platform="PXP PxW WxW SDC" class="- topic/ph ">The common
+alarm in the Reality system is active.</ph>
+                     <ph platform="Modular-DC Modular-Inverter Modular-AC Prime-UPS"
+                         class="- topic/ph ">Status
+of the Modbus communication from the Reality system.</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl platform="PXP PxW WxW SDC" class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <b class="+ topic/ph hi-d/b ">Red: </b>Alarm active</sli>
+                        <sli class="- topic/sli ">
+                           <b class="+ topic/ph hi-d/b ">Off: </b>OK</sli>
+                     </sl>
+                     <sl platform="Modular-DC Modular-Inverter Modular-AC Prime-UPS"
+                         class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <b class="+ topic/ph hi-d/b ">Red: </b>Modbus TCP/IP communication issue</sli>
+                        <sli class="- topic/sli ">
+                           <b class="+ topic/ph hi-d/b ">Green: </b>OK</sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(P)</b>
+                     </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph platform="PXP PxW WxW SDC" class="- topic/ph ">Modbus
+status</ph>
+                     <ph platform="Modular-DC Modular-Inverter Modular-AC Prime-UPS"
+                         class="- topic/ph ">Common
+alarm</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph platform="PXP PxW WxW SDC" class="- topic/ph ">Status
+of the Modbus communication from the Reality system.</ph>
+                     <ph platform="Modular-DC Modular-Inverter Modular-AC Prime-UPS"
+                         class="- topic/ph ">The common
+alarm in the Reality system is active.</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl platform="PXP PxW WxW SDC" class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <b class="+ topic/ph hi-d/b ">Red: </b>Communication issue</sli>
+                        <sli class="- topic/sli ">
+                           <b class="+ topic/ph hi-d/b ">Off: </b>OK</sli>
+                     </sl>
+                     <sl platform="Modular-DC Modular-Inverter Modular-AC Prime-UPS"
+                         class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <b class="+ topic/ph hi-d/b ">Red: </b>Common alarm active</sli>
+                        <sli class="- topic/sli ">
+                           <b class="+ topic/ph hi-d/b ">Green: </b>OK</sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(Q)</b>
+                     </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph platform="PxW WxW SDC" class="- topic/ph ">(Not used)</ph>
+                     <ph platform="PXP" class="- topic/ph ">System switch on</ph>
+                     <ph platform="Modular-DC Modular-Inverter Modular-AC Prime-UPS"
+                         class="- topic/ph ">Urgent
+event</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph platform="PxW WxW SDC" class="- topic/ph ">—</ph>
+                     <ph platform="PXP" class="- topic/ph ">Indicates if the PXP system is turned on or off.</ph>
+                     <ph platform="Modular-DC Modular-Inverter Modular-AC Prime-UPS"
+                         class="- topic/ph ">An
+urgent alarm is present in the Reality system.</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph platform="PxW WxW SDC" class="- topic/ph ">—</ph>
+                     <sl platform="PXP" class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <b class="+ topic/ph hi-d/b ">Green: </b>PXP is on</sli>
+                        <sli class="- topic/sli ">
+                           <b class="+ topic/ph hi-d/b ">Off: </b>PXP is off</sli>
+                     </sl>
+                     <sl platform="Modular-DC Modular-Inverter Modular-AC Prime-UPS"
+                         class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <b class="+ topic/ph hi-d/b ">Red: </b>Urgent event present</sli>
+                        <sli class="- topic/sli ">
+                           <b class="+ topic/ph hi-d/b ">Green: </b>OK</sli>
+                     </sl>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </conbody>
+</concept>

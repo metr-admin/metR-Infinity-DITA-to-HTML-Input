@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="InitialStart-UpOfRedundantParallelS-58874E7F"
+      translate="yes"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">Initial Start-Up of Redundant Parallel System with Two Separate
+Batteries and One Common Bypass Source</title>
+   <shortdesc class="- topic/shortdesc ">Reality EMEA 10–80 kVA</shortdesc>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-12+05:30" class="- topic/created "/>
+         <revised modified="2025-11-12" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>redundant-parallel-system</indexterm>
+            <indexterm>battery-string</indexterm>
+            <indexterm>bypass-source</indexterm>
+            <indexterm>static-bypass</indexterm>
+            <indexterm>control-module</indexterm>
+            <!-- Process layer -->
+            <indexterm>initial-start-up</indexterm>
+            <indexterm>pre-connection-checks</indexterm>
+            <indexterm>battery-commissioning</indexterm>
+            <indexterm>parallel-synchronisation</indexterm>
+            <indexterm>load-transfer</indexterm>
+            <!-- Context layer -->
+            <indexterm>redundant-system-deployment</indexterm>
+            <indexterm>commissioning-site</indexterm>
+            <indexterm>battery-room</indexterm>
+            <indexterm>emergency-power-supply</indexterm>
+            <indexterm>critical-loads</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Initial Start-Up of Redundant Parallel System with Two Separate Batteries and One Common Bypass Source"/>
+         <othermeta name="shortdesc" content="Stepwise pre-checks and the start-up procedure for redundant parallel UPS systems with two battery banks and a shared bypass — commissioning checklist and safety notes."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="batteries;bypass-source;printed-circuit-boards;control-relays;measurement-instruments"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:commissioning-redundant-parallel-ups;industry:industrial-engineering"/>
+         <othermeta name="tags" content="start-up-procedure,parallel-operation,battery-commissioning,synchronisation,commissioning-checklist"/>
+         <othermeta name="usecase" content="commissioning-and-initialisation-of-redundant-parallel-ups"/>
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <prereq class="- topic/section task/prereq ">Check the following before connecting mains, battery, and
+the load to the UPS system:<ul class="- topic/ul ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">Check that all power sections are deenergized, see <xref href="Service_Measure_for_Voltage_and_Currents_Before_Start-Up_TSK_0000116559.dita"
+                        format="dita"
+                        scope="local"
+                        type="task"
+                        class="- topic/xref "/>.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Check that all cabinets are correctly grounded.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Check that all connectors are correctly fixed.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Check that all printed circuit boards are correctly mounted
+and the plugs are firmly plugged in.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Check all interconnections and junctions according to the connection
+diagram.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Check that the external fuses have the correct size.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">If bags with moisture absorbing material are in the cubicle,
+remove these. Check that the interior of the UPS system is dry. If
+there is any condensed water, let the UPS system stand with the front
+doors open in a dry and warm area for at least 24 hours.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Check that all available switches in the system are in the
+correct position:<table pgwide="1" class="- topic/table ">
+                     <tgroup cols="3" class="- topic/tgroup ">
+                        <colspec colname="col1" class="- topic/colspec "/>
+                        <colspec colname="col2" class="- topic/colspec "/>
+                        <colspec colname="COLSPEC0" class="- topic/colspec "/>
+                        <thead class="- topic/thead ">
+                           <row class="- topic/row ">
+                              <entry valign="top" class="- topic/entry ">Switch
+name</entry>
+                              <entry valign="top" class="- topic/entry ">Switch location</entry>
+                              <entry valign="top" class="- topic/entry ">Correct switch
+position</entry>
+                           </row>
+                        </thead>
+                        <tbody class="- topic/tbody ">
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">Q301</entry>
+                              <entry class="- topic/entry ">Auxiliary
+cabinet</entry>
+                              <entry class="- topic/entry ">Open</entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">Q692</entry>
+                              <entry class="- topic/entry ">Auxiliary
+cabinet</entry>
+                              <entry class="- topic/entry ">Closed</entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">Q694</entry>
+                              <entry class="- topic/entry ">Auxiliary
+cabinet</entry>
+                              <entry class="- topic/entry ">Open</entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">Q001</entry>
+                              <entry class="- topic/entry ">UPS
+1 and UPS 2</entry>
+                              <entry class="- topic/entry ">Open</entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">Q211</entry>
+                              <entry class="- topic/entry ">Battery
+breaker box</entry>
+                              <entry class="- topic/entry ">Closed</entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">Q201</entry>
+                              <entry class="- topic/entry ">UPS
+1 and UPS 2</entry>
+                              <entry class="- topic/entry ">Open</entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">Q601</entry>
+                              <entry class="- topic/entry ">UPS
+1 and UPS 2</entry>
+                              <entry class="- topic/entry ">Position <uicontrol class="+ topic/ph ui-d/uicontrol ">BYPASS</uicontrol>
+                              </entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">Q501</entry>
+                              <entry class="- topic/entry ">UPS
+1 and UPS 2</entry>
+                              <entry class="- topic/entry ">Open</entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">Q528</entry>
+                              <entry class="- topic/entry ">UPS 1 and UPS 2</entry>
+                              <entry class="- topic/entry ">Open</entry>
+                           </row>
+                        </tbody>
+                     </tgroup>
+                  </table>
+               </p>
+            </li>
+         </ul>
+      </prereq>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Connect the input source to both UPS units and check the
+phase sequence and the voltage.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Connect the bypass source and check the phase sequence
+and the voltage.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Close switch Q301 in the auxiliary cabinet.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Close switch Q501 on UPS 1.</cmd>
+            <stepresult class="- topic/itemgroup task/stepresult ">The safe bus is now energized via the closed bypass mains
+input switch Q501, the manual bypass switch Q601 of UPS1 and the safe
+bus switch Q692 (if available).</stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <b class="+ topic/ph hi-d/b ">On UPS 1</b>: Close switch Q001. UPS 1 will start up.
+Check any pending alarms on the display and the system specific alarm
+indication LEDs below the mimic diagram (see <xref href="Service_Troubleshooting_REF_0000102000.dita"
+                     format="dita"
+                     scope="local"
+                     type="reference"
+                     class="- topic/xref "/>). </cmd>
+            <stepresult class="- topic/itemgroup task/stepresult ">To confirm one pop-up messages, press the ENTER key. To
+confirm all pending pop-up messages, press the ESC key. When all alarms
+have been confirmed, the display shows the following screen:<table outputclass="font:10" class="- topic/table ">
+                  <tgroup cols="1" class="- topic/tgroup ">
+                     <colspec colname="col1" class="- topic/colspec "/>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <screen xml:space="preserve" class="+ topic/pre ui-d/screen ">Manual Bypass
+Standby</screen>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+               <note class="- topic/note ">If the system is programmed for <uicontrol class="+ topic/ph ui-d/uicontrol ">AUTOSTART</uicontrol> it will start automatically after 60s if the rectifier mains input
+switch Q001 is closed and the input voltage is within tolerance.</note>
+            </stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <b class="+ topic/ph hi-d/b ">On UPS 1</b>: Press the UP key twice to start the light
+indicator and display test. All LEDs should turn on.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <b class="+ topic/ph hi-d/b ">On UPS 1</b>: Press the ON button to turn on UPS 1 (if
+not already automatically started with the <uicontrol class="+ topic/ph ui-d/uicontrol ">AUTOSTART</uicontrol> function.</cmd>
+            <stepresult class="- topic/itemgroup task/stepresult ">The display will show the following screen:<table outputclass="font:10" class="- topic/table ">
+                  <title class="- topic/title ">Overview Screen</title>
+                  <tgroup cols="1" class="- topic/tgroup ">
+                     <colspec colname="col1" colwidth="100.00*" class="- topic/colspec "/>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <screen xml:space="preserve" class="+ topic/pre ui-d/screen ">Manual Bypass Normal OperationLoad 058%  Cap. 093%405Uin  xxxUout  xxHz</screen>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <b class="+ topic/ph hi-d/b ">On UPS 1</b>: From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Main Menu</uicontrol>, select <menucascade class="+ topic/ph ui-d/menucascade ">
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">System Status</uicontrol>
+               </menucascade> using the UP/DOWN keys and the ENTER key. Check the
+input and output voltages.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <b class="+ topic/ph hi-d/b ">On UPS 1</b>: Close switch Q201 or Q211 in the battery
+breaker box.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <b class="+ topic/ph hi-d/b ">On UPS 1</b>: Use the DOWN key to go to the battery
+measurements page and check the battery voltage and current. Press
+the ESC key until you return to the overview screen.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <b class="+ topic/ph hi-d/b ">On UPS 1</b>: Open switch Q001. Check that the UPS transfers
+to battery operation.</cmd>
+            <stepresult class="- topic/itemgroup task/stepresult ">
+               <table outputclass="font:10" class="- topic/table ">
+                  <title class="- topic/title ">Overview Screen</title>
+                  <tgroup cols="1" class="- topic/tgroup ">
+                     <colspec colname="col1" colwidth="100.00*" class="- topic/colspec "/>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <screen xml:space="preserve" class="+ topic/pre ui-d/screen ">Manual Bypass Battery OperationLoad 058%  Cap. 093%405Uin  xxxUout  xxHz</screen>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <b class="+ topic/ph hi-d/b ">On UPS 1</b>: Close switch Q001. Check that the UPS
+transfers to normal operation.</cmd>
+            <stepresult class="- topic/itemgroup task/stepresult ">
+               <table outputclass="font:10" class="- topic/table ">
+                  <title class="- topic/title ">Overview Screen</title>
+                  <tgroup cols="1" class="- topic/tgroup ">
+                     <colspec colname="col1" colwidth="100.00*" class="- topic/colspec "/>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <screen xml:space="preserve" class="+ topic/pre ui-d/screen ">Manual Bypass Normal OperationLoad 058%  Cap. 093%405Uin  xxxUout  xxHz</screen>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <b class="+ topic/ph hi-d/b ">On UPS 1</b>: Close switch Q528. Check that the synchronous
+LED turns on on the mimic display.</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <fig class="- topic/fig ">
+                  <image href="../Images/Reality_pxc_emea_synchronous_led_on_mimic_diagram_0000184409.svg"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+               <note class="- topic/note ">The bypass source must be available and within tolerances.</note>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <b class="+ topic/ph hi-d/b ">On UPS 1</b>: From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Main Menu</uicontrol>, select <menucascade class="+ topic/ph ui-d/menucascade ">
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">System Control</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Bypass Control</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">YES, UPS into Bypass</uicontrol>
+               </menucascade> using the UP/DOWN keys and the ENTER key. After the
+UPS has transferred to static bypass operation, press the ESC key
+until you return to the overview screen.</cmd>
+            <stepresult class="- topic/itemgroup task/stepresult ">If the UPS is not able to transfer to static bypass operation,
+see <xref href="Service_Troubleshooting_REF_0000102000.dita"
+                     format="dita"
+                     scope="local"
+                     type="reference"
+                     class="- topic/xref "/>.</stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <b class="+ topic/ph hi-d/b ">On UPS 1</b>: From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Main Menu</uicontrol>, select <menucascade class="+ topic/ph ui-d/menucascade ">
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">System Control</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Bypass Control</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">YES, UPS out of Byp</uicontrol>
+               </menucascade> using the UP/DOWN keys and the ENTER key. After the
+UPS has transferred to normal operation, press the ESC key until you
+return to the overview screen.</cmd>
+            <stepresult class="- topic/itemgroup task/stepresult ">If the UPS is not able to transfer to normal operation,
+see <xref href="Service_Troubleshooting_REF_0000102000.dita"
+                     format="dita"
+                     scope="local"
+                     type="reference"
+                     class="- topic/xref "/>.</stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">All functionality of UPS 1 has been checked now. Press
+down the ON and OFF button to turn off UPS 1.</cmd>
+            <stepresult class="- topic/itemgroup task/stepresult ">
+               <note class="- topic/note ">The safe bus is still supplied via the manual bypass
+switch Q601 at position <uicontrol class="+ topic/ph ui-d/uicontrol ">BYPASS</uicontrol>.</note>
+            </stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <b class="+ topic/ph hi-d/b ">On UPS 2</b>: Close switch Q501. Repeat step 5–15
+on UPS 2.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Close safe bus switch Q694 (if available).</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <b class="+ topic/ph hi-d/b ">On UPS 1</b>: Press the ON button.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <b class="+ topic/ph hi-d/b ">On UPS 1 and UPS 2</b>: From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Main Menu</uicontrol>, select <menucascade class="+ topic/ph ui-d/menucascade ">
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">System Control</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Bypass Control</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">YES, UPS into Bypass</uicontrol>
+               </menucascade> using the UP/DOWN keys and the ENTER key. </cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <b class="+ topic/ph hi-d/b ">On UPS 1 and UPS 2</b>: Turn switch Q601 to position <uicontrol class="+ topic/ph ui-d/uicontrol ">AUTO</uicontrol>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <b class="+ topic/ph hi-d/b ">On UPS 1 and UPS 2</b>: From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Main Menu</uicontrol>, select <menucascade class="+ topic/ph ui-d/menucascade ">
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">System Control</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Bypass Control</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">YES, UPS out of Byp</uicontrol>
+               </menucascade> using the UP/DOWN keys and the ENTER key.  After the
+UPS units have transferred to normal operation, press the ESC key
+until you return to the overview screen.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Check that UPS 1 and UPS 2 are operating correctly in normal
+operation and that there are no pending alarms present.</cmd>
+            <stepresult class="- topic/itemgroup task/stepresult ">
+               <note class="- topic/note ">The safe bus is energized. The load is now supplied
+from all UPS units in parallel/redundant operation with load sharing.</note>
+            </stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Reset any pop-up messages.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Main Menu</uicontrol>, select <menucascade class="+ topic/ph ui-d/menucascade ">
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Event Log</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Clear Log</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">YES, Clear Log</uicontrol>
+               </menucascade> using the UP/DOWN
+keys and the ENTER key.</cmd>
+         </step>
+      </steps>
+   </taskbody>
+</task>

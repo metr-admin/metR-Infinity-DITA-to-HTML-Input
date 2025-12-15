@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="OperatingTheCoupleSwitchInARedundan-8B75C531"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">How to Operate the Output Couple Switch</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-06T16:00:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-06T16:00:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="engineering,maintenance,operations,service"/>
+         <keywords>
+            <indexterm>battery-couple-switch</indexterm>
+            <indexterm>redundant-couple-assembly</indexterm>
+            <indexterm>dual-system-coupler</indexterm>
+            <indexterm>mechanical-interlock</indexterm>
+            <indexterm>couple-switch-indicators</indexterm>
+            <indexterm>operate-couple-switch</indexterm>
+            <indexterm>test-redundant-transfer</indexterm>
+            <indexterm>isolate-battery-strings</indexterm>
+            <indexterm>perform-couple-switch-maintenance</indexterm>
+            <indexterm>synchronize-output-buses</indexterm>
+            <indexterm>redundant-system-operations</indexterm>
+            <indexterm>maintenance-of-redundancy</indexterm>
+            <indexterm>battery-management-in-redundancy</indexterm>
+            <indexterm>critical-site-procedures</indexterm>
+            <indexterm>operator-interlock-safety</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="How to operate the couple switch in a redundant or dual system"/>
+         <othermeta name="shortdesc" content="Operational steps and safety checks for using the couple switch in dual HU250 systems for load sharing and redundancy"/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="battery couple switch;mechanical interlock;bus coupler;status indicators;battery strings"/>
+         <othermeta name="taxonomy" content="domain:redundancy;usecase:coupling-and-load-sharing;industry:uninterruptible power supply"/>
+         <othermeta name="tags" content="couple-switch,redundancy,load-sharing,battery-isolation"/>
+         <othermeta name="usecase" content="operate-and-test-couple-switch-in-redundant-setup"/>
+      </metadata>
+   </prolog>
+   <conbody>
+      <conbodydiv class="- topic/bodydiv concept/conbodydiv ">
+         <section class="- topic/section ">
+            <sectiondiv class="- topic/sectiondiv ">
+               <hazardstatement conref="../Library/Warnings_Library_0000325173.dita#war_lib/separate_redundant_units"
+                                class="+ topic/note hazard-d/hazardstatement ">
+                  <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+                     <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+                     <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+                  </messagepanel>
+               </hazardstatement>
+               <p class="- topic/p ">Systems with multiple units can have an output
+couple switch to control the load sharing between the units.</p>
+               <p class="- topic/p ">
+                  <ph class="- topic/ph ">Redundant systems use a normally closed (NC) output couple switch
+to share the load by default.</ph>
+                  <ph otherprops="typeD" class="- topic/ph "> Dual systems
+use a normally open (NO) output couple switch to supply individual
+loads by default.</ph>
+               </p>
+               <p class="- topic/p ">NO and NC output couple switches are
+operated in the same way.</p>
+            </sectiondiv>
+         </section>
+         <section class="- topic/section ">
+            <title class="- topic/title ">How to Open the Output Couple Switch</title>
+            <sectiondiv class="- topic/sectiondiv ">
+               <p class="- topic/p ">To open the output couple switch and separate the outputs:</p>
+               <ol class="- topic/ol ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Check that:<ol class="- topic/ol ">
+                           <li class="- topic/li ">
+                              <p class="- topic/p ">The system is running in <ph platform="PxW WxW" class="- topic/ph ">normal operation</ph>
+                                 <ph platform="SDC" class="- topic/ph ">float charge</ph> (with all units active).</p>
+                           </li>
+                           <li class="- topic/li ">
+                              <p class="- topic/p ">No alarms are pending on any unit.</p>
+                           </li>
+                        </ol>
+                     </p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Open the output couple switch.</p>
+                  </li>
+               </ol>
+               <p class="- topic/p ">The system output is now separated and each unit is supplying
+its own load.</p>
+            </sectiondiv>
+         </section>
+      </conbodydiv>
+      <section class="- topic/section ">
+         <title class="- topic/title ">How to Close the Output Couple Switch</title>
+         <p class="- topic/p ">To
+close the output couple switch and connect the outputs:</p>
+         <ol class="- topic/ol ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">Check that:<ol class="- topic/ol ">
+                     <li class="- topic/li ">
+                        <p class="- topic/p ">The units are all running in <ph platform="PxW WxW" class="- topic/ph ">normal
+operation</ph>
+                           <ph platform="SDC" class="- topic/ph ">float charge</ph> (individually).</p>
+                     </li>
+                     <li platform="PxW WxW" class="- topic/li ">
+                        <p class="- topic/p ">The bypass mains and static switch EN are
+available for all units and within tolerance (check status on the
+mimic diagram).</p>
+                     </li>
+                     <li class="- topic/li ">
+                        <p class="- topic/p ">No alarms are pending.</p>
+                     </li>
+                  </ol>
+               </p>
+            </li>
+            <li platform="PxW WxW" class="- topic/li ">
+               <p class="- topic/p ">Switch over <u class="+ topic/ph hi-d/u ">unit1</u> to static bypass
+operation:<ol conref="../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/Switch-to-bypass"
+                      class="- topic/ol ">
+                     <li class="- topic/li "/>
+                  </ol>
+               </p>
+            </li>
+            <li platform="PxW WxW" class="- topic/li ">
+               <p class="- topic/p ">Follow the same procedure and switch over <u class="+ topic/ph hi-d/u ">unit2</u> to bypass operation.</p>
+            </li>
+            <li platform="PxW WxW" class="- topic/li ">
+               <p class="- topic/p ">Check that the <b class="+ topic/ph hi-d/b ">Display</b> on <u class="+ topic/ph hi-d/u ">both
+units</u> show <codeph class="+ topic/ph pr-d/codeph ">Bypass operation</codeph>.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Check that the external load connection is closed.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Close the output couple switch.</p>
+            </li>
+            <li platform="PxW WxW" class="- topic/li ">
+               <p class="- topic/p ">Switch over <u class="+ topic/ph hi-d/u ">unit1</u> to normal operation:<ol conref="../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/Switch-to-normal"
+                      class="- topic/ol ">
+                     <li class="- topic/li "/>
+                  </ol>
+               </p>
+               <note class="- topic/note ">The load will be supplied by the bypass until all units
+in the system have been switched back to normal operation.</note>
+            </li>
+            <li platform="PxW WxW" class="- topic/li ">
+               <p class="- topic/p ">Follow the same procedure and switch over <u class="+ topic/ph hi-d/u ">unit2</u> to normal operation.</p>
+            </li>
+            <li platform="PxW WxW" class="- topic/li ">
+               <p class="- topic/p ">Check that the <b class="+ topic/ph hi-d/b ">Display</b> on <u class="+ topic/ph hi-d/u ">both
+units</u> show <codeph class="+ topic/ph pr-d/codeph ">Normal operation load power ...%</codeph>.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Confirm any alarms by pressing the <b class="+ topic/ph hi-d/b ">C key</b> twice.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Make sure the system operates correctly and no alarms are present.</p>
+            </li>
+         </ol>
+         <p class="- topic/p ">The system is now in redundant/parallel operation with all
+units supplying an equal share of the load.</p>
+      </section>
+   </conbody>
+</concept>

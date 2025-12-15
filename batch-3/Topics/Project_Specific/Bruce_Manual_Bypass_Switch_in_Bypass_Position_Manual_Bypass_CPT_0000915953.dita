@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="ManualBypassSwitchInBypassPositionM-743CD556"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Manual Bypass Switch in Bypass Position (Manual Bypass)</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-28+05:30" class="- topic/created "/>
+         <revised modified="2025-11-28" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience 
+            type="role" 
+            otherprops="operations,engineering,maintenance,field technician,commissioning,support"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>manual bypass switch</indexterm>
+            <indexterm>Bruce UPS system</indexterm>
+            <indexterm>bypass line</indexterm>
+            <indexterm>inverter output path</indexterm>
+            <indexterm>rectifier input path</indexterm>
+            <indexterm>load distribution bus</indexterm>
+            <indexterm>mechanical switching assembly</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>manual bypass activation</indexterm>
+            <indexterm>switch operation procedure</indexterm>
+            <indexterm>inverter isolation workflow</indexterm>
+            <indexterm>load transfer to bypass</indexterm>
+            <indexterm>bypass verification steps</indexterm>
+            <indexterm>safety switching checks</indexterm>
+            <indexterm>bypass readiness confirmation</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>manual bypass conditions</indexterm>
+            <indexterm>maintenance operations</indexterm>
+            <indexterm>critical load environments</indexterm>
+            <indexterm>UPS bypass architecture</indexterm>
+            <indexterm>electrical continuity paths</indexterm>
+            <indexterm>high-availability infrastructure</indexterm>
+            <indexterm>mechanical safety handling</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="Manual Bypass Switch in Bypass Position"/>
+         <othermeta 
+            name="shortdesc" 
+            content="Explains how the manual bypass switch operates when placed in the bypass position and how load transfer occurs from inverter to bypass line in the Bruce UPS system."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta 
+            name="entities" 
+            content="manual bypass switch; bypass line; inverter path; rectifier path; load bus; mechanical switch contacts; locking mechanism"/>
+         
+         <othermeta 
+            name="taxonomy" 
+            content="domain:industrial automation;usecase:bypass-operation;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta 
+            name="tags" 
+            content="manual bypass,bypass position,load transfer,UPS bypass path,inverter isolation"/>
+         
+         <othermeta 
+            name="usecase" 
+            content="Explain the function and operation of the manual bypass switch when placed in the bypass position"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <div class="- topic/div ">
+         <hazardstatement conref="../../Library/Warnings_Library_0000325173.dita#war_lib/still_energized_MBS"
+                          class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+            </messagepanel>
+         </hazardstatement>
+         <hazardstatement otherprops="2pMBS"
+                          type="notice"
+                          class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard ">loss of output voltage</typeofhazard>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid ">When the manual bypass switch is in <b class="+ topic/ph hi-d/b ">Bypass</b> position, <ph platform="PxW" class="- topic/ph ">there is no backup from the battery</ph>
+                  <ph platform="WxW" class="- topic/ph ">it is not possible for the system to automatically
+switch back to inverter operation</ph> in case the bypass mains becomes
+unavailable.</howtoavoid>
+            </messagepanel>
+         </hazardstatement>
+         <hazardstatement conref="../../Library/Warnings_Library_0000325173.dita#war_lib/no-backup-in-bypass"
+                          otherprops="3pMBS"
+                          class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+            </messagepanel>
+         </hazardstatement>
+         <p class="- topic/p ">With a manual bypass switch
+it is possible to manually switch and lock the system in <b class="+ topic/ph hi-d/b ">Bypass</b> position to isolate sections.</p>
+         <note class="- topic/note ">This mode is also called
+manual bypass because the load is supplied over the manual bypass
+switch.</note>
+         <fig platform="PxW" class="- topic/fig ">
+            <image href="../../Images/FD_PxW_Operating_Modes_MSB_Test_0000348572.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <fig otherprops="typeS 3pMBS" platform="WxW" class="- topic/fig ">
+            <image href="../../Images/FD_WxW_Operating_Modes_MBS_Bypass_0000478970.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <fig otherprops="typeR 2pMBS" platform="WxW" class="- topic/fig ">
+            <image href="../../Images/FD_WEW_1170112_Operating_Modes_Bruce_R_2pMBS_Manual_Bypass_0000915965.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <table class="- topic/table ">
+            <tgroup cols="2" class="- topic/tgroup ">
+               <colspec colname="col1" colwidth="40.00mm" class="- topic/colspec "/>
+               <colspec colname="col2" colwidth="2.00*" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">
+                        <p class="- topic/p ">Part</p>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <p class="- topic/p ">Status</p>
+                     </entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p platform="PxW SDC" class="- topic/p ">Rectifier mains</p>
+                        <p platform="WxW" class="- topic/p ">DC input power</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Available or unavailable.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p platform="PxW SDC" class="- topic/p ">Rectifier mains breaker(s)</p>
+                        <p platform="WxW" class="- topic/p ">Inverter input switches</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Open</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Bypass mains</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Available and within the tolerance range.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Bypass mains breaker</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Closed</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Manual bypass switch</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">In <b class="+ topic/ph hi-d/b ">Bypass</b> position.</p>
+                     </entry>
+                  </row>
+                  <row platform="PxW SDC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Battery</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Disconnected from the system.</p>
+                     </entry>
+                  </row>
+                  <row platform="PxW SDC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Battery breaker(s)</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Open</p>
+                     </entry>
+                  </row>
+                  <row platform="PxW SDC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Rectifier</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Off</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Inverter</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Off</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Static switch EN</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Off</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Bypass isolation (EN input) switches</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Open</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Static switch EA</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Off</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Output isolation switches</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Open</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Output</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">No output voltage from the system. The load is supplied directly
+from the bypass mains.</p>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </div>
+   </conbody>
+</concept>

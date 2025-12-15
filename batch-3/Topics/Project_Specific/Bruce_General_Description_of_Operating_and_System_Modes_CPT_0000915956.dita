@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="GeneralDescriptionOfOperatingAndSys-7439DA6F"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">General Description of Operating and System Modes</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-28+05:30" class="- topic/created "/>
+         <revised modified="2025-11-28" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience 
+            type="role" 
+            otherprops="operations,engineering,maintenance,commissioning,monitoring,field technician"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>Bruce UPS system</indexterm>
+            <indexterm>inverter operating mode</indexterm>
+            <indexterm>bypass operating mode</indexterm>
+            <indexterm>battery operation mode</indexterm>
+            <indexterm>ISBS operation</indexterm>
+            <indexterm>rectifier subsystem</indexterm>
+            <indexterm>control panel interface</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>system mode transition</indexterm>
+            <indexterm>operating mode interpretation</indexterm>
+            <indexterm>inverter-to-bypass switching</indexterm>
+            <indexterm>battery support workflow</indexterm>
+            <indexterm>system behavior evaluation</indexterm>
+            <indexterm>operational state verification</indexterm>
+            <indexterm>runtime condition analysis</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>critical load environment</indexterm>
+            <indexterm>industrial power stability</indexterm>
+            <indexterm>UPS operating states</indexterm>
+            <indexterm>system resilience environments</indexterm>
+            <indexterm>electrical continuity assurance</indexterm>
+            <indexterm>mains fluctuation scenarios</indexterm>
+            <indexterm>high-availability operation</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta 
+            name="title" 
+            content="General Description of Operating and System Modes"/>
+         
+         <othermeta 
+            name="shortdesc" 
+            content="Provides an overview of the operating and system modes of the Bruce UPS including inverter mode, bypass mode, battery mode, and ISBS operation."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta 
+            name="entities" 
+            content="inverter; rectifier; battery strings; bypass line; ISBS; load bus; mains input; control electronics"/>
+         
+         <othermeta 
+            name="taxonomy" 
+            content="domain:industrial automation;usecase:system-mode-description; industry: uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta 
+            name="tags" 
+            content="UPS modes,inverter mode,bypass mode,battery mode,system behavior,operational states"/>
+         
+         <othermeta 
+            name="usecase" 
+            content="Explain the various operating modes of the Bruce UPS system and how they interact under different electrical conditions"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <div class="- topic/div ">
+         <note class="- topic/note ">An example system is used to illustrate the operating modes.
+The function of the operating mode is similar in all applicable configurations,
+but the energized path will depend on the configuration.</note>
+         <p platform="PxW WxW" class="- topic/p ">
+            <ph platform="PxW" class="- topic/ph ">The operating mode depends on
+the status of the system, the rectifier mains, the battery and the
+bypass mains.</ph>
+            <ph platform="WxW" class="- topic/ph ">The operating mode depends on
+the status of the system and the DC input power.</ph>
+            <ph otherprops="2pMBS 3pMBS noMBS" platform="WxW" class="- topic/ph ">The operating mode depends
+on the status of the system, the DC input power and the bypass mains.</ph> The operating priority is:<ol class="- topic/ol ">
+               <li platform="PxW WxW" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Bruce_Normal_Operation_CPT_0000911079.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li platform="PxW" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Bruce_Battery_Operation_CPT_0000915955.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li otherprops="2pMBS 3pMBS noMBS"
+                   platform="PxW WxW"
+                   class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Bruce_Bypass_Operation_Static_Bypass_CPT_0000915954.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+            </ol>
+         </p>
+         <p platform="SDC" class="- topic/p ">The operating mode of the system depends
+on the status of the rectifier mains and the charge mode of the system.
+The operation modes are:<ul class="- topic/ul ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Bruce_Float_Charge_CPT_0000941179.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Bruce_Boost_Charge_CPT_0000941178.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Bruce_Battery_Operation_CPT_0000944723.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+            </ul>
+         </p>
+         <p class="- topic/p ">Other modes that the system can be in during startup,
+charging, maintenance, troubleshooting and shutdown are:<ul class="- topic/ul ">
+               <li otherprops="2pMBS 3pMBS" platform="PxW WxW" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Bruce_Manual_Bypass_Switch_in_Bypass_Position_Manual_Bypass_CPT_0000915953.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li otherprops="3pMBS" platform="PxW WxW" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="../Manual_Bypass_Switch_in_Test_Position_CPT_0000319425.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Bruce_Standby_CPT_0000915952.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li platform="PxW" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="../Charger_Only_CPT_0000319409.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li platform="SDC" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Bruce_Initial_Charge_CPT_0000941177.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Bruce_Off_CPT_0000915951.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li otherprops="ISBS" platform="PxW WxW" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Bruce_Independent_Static_Bypass_Switch_ISBS_Operation_CPT_0000915950.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+            </ul>
+         </p>
+         <p otherprops="typeR D_ParallelCom" class="- topic/p ">Additional modes in redundant
+systems:<ul class="- topic/ul ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Bruce_Operation_with_One_Unit_Active_Redundant_Systems_CPT_0000915949.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li platform="PxW WxW" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="1220256_Hot_Standby_Redundant_Systems_CPT_DD00755576.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+            </ul>
+         </p>
+      </div>
+   </conbody>
+</concept>

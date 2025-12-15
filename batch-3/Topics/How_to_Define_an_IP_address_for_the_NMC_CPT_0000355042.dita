@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="HowToDefineAnIPAddressForTheNMC-808BF7B1"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">How to Change the IP Address of the NMC Over a Network</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-06T16:00:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-06T16:00:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,engineering,management"/>
+         <keywords>
+            <indexterm>nmc-network-management-card</indexterm>
+            <indexterm>hu250-network-interface</indexterm>
+            <indexterm>ethernet-port-configuration</indexterm>
+            <indexterm>snmp-agent-board</indexterm>
+            <indexterm>network-communication-module</indexterm>
+            <indexterm>define-ip-address</indexterm>
+            <indexterm>configure-subnet-mask</indexterm>
+            <indexterm>set-default-gateway</indexterm>
+            <indexterm>enable-ssh-access</indexterm>
+            <indexterm>manage-dns-settings</indexterm>
+            <indexterm>nmc-commissioning</indexterm>
+            <indexterm>plant-network-integration</indexterm>
+            <indexterm>remote-monitoring-setup</indexterm>
+            <indexterm>cybersecurity-baseline</indexterm>
+            <indexterm>data-centre-networking</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="How to define an IP address for the NMC"/>
+         <othermeta name="shortdesc" content="Step by step procedure to assign IPv4 settings to the Network Management Card used for remote monitoring"/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="Network Management Card;ip address;subnet mask;default gateway;dns server;ssh credentials"/>
+         <othermeta name="taxonomy" content="domain:networking;usecase:commissioning-and-monitoring;industry:uninterruptible power supply"/>
+         <othermeta name="tags" content="nmc,ip-configuration,remote-monitoring,network-security"/>
+         <othermeta name="usecase" content="configure-nmc-network-settings-for-commissioning"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <section class="- topic/section ">
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">To change the IP address over the network
+the NMC needs the MAC address of the NMC is needed. The MAC address
+can be found on a label on the bottom of the card. The MAC address
+consists of 12 characters (only letters and numbers).</p>
+            <note class="- topic/note ">Make
+sure to select a unique IP address for each NMC on the same network.</note>
+            <p class="- topic/p ">
+               <ol class="- topic/ol ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Check that the Ethernet cable is connected from the NMC is
+connected to the network.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Start a command prompt window from a computer on the same network.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Type <codeph translate="no" class="+ topic/ph pr-d/codeph ">arp –s xxx.xxx.xxx.xxx yy-yy-yy-yy-yy-yy</codeph>
+                     </p>. Where <codeph translate="no" class="+ topic/ph pr-d/codeph ">xxx.xxx.xxx.xxx</codeph> is the
+IPv4 address that you want to assign to the NMC card with a MAC address
+of <codeph translate="no" class="+ topic/ph pr-d/codeph ">yyyyyyyyyyyy</codeph>.<note class="- topic/note ">Linux uses colon
+instead dashes in the MAC address, for Linux write the MAC address
+as <codeph translate="no" class="+ topic/ph pr-d/codeph ">yy:yy:yy:yy:yy:yy</codeph>
+                     </note>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Type <codeph translate="no" class="+ topic/ph pr-d/codeph ">ping xxx.xxx.xxx.xxx –l
+113</codeph> to ping 113 bytes to check that the new IPv4 address
+for the NMC is working.</p>
+                     <note class="- topic/note ">For Linux write -s instead of -l.</note>
+                  </li>
+               </ol>
+               <note class="- topic/note ">To assign an IPv6 address, choose an IPv6 address in the
+above example instead of an IPv4 address.</note>
+            </p>
+         </sectiondiv>
+      </section>
+   </conbody>
+</concept>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="TransferFromNormalOperationOrECOMod-6A17B331"
+      translate="yes"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">Transfer from Normal Operation or ECO Mode to Maintenance Bypass
+Operation – Redundant Parallel UPS System N+1</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-18+05:30" class="- topic/created "/>
+         <revised modified="2025-11-18" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>eco-mode</indexterm>
+            <indexterm>maintenance-bypass</indexterm>
+            <indexterm>ups</indexterm>
+            <indexterm>breaker</indexterm>
+            <indexterm>battery</indexterm>
+            <!-- Process layer -->
+            <indexterm>transfer-to-maintenance-bypass</indexterm>
+            <indexterm>shutdown</indexterm>
+            <indexterm>verify-input-output</indexterm>
+            <indexterm>measure-voltage-and-current</indexterm>
+            <indexterm>switch-over</indexterm>
+            <!-- Context layer -->
+            <indexterm>ups-installation</indexterm>
+            <indexterm>ups-maintenance</indexterm>
+            <indexterm>ups-troubleshooting</indexterm>
+            <indexterm>control-room</indexterm>
+            <indexterm>site-maintenance</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Transfer_from_Normal_Operation_or_ECO_Mode_to_Maintenance_Bypass_Operati_0000190580"/>
+         <othermeta name="shortdesc" content="Steps to transfer from normal operation or ECO Mode to maintenance bypass operation – Redundant Parallel UPS System N+1"/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="battery;breaker;load;transformer"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:transfer-to-maintenance-bypass;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="eco-mode,maintenance-bypass,ups,breaker,battery,transfer-to-maintenance-bypass,shutdown,ups-maintenance,ups-installation"/>
+         <othermeta name="usecase" content="transfer-to-maintenance-bypass"/>
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <context class="- topic/section task/context ">
+         <hazardstatement type="danger" class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard ">hazard of electric shock, explosion, or arc flash</typeofhazard>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid ">The UPS with transformer in maintenance bypass operation
+still contains energized components in both the UPS cabinet and the
+transformer cabinet (if present). All sources to the UPS and transformer(s)
+must be shut off before any work can be carried out on the units.
+The load will not be supported.</howtoavoid>
+            </messagepanel>
+         </hazardstatement>
+         <note class="- topic/note ">The following procedures apply
+to both UPS1 and UPS2 in parallel.</note>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">On UPS1: From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Main Menu</uicontrol>, select <menucascade class="+ topic/ph ui-d/menucascade ">
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">System Control</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Bypass Control</uicontrol>
+               </menucascade> using the UP/DOWN keys and the ENTER key. </cmd>
+            <stepresult class="- topic/itemgroup task/stepresult ">If the UPS is running in ECO mode, proceed to step 3.</stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">If the unit is running in normal operation, select <uicontrol class="+ topic/ph ui-d/uicontrol ">YES, UPS into Bypass</uicontrol> to transfer to bypass operation.
+All UPS units in the parallel system will now transfer to static bypass
+operation. This action releases the key from the kirk key solenoid
+interlock KS of UPS1 and UPS2.</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <table outputclass="font:10" class="- topic/table ">
+                  <tgroup cols="1" class="- topic/tgroup ">
+                     <colspec colname="col1" class="- topic/colspec "/>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <screen xml:space="preserve" class="+ topic/pre ui-d/screen ">Confirm action:UPS into Bypass NO, Abort►YES, UPS into Bypass</screen>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Perform the following steps on both UPS1 and UPS2:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Unlock and remove the key from the kirk key solenoid
+interlock KS.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Insert the key into the maintenance bypass breaker MBB.
+Unlock and close the maintenance bypass breaker MBB. The key is now
+trapped.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Open the unit output breaker UOB and lock the breaker
+in this position with its key. Remove the key.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Insert the key into the kirk key solenoid interlock
+KS and lock it.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Press the ON and OFF buttons simultaneously on the display
+to turn OFF the UPS.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Open the static switch input breaker SSIB (only in configurations
+where SSIB is present).</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Open the battery breaker BB.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Open the unit input breaker UIB.</cmd>
+               </substep>
+            </substeps>
+            <stepresult class="- topic/itemgroup task/stepresult ">The UPS system is now in maintenance bypass operation.</stepresult>
+         </step>
+      </steps>
+   </taskbody>
+</task>

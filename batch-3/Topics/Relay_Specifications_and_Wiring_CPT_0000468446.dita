@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="RelaySpecificationsAndWiring-08A9AE8E"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Relay Specifications and Wiring</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-04+05:30" class="- topic/created "/>
+         <revised modified="2025-12-04" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>relay</indexterm>
+            <indexterm>relay-board</indexterm>
+            <indexterm>change-over-relay</indexterm>
+            <indexterm>control-board</indexterm>
+            <indexterm>relay-coil</indexterm>
+            <indexterm>contact-assembly</indexterm>
+            <!-- Process layer -->
+            <indexterm>wiring-specification</indexterm>
+            <indexterm>wiring-diagram</indexterm>
+            <indexterm>voltage-rating-check</indexterm>
+            <indexterm>terminal-identification</indexterm>
+            <indexterm>signal-mapping</indexterm>
+            <indexterm>safety-inspection</indexterm>
+            <!-- Context layer -->
+            <indexterm>ups-module</indexterm>
+            <indexterm>power-control-panel</indexterm>
+            <indexterm>ups-troubleshooting</indexterm>
+            <indexterm>industrial-control</indexterm>
+            <indexterm>service-manual</indexterm>
+            <indexterm>field-installation</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Relay Specifications and Wiring"/>
+         <othermeta name="shortdesc" content="Hazard and wiring information for relay modules — describes relay board wiring types, terminal identification and safety precautions."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="relays;terminal-blocks;wire-harness;pcb;fuses"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:specification-and-wiring;industry:uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="specifications,wiring,relay,installation,safety"/>
+         <othermeta name="usecase" content="specification-and-wiring"/>
+      </metadata>
+   </prolog>
+   <conbody>
+      <section class="- topic/section ">
+         <sectiondiv class="- topic/sectiondiv ">
+            <hazardstatement type="danger" class="+ topic/note hazard-d/hazardstatement ">
+               <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+                  <typeofhazard class="+ topic/li hazard-d/typeofhazard ">HAZARD OF ELECTRIC SHOCK</typeofhazard>
+                  <howtoavoid class="+ topic/li hazard-d/howtoavoid ">Never mix safety extra low voltage (SELV) and other voltages
+used for the relays on the external connection board or the relay
+board.</howtoavoid>
+               </messagepanel>
+            </hazardstatement>
+            <p class="- topic/p ">The external connection board
+and the relay board uses change-over (CO) relays. The table shows
+the required minimum voltage and current, and allowable maximum voltage
+and current.</p>
+            <table class="- topic/table ">
+               <tgroup cols="3" class="- topic/tgroup ">
+                  <colspec colname="col2" class="- topic/colspec "/>
+                  <colspec colname="col3" class="- topic/colspec "/>
+                  <colspec colname="col4" class="- topic/colspec "/>
+                  <thead class="- topic/thead ">
+                     <row class="- topic/row ">
+                        <entry valign="top" class="- topic/entry ">
+                           <ph class="- topic/ph ">Recommended
+Minimum</ph>
+                        </entry>
+                        <entry valign="top" class="- topic/entry ">
+                           <ph class="- topic/ph ">Relay Rated
+Maximum (Resistive load)</ph>
+                        </entry>
+                        <entry valign="top" class="- topic/entry ">
+                           <ph class="- topic/ph ">Note</ph>
+                        </entry>
+                     </row>
+                  </thead>
+                  <tbody class="- topic/tbody ">
+                     <row valign="middle" class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <ph class="- topic/ph ">6V/50mA<sub class="+ topic/ph hi-d/sub ">AC</sub>
+                           </ph>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <ph class="- topic/ph ">250V/6A<sub class="+ topic/ph hi-d/sub ">AC</sub>
+                           </ph>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <ph class="- topic/ph ">50/60Hz</ph>
+                        </entry>
+                     </row>
+                     <row valign="middle" class="- topic/row ">
+                        <entry morerows="1" class="- topic/entry ">
+                           <ph class="- topic/ph ">6V/50mA<sub class="+ topic/ph hi-d/sub ">DC</sub>
+                           </ph>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <ph class="- topic/ph ">250V/300mA<sub class="+ topic/ph hi-d/sub ">DC</sub>
+                           </ph>
+                        </entry>
+                        <entry morerows="1" class="- topic/entry "/>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry valign="middle" class="- topic/entry ">
+                           <ph class="- topic/ph ">6V/6A<sub class="+ topic/ph hi-d/sub ">DC</sub>
+                           </ph>
+                        </entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">The relay is in the normally open (NO) position
+when the terminal is energized. When the terminal is volt free the
+relay is in the normally closed (NC) position.</p>
+            <fig class="- topic/fig ">
+               <image href="../Images/Alarm_Relay_Wiring_0000362609.svg"
+                      placement="inline"
+                      class="- topic/image "/>
+            </fig>
+         </sectiondiv>
+      </section>
+   </conbody>
+</concept>

@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="SettingsOIDs-A0F63E4E"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Settings OIDs</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-06T15:00:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-06T15:00:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- product layer -->
+            <indexterm>gbms-settings-oids</indexterm>
+            <indexterm>configuration-mib</indexterm>
+            <indexterm>device-parameter</indexterm>
+            <indexterm>configuration-store</indexterm>
+            <indexterm>network-params</indexterm>
+            <!-- process layer -->
+            <indexterm>read-write-oids</indexterm>
+            <indexterm>apply-configuration</indexterm>
+            <indexterm>backup-config</indexterm>
+            <indexterm>restore-config</indexterm>
+            <indexterm>validate-configuration</indexterm>
+            <!-- context layer -->
+            <indexterm>secure-configuration-management</indexterm>
+            <indexterm>commissioning-configuration</indexterm>
+            <indexterm>operations-parameter-tuning</indexterm>
+            <indexterm>change-control</indexterm>
+            <indexterm>industrial-it-ot-integration</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="GBMS settings OIDs"/>
+         <othermeta name="shortdesc" content="List of configurable SNMP OIDs and procedures to read and modify GBMS device settings."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="config-oids;device-params;config-backup;access-controls;change-log"/>
+         <othermeta name="taxonomy" content="domain:security/usecase:configuration;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="configuration,oids,backup,restore,gbms"/>
+         <othermeta name="usecase" content="configuration-management-and-integration"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <note class="- topic/note ">The <ph translate="no" class="- topic/ph ">bacsSettings</ph> shows configured settings
+and alarm thresholds for the setup. The table <ph translate="no" class="- topic/ph ">bacsSettings</ph> lists a mix of <ph translate="no" class="- topic/ph ">read only</ph> and <ph translate="no" class="- topic/ph ">read-write</ph> OIDs. All other tables only contain <ph translate="no" class="- topic/ph ">read only</ph> OIDs.</note>
+      <table pgwide="1" class="- topic/table ">
+         <title class="- topic/title ">OID Address: <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1</ph> / OID
+Name: <ph translate="no" class="- topic/ph ">bacsSettings</ph>
+         </title>
+         <tgroup cols="5" class="- topic/tgroup ">
+            <colspec colname="1" colwidth="2.5*" class="- topic/colspec "/>
+            <colspec colname="2" colwidth="2*" class="- topic/colspec "/>
+            <colspec colname="3" colwidth="3.5*" class="- topic/colspec "/>
+            <colspec colname="COLSPEC0" colwidth="1*" class="- topic/colspec "/>
+            <colspec colname="COLSPEC1" colwidth="2.5*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">OID Address</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">OID Name</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Description</ph>
+                     <ph translate="no" class="- topic/ph ">(read only / read-write)</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Scale [Unit]</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Example of Read Value<fn class="- topic/fn "> The example
+values are only intended to show how to read them. They do not indicate
+any recommended or suggested values. Actual values will depend on
+settings and readings for the specific setup.</fn>
+                     </ph>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.1</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsModuleType</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Module Type. 0 = C20, 1 = C21,
+10 = C30, 20 = C40, 20 = C41.</ph>
+                     <ph translate="no" class="- topic/ph ">(read only)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph id="p-12427152-87CBB685" class="- topic/ph ">1</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">c20(0) -&gt; Module type C20</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.2</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsNumStrings</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Number of battery strings.</ph>
+                     <ph translate="no" class="- topic/ph ">(read only)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./p-12427152-87CBB685" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">2</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.3</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsNumBatteries</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Total number of batteries.</ph>
+                     <ph translate="no" class="- topic/ph ">(read only)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./p-12427152-87CBB685" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">18</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.4</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsBattCap</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Capacity of installed batteries.</ph>
+                     <ph translate="no" class="- topic/ph ">(read only)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph id="Ah-87CC04DF" class="- topic/ph ">1 [Ah]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">50</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.5</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsLogRate1</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">The configured period between
+log recordings during normal operation. Period between log recordings.</ph>
+                     <ph translate="no" class="- topic/ph ">(read only)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph id="s-87CC0785" class="- topic/ph ">1 [s]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">1200 -&gt; 1200 seconds (20 minutes)<fn id="WillBeAvailableInAFutureFirmwareUpd-9204607C" class="- topic/fn "> OID reading will
+be available in a future firmware update.</fn>
+                     </ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.6</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsLogRate2</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">The configured period between
+log recordings during charge or discharge.</ph>
+                     <ph translate="no" class="- topic/ph ">(read only)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./s-87CC0785" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">(The readings are done as soon as
+possible.)<fn conref="#./WillBeAvailableInAFutureFirmwareUpd-9204607C"
+                            class="- topic/fn "/>
+                     </ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.7</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsImpcPollRate</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">The configured period between
+internal impedance polls.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">1 [min]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">720 -&gt; 720 minutes (12 hours)<fn conref="#./WillBeAvailableInAFutureFirmwareUpd-9204607C"
+                            class="- topic/fn "/>
+                     </ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.8</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsImpcLowAlarm</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Impedance low alarm level.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">0.01 [mΩ]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">110 -&gt; 1.1 mΩ</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.9</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsImpcHighAlarm</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Impedance high alarm level.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./p-12427152-87CBB685" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">5000 -&gt; 50 mΩ</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.10</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsTemperatureLowAlarm</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Temperature alarm below this
+level.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph id="COrFDependsOnSettingOfBacsTemperatu-87BFD8F7" class="- topic/ph ">0.1 [C° or
+F°]<fn class="- topic/fn ">Depends on setting of <ph translate="no" class="- topic/ph ">bacsTemperatureUnit</ph>.</fn>
+                     </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">50 -&gt; 5 C°</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.11</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsTemperatureHighAlarm</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Temperature alarm above this
+level.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./COrFDependsOnSettingOfBacsTemperatu-87BFD8F7"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">350 -&gt; 35C°</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.12</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsVoltageLowAlarm</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Voltage alarm below this level.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph id="V-87BFF470" class="- topic/ph ">0.01 [V]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">1200 -&gt; 12 V</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.13</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsVoltageHighAlarm</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Voltage alarm above this level.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./V-87BFF470" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">1550 -&gt; 15.5 V</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.14</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsImpcLowWarn</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Impedance low warning level.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph id="mΩ-87C01E23" class="- topic/ph ">0.01 [mΩ]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">120 -&gt; 1.2 mΩ</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.15</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsImpcHighWarn</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Impedance high warning level.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./mΩ-87C01E23" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">4000 -&gt; 40 mΩ</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.16</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsTemperatureLowWarn</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Temperature warning below this
+level.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./COrFDependsOnSettingOfBacsTemperatu-87BFD8F7"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">100 -&gt; 10 C°</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.17</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsTemperatureHighWarn</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Temperature warning above this
+level.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./COrFDependsOnSettingOfBacsTemperatu-87BFD8F7"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">300 -&gt; 30 C°</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.18</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsVoltageLowWarn</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Voltage warning below this level.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./V-87BFF470" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">1200 -&gt; 12 V</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.19</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsVoltageHighWarn</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Voltage warning above this level.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./V-87BFF470" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">1410 -&gt; 14.1 V</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.20</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsTemperatureUnit</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Temperature unit currently in use.
+0 = Celsius, 1 = Fahrenheit.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./p-12427152-87CBB685" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Celsius(0)</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.21</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsStringVoltageLowAlarm</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The configured alarm threshold for
+the battery string voltage low alarm.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./V-87BFF470" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">10500 -&gt; 105 V</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.22</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsStringVoltageHighAlarm</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The configured alarm threshold for
+the battery string voltage high alarm.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./V-87BFF470" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">13500 -&gt; 135 V</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.23</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsStringVoltageLowWarn</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The configured alarm threshold for
+the battery string voltage low warning.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./V-87BFF470" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">11000 -&gt; 110 V</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.24</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsStringVoltageHighWarn</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The configured alarm threshold for
+the battery string voltage high warning.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./V-87BFF470" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">12500 -&gt; 125 V</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.25</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsStringCurrentDeviationDischargeAlarm</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The configured alarm threshold for
+the current difference between the battery strings alarm.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="GBMS_Objects_OIDs_CPT_0000612742.dita#ObjectsOIDs-A0F76545/A-8E067A4C"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">1000 -&gt; 10 A</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.26</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsStringCurrentDeviationChargeAlarm</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The configured alarm threshold for
+the charge current difference between the battery strings alarm.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="GBMS_Objects_OIDs_CPT_0000612742.dita#ObjectsOIDs-A0F76545/A-8E067A4C"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">1000 -&gt; 10 A</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.27</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsStringCurrentDeviationDischargeWarn</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The configured warning threshold
+for the charge current difference between the battery strings warning.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="GBMS_Objects_OIDs_CPT_0000612742.dita#ObjectsOIDs-A0F76545/A-8E067A4C"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">500 -&gt; 5 A</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.3.6.1.2.1.33.5.1.28</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">bacsStringCurrentDeviationChargeWarn</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The configured warning threshold
+for the charge current difference between the battery warning.</ph>
+                     <ph translate="no" class="- topic/ph ">(read-write)</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="GBMS_Objects_OIDs_CPT_0000612742.dita#ObjectsOIDs-A0F76545/A-8E067A4C"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">500 -&gt; 5 A</ph>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </conbody>
+</concept>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="ChangeAddressOnAGateway-C4A9299F"
+      translate="yes"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">Change Profibus-DP Address on a Gateway</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-04+05:30" class="- topic/created "/>
+         <revised modified="2025-12-04" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>protocol-gateway</indexterm>
+            <indexterm>modbus-tcp-gateway</indexterm>
+            <indexterm>ethernet-serial-gateway</indexterm>
+            <indexterm>network-communication-module</indexterm>
+            <indexterm>gateway-configuration-interface</indexterm>
+            <!-- Process layer -->
+            <indexterm>gateway-address-configuration</indexterm>
+            <indexterm>ip-subnet-validation</indexterm>
+            <indexterm>gateway-firmware-apply</indexterm>
+            <indexterm>restart-and-verify-comms</indexterm>
+            <indexterm>backup-configuration-export</indexterm>
+            <!-- Context layer -->
+            <indexterm>scada-gateway-integration</indexterm>
+            <indexterm>plant-network-segmentation</indexterm>
+            <indexterm>commissioning-network-setup</indexterm>
+            <indexterm>secure-remote-access</indexterm>
+            <indexterm>water-treatment-site-integration</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="change address on a gateway"/>
+         <othermeta name="shortdesc" content="Task describing how to change the network or device address on a protocol gateway and verify connectivity."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="gateway;ip-address;subnet;config-backup;firmware"/>
+         <othermeta name="taxonomy" content="domain:industrial-communications;usecase:network-commissioning;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="gateway;ip;modbus-tcp;configuration;commissioning"/>
+         <othermeta name="usecase" content="change gateway address and confirm network integration"/>
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <context class="- topic/section task/context ">
+         <hazardstatement id="turn-of_power-sup"
+                          type="caution"
+                          class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard ">HAZARD OF ELECTRIC SHOCK or Short Circuit</typeofhazard>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid ">
+                  <sl class="- topic/sl ">
+                     <sli class="- topic/sli ">Always turn off the power supply of the gateway before opening
+the removable cover.</sli>
+                     <sli class="- topic/sli ">When the cover is removed electrical circuits and electronic
+components are exposed. </sli>
+                     <sli class="- topic/sli ">Never touch any electrical circuits or electronic components.</sli>
+                  </sl>
+               </howtoavoid>
+            </messagepanel>
+         </hazardstatement>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Turn of the power supply.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Remove the cover by with a small flat screwdriver. Insert
+the screwdriver between the top of the cover and the gateway box.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">The wheels can now be turned using a flat screwdriver.
+To change the address to for example 19, set the first wheel to 9
+and the second wheel to 1 (for 10).</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <table class="- topic/table ">
+                  <tgroup cols="2" class="- topic/tgroup ">
+                     <colspec colname="col1" colwidth="40.00mm" class="- topic/colspec "/>
+                     <colspec colname="col2" colwidth="40.00mm" class="- topic/colspec "/>
+                     <thead class="- topic/thead ">
+                        <row class="- topic/row ">
+                           <entry align="center"
+                                  nameend="col2"
+                                  namest="col1"
+                                  valign="top"
+                                  class="- topic/entry ">Address 19</entry>
+                        </row>
+                     </thead>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry align="center"
+                                  morerows="1"
+                                  valign="middle"
+                                  class="- topic/entry ">
+                              <fig class="- topic/fig ">
+                                 <image href="../Images/Set-profibus-address_0000414810.svg"
+                                        scope="local"
+                                        placement="inline"
+                                        class="- topic/image "/>
+                              </fig>
+                           </entry>
+                           <entry align="left" valign="middle" class="- topic/entry ">First wheel = 9</entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry align="left" valign="middle" class="- topic/entry ">Second wheel = 1 (for 10)</entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </info>
+         </step>
+      </steps>
+   </taskbody>
+</task>

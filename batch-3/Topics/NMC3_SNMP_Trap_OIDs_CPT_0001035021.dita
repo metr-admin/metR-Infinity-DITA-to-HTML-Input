@@ -1,0 +1,2361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="SNMPTrapOIDs-CEB8F526"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">SNMP Trap OIDs</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-05+05:30" class="- topic/created "/>
+         <revised modified="2025-12-05" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>network-management-card</indexterm>
+            <indexterm>snmp-traps</indexterm>
+            <indexterm>trap-oids</indexterm>
+            <indexterm>mib</indexterm>
+            <indexterm>trap-destination</indexterm>
+            <indexterm>ap9635</indexterm>
+            <!-- Process layer -->
+            <indexterm>configure-snmp-traps</indexterm>
+            <indexterm>map-trap-oids</indexterm>
+            <indexterm>subscribe-to-traps</indexterm>
+            <indexterm>parse-trap-payload</indexterm>
+            <indexterm>forward-traps</indexterm>
+            <indexterm>test-trap-generation</indexterm>
+            <!-- Context layer -->
+            <indexterm>alarm-notification</indexterm>
+            <indexterm>remote-alarms</indexterm>
+            <indexterm>incident-response</indexterm>
+            <indexterm>production-ops-monitoring</indexterm>
+            <indexterm>systems-integration</indexterm>
+            <indexterm>audit-traceability</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="SNMP trap OIDs"/>
+         <othermeta name="shortdesc" content="Catalog of SNMP trap OIDs sent by the network management card and instructions for configuring trap destinations and handling alarms."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="snmp traps; trap oids; network management card AP9635; mib entries; trap destinations; monitoring system"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:snmp-trap-management; industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="snmp,traps,oids,alarms,nmc,notifications"/>
+         <othermeta name="usecase" content="configure-and-handle-snmp-traps-for-alerting"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <div class="- topic/div ">
+         <p class="- topic/p ">Any active traps can be view from a management information
+base (MIB) browser with correctly configured trap receiver connected
+to the NMC.</p>
+         <p class="- topic/p ">The following table shows the different traps that
+can be sent out from the NMC when triggered. The NMC will only send
+out the traps that are currently triggered in the system.</p>
+         <note class="- topic/note ">Base OID Address for APC / Reality: 1.3.6.1.4.1.318.</note>
+      </div>
+      <table pgwide="1" class="- topic/table ">
+         <title class="- topic/title ">SNMP Trap OID List</title>
+         <tgroup cols="5" class="- topic/tgroup ">
+            <colspec colname="1" colwidth="5*" class="- topic/colspec "/>
+            <colspec colname="2" colwidth="1.5*" class="- topic/colspec "/>
+            <colspec colname="3" colwidth="1.5*" class="- topic/colspec "/>
+            <colspec colname="COLSPEC1" colwidth="2.5*" class="- topic/colspec "/>
+            <colspec colname="4" colwidth="6*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">SNMP Trap
+OID Name</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Trap ID</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Specific Sub Trap ID</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Severity</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Event Text</ph>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">communicationLost</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">—</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph id="Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph platform="PxW WxW" class="- topic/ph ">UPS: Lost the local network management interface-to-UPS
+communication.</ph>
+                     <ph platform="SDC" class="- topic/ph ">SDC: Lost the local network
+management interface-to-charger communication.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsOverload</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">2</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">—</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph id="Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Inverter
+overload or output overload detected.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsOnBattery</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">5</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">—</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph id="Warning-CEB95C40" class="- topic/ph ">Warning</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph platform="PxW WxW" class="- topic/ph ">UPS: Battery operation detected.</ph>
+                     <ph platform="SDC" class="- topic/ph ">SDC: Battery operation detected.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">lowBattery</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">7</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">—</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph platform="PxW WxW" class="- topic/ph ">UPS: Low DC voltage warning detected.</ph>
+                     <ph platform="SDC" class="- topic/ph ">SDC: Low DC voltage warning detected.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">communicationEstablished</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">8</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">—</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph platform="PxW WxW" class="- topic/ph ">UPS: Communication established.</ph>
+                     <ph platform="SDC" class="- topic/ph ">SDC: Restored the local network management interface-to-charger
+communication.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">powerRestored</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">9</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">—</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph platform="PxW WxW" class="- topic/ph ">UPS: Utility power restored.</ph>
+                     <ph platform="SDC" class="- topic/ph ">SDC: Battery operation cleared.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">returnFromLowBattery</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">11</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">—</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph platform="PxW WxW" class="- topic/ph ">UPS: Low DC voltage warning cleared.</ph>
+                     <ph platform="SDC" class="- topic/ph ">SDC: Low DC voltage warning cleared.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsBatteryNeedsReplacement</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">17</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">—</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph platform="PxW WxW" class="- topic/ph ">UPS: Battery needs replacement.</ph>
+                     <ph platform="SDC" class="- topic/ph ">SDC: Battery needs replacement.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">switchedBypass</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">22</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">—</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Warning-CEB95C40" class="- topic/ph ">Warning</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Static
+bypass operation or system set to manual bypass detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">returnFromBypass</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">23</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">—</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Static
+bypass operation or system set to manual bypass cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsOverloadCleared</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">33</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">—</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Inverter
+overload or output overload cleared.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsBatteryReplaced</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">36</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">—</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph platform="PxW WxW" class="- topic/ph ">UPS: Bad battery condition cleared.</ph>
+                     <ph platform="SDC" class="- topic/ph ">SDC: Bad battery condition cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">batteryOverTemperature</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">53</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">—</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Warning-CEB95C40" class="- topic/ph ">Warning</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Low DC warning or overload shutdown
+cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">batteryOverTemperatureCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">54</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">—</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Low DC warning.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">15</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Bypass
+is out of tolerance detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">43</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Output
+is out of tolerance detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">45</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Inverter
+not synchronized to bypass line detected.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">47</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph platform="PxW WxW" class="- topic/ph ">UPS: Battery breaker open detected.</ph>
+                     <ph platform="SDC" class="- topic/ph ">SDC: Battery  breaker open detected.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">49</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph platform="PxW WxW" class="- topic/ph ">UPS: High DC voltage shutdown detected.</ph>
+                     <ph platform="SDC" class="- topic/ph ">SDC: High DC warning detected.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">65</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Mains input failure detected.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">67</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Load breaker open detected.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">69</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Mains input breaker open detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">71</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Fan
+inoperable detected.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">73</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph platform="PxW WxW" class="- topic/ph ">UPS: High DC voltage warning detected.</ph>
+                     <ph platform="SDC" class="- topic/ph ">SDC: DC out of tolerance (out of warning level) detected.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">75</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph platform="PxW WxW" class="- topic/ph ">UPS: Inverter voltage is out of tolerance detected.</ph>
+                     <ph platform="SDC" class="- topic/ph ">SDC: DC fuse fault detected.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Total DC current limit alarm
+detected.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">79</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Load sharing fault detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">81</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: PSU1
+AC or DC is not working detected.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">85</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Earth fault detected.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">89</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Internal PSU fault detected.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">91</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Over temperature detected.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">93</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph platform="PxW WxW" class="- topic/ph ">UPS: Battery
+temperature warning detected.</ph>
+                     <ph platform="SDC" class="- topic/ph ">SDC: Fan inoperable
+detected.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">96</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Option 1 fault detected.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">98</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Option 2 fault detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">99</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: System
+is locked in operation mode detected.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">100</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Option 3 fault detected.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">102</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Option 4 fault detected.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">104</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Option 5 fault (K13) detected.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">106</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Option 6 fault (K14) detected.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">108</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Option 7 fault (K15) detected.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">110</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Option 8 fault (K16) detected.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">112</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Battery symmetry fault detected.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">114</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Battery weak detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">129</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry colname="4"
+                         morerows="0"
+                         nameend="4"
+                         namest="4"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Inverter fuse blown detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">133</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Aux 1 error detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">155</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Rectifier magnetics temperature
+warning detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">159</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Battery monitor warning detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">161</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Battery monitor alarm detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">169</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Inverter PM block 1 (L1, L2
+or L3) temperature shutdown detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">171</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Charger 0 degree or 30 degrees
+temperature warning detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">173</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Charger 0 degree or 30 degrees
+temperature shutdown detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">175</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: High output voltage detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">177</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Static switch EA temperature
+warning or static switch EN temperature warning detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">181</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">PS: AC capacitors CB03 current warning
+detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">185</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: No redundancy operation detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">187</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: FPU-MPU communication inoperable
+detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">77</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">189</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Critical-CEB95A3B" class="- topic/ph ">Critical</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: AC capacitors CB03 current shutdown
+detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">16</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Bypass is out of tolerance cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">44</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Output is out of tolerance cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">46</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Inverter not synchronized to
+bypass line cleared.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">48</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph platform="PxW WxW" class="- topic/ph ">UPS: Battery breaker
+open cleared.</ph>
+                     <ph platform="SDC" class="- topic/ph ">SDC: Battery  breaker open cleared.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">50</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph platform="PxW WxW" class="- topic/ph ">UPS: High DC voltage
+shutdown cleared.</ph>
+                     <ph platform="SDC" class="- topic/ph ">SDC: High DC warning cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">66</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Mains input failure cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">68</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Load breaker open cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">70</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Mains input breaker open cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">72</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Fan inoperable cleared.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">74</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph platform="PxW WxW" class="- topic/ph ">UPS: High DC voltage
+warning cleared.</ph>
+                     <ph platform="SDC" class="- topic/ph ">SDC: DC out of tolerance (out
+of warning level) cleared.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">76</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph platform="PxW WxW" class="- topic/ph ">UPS: Inverter
+voltage is out of tolerance cleared.</ph>
+                     <ph platform="SDC" class="- topic/ph ">SDC: DC
+fuse fault cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Total DC current limit alarm
+cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">80</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Load sharing fault cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">82</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: PSU1 AC or DC is not working
+cleared</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">86</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Earth fault cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">90</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Internal PSU fault cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">92</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Over temperature cleared.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">94</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph platform="PxW WxW" class="- topic/ph ">UPS: Battery temperature
+warning cleared.</ph>
+                     <ph platform="SDC" class="- topic/ph ">SDC: Fan inoperable cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">97</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Option 1 fault cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">99</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Option 2 fault cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">100</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: System is locked in operation
+mode cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">101</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Option 3 fault cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">103</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Option 4 fault cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">105</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Option 5 fault (K13) cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">107</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Option 6 fault (K14) cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">109</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Option 7 fault (K15) cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">111</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Option 8 fault (K16) cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">113</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Battery symmetry fault cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">115</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">SDC: Battery weak cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">130</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Inverter fuse blown cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">134</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Aux 1 error cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">156</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Rectifier magnetics temperature
+warning cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">160</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Battery monitor warning cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">162</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Battery monitor alarm cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">170</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Inverter PM block 1 (L1, L2
+or L3) temperature shutdown cleared. </ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">172</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Charger 0 degree or 30 degrees
+temperature warning cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">174</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Charger 0 degree or 30 degrees
+temperature shutdown cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">176</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: High output voltage cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">178</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Static switch EA temperature
+warning or static switch EN temperature warning cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">182</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: AC capacitors CB03 current warning
+cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">186</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: No redundancy operation cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">188</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: FPU-MPU communication inoperable
+cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">abnormalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">78</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">190</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: AC capacitors CB03 current shutdown
+cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsInternalOverTemperature</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">353</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">—</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Warning-CEB95C40" class="- topic/ph ">Warning</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Over temperature violation on
+inverter magnetics, inverter power modules or static switches EA or
+EN detected.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsInternalOverTemperatureCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">354</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">—</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: Over temperature violation on
+inverter magnetics, inverter power modules or static switches EA or
+EN cleared.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsWarningCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">736</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">—</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Warning-CEB95C40" class="- topic/ph ">Warning</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph platform="PxW WxW" class="- topic/ph ">UPS: Shutdown
+condition.</ph>
+                     <ph platform="SDC" class="- topic/ph ">SDC: Overload shutdown detected.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsWarningConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">737</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">—</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph platform="PxW WxW" class="- topic/ph ">UPS: Shutdown
+condition cleared.</ph>
+                     <ph platform="SDC" class="- topic/ph ">SDC: Shutdown condition
+cleared.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsInformationalCondition</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">738</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">—</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: In hot standby mode.</ph>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsInformationalConditionCleared</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">739</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">—</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Informational-CEB94356" class="- topic/ph ">Informational</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">UPS: No longer in hot standby mode.</ph>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </conbody>
+</concept>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="NMCFirmware-65D0964D"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">NMC Firmware</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-05+05:30" class="- topic/created "/>
+         <revised modified="2025-12-05" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>nmc-card</indexterm>
+            <indexterm>reality-system</indexterm>
+            <indexterm>nmc-firmware</indexterm>
+            <indexterm>firmware-file</indexterm>
+            <indexterm>network-management-card</indexterm>
+            <indexterm>nmc-web-interface</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>scp-firmware-update</indexterm>
+            <indexterm>firmware-verification</indexterm>
+            <indexterm>network-configuration</indexterm>
+            <indexterm>file-transfer-procedure</indexterm>
+            <indexterm>snmp-query-process</indexterm>
+            <indexterm>firmware-version-check</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>ups-monitoring-environment</indexterm>
+            <indexterm>networked-ups-management</indexterm>
+            <indexterm>system-maintenance-operations</indexterm>
+            <indexterm>device-network-setup</indexterm>
+            <indexterm>remote-management-context</indexterm>
+            <indexterm>industrial-it-infrastructure</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="NMC Firmware"/>
+         <othermeta name="shortdesc" content="Describes the NMC firmware file format and provides procedures to update and verify the firmware using SCP, SNMP, and the NMC web interface."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta name="entities" content="nmc-card; firmware-file; scp-command; snmp-oid; sysdescr; ip-address; web-interface"/>
+         
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:nmc-firmware-update;industry: uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta name="tags" content="nmc-firmware, scp-update, firmware-verification, snmp-query, network-configuration, ups-monitoring"/>
+         <othermeta name="usecase" content="update-and-verify-nmc-firmware"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <section class="- topic/section ">
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">The firmware for the NMC card in a Reality system consists of one
+file. Examples of the file name are <codeph translate="no" class="+ topic/ph pr-d/codeph ">apc_hw21_gmod_2-1-0-3.nmc3</codeph> or <codeph translate="no" class="+ topic/ph pr-d/codeph ">apc_hw21_sxw_1-4-0-15.nmc3</codeph>.</p>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Update the NMC Firmware with SCP</title>
+         <p class="- topic/p ">To update
+the firmware using SCP the NMC needs to have SCP enabled and configured
+network settings. The NMC and the computer also needs to be on the
+same network.</p>
+         <ol class="- topic/ol ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">From a computer on the same network as the NMC open a command
+prompt window.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Go to the directory that contains the firmware files and list
+the files:<codeph translate="no" class="+ topic/ph pr-d/codeph ">scp apc_hw21_YYY_v-v-v-v.nmc3
+apc@xxx.xxx.xxx.xxx:apc_hw21_YYY_v-v-v-v.nmc3</codeph> and press <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> to run.</p>
+            </li>
+            <li class="- topic/li ">Where <codeph translate="no" class="+ topic/ph pr-d/codeph ">YYY</codeph> is the system type code, <codeph translate="no" class="+ topic/ph pr-d/codeph ">v-v-v-v</codeph> is the version of the firmware file
+and <codeph translate="no" class="+ topic/ph pr-d/codeph ">xxx.xxx.xxx.xxx</codeph> is the IP address
+of the NMC.</li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Wait 20 seconds while the card is rebooting.</p>
+            </li>
+         </ol>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Verify Firmware Update</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">To verify
+that the firmware update succeeded and to check the firmware version
+it is possible to:</p>
+            <ul class="- topic/ul ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">From the NMC web interface navigate to <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">About &gt; Network</uicontrol>.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Use a SNMP GET to the MIB II <codeph translate="no" class="+ topic/ph pr-d/codeph ">sysDescr</codeph> OID.</p>
+               </li>
+            </ul>
+         </sectiondiv>
+      </section>
+   </conbody>
+</concept>

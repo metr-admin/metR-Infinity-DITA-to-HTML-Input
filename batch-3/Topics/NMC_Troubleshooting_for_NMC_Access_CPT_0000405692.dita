@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="TroubleshootingForNMCAccess-B54173F4"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Troubleshooting for NMC Access</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-05+05:30" class="- topic/created "/>
+         <revised modified="2025-12-05" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-pxc-reality</indexterm>
+            <indexterm>network-management-card</indexterm>
+            <indexterm>web-interface</indexterm>
+            <indexterm>ssh-access</indexterm>
+            <indexterm>serial-console</indexterm>
+            <indexterm>access-control-module</indexterm>
+            <!-- Process layer -->
+            <indexterm>access-troubleshooting</indexterm>
+            <indexterm>login-diagnostics</indexterm>
+            <indexterm>connectivity-check</indexterm>
+            <indexterm>credential-reset</indexterm>
+            <indexterm>port-testing</indexterm>
+            <indexterm>timeout-analysis</indexterm>
+            <!-- Context layer -->
+            <indexterm>remote-management</indexterm>
+            <indexterm>maintenance-window</indexterm>
+            <indexterm>secure-access</indexterm>
+            <indexterm>site-network</indexterm>
+            <indexterm>operator-remote-support</indexterm>
+            <indexterm>ups-network-management</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="NMC Troubleshooting for NMC Access"/>
+         <othermeta name="shortdesc" content="Troubleshooting steps for diagnosing and resolving access issues to the Network Management Card via web, SSH or serial console."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="ssh-daemon; http-server; serial-port; user-account; network-interface; credential-store"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:nmc-access-diagnostics-and-resolution;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="access,troubleshooting,ssh,web,serial,connectivity"/>
+         <othermeta name="usecase" content="diagnose and resolve access failures to the Network Management Card"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <table class="- topic/table ">
+         <tgroup cols="2" class="- topic/tgroup ">
+            <colspec colname="col1" colwidth="1*" class="- topic/colspec "/>
+            <colspec colname="col2" colwidth="3*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">Problem</entry>
+                  <entry valign="top" class="- topic/entry ">Solution</entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Unable to ping the NMC</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">If the NMC’s status LED is green and the link LED
+is flashing, try to ping another node on the same network segment
+as the NMC. If that does not work, try the following:</ph>
+                     <ul class="- topic/ul ">
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">Verify if the TCP/IP setting configuration of the NMC is set
+manually or obtained through DHCP or BOOTP.</ph>
+                        </li>
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">Verify the number of the subnet bits set for the NMC’s
+subnet mask.</ph>
+                        </li>
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">Check any VLAN, firewall, or proxy configurations.</ph>
+                        </li>
+                     </ul>
+                     <ph class="- topic/ph ">Check the NMC status and system info through the local serial
+interface. If the NMC’s status LED is not solid green and/or
+the link LED is not flashing, perform the following checks:</ph>
+                     <ul class="- topic/ul ">
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">Verify that the NMC is properly connected in the system.</ph>
+                        </li>
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">Check that the Ethernet cable is connected securely to your
+network and the NMC. If there is an issue with the Ethernet cable,
+try a second cable.</ph>
+                        </li>
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">Verify that the network device (switch) port the NMC is connected
+to is not disabled, or that the port speed is set incorrectly.</ph>
+                        </li>
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">Check that your network DHCP or BOOTP server is active.</ph>
+                        </li>
+                     </ul>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Cannot allocate the communications port through a terminal
+program</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Before you can use a terminal program to configure the
+NMC, you must shut down any application, service, or program using
+the communications port.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Cannot access the command line interface through a serial
+connection</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ul class="- topic/ul ">
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">Verify that the NMC LEDs are illuminated and the NMC is powered
+on.</ph>
+                        </li>
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">Make sure that you did not change the baud rate. Try 2400,
+9600, 19200, or 38400.</ph>
+                        </li>
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">Check your PC’s COM port configuration.</ph>
+                        </li>
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">Make sure the port is not already in use.</ph>
+                        </li>
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">Verify that the serial cable is firmly attached to the NMC
+and PC.</ph>
+                        </li>
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">Verify that the cable part number being used is compatible.</ph>
+                        </li>
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">Verify that <uicontrol class="+ topic/ph ui-d/uicontrol ">Scroll Lock</uicontrol> is not disabled
+on your keyboard.</ph>
+                        </li>
+                     </ul>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Cannot access
+the command line interface remotely</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ul class="- topic/ul ">
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">Make sure you are using the correct access method, Telnet
+or Secure SHell (SSH). An Administrator can enable these access methods.
+By default, Telnet is disabled.</ph>
+                        </li>
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">For SSH, the NMC may be creating a host key. The NMC can take
+up to one minute to create the host key, and SSH is inaccessible for
+that time.</ph>
+                        </li>
+                     </ul>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Cannot access the web interface</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ul class="- topic/ul ">
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">Verify that HTTP or HTTPS access is enabled and configured
+correctly.</ph>
+                        </li>
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">Make sure you are specifying the correct URL, that is consistent
+with the security system used by the NMC. SSL requires HTTPS, not
+HTTP, at the beginning of the URL.</ph>
+                        </li>
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">Verify that you can ping the NMC.</ph>
+                        </li>
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">Verify that you are using a supported web browser.</ph>
+                        </li>
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">If the NMC has just restarted and SSL security is being set
+up, the NMC may be generating a server certificate. The NMC can take
+up to one minute to create this certificate, and the SSL server is
+not available during that time.</ph>
+                        </li>
+                     </ul>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Cannot access the NMC from EcoStruxture
+or another asset software</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ul class="- topic/ul ">
+                        <li class="- topic/li ">
+                           <ph class="- topic/ph ">Make sure that EcoStruxture (or asset software) is correctly
+configured for the NMC.</ph>
+                        </li>
+                        <li platform="Modular-DC Modular-Inverter Modular-AC" class="- topic/li ">
+                           <ph class="- topic/ph ">Check that
+the <uicontrol platform="Modular-DC" class="+ topic/ph ui-d/uicontrol ">About &gt; Charger</uicontrol>
+                              <uicontrol platform="Modular-AC" class="+ topic/ph ui-d/uicontrol ">About &gt; UPS</uicontrol>
+                              <uicontrol platform="Modular-Inverter" class="+ topic/ph ui-d/uicontrol ">About &gt; Inverter</uicontrol> page displays
+the correct information for the system.</ph>
+                        </li>
+                     </ul>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </conbody>
+</concept>

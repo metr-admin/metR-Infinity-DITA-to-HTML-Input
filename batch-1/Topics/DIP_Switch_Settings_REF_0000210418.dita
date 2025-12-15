@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+           id="DIPSwitchSettings-95C8006B"
+           translate="yes"
+           xml:lang="en"
+           ditaarch:DITAArchVersion="1.3"
+           domains="(topic reference)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+           class="- topic/topic       reference/reference ">
+   <title class="- topic/title ">DIP Switch Settings</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-12+05:30" class="- topic/created "/>
+         <revised modified="2025-11-12" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>dip-switch</indexterm>
+            <indexterm>dip-switch-settings</indexterm>
+            <indexterm>sw1001</indexterm>
+            <indexterm>sw1002</indexterm>
+            <indexterm>configuration-switch</indexterm>
+            <!-- Process layer -->
+            <indexterm>set-dip-switches</indexterm>
+            <indexterm>interpret-switch-map</indexterm>
+            <indexterm>enable-disable-features</indexterm>
+            <indexterm>backup-and-restore-settings</indexterm>
+            <indexterm>verify-configuration</indexterm>
+            <!-- Context layer -->
+            <indexterm>feature-configuration</indexterm>
+            <indexterm>operation-mode-selection</indexterm>
+            <indexterm>factory-defaults</indexterm>
+            <indexterm>service-configuration</indexterm>
+            <indexterm>safety-and-operational-settings</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="DIP Switch Settings — Reference"/>
+         <othermeta name="shortdesc" content="Reference table and explanation for DIP switch settings (e.g., SW1001, SW1002) describing feature enablement, monitoring and default positions."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="dip-switch;sw1001;sw1002;switch-map;configuration-table"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:dip-switch-configuration;industry:uninterruptible-power-supply"/>
+         <othermeta name="tags" content="dip-switch,configuration,settings,feature-enable,defaults"/>
+         <othermeta name="usecase" content="document-dip-switch-settings-and-configuration-guidance"/>
+      </metadata>
+   </prolog>
+   
+   <refbody>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Power Block Fans</title>
+         <fig class="- topic/fig ">
+            <title class="- topic/title ">Power block fans 1 to 6</title>
+            <image href="../Images/fans_powerblocks_schematic_0000211057.png"
+                   scalefit="yes"
+                   scope="local"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <table class="- topic/table ">
+            <title class="- topic/title ">Enable fan monitoring for fans 1, 2, and 3 (SW1001)</title>
+            <tgroup cols="4" class="- topic/tgroup ">
+               <colspec colname="col1" class="- topic/colspec "/>
+               <colspec colname="col2" class="- topic/colspec "/>
+               <colspec colname="col3" class="- topic/colspec "/>
+               <colspec colname="col4" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry "/>
+                     <entry valign="top" class="- topic/entry ">Fan 1</entry>
+                     <entry valign="top" class="- topic/entry ">Fan 2</entry>
+                     <entry valign="top" class="- topic/entry ">Fan 3</entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">DIP switch</entry>
+                     <entry class="- topic/entry ">SW1001:1</entry>
+                     <entry class="- topic/entry ">SW1001:2</entry>
+                     <entry class="- topic/entry ">SW1001:3</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">ON</entry>
+                     <entry class="- topic/entry ">enable</entry>
+                     <entry class="- topic/entry ">enable</entry>
+                     <entry class="- topic/entry ">enable</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">OFF</entry>
+                     <entry class="- topic/entry ">—</entry>
+                     <entry class="- topic/entry ">—</entry>
+                     <entry class="- topic/entry ">—</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">Affected connector</entry>
+                     <entry class="- topic/entry ">J1007:3</entry>
+                     <entry class="- topic/entry ">J1007:2</entry>
+                     <entry class="- topic/entry ">J1007:1</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table class="- topic/table ">
+            <title class="- topic/title ">Enable fan monitoring for fans 4, 5, and 6 (SW1002)</title>
+            <tgroup cols="4" class="- topic/tgroup ">
+               <colspec colname="col1" class="- topic/colspec "/>
+               <colspec colname="col2" class="- topic/colspec "/>
+               <colspec colname="col3" class="- topic/colspec "/>
+               <colspec colname="col4" class="- topic/colspec "/>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry "/>
+                     <entry class="- topic/entry ">
+                        <b class="+ topic/ph hi-d/b ">Fan 4</b>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <b class="+ topic/ph hi-d/b ">Fan 5</b>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <b class="+ topic/ph hi-d/b ">Fan 6</b>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">DIP switch</entry>
+                     <entry class="- topic/entry ">SW1002:1</entry>
+                     <entry class="- topic/entry ">SW1002:2</entry>
+                     <entry class="- topic/entry ">SW1002:3</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">ON</entry>
+                     <entry class="- topic/entry ">enable</entry>
+                     <entry class="- topic/entry ">enable</entry>
+                     <entry class="- topic/entry ">enable</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">OFF</entry>
+                     <entry class="- topic/entry ">—</entry>
+                     <entry class="- topic/entry ">—</entry>
+                     <entry class="- topic/entry ">—</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">Affected connector</entry>
+                     <entry class="- topic/entry ">J1009:1</entry>
+                     <entry class="- topic/entry ">J1009:2</entry>
+                     <entry class="- topic/entry ">J1009:3</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table class="- topic/table ">
+            <title class="- topic/title ">Select fan monitoring for fans 1 to 6</title>
+            <tgroup cols="3" class="- topic/tgroup ">
+               <colspec colname="col1" class="- topic/colspec "/>
+               <colspec colname="col2" class="- topic/colspec "/>
+               <colspec colname="col3" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">SW1000:1
+(Fans 1–3)</entry>
+                     <entry valign="top" class="- topic/entry ">SW1000:2 (Fans
+4–6)</entry>
+                     <entry valign="top" class="- topic/entry ">Function</entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">OFF</entry>
+                     <entry class="- topic/entry ">ON</entry>
+                     <entry class="- topic/entry ">Fans 1 to 3 are monitored<fn class="- topic/fn ">Monitored fans can generate the
+alarm signal.</fn>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">ON</entry>
+                     <entry class="- topic/entry ">OFF</entry>
+                     <entry class="- topic/entry ">Fans 4 to 6 are monitored<fn class="- topic/fn ">Monitored fans can generate the
+alarm signal.</fn>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">OFF</entry>
+                     <entry class="- topic/entry ">OFF</entry>
+                     <entry class="- topic/entry ">Fans 1 to 6 are monitored<fn class="- topic/fn ">Monitored fans can generate the
+alarm signal.</fn>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">ON</entry>
+                     <entry class="- topic/entry ">ON</entry>
+                     <entry class="- topic/entry ">No fans are monitored<fn class="- topic/fn ">No alarm signal can be generated (this
+setting is not to be used).</fn>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Static Bypass Switch Fans for 25–50 kVA Systems</title>
+         <fig class="- topic/fig ">
+            <title class="- topic/title ">Static bypass switch fans 1, 2, 4, and 5</title>
+            <image href="../Images/fan_sbs_schematic_0000211056.png"
+                   scalefit="yes"
+                   scope="local"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+      </section>
+      <section class="- topic/section ">
+         <table class="- topic/table ">
+            <title class="- topic/title ">Enable fan monitoring of fans 1 and 2 (SW1001)</title>
+            <tgroup cols="4" class="- topic/tgroup ">
+               <colspec colname="col1" class="- topic/colspec "/>
+               <colspec colname="col2" class="- topic/colspec "/>
+               <colspec colname="col3" class="- topic/colspec "/>
+               <colspec colname="col4" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry "/>
+                     <entry valign="top" class="- topic/entry ">Fan 1</entry>
+                     <entry valign="top" class="- topic/entry ">Fan 2</entry>
+                     <entry valign="top" class="- topic/entry ">Fan 3</entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">DIP switch</entry>
+                     <entry class="- topic/entry ">SW1001:1</entry>
+                     <entry class="- topic/entry ">SW1001:2</entry>
+                     <entry class="- topic/entry ">SW1001:3</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">ON</entry>
+                     <entry class="- topic/entry ">enable</entry>
+                     <entry class="- topic/entry ">enable</entry>
+                     <entry class="- topic/entry ">—</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">OFF</entry>
+                     <entry class="- topic/entry ">—</entry>
+                     <entry class="- topic/entry ">—</entry>
+                     <entry class="- topic/entry ">disable</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">Affected connector</entry>
+                     <entry class="- topic/entry ">J1007:3</entry>
+                     <entry class="- topic/entry ">J1007:2</entry>
+                     <entry class="- topic/entry ">J1007:1</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table class="- topic/table ">
+            <title class="- topic/title ">Enable fan monitoring of fans 4 and 5 (SW1002)</title>
+            <tgroup cols="4" class="- topic/tgroup ">
+               <colspec colname="col1" class="- topic/colspec "/>
+               <colspec colname="col2" class="- topic/colspec "/>
+               <colspec colname="col3" class="- topic/colspec "/>
+               <colspec colname="col4" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">DIP
+switch</entry>
+                     <entry valign="top" class="- topic/entry ">SW1002:1</entry>
+                     <entry valign="top" class="- topic/entry ">SW1002:2</entry>
+                     <entry valign="top" class="- topic/entry ">SW1002:3</entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">ON</entry>
+                     <entry class="- topic/entry ">enable</entry>
+                     <entry class="- topic/entry ">enable</entry>
+                     <entry class="- topic/entry ">—</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">OFF</entry>
+                     <entry class="- topic/entry ">—</entry>
+                     <entry class="- topic/entry ">—</entry>
+                     <entry class="- topic/entry ">disable</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">Affected fan</entry>
+                     <entry class="- topic/entry ">Fan
+4</entry>
+                     <entry class="- topic/entry ">Fan 5</entry>
+                     <entry class="- topic/entry ">Fan 6</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">Affected connector</entry>
+                     <entry class="- topic/entry ">J1009:1</entry>
+                     <entry class="- topic/entry ">J1009:2</entry>
+                     <entry class="- topic/entry ">J1009:3</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table class="- topic/table ">
+            <title class="- topic/title ">Select fan monitoring for fans 1, 2, 4, and 5</title>
+            <tgroup cols="3" class="- topic/tgroup ">
+               <colspec colname="col1" class="- topic/colspec "/>
+               <colspec colname="col2" class="- topic/colspec "/>
+               <colspec colname="col3" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">SW1000:1
+(Fans 1 to 3)</entry>
+                     <entry valign="top" class="- topic/entry ">SW1000:2 (Fans
+4 to 6)</entry>
+                     <entry valign="top" class="- topic/entry ">Function</entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">OFF</entry>
+                     <entry class="- topic/entry ">ON</entry>
+                     <entry class="- topic/entry ">Fans 1 and 2 are monitored<fn class="- topic/fn ">Monitored fans can generate the
+alarm signal.</fn>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">ON</entry>
+                     <entry class="- topic/entry ">OFF</entry>
+                     <entry class="- topic/entry ">Fans 4 and 5 are monitored<fn class="- topic/fn ">Monitored fans can generate the
+alarm signal.</fn>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">OFF</entry>
+                     <entry class="- topic/entry ">OFF</entry>
+                     <entry class="- topic/entry ">Fans 1, 2, 4, and 5 are monitored<fn class="- topic/fn ">Monitored fans can generate
+the alarm signal.</fn>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">ON</entry>
+                     <entry class="- topic/entry ">ON</entry>
+                     <entry class="- topic/entry ">No fans are monitored<fn class="- topic/fn ">No alarm signal can be generated (this
+setting is not to be used).</fn>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Static Bypass Switch Fans for 75–100 kVA Systems</title>
+         <fig class="- topic/fig ">
+            <title class="- topic/title ">Static bypass switch fans 1, 2, and 4</title>
+            <image href="../Images/fan_sbs75-100kva_schematic_0000223518.png"
+                   scalefit="yes"
+                   scope="local"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+      </section>
+      <section class="- topic/section ">
+         <table class="- topic/table ">
+            <title class="- topic/title ">Enable fan monitoring of fans 1 and 2 (SW1001)</title>
+            <tgroup cols="4" class="- topic/tgroup ">
+               <colspec colname="col1" class="- topic/colspec "/>
+               <colspec colname="col2" class="- topic/colspec "/>
+               <colspec colname="col3" class="- topic/colspec "/>
+               <colspec colname="col4" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry "/>
+                     <entry valign="top" class="- topic/entry ">Fan 1</entry>
+                     <entry valign="top" class="- topic/entry ">Fan 2</entry>
+                     <entry valign="top" class="- topic/entry ">Fan 3</entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">DIP switch</entry>
+                     <entry class="- topic/entry ">SW1001:1</entry>
+                     <entry class="- topic/entry ">SW1001:2</entry>
+                     <entry class="- topic/entry ">SW1001:3</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">ON</entry>
+                     <entry class="- topic/entry ">enable</entry>
+                     <entry class="- topic/entry ">enable</entry>
+                     <entry class="- topic/entry ">—</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">OFF</entry>
+                     <entry class="- topic/entry ">—</entry>
+                     <entry class="- topic/entry ">—</entry>
+                     <entry class="- topic/entry ">disable</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">Affected connector</entry>
+                     <entry class="- topic/entry ">J1007:3</entry>
+                     <entry class="- topic/entry ">J1007:2</entry>
+                     <entry class="- topic/entry ">J1007:1</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table class="- topic/table ">
+            <title class="- topic/title ">Enable fan monitoring of fan 4 (SW1002)</title>
+            <tgroup cols="4" class="- topic/tgroup ">
+               <colspec colname="col1" class="- topic/colspec "/>
+               <colspec colname="col2" class="- topic/colspec "/>
+               <colspec colname="col3" class="- topic/colspec "/>
+               <colspec colname="col4" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">DIP
+switch</entry>
+                     <entry valign="top" class="- topic/entry ">SW1002:1</entry>
+                     <entry valign="top" class="- topic/entry ">SW1002:2</entry>
+                     <entry valign="top" class="- topic/entry ">SW1002:3</entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">ON</entry>
+                     <entry class="- topic/entry ">enable</entry>
+                     <entry class="- topic/entry ">—</entry>
+                     <entry class="- topic/entry ">—</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">OFF</entry>
+                     <entry class="- topic/entry ">—</entry>
+                     <entry class="- topic/entry ">disable</entry>
+                     <entry class="- topic/entry ">disable</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">Affected fan</entry>
+                     <entry class="- topic/entry ">Fan
+4</entry>
+                     <entry class="- topic/entry ">Fan 5</entry>
+                     <entry class="- topic/entry ">Fan 6</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">Affected connector</entry>
+                     <entry class="- topic/entry ">J1009:1</entry>
+                     <entry class="- topic/entry ">J1009:2</entry>
+                     <entry class="- topic/entry ">J1009:3</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table class="- topic/table ">
+            <title class="- topic/title ">Select fan monitoring for fans 1, 2, and 4</title>
+            <tgroup cols="3" class="- topic/tgroup ">
+               <colspec colname="col1" class="- topic/colspec "/>
+               <colspec colname="col2" class="- topic/colspec "/>
+               <colspec colname="col3" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">SW1000:1
+(Fans 1 to 3)</entry>
+                     <entry valign="top" class="- topic/entry ">SW1000:2 (Fans
+4 to 6)</entry>
+                     <entry valign="top" class="- topic/entry ">Function</entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">OFF</entry>
+                     <entry class="- topic/entry ">ON</entry>
+                     <entry class="- topic/entry ">Fans 1 and 2 are monitored<fn class="- topic/fn ">Monitored fans can generate the
+alarm signal.</fn>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">ON</entry>
+                     <entry class="- topic/entry ">OFF</entry>
+                     <entry class="- topic/entry ">Fan 4 is monitored<fn class="- topic/fn ">Monitored fans can generate the alarm
+signal.</fn>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">OFF</entry>
+                     <entry class="- topic/entry ">OFF</entry>
+                     <entry class="- topic/entry ">Fans 1, 2, and 4 are monitored<fn class="- topic/fn ">Monitored fans can generate
+the alarm signal.</fn>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">ON</entry>
+                     <entry class="- topic/entry ">ON</entry>
+                     <entry class="- topic/entry ">No fans are monitored<fn class="- topic/fn ">No alarm signal can be generated (this
+setting is not to be used).</fn>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+   </refbody>
+</reference>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="FunctionCheckOfTheISBSSolution-5AEB6DC0"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Function Check of the ISBS Solution</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-01+05:30" class="- topic/created "/>
+         <revised modified="2025-12-01" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience
+            type="role"
+            otherprops="maintenance,engineering,commissioning,service technician,system operator,field technician"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>Independent Static Bypass Switch (ISBS)</indexterm>
+            <indexterm>ISBS module</indexterm>
+            <indexterm>bypass power path</indexterm>
+            <indexterm>control interface</indexterm>
+            <indexterm>status indicators</indexterm>
+            <indexterm>transfer contactors</indexterm>
+            <indexterm>system controller</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>ISBS function check</indexterm>
+            <indexterm>bypass transfer validation</indexterm>
+            <indexterm>synchronization testing</indexterm>
+            <indexterm>module-level diagnostics</indexterm>
+            <indexterm>fault simulation steps</indexterm>
+            <indexterm>response verification</indexterm>
+            <indexterm>test sequence documentation</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>critical bypass operations</indexterm>
+            <indexterm>fault tolerance environment</indexterm>
+            <indexterm>high-availability electrical systems</indexterm>
+            <indexterm>UPS failover testing</indexterm>
+            <indexterm>emergency operation domain</indexterm>
+            <indexterm>redundant power infrastructure</indexterm>
+            <indexterm>system reliability validation</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta 
+            name="title"
+            content="Function Check of the ISBS Solution"/>
+         
+         <othermeta 
+            name="shortdesc"
+            content="Explains how to perform a function check of the Independent Static Bypass Switch (ISBS), including synchronization testing, fault scenario validation, and system response assessment."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta 
+            name="entities"
+            content="static bypass switch; transfer contactors; control board; sensors; fault simulation tools; testing equipment"/>
+         
+         <othermeta 
+            name="taxonomy"
+            content="domain:industrial testing;usecase:ISBS-function-check;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta 
+            name="tags"
+            content="ISBS,function check,bypass testing,synchronization,system response"/>
+         
+         <othermeta 
+            name="usecase"
+            content="Guide technicians in validating the performance and reliability of the ISBS solution"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <hazardstatement type="note" class="+ topic/note hazard-d/hazardstatement ">
+         <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+            <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+            <howtoavoid class="+ topic/li hazard-d/howtoavoid ">When the manual bypass switch is in <b class="+ topic/ph hi-d/b ">Bypass</b> position,
+it is not possible for the system to automatically switch back to
+inverter operation in case the bypass mains becomes unavailable.</howtoavoid>
+         </messagepanel>
+      </hazardstatement>
+      <section class="- topic/section ">
+         <sectiondiv class="- topic/sectiondiv ">
+            <note class="- topic/note ">The bypass mains needs to be available
+and within tolerance. The static switch EN (BYP SSW) needs to be available.
+The switch over do not interrupt to the load.</note>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">How to Check the Function of the ISBS Controller</title>
+         <ol class="- topic/ol ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">Check that the system is in normal operation and that no alarms
+are active.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Switch to bypass operation:</p>
+               <note class="- topic/note ">The bypass mains needs
+to be available and within tolerance. The static switch EN (BYP SSW)
+needs to be available.</note>
+               <ol conref="1220236_How_to_Switch_from_Normal_Operation_to_Bypass_Operation_CPT_DD00545782.dita#HowToSwitchFromNormalOperationToByp-5AF57FF1/Switch-to-bypass_1220236"
+                   class="- topic/ol ">
+                  <li class="- topic/li "/>
+               </ol>
+            </li>
+            <li otherprops="2pMBS" class="- topic/li ">
+               <p class="- topic/p ">Check that the EN (BYP SSW) input switch
+and the external bypass input switch are closed. Turn the manual bypass
+switch to the <b class="+ topic/ph hi-d/b ">Bypass</b> position.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Check the status of all indication LEDs on the ISBS controller
+(A703) is ok:<ul class="- topic/ul ">
+                     <li class="- topic/li ">
+                        <p class="- topic/p ">The STATUS_1 LED should be flashing slowly (0.5 Hz).</p>
+                     </li>
+                     <li class="- topic/li ">
+                        <p class="- topic/p ">The STATUS_3 LED should be turned off.</p>
+                     </li>
+                     <li class="- topic/li ">
+                        <p class="- topic/p ">The 15V FAN LED is not used.</p>
+                     </li>
+                     <li class="- topic/li ">
+                        <p class="- topic/p ">All other LEDs should be turned on.</p>
+                     </li>
+                  </ul>For more information about the LEDs see the chapter <i class="+ topic/ph hi-d/i ">Troubleshooting
+the ISBS</i> in the <i class="+ topic/ph hi-d/i ">Operating Manual</i>.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Monitor the system output voltage before the manual bypass
+switch.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Reset button</b> on the controller (A070).</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Check that:<ul class="- topic/ul ">
+                     <li class="- topic/li ">
+                        <p class="- topic/p ">The ISBS controller (A703) switched to independent fire.</p>
+                     </li>
+                     <li class="- topic/li ">
+                        <p class="- topic/p ">The STATUS_3 LED is turned on.</p>
+                     </li>
+                     <li class="- topic/li ">
+                        <p class="- topic/p ">The STATUS_1 LED is flashing very fast (4Hz).</p>
+                     </li>
+                     <li class="- topic/li ">
+                        <p class="- topic/p ">The output is supplied over the static switch EN (BYP SSW).</p>
+                     </li>
+                     <li class="- topic/li ">
+                        <p class="- topic/p ">The break in output voltage &lt; 20ms.</p>
+                     </li>
+                     <li class="- topic/li ">
+                        <p class="- topic/p ">The <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph class="+ topic/ph pr-d/codeph ">Standby</codeph>.</p>
+                     </li>
+                     <li class="- topic/li ">
+                        <p class="- topic/p ">It is not possible to turn the system on by pressing the <b class="+ topic/ph hi-d/b ">On button</b> on the front panel. The system should be locked in
+ISBS operation.</p>
+                     </li>
+                  </ul>
+               </p>
+            </li>
+            <li otherprops="2pMBS" class="- topic/li ">
+               <p class="- topic/p ">Open the EN (BYP SSW) input switch to disconnect
+the bypass supply.</p>
+            </li>
+            <li platform="WxW" class="- topic/li ">
+               <p class="- topic/p ">Open the inverter input switch to disconnect
+the DC power supply.</p>
+            </li>
+            <li platform="WxW" class="- topic/li ">
+               <p class="- topic/p ">Discharge the DC capacitor by keeping the charging/discharge
+switch in position 1 until the warning LED turns off.</p>
+            </li>
+         </ol>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Restart the System</title>
+         <p class="- topic/p ">After the function of
+the ISBS have been tested and the controller board have been reset
+the system can be started again. To restart the system:</p>
+         <ol conref="1220236_How_to_Switch_from_ISS_or_ISBS_Operation_to_Normal_Operation_CPT_DD00545783.dita#HowToSwitchFromISSOrISBSOperationTo-5AEB8E5E/ISBS-restart_1220236"
+             class="- topic/ol ">
+            <li class="- topic/li "/>
+         </ol>
+         <p class="- topic/p ">The system is in normal operation and the load is supplied
+by the system.</p>
+      </section>
+   </conbody>
+</concept>

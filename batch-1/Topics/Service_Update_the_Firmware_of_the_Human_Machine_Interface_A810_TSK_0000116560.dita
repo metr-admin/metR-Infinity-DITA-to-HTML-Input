@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="UpdateTheFirmwareOfTheHumanMachineI-8F1D0CB4"
+      otherprops="Public"
+      translate="yes"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">Update the Firmware of the HMI Display(A810)</title>
+   <shortdesc class="- topic/shortdesc ">
+      <keyword class="- topic/keyword ">Reality EMEA</keyword>
+   </shortdesc>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-18+05:30" class="- topic/created "/>
+         <revised modified="2025-11-18" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-pxc-reality</indexterm>
+            <indexterm>human-machine-interface</indexterm>
+            <indexterm>hmi-display</indexterm>
+            <indexterm>hmi-firmware</indexterm>
+            <indexterm>service-port</indexterm>
+            <indexterm>usb-interface</indexterm>
+            <indexterm>hmi-connector</indexterm>
+            <!-- Process layer -->
+            <indexterm>firmware-update</indexterm>
+            <indexterm>connect-laptop-to-service-port</indexterm>
+            <indexterm>flash-firmware</indexterm>
+            <indexterm>backup-configuration</indexterm>
+            <indexterm>verify-display</indexterm>
+            <indexterm>rollback-procedure</indexterm>
+            <indexterm>post-update-test</indexterm>
+            <!-- Context layer -->
+            <indexterm>service-portal</indexterm>
+            <indexterm>onsite-maintenance</indexterm>
+            <indexterm>industrial-engineering</indexterm>
+            <indexterm>production-operations</indexterm>
+            <indexterm> uninterruptible power supply (UPS) systems</indexterm>
+            <indexterm>safety-procedures</indexterm>
+            <indexterm>on-site-service</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Update the Firmware of the HMI Display(A810)"/>
+         <othermeta name="shortdesc"
+            content="Stepwise procedure to update the firmware of the Human Machine Interface (HMI). Includes connection via the service port and verification steps."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="human machine interface;hmi display;service port;usb interface;hmi firmware"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:firmware-update-hmi-controller;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="firmware-update,hmi,service-port,flash-firmware,post-update-test"/>
+         <othermeta name="usecase" content="firmware-update-hmi-controller"/>
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <prereq class="- topic/section task/prereq ">
+         <indexterm class="- topic/indexterm ">HMI</indexterm>
+         <note class="- topic/note ">The update of the firmware
+on the controller box can be done via a RS232 serial connection.</note>
+      </prereq>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Connect your laptop to the service port (J405) located
+on the rear side of the front panel (A810).</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <note class="- topic/note ">Use the service port cable 940–0024D for the
+proper connection of all required signals.</note>
+            </stepxmp>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <fig class="- topic/fig ">
+                  <image href="../Images/location_of_service_port_j405_on_the_rear_side_of_the_front_panel_120mm_0000116570.svg"
+                         translate="yes"
+                         xml:lang="en"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Launch the UPS Tuner and select <uicontrol class="+ topic/ph ui-d/uicontrol ">Display Module</uicontrol>. After start-up, your laptop will automatically log in and the main
+menu appears on the terminal screen.</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <note class="- topic/note ">Navigate through the menu tree by typing the number
+of the submenu you wish to enter, followed by the <uicontrol class="+ topic/ph ui-d/uicontrol ">ENTER</uicontrol> key.</note>
+            </stepxmp>
+            <stepxmp class="- topic/itemgroup task/stepxmp "/>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Type <uicontrol class="+ topic/ph ui-d/uicontrol ">5</uicontrol> (<uicontrol class="+ topic/ph ui-d/uicontrol ">HMI Firmware
+Update</uicontrol>).</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <fig class="- topic/fig ">
+                  <image href="../Images/tunerhmia_0000148864.jpg"
+                         scalefit="yes"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Type <uicontrol class="+ topic/ph ui-d/uicontrol ">1</uicontrol> to initialize the HMI for
+the firmware update, or press the <uicontrol class="+ topic/ph ui-d/uicontrol ">ESC</uicontrol> key to
+abort. After successful initialization, the HMI waits for a new hex
+file.</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <fig class="- topic/fig ">
+                  <image href="../Images/tunerhmib_0000148863.jpg"
+                         scalefit="yes"
+                         placement="inline"
+                         class="- topic/image "/>
+                  <image href="../Images/tunerhmic_0000148862.jpg"
+                         scalefit="yes"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click on <uicontrol class="+ topic/ph ui-d/uicontrol ">Send file</uicontrol> and browse to
+the firmware file on your laptop and click on <uicontrol class="+ topic/ph ui-d/uicontrol ">Open</uicontrol>. </cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <fig class="- topic/fig ">
+                  <image href="../Images/tunerhmid_0000148861.jpg"
+                         scalefit="yes"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+               <fig class="- topic/fig ">
+                  <image href="../Images/tunerhmi1_0000148860.jpg"
+                         scalefit="yes"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">After the file transfer, the file checksum will now appear
+on the screen. Check if file checksum is correct before continuing.
+If the file checksum is not correct, press the <uicontrol class="+ topic/ph ui-d/uicontrol ">ESC</uicontrol> key.</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <fig class="- topic/fig ">
+                  <image href="../Images/tunerhmi2_0000148859.jpg"
+                         scalefit="yes"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Type <uicontrol class="+ topic/ph ui-d/uicontrol ">y</uicontrol> to confirm the update and
+copy the new firmware from the SRAM to the FLASH memory.</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <note class="- topic/note ">If you wish to cancel the update and keep the old firmware,
+press the <uicontrol class="+ topic/ph ui-d/uicontrol ">ESC</uicontrol> key.</note>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">After the firmware has been successfully updated and <uicontrol class="+ topic/ph ui-d/uicontrol ">Update done. Restart system...</uicontrol> appears on the screen,
+restart the HMI by either unplugging the HMI supply or switch the
+system off and then back on.</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <fig class="- topic/fig ">
+                  <image href="../Images/tunerhmi4_0000148858.jpg"
+                         scalefit="yes"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </stepxmp>
+         </step>
+      </steps>
+   </taskbody>
+</task>

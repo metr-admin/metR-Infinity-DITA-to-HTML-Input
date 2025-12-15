@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="UserAccountsAndAccess-5E2E507C"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">User Accounts</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-05+05:30" class="- topic/created "/>
+         <revised modified="2025-12-05" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-pxc-reality</indexterm>
+            <indexterm>user-management</indexterm>
+            <indexterm>access-control</indexterm>
+            <indexterm>authentication-module</indexterm>
+            <indexterm>role-based-access</indexterm>
+            <indexterm>nmc-user-db</indexterm>
+            <!-- Process layer -->
+            <indexterm>account-creation</indexterm>
+            <indexterm>password-reset</indexterm>
+            <indexterm>role-assignment</indexterm>
+            <indexterm>privilege-management</indexterm>
+            <indexterm>session-termination</indexterm>
+            <indexterm>audit-trail-review</indexterm>
+            <!-- Context layer -->
+            <indexterm>operator-administration</indexterm>
+            <indexterm>security-compliance</indexterm>
+            <indexterm>authorized-access</indexterm>
+            <indexterm>shift-handover</indexterm>
+            <indexterm>remote-administration</indexterm>
+            <indexterm>ups-network-management</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="NMC User Accounts and Access"/>
+         <othermeta name="shortdesc" content="Instructions for creating and managing user accounts, role assignments and access control for the Network Management Card."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="user-account; role; authentication-token; password-policy; audit-log; access-policy"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:user-account-and-access-management;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="users,accounts,access-control,authentication,roles,audit"/>
+         <othermeta name="usecase" content="manage user accounts and access roles on the Network Management Card for secure administration"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <section class="- topic/section ">
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">To access the NMC, a login with a user name
+and a password is always required. Both the user name and the password
+are case sensitive and can consist of maximum 64 characters.</p>
+            <p class="- topic/p ">There are different user types with different access levels: <ul class="- topic/ul ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">Super user:</b> Both CLI and GUI access. Full access to
+all menus and options. Can add new users and manage other users.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">Administrator:</b> Both CLI and GUI access. Full access
+to all menus and options. Can add new users.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">Device manager:</b> Both CLI and GUI access. Can only access
+the log options, event and system menu.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">Read-only user:</b> Only GUI access. Can view the same menus
+as the device manager but cannot configure, delete data, or use FTP
+options.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">Network-only user:</b> Only remote access to the CLI and
+GUI. Can only access the network settings.</p>
+                  </li>
+               </ul>
+               <note class="- topic/note ">Menus and options that a user does not have access to will
+appear grayed out.</note>
+            </p>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <sectiondiv class="- topic/sectiondiv ">
+            <table id="DefaultUserAndPasswordSettings-AAE2F9B2" class="- topic/table ">
+               <title class="- topic/title ">Default User and Password Settings</title>
+               <tgroup cols="3" class="- topic/tgroup ">
+                  <colspec colname="col1" class="- topic/colspec "/>
+                  <colspec colname="col2" class="- topic/colspec "/>
+                  <colspec colname="col3" class="- topic/colspec "/>
+                  <thead class="- topic/thead ">
+                     <row class="- topic/row ">
+                        <entry valign="top" class="- topic/entry ">
+                           <ph class="- topic/ph ">User Types</ph>
+                        </entry>
+                        <entry valign="top" class="- topic/entry ">
+                           <ph class="- topic/ph ">Default
+User Name</ph>
+                        </entry>
+                        <entry valign="top" class="- topic/entry ">
+                           <ph class="- topic/ph ">Default
+Password</ph>
+                        </entry>
+                     </row>
+                  </thead>
+                  <tbody class="- topic/tbody ">
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <ph class="- topic/ph ">Super user</ph>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <ph translate="no" class="- topic/ph ">apc</ph>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <ph translate="no" class="- topic/ph ">apc</ph>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <ph class="- topic/ph ">Administrator</ph>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <ph translate="no" class="- topic/ph ">apc</ph>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <ph translate="no" class="- topic/ph ">apc</ph>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <ph class="- topic/ph ">Device manager</ph>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <ph translate="no" class="- topic/ph ">device</ph>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <ph translate="no" class="- topic/ph ">apc</ph>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <ph class="- topic/ph ">Read-only user</ph>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <ph translate="no" class="- topic/ph ">readonly</ph>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <ph translate="no" class="- topic/ph ">apc</ph>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <ph class="- topic/ph ">Network-only user</ph>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <ph translate="no" class="- topic/ph ">–</ph>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <ph translate="no" class="- topic/ph ">–</ph>
+                        </entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+            <note class="- topic/note ">A user is automatically logged out after 3 minutes (default
+setting) of inactivity, this can be changed from the user settings.</note>
+         </sectiondiv>
+      </section>
+   </conbody>
+</concept>

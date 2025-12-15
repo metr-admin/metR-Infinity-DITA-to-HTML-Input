@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="SNMPv3Access-80A504FD"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">SNMPv3 Access</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-05+05:30" class="- topic/created "/>
+         <revised modified="2025-12-05" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-pxc-reality</indexterm>
+            <indexterm>snmpv3-agent</indexterm>
+            <indexterm>user-based-security</indexterm>
+            <indexterm>network-management-card</indexterm>
+            <indexterm>mib-access</indexterm>
+            <indexterm>security-module</indexterm>
+            <!-- Process layer -->
+            <indexterm>snmpv3-configuration</indexterm>
+            <indexterm>usm-user-creation</indexterm>
+            <indexterm>auth-and-priv-setup</indexterm>
+            <indexterm>encryption-configuration</indexterm>
+            <indexterm>access-listing</indexterm>
+            <indexterm>snmpv3-troubleshooting</indexterm>
+            <!-- Context layer -->
+            <indexterm>secure-monitoring</indexterm>
+            <indexterm>management-plane</indexterm>
+            <indexterm>telemetry-security</indexterm>
+            <indexterm>remote-operations</indexterm>
+            <indexterm>compliance</indexterm>
+            <indexterm>ups-network-management</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="NMC SNMPv3 Access"/>
+         <othermeta name="shortdesc" content="Instructions for configuring SNMPv3 access to the Network Management Card, including USM user setup, authentication and privacy parameters."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="snmpv3-user; auth-protocol; priv-protocol; mib-access; agent-port; access-list"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:snmpv3-secure-access-configuration;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="snmpv3,security,usm,authentication,encryption,monitoring"/>
+         <othermeta name="usecase" content="configure and secure SNMPv3 access for protected monitoring and MIB retrieval"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">SNMPv3 uses user profiles to define what IP addresses on the network
+has access to the SNMP communication from the NMC. The settings for
+SNMPv3 can be configured from the CLI or the web interface.</p>
+      <section class="- topic/section ">
+         <title class="- topic/title ">SNMPv3 User Profiles</title>
+         <p class="- topic/p ">To use SNMPv3 a user
+profile needs to be defined. Each user profile has a user name, authentication
+setting and encryption setting. It is possible to defined up to four
+different user profiles.</p>
+         <ul class="- topic/ul ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">The user name:</uicontrol> Used to
+identify the user profile. SNMPv3 checks that the user name is the
+same in the user profile and the data package being transmitted. The
+maximum length of a user name is 32 ASCII characters.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Authentication passphrase:</uicontrol> Provides the SNMPv3 communication with authentication. Checks that
+the NMS that communicates with the device is the NMS it claims to
+be. The authentication passphrase verifies that the message has not
+been changed during transmission. It also verifies that the transmission
+was not delayed, copied and then sent again. The length of a passphrase
+can be between 15-32 ASCII characters.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Privacy passphrase:</uicontrol> 
+Provides the SNMPv3 communication with encryption. Ensures the privacy
+of the data sent with to and from an NMS. The length of a privacy
+passphrase can be between 15-32 ASCII characters.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Authentication protocol:</uicontrol> Use either SHA or MD5 as an authentication protocol.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Privacy protocol:</uicontrol> Use
+either AES or DES as a privacy protocol. For encryption of the SNMPv3
+requests it is required to use both an authentication and a privacy
+protocol. To set a privacy protocol an authentication protocol must
+be selected.</p>
+            </li>
+         </ul>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Configure SNMPv3 from the CLI</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <ol class="- topic/ol ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Log in to the CLI.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">To see the configuration options type <codeph translate="no" class="+ topic/ph pr-d/codeph ">snmpV3 ?</codeph>.<note class="- topic/note ">In the table <codeph translate="no" class="+ topic/ph pr-d/codeph ">[n]</codeph> is the user name number 1, 2, 3 or 4.</note>
+                     <table class="- topic/table ">
+                        <tgroup cols="4" class="- topic/tgroup ">
+                           <colspec colname="COLSPEC0" colwidth="1*" class="- topic/colspec "/>
+                           <colspec colname="col1" colwidth="1*" class="- topic/colspec "/>
+                           <colspec colname="col2" colwidth="1*" class="- topic/colspec "/>
+                           <colspec colname="col3" colwidth="2*" class="- topic/colspec "/>
+                           <thead class="- topic/thead ">
+                              <row class="- topic/row ">
+                                 <entry valign="top" class="- topic/entry ">
+                                    <ph class="- topic/ph ">Setting</ph>
+                                 </entry>
+                                 <entry valign="top" class="- topic/entry ">
+                                    <ph class="- topic/ph ">Command</ph>
+                                 </entry>
+                                 <entry valign="top" class="- topic/entry ">
+                                    <ph class="- topic/ph ">Argument</ph>
+                                 </entry>
+                                 <entry valign="top" class="- topic/entry ">
+                                    <ph class="- topic/ph ">Description</ph>
+                                 </entry>
+                              </row>
+                           </thead>
+                           <tbody class="- topic/tbody ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Help</ph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">?</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph "/>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Shows the command help.</ph>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">SNMPv3 access</ph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">–S</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">enable | disable</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Enables or disables SNMP version 3.</ph>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">User name</ph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">–u[n]</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">&lt;User Name&gt;</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Set a user name.</ph>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Authentication phrase</ph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">–a[n]</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">&lt;Authentication Phrase&gt;</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Set an authentication phrase.</ph>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Encryption phrase</ph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">–c[n]</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">&lt;Crypt Phrase&gt;</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Set an encryption phrase.</ph>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Authentication protocol</ph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">–ap[n]</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">sha | md5 | none</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Set the type of authentication protocol.</ph>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph "> Privacy (encryption) protocol</ph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">–pp[n]</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">eas | des | none</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Set the privacy (encryption) protocol.</ph>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Slave address</ph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">–ac[n]</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">enable | disable</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Enable or disable access.</ph>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">User access</ph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">–au[n]</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">&lt;User Name&gt;</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Give access to a user.</ph>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Set IPv4/IPv6 address or host name</ph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">–n[n]</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">&lt;IP address&gt; | &lt;Host Name&gt;</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Set the IPv4/IPv6
+address or the host name of the network management station.</ph>
+                                 </entry>
+                              </row>
+                           </tbody>
+                        </tgroup>
+                     </table>
+                  </p>
+               </li>
+            </ol>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Configure SNMPv3 from the Web Interface</title>
+         <ol class="- topic/ol ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">Log in to the web interface.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Navigate to <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Configuration &gt; Network
+&gt; SNMPv3 &gt; User Profile</uicontrol>.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Click on a user name to view the settings for it.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Here it is possible to configure the <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">User Name</uicontrol>, <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Authentication Passphrase</uicontrol>, <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Authentication Protocol</uicontrol>, <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Privacy Passphrase</uicontrol> and <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Privacy Protocol</uicontrol>.</p>
+               <fig class="- topic/fig ">
+                  <image href="../Images/NMC_Configuration_Network_SNMPv3_Access-Control_Configure-user_access_0000337185.png"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Click <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Apply</uicontrol> to save any
+changes.<note conref="../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/restart_to_apply_change"
+                        class="- topic/note ">A reboot of the NMC might be necessary to activate changes.</note>
+               </p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Navigate to <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Configuration &gt; Network
+&gt; SNMPv3 &gt; Access Control</uicontrol>.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Click on a user name to view the settings for it.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Here it is possible to enable <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Access</uicontrol> and configure the <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">NMS IP/Host Name</uicontrol> for the selected <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">User Name</uicontrol>. Use the drop-down menu to change <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">User
+Name</uicontrol> to configure.</p>
+               <fig class="- topic/fig ">
+                  <image href="../Images/NMC_Configuration_Network_SNMPv3_Access-Control_Configure-user_0000337184.png"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Click <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Apply</uicontrol> to save any
+changes.<note conref="../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/restart_to_apply_change"
+                        class="- topic/note ">A reboot of the NMC might be necessary to activate changes.</note>
+               </p>
+            </li>
+         </ol>
+      </section>
+   </conbody>
+</concept>

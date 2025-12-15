@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+           id="SBSControllerA401-4C4567B9"
+           otherprops="Public"
+           translate="yes"
+           xml:lang="en"
+           ditaarch:DITAArchVersion="1.3"
+           domains="(topic reference)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+           class="- topic/topic       reference/reference ">
+   <title class="- topic/title ">Static Bypass Switch Controller Board (A401)</title>
+   <shortdesc class="- topic/shortdesc ">
+      <keyword class="- topic/keyword ">Reality EMEA</keyword>
+   </shortdesc>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-18+05:30" class="- topic/created "/>
+         <revised modified="2025-11-18" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-pxc-reality</indexterm>
+            <indexterm>static-bypass-switch</indexterm>
+            <indexterm>controller-box</indexterm>
+            <indexterm>controller-board</indexterm>
+            <indexterm>sbs-module</indexterm>
+            <indexterm>interface-board</indexterm>
+            <indexterm>main-contactor</indexterm>
+            <!-- Process layer -->
+            <indexterm>start-up</indexterm>
+            <indexterm>firmware-update</indexterm>
+            <indexterm>troubleshooting</indexterm>
+            <indexterm>diagnostics</indexterm>
+            <indexterm>replace-module</indexterm>
+            <indexterm>measure-voltage-and-current</indexterm>
+            <indexterm>status-monitoring</indexterm>
+            <!-- Context layer -->
+            <indexterm>ups-installation</indexterm>
+            <indexterm>ups-troubleshooting</indexterm>
+            <indexterm>industrial-engineering</indexterm>
+            <indexterm>production-operations</indexterm>
+            <indexterm> uninterruptible power supply (UPS) systems</indexterm>
+            <indexterm>safety-procedures</indexterm>
+            <indexterm>maintenance-workshop</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Static Bypass Switch Controller Board (A401)"/>
+         <othermeta name="shortdesc" content="The static bypass switch has its own controller; this topic describes the A401 controller board, its role and interactions with the static bypass switch."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="static bypass switch;controller board;interface board;main contactor;power module"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:maintenance-and-service;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="static-bypass,controller-board,firmware,diagnostics,status-monitoring"/>
+         <othermeta name="usecase" content="maintenance-and-service"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section class="- topic/section ">
+         <p class="- topic/p ">The static bypass switch has its own controller. If the
+output voltage goes out of tolerance due to a malfunction in the main
+controller, the static bypass switch controller becomes active and
+independent. Following a malfunction in the main controller, the static
+bypass switch controller takes over and transfers immediately to static
+bypass.</p>
+         <p class="- topic/p ">Under normal operating conditions, the static bypass
+switch is fully controlled by the UPS controller. The static bypass
+switch controller analyses the control signals from the UPS controller,
+performs the corresponding tasks, and returns a status signal to the
+UPS controller. If the communication fails, the static bypass switch
+can operate independently.</p>
+         <p class="- topic/p ">The firmware mainly performs the
+following tasks:<ul class="- topic/ul ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Measures the control frequency coming from the UPS controller
+and reacts accordingly</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Controls the thyristors</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Generates a status feedback signal for the UPS controller</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Monitors the PSU</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Controls three LEDs and two open collector outputs to display
+the actual state</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Measures and evaluates the system output voltage</p>
+               </li>
+            </ul>
+         </p>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Status LEDs for the Static Bypass Switch Controller</title>
+         <fig class="- topic/fig ">
+            <image href="../Images/Reality_static_switch_controller_board_status_leds_120mm_0000152213.svg"
+                   scalefit="yes"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <table class="- topic/table ">
+            <tgroup cols="4" class="- topic/tgroup ">
+               <colspec colname="COLSPEC1" colwidth="20%" class="- topic/colspec "/>
+               <colspec colname="COLSPEC0" colwidth="30%" class="- topic/colspec "/>
+               <colspec colname="col1" class="- topic/colspec "/>
+               <colspec colname="col2" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">LED
+number </entry>
+                     <entry valign="top" class="- topic/entry ">LED
+function</entry>
+                     <entry valign="top" class="- topic/entry ">LED
+status</entry>
+                     <entry valign="top" class="- topic/entry ">Controller
+status</entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry morerows="3" class="- topic/entry ">1</entry>
+                     <entry morerows="3" class="- topic/entry ">Indication
+of the operation mode</entry>
+                     <entry class="- topic/entry ">LED
+ON</entry>
+                     <entry class="- topic/entry ">
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">DISARM</uicontrol> mode<fn class="- topic/fn ">The system is in standby mode.</fn>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">Slow
+flashing LED</entry>
+                     <entry class="- topic/entry ">
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">ARM</uicontrol> mode<fn class="- topic/fn ">The system is in normal operation.</fn>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">Fast
+flashing LED </entry>
+                     <entry class="- topic/entry ">
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">FIRE</uicontrol> mode<fn class="- topic/fn ">The system is in requested or temporary
+static bypass operation.</fn>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">Very
+fast flashing LED</entry>
+                     <entry class="- topic/entry ">
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">INDEPENDENT FIRE</uicontrol> mode</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">2</entry>
+                     <entry class="- topic/entry ">Controller OK</entry>
+                     <entry class="- topic/entry ">LED
+ON</entry>
+                     <entry class="- topic/entry ">Controller
+OK</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">3</entry>
+                     <entry class="- topic/entry ">Independent
+operation<fn class="- topic/fn ">When the static bypass switch is in the operation mode <uicontrol class="+ topic/ph ui-d/uicontrol ">ARM</uicontrol> or <uicontrol class="+ topic/ph ui-d/uicontrol ">FIRE</uicontrol> and the control signal
+from the UPS controller is lost, the static bypass switch controller
+can become independent.</fn>
+                     </entry>
+                     <entry class="- topic/entry ">LED ON</entry>
+                     <entry class="- topic/entry ">Independent operation</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">ARM State (Normal Operation)</title>
+         <p class="- topic/p ">When the control
+signal is lost in ARM state, the output voltage is monitored by the
+fast-detector during 500 ms:<ul class="- topic/ul ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">If the output voltage remains OK, the static bypass switch
+switches to <uicontrol class="+ topic/ph ui-d/uicontrol ">DISARM</uicontrol> after 500 ms.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">If the output voltage is lost within these 500 ms, the static
+bypass switch switches to <uicontrol class="+ topic/ph ui-d/uicontrol ">FIRE</uicontrol> state.</p>
+               </li>
+            </ul>After the static bypass switch has switched to <uicontrol class="+ topic/ph ui-d/uicontrol ">FIRE</uicontrol> state, it again monitors the output voltage (RMS detector and DC
+detector):<ul class="- topic/ul ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">If the voltage is lost, the static bypass switch switches to <uicontrol class="+ topic/ph ui-d/uicontrol ">ERROR</uicontrol> state. A reset is then required in order to turn
+on the static bypass switch again. Within the first 200 ms after switching
+to <uicontrol class="+ topic/ph ui-d/uicontrol ">FIRE</uicontrol>, the static bypass switch does not
+switch off.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">If DC is detected on the output, the static bypass switch switches
+to <uicontrol class="+ topic/ph ui-d/uicontrol ">ERROR</uicontrol> state. A reset is then required in
+order to turn on the static bypass switch again. Within the first
+200 ms after switching to <uicontrol class="+ topic/ph ui-d/uicontrol ">FIRE</uicontrol>, the static
+bypass switch does not switch off.</p>
+               </li>
+            </ul>
+         </p>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">FIRE State (Requested or Temporary Static Bypass Operation)</title>
+         <p class="- topic/p ">When the control signal is lost in the <uicontrol class="+ topic/ph ui-d/uicontrol ">FIRE</uicontrol> state, the static bypass switch stays in the <uicontrol class="+ topic/ph ui-d/uicontrol ">FIRE</uicontrol> state. The static bypass switch monitors the output voltage (RMS
+detector and DC detector):<ul class="- topic/ul ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">If the voltage is lost, the static bypass switch switches to <uicontrol class="+ topic/ph ui-d/uicontrol ">ERROR</uicontrol> state. A reset is then required in order to turn
+on the static bypass switch again.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">If DC is detected on the output, the static bypass switch switches
+to <uicontrol class="+ topic/ph ui-d/uicontrol ">ERROR</uicontrol> state. A reset is then required in
+order to turn on the static bypass switch again.</p>
+               </li>
+            </ul>
+         </p>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Regaining Control over the Static Bypass Switch</title>
+         <p class="- topic/p ">When the UPS controller recovers from an inoperable state or a
+cable is reconnected, control over the static bypass switch can be
+regained.<ul class="- topic/ul ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">If the static bypass switch is independently in <uicontrol class="+ topic/ph ui-d/uicontrol ">FIRE</uicontrol> state, control cannot be regained. A firmware restart
+(reset) is required.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">If the static bypass switch is in <uicontrol class="+ topic/ph ui-d/uicontrol ">ERROR</uicontrol> state due to independent switching off from <uicontrol class="+ topic/ph ui-d/uicontrol ">FIRE</uicontrol> state (low voltage or DC detection), control cannot be regained.
+A firmware restart (reset) is required.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">If the static bypass switch is in another state, it reacts
+immediately to the regained control signal.</p>
+               </li>
+            </ul>
+         </p>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Overview of the Static Bypass Switch Controller Board</title>
+         <p class="- topic/p ">
+            <fig class="- topic/fig ">
+               <title class="- topic/title ">Static bypass switch controller board</title>
+               <image href="../Images/0j-0p2560_sbscontrollerboard_120mm_0000117137.svg"
+                      scalefit="yes"
+                      translate="no"
+                      xml:lang="en"
+                      placement="inline"
+                      class="- topic/image "/>
+               <ol class="- topic/ol ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">To interface board: SBS control in</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Bypass input</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">To power connection board: sense of bypass voltage</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Voltage selection for static bypass switch supply T403</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">To thyristor (Q401)</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Voltage selection / Output (bypass) / Voltage measuring</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">To fan module: E401 fan supply and fan speed sense</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">To interface board: fan speed control and fan speed monitoring</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">LED indications</p>
+                  </li>
+               </ol>
+            </fig>
+         </p>
+      </section>
+   </refbody>
+</reference>

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="SNMPv1Access-80A305E2"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">SNMPv1 Access</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-05+05:30" class="- topic/created "/>
+         <revised modified="2025-12-05" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-pxc-reality</indexterm>
+            <indexterm>snmpv1-agent</indexterm>
+            <indexterm>network-management-card</indexterm>
+            <indexterm>snmp-mib</indexterm>
+            <indexterm>trap-destination</indexterm>
+            <indexterm>community-string</indexterm>
+            <!-- Process layer -->
+            <indexterm>snmpv1-configuration</indexterm>
+            <indexterm>community-string-setup</indexterm>
+            <indexterm>snmp-get-and-set</indexterm>
+            <indexterm>mib-query</indexterm>
+            <indexterm>trap-enabling</indexterm>
+            <indexterm>port-configuration</indexterm>
+            <!-- Context layer -->
+            <indexterm>legacy-monitoring</indexterm>
+            <indexterm>management-network</indexterm>
+            <indexterm>data-centre-telemetry</indexterm>
+            <indexterm>monitoring-integration</indexterm>
+            <indexterm>remote-operations</indexterm>
+            <indexterm>ups-network-management</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="NMC SNMPv1 Access"/>
+         <othermeta name="shortdesc" content="Guidance on configuring SNMPv1 access to the Network Management Card including community string setup and MIB queries."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="snmpv1; community-string; oid; trap-destination; agent-port; mib-file"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:snmpv1-access-configuration;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="snmpv1,community,mib,traps,monitoring,legacy"/>
+         <othermeta name="usecase" content="configure SNMPv1 access for monitoring integration and trap notifications"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">SNMPv1 uses access communities to define what IP addresses on the
+network have access to the SNMP communication from the NMC.</p>
+      <section class="- topic/section ">
+         <title class="- topic/title ">SNMPv1 Access Communities</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">To
+use SNMPv1 an access community is used. Each access community has
+a community name, an IP name or a host name and an access type. It
+is possible to defined up to four different access communities.</p>
+            <ul class="- topic/ul ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">
+                     <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">The community name:</uicontrol> Used
+for access by a network management station (NMS). The maximum length
+of a community name is 15 ASCII characters. </p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">
+                     <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">The NMS IP/host name:</uicontrol> The IPv4 or IPv6 address, IP address mask, or host name that controls
+access by NMSs. A host name or a specific IP address (for example,
+149.225.12.1) allows access only by the NMS at that location. IP addresses
+that contain 255 restrict access as follows:<ul class="- topic/ul ">
+                        <li class="- topic/li ">
+                           <p class="- topic/p ">149.225.12.255: Access by NMS on the 149.225.12 segment.</p>
+                        </li>
+                        <li class="- topic/li ">
+                           <p class="- topic/p ">149.225.255.255: Access by NMS on the 149.225 segment.</p>
+                        </li>
+                        <li class="- topic/li ">
+                           <p class="- topic/p ">149.255.255.255: Access by NMS on the 149 segment.</p>
+                        </li>
+                        <li class="- topic/li ">
+                           <p class="- topic/p ">0.0.0.0 (the default setting) which can also be expressed as
+255.255.255.255: Access by NMS on any segment.</p>
+                        </li>
+                     </ul>
+                  </p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">
+                     <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">The access type:</uicontrol> There
+are four different access types:<ul class="- topic/ul ">
+                        <li class="- topic/li ">
+                           <p class="- topic/p ">Read: GETS only, at any time</p>
+                        </li>
+                        <li class="- topic/li ">
+                           <p class="- topic/p ">Write: GETS at any time, and SETS when no user is logged onto
+the UI or command line interface.</p>
+                        </li>
+                        <li class="- topic/li ">
+                           <p class="- topic/p ">Write+: GETS and SETS at any time.</p>
+                        </li>
+                        <li class="- topic/li ">
+                           <p class="- topic/p ">Disable: No GETS or SETS at any time.</p>
+                        </li>
+                     </ul>
+                  </p>
+               </li>
+            </ul>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Configure SNMPv1 from the CLI</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <ol class="- topic/ol ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Log in to the CLI.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">To see the configuration options type <codeph translate="no" class="+ topic/ph pr-d/codeph ">snmp ?</codeph>
+                     <note class="- topic/note ">In the table <codeph translate="no" class="+ topic/ph pr-d/codeph ">[n]</codeph> is the access community number 1, 2, 3 or 4.</note>
+                  </p>
+                  <table class="- topic/table ">
+                     <tgroup cols="4" class="- topic/tgroup ">
+                        <colspec colname="COLSPEC0" colwidth="1*" class="- topic/colspec "/>
+                        <colspec colname="col1" colwidth="1*" class="- topic/colspec "/>
+                        <colspec colname="col2" colwidth="1*" class="- topic/colspec "/>
+                        <colspec colname="col3" colwidth="2*" class="- topic/colspec "/>
+                        <thead class="- topic/thead ">
+                           <row class="- topic/row ">
+                              <entry valign="top" class="- topic/entry ">
+                                 <ph class="- topic/ph ">Setting</ph>
+                              </entry>
+                              <entry valign="top" class="- topic/entry ">
+                                 <ph class="- topic/ph ">Command</ph>
+                              </entry>
+                              <entry valign="top" class="- topic/entry ">
+                                 <ph class="- topic/ph ">Argument</ph>
+                              </entry>
+                              <entry valign="top" class="- topic/entry ">
+                                 <ph class="- topic/ph ">Description</ph>
+                              </entry>
+                           </row>
+                        </thead>
+                        <tbody class="- topic/tbody ">
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <ph class="- topic/ph ">Help</ph>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <codeph translate="no" class="+ topic/ph pr-d/codeph ">?</codeph>
+                              </entry>
+                              <entry class="- topic/entry "/>
+                              <entry class="- topic/entry ">
+                                 <ph class="- topic/ph ">Shows the command help.</ph>
+                              </entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <ph class="- topic/ph ">SNMPv1
+access</ph>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <codeph translate="no" class="+ topic/ph pr-d/codeph ">–S</codeph>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <codeph translate="no" class="+ topic/ph pr-d/codeph ">enable | disable</codeph>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <ph class="- topic/ph ">Enables or disables SNMP version
+1.</ph>
+                              </entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <ph class="- topic/ph ">Community
+name</ph>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <codeph translate="no" class="+ topic/ph pr-d/codeph ">–c[n]</codeph>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <codeph translate="no" class="+ topic/ph pr-d/codeph ">&lt;Community
+Name&gt;</codeph>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <ph class="- topic/ph ">Specify a community name.</ph>
+                              </entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <ph class="- topic/ph ">Community
+access type</ph>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <codeph translate="no" class="+ topic/ph pr-d/codeph ">–a[n]</codeph>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <codeph translate="no" class="+ topic/ph pr-d/codeph ">read | write |
+writeplus | disable</codeph>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <ph class="- topic/ph ">Set the access type of a community.</ph>
+                              </entry>
+                           </row>
+                           <row class="- topic/row ">
+                              <entry class="- topic/entry ">
+                                 <ph class="- topic/ph ">Community IPv4/IPv6 address or host
+name</ph>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <codeph translate="no" class="+ topic/ph pr-d/codeph ">–n[n]</codeph>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <codeph translate="no" class="+ topic/ph pr-d/codeph ">&lt;IP address&gt; | &lt;Host Name&gt;</codeph>
+                              </entry>
+                              <entry class="- topic/entry ">
+                                 <ph class="- topic/ph ">Specify the
+IPv4/IPv6 address or the host name of community.</ph>
+                              </entry>
+                           </row>
+                        </tbody>
+                     </tgroup>
+                  </table>
+               </li>
+            </ol>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Configure SNMPv1 from the Web Interface</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <ol class="- topic/ol ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Log in to the web interface.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Navigate to <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Configuration &gt; Network
+&gt; SNMPv1 &gt; Access Control</uicontrol>.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Click on a community name to configure <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Community Name</uicontrol>, <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">NMS IP/Host
+Name</uicontrol> and <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Access Type</uicontrol>.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Click <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Apply</uicontrol> to save any
+changes.</p>
+                  <note conref="../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/restart_to_apply_change"
+                        class="- topic/note ">A reboot of the NMC might be necessary to activate changes.</note>
+               </li>
+            </ol>
+            <image href="../Images/NMC_Configuration_Network_SNMPv1_Access-Control_Configure-Comunity_0000337186.png"
+                   placement="inline"
+                   class="- topic/image "/>
+         </sectiondiv>
+      </section>
+   </conbody>
+</concept>

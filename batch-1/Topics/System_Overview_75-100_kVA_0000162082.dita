@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+           id="SystemOverview-10F67377"
+           otherprops="Public"
+           translate="yes"
+           xml:lang="en"
+           ditaarch:DITAArchVersion="1.3"
+           domains="(topic reference)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+           class="- topic/topic       reference/reference ">
+   <title class="- topic/title ">System Overview</title>
+   <shortdesc class="- topic/shortdesc ">
+      <keyword class="- topic/keyword ">Reality NAM UPS with transformer 25–100 kVA</keyword>
+   </shortdesc>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-18+05:30" class="- topic/created "/>
+         <revised modified="2025-11-18" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>ups-system</indexterm>
+            <indexterm>power-inverter</indexterm>
+            <indexterm>rectifier</indexterm>
+            <indexterm>transformer</indexterm>
+            <indexterm>battery-bank</indexterm>
+            <!-- Process layer -->
+            <indexterm>install-system</indexterm>
+            <indexterm>operate-system</indexterm>
+            <indexterm>monitor-system</indexterm>
+            <indexterm>perform-safety-checks</indexterm>
+            <indexterm>system-overview-procedure</indexterm>
+            <!-- Context layer -->
+            <indexterm>industrial-power</indexterm>
+            <indexterm>data-center</indexterm>
+            <indexterm>manufacturing-plant</indexterm>
+            <indexterm>electrical-room</indexterm>
+            <indexterm>high-availability</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="System Overview 75–100 kVA"/>
+         <othermeta name="shortdesc" content="Overview of the 75–100 kVA UPS system architecture, main components and operational considerations."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="ups system;inverter;rectifier;transformer;battery bank;control panel"/>
+         <othermeta name="taxonomy" content="domain:industrial-power;usecase:provide-system-overview-and-operational-guidance;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="system-overview,installation,operation,monitoring,safety"/>
+         <othermeta name="usecase" content="provide-system-overview-and-operational-guidance"/>
+      </metadata>
+   </prolog>
+   
+   <refbody>
+      <section class="- topic/section ">
+         <title class="- topic/title ">One Line Diagrams</title>
+         <note class="- topic/note ">Individual cabinets
+are not shown in the one line drawings.</note>
+         <fig expanse="page" class="- topic/fig ">
+            <title class="- topic/title ">25–50 kVA – Single Mains</title>
+            <image href="../Images/one-line_diagram_25-37_kva_ups_single_mains_170mm_0000161885.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <fig expanse="page" class="- topic/fig ">
+            <title class="- topic/title ">25–50 kVA – Dual Mains</title>
+            <image href="../Images/one-line_diagram_25-37_kva_ups_dual_mains_170mm_0000161884.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <fig expanse="page" class="- topic/fig ">
+            <title class="- topic/title ">75–100 kVA – Single Mains</title>
+            <image href="../Images/one-line_diagram_75-100_kva_ups_single_mains_170mm_0000162093.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <fig expanse="page" class="- topic/fig ">
+            <title class="- topic/title ">75–100 kVA – Dual Mains</title>
+            <image href="../Images/one-line_diagram_25-37_kva_ups_dual_mains_170mm_0000161884.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Breaker Overview</title>
+         <note class="- topic/note ">The 25–37.5 kVA
+UPS for single mains does not have a transformer cabinet as the input
+transformer is placed inside the UPS cabinet. Breakers are the same
+as shown here.</note>
+         <table outputclass="font:10" pgwide="1" class="- topic/table ">
+            <tgroup cols="2" class="- topic/tgroup ">
+               <colspec colname="col1" class="- topic/colspec "/>
+               <colspec colname="col2" class="- topic/colspec "/>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">MIB</entry>
+                     <entry class="- topic/entry ">Mains input breaker</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">BIB</entry>
+                     <entry class="- topic/entry ">Bypass
+input breaker</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">UIB</entry>
+                     <entry class="- topic/entry ">Unit input breaker</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">SSIB</entry>
+                     <entry class="- topic/entry ">Static switch
+input breaker</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">MBB</entry>
+                     <entry class="- topic/entry ">Maintenance
+bypass breaker</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">UOB</entry>
+                     <entry class="- topic/entry ">Unit output
+breaker</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">BB</entry>
+                     <entry class="- topic/entry ">Battery breaker
+in the external battery solution (not shown here)</entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">KS</entry>
+                     <entry class="- topic/entry ">Kirk key
+solenoid interlock</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="none"
+                outputclass="font:10"
+                pgwide="1"
+                class="- topic/table ">
+            <tgroup cols="2" class="- topic/tgroup ">
+               <colspec colname="col1" colsep="0" class="- topic/colspec "/>
+               <colspec colname="col2" class="- topic/colspec "/>
+               <tbody class="- topic/tbody ">
+                  <row rowsep="0" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <fig class="- topic/fig ">
+                           <title class="- topic/title ">25–50 kVA – Bottom Entry System for Single Mains
+(50 kVA UPS Shown)</title>
+                           <image href="../Images/Reality_50kwsingleupsbotcableconoverview_120mm_0000164477.svg"
+                                  placement="inline"
+                                  class="- topic/image "/>
+                        </fig>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <fig class="- topic/fig ">
+                           <title class="- topic/title ">25–50 kVA – Bottom Entry System for Dual Mains
+(50 kVA UPS Shown)</title>
+                           <image href="../Images/Reality_50kwdualupsbotcableconoverview_120mm_0000164476.svg"
+                                  placement="inline"
+                                  class="- topic/image "/>
+                        </fig>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry rowsep="0" class="- topic/entry ">
+                        <fig class="- topic/fig ">
+                           <title class="- topic/title ">25–50 kVA – Top Entry System for Single Mains
+(50 kVA UPS Shown)</title>
+                           <image href="../Images/Reality_50kwsingleupstopcableconoverview_120mm_0000164597.svg"
+                                  placement="inline"
+                                  class="- topic/image "/>
+                        </fig>
+                     </entry>
+                     <entry rowsep="0" class="- topic/entry ">
+                        <fig class="- topic/fig ">
+                           <title class="- topic/title ">25–50 kVA – Top Entry System for Dual Mains (50
+kVA UPS Shown)</title>
+                           <image href="../Images/Reality_50kwdualupstopcableconoverview_120mm_0000164594.svg"
+                                  placement="inline"
+                                  class="- topic/image "/>
+                        </fig>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <fig class="- topic/fig ">
+                           <title class="- topic/title ">75–100 kVA UPS – Single Mains (100 kVA UPS Shown)</title>
+                           <image href="../Images/Reality_75-100_kwsingle_topentryinstalloverview_w120mm_0000164633.svg"
+                                  placement="inline"
+                                  class="- topic/image "/>
+                        </fig>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <fig class="- topic/fig ">
+                           <title class="- topic/title ">75–100 kVA UPS – Dual Mains (100 kVA UPS Shown)</title>
+                           <image href="../Images/Reality_75-100_kwdual_topentryinstalloverview_w120mm_0000164632.svg"
+                                  placement="inline"
+                                  class="- topic/image "/>
+                        </fig>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+   </refbody>
+</reference>

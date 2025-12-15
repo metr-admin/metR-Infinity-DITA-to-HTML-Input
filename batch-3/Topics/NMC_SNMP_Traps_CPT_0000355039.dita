@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="SNMPTraps-80A5F685"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">SNMP Trap Receiver</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-05+05:30" class="- topic/created "/>
+         <revised modified="2025-12-05" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-pxc-reality</indexterm>
+            <indexterm>network-management-card</indexterm>
+            <indexterm>snmp-agent</indexterm>
+            <indexterm>trap-handler</indexterm>
+            <indexterm>management-server</indexterm>
+            <indexterm>snmp-service-module</indexterm>
+            <!-- Process layer -->
+            <indexterm>snmp-trap-configuration</indexterm>
+            <indexterm>trap-formatting</indexterm>
+            <indexterm>trap-routing</indexterm>
+            <indexterm>trap-filtering</indexterm>
+            <indexterm>trap-subscription</indexterm>
+            <indexterm>trap-verification</indexterm>
+            <!-- Context layer -->
+            <indexterm>network-monitoring</indexterm>
+            <indexterm>remote-alerting</indexterm>
+            <indexterm>data-centre-telemetry</indexterm>
+            <indexterm>event-notification</indexterm>
+            <indexterm>alarm-integration</indexterm>
+            <indexterm>ups-network-management</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="NMC SNMP Traps"/>
+         <othermeta name="shortdesc" content="Describes SNMP trap types, configuration and handling for the Network Management Card to enable event notifications to management systems."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="snmp-trap; snmp-manager; oid-list; trap-destination; trap-filter; network-management-card"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:snmp-event-notification-configuration;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="snmp,traps,alerts,event-notification,monitoring,network-management"/>
+         <othermeta name="usecase" content="configure and manage SNMP traps from the Network Management Card for event notification"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">A SNMP trap receiver needs to be configured to receive the SNMP
+traps from the NMC in a Reality system. Up to six trap receivers can
+be added for each NMC.</p>
+      <p class="- topic/p ">Super users, administrators and device users can add and configure
+SNMP traps from the CLI and the web interface.</p>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Add and Configure SNMP Trap Receivers from the CLI</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <ol class="- topic/ol ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Log in to the CLI.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">To see the configuration options type <codeph translate="no" class="+ topic/ph pr-d/codeph ">snmptrap ?</codeph>.<note class="- topic/note ">In the table <codeph translate="no" class="+ topic/ph pr-d/codeph ">[n]</codeph> is the number of the trap receiver (1–6).</note>
+                     <table class="- topic/table ">
+                        <tgroup cols="4" class="- topic/tgroup ">
+                           <colspec colname="col2" colwidth="1*" class="- topic/colspec "/>
+                           <colspec colname="COLSPEC0" colwidth="1*" class="- topic/colspec "/>
+                           <colspec colname="col3" colwidth="1*" class="- topic/colspec "/>
+                           <colspec colname="col4" colwidth="2*" class="- topic/colspec "/>
+                           <thead class="- topic/thead ">
+                              <row class="- topic/row ">
+                                 <entry valign="top" class="- topic/entry ">
+                                    <ph class="- topic/ph ">Setting</ph>
+                                 </entry>
+                                 <entry valign="top" class="- topic/entry ">
+                                    <ph class="- topic/ph ">Command</ph>
+                                 </entry>
+                                 <entry valign="top" class="- topic/entry ">
+                                    <ph class="- topic/ph ">Argument</ph>
+                                 </entry>
+                                 <entry valign="top" class="- topic/entry ">
+                                    <ph class="- topic/ph ">Description</ph>
+                                 </entry>
+                              </row>
+                           </thead>
+                           <tbody class="- topic/tbody ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Community</ph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">-c[n]</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">&lt;Community Name&gt;</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Select what SNMPv1 community name to use.</ph>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Receiver NMS IP</ph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">-r[n]</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">&lt;IP address&gt;</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Set the IP address for the trap receiver.</ph>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Language</ph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">-l[n]</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">&lt;Language&gt;</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Select language code.</ph>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Trap Type</ph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">-t[n]</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">snmpV3 | snmpV1</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Select if the trap receiver should use SNMPv3 or SNMPv1.</ph>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Generation</ph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">-g[n]</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">enable | disable</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Enable or disable trap generation.</ph>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Auth Traps</ph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">-a[n]</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">enable | disable</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Enable or disable
+trap authentication for SNMPv1.</ph>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">User Name</ph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">-u[n]</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <codeph translate="no" class="+ topic/ph pr-d/codeph ">profile1 | profile2 | profile3 | profile4</codeph>
+                                 </entry>
+                                 <entry class="- topic/entry ">
+                                    <ph class="- topic/ph ">Select what SNMPv3 user name to use.</ph>
+                                 </entry>
+                              </row>
+                           </tbody>
+                        </tgroup>
+                     </table>
+                  </p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">For example, to set the trap receiver number 1 to an IP address
+of 255.255.255.255 using SNMPv3 and the user name for profile1 type: <codeph translate="no" class="+ topic/ph pr-d/codeph ">snmptrap -r1 255.255.255.255 -t1 snmpV3 -u1 profile1
+-g1 enable</codeph> and press <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol>.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">If the SNMP trap command was entered correctly a <codeph translate="no" class="+ topic/ph pr-d/codeph ">Success</codeph> response is displayed, indicating
+that the SNMP trap was created with the chosen settings.</p>
+               </li>
+            </ol>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Add and Configure SNMP Trap Receivers from the Web
+Interface</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <ol class="- topic/ol ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Log in to the web interface.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Navigate to <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Configuration &gt; Notification
+&gt; SNMP Traps &gt; Trap Receivers</uicontrol>.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Here a list of the current trap receivers is displayed, if
+there are any. To configure an existing trap receiver, click on the
+NMS IP/host name.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">To add a new trap receiver:<ol class="- topic/ol ">
+                        <li class="- topic/li ">
+                           <p class="- topic/p ">Click <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Add Trap Receiver</uicontrol>. Here the settings for the SNMP trap can be configured.</p>
+                           <fig class="- topic/fig ">
+                              <image href="../Images/NMC_Configuration_Network_SNMP-Traps_0000375536.png"
+                                     placement="inline"
+                                     class="- topic/image "/>
+                           </fig>
+                        </li>
+                        <li class="- topic/li ">
+                           <p class="- topic/p ">Check the <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Enable</uicontrol> box
+under trap generation.</p>
+                        </li>
+                        <li class="- topic/li ">
+                           <p class="- topic/p ">Specify the IP address of the trap receiver under <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">NMS IP/Host Name</uicontrol>.</p>
+                        </li>
+                        <li class="- topic/li ">
+                           <p class="- topic/p ">Select either SNMPv3 or SNMPv1 to use. For SNMPv3 select the
+user name that should be used. For SNMPv1 select the community name
+to use and select if the traps should use authentication.</p>
+                        </li>
+                        <li class="- topic/li ">
+                           <p class="- topic/p ">Click <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Apply</uicontrol> to save any
+changes.</p>
+                        </li>
+                     </ol>
+                  </p>
+               </li>
+            </ol>
+         </sectiondiv>
+      </section>
+   </conbody>
+</concept>

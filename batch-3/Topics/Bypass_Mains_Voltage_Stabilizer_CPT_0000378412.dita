@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="BypassMainsVoltageStabilizer-9F9C055E"
+         otherprops="generalM bypassStabilizer"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Bypass Mains Voltage Stabilizer</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-04+05:30" class="- topic/created "/>
+         <revised modified="2025-12-04" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>mains-voltage-stabilizer</indexterm>
+            <indexterm>auto-voltage-regulator</indexterm>
+            <indexterm>line-conditioning-module</indexterm>
+            <indexterm>input-transformer-bank</indexterm>
+            <indexterm>power-factor-correction-unit</indexterm>
+            <!-- Process layer -->
+            <indexterm>voltage-stabilization-setup</indexterm>
+            <indexterm>stabilizer-synchronisation</indexterm>
+            <indexterm>phase-balance-check</indexterm>
+            <indexterm>stabilizer-maintenance-routine</indexterm>
+            <indexterm>harmonic-analysis-procedure</indexterm>
+            <!-- Context layer -->
+            <indexterm>industrial-mains-conditioning</indexterm>
+            <indexterm>generator-paralleling-consideration</indexterm>
+            <indexterm>critical-load-protection</indexterm>
+            <indexterm>power-generation-site</indexterm>
+            <indexterm>mining-site-power-quality</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="bypass mains voltage stabilizer"/>
+         <othermeta name="shortdesc" content="Defines mains voltage stabilizer bypass modes, setup, and checks for maintaining power quality during transfer."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="stabilizer;avr;transformer;harmonic-filter;pf-corrector"/>
+         <othermeta name="taxonomy" content="domain:power-quality;usecase:voltage-stabilization;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="stabilizer;voltage;power-quality;harmonics;maintenance"/>
+         <othermeta name="usecase" content="describe bypass and setup for mains voltage stabilizer to maintain power quality"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <div class="- topic/div ">
+         <p class="- topic/p ">The bypass mains stabilizer <b class="+ topic/ph hi-d/b ">T090</b> is a combination of
+a variable auto transformer <b class="+ topic/ph hi-d/b ">T2</b>, a motor <b class="+ topic/ph hi-d/b ">M1</b>, a booster
+transformer <b class="+ topic/ph hi-d/b ">T1</b> and an electronic controller <b class="+ topic/ph hi-d/b ">N1</b>.</p>
+         <table class="- topic/table ">
+            <tgroup cols="2" class="- topic/tgroup ">
+               <colspec colname="col1" colwidth="2.00*" class="- topic/colspec "/>
+               <colspec colname="col2" colwidth="60.00mm" class="- topic/colspec "/>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry align="center" colsep="0" class="- topic/entry ">
+                        <fig class="- topic/fig ">
+                           <image href="../Images/Bypass_Transformer_Working_Principle_0000378503.svg"
+                                  placement="inline"
+                                  class="- topic/image "/>
+                        </fig>
+                     </entry>
+                     <entry valign="bottom" class="- topic/entry ">
+                        <sl class="- topic/sl ">
+                           <sli class="- topic/sli ">
+                              <b class="+ topic/ph hi-d/b ">(M1)</b> Motor</sli>
+                           <sli class="- topic/sli ">
+                              <b class="+ topic/ph hi-d/b ">(N1)</b> Electronic controller</sli>
+                           <sli class="- topic/sli ">
+                              <b class="+ topic/ph hi-d/b ">(T1)</b> Variable auto transformer</sli>
+                           <sli class="- topic/sli ">
+                              <b class="+ topic/ph hi-d/b ">(T2)</b> Booster transformer</sli>
+                        </sl>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </div>
+      <div class="- topic/div ">
+         <p class="- topic/p ">The electronic controller <b class="+ topic/ph hi-d/b ">N1</b> compares the output voltage
+with the adjusted set-point value. Depending on the difference between
+the measured and set-point value, the motor <b class="+ topic/ph hi-d/b ">M1</b> will adjust
+the variable auto transformer <b class="+ topic/ph hi-d/b ">T2</b>.</p>
+         <p class="- topic/p ">The adjusted voltage
+of the variable auto transformer <b class="+ topic/ph hi-d/b ">T2</b> is transferred to the primary
+winding of the booster transformer <b class="+ topic/ph hi-d/b ">T1</b>, which is rated for the
+maximum bypass mains voltage deviation. The secondary winding of the
+booster transformer <b class="+ topic/ph hi-d/b ">T1</b> is placed in the line branch of the
+bypass mains to compensate for voltage variations. </p>
+         <p class="- topic/p ">With the
+bypass mains stabilizer <b class="+ topic/ph hi-d/b ">T090</b> the actual value of the output
+voltage will be observed with an accuracy of ± 1 % at a deviation
+of the incoming bypass mains voltage of ±10 / ±15 / ±20
+% of the set-point value (depending on type of transformer). A change
+of the load has no influence on the accuracy of the output voltage.</p>
+      </div>
+   </conbody>
+</concept>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="OverviewOfTheNetworkMonitoringSyste-5B1916F6"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Overview of the Network Monitoring System</title>
+   <shortdesc class="- topic/shortdesc "/>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates>
+         <created date="2025-12-04T15:00:00+05:30"/>
+         <revised modified="2025-12-04T15:00:00+05:30"/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="engineering,security,maintenance,production,management,quality"/>
+         <keywords>
+            <!-- product layer -->
+            <indexterm>network-monitoring-agent</indexterm>
+            <indexterm>snmp-trap-collector</indexterm>
+            <indexterm>syslog-forwarder</indexterm>
+            <indexterm>secure-telemetry-gateway</indexterm>
+            <indexterm>monitoring-dashboard</indexterm>
+            <!-- process layer -->
+            <indexterm>device-onboarding</indexterm>
+            <indexterm>alerting-configuration</indexterm>
+            <indexterm>health-check-polling</indexterm>
+            <indexterm>log-retention-policy</indexterm>
+            <indexterm>secure-credentials-rotation</indexterm>
+            <!-- context layer -->
+            <indexterm>cybersecurity-operational-monitoring</indexterm>
+            <indexterm>industrial-control-systems-monitoring</indexterm>
+            <indexterm>remote-site-telemetry</indexterm>
+            <indexterm>data-center-security</indexterm>
+            <indexterm>regulatory-compliance-audit</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="CySec overview of the network monitoring system"/>
+         <othermeta name="shortdesc" content="High level overview of the network monitoring architecture, agents and security considerations for telemetry from UPS and associated systems."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="snmp agent;syslog server;telemetry gateway;dashboard;alert rule"/>
+         <othermeta name="taxonomy" content="domain:security-operations/usecase:network-monitoring/industry:uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="monitoring,telemetry,security,agent-onboarding"/>
+         <othermeta name="usecase" content="overview and secure deployment of network monitoring"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <fig expanse="page" class="- topic/fig ">
+         <p class="- topic/p ">The network monitoring system in Reality UPS’s and inverters
+provides the possibility to obtain readings, measurements, events
+and logs via a secure one-way communication from the controller board.</p>
+         <image href="../Images/Network-Management-System-Overview_Solids-01_0000332006.svg"
+                scalefit="yes"
+                placement="inline"
+                class="- topic/image "/>
+      </fig>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Parts of the Network Monitoring System</title>
+         <p class="- topic/p ">The
+network monitoring system consists of:</p>
+         <ul class="- topic/ul ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">The communication interface, extends the signal from the controller
+board and to the smart slot translator.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">The smart slot translator, converts the signal from the controller
+board to another type of protocol. Allows for local connection to
+the NMC.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">The <b class="+ topic/ph hi-d/b ">Network Management Card (NMC)</b>, offers secure local
+and/or remote monitoring of Reality systems.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">The options slot, is an additional slot for an optional extra
+card. It can be used to for example connect another NMC card for additional
+ports, to use different settings or for redundancy.</p>
+            </li>
+         </ul>
+      </section>
+   </conbody>
+</concept>

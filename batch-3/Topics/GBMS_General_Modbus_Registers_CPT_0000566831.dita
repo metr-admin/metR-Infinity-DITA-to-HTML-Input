@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="GeneralModbusRegisters-800684AE"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">General Modbus Registers</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-05T13:00:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-05T13:00:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="engineering,automation,maintenance,service,quality"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>modbus-register-map</indexterm>
+            <indexterm>holding-registers</indexterm>
+            <indexterm>input-registers</indexterm>
+            <indexterm>coil-registers</indexterm>
+            <indexterm>g.bms-communication</indexterm>
+            <!-- Process layer -->
+            <indexterm>register-addressing-schema</indexterm>
+            <indexterm>read-write-procedures</indexterm>
+            <indexterm>data-scaling-and-units</indexterm>
+            <indexterm>polling-interval-recommendations</indexterm>
+            <indexterm>error-handling-and-timeouts</indexterm>
+            <!-- Context layer -->
+            <indexterm>scada-and-nms-integration</indexterm>
+            <indexterm>industrial-protocol-conversion</indexterm>
+            <indexterm>data-centre-power-monitoring</indexterm>
+            <indexterm>utility-substation-monitoring</indexterm>
+            <indexterm>manufacturing-floor-control</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="General Modbus Registers"/>
+         <othermeta name="shortdesc" content="Canonical modbus register map and usage guidance for interacting with G BMS devices and modules."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="modbus map; register types; scaling factors; function codes"/>
+         <othermeta name="taxonomy" content="domain:protocols;usecase:modbus-reference;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="modbus,protocol,reference"/>
+         <othermeta name="usecase" content="reference for engineers integrating modbus devices"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">These registers are in <u class="+ topic/ph hi-d/u ">0 base</u> and are <u class="+ topic/ph hi-d/u ">unsigned</u>.</p>
+      <table class="- topic/table ">
+         <tgroup cols="3" class="- topic/tgroup ">
+            <colspec colname="col1" colwidth="1*" class="- topic/colspec "/>
+            <colspec colname="col2" colwidth="2*" class="- topic/colspec "/>
+            <colspec colname="col3" colwidth="3*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Register </ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Name</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Description</ph>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1000 </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">BACS_ALARM</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">This register contains multiple flags.
+For information about the flags see <xref href="GBMS_Alarm_Flag_Descriptions_CPT_0000566828.dita#AlarmFlagDescriptions-80086A12/GeneralStatusFlagsDescription-7B645E46"
+                              scope="local"
+                              type="table"
+                              class="- topic/xref "/>.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1001</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">BACS_ALARM</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">This register contains multiple flags.
+For information about the flags see <xref href="GBMS_Alarm_Flag_Descriptions_CPT_0000566828.dita#AlarmFlagDescriptions-80086A12/BatteryStatusFlagsDescription-7B646215"
+                              scope="local"
+                              type="table"
+                              class="- topic/xref "/>.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1002</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">BACS_ALARM</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">This register contains multiple flags.
+For information about the flags see <xref href="GBMS_Alarm_Flag_Descriptions_CPT_0000566828.dita#AlarmFlagDescriptions-80086A12/AlarmFlagsDescription-7B64646A"
+                              scope="local"
+                              type="table"
+                              class="- topic/xref "/>.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1003</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">BACS_NUMSTRINGS</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The number of strings in the setup.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1004</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">BACS_NUMMODULES </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The total number of modules in the
+setup.</ph>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </conbody>
+</concept>

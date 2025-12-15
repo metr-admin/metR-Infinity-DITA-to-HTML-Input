@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="HowToStartTheBatteryTest-0057898C"
+      translate="yes"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">How to Start the Battery Capacity Probe</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-06T19:29:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-06T19:29:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- product layer -->
+            <indexterm>metr-pxc-reality</indexterm>
+            <indexterm>ups-battery</indexterm>
+            <indexterm>battery-management-system</indexterm>
+            <indexterm>charge-controller</indexterm>
+            <indexterm>battery-sensors</indexterm>
+            <!-- process layer -->
+            <indexterm>start-battery-test</indexterm>
+            <indexterm>pre-test-checks</indexterm>
+            <indexterm>configure-test-parameters</indexterm>
+            <indexterm>monitor-charge-discharge</indexterm>
+            <indexterm>log-test-results</indexterm>
+            <!-- context layer -->
+            <indexterm>commissioning-procedure</indexterm>
+            <indexterm>preventive-maintenance</indexterm>
+            <indexterm>data-center-power</indexterm>
+            <indexterm>battery-performance-evaluation</indexterm>
+            <indexterm>safety-procedure</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="How to Start the Battery Test"/>
+         <othermeta name="shortdesc" content="Procedure to perform battery functional and performance tests for UPS systems."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="battery cells;bms;charge-controller;test-instrumentation;control-panel"/>
+         <othermeta name="taxonomy" content="domain:power-systems;usecase:battery-functional-test;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="battery-test,commissioning,bms,performance"/>
+         <othermeta name="usecase" content="functional and performance testing during commissioning and maintenance"/>
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <prereq class="- topic/section task/prereq ">
+         <hazardstatement id="LossOfOutputVoltageAfterABatteryTes-1B1944A9"
+                          type="notice"
+                          class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard ">Loss of Output Voltage</typeofhazard>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid ">After a battery test the battery is discharged or partially
+discharged and it may take up to 24 hours to fully recharge it again.</howtoavoid>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid ">Make sure to coordinate and schedule the test with the
+responsible personnel and users of the connected consumers.</howtoavoid>
+            </messagepanel>
+         </hazardstatement>
+         <p class="- topic/p ">If it is not possible to start
+the battery test (button is gray), it could be because: <ul class="- topic/ul ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">That the duration since the last time the mains was unavailable
+(or the rectifier mains breaker was opened) is too short.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">That the load current is too low.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">That the battery breaker is open.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Rectifier modules are in boost charge (charge), equalization
+charge or battery operation (batterytest).</p>
+               </li>
+            </ul>
+         </p>
+      </prereq>
+      <steps class="- topic/ol task/steps ">
+         <step conref="M_How_to_Start_the_Relay_Tests_TSK_0000752494.dita#HowToStartTheRelayTests-FD3177D6/M_User-Access_Service"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step conref="M_How_to_Start_the_Battery_Circuit_Test_TSK_0000755301.dita#HowToStartTheBatteryCircuitTest-0056FABE/FromTheMenuBarNavigateToServiceDCSy-0057E33A"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Press the <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Start</uicontrol> button
+in line with <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Start battery capacity probe</uicontrol> to start the test.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <fig class="- topic/fig ">
+                  <image href="../Images/Battery-tests_0000755264.png"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To end the battery test early, press the <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Abort</uicontrol> in line with <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Abort battery capacity probe</uicontrol>.</cmd>
+            <info class="- topic/itemgroup task/info "/>
+         </step>
+      </steps>
+      <result class="- topic/section task/result ">
+         <p class="- topic/p ">The test will run for the defined requirement (time or
+capacity) or both requirements (time and capacity), depending on the
+settings.</p>
+         <p class="- topic/p ">If the voltage stays above the set voltage level during
+the whole test, the battery test is successful.</p>
+         <p class="- topic/p ">In case the
+voltage drops below the set voltage level at any time, the test is
+interrupted and considered unsuccessful.</p>
+         <note class="- topic/note ">Depending on the
+alarm configuration, an alarm might activate if a battery capacity
+probe is unsuccessful.</note>
+      </result>
+   </taskbody>
+</task>

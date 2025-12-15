@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="FunctionCheckOfTheSystem-C4151E19"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Function Check of a Unit</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-04T15:30:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-04T15:30:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>reality-ups-system</indexterm>
+            <indexterm>dc-charger-module</indexterm>
+            <indexterm>inverter-subsystem</indexterm>
+            <indexterm>communications-module</indexterm>
+            <indexterm>battery-management-interface</indexterm>
+            <!-- Process layer -->
+            <indexterm>system-power-up-check</indexterm>
+            <indexterm>interlock-and-safety-verification</indexterm>
+            <indexterm>alarm-and-event-validation</indexterm>
+            <indexterm>redundancy-failover-test</indexterm>
+            <indexterm>load-transfer-sequence</indexterm>
+            <!-- Context layer -->
+            <indexterm>commissioning-procedures</indexterm>
+            <indexterm>transportation-and-installation-sites</indexterm>
+            <indexterm>water-and-wastewater-applications</indexterm>
+            <indexterm>continuous-power-requirements</indexterm>
+            <indexterm>safety-and-compliance-checks</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Function check of the system"/>
+         <othermeta name="shortdesc" content="Comprehensive system level functional checks covering power, alarms, communications and redundancy for safe commissioning."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="ups-system;inverter;dc-charger;bms;communication-module"/>
+         <othermeta name="taxonomy" content="domain:system-commissioning;usecase:function-check;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="commissioning,redundancy,alarms,communication,verification"/>
+         <othermeta name="usecase" content="verify system readiness for commissioning and handover"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <hazardstatement conref="../Library/Warnings_Library_0000325173.dita#war_lib/bypass-turn-off-output-loss"
+                       platform="PxW WxW"
+                       class="+ topic/note hazard-d/hazardstatement ">
+         <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+            <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+            <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+         </messagepanel>
+      </hazardstatement>
+      <p class="- topic/p ">This function check describes how to perform a basic function check
+on a single system or one unit in a system with multiple units.</p>
+      <ol class="- topic/ol ">
+         <li class="- topic/li ">
+            <p class="- topic/p ">Check that the system is in <ph platform="PxW WxW" class="- topic/ph ">normal operation</ph>
+               <ph platform="SDC" class="- topic/ph ">float charge</ph> and that no alarms are active.</p>
+         </li>
+         <li platform="PxW SDC" class="- topic/li ">
+            <p class="- topic/p ">Open the rectifier mains input breaker.</p>
+         </li>
+         <li platform="PxW SDC" class="- topic/li ">
+            <p class="- topic/p ">Check that the system switches to battery
+operation and that the <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph class="+ topic/ph pr-d/codeph ">Batt. operation
+time ...min</codeph>.</p>
+            <note class="- topic/note ">The remaining runtime will only be
+shown if advanced battery monitor is installed.</note>
+         </li>
+         <li platform="PxW" class="- topic/li ">
+            <p class="- topic/p ">Open the battery breaker.</p>
+         </li>
+         <li platform="WxW" class="- topic/li ">
+            <p class="- topic/p ">Open the inverter input switch.</p>
+         </li>
+         <li platform="PxW WxW" class="- topic/li ">
+            <p class="- topic/p ">Check that the system switches to bypass
+operation and that the <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph class="+ topic/ph pr-d/codeph ">Bypass operation</codeph>.</p>
+         </li>
+         <li platform="PxW SDC" class="- topic/li ">Close the rectifier mains input breaker.</li>
+         <li platform="WxW" class="- topic/li ">
+            <p class="- topic/p ">Keep the charging/discharging switch in position
+2 to charge the DC capacitors <b class="+ topic/ph hi-d/b ">(CB02)</b>. Keep the switch in position
+2 until the warning LED turns off. With the switch still in position
+2 close the inverter input switch.</p>
+         </li>
+         <li class="- topic/li ">
+            <p class="- topic/p ">Check that the system switches to <ph platform="PxW WxW" class="- topic/ph ">normal
+operation</ph>
+               <ph platform="SDC" class="- topic/ph ">float charge</ph> and that the <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph platform="PxW WxW" class="+ topic/ph pr-d/codeph ">Normal operation load
+power ...%</codeph>
+               <codeph platform="SDC" class="+ topic/ph pr-d/codeph ">Float charge load ...%</codeph>.</p>
+         </li>
+         <li platform="PxW" class="- topic/li ">
+            <p class="- topic/p ">Close the battery breaker.</p>
+         </li>
+         <li platform="PxW WxW" class="- topic/li ">
+            <p class="- topic/p ">Switch to bypass operation:</p>
+            <ol conref="../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/Switch-to-bypass"
+                class="- topic/ol ">
+               <li class="- topic/li "/>
+            </ol>
+         </li>
+         <li platform="PxW WxW" class="- topic/li ">
+            <p class="- topic/p ">Check that the green static switch EN LED
+is active on the mimic diagram and that the <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph class="+ topic/ph pr-d/codeph ">Bypass operation</codeph>.</p>
+         </li>
+         <li platform="PxW WxW" class="- topic/li ">
+            <p class="- topic/p ">
+               <b class="+ topic/ph hi-d/b ">Only for systems with manual bypass switch(es): </b>
+            </p>
+            <ol class="- topic/ol ">
+               <li otherprops="generalM 3pMBS" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <b otherprops="tempExclude" class="+ topic/ph hi-d/b ">Only
+for 3-position manual bypass switches: </b>Turn the manual bypass
+switch to the <b class="+ topic/ph hi-d/b ">Test</b> position. </p>
+               </li>
+               <li otherprops="2pMBS" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <b class="+ topic/ph hi-d/b ">Only for 2-position manual bypass switches: </b>Turn the manual bypass switch to the <b class="+ topic/ph hi-d/b ">Bypass</b> position.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Check that the red <b class="+ topic/ph hi-d/b ">Manual bypass on</b> LED is active on
+the alarm panel and that the green manual bypass LED is active on
+the mimic diagram.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Turn off the system, press both the <b class="+ topic/ph hi-d/b ">ON button</b> and the <b class="+ topic/ph hi-d/b ">OFF button</b> for two seconds. The <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph class="+ topic/ph pr-d/codeph ">Standby</codeph>.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Measure the output voltage.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Turn on the system, press the <b class="+ topic/ph hi-d/b ">ON button</b> for one second.
+After a few seconds the <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph class="+ topic/ph pr-d/codeph ">Normal operation
+load power ...%</codeph>.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Switch to bypass operation:</p>
+                  <ol conref="../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/Switch-to-bypass"
+                      class="- topic/ol ">
+                     <li class="- topic/li "/>
+                  </ol>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">The <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph class="+ topic/ph pr-d/codeph ">Bypass operation</codeph>.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Turn the manual bypass switch to the <b class="+ topic/ph hi-d/b ">Auto</b> position.</p>
+               </li>
+            </ol>
+         </li>
+         <li platform="PxW WxW" class="- topic/li ">
+            <p class="- topic/p ">Switch to normal operation:</p>
+            <ol conref="../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/Switch-to-normal"
+                class="- topic/ol ">
+               <li class="- topic/li "/>
+            </ol>
+         </li>
+         <li platform="PxW WxW" class="- topic/li ">
+            <p class="- topic/p ">The <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph class="+ topic/ph pr-d/codeph ">Normal
+operation load power ...%</codeph>.</p>
+         </li>
+         <li class="- topic/li ">
+            <p class="- topic/p ">Reset any alarms by pressing the <b class="+ topic/ph hi-d/b ">C key</b> twice.</p>
+         </li>
+         <li class="- topic/li ">
+            <p class="- topic/p ">Make sure the system operates correctly and no alarms are present.</p>
+         </li>
+      </ol>
+   </conbody>
+</concept>

@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="TroubleshootTheISBS-67456D9F"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Troubleshoot the ISBS</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-01+05:30" class="- topic/created "/>
+         <revised modified="2025-12-01" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience
+            type="role"
+            otherprops="operations,maintenance,engineering,technical support,field technician,monitoring"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>independent static bypass switch</indexterm>
+            <indexterm>ISBS</indexterm>
+            <indexterm>bypass module</indexterm>
+            <indexterm>static switch assembly</indexterm>
+            <indexterm>bypass controller</indexterm>
+            <indexterm>bypass path</indexterm>
+            <indexterm>protection circuits</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>ISBS troubleshooting</indexterm>
+            <indexterm>bypass fault diagnostics</indexterm>
+            <indexterm>switch state verification</indexterm>
+            <indexterm>fault isolation steps</indexterm>
+            <indexterm>load transfer validation</indexterm>
+            <indexterm>pre-reset safety checks</indexterm>
+            <indexterm>corrective action workflow</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>bypass operation environment</indexterm>
+            <indexterm>UPS redundancy domain</indexterm>
+            <indexterm>critical load continuity</indexterm>
+            <indexterm>industrial power systems</indexterm>
+            <indexterm>fault tolerance architecture</indexterm>
+            <indexterm>system protection context</indexterm>
+            <indexterm>high availability power path</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta
+            name="title"
+            content="Troubleshoot the ISBS"/>
+         
+         <othermeta
+            name="shortdesc"
+            content="Explains troubleshooting steps for the Independent Static Bypass Switch (ISBS), including fault diagnostics, switch-state checks, and corrective action procedures."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta
+            name="entities"
+            content="ISBS; static switch; bypass controller; sensors; power modules; load path; monitoring indicators"/>
+         
+         <othermeta
+            name="taxonomy"
+            content="domain:industrial diagnostics;usecase:bypass-switch-troubleshooting;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta
+            name="tags"
+            content="ISBS,static bypass,troubleshooting,fault analysis,switch diagnostics"/>
+         
+         <othermeta
+            name="usecase"
+            content="Support technicians in identifying and resolving issues affecting the Independent Static Bypass Switch"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <fig expanse="page" class="- topic/fig ">
+         <image href="../../Images/A703_SBS_Controller_Board_LED_ZOOM_0000356099.png"
+                placement="inline"
+                class="- topic/image "/>
+      </fig>
+      <table pgwide="1" class="- topic/table ">
+         <tgroup cols="6" class="- topic/tgroup ">
+            <colspec colname="col1" colwidth="20.00mm" class="- topic/colspec "/>
+            <colspec colname="col2" colwidth="20.00mm" class="- topic/colspec "/>
+            <colspec colname="COLSPEC2" colwidth="20.00mm" class="- topic/colspec "/>
+            <colspec colname="col4" colwidth="2.67*" class="- topic/colspec "/>
+            <colspec colname="COLSPEC1" colwidth="2.67*" class="- topic/colspec "/>
+            <colspec colname="col6" colwidth="2.67*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Position</p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Name on
+Board</p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Name Description</p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Normal Status
+and Description</p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Abnormal
+Status and Description</p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Corrective
+Action for Abnormal Status</p>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">(A)</b>
+                     </p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">15V(D1237)</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">15V supply ok</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">On:</b> The internal 15V power supply is ok. Delivered
+from the bypass mains.</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">Off:</b> Bypass mains not available or there is a hardware issue
+present</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Check bypass mains power supply and connection.</p>
+                     <p class="- topic/p ">Contact <xref conref="../../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/Reality_service_centers"
+                              scope="local"
+                              class="- topic/xref "/>.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">(B)</b>
+                     </p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">5V(D1238)</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">5V supply ok</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">On:</b> The internal 5V power supply is ok. Delivered
+from the internal 15V power supply.</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">Off:</b> Bypass mains not available or there is a hardware issue
+present.</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Check bypass mains power supply and connection.</p>
+                     <p class="- topic/p ">Contact <xref conref="../../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/Reality_service_centers"
+                              scope="local"
+                              class="- topic/xref "/>.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">(C)</b>
+                     </p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">15V FAN(D1239)</p>
+                  </entry>
+                  <entry nameend="col6" namest="COLSPEC2" class="- topic/entry ">
+                     <p class="- topic/p "> Not used</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">(D)</b>
+                     </p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">24V FAN(D1240)</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">20V supply for EN &amp; fan ok</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">On:</b> The 20V power supply used to power supply the
+static bypass switch EN and the fans is ok. Delivered from the bypass
+mains.</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">Off:</b> Bypass mains not available or there is a hardware issue
+present.</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Check bypass mains power supply and connection.</p>
+                     <p class="- topic/p ">Contact <xref conref="../../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/Reality_service_centers"
+                              scope="local"
+                              class="- topic/xref "/>.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry morerows="2" class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">(E)</b>
+                     </p>
+                  </entry>
+                  <entry morerows="2" class="- topic/entry ">
+                     <p class="- topic/p ">STATUS_1(D1242)</p>
+                  </entry>
+                  <entry morerows="2" class="- topic/entry ">
+                     <p class="- topic/p ">System firmware status indication</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p "> System firmware status indication. Shows what mode the
+system is in:<b class="+ topic/ph hi-d/b ">On:</b> System is in Standby</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">Off:</b> Bypass mains not available or there is a firmware or
+wiring issue present.</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Check bypass mains power supply and connection.</p>
+                     <p class="- topic/p ">Contact <xref conref="../../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/Reality_service_centers"
+                              scope="local"
+                              class="- topic/xref "/>.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">Slow flashing (0.5Hz):</b> System is in normal operation.</p>
+                  </entry>
+                  <entry morerows="1" class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">Very fast flashing (4Hz):</b> The
+system is in ISBS operation. There is an issue present with the main
+controller, or the main controller was manually reset during operation.</p>
+                  </entry>
+                  <entry morerows="1" class="- topic/entry ">
+                     <p class="- topic/p ">Transfer the system to manual bypass,
+for details see chapter <xref href="1220236_How_to_Switch_from_ISS_or_ISBS_Operation_to_Normal_Operation_CPT_DD00545783.dita"
+                              scope="local"
+                              type="concept"
+                              class="- topic/xref "/>.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">Fast flashing (2Hz):</b> System is in bypass operation (over the
+static switch), switched over by the main controller.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">(F)</b>
+                     </p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">STATUS_2(D1243)</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">ISBS status ok</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">On:</b> The ISBS system is ok and ready transfer to ISBS
+operation if needed.</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">Off:</b> Bypass mains not available or there is a firmware or
+wiring issue present.</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Check bypass mains power supply and connection.</p>
+                     <p class="- topic/p ">Contact <xref conref="../../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/Reality_service_centers"
+                              scope="local"
+                              class="- topic/xref "/>.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">(G)</b>
+                     </p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">STATUS_3(D1283)</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">ISBS operation active</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">Off:</b> Indicated that the controller has not switched
+to ISBS.</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">On:</b> The system is in ISBS operation. There is an issue present
+with the main controller, or the main controller was manually reset
+during operation.</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Transfer the system to manual bypass, for details see chapter <xref href="1220236_How_to_Switch_from_ISS_or_ISBS_Operation_to_Normal_Operation_CPT_DD00545783.dita"
+                              scope="local"
+                              type="concept"
+                              class="- topic/xref "/>.</p>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </conbody>
+</concept>

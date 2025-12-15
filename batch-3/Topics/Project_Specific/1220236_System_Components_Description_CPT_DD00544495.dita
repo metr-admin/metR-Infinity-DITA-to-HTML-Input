@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="SystemComponentsDescription-58D52755"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">System Components Description</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-01+05:30" class="- topic/created "/>
+         <revised modified="2025-12-01" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience
+            type="role"
+            otherprops="engineering,operations,maintenance,technical support,system architect,commissioning"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>UPS system components</indexterm>
+            <indexterm>rectifier</indexterm>
+            <indexterm>inverter</indexterm>
+            <indexterm>static switch</indexterm>
+            <indexterm>battery subsystem</indexterm>
+            <indexterm>control electronics</indexterm>
+            <indexterm>cooling system</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>component identification</indexterm>
+            <indexterm>system overview workflow</indexterm>
+            <indexterm>functional role understanding</indexterm>
+            <indexterm>power conversion process</indexterm>
+            <indexterm>bypass operation analysis</indexterm>
+            <indexterm>status indication review</indexterm>
+            <indexterm>inter-component interaction</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>UPS architecture</indexterm>
+            <indexterm>industrial power systems</indexterm>
+            <indexterm>facility backup infrastructure</indexterm>
+            <indexterm>critical power environments</indexterm>
+            <indexterm>system-level diagnostics</indexterm>
+            <indexterm>equipment performance context</indexterm>
+            <indexterm>electrical distribution ecosystems</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta 
+            name="title"
+            content="System Components Description"/>
+         
+         <othermeta 
+            name="shortdesc"
+            content="Provides a detailed description of the major system components—including the rectifier, inverter, static switch, battery subsystem, and control units—and explains their roles within the UPS architecture."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta
+            name="entities"
+            content="rectifier; inverter; static switch; batteries; cooling fans; sensors; controller modules; load bus"/>
+         
+         <othermeta 
+            name="taxonomy"
+            content="domain:UPS system architecture;usecase:component-description;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta 
+            name="tags"
+            content="system components,rectifier,inverter,static switch,battery subsystem,UPS architecture"/>
+         
+         <othermeta 
+            name="usecase"
+            content="Help users understand the structure and functional roles of each major UPS component"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">The image shows an a simplification of the system intended as a
+reference for the description of the system components. See the <i class="+ topic/ph hi-d/i ">Single Line Diagram</i> for more details.</p>
+      <fig expanse="page" platform="WxW" class="- topic/fig ">
+         <image href="../../Images/1220236_WxW_General-System-Principle-Diagram_WxW_BB_parallel_ISBS_DD00544525.svg"
+                placement="inline"
+                class="- topic/image "/>
+      </fig>
+      <section platform="PxW WxW" class="- topic/section ">
+         <title class="- topic/title ">Components in the Connection Field</title>
+         <table pgwide="1" class="- topic/table ">
+            <tgroup cols="3" class="- topic/tgroup ">
+               <colspec colname="col1" colwidth="2*" class="- topic/colspec "/>
+               <colspec colname="COLSPEC0" colwidth="3*" class="- topic/colspec "/>
+               <colspec colname="col2" colwidth="12.00*" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">
+                        <ph id="Designator-05E095CC" class="- topic/ph ">Designator</ph>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <ph id="Component-05E0975F" class="- topic/ph ">Component</ph>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <ph id="Description-05E09A27" class="- topic/ph ">Description</ph>
+                     </entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">X090</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Bypass mains terminals</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Connection terminal for the bypass mains input. The bypass
+mains input requires an external protective device. A fuse or molded
+case circuit breaker (MCCB) according to the technical specification.
+L, N, PE for single phase systems. L1, L2, L3 and PE (and N if there
+is no isolation bypass transformer) for three phase systems. Also
+used to isolates the static switch EN when the 2-position manual bypass
+switch is in <b class="+ topic/ph hi-d/b ">Bypass</b> position. For specifications always refer
+to the <i class="+ topic/ph hi-d/i ">Drawings</i> for your system.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">Q090(CB2)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Bypass circuit breaker or Switch-disconnector</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Breaker for the bypass mains input. The bypass mains input
+requires an external protective device. A fuse or MCCB according to
+the technical specification.</ph>
+                     </entry>
+                  </row>
+                  <row otherprops="2pMBS" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">—</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">External 2-position manual bypass
+switch</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Makes it possible to isolate the system for maintenance.
+Positions are <b class="+ topic/ph hi-d/b ">UPS</b> and <b class="+ topic/ph hi-d/b ">Bypass</b>.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">X001</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph platform="WxW" class="- topic/ph ">DC power input terminals</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Connection terminal for the DC power input. The DC power
+input requires an external protective device. A fuse or MCCB according
+to the technical specification.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph platform="WxW" translate="no" class="- topic/ph ">Q020(CB1)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph platform="WxW" class="- topic/ph ">DC power input isolation</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph platform="WxW" class="- topic/ph ">Provides isolation for the DC power input.
+With trip function.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">X004</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Load terminals</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Connection terminal for the load. L, N, PE for single phase
+systems. L1, L2, L3, N and PE for three phase systems.</ph>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Components in the System Part</title>
+         <table pgwide="1" platform="PxW WxW" class="- topic/table ">
+            <tgroup cols="3" class="- topic/tgroup ">
+               <colspec colname="col1" colwidth="2*" class="- topic/colspec "/>
+               <colspec colname="COLSPEC0" colwidth="3*" class="- topic/colspec "/>
+               <colspec colname="col2" colwidth="12*" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">
+                        <ph conref="#./Designator-05E095CC" class="- topic/ph ">Number</ph>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <ph conref="#./Component-05E0975F" class="- topic/ph ">Component</ph>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <ph conref="#./Description-05E09A27" class="- topic/ph ">Description</ph>
+                     </entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">CB02</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">DC capacitor module</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph id="CB02-Desc" class="- topic/ph ">Filters the DC current together with L001.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">A032</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Pulse width modulated (PWM) inverter</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Power module with insulated-gate bipolar transistor (IGBT).
+Converts the DC voltage from the <ph platform="PxW" class="- topic/ph ">rectifier back</ph>
+                           <ph platform="WxW" class="- topic/ph ">DC power supply</ph> to AC voltage.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">L002</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Smoothing choke</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Filters the AC output and removes distortions together
+with the CB03.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">T002</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Inverter power transformer</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Galvanic isolation
+between the load and the DC. Transforms the AC output to the correct
+value for the load.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry morerows="1" class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">CB03</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">AC capacitor module</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Filters the AC output and removes
+distortions together with the L002. Subdivided into several sections.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">
+                           <i class="+ topic/ph hi-d/i ">Optional</i>Fuse</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Protects each section of CB03. If
+one section has a failure that section will be isolated.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">F021</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Inverter output fuse</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Protection at the inverter output.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">A035</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Static switch EN(BYP
+SSW)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The static
+switch consists of antiparallel-switched power thyristors. It is used
+to automatically transfer the load to bypass without interruption.
+Can only be transferred if the bypass mains voltage is within tolerance.
+Transfer can occur when:</ph>
+                        <ul class="- topic/ul ">
+                           <li class="- topic/li ">
+                              <ph class="- topic/ph ">The system is heavily overload.</ph>
+                           </li>
+                           <li class="- topic/li ">
+                              <ph class="- topic/ph ">The inverter cannot keep the output voltage within tolerance.</ph>
+                           </li>
+                           <li platform="WxW" class="- topic/li ">
+                              <ph class="- topic/ph ">DC input power is unavailable or out of tolerance.</ph>
+                           </li>
+                           <li class="- topic/li ">
+                              <ph class="- topic/ph ">The system has been switched to static bypass operation from
+the front panel.</ph>
+                           </li>
+                        </ul>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">F028</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Fuse</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Protects the bypass static switch
+A035.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">A036</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Static switch EA(INV
+SSW)</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The inverter static switch is at
+the inverter output. It can make the switch over between operating
+modes more reliable.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">A201</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Internal power supply</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Supplied by the bypass mains. Part
+of the redundant internal power supply together with A202. One of
+the two supplies can supply the system alone. In case of one of the
+supplies stops suppling the system an alarm is generated on the front
+panel.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">A202</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Internal power supply</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Supplied from the internal DC bus.
+Part of the redundant internal power supply together with A201. One
+of the two supplies can supply the system alone. In case of one of
+the supplies stops suppling the system an alarm is generated on the
+front panel.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">A055</ph>
+                     </entry>
+                     <entry morerows="1" class="- topic/entry ">
+                        <ph class="- topic/ph ">Fan
+system</ph>
+                     </entry>
+                     <entry morerows="1" class="- topic/entry ">
+                        <ph class="- topic/ph ">Consist
+of:</ph>
+                        <ul class="- topic/ul ">
+                           <li class="- topic/li ">
+                              <ph class="- topic/ph ">Fan-transformer that transforms the voltage to the correct
+voltage to the fans.</ph>
+                           </li>
+                           <li class="- topic/li ">
+                              <ph class="- topic/ph ">Fans with internal hall sensor for monitoring the number of
+revolutions.</ph>
+                           </li>
+                           <li class="- topic/li ">
+                              <ph class="- topic/ph ">Fan monitor that monitors the number of revolutions of each
+fan. If the number of revolutions falls below the preset value an
+alarm is generated.</ph>
+                           </li>
+                        </ul>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">E00X</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">A070</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Main controller board</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Controls the main parts (inverter
+and static switches) of the system and the alarm relays. Monitors
+the voltages, the currents and the alarms. Communicates with the front
+panel, the serial connections and between multiple units in redundant
+systems.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">A071</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Interface board</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Contains control fuses and distributes
+power to auxiliary circuits and different modules. Converts AC and
+DC voltages to lower standard values for the controller. Secures galvanic
+isolation for the controller.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">A073</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Front panel</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph id="A073-Desc" class="- topic/ph ">The human machine
+interface (HMI) of the system. Contains a display, operating status
+indications, alarm indications, operating buttons and numpad. For
+more information see <xref href="../Front_Panel_CPT_0000333861.dita"
+                                 scope="local"
+                                 type="concept"
+                                 class="- topic/xref "/>.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">A703</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">ISBS Controller</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The ISBS controller controls the
+bypass static switch A035 based on the control signal from the controller
+board A070. It can independently switch the system to independent
+static bypass (ISBS) operation. The ISBS controller has an independent
+power supply and independent supervision of the output voltage. It
+is connected to the relays K701.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">A068</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Adapter board</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Connection interface to the controller
+board A070.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">K701</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">1 relay</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Indicates the
+status of the complete ISBS controller. If the relay is activated,
+the controller is fully operational and ready to react on the control
+signal from the controller board.</ph>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Components in the Low-Voltage Section</title>
+         <table pgwide="1" platform="PxW WxW" class="- topic/table ">
+            <tgroup cols="4" class="- topic/tgroup ">
+               <colspec colname="col1" colwidth="2*" class="- topic/colspec "/>
+               <colspec colname="col2" colwidth="3*" class="- topic/colspec "/>
+               <colspec colname="col3" colwidth="6*" class="- topic/colspec "/>
+               <colspec colname="COLSPEC0" colwidth="6*" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">
+                        <ph conref="#./Designator-05E095CC" class="- topic/ph ">Number</ph>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <ph conref="#./Component-05E0975F" class="- topic/ph ">Component</ph>
+                     </entry>
+                     <entry nameend="COLSPEC0"
+                            namest="col3"
+                            valign="top"
+                            class="- topic/entry ">
+                        <ph conref="#./Description-05E09A27" class="- topic/ph ">Description</ph>
+                     </entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry morerows="1" class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">A025</ph>
+                     </entry>
+                     <entry morerows="1" class="- topic/entry ">
+                        <ph class="- topic/ph ">External
+connection board</ph>
+                     </entry>
+                     <entry nameend="COLSPEC0" namest="col3" class="- topic/entry ">
+                        <ph class="- topic/ph ">An interface board with status relays
+and input terminals. For more information see the chapter <xref href="Bruce_External_Connection_Board_CPT_0000917822.dita"
+                                 scope="local"
+                                 type="concept"
+                                 class="- topic/xref "/>.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <b class="+ topic/ph hi-d/b ">Outputs:</b>
+                        <ul class="- topic/ul ">
+                           <li class="- topic/li ">
+                              <ph class="- topic/ph ">Two common alarm relays with a programmable delay between
+0-327 seconds (default value is 5 seconds)</ph>
+                           </li>
+                           <li class="- topic/li ">
+                              <ph class="- topic/ph ">A battery operation relay with a 30 seconds delay<fn platform="WxW" class="- topic/fn "> Indication from the upstream rectifier.</fn>
+                              </ph>
+                           </li>
+                           <li class="- topic/li ">
+                              <ph class="- topic/ph ">A bypass operation relay (BYP SSW active)</ph>
+                           </li>
+                        </ul>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <b class="+ topic/ph hi-d/b ">Inputs:</b>
+                        <ul class="- topic/ul ">
+                           <li class="- topic/li ">
+                              <ph class="- topic/ph ">Battery temperature sensor</ph>
+                           </li>
+                           <li class="- topic/li ">
+                              <ph class="- topic/ph ">Remote start/stop</ph>
+                           </li>
+                           <li class="- topic/li ">
+                              <ph class="- topic/ph ">Emergency power off (EPO)</ph>
+                           </li>
+                           <li class="- topic/li ">
+                              <ph class="- topic/ph ">Battery breaker status</ph>
+                           </li>
+                        </ul>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry morerows="1" class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">A077</ph>
+                     </entry>
+                     <entry morerows="1" class="- topic/entry ">
+                        <ph class="- topic/ph ">Relay
+board</ph>
+                     </entry>
+                     <entry nameend="COLSPEC0" namest="col3" class="- topic/entry ">
+                        <ph class="- topic/ph ">16 change-over relays for alarms
+from the alarm panel. If the alarm is active the relay is in the volt
+free position. For more information see the chapter <xref href="1220236_Relay_Boards_CPT_DD00544494.dita"
+                                 scope="local"
+                                 type="concept"
+                                 class="- topic/xref "/>.The available relays are:</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <sl class="- topic/sl ">
+                           <sli class="- topic/sli ">K001 – (Not used)</sli>
+                           <sli class="- topic/sli ">K002 – DC out of tolerance</sli>
+                           <sli class="- topic/sli ">K003 – (Not used)</sli>
+                           <sli class="- topic/sli ">K004 – DC low warning</sli>
+                           <sli class="- topic/sli ">K005 – DC earth fault</sli>
+                           <sli class="- topic/sli ">K006 – Inverter fuse blown</sli>
+                           <sli class="- topic/sli ">K007 – Bypass mains fault</sli>
+                           <sli class="- topic/sli ">K008 – Overtemperature</sli>
+                        </sl>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <sl class="- topic/sl ">
+                           <sli class="- topic/sli ">K009 – Fan failure</sli>
+                           <sli class="- topic/sli ">K010 – Power supply fault</sli>
+                           <sli class="- topic/sli ">K011 – Optional alarm</sli>
+                           <sli class="- topic/sli ">K012 – Optional alarm</sli>
+                           <sli class="- topic/sli ">K013 – Optional alarm</sli>
+                           <sli class="- topic/sli ">K014 – Optional alarm</sli>
+                           <sli class="- topic/sli ">K015 – Optional alarm</sli>
+                           <sli class="- topic/sli ">K016 – (Not used)</sli>
+                        </sl>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry morerows="1" class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">A078</ph>
+                     </entry>
+                     <entry morerows="1" class="- topic/entry ">
+                        <ph class="- topic/ph ">Relay
+board</ph>
+                     </entry>
+                     <entry nameend="COLSPEC0" namest="col3" class="- topic/entry ">
+                        <ph class="- topic/ph ">16 change-over relays for alarms
+from the alarm panel, status indications from the mimic diagram and
+an indication if there are alarms that are not confirmed. If the alarm
+is active the relay is in the volt free position. For more information
+see the chapter <xref href="1220236_Relay_Boards_CPT_DD00544494.dita"
+                                 scope="local"
+                                 type="concept"
+                                 class="- topic/xref "/>.The available relays are:</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <sl class="- topic/sl ">
+                           <sli class="- topic/sli ">K001 – EA (INV SSW) inhibited</sli>
+                           <sli class="- topic/sli ">K002 – EN (BYP SSW) inhibited</sli>
+                           <sli class="- topic/sli ">K003 – Manual bypass on (External manual bypass in bypass
+position)</sli>
+                           <sli class="- topic/sli ">K004 – Asynchronous</sli>
+                           <sli class="- topic/sli ">K005 – Overload inv./bypass</sli>
+                           <sli class="- topic/sli ">K006 – Inverter fault</sli>
+                           <sli class="- topic/sli ">K007 – Batt. disconnected</sli>
+                           <sli class="- topic/sli ">K008 – Battery operation</sli>
+                        </sl>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <sl class="- topic/sl ">
+                           <sli class="- topic/sli ">K009 – (Not used)</sli>
+                           <sli class="- topic/sli ">K010 – EA (INV SSW) on</sli>
+                           <sli class="- topic/sli ">K011 – EN (BYP SSW) on</sli>
+                           <sli class="- topic/sli ">K012 – The inverter is on</sli>
+                           <sli class="- topic/sli ">K013 – (Not used)</sli>
+                           <sli class="- topic/sli ">K014 – (Not used)</sli>
+                           <sli class="- topic/sli ">K015 – (Not used)</sli>
+                           <sli class="- topic/sli ">K016 – External horn (indicates that there are alarms
+that have not been acknowledged)</sli>
+                        </sl>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+   </conbody>
+</concept>

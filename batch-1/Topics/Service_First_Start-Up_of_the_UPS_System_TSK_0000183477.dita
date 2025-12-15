@@ -1,0 +1,2054 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="FirstStart-UpOfTheUPSSystem-54E7723F"
+      translate="yes"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">First Start-Up of the UPS System</title>
+   <shortdesc class="- topic/shortdesc ">
+      <keyword class="- topic/keyword ">Reality NAM 25–100 kVA</keyword>
+   </shortdesc>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-18+05:30" class="- topic/created "/>
+         <revised modified="2025-11-18" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-pxc-reality</indexterm>
+            <indexterm>ups-system</indexterm>
+            <indexterm>power-conversion-unit</indexterm>
+            <indexterm>battery-string</indexterm>
+            <indexterm>distribution-assembly</indexterm>
+            <indexterm>ups-controller</indexterm>
+            <!-- Process layer -->
+            <indexterm>first-start-up</indexterm>
+            <indexterm>system-commissioning</indexterm>
+            <indexterm>pre-power-checks</indexterm>
+            <indexterm>sequence-startup</indexterm>
+            <indexterm>post-start-verification</indexterm>
+            <indexterm>safety-confirmation</indexterm>
+            <!-- Context layer -->
+            <indexterm>commissioning-environment</indexterm>
+            <indexterm>site-acceptance-test</indexterm>
+            <indexterm>plant-power-system</indexterm>
+            <indexterm>control-room-handover</indexterm>
+            <indexterm>operational-readiness</indexterm>
+            <indexterm>installation-checklist</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="First Start-Up of the UPS System"/>
+         <othermeta name="shortdesc" content="Task instructions for initial power-up and commissioning of the UPS system, including pre-start checks and verification steps."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="ups-system;battery-string;inverter-module;distribution-panel;ups-controller;safety-interlocks"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:commissioning;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="startup,commissioning,power,verification,safety"/>
+         <othermeta name="usecase" content="system-commissioning"/>
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <context class="- topic/section task/context ">
+         <hazardstatement type="danger" class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard ">Hazard or electric shock, explosion, or arc flash</typeofhazard>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid ">
+                  <sl class="- topic/sl ">
+                     <sli class="- topic/sli ">Follow the Schneider Electric safety procedures (SE425 and SE460)</sli>
+                     <sli class="- topic/sli ">Check the input phase rotation (L1–L2–L3 clockwise)</sli>
+                  </sl>
+               </howtoavoid>
+            </messagepanel>
+         </hazardstatement>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+            <choices class="- topic/ul task/choices ">
+               <choice class="- topic/li task/choice ">For a REPO with internal supply: Remove the jumper from the
+EPO terminals J1602 between pin 3 and 4 on the external connection
+board 0P2553 (A811).</choice>
+            </choices>
+            <choices class="- topic/ul task/choices ">
+               <choice class="- topic/li task/choice ">For a REPO with external supply: Activate the REPO switch.</choice>
+            </choices>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">This enables crosschecking via the display on first start-up
+because the system state can be completely OFF while the display is
+ON. </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Close UIB to turn on the UPS.</cmd>
+            <stepresult class="- topic/itemgroup task/stepresult ">Now that the EPO jumper is open and the mains input breaker
+UIB is closed, the PFC will not start and the system is supplied by
+the passive rectifier.</stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Connect your PC to the UPS, launch Tuner, and connect to
+the display module — follow the instructions in <xref href="Service_Configure_and_Manage_the_UPS_with_the_UPS_Tuner_TSK_0000116983.dita"
+                     format="dita"
+                     scope="local"
+                     type="task"
+                     class="- topic/xref "/>.</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">For units built after July 2018 (without transformer), the
+display will show <uicontrol class="+ topic/ph ui-d/uicontrol ">Waiting for controllers</uicontrol>. <table outputclass="font:10" class="- topic/table ">
+                  <tgroup cols="1" class="- topic/tgroup ">
+                     <colspec colname="col1" class="- topic/colspec "/>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <screen xml:space="preserve" class="+ topic/pre ui-d/screen ">Waiting for controllersPlease wait...</screen>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>If the display shows this message, follow steps a and b below.
+If the display does not show this message, continue with step 4.</stepxmp>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Change setting 048 from 500 to 208 via the UPS Tuner.</cmd>
+                  <stepxmp class="- topic/itemgroup task/stepxmp ">
+                     <fig class="- topic/fig ">
+                        <image href="../Images/upstuner_changesetting048_500to208_w120mm_0000210318.jpg"
+                               scalefit="yes"
+                               scope="local"
+                               placement="inline"
+                               class="- topic/image "/>
+                     </fig>
+                  </stepxmp>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Open UIB, wait 30 seconds and then close UIB.</cmd>
+                  <stepresult class="- topic/itemgroup task/stepresult ">The unit should now be in <uicontrol class="+ topic/ph ui-d/uicontrol ">Standby mode</uicontrol>.</stepresult>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Main Menu</uicontrol>, select <menucascade class="+ topic/ph ui-d/menucascade ">
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Diagnosis</uicontrol>
+               </menucascade> using the UP/DOWN keys
+and the ENTER key and check the U DC bus. See <xref href="View_Diagnosis_TSK_0000103901.dita"
+                     format="dita"
+                     scope="local"
+                     type="task"
+                     class="- topic/xref "/> for more information.
+The DC bus voltages must be about 300 VDC. (+) and (–) may
+not be completely balanced.</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <table outputclass="font:10" class="- topic/table ">
+                  <tgroup cols="1" class="- topic/tgroup ">
+                     <colspec colname="col1" class="- topic/colspec "/>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <screen xml:space="preserve" class="+ topic/pre ui-d/screen ">U dc-bus: + 130.0V          -170.0V</screen>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </stepxmp>
+            <stepresult class="- topic/itemgroup task/stepresult ">If there is already a big load on the DC bus this rectifier
+will not be able to charge the DC bus to an acceptable voltage. If
+the DC bus voltages are correct, please proceed to the next step.</stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">If an input transformer is installed:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Main Menu</uicontrol>, select <menucascade class="+ topic/ph ui-d/menucascade ">
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">System status</uicontrol>
+                     </menucascade> using the UP/DOWN
+keys and the ENTER key and check the measured input voltage before
+the transformer. See <xref href="View_UPS_Measurements_0000103875.dita"
+                           format="dita"
+                           scope="local"
+                           type="task"
+                           class="- topic/xref "/> for more information.</cmd>
+                  <stepxmp class="- topic/itemgroup task/stepxmp ">
+                     <table outputclass="font:10" class="- topic/table ">
+                        <tgroup cols="1" class="- topic/tgroup ">
+                           <colspec colname="col1" class="- topic/colspec "/>
+                           <tbody class="- topic/tbody ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <screen xml:space="preserve" class="+ topic/pre ui-d/screen ">Ø Uin   Ubyp   Uout1 480.0        000.02 480.0        000.03 480.0        000.0</screen>
+                                 </entry>
+                              </row>
+                           </tbody>
+                        </tgroup>
+                     </table>
+                  </stepxmp>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Main Menu</uicontrol>, select <menucascade class="+ topic/ph ui-d/menucascade ">
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Diagnosis</uicontrol>
+                     </menucascade> using the UP/DOWN keys
+and the ENTER key and check the measured input voltage after the transformer.</cmd>
+                  <stepxmp class="- topic/itemgroup task/stepxmp ">
+                     <table outputclass="font:10" class="- topic/table ">
+                        <tgroup cols="1" class="- topic/tgroup ">
+                           <colspec colname="col1" class="- topic/colspec "/>
+                           <tbody class="- topic/tbody ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <screen xml:space="preserve" class="+ topic/pre ui-d/screen ">Ø Urec   Usbs   Uinv1 208.0 000.0   000.02 208.0 000.0   000.03 208.0 000.0   000.0</screen>
+                                 </entry>
+                              </row>
+                           </tbody>
+                        </tgroup>
+                     </table>
+                  </stepxmp>
+               </substep>
+            </substeps>
+            <stepresult class="- topic/itemgroup task/stepresult ">If the input voltages are correct, you can proceed.</stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">If a bypass transformer is installed:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Main Menu</uicontrol>, select <menucascade class="+ topic/ph ui-d/menucascade ">
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">System status</uicontrol>
+                     </menucascade> using the UP/DOWN
+keys and the ENTER key and check the measured bypass voltage before
+the transformer.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Main Menu</uicontrol>, select <menucascade class="+ topic/ph ui-d/menucascade ">
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Diagnosis</uicontrol>
+                     </menucascade> using the UP/DOWN keys
+and the ENTER key and check the measured bypass voltage after the
+transformer.</cmd>
+               </substep>
+            </substeps>
+            <stepresult class="- topic/itemgroup task/stepresult ">If the bypass voltages are correct, you can proceed.</stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">If the HMI has been replaced, load the settings sheet to
+the new HMI: Download the default settings file for the UPS from ServiceView.
+See how to import the settings file or change the settings manually
+in <xref href="Configure_UPS_Settings_with_Tuner_TSK_0000148966.dita"
+                     format="dita"
+                     scope="local"
+                     type="task"
+                     class="- topic/xref "/>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Set the following settings for UPS systems with battery
+cabinet — find the relevant settings in ServiceView for the
+specific battery configuration.</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <table outputclass="font:10" pgwide="1" class="- topic/table ">
+                  <title class="- topic/title ">Settings to Configure for UPS Systems with Battery Cabinet</title>
+                  <tgroup cols="2" class="- topic/tgroup ">
+                     <colspec colname="1" colwidth="14.66*" class="- topic/colspec "/>
+                     <colspec colname="2" colwidth="85.34*" class="- topic/colspec "/>
+                     <thead class="- topic/thead ">
+                        <row class="- topic/row ">
+                           <entry valign="top" class="- topic/entry ">
+                              <p class="- topic/p ">Setting number</p>
+                           </entry>
+                           <entry valign="top" class="- topic/entry ">
+                              <p class="- topic/p ">Description</p>
+                           </entry>
+                        </row>
+                     </thead>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">59</p>
+                           </entry>
+                           <entry morerows="0" class="- topic/entry ">
+                              <p class="- topic/p ">Battery temperature compensation upper level</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">60</p>
+                           </entry>
+                           <entry morerows="0" class="- topic/entry ">
+                              <p class="- topic/p ">Battery temperature compensation lower level</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">61</p>
+                           </entry>
+                           <entry morerows="0" class="- topic/entry ">
+                              <p class="- topic/p ">Battery temperature compensation coefficient</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">62</p>
+                           </entry>
+                           <entry morerows="0" class="- topic/entry ">
+                              <p class="- topic/p ">Float voltage</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">63</p>
+                           </entry>
+                           <entry morerows="0" class="- topic/entry ">
+                              <p class="- topic/p ">Boost voltage</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">64</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Initial
+voltage</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">65</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Cyclic voltage</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">66</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Float current</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">67</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Boost current</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">68</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Initial
+current</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">69</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Cyclic current</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">70</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Cyclic charge
+time on in hours</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">71</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Cyclic charge
+repeat cycle in days</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">72</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Boost charge
+time</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">73</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Initial
+charge time</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">313</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Charging
+Time up to 80%</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">314</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Charging
+Time 80%...100% (float)</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">315</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Charging
+Time 80%...100% (boost)</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">316</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Charging
+Time 80%...100% (cyclic)</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">317</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">BatRunTimeCalc
+Par1</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">318</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">BatRunTimeCalc
+Par2</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">319</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">BatRunTimeCalc
+Par3</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">320</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">BatRunTimeCalc
+Par4</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">321</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">BatCapCalc
+Par1</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">322</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">BatCapCalc
+Par2</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">323</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">BatCapCalc
+Par3</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">324</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">BatCapCalc
+Par4</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">325</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">BatCapCalc
+Par5</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">326</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">BatCapCalc
+Par6</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">327</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">BatCap at
+0°C</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">328</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">BatCap at
+40°C</p>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Check/adjust the following settings if the HMI has been
+replaced.<fn class="- topic/fn ">These settings are set in the factory, but will be lost
+if the HMI is replaced.</fn>
+            </cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <table outputclass="font:10" pgwide="1" class="- topic/table ">
+                  <title class="- topic/title ">Settings for 25–50 kVA UPS Systems with Input Transformer
+(Single Mains)</title>
+                  <tgroup cols="3" class="- topic/tgroup ">
+                     <colspec colname="1" colwidth="14.79*" class="- topic/colspec "/>
+                     <colspec colname="2" colwidth="62.57*" class="- topic/colspec "/>
+                     <colspec colname="3" colwidth="22.64*" class="- topic/colspec "/>
+                     <thead class="- topic/thead ">
+                        <row class="- topic/row ">
+                           <entry valign="top" class="- topic/entry ">
+                              <p class="- topic/p ">Setting number</p>
+                           </entry>
+                           <entry valign="top" class="- topic/entry ">
+                              <p class="- topic/p ">Description</p>
+                           </entry>
+                           <entry valign="top" class="- topic/entry ">
+                              <p class="- topic/p ">Setting</p>
+                           </entry>
+                        </row>
+                     </thead>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">415</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Enable Mimic
+LEDs byte 0</p>
+                           </entry>
+                           <entry colname="3"
+                                  morerows="0"
+                                  nameend="3"
+                                  namest="3"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">204</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">416</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Enable Mimic
+LEDs byte 1</p>
+                           </entry>
+                           <entry colname="3"
+                                  morerows="0"
+                                  nameend="3"
+                                  namest="3"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">15</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">417</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Enable Mimic
+LEDs byte 2</p>
+                           </entry>
+                           <entry colname="3"
+                                  morerows="0"
+                                  nameend="3"
+                                  namest="3"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">255</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">418</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Enable Mimic
+LEDs byte 3</p>
+                           </entry>
+                           <entry colname="3"
+                                  morerows="0"
+                                  nameend="3"
+                                  namest="3"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">192</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">419</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Enable Mimic
+LEDs byte 4</p>
+                           </entry>
+                           <entry colname="3"
+                                  morerows="0"
+                                  nameend="3"
+                                  namest="3"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">3</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">420</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Enable Mimic
+LEDs byte 5</p>
+                           </entry>
+                           <entry colname="3"
+                                  morerows="0"
+                                  nameend="3"
+                                  namest="3"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">204</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">421</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Enable Mimic
+LEDs byte 6</p>
+                           </entry>
+                           <entry colname="3"
+                                  morerows="0"
+                                  nameend="3"
+                                  namest="3"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">7</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">422</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Enable Mimic
+LEDs byte 7</p>
+                           </entry>
+                           <entry colname="3"
+                                  morerows="0"
+                                  nameend="3"
+                                  namest="3"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">15</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">423</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Enable Mimic
+LEDs byte 8</p>
+                           </entry>
+                           <entry colname="3"
+                                  morerows="0"
+                                  nameend="3"
+                                  namest="3"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">127</p>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+               <table outputclass="font:10" pgwide="1" class="- topic/table ">
+                  <title class="- topic/title ">Settings for 75–100 kVA UPS Systems with Input Transformer
+(Single Mains) and 25–100 kVA Systems with Input and Bypass
+Transformers (Dual Mains)</title>
+                  <tgroup cols="3" class="- topic/tgroup ">
+                     <colspec colname="1" colwidth="14.75*" class="- topic/colspec "/>
+                     <colspec colname="2" colwidth="62.96*" class="- topic/colspec "/>
+                     <colspec colname="3" colwidth="22.29*" class="- topic/colspec "/>
+                     <thead class="- topic/thead ">
+                        <row class="- topic/row ">
+                           <entry valign="top" class="- topic/entry ">
+                              <p class="- topic/p ">Setting number</p>
+                           </entry>
+                           <entry valign="top" class="- topic/entry ">
+                              <p class="- topic/p ">Description</p>
+                           </entry>
+                           <entry valign="top" class="- topic/entry ">
+                              <p class="- topic/p ">Setting</p>
+                           </entry>
+                        </row>
+                     </thead>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">415</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Enable Mimic
+LEDs byte 0</p>
+                           </entry>
+                           <entry colname="3"
+                                  morerows="0"
+                                  nameend="3"
+                                  namest="3"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">204</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">416</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Enable Mimic
+LEDs byte 1</p>
+                           </entry>
+                           <entry colname="3"
+                                  morerows="0"
+                                  nameend="3"
+                                  namest="3"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">15</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">417</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Enable Mimic
+LEDs byte 2</p>
+                           </entry>
+                           <entry colname="3"
+                                  morerows="0"
+                                  nameend="3"
+                                  namest="3"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">255</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">418</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Enable Mimic
+LEDs byte 3</p>
+                           </entry>
+                           <entry colname="3"
+                                  morerows="0"
+                                  nameend="3"
+                                  namest="3"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">192</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">419</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Enable Mimic
+LEDs byte 4</p>
+                           </entry>
+                           <entry colname="3"
+                                  morerows="0"
+                                  nameend="3"
+                                  namest="3"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">3</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">420</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Enable Mimic
+LEDs byte 5</p>
+                           </entry>
+                           <entry colname="3"
+                                  morerows="0"
+                                  nameend="3"
+                                  namest="3"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">252</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">421</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Enable Mimic
+LEDs byte 6</p>
+                           </entry>
+                           <entry colname="3"
+                                  morerows="0"
+                                  nameend="3"
+                                  namest="3"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">7</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">422</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Enable Mimic
+LEDs byte 7</p>
+                           </entry>
+                           <entry colname="3"
+                                  morerows="0"
+                                  nameend="3"
+                                  namest="3"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">15</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">423</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">Enable Mimic
+LEDs byte 8</p>
+                           </entry>
+                           <entry colname="3"
+                                  morerows="0"
+                                  nameend="3"
+                                  namest="3"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">127</p>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+               <table outputclass="font:10" pgwide="1" class="- topic/table ">
+                  <title class="- topic/title ">Settings for 25–100 kVA UPS Systems with 480/600V Input/Bypass
+Transformers</title>
+                  <tgroup cols="4" class="- topic/tgroup ">
+                     <colspec colname="1" colwidth="14.61*" class="- topic/colspec "/>
+                     <colspec colname="2" colwidth="20.23*" class="- topic/colspec "/>
+                     <colspec colname="3" colwidth="49.31*" class="- topic/colspec "/>
+                     <colspec colname="COLSPEC1" colwidth="15.86*" class="- topic/colspec "/>
+                     <thead class="- topic/thead ">
+                        <row class="- topic/row ">
+                           <entry valign="top" class="- topic/entry ">
+                              <p class="- topic/p ">Setting number</p>
+                           </entry>
+                           <entry nameend="3" namest="2" valign="top" class="- topic/entry ">
+                              <p class="- topic/p ">Description</p>
+                           </entry>
+                           <entry valign="top" class="- topic/entry ">
+                              <p class="- topic/p ">Setting</p>
+                           </entry>
+                        </row>
+                     </thead>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">402</p>
+                           </entry>
+                           <entry morerows="0" nameend="3" namest="2" class="- topic/entry ">
+                              <p class="- topic/p ">(S)ingle or (D)ual Input</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">S INP = 1</p>
+                              <p class="- topic/p ">D INP = 5</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="5"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">025</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="5"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">System type UL or IEC</p>
+                           </entry>
+                           <entry colname="3"
+                                  morerows="0"
+                                  nameend="3"
+                                  namest="3"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">208-208 No Transformer</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">3</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">PXC 25-50kW 480/208V (or 600/208V) UPS – single input</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">4</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">PXC 25-100kW 480/208V (or 600/208V) UPS – dual input</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">5</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">PXC 75-100kVA 480/208V (or 600/208V) UPS – single input</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">6</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">PXC 50-100kVA 480/480V (or 600/600V) UPS – single input</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">7</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">PXC 75-100kVA 480/480V (or 600/600V) UPS – dual input</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">8</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="5"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">457</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="5"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">HMI UL System Mimic</p>
+                           </entry>
+                           <entry colname="3"
+                                  morerows="0"
+                                  nameend="3"
+                                  namest="3"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">208-208 No Transformer</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">0</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">PXC 25-50kW 480/208V (or 600/208V) UPS – single input</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">1</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">PXC 25-100kW 480/208V (or 600/208V) UPS – dual input</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">2</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">PXC 75-100kVA 480/208V (or 600/208V) UPS – single input</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">3</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">PXC 50-100kVA 480/480V (or 600/600V) UPS – single input</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">4</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">PXC 75-100kVA 480/480V (or 600/600V) UPS – dual input</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">5</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">047</p>
+                           </entry>
+                           <entry morerows="0" nameend="3" namest="2" class="- topic/entry ">
+                              <p class="- topic/p ">Bypass Measurement sensing. (Bypass
+XFMR installed)</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">1</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">048</p>
+                           </entry>
+                           <entry morerows="0" nameend="3" namest="2" class="- topic/entry ">
+                              <p class="- topic/p ">Input Voltage 480 or 600</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">480 or 600</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">049</p>
+                           </entry>
+                           <entry morerows="0" nameend="3" namest="2" class="- topic/entry ">
+                              <p class="- topic/p ">Bypass Voltage Dual Input 480 or 600</p>
+                              <p class="- topic/p ">For Single Input (no Bypass XFMR)</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">480 or 600  208</p>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Press <uicontrol class="+ topic/ph ui-d/uicontrol ">Send</uicontrol> to implement the settings.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Turn unit input breaker UIB to the OFF position.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Turn static switch input breaker SSIB to the OFF position.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Wait 30 seconds.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Turn unit input breaker UIB to the ON position and wait
+for the UPS to turn on.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Verify that the settings have been changed in Tuner.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">If the DC bus voltage cannot be read out or if it differs
+drastically from the above-mentioned value, check the troubleshooting
+table below. Otherwise, please proceed to the next step.</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <table class="- topic/table ">
+                  <title class="- topic/title ">Troubleshooting</title>
+                  <tgroup cols="2" class="- topic/tgroup ">
+                     <colspec colname="col1" class="- topic/colspec "/>
+                     <colspec colname="col2" class="- topic/colspec "/>
+                     <thead class="- topic/thead ">
+                        <row class="- topic/row ">
+                           <entry valign="top" class="- topic/entry ">Problem</entry>
+                           <entry valign="top" class="- topic/entry ">Solution</entry>
+                        </row>
+                     </thead>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">Controller/display/Interface
+not powered</entry>
+                           <entry class="- topic/entry ">Check the supply
+wiring. The controller is supplied by the PM. The upper power module
+is connected to the upper right connector on the CBOX (24V/15V with
+positive upper pin). The display is then connected to the uppermost
+controller on top right side. The Interface is then connected to the
+lowermost controller on the bottom right side. All controllers must
+be connected from the top to the bottom controller by connecting the
+bottom right connector of the upper controller with the top right
+connector of the lower one.</entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">Text <uicontrol class="+ topic/ph ui-d/uicontrol ">No valid system configuration
+file available</uicontrol>
+                           </entry>
+                           <entry class="- topic/entry ">Please
+retry to download the system setting sheet.</entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">Text <uicontrol class="+ topic/ph ui-d/uicontrol ">Waiting for controllers</uicontrol> or <uicontrol class="+ topic/ph ui-d/uicontrol ">System configuration setup please wait…</uicontrol>
+                           </entry>
+                           <entry class="- topic/entry ">If
+this text is indicated the display gets no ok by the master controller.
+This can happen if the configuration is downloaded correctly but the
+controller is not compatible with the display. The same text appears
+if the self-test fails. Please check the self-test state in the service
+port directly on the controller in the RAW status menu.</entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">Text <uicontrol class="+ topic/ph ui-d/uicontrol ">Abus communication failure</uicontrol>
+                           </entry>
+                           <entry class="- topic/entry ">Check
+the Abus wiring and if all terminators are located correctly. This
+means the display is the first Abus member with built in terminator
+then all controllers are connected together and at the end the interface
+is connected. If no relay board is available the terminator is located
+on the interface, else the relay board is connected to the interface
+and the terminator is located on the relay board. </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Open the unit input breaker UIB.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+            <choices class="- topic/ul task/choices ">
+               <choice class="- topic/li task/choice ">For a REPO with internal supply: Reconnect the jumper on the
+EPO terminals J1602 between pin 3 and 4 on the external connection
+board 0P2553 (A811). </choice>
+            </choices>
+            <choices class="- topic/ul task/choices ">
+               <choice class="- topic/li task/choice ">For a REPO with external supply: Deactivate the REPO switch.</choice>
+            </choices>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Close the unit input breaker UIB.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Close the static switch input breaker SSIB.</cmd>
+            <stepresult class="- topic/itemgroup task/stepresult ">
+               <p class="- topic/p ">Wait for Logic to boot and display to normalize.</p>
+               <p class="- topic/p ">Check LED lights on Controllers to verify that all are on and
+working and that only 1 is saying it is the master.</p>The PFC starts
+to work. The closing of the input contactor can be heard. If everything
+is ok the contactor stays closed. A DC-bus voltage of about +/- 225V
+can be read out in the diagnosis menu.<table outputclass="font:10" class="- topic/table ">
+                  <tgroup cols="1" class="- topic/tgroup ">
+                     <colspec colname="col1" class="- topic/colspec "/>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <screen xml:space="preserve" class="+ topic/pre ui-d/screen ">U dc-bus: + 225.0V          -225.0V</screen>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>The mimic diagram is now displaying the correct switch position:<fig class="- topic/fig ">
+                  <image href="../Images/Reality_nam_service_manual_mimic_diagram_0000183467.jpg"
+                         scope="local"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+               <p class="- topic/p ">If something is wrong the input contactor is opened after
+a short time. Check if input phases are available and within tolerance. </p>
+            </stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Check the indications. A missing input phase or a wrong
+input range can be checked very easily.</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Check input and bypass voltages, , see<xref href="Measure_for_Voltages_and_Currents_on_the_25-50_kVA_UPS_TSK_0000148894.dita"
+                           format="dita"
+                           scope="local"
+                           type="task"
+                           class="- topic/xref "/> and <xref href="Measure_for_Voltages_and_Currents_on_the_75-100_kVA_UPS_TSK_0000148893.dita"
+                           format="dita"
+                           scope="local"
+                           type="task"
+                           class="- topic/xref "/>.</cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Check the indication of the unit input breaker UIB,
+the battery breaker BB and the static switch input breaker SSIB. Check
+if input and bypass are within tolerance.</cmd>
+               </substep>
+            </substeps>
+            <stepresult class="- topic/itemgroup task/stepresult ">If all values are ok, please proceed to the next step.</stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">ON</uicontrol> button on the display
+to turn on the UPS. </cmd>
+            <stepresult class="- topic/itemgroup task/stepresult ">Do not close the battery breaker(s) BB! Now the inverter
+only is turned on. If everything is ok, check the measurements and
+the indication on the display.<fig class="- topic/fig ">
+                  <image href="../Images/Reality_nam_service_manual_mimic_diagram2_0000183466.jpg"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Before connecting the battery please check the polarity
+of the battery voltage. The battery voltage can be measured on the
+battery breaker BB, see<xref href="Measure_for_Voltages_and_Currents_on_the_25-50_kVA_UPS_TSK_0000148894.dita"
+                     format="dita"
+                     scope="local"
+                     type="task"
+                     class="- topic/xref "/> and <xref href="Measure_for_Voltages_and_Currents_on_the_75-100_kVA_UPS_TSK_0000148893.dita"
+                     format="dita"
+                     scope="local"
+                     type="task"
+                     class="- topic/xref "/>. If the polarity is correct, connect the battery. Please
+check the measurements and the indication on the display.</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <fig class="- topic/fig ">
+                  <image href="../Images/Reality_nam_service_manual_mimic_diagram3_0000183465.jpg"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Check output frequency. If the output frequency is about
+60 Hz you will be able to go into bypass operation via the display.
+Transfer the load to static bypass:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Main Menu</uicontrol>, select <menucascade class="+ topic/ph ui-d/menucascade ">
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">System Control</uicontrol>
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Bypass Control</uicontrol>
+                     </menucascade> using the UP/DOWN keys and the ENTER key. </cmd>
+                  <stepxmp class="- topic/itemgroup task/stepxmp ">
+                     <table outputclass="font:10" class="- topic/table ">
+                        <tgroup cols="1" class="- topic/tgroup ">
+                           <colspec colname="col1" class="- topic/colspec "/>
+                           <tbody class="- topic/tbody ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <screen xml:space="preserve" class="+ topic/pre ui-d/screen ">Confirm action:UPS into Bypass NO, Abort►YES, UPS into Bypass</screen>
+                                 </entry>
+                              </row>
+                           </tbody>
+                        </tgroup>
+                     </table>
+                  </stepxmp>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Select <uicontrol class="+ topic/ph ui-d/uicontrol ">YES, UPS into Bypass</uicontrol> to
+transfer to requested static bypass operation. The following message
+will appear on the display:</cmd>
+                  <stepxmp class="- topic/itemgroup task/stepxmp ">
+                     <table outputclass="font:10" class="- topic/table ">
+                        <tgroup cols="1" class="- topic/tgroup ">
+                           <colspec colname="col1" class="- topic/colspec "/>
+                           <tbody class="- topic/tbody ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <screen xml:space="preserve" class="+ topic/pre ui-d/screen ">The load is supplied via the static bypass switch</screen>
+                                 </entry>
+                              </row>
+                           </tbody>
+                        </tgroup>
+                     </table>
+                  </stepxmp>
+               </substep>
+            </substeps>
+            <stepresult class="- topic/itemgroup task/stepresult ">If the transfer to static bypass was successful, please
+proceed to the next step.</stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Transfer the UPS back to normal operation:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">From the <uicontrol class="+ topic/ph ui-d/uicontrol ">Main Menu</uicontrol>, select <menucascade class="+ topic/ph ui-d/menucascade ">
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">System Control</uicontrol>
+                        <uicontrol class="+ topic/ph ui-d/uicontrol ">Bypass Control</uicontrol>
+                     </menucascade> using the UP/DOWN keys and the ENTER key. </cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Select <uicontrol class="+ topic/ph ui-d/uicontrol ">YES, UPS out of Bypass</uicontrol> to transfer to normal operation.</cmd>
+                  <stepxmp class="- topic/itemgroup task/stepxmp ">
+                     <table outputclass="font:10" class="- topic/table ">
+                        <tgroup cols="1" class="- topic/tgroup ">
+                           <colspec colname="col1" class="- topic/colspec "/>
+                           <tbody class="- topic/tbody ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry ">
+                                    <screen xml:space="preserve" class="+ topic/pre ui-d/screen ">Confirm action:UPS out of Bypass NO, Abort►YES, UPS out of Bypass</screen>
+                                 </entry>
+                              </row>
+                           </tbody>
+                        </tgroup>
+                     </table>
+                  </stepxmp>
+               </substep>
+            </substeps>
+            <stepresult class="- topic/itemgroup task/stepresult ">If the transfer was successful, please proceed to the
+next step to calibrate the UPS system. See <xref href="Configure_UPS_Settings_with_Tuner_TSK_0000148966.dita"
+                     format="dita"
+                     scope="local"
+                     type="task"
+                     class="- topic/xref "/> on how to access
+the system settings via Tuner.</stepresult>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Calibrate the voltage settings.<fn class="- topic/fn ">If the displayed voltage
+is higher than the actual voltage – decrease the value in the
+corresponding calibration setting. If the displayed voltage is lower
+than the actual voltage – increase the value in the corresponding
+calibration setting.</fn>
+            </cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <table outputclass="font:10" pgwide="1" class="- topic/table ">
+                  <tgroup cols="2" class="- topic/tgroup ">
+                     <colspec colname="1" colwidth="10.27*" class="- topic/colspec "/>
+                     <colspec colname="2" colwidth="89.73*" class="- topic/colspec "/>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">373</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">VSB Value
+InVoltage L12</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">374</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">VSB Value
+InVoltage L23</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">375</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">VSB Value
+InVoltage L31</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">376</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">VSB Value
+BypVoltage L12 / L1-N</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">377</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">VSB Value
+BypVoltage L23 / L1-N</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">378</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">VSB Value
+BypVoltage L31 / L1-N</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">379</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">VSB Value
+OutVoltage L12 / L1-N</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">380</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">VSB Value
+OutVoltage L23 / L1-N</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry colname="1"
+                                  morerows="0"
+                                  nameend="1"
+                                  namest="1"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">381</p>
+                           </entry>
+                           <entry colname="2"
+                                  morerows="0"
+                                  nameend="2"
+                                  namest="2"
+                                  class="- topic/entry ">
+                              <p class="- topic/p ">VSB Value
+OutVoltage L31 / L1-N</p>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Calibrate the current settings.<fn class="- topic/fn ">If the displayed current
+is higher than the actual current – decrease the value in the
+corresponding calibration setting. If the displayed current is lower
+than the actual current – increase the value in the corresponding
+calibration setting.</fn>
+            </cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <table outputclass="font:10" pgwide="1" class="- topic/table ">
+                  <tgroup cols="2" class="- topic/tgroup ">
+                     <colspec colname="COLSPEC2" colwidth="10.27*" class="- topic/colspec "/>
+                     <colspec colname="COLSPEC3" colwidth="89.73*" class="- topic/colspec "/>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">382</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">CSB Value InCurrent L1</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">383</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">CSB Value InCurrent
+L2</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">384</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">CSB Value InCurrent
+L3</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">385</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">CSB Value BypCurrent
+L1</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">386</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">CSB Value BypCurrent
+L2</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">387</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">CSB Value BypCurrent
+L3</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">388</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">CSB Value OutCurrent
+L1</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">389</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">CSB Value OutCurrent
+L2</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">390</p>
+                           </entry>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">CSB Value OutCurrent
+L3</p>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Verify that the life cycle monitoring (LCM) is activated,
+see <xref href="Service_Life_Cycle_Monitoring_LCM_REF_0000116558.dita"
+                     format="dita"
+                     scope="local"
+                     type="reference"
+                     class="- topic/xref "/> for setting up the LCM.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">If necessary, the controller firmware must be upgraded.
+The actual firmware can be read out in the diagnosis menu. Note that
+if there is a system with a power rating &gt; 25 kVA all controllers
+must be updated. See <xref href="Update_the_Firmware_REF_0000149816.dita"
+                     format="dita"
+                     scope="local"
+                     type="reference"
+                     class="- topic/xref "/>, <xref href="Service_Update_the_Firmware_on_the_Controller_Box_A102_TSK_0000116530.dita"
+                     format="dita"
+                     scope="local"
+                     type="task"
+                     class="- topic/xref "/>, <xref href="Service_Update_the_Firmware_of_the_Human_Machine_Interface_A810_TSK_0000116560.dita"
+                     format="dita"
+                     scope="local"
+                     type="task"
+                     class="- topic/xref "/>, <xref href="Update_the_Firmware_on_the_Interface_Board_TSK_0000147224.dita"
+                     format="dita"
+                     scope="local"
+                     type="task"
+                     class="- topic/xref "/>, and <xref href="Update_the_Firmware_for_the_Independent_Static_Bypass_Switch_Controller__0000147223.dita"
+                     format="dita"
+                     scope="local"
+                     type="task"
+                     class="- topic/xref "/>for instructions on updating firmware.</cmd>
+         </step>
+      </steps>
+   </taskbody>
+</task>

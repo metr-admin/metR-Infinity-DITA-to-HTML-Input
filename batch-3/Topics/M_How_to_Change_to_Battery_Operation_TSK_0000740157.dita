@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="HowToChangeToBatteryOperation-F2D0881F"
+      translate="yes"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">How to Change to Battery Operation (Batterytest)</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-06T19:12:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-06T19:12:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>battery-operation</indexterm>
+            <indexterm>rectifier-module</indexterm>
+            <indexterm>dc-distribution</indexterm>
+            <indexterm>battery-monitoring</indexterm>
+            <indexterm>control-panel</indexterm>
+            <!-- Process layer -->
+            <indexterm>enable-battery-operation</indexterm>
+            <indexterm>initiate-batterytest</indexterm>
+            <indexterm>manual-battery-mode</indexterm>
+            <indexterm>revert-to-float-charge</indexterm>
+            <indexterm>verify-load-transfer</indexterm>
+            <!-- Context layer -->
+            <indexterm>battery-testing</indexterm>
+            <indexterm>commissioning-test</indexterm>
+            <indexterm>emergency-power-supply</indexterm>
+            <indexterm>field-operations</indexterm>
+            <indexterm>industrial-power-systems</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="How to Change to Battery Operation (Batterytest)"/>
+         <othermeta name="shortdesc" content="Procedure to switch the system into battery operation for testing and emergency verification, and instructions to revert to float charge."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="battery bank; rectifier modules; display interface; load panels; test switches"/>
+         <othermeta name="taxonomy" content="domain:battery-management/usecase:battery-testing/industry:uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="batterytest, battery-operation, revert-to-float"/>
+         <othermeta name="usecase" content="execute battery operation for functional testing and verification"/>
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <context class="- topic/section task/context ">
+         <hazardstatement conref="M_Battery_Operation_CPT_0000735393.dita#BatteryOperation-EF587010/DAMAGEDBATTERIESIfTheLoadIsNotAutom-FED0FC71"
+                          class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+            </messagepanel>
+         </hazardstatement>
+         <hazardstatement conref="M_Battery_Operation_CPT_0000735393.dita#BatteryOperation-EF587010/LossOfOutputVoltageAfterBatteryOper-03EAAD68"
+                          class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+            </messagepanel>
+         </hazardstatement>
+         <p class="- topic/p ">If battery operation is manually enabled the
+rectifier modules output is reduced to simulate that the rectifier
+mains is unavailable and to discharge the battery.</p>
+         <note type="important" class="- topic/note ">It is not recommended to manually enable battery
+operation. It should only be used for service and troubleshooting.</note>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step conref="M_How_to_Change_to_Float_Charge_TSK_0000740158.dita#HowToChangeToFloatCharge-F2D031B5/M_User-Access"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step conref="M_How_to_Change_to_Float_Charge_TSK_0000740158.dita#HowToChangeToFloatCharge-F2D031B5/M_Operate-Menu"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Press the <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Batterytest</uicontrol> button.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <note conref="M_How_to_Change_to_Float_Charge_TSK_0000740158.dita#HowToChangeToFloatCharge-F2D031B5/TheCurrentActiveOperationModeIsIndi-04FEB884"
+                     type="-dita-use-conref-target"
+                     class="- topic/note "/>
+               <fig class="- topic/fig ">
+                  <image href="../Images/Switching-operations_0000750075.png"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </info>
+         </step>
+         <step conref="M_How_to_Change_to_Float_Charge_TSK_0000740158.dita#HowToChangeToFloatCharge-F2D031B5/M_Confirm-change"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+      </steps>
+      <result class="- topic/section task/result ">
+         <p class="- topic/p ">The rectifier modules have changed to battery operation
+(batterytest). When battery operation is manually enabled the rectifier
+modules will <u class="+ topic/ph hi-d/u ">not</u> automatically switch back to float charge.</p>
+         <p class="- topic/p ">When the battery voltage has reached the reduced voltage level
+of the rectifier modules, the rectifier modules will take over and
+supply the load, but the rectifier modules will still indicate that
+they are in battery operation. The rectifier modules need to be manually
+switched back to float charge.</p>
+      </result>
+   </taskbody>
+</task>

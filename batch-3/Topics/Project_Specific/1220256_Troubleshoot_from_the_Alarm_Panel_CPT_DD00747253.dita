@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="AlarmPanel-E77B20FB"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Troubleshoot from the Alarm Panel</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-01+05:30" class="- topic/created "/>
+         <revised modified="2025-12-01" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience
+            type="role"
+            otherprops="operations,maintenance,engineering,technical support,monitoring,field technician"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>alarm panel</indexterm>
+            <indexterm>alert messages</indexterm>
+            <indexterm>status indicators</indexterm>
+            <indexterm>fault LEDs</indexterm>
+            <indexterm>system controller</indexterm>
+            <indexterm>diagnostic messages</indexterm>
+            <indexterm>operator controls</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>alarm-driven troubleshooting</indexterm>
+            <indexterm>fault identification workflow</indexterm>
+            <indexterm>alert interpretation steps</indexterm>
+            <indexterm>corrective action process</indexterm>
+            <indexterm>event confirmation</indexterm>
+            <indexterm>acknowledgement and reset</indexterm>
+            <indexterm>verification of resolution</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>critical diagnostics environment</indexterm>
+            <indexterm>UPS alarm handling</indexterm>
+            <indexterm>real-time monitoring systems</indexterm>
+            <indexterm>industrial power fault analysis</indexterm>
+            <indexterm>control panel operations</indexterm>
+            <indexterm>high availability systems</indexterm>
+            <indexterm>equipment health monitoring</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta 
+            name="title"
+            content="Troubleshoot from the Alarm Panel"/>
+         
+         <othermeta 
+            name="shortdesc"
+            content="Explains how to troubleshoot system faults using the alarm panel by reviewing alerts, interpreting diagnostic messages, performing corrective steps, and verifying system recovery."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta 
+            name="entities"
+            content="alarm panel; diagnostic logs; system controller; LEDs; sensors; event codes; operator keys"/>
+         
+         <othermeta 
+            name="taxonomy"
+            content="domain:industrial diagnostics;usecase:alarm-panel-troubleshooting;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta 
+            name="tags"
+            content="alarm panel,troubleshooting,diagnostic messages,alerts,fault resolution,monitoring"/>
+         
+         <othermeta 
+            name="usecase"
+            content="Guide operators and technicians in diagnosing and resolving system issues using alarm panel information"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <fig expanse="page" class="- topic/fig ">
+         <image href="../../Images/1220256_WxW_Alarm_Display_DD00755516.svg"
+                placement="inline"
+                class="- topic/image "/>
+      </fig>
+      <note class="- topic/note ">The alarm text is only displayed in English even if another
+system language is used.</note>
+      <table pgwide="1" platform="WxW" class="- topic/table ">
+         <tgroup cols="3" class="- topic/tgroup ">
+            <colspec colname="COLSPEC0" colwidth="40.00mm" class="- topic/colspec "/>
+            <colspec colname="COLSPEC1" colwidth="1.50*" class="- topic/colspec "/>
+            <colspec colname="COLSPEC2" colwidth="1.50*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Alarm Indicator</p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Alarm Number
+and Text</p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Possible
+Source</p>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row class="- topic/row ">
+                  <entry morerows="1" class="- topic/entry ">
+                     <p class="- topic/p ">DC out
+of tolerance[5 seconds]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">35: Low DC warning</p>
+                     <p translate="no" class="- topic/p ">36: Low DC
+shutdown</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The DC is below the low DC warning/shutdown level</p>
+                     <p class="- topic/p ">Battery is
+discharged or disconnected</p>
+                     <p platform="WxW" class="- topic/p ">The DC power input
+is out of tolerance or unavailable.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">37: High DC warning</p>
+                     <p translate="no" class="- topic/p ">38: High DC
+shutdown</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The DC is above
+the high DC warning/shutdown level</p>
+                     <p class="- topic/p ">High load variation</p>
+                  </entry>
+               </row>
+               <row platform="WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">DC low warning[5 seconds]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">35: Low DC warning</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The DC is below the low DC warning level</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Batt. disconnected[5
+seconds]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">51: Battery breaker open</p>
+                     <p translate="no" class="- topic/p ">60: External
+battery breaker open</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Switch open
+or auxiliary contact not connected</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry morerows="1" class="- topic/entry ">
+                     <p class="- topic/p ">Inverter
+fault[5 seconds]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">67: Inverter volt out of tolerance</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Inverter fuse
+blown</p>
+                     <p class="- topic/p ">DC input too low</p>
+                     <p class="- topic/p ">Inverter inoperable</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">116-139: Power module temperature shutdown</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The inverter power unit temperature is too high</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p otherprops="2pMBS 3pMBS" class="- topic/p ">Overload
+inv./Bypass[30 seconds]</p>
+                     <p otherprops="noByp" class="- topic/p ">Overload
+inverter[30 seconds]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">76: OVERLOAD: load is &gt; 100%</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The load current
+is higher than the nominal current of the system</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Inverter fuse blown[5 seconds]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">68: Inverter fuse blown</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Power fuse F021
+(F022... F023)</p>
+                     <p class="- topic/p ">Inverter input switch Q020 is open</p>
+                  </entry>
+               </row>
+               <row otherprops="2pMBS 3pMBS noMBS" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Asynchronous[30 seconds]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">66: Inverter not synchronized</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The bypass mains
+frequency is out of tolerance or unstable</p>
+                     <p class="- topic/p ">The inverter is off</p>
+                  </entry>
+               </row>
+               <row otherprops="2pMBS 3pMBS noMBS" class="- topic/row ">
+                  <entry morerows="1" class="- topic/entry ">
+                     <p class="- topic/p ">Bypass
+input fault[30 seconds]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">87: Bypass avg out of tolerance</p>
+                     <p translate="no" class="- topic/p ">88: Bypass fast out of tolerance</p>
+                     <p translate="no" class="- topic/p ">89: Bypass
+freq out of tolerance</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The bypass mains
+voltage or the frequency is out of tolerance</p>
+                  </entry>
+               </row>
+               <row otherprops="2pMBS 3pMBS noMBS" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">93: Bypass phase order incorrect</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Wiring at the
+bypass mains input terminal</p>
+                  </entry>
+               </row>
+               <row otherprops="2pMBS 3pMBS noMBS" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Manual bypass on[5
+seconds]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">90: System set in manual bypass</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Manual bypass
+switch Q050 is not at position <b class="+ topic/ph hi-d/b ">Auto</b>
+                     </p>
+                  </entry>
+               </row>
+               <row otherprops="2pMBS 3pMBS noMBS" class="- topic/row ">
+                  <entry morerows="1" class="- topic/entry ">
+                     <p class="- topic/p ">EN inhibited[30 seconds]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">87: Bypass avg out of tolerance</p>
+                     <p translate="no" class="- topic/p ">88: Bypass fast out of tolerance</p>
+                     <p translate="no" class="- topic/p ">89: Bypass
+freq out of tolerance</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The bypass mains
+voltage or the frequency is out of tolerance</p>
+                  </entry>
+               </row>
+               <row otherprops="2pMBS 3pMBS noMBS" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">114: SSW EN temp shutdown</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The static switch
+EN temperature is too high</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">EA inhibited [5 seconds]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">112: SSW EA temp shutdown</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The inverter
+is off</p>
+                     <p class="- topic/p ">The static switch EA temperature is too high</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Overtemperature [5
+seconds]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p platform="PxW" translate="no" class="- topic/p ">103-106: Charger temperature warning
+or shutdown</p>
+                     <p translate="no" class="- topic/p ">107-110: Magnetics temperature warning
+or shutdown</p>
+                     <p translate="no" class="- topic/p ">111-114: Static switches temperature
+warning or shutdown</p>
+                     <p translate="no" class="- topic/p ">116-139: Power module temperature
+warning or shutdown</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Obstructed air
+inlet</p>
+                     <p class="- topic/p ">Too high ambient temperature </p>
+                     <p class="- topic/p ">The winding material
+is too hot </p>
+                     <p class="- topic/p ">The heat-sink of the power components is too hot</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Fan failure [30 seconds]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">82: Fan inoperable</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Fans</p>
+                     <p class="- topic/p ">Fan
+monitoring board (A055 / A056)</p>
+                     <p class="- topic/p ">Fan transformer (T051 / T052)</p>
+                     <p class="- topic/p ">Power supply for the fans</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Control power fault [5 seconds]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">6: PSU AC or DC not working </p>
+                     <p translate="no" class="- topic/p ">7:
+AC power supply for parallel inverter fault </p>
+                     <p translate="no" class="- topic/p ">8: DC power supply for parallel inverter fault</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Power supply
+units : PSU A201 / A202</p>
+                     <p class="- topic/p ">AC or DC power supply sources</p>
+                     <p class="- topic/p ">Interface A071</p>
+                  </entry>
+               </row>
+               <row otherprops="typeR" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Parallel cable interrupted [5 seconds]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">96: At least one parallel cable interrupted</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">At least one
+of the parallel cables are inoperable or disconnected</p>
+                  </entry>
+               </row>
+               <row otherprops="2pMBS 3pMBS noMBS" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Surge protection blown[5 seconds]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">140–145: Option x</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Surge protection fuse blown or tripped.</p>
+                  </entry>
+               </row>
+               <row otherprops="ISBS" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">ISBS inoperable[5 seconds]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">24: ISBS not ok or disrupted</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The ISBS cannot
+switch to bypass because it could not switch on the static switch
+EN.</p>
+                     <p class="- topic/p ">Check the bypass mains power supply and connection.</p>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </conbody>
+</concept>

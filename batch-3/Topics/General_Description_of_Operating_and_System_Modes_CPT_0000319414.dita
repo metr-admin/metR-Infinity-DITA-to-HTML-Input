@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="OperatingModes-502E48FC"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">General Description of Operating and System Modes</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-06T15:00:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-06T15:00:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- product layer -->
+            <indexterm>operating-modes</indexterm>
+            <indexterm>system-modes</indexterm>
+            <indexterm>standby-mode</indexterm>
+            <indexterm>parallel-operation</indexterm>
+            <indexterm>maintenance-mode</indexterm>
+            <!-- process layer -->
+            <indexterm>mode-transition</indexterm>
+            <indexterm>safe-isolation</indexterm>
+            <indexterm>mode-selection</indexterm>
+            <indexterm>perform-mode-checks</indexterm>
+            <indexterm>verify-redundancy</indexterm>
+            <!-- context layer -->
+            <indexterm>high-availability-systems</indexterm>
+            <indexterm>data-center-power-management</indexterm>
+            <indexterm>plant-operation-scenarios</indexterm>
+            <indexterm>scheduled-maintenance-windows</indexterm>
+            <indexterm>safety-critical-operation</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="General description of operating and system modes"/>
+         <othermeta name="shortdesc" content="Overview of GBMS operating and system modes with descriptions and transition rules."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="operating-mode;redundancy-controller;mode-switch-relay;state-machine;health-checks"/>
+         <othermeta name="taxonomy" content="domain:operations/usecase:operational-guidance;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="modes,operations,availability,redundancy,gbms"/>
+         <othermeta name="usecase" content="reference-for-mode-management"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <div class="- topic/div ">
+         <note class="- topic/note ">An example system is used to illustrate the operating modes.
+The function of the operating mode is similar in all applicable configurations,
+but the energized path will depend on the configuration.</note>
+         <p platform="PxW" class="- topic/p ">The operating mode depends on the status of the system,
+the rectifier mains, the battery and the bypass mains.</p>
+         <p platform="WxW" class="- topic/p ">The operating mode depends on the status of the system,
+the DC input power and the bypass mains.</p>
+         <p platform="PxW WxW" class="- topic/p ">The operating priority is:<ol class="- topic/ol ">
+               <li platform="PxW WxW" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Normal_Operation_CPT_0000319413.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li platform="PxW" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Battery_Operation_CPT_0000319411.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li otherprops="generalM 2pMBS 3pMBS noMBS"
+                   platform="PxW WxW"
+                   class="- topic/li ">
+                  <p class="- topic/p ">
+                     <b otherprops="generalM" class="+ topic/ph hi-d/b ">For systems with bypass: </b>
+                     <xref href="Bypass_Operation_System_Operation_CPT_0000319410.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+            </ol>
+         </p>
+         <p platform="SDC" class="- topic/p ">The operating mode of the system depends
+on the status of the rectifier mains and the charge mode of the system.
+The operation modes are:<ul class="- topic/ul ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="SDC_Float_Charge_CPT_0000536863.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="SDC_Boost_Charge_CPT_0000531631.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Battery_Operation_CPT_0000319411.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+            </ul>
+         </p>
+         <p class="- topic/p ">Other modes that the system can be in during startup,
+charging, maintenance, troubleshooting and shutdown are:<ul class="- topic/ul ">
+               <li otherprops="generalM 2pMBS 3pMBS"
+                   platform="PxW WxW"
+                   class="- topic/li ">
+                  <p class="- topic/p ">
+                     <b otherprops="generalM" class="+ topic/ph hi-d/b ">For systems with manual bypass switch(es): </b>
+                     <xref href="Manual_Bypass_Switch_in_Bypass_Position_Manual_Bypass_CPT_0000319424.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li otherprops="generalM 2pMBS 3pMBS"
+                   platform="PxW WxW"
+                   class="- topic/li ">
+                  <p class="- topic/p ">
+                     <b otherprops="generalM" class="+ topic/ph hi-d/b ">For systems with manual bypass switch(es): </b>
+                     <xref href="Manual_Bypass_Switch_in_Test_Position_CPT_0000319425.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Standby_CPT_0000319408.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li platform="PxW" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Charger_Only_CPT_0000319409.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li platform="SDC" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="SDC_Initial_Charge_CPT_0000536861.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Off_CPT_0000319407.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li platform="PxW WxW" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Independent_System_Surveillance_ISS_CPT_0001130321.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li otherprops="generalM ISBS" platform="PxW WxW" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <b otherprops="generalM" class="+ topic/ph hi-d/b ">For systems with ISBS: </b>
+                     <xref href="Independent_Static_Bypass_Switch_ISBS_Operation_CPT_0000320038.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+            </ul>
+         </p>
+         <p otherprops="generalM typeR D_ParallelCom" class="- topic/p ">Additional modes
+in redundant systems:<ul class="- topic/ul ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Normal_Operation_with_One_Unit_Active_CPT_0000319412.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li platform="PxW WxW" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="Hot_Standby_CPT_0000358503.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+            </ul>
+         </p>
+      </div>
+   </conbody>
+</concept>

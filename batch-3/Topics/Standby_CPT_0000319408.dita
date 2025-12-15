@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="Standby-502E654E"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Standby</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-03+05:30" class="- topic/created "/>
+         <revised modified="2025-12-03" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience
+            type="role"
+            otherprops="operations,system operator,maintenance,engineering,technical support,field technician"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>standby mode</indexterm>
+            <indexterm>system standby operation</indexterm>
+            <indexterm>UPS standby functionality</indexterm>
+            <indexterm>inverter standby state</indexterm>
+            <indexterm>bypass standby readiness</indexterm>
+            <indexterm>controller standby logic</indexterm>
+            <indexterm>load support standby mode</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>entering standby operation workflow</indexterm>
+            <indexterm>standby activation steps</indexterm>
+            <indexterm>standby status verification</indexterm>
+            <indexterm>operational transition procedure</indexterm>
+            <indexterm>user confirmation steps</indexterm>
+            <indexterm>pre-standby safety checks</indexterm>
+            <indexterm>restoration from standby</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>system idle state environment</indexterm>
+            <indexterm>service mode scenarios</indexterm>
+            <indexterm>critical load readiness context</indexterm>
+            <indexterm>electrical system standby domain</indexterm>
+            <indexterm>industrial UPS operation</indexterm>
+            <indexterm>maintenance preparation context</indexterm>
+            <indexterm>power continuity environment</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta 
+            name="title"
+            content="Standby"/>
+         
+         <othermeta
+            name="shortdesc"
+            content="Describes the UPS standby mode, including activation steps, operational behavior, safety checks, and transition procedures for stable load readiness."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta
+            name="entities"
+            content="inverter; bypass path; control panel; system controller; load bus; front panel indicators"/>
+         
+         <othermeta
+            name="taxonomy"
+            content="domain:operation modes;usecase:ups-standby-mode;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta
+            name="tags"
+            content="standby mode,UPS standby,operation mode,system readiness,inverter state"/>
+         
+         <othermeta
+            name="usecase"
+            content="Help operators understand and execute the correct procedures for transitioning the UPS to and from standby mode"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <div class="- topic/div ">
+         <hazardstatement conref="../Library/Warnings_Library_0000325173.dita#war_lib/high_current_cap-inverter"
+                          platform="WxW"
+                          class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+            </messagepanel>
+         </hazardstatement>
+         <hazardstatement conref="../Library/Warnings_Library_0000325173.dita#war_lib/high_current_capacitors"
+                          platform="PxW SDC"
+                          class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+            </messagepanel>
+         </hazardstatement>
+         <p class="- topic/p ">In standby the system is energized
+but there is no output voltage and the load is not supplied. For more
+information about how to turn on the system see the chapter <xref href="Starting_the_System_CPT_0000337203.dita"
+                  scope="local"
+                  type="concept"
+                  class="- topic/xref "/>.</p>
+         <fig platform="PxW" class="- topic/fig ">
+            <image href="../Images/FD_PxW_Operating_Modes_Standby_0000348573.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <fig platform="WxW" class="- topic/fig ">
+            <image href="../Images/FD_WxW_Operating_Modes_Standby_0000478968.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <fig platform="SDC" class="- topic/fig ">
+            <image href="../Images/FD_SDC_Operating_Modes_Standby_0000510873.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <table class="- topic/table ">
+            <tgroup cols="2" class="- topic/tgroup ">
+               <colspec colname="col1" colwidth="40.00mm" class="- topic/colspec "/>
+               <colspec colname="col2" colwidth="2.00*" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">
+                        <p class="- topic/p ">Part</p>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <p class="- topic/p ">Status</p>
+                     </entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p platform="PxW SDC" class="- topic/p ">Rectifier mains</p>
+                        <p platform="WxW" class="- topic/p ">DC input power</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Available<fn id="AtLeastOneOfThePowerSuppliesDCInput-44D21C08"
+                               platform="PxW WxW"
+                               class="- topic/fn "> At least one of the power supplies <ph platform="WxW" class="- topic/ph ">(DC input power or bypass mains)</ph>
+                              <ph platform="PxW" class="- topic/ph ">(rectifier mains, bypass mains or battery)</ph> needs to be available
+for the system to be in standby, but not necessary all.</fn> and within
+the tolerance range.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p platform="PxW SDC" class="- topic/p ">Rectifier mains breaker(s)</p>
+                        <p platform="WxW" class="- topic/p ">Inverter input switch(es)</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Closed</p>
+                     </entry>
+                  </row>
+                  <row platform="PxW WxW" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Bypass mains</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Available<fn conref="#./AtLeastOneOfThePowerSuppliesDCInput-44D21C08"
+                               platform="PxW WxW"
+                               class="- topic/fn "/> and can be either within or outside the
+tolerance range.</p>
+                     </entry>
+                  </row>
+                  <row platform="PxW WxW" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Bypass mains breaker(s)</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Closed</p>
+                     </entry>
+                  </row>
+                  <row platform="PxW WxW" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Manual bypass switch</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">In <b class="+ topic/ph hi-d/b ">Auto</b> position.</p>
+                     </entry>
+                  </row>
+                  <row platform="PxW SDC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Battery</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Available<fn conref="#./AtLeastOneOfThePowerSuppliesDCInput-44D21C08"
+                               platform="PxW WxW"
+                               class="- topic/fn "/> and within the tolerance range.</p>
+                     </entry>
+                  </row>
+                  <row platform="PxW SDC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Battery breaker(s)</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p platform="PxW" class="- topic/p ">Closed</p>
+                        <p platform="SDC" class="- topic/p ">Open</p>
+                     </entry>
+                  </row>
+                  <row platform="PxW SDC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Rectifier</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Off</p>
+                     </entry>
+                  </row>
+                  <row platform="PxW WxW" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Inverter</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Off</p>
+                     </entry>
+                  </row>
+                  <row platform="PxW WxW" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Static switch EN</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Off</p>
+                     </entry>
+                  </row>
+                  <row platform="PxW WxW" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Static switch EA</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Off</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Output</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">No output voltage.</p>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </div>
+   </conbody>
+</concept>

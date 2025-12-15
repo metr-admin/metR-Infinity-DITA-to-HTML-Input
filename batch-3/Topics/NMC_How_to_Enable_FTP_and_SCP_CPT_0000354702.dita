@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="HowToEnableFTPAndSCP-7F9FDEFC"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">How to Enable SCP and FTP</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-05+05:30" class="- topic/created "/>
+         <revised modified="2025-12-05" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>network-management-card</indexterm>
+            <indexterm>nmc-ap9635</indexterm>
+            <indexterm>file-transfer-module</indexterm>
+            <indexterm>ftp-server-support</indexterm>
+            <indexterm>scp-support</indexterm>
+            <indexterm>ethernet-interface</indexterm>
+            <!-- Process layer -->
+            <indexterm>enable-ftp</indexterm>
+            <indexterm>enable-scp</indexterm>
+            <indexterm>configure-ftp-credentials</indexterm>
+            <indexterm>configure-scp-credentials</indexterm>
+            <indexterm>transfer-logs</indexterm>
+            <indexterm>verify-file-transfer</indexterm>
+            <!-- Context layer -->
+            <indexterm>remote-log-collection</indexterm>
+            <indexterm>firmware-deployment-usecase</indexterm>
+            <indexterm>maintenance-operations</indexterm>
+            <indexterm>secure-file-transfer</indexterm>
+            <indexterm>production-environment</indexterm>
+            <indexterm>audit-and-traceability</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="How to enable FTP and SCP on the NMC"/>
+         <othermeta name="shortdesc" content="Instructions to enable and configure FTP and SCP services on the network management card for secure file transfers and log uploads."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="network management card AP9635; ftp server; scp server; user credentials; log files; ethernet interface"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:file-transfer-and-log-collection; industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="ftp,scp,file-transfer,logs,nmc,security"/>
+         <othermeta name="usecase" content="configure-secure-file-transfer-for-log-and-file-management"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">Both SCP and FTP can be enabled from the command line interface
+or the web interface. For information on how see each section:<ul class="- topic/ul ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <xref href="#./Enable_SCP_CLI"
+                        scope="local"
+                        type="section"
+                        class="- topic/xref "/>
+               </p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <xref href="#./Enable_FTP_CLI"
+                        scope="local"
+                        type="section"
+                        class="- topic/xref "/>
+               </p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <xref href="#./Enable_SCP_GUI"
+                        scope="local"
+                        type="section"
+                        class="- topic/xref "/>
+               </p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <xref href="#./Enable_FTP_GUI"
+                        scope="local"
+                        type="section"
+                        class="- topic/xref "/>
+               </p>
+            </li>
+         </ul>
+      </p>
+      <section id="Enable_SCP_CLI" class="- topic/section ">
+         <title class="- topic/title ">Enable SCP from the CLI</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">To enable SCP, SSH needs to be enable and FTP needs
+to be disabled.</p>
+            <ol class="- topic/ol ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Log in to the CLI.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">To disable FTP type <codeph translate="no" class="+ topic/ph pr-d/codeph ">ftp –s disable</codeph> and press <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> to confirm.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">To enable SSH type <codeph translate="no" class="+ topic/ph pr-d/codeph ">ssh –s enable</codeph> and press <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> to confirm.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">To set the SSH port, to for example 5000, type <codeph translate="no" class="+ topic/ph pr-d/codeph ">ssh –p 5000</codeph>. Available ports are 22,
+5000-32768.</p>
+                  <note class="- topic/note ">Use a specified SSH port, instead of the default,
+to increase security. </note>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">SCP is now enabled.</p>
+                  <note conref="Configure_from_the_CLI_CPT_0000354856.dita#ConfigureFromTheCLI-8010148F/Reboot-the-NMC-from-the-CLI-77BE4F3B"
+                        class="- topic/note ">A reboot of the NMC might be necessary to activate changes.</note>
+               </li>
+            </ol>
+         </sectiondiv>
+      </section>
+      <section id="Enable_FTP_CLI" class="- topic/section ">
+         <title class="- topic/title ">Enable FTP from the CLI</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <ol class="- topic/ol ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Log in to the CLI.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">To enable FTP type <codeph translate="no" class="+ topic/ph pr-d/codeph ">ftp –s enable</codeph> and press <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Enter</uicontrol> to confirm.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">To set the FTP port to, for example 5001, type <codeph translate="no" class="+ topic/ph pr-d/codeph ">ftp –p 5001</codeph>. Available ports are 21,
+5001-32768.</p>
+                  <note class="- topic/note ">Use a specified FTP port, instead of the default,
+to increase security. </note>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">FTP is now enabled.</p>
+                  <note conref="Configure_from_the_CLI_CPT_0000354856.dita#ConfigureFromTheCLI-8010148F/Reboot-the-NMC-from-the-CLI-77BE4F3B"
+                        class="- topic/note ">A reboot of the NMC might be necessary to activate changes.</note>
+               </li>
+            </ol>
+         </sectiondiv>
+      </section>
+      <section id="Enable_SCP_GUI" class="- topic/section ">
+         <title class="- topic/title ">Enable SCP from the Web Interface</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">To enable SCP, SSH needs to be enable and FTP needs
+to be disabled.</p>
+            <ol class="- topic/ol ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Log in to the web interface.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Navigate to <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Configuration &gt; Network
+&gt; Console &gt; Access</uicontrol>. </p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Check the SSH enable box. It is also possible to specify an
+SSH port. Click <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Apply</uicontrol> to save
+the changes.<note class="- topic/note ">Use a specified SSH port, instead of the default,
+to increase security. </note>
+                     <image href="../Images/NMC_Configuration_Network_Console_Access_0000338179.png"
+                            placement="inline"
+                            class="- topic/image "/>
+                  </p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Navigate to <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Configuration &gt; Network
+&gt; FTP server</uicontrol>.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Make sure that the FTP enable box is unchecked. Click <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Apply</uicontrol> to save the changes.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">SCP is now enabled.</p>
+                  <note conref="../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/restart_to_apply_change"
+                        class="- topic/note ">A reboot of the NMC might be necessary to activate changes.</note>
+               </li>
+            </ol>
+         </sectiondiv>
+      </section>
+      <section id="Enable_FTP_GUI" class="- topic/section ">
+         <title class="- topic/title ">Enable FTP from the Web Interface</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">
+               <ol class="- topic/ol ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Log in to the web interface.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Navigate to <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Configuration &gt; Network
+&gt; FTP server</uicontrol>.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Check the FTP enable box. It is also possible to specify an
+FTP port. Click <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Apply</uicontrol> to save
+the changes. <note class="- topic/note ">Use a specified FTP port, instead of the default,
+to increase security. </note>
+                     </p>
+                     <image href="../Images/NMC_Configuration_Network_FTP-server_0000338180.png"
+                            placement="inline"
+                            class="- topic/image "/>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">FTP is now enabled.</p>
+                     <note conref="../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/restart_to_apply_change"
+                           class="- topic/note ">A reboot of the NMC might be necessary to activate changes.</note>
+                  </li>
+               </ol>
+            </p>
+         </sectiondiv>
+      </section>
+   </conbody>
+</concept>

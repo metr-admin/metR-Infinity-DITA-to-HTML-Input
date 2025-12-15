@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="SystemCheck-74AF505E"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">System Check</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-28+05:30" class="- topic/created "/>
+         <revised modified="2025-11-28" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience type="role" otherprops="maintenance,operations,field technician,engineering,quality assurance,service personnel"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>Bruce UPS system</indexterm>
+            <indexterm>Bruce control panel</indexterm>
+            <indexterm>Bruce power modules</indexterm>
+            <indexterm>battery subsystem</indexterm>
+            <indexterm>ISBS subsystem</indexterm>
+            <indexterm>UPS monitoring interface</indexterm>
+            <indexterm>metR-PXC-Reality diagnostics</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>system check procedure</indexterm>
+            <indexterm>pre-operation inspection</indexterm>
+            <indexterm>health status evaluation</indexterm>
+            <indexterm>operational verification workflow</indexterm>
+            <indexterm>module integrity assessment</indexterm>
+            <indexterm>battery condition check</indexterm>
+            <indexterm>alarm and warning review</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>industrial UPS environments</indexterm>
+            <indexterm>commissioning verification</indexterm>
+            <indexterm>critical power reliability</indexterm>
+            <indexterm>load protection environment</indexterm>
+            <indexterm>preventive maintenance context</indexterm>
+            <indexterm>status monitoring infrastructure</indexterm>
+            <indexterm>system readiness validation</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="Bruce UPS – System Check"/>
+         <othermeta name="shortdesc" content="Provides the steps to perform a complete system check on the Bruce UPS, including module health assessment, battery condition review, and operational verification."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="inverter; rectifier; battery strings; alarm panel; control panel; ISBS; status indicators"/>
+         <othermeta name="taxonomy" content="domain:industrial automation;usecase:system-verification;industry:uninterruptible power supply (UPS) systems)"/>
+         <othermeta name="tags" content="system check,verification,UPS health,module diagnostics,battery condition"/>
+         <othermeta name="usecase" content="Guide technicians through verifying the Bruce UPS system before operation or maintenance"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <conbodydiv class="- topic/bodydiv concept/conbodydiv ">
+         <section class="- topic/section ">
+            <sectiondiv class="- topic/sectiondiv ">
+               <hazardstatement conref="../../Library/Warnings_Library_0000325173.dita#war_lib/high_current_cap-inverter"
+                                platform="WxW"
+                                class="+ topic/note hazard-d/hazardstatement ">
+                  <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+                     <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+                     <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+                  </messagepanel>
+               </hazardstatement>
+               <hazardstatement conref="../../Library/Warnings_Library_0000325173.dita#war_lib/high_current_capacitors"
+                                platform="PxW SDC"
+                                class="+ topic/note hazard-d/hazardstatement ">
+                  <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+                     <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+                     <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+                  </messagepanel>
+               </hazardstatement>
+               <p class="- topic/p ">A system check is performed
+during the commissioning. Pay special attention to specific steps
+that are only valid for some configurations and system types.</p>
+               <p otherprops="typeS" class="- topic/p ">
+                  <b otherprops="generalM" class="+ topic/ph hi-d/b ">Only for single system: </b>The system check is performed for the system. Afterwards it is in <ph platform="PxW WxW" class="- topic/ph ">normal operation</ph>
+                  <ph platform="SDC" class="- topic/ph ">float charge</ph>, without any load connected.</p>
+               <p otherprops="typeD" class="- topic/p ">
+                  <b otherprops="generalM" class="+ topic/ph hi-d/b ">Only for dual systems: </b>The system check
+is performed for one unit at a time, the order of the units does not
+matter. Afterwards both units are in normal operation, without any
+load connected.</p>
+               <p otherprops="typeR" class="- topic/p ">
+                  <b otherprops="generalM" class="+ topic/ph hi-d/b ">Only for redundant systems: </b>The <ph platform="PxW WxW" class="- topic/ph ">two first
+sections</ph>
+                  <ph platform="SDC" class="- topic/ph ">first section</ph> in the system check
+is performed for one unit at a time, <u class="+ topic/ph hi-d/u ">starting with unit2</u>. Afterwards <u class="+ topic/ph hi-d/u ">unit2 is in <ph platform="PxW SDC" class="- topic/ph ">standby</ph>
+                     <ph platform="WxW" class="- topic/ph ">charger only (standby)</ph>
+                  </u> and <u class="+ topic/ph hi-d/u ">unit1 is in <ph platform="PxW WxW" class="- topic/ph ">normal operation</ph>
+                     <ph platform="SDC" class="- topic/ph ">float charge</ph>
+                  </u>, without any load connected.</p>
+            </sectiondiv>
+         </section>
+         <section id="BP_BatteryOperationCheckOnOneUnit-AA6BF085"
+                  platform="PxW SDC"
+                  class="- topic/section ">
+            <title class="- topic/title ">Battery Operation Check on One Unit</title>
+            <ol class="- topic/ol ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Close the rectifier mains input breaker.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">After about 10 seconds the <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph class="+ topic/ph pr-d/codeph ">Standby</codeph>.</p>
+                  <note conref="../../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/autostart_start-up"
+                        class="- topic/note "/>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Lamp test button</b> and check that all LED’s
+on the front panel illuminates. </p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">ON button</b> for one second, if the unit did
+not start from the autostart. After a few seconds or if any key is
+pressed the <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph platform="PxW" class="+ topic/ph pr-d/codeph ">Normal operation
+load power ...%</codeph>
+                     <codeph platform="SDC" class="+ topic/ph pr-d/codeph ">Float charge load ...%</codeph>.</p>
+                  <note type="important" class="- topic/note ">
+                     <b class="+ topic/ph hi-d/b ">Only for 250 V DC systems: </b>The
+output terminal is energized.</note>
+               </li>
+               <li otherprops="R_CommonBattery" platform="SDC" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <b otherprops="generalM" class="+ topic/ph hi-d/b ">Only for redundant system with a common battery: </b>Close the rectifier output switch.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Number 8 key</b> to check the DC voltage.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p id="battery" class="- topic/p ">If the DC voltage is within tolerance, close the
+external battery breaker. The battery is now connected to the unit.</p>
+                  <note otherprops="R_CommonBattery" class="- topic/note ">
+                     <b otherprops="generalM" class="+ topic/ph hi-d/b ">Only
+for redundant system with a common battery: </b>If the system has
+a common battery protection breaker it will already be closed when
+performing the check on <u class="+ topic/ph hi-d/u ">unit1</u>.</note>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Number 5 key</b> to check the battery current.</p>
+               </li>
+               <li platform="PxW" class="- topic/li ">
+                  <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Number 9 key</b> to check that
+the inverter output voltage is within tolerance. Check that the white
+inverter LED on the mimic diagram is illuminated.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Open the rectifier mains input breaker. Check that the unit
+changes to battery operation, and that the white battery LED on the
+mimic diagram is illuminated. The <b class="+ topic/ph hi-d/b ">Display</b> will show <codeph class="+ topic/ph pr-d/codeph ">Batt. operation time ...min</codeph>.</p>
+                  <note class="- topic/note "> The remaining runtime
+will only be shown if advanced battery monitor is installed.</note>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Let the unit be in battery operation for 30 seconds to check
+that the <b class="+ topic/ph hi-d/b ">Battery operation</b> indication activates on the alarm
+panel.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Close the rectifier mains input breaker. Check that the unit
+changes to <ph platform="PxW WxW" class="- topic/ph ">normal operation</ph>
+                     <ph platform="SDC" class="- topic/ph ">float charge</ph>.</p>
+               </li>
+               <li platform="SDC" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <b class="+ topic/ph hi-d/b ">Only for 48 V DC systems: </b>Close the output
+breaker.</p>
+                  <note type="important" class="- topic/note ">
+                     <b class="+ topic/ph hi-d/b ">Only for 48 V DC systems: </b>The output terminal is energized.</note>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Confirm the alarms by pressing the <b class="+ topic/ph hi-d/b ">C key</b> twice.</p>
+               </li>
+               <li otherprops="typeR" platform="SDC" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <b class="+ topic/ph hi-d/b ">Only for <u class="+ topic/ph hi-d/u ">unit2</u> in
+redundant systems with individual batteries: </b>Open the battery
+breaker.</p>
+               </li>
+               <li otherprops="typeR" platform="SDC" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <b class="+ topic/ph hi-d/b ">Only for <u class="+ topic/ph hi-d/u ">unit2</u> 
+in redundant systems: </b>Press both the <b class="+ topic/ph hi-d/b ">ON button</b> and the <b class="+ topic/ph hi-d/b ">OFF button</b> at the same time for two seconds. The <b class="+ topic/ph hi-d/b ">Display</b> now shows <codeph class="+ topic/ph pr-d/codeph ">Standby</codeph>.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Continue with the section:<sl platform="PxW" class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <b otherprops="generalM" class="+ topic/ph hi-d/b ">For all systems with bypass: </b>
+                           <xref href="#./BP_BypassOperationCheckOnOneUnit-AA6BEEEC"
+                                 scope="local"
+                                 type="section"
+                                 class="- topic/xref "/>.</sli>
+                        <sli class="- topic/sli ">
+                           <b otherprops="generalM" class="+ topic/ph hi-d/b ">For single systems without bypass: </b>
+                           <xref href="Bruce_Connecting_the_Output_Distribution_CPT_0000916515.dita"
+                                 scope="local"
+                                 type="concept"
+                                 class="- topic/xref "/>.</sli>
+                        <sli class="- topic/sli ">
+                           <b otherprops="generalM" class="+ topic/ph hi-d/b ">For dual systems without bypass: </b>
+                           <xref href="#./BP_AdditionalStepsForDualSystems-8EFBDCC3"
+                                 scope="local"
+                                 type="section"
+                                 class="- topic/xref "/>.</sli>
+                        <sli class="- topic/sli ">
+                           <b otherprops="generalM" class="+ topic/ph hi-d/b ">For redundant systems without bypass: </b>
+                           <xref href="#./BP_AdditionalStepsForRedundantSystems-8EFBDEDE"
+                                 scope="local"
+                                 type="section"
+                                 class="- topic/xref "/>.</sli>
+                     </sl>
+                     <sl platform="SDC" class="- topic/sl ">
+                        <sli otherprops="typeS" class="- topic/sli ">
+                           <b otherprops="generalM" class="+ topic/ph hi-d/b ">For single systems: </b>
+                           <xref href="Bruce_Connecting_the_Output_Distribution_CPT_0000916515.dita"
+                                 scope="local"
+                                 type="concept"
+                                 class="- topic/xref "/>.</sli>
+                        <sli otherprops="typeR" class="- topic/sli ">
+                           <b otherprops="generalM" class="+ topic/ph hi-d/b ">For redundant systems: </b>
+                           <xref href="#./BP_AdditionalStepsForRedundantSystems-8EFBDEDE"
+                                 scope="local"
+                                 type="section"
+                                 class="- topic/xref "/>.</sli>
+                     </sl>
+                  </p>
+               </li>
+            </ol>
+         </section>
+      </conbodydiv>
+      <conbodydiv class="- topic/bodydiv concept/conbodydiv ">
+         <section id="BP_StartUpCheckOnOneUnit-20D8C3C2"
+                  platform="WxW"
+                  class="- topic/section ">
+            <title class="- topic/title ">Start Up Check on One Unit</title>
+            <note type="important" class="- topic/note "> The DC
+capacitors needs to be charged before the inverter input switch is
+closed.</note>
+            <ol class="- topic/ol ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Make sure the external source of the DC input power is available.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Charge the DC capacitors:</p>
+                  <ol class="- topic/ol ">
+                     <li class="- topic/li ">
+                        <p class="- topic/p ">Keep the charging/discharging switch it in position 2 (charge)
+until the warning LED turns off.</p>
+                     </li>
+                     <li class="- topic/li ">
+                        <p class="- topic/p ">With the charging/discharging switch still in position 2 (charge),
+close the inverter input switch. If not possible, release the charging/discharging
+switch and quickly close the inverter input switch.</p>
+                     </li>
+                     <li class="- topic/li ">
+                        <p class="- topic/p ">Release the charging/discharging switch.</p>
+                     </li>
+                  </ol>
+                  <note conref="../../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/autostart_start-up"
+                        class="- topic/note "/>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Lamp test button</b> and check that all LED’s
+on the front panel illuminates. </p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">ON button</b> for one second, if the unit did
+not start from the autostart. After a few seconds or if any key is
+pressed the <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph class="+ topic/ph pr-d/codeph ">Normal operation load power
+...%</codeph>.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Number 8 key</b> to check the DC voltage.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Number 5 key</b> to check the DC current.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Number 9 key</b> to check that the inverter output
+voltage is within tolerance. Check that the white inverter LED on
+the mimic diagram is illuminated.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Confirm the alarms by pressing the <b class="+ topic/ph hi-d/b ">C key</b> twice.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Continue with the section:<sl class="- topic/sl ">
+                        <sli otherprops="2pMBS 3pMBS noMBS" class="- topic/sli ">
+                           <b otherprops="generalM" class="+ topic/ph hi-d/b ">For all
+systems with bypass: </b>
+                           <xref href="#./BP_BypassOperationCheckOnOneUnit-AA6BEEEC"
+                                 scope="local"
+                                 type="section"
+                                 class="- topic/xref "/>.</sli>
+                        <sli otherprops="noByp" class="- topic/sli ">
+                           <b otherprops="generalM" class="+ topic/ph hi-d/b ">For single systems
+without bypass: </b>
+                           <xref href="Bruce_Connecting_the_Output_Distribution_CPT_0000916515.dita"
+                                 scope="local"
+                                 type="concept"
+                                 class="- topic/xref "/>.</sli>
+                        <sli otherprops="typeD noByp" class="- topic/sli ">
+                           <b otherprops="generalM" class="+ topic/ph hi-d/b ">For dual systems
+without bypass: </b>
+                           <xref href="#./BP_AdditionalStepsForDualSystems-8EFBDCC3"
+                                 scope="local"
+                                 type="section"
+                                 class="- topic/xref "/>.</sli>
+                        <sli otherprops="typeR noByp" class="- topic/sli ">
+                           <b otherprops="generalM" class="+ topic/ph hi-d/b ">For redundant
+systems without bypass: </b>
+                           <xref href="#./BP_AdditionalStepsForRedundantSystems-8EFBDEDE"
+                                 scope="local"
+                                 type="section"
+                                 class="- topic/xref "/>.</sli>
+                     </sl>
+                  </p>
+               </li>
+            </ol>
+         </section>
+      </conbodydiv>
+      <section id="BP_BypassOperationCheckOnOneUnit-AA6BEEEC"
+               otherprops="2pMBS 3pMBS noMBS"
+               platform="PxW WxW"
+               class="- topic/section ">
+         <title class="- topic/title ">Bypass Operation
+Check on One Unit</title>
+         <hazardstatement conref="../../Library/Warnings_Library_0000325173.dita#war_lib/output_energized"
+                          class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+            </messagepanel>
+         </hazardstatement>
+         <note otherprops="2pMBS 3pMBS noMBS" class="- topic/note ">
+            <b otherprops="generalM" class="+ topic/ph hi-d/b ">For systems with a manual bypass switch: </b>Check the position of the manual bypass switch. It should be in <b class="+ topic/ph hi-d/b ">Bypass</b> except if the check is performed on <u class="+ topic/ph hi-d/u ">unit1</u> in a
+redundant system with a common manual bypass switch.</note>
+         <ol class="- topic/ol ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">Close the bypass mains input breaker. </p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p "> If applicable, close the bypass isolation switch.</p>
+            </li>
+            <li otherprops="generalM 3pMBS" class="- topic/li ">
+               <p class="- topic/p ">
+                  <b otherprops="tempExclude" class="+ topic/ph hi-d/b ">Only
+for 3-position manual bypass switch: </b>Turn the manual bypass switch
+to the <b class="+ topic/ph hi-d/b ">Test</b> position. <note class="- topic/note ">
+                     <b otherprops="generalM" class="+ topic/ph hi-d/b ">Only for
+redundant systems with common manual bypass: </b>The manual bypass
+switch will already be in the <b class="+ topic/ph hi-d/b ">Test</b> position when performing
+the check for <u class="+ topic/ph hi-d/u ">unit1</u>.</note>
+               </p>
+            </li>
+            <li otherprops="2pMBS" class="- topic/li ">
+               <p class="- topic/p ">Close the bypass isolation (EN input) switch.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Check that the blue inverter LED on the mimic diagram is illuminated,
+indicating that the inverter is synchronized with the bypass mains.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Check that the white LED before the static switch EN (upstream)
+on the mimic diagram is illuminated, indicating that the bypass mains
+is available and within tolerance.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Switch to bypass operation:<ol conref="Bruce_How_to_Switch_from_Normal_Operation_to_Bypass_Operation_CPT_0000916381.dita#HowToSwitchFromNormalOperationToByp-74A61565/BP_Switch-to-bypass"
+                      class="- topic/ol ">
+                     <li class="- topic/li "/>
+                  </ol>
+               </p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Check that the <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph class="+ topic/ph pr-d/codeph ">Bypass operation</codeph>.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Switch back to normal operation:</p>
+               <ol conref="Bruce_How_to_Switch_from_Bypass_Operation_to_Normal_Operation_CPT_0000916380.dita#HowToSwitchFromBypassOperationToNor-74A64CEF/BP_Switch-to-normal"
+                   class="- topic/ol ">
+                  <li class="- topic/li "/>
+               </ol>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Check that the <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph class="+ topic/ph pr-d/codeph ">Normal operation
+load power ...%</codeph>.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Confirm any alarms by pressing the <b class="+ topic/ph hi-d/b ">C key</b> twice.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <b class="+ topic/ph hi-d/b ">Only for <u class="+ topic/ph hi-d/u ">unit2</u> in redundant systems: </b>Press both
+the <b class="+ topic/ph hi-d/b ">ON button</b> and the <b class="+ topic/ph hi-d/b ">OFF button</b> at the same time for
+two seconds. The <b class="+ topic/ph hi-d/b ">Display</b> now shows <codeph platform="PxW" class="+ topic/ph pr-d/codeph ">Standby</codeph>
+                  <codeph platform="WxW" class="+ topic/ph pr-d/codeph ">Charger only</codeph>
+                  <ph platform="WxW" class="- topic/ph "> (standby)</ph>.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Continue with the section:<sl class="- topic/sl ">
+                     <sli otherprops="typeS" class="- topic/sli ">
+                        <b otherprops="generalM" class="+ topic/ph hi-d/b ">For single or dual
+units with manual bypass switch(es): </b>
+                        <xref href="#./BP_SetManualBypassSwitchesToAuto-AA6C103D"
+                              scope="local"
+                              type="section"
+                              class="- topic/xref "/>.</sli>
+                     <sli otherprops="noByp" class="- topic/sli ">
+                        <b otherprops="generalM" class="+ topic/ph hi-d/b ">For single units
+without manual bypass switch(es): </b>
+                        <xref href="Bruce_Connecting_the_Output_Distribution_CPT_0000916515.dita"
+                              scope="local"
+                              type="concept"
+                              class="- topic/xref "/>.</sli>
+                     <sli otherprops="typeD" class="- topic/sli ">
+                        <b otherprops="generalM" class="+ topic/ph hi-d/b ">For dual units without
+manual bypass switch(es): </b>
+                        <xref href="#./BP_AdditionalStepsForDualSystems-8EFBDCC3"
+                              scope="local"
+                              type="section"
+                              class="- topic/xref "/>.</sli>
+                     <sli otherprops="typeR" class="- topic/sli ">
+                        <b otherprops="generalM" class="+ topic/ph hi-d/b ">For redundant systems: </b>
+                        <xref href="#./BP_AdditionalStepsForRedundantSystems-8EFBDEDE"
+                              scope="local"
+                              type="section"
+                              class="- topic/xref "/>.</sli>
+                  </sl>
+               </p>
+            </li>
+         </ol>
+      </section>
+      <section id="BP_AdditionalStepsForRedundantSystems-8EFBDEDE"
+               otherprops="typeR"
+               class="- topic/section ">
+         <title class="- topic/title ">Additional Steps for Redundant Systems</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <ol class="- topic/ol ">
+               <li platform="PxW WxW" class="- topic/li ">
+                  <p class="- topic/p ">Repeat the relevant sections for <u class="+ topic/ph hi-d/u ">unit1</u>:<ol class="- topic/ol ">
+                        <li platform="PxW" class="- topic/li ">
+                           <p class="- topic/p ">
+                              <xref href="#./BP_BatteryOperationCheckOnOneUnit-AA6BF085"
+                                    scope="local"
+                                    type="section"
+                                    class="- topic/xref "/>.</p>
+                        </li>
+                        <li platform="WxW" class="- topic/li ">
+                           <p class="- topic/p ">
+                              <xref href="#./BP_StartUpCheckOnOneUnit-20D8C3C2"
+                                    scope="local"
+                                    type="section"
+                                    class="- topic/xref "/>
+                           </p>
+                        </li>
+                        <li otherprops="2pMBS 3pMBS noMBS"
+                            platform="PxW WxW"
+                            class="- topic/li ">
+                           <p class="- topic/p ">
+                              <xref href="#./BP_BypassOperationCheckOnOneUnit-AA6BEEEC"
+                                    scope="local"
+                                    type="section"
+                                    class="- topic/xref "/>.</p>
+                        </li>
+                     </ol>
+                  </p>
+               </li>
+               <li platform="SDC" class="- topic/li ">
+                  <p class="- topic/p ">Repeat the <xref href="#./BP_BatteryOperationCheckOnOneUnit-AA6BF085"
+                           scope="local"
+                           type="section"
+                           class="- topic/xref "/> section for <u class="+ topic/ph hi-d/u ">unit1</u>.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Check that the <ph platform="PxW WxW" class="- topic/ph ">redundant communication
+cables are</ph>
+                     <ph platform="SDC" class="- topic/ph ">parallel communication cable is</ph> connected according to the specifications in the <i class="+ topic/ph hi-d/i ">Connection Diagram</i>.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">
+                     <b class="+ topic/ph hi-d/b ">Only for <u class="+ topic/ph hi-d/u ">unit2</u>: </b>Press the <b class="+ topic/ph hi-d/b ">ON button</b> for
+one second to restart <u class="+ topic/ph hi-d/u ">unit2</u>.<ph platform="PxW WxW" class="- topic/ph "> Check that
+the blue inverter LED on the mimic diagrams is illuminated.</ph>
+                  </p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Check that the <b class="+ topic/ph hi-d/b ">Displays</b> on both units show <codeph platform="PxW WxW" class="+ topic/ph pr-d/codeph ">Normal operation load power ...%</codeph>
+                     <codeph platform="SDC" class="+ topic/ph pr-d/codeph ">Float charge load ...%</codeph>.</p>
+               </li>
+               <li platform="PxW WxW" class="- topic/li ">
+                  <p class="- topic/p ">Close <u class="+ topic/ph hi-d/u ">both</u> output isolation switches.</p>
+               </li>
+               <li otherprops="R_CommonBattery" platform="SDC" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <b class="+ topic/ph hi-d/b ">Only for <u class="+ topic/ph hi-d/u ">unit2</u> in redundant systems with individual batteries: </b>Close
+the battery breaker.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Confirm any alarms by pressing the <b class="+ topic/ph hi-d/b ">C key</b> twice.</p>
+               </li>
+               <li platform="PxW WxW" class="- topic/li ">
+                  <p class="- topic/p ">Check that alarms for the parallel communication
+are not active.</p>
+               </li>
+               <li platform="PxW WxW" class="- topic/li ">
+                  <p class="- topic/p ">Continue with the section <xref href="#./BP_SetManualBypassSwitchesToAuto-AA6C103D"
+                           scope="local"
+                           type="section"
+                           class="- topic/xref "/>.</p>
+               </li>
+               <li platform="SDC" class="- topic/li ">
+                  <p class="- topic/p ">After both units are checked and in float charge,
+continue with the section <xref href="Bruce_Connecting_the_Output_Distribution_CPT_0000916515.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>.</p>
+               </li>
+            </ol>
+         </sectiondiv>
+      </section>
+      <section id="BP_SetManualBypassSwitchesToAuto-AA6C103D"
+               otherprops="2pMBS 3pMBS noMBS"
+               platform="PxW WxW"
+               class="- topic/section ">
+         <title class="- topic/title ">Set Manual
+Bypass Switch to Normal and Check Parallel Communication</title>
+         <p otherprops="typeR" class="- topic/p ">
+            <b otherprops="generalM" class="+ topic/ph hi-d/b ">Only for redundant systems: </b>This procedure is performed to verify that the parallel communication
+is working as intended. Only switch operation from <u class="+ topic/ph hi-d/u ">unit1</u> and
+check that <u class="+ topic/ph hi-d/u ">unit2</u> reacts in the same way.</p>
+         <ol class="- topic/ol ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">Switch the unit to bypass operation:</p>
+               <ol conref="Bruce_How_to_Switch_from_Normal_Operation_to_Bypass_Operation_CPT_0000916381.dita#HowToSwitchFromNormalOperationToByp-74A61565/BP_Switch-to-bypass"
+                   class="- topic/ol ">
+                  <li class="- topic/li "/>
+               </ol>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p "> Check that the <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph class="+ topic/ph pr-d/codeph ">Bypass operation</codeph>.</p>
+            </li>
+            <li otherprops="typeR" class="- topic/li ">
+               <p class="- topic/p ">
+                  <b otherprops="generalM" class="+ topic/ph hi-d/b ">Only for redundant
+system: </b>Check that <u class="+ topic/ph hi-d/u ">unit2</u> also switched to bypass operation.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Check that the white LED after the inverter (downstream) on
+the mimic diagram is illuminated, indicating that the inverter output
+is available and within tolerance.</p>
+            </li>
+            <li otherprops="2pMBS 3pMBS" class="- topic/li ">
+               <p class="- topic/p ">
+                  <b otherprops="generalM" class="+ topic/ph hi-d/b ">Only for
+systems with manual bypass switch(es): </b>If the inverter output
+is available and within tolerance, switch the manual bypass switch
+to the position <b class="+ topic/ph hi-d/b ">Normal</b>.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Switch the unit to normal operation:</p>
+               <ol conref="Bruce_How_to_Switch_from_Bypass_Operation_to_Normal_Operation_CPT_0000916380.dita#HowToSwitchFromBypassOperationToNor-74A64CEF/BP_Switch-to-normal"
+                   class="- topic/ol ">
+                  <li class="- topic/li "/>
+               </ol>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p "> Check that the <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph class="+ topic/ph pr-d/codeph ">Normal operation
+load power ...%</codeph>.</p>
+            </li>
+            <li otherprops="typeR" class="- topic/li ">
+               <p class="- topic/p ">
+                  <b otherprops="generalM" class="+ topic/ph hi-d/b ">Only for redundant
+system: </b>Check that <u class="+ topic/ph hi-d/u ">unit2</u> also switched to normal operation.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Confirm any alarms by pressing the <b class="+ topic/ph hi-d/b ">C key</b> twice.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Continue with the section:<sl class="- topic/sl ">
+                     <sli otherprops="typeS typeR" class="- topic/sli ">
+                        <b otherprops="generalM" class="+ topic/ph hi-d/b ">For single
+and redundant systems: </b>
+                        <xref href="Bruce_Connecting_the_Output_Distribution_CPT_0000916515.dita"
+                              scope="local"
+                              type="concept"
+                              class="- topic/xref "/>.</sli>
+                     <sli otherprops="typeD" class="- topic/sli ">
+                        <b otherprops="generalM" class="+ topic/ph hi-d/b ">For dual systems: </b>
+                        <xref href="#./BP_AdditionalStepsForDualSystems-8EFBDCC3"
+                              scope="local"
+                              type="section"
+                              class="- topic/xref "/>.</sli>
+                  </sl>
+               </p>
+            </li>
+         </ol>
+      </section>
+      <section id="BP_AdditionalStepsForDualSystems-8EFBDCC3"
+               otherprops="typeD"
+               class="- topic/section ">
+         <title class="- topic/title ">Additional Steps for Dual Systems</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <ol class="- topic/ol ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Repeat the sections for the other unit in the system, until
+all applicable sections are performed and both units are checked:</p>
+                  <ol class="- topic/ol ">
+                     <li platform="PxW" class="- topic/li ">
+                        <p class="- topic/p ">
+                           <xref href="#./BP_BatteryOperationCheckOnOneUnit-AA6BF085"
+                                 scope="local"
+                                 type="section"
+                                 class="- topic/xref "/>.</p>
+                     </li>
+                     <li platform="WxW" class="- topic/li ">
+                        <p class="- topic/p ">
+                           <xref href="#./BP_StartUpCheckOnOneUnit-20D8C3C2"
+                                 scope="local"
+                                 type="section"
+                                 class="- topic/xref "/>
+                        </p>
+                     </li>
+                     <li otherprops="2pMBS 3pMBS noMBS" class="- topic/li ">
+                        <p class="- topic/p ">
+                           <b otherprops="generalM" class="+ topic/ph hi-d/b ">Only
+for systems with bypass: </b>
+                           <xref href="#./BP_BypassOperationCheckOnOneUnit-AA6BEEEC"
+                                 scope="local"
+                                 type="section"
+                                 class="- topic/xref "/>.</p>
+                     </li>
+                     <li otherprops="2pMBS 3pMBS" class="- topic/li ">
+                        <p class="- topic/p ">
+                           <b otherprops="generalM" class="+ topic/ph hi-d/b ">Only for
+systems with manual bypass switches: </b>
+                           <xref href="#./BP_SetManualBypassSwitchesToAuto-AA6C103D"
+                                 scope="local"
+                                 type="section"
+                                 class="- topic/xref "/>.</p>
+                     </li>
+                  </ol>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">After both units are checked and in normal operation, continue
+with the section <xref href="Bruce_Connecting_the_Output_Distribution_CPT_0000916515.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>.</p>
+               </li>
+            </ol>
+         </sectiondiv>
+      </section>
+   </conbody>
+</concept>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="SmartSlotTranslator-5E2115E9"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Connections on the Smart Slot Translator</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-03+05:30" class="- topic/created "/>
+         <revised modified="2025-12-03" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience
+            type="role"
+            otherprops="engineering,system integrator,automation engineer,operations,maintenance,technical support"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>Smart Slot Translator</indexterm>
+            <indexterm>communication module</indexterm>
+            <indexterm>interface translator</indexterm>
+            <indexterm>UPS communication accessory</indexterm>
+            <indexterm>protocol conversion module</indexterm>
+            <indexterm>slot-based interface card</indexterm>
+            <indexterm>device communication adapter</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>communication setup workflow</indexterm>
+            <indexterm>module installation process</indexterm>
+            <indexterm>protocol translation steps</indexterm>
+            <indexterm>data exchange configuration</indexterm>
+            <indexterm>monitoring system integration</indexterm>
+            <indexterm>interface troubleshooting</indexterm>
+            <indexterm>port mapping procedure</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>industrial communication environment</indexterm>
+            <indexterm>UPS monitoring systems</indexterm>
+            <indexterm>facility automation networks</indexterm>
+            <indexterm>remote supervision domain</indexterm>
+            <indexterm>protocol interoperability context</indexterm>
+            <indexterm>device communication ecosystem</indexterm>
+            <indexterm>system integration requirements</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta
+            name="title"
+            content="Smart Slot Translator"/>
+         
+         <othermeta
+            name="shortdesc"
+            content="Describes the Smart Slot Translator module, its role in protocol conversion, installation steps, supported interfaces, and integration with UPS communication systems."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta
+            name="entities"
+            content="Smart Slot module; communication ports; protocol converter; RS-485 interface; monitoring systems; control electronics; network cabling"/>
+         
+         <othermeta
+            name="taxonomy"
+            content="domain:communication interfaces;usecase:protocol-translation;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta
+            name="tags"
+            content="Smart Slot,protocol conversion,communication module,interface translator,UPS communication"/>
+         
+         <othermeta
+            name="usecase"
+            content="Support integrators and technicians in configuring and installing the Smart Slot Translator for UPS communication interoperability"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <section class="- topic/section ">
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">The smart slot translator is used to convert
+the RS-232 signal from the Silcon<fn conref="The_Communication_Interface_CPT_0000332515.dita#TheCommunicationInterface-5E20EE4E/TheSilconProtocolIsAnInternalSchnei-34CA2A38"
+                   class="- topic/fn "/> protocol to the UPS-link protocol. The connection from the <ph platform="PxW WxW" class="- topic/ph ">communication interface</ph>
+               <ph platform="SDC" class="- topic/ph ">external connection board</ph> is to a RS-232 port <b class="+ topic/ph hi-d/b ">J8</b> with
+a DE-9 connector (male), using the Silcon protocol. The connections
+to the NMC and the options slot are from RS-232 ports <b class="+ topic/ph hi-d/b ">J3</b> and <b class="+ topic/ph hi-d/b ">J2</b> with 10 pin IDC-connectors, using the UPS-Link protocol<fn class="- topic/fn "> For more information about the UPS-link protocol see <xref href="https://www.se.com/ww/en/faqs/FA276164/"
+                        scope="external"
+                        class="- topic/xref "
+                        format="html">How
+to download and use the APC UPS-Link Protocol Language</xref>
+               </fn>.</p>
+            <p class="- topic/p ">The smart slot translator has a serial monitoring port <b class="+ topic/ph hi-d/b ">J6</b>, a RS-232 port with a DE-9 connector (female). With a serial
+cable it is possible to access the command line interface (CLI) from
+the <b class="+ topic/ph hi-d/b ">J6</b> port. </p>
+            <p class="- topic/p ">The green LED <b class="+ topic/ph hi-d/b ">(A)</b> indicates the
+status of the serial connection. A solid green light indicates normal
+operation and that the smart slot translator is receiving valid information
+from the system, else the LED is flashing with a green light.</p>
+            <p class="- topic/p ">The port <b class="+ topic/ph hi-d/b ">J1</b> is not used.</p>
+            <fig class="- topic/fig ">
+               <image href="../Images/OM_Smart-Slot-Translator-Ports_0000352797.png"
+                      placement="inline"
+                      class="- topic/image "/>
+            </fig>
+            <table class="- topic/table ">
+               <tgroup cols="4" class="- topic/tgroup ">
+                  <colspec colname="col1" class="- topic/colspec "/>
+                  <colspec colname="COLSPEC0" class="- topic/colspec "/>
+                  <colspec colname="col2" class="- topic/colspec "/>
+                  <colspec colname="col3" class="- topic/colspec "/>
+                  <thead class="- topic/thead ">
+                     <row class="- topic/row ">
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">Ports</p>
+                        </entry>
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">Port Standard</p>
+                        </entry>
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">Connector</p>
+                        </entry>
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">Communication
+Protocol</p>
+                        </entry>
+                     </row>
+                  </thead>
+                  <tbody class="- topic/tbody ">
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">
+                              <b class="+ topic/ph hi-d/b ">J1</b>, <b class="+ topic/ph hi-d/b ">J2</b>, <b class="+ topic/ph hi-d/b ">J3</b> (outputs)</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">RS-232</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">10 pin IDC (male)</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">UPS-Link</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">
+                              <b class="+ topic/ph hi-d/b ">J6</b> (output)</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">RS-232</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">DE-9 (female)</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">UPS-Link</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">
+                              <b class="+ topic/ph hi-d/b ">J8</b> (input)</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">RS-232</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">DE-9 (male)</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Silcon</p>
+                        </entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+         </sectiondiv>
+      </section>
+   </conbody>
+</concept>

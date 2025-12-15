@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="ModbusReadCoilRegisterFunctionCall0-C70836C9"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Modbus Read Coil Register (Function Call 01)</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-05+05:30" class="- topic/created "/>
+         <revised modified="2025-12-05" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>network-management-card</indexterm>
+            <indexterm>nmc</indexterm>
+            <indexterm>modbus-interface</indexterm>
+            <indexterm>rs485-connector</indexterm>
+            <indexterm>ap9635</indexterm>
+            <indexterm>serial-port</indexterm>
+            <indexterm>metR-PXC-Reality</indexterm>
+            <!-- Process layer -->
+            <indexterm>read-coil-register</indexterm>
+            <indexterm>modbus-function-call</indexterm>
+            <indexterm>interpret-coil-status</indexterm>
+            <indexterm>configure-modbus-parameters</indexterm>
+            <indexterm>test-modbus-communication</indexterm>
+            <indexterm>map-coil-to-parameter</indexterm>
+            <!-- Context layer -->
+            <indexterm>industrial-automation</indexterm>
+            <indexterm>ups-monitoring</indexterm>
+            <indexterm>field-commissioning</indexterm>
+            <indexterm>remote-monitoring</indexterm>
+            <indexterm>site-integration</indexterm>
+            <indexterm>maintenance-diagnostics</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Modbus read coil register — function call (PxW)"/>
+         <othermeta name="shortdesc" content="Explains the Modbus read-coil-register function call (PxW variant) for the network management card and how to interpret coil responses for device monitoring."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="modbus coils; modbus function calls; network management card AP9635; rs485 connector; serial port; register map"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:modbus-read-coil-register; industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="modbus,read-coil,coil-register,rs485,nmc,communication"/>
+         <othermeta name="usecase" content="use-modbus-read-coil-for-state-monitoring"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <div id="Modbus01_general_desc-C70847C5" class="- topic/div ">
+         <p class="- topic/p ">The read coil register
+contains digital information, the parameters are either 1 (true) or
+0 (false). True indicates that the alarm/indication is active and
+present in the system.</p>
+         <p class="- topic/p ">The data is stored as Boolean. This information
+can be used to trigger alarms, actions or other events.</p>
+         <note class="- topic/note ">It
+is recommended that the delay poll is more than 10 seconds because
+the refresh rate of the register is about 10 seconds.</note>
+         <note class="- topic/note ">All coil registers between 00001-00071 are reserved even if not listed
+in the table.</note>
+      </div>
+      <table class="- topic/table ">
+         <tgroup cols="3" class="- topic/tgroup ">
+            <colspec colname="col1" colwidth="1*" class="- topic/colspec "/>
+            <colspec colname="col2" colwidth="2*" class="- topic/colspec "/>
+            <colspec colname="col3" colwidth="5*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <ph id="CoilRegister-C7085A28" class="- topic/ph ">Coil Register</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph id="Name-C7085BAD" class="- topic/ph ">Name</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph id="Description-C7085C83" class="- topic/ph ">Description</ph>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00001</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00001_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00001_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00002</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00002_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00002_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00003</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00003_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00003_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00004</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00004_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00004_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00005</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00005_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00005_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00006</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00006_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00006_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00007</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00007_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00007_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00008</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00008_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00008_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00009</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00009_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00009_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00010</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00010_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00010_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00011</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00011_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00011_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00012</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00012_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00012_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00016</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00016_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00016_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00021</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00021_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00021_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00023</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00023_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00023_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00025</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00025_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00025_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00027</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00027_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00027_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00028</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00028_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00028_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00035</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00035_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00035_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00037</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00037_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00037_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00038</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00038_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00038_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00039</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00039_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00039_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00040</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00040_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00040_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00043</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00043_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00043_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00048</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00048_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00048_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00049</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00049_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00049_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00050</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00050_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00050_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00051</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00051_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00051_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00052</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00052_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00052_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00054</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00054_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00054_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00055</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00055_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00055_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00056</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00056_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00056_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00057</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00057_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00057_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00058</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00058_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00058_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00059</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00059_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00059_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00060</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00060_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00060_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00061</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00061_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00061_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00063</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00063_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00063_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00065</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00065_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00065_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00066</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00066_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00066_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00069</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00069_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00069_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </conbody>
+</concept>

@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="BlackStart-87DFE252"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Black Start</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-04+05:30" class="- topic/created "/>
+         <revised modified="2025-12-04" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>black-start-module</indexterm>
+            <indexterm>inverter-start-sequence</indexterm>
+            <indexterm>dc-ac-start-converter</indexterm>
+            <indexterm>starter-battery-supply</indexterm>
+            <indexterm>cranking-relay</indexterm>
+            <!-- Process layer -->
+            <indexterm>black-start-procedure</indexterm>
+            <indexterm>auxiliary-power-engage</indexterm>
+            <indexterm>inverter-synchronisation</indexterm>
+            <indexterm>generator-aux-start-handshake</indexterm>
+            <indexterm>post-start-load-transfer</indexterm>
+            <!-- Context layer -->
+            <indexterm>grid-outage-recovery</indexterm>
+            <indexterm>power-plant-black-start</indexterm>
+            <indexterm>data-center-emergency-start</indexterm>
+            <indexterm>critical-infrastructure-resilience</indexterm>
+            <indexterm>commissioning-emergency-procedure</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="black start"/>
+         <othermeta name="shortdesc" content="Describes black start operations: how to use on-board inverters and batteries to restart systems during grid outages."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="black-start-unit;inverter;starter-battery;generator-interface;load-shed-circuit"/>
+         <othermeta name="taxonomy" content="domain:emergency-power;usecase:black-start;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="black-start;inverter;startup;emergency;resilience"/>
+         <othermeta name="usecase" content="guide operators on black-start procedures for recovering from grid outages"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <conbodydiv class="- topic/bodydiv concept/conbodydiv ">
+         <section class="- topic/section ">
+            <p class="- topic/p ">Black start is an optional feature. With black start it
+is possible to start the system with only the batteries when the rectifier
+mains <ph platform="PxW" class="- topic/ph ">and bypass mains are </ph>
+               <ph platform="SDC" class="- topic/ph ">is </ph>unavailable.</p>
+            <p platform="PxW" class="- topic/p ">There are two different
+types of black starts:<ul class="- topic/ul ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Black start installed on the inverter input switch</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Black start installed on the battery breaker</p>
+                  </li>
+               </ul>
+               <note type="important" class="- topic/note ">Check the status of the respective switch depending on the type.</note>
+            </p>
+         </section>
+         <section class="- topic/section ">
+            <title class="- topic/title ">Check Before Performing a Black Start</title>
+            <p class="- topic/p ">Check that the system is in the following status before proceeding:</p>
+            <table pgwide="1" class="- topic/table ">
+               <tgroup cols="3" class="- topic/tgroup ">
+                  <colspec colname="col1" colwidth="50.00mm" class="- topic/colspec "/>
+                  <colspec colname="col2" colwidth="1.90*" class="- topic/colspec "/>
+                  <colspec colname="COLSPEC0" colwidth="1.10*" class="- topic/colspec "/>
+                  <thead class="- topic/thead ">
+                     <row class="- topic/row ">
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">Switch,
+breaker or feeder</p>
+                        </entry>
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">Status</p>
+                        </entry>
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">Note</p>
+                        </entry>
+                     </row>
+                  </thead>
+                  <tbody class="- topic/tbody ">
+                     <row class="- topic/row ">
+                        <entry nameend="COLSPEC0" namest="col1" class="- topic/entry ">
+                           <p class="- topic/p ">
+                              <b class="+ topic/ph hi-d/b ">In unit
+cabinet(s)</b>
+                           </p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Rectifier mains breaker(s)</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Open</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">The rectifier mains is not available</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Rectifier output switch(es)</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Closed</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">If applicable</p>
+                        </entry>
+                     </row>
+                     <row platform="PxW" class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Inverter input switch(es)</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">
+                              <b class="+ topic/ph hi-d/b ">For black start on the inverter input switch: </b>Open</p>
+                           <p class="- topic/p ">
+                              <b class="+ topic/ph hi-d/b ">For black start on the battery breaker: </b>Closed</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">If applicable</p>
+                        </entry>
+                     </row>
+                     <row platform="PxW" class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Inverter output switch(es)</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Closed</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">If applicable</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry nameend="COLSPEC0" namest="col1" class="- topic/entry ">
+                           <p class="- topic/p ">
+                              <b class="+ topic/ph hi-d/b ">Battery</b>
+                           </p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Battery breaker(s)</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p platform="PxW" class="- topic/p ">
+                              <b class="+ topic/ph hi-d/b ">For black start on the inverter input switch: </b>Closed</p>
+                           <p class="- topic/p ">
+                              <b platform="PxW" class="+ topic/ph hi-d/b ">For black start on the battery breaker: </b>Open</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">The batteries are fully charged</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Battery protection breaker(s)</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Closed</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p "/>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Battery couple switch</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Open</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">If applicable</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry nameend="COLSPEC0" namest="col1" class="- topic/entry ">
+                           <p class="- topic/p ">
+                              <b class="+ topic/ph hi-d/b ">In <ph platform="PxW" class="- topic/ph ">bypass, </ph>distribution and/or output cabinet(s)</b>
+                           </p>
+                        </entry>
+                     </row>
+                     <row platform="PxW" class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Bypass mains input breaker(s)</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Open</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">If applicable, the bypass mains is not available</p>
+                        </entry>
+                     </row>
+                     <row platform="PxW" class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Bypass stabilizer protection switch</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Closed</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">If applicable</p>
+                        </entry>
+                     </row>
+                     <row platform="PxW" class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Manual bypass switch(es)</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">In the position <b class="+ topic/ph hi-d/b ">Auto</b>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">If applicable<ph otherprops="tempExclude" class="- topic/ph ">, for both 2-position and
+3-position</ph>
+                           </p>
+                        </entry>
+                     </row>
+                     <row platform="PxW" class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Bypass isolation switches</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Closed</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">If applicable</p>
+                        </entry>
+                     </row>
+                     <row platform="PxW" class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Output isolation switches</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Closed</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">If applicable</p>
+                        </entry>
+                     </row>
+                     <row otherprops="2pMBS" platform="PxW" class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">EN input switch(es)</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Closed</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Only applicable with 2-position manual bypass switch(es)</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Output couple switch</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">
+                              <b class="+ topic/ph hi-d/b ">For normally closed (NC): </b>Closed</p>
+                           <p class="- topic/p ">
+                              <b class="+ topic/ph hi-d/b ">For normally open
+(NO): </b>Open</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">If applicable</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Output breaker(s)</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Open</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Consumers must be volt free</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Outgoing feeders</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Open</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">If applicable,
+consumers must be volt free</p>
+                        </entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+         </section>
+      </conbodydiv>
+      <section class="- topic/section ">
+         <title class="- topic/title ">How to Perform a Black Start</title>
+         <p class="- topic/p ">This procedure
+is for one unit. For a system with multiple units, repeat the procedure for the other units.</p>
+         <note type="important" class="- topic/note ">The DC capacitors must be charged before connecting the load to the batteries.</note>
+         <note class="- topic/note ">Read the complete procedure before performing the procedure.</note>
+         <ol class="- topic/ol ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">Charge the DC capacitors:</p>
+               <ol class="- topic/ol ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Keep the charging/discharging switch in position 2 (charge)
+until the warning LED turns off.</p>
+                  </li>
+                  <li platform="PxW" class="- topic/li ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">Only for black start on the inverter input
+switch: </b>With the charging/discharging switch still in position
+2 (charge), close the inverter input switch. If not possible, release
+the charging/discharging switch and quickly close the inverter input
+switch.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">
+                        <b platform="PxW" class="+ topic/ph hi-d/b ">Only for black start on the battery breaker: </b>With the charging/discharging switch still in position 2 (charge),
+close the battery breaker. If not possible, release the charging/discharging
+switch and quickly close the battery breaker.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Release the charging/discharging switch.</p>
+                  </li>
+               </ol>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">After about 10 seconds the <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph class="+ topic/ph pr-d/codeph ">Standby</codeph>.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Lamp test button</b> and check that all operating
+status and alarm LED’s are illuminated.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">ON button</b> for one second on the front panel
+to turn on the system. After a few seconds the <b class="+ topic/ph hi-d/b ">Display</b> will
+show <codeph class="+ topic/ph pr-d/codeph ">Batt. operation time &gt; ...min.</codeph>.</p>
+               <note class="- topic/note ">The
+time will only be shown if an advanced battery monitor is installed.</note>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Press the<b class="+ topic/ph hi-d/b "> Number 9 key</b> to check that the system output
+voltage is within the tolerance range.</p>
+               <draft-comment translate="no" class="- topic/draft-comment ">NEED TO CHECK
+IF THIS IS CORRECT. For SDC should itbe nr. 8? also bit incorrect
+to say system for SDC since here we do not have a system component
+doing anything active?</draft-comment>
+            </li>
+            <li platform="PxW" class="- topic/li ">
+               <p class="- topic/p ">Check on the mimic diagram that the green inverter
+LED and the green static switch EN LED is illuminated.</p>
+            </li>
+            <li platform="SDC" class="- topic/li ">
+               <p class="- topic/p ">Check on the mimic diagram that the green output
+voltage LED is illuminated.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Close the output breaker.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Close any outgoing feeders.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">The system will now supply the load until the batteries are
+discharged.</p>
+            </li>
+            <li platform="PxW" class="- topic/li ">
+               <p class="- topic/p ">When the rectifier mains and/or bypass mains
+are available again close the respective mains breaker.</p>
+            </li>
+            <li platform="SDC" class="- topic/li ">
+               <p class="- topic/p ">When the rectifier mains is available again
+close the rectifier mains breaker.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Confirm any alarms by pressing the <b class="+ topic/ph hi-d/b ">C key</b> twice.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Make sure the system operates correctly and no alarms are present.</p>
+            </li>
+         </ol>
+      </section>
+   </conbody>
+</concept>

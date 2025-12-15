@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="NormalOperation-6CF31FC2"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Normal Operation and Forced Inverter Operation</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-04+05:30" class="- topic/created "/>
+         <revised modified="2025-12-04" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         
+         <keywords>
+            
+            <!-- Product layer -->
+            <indexterm>ups-system</indexterm>
+            <indexterm>inverter</indexterm>
+            <indexterm>rectifier</indexterm>
+            <indexterm>battery-charger</indexterm>
+            <indexterm>bypass-path</indexterm>
+            <indexterm>system-controller</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>enter-normal-operation</indexterm>
+            <indexterm>operate-in-forced-inverter-mode</indexterm>
+            <indexterm>monitor-system-mode</indexterm>
+            <indexterm>check-battery-charging</indexterm>
+            <indexterm>evaluate-load-supply-path</indexterm>
+            <indexterm>review-inverter-status</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>online-mode</indexterm>
+            <indexterm>forced-inverter-operation</indexterm>
+            <indexterm>system-performance-monitoring</indexterm>
+            <indexterm>load-handling-environment</indexterm>
+            <indexterm>power-conditioning-operation</indexterm>
+            <indexterm>ups-operational-behaviour</indexterm>
+            
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="Normal Operation and Forced Inverter Operation"/>
+         
+         <othermeta name="shortdesc" content="Describes how the system functions in normal operation and forced inverter operation modes, including battery charging, inverter status, and load supply behaviour."/> 
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta name="entities" content="ups system; inverter; rectifier; battery charger; bypass path; system controller"/>
+         
+         <othermeta name="taxonomy" content="domain:system-operation-modes;usecase:normal-and-forced-inverter-operation;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta name="tags" content="normal operation, forced inverter, inverter mode, battery charging, load supply, online mode"/>
+         
+         <othermeta name="usecase" content="explain ups behaviour and operational states during normal and forced inverter operation"/>
+         
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <div class="- topic/div ">
+         <p class="- topic/p ">If the <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Unit state</uicontrol> is <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Online mode</uicontrol>, the system can be either in
+normal operation or forced inverter operation.</p>
+         <note id="TheUnitStateisIndicatedInTheBottomL-87B3C55D" class="- topic/note ">The <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Unit state</uicontrol> is indicated in the bottom left
+corner of the <uicontrol class="+ topic/ph ui-d/uicontrol ">Display</uicontrol>.</note>
+         <p class="- topic/p ">In normal operation
+the rectifier supplies the inverter and charges the battery. The inverter
+is synced to the bypass and supplies the load. The bypass mains is
+available and the static switch is energized. All breakers except
+the manual bypass are closed.</p>
+         <p class="- topic/p ">Forced inverter operation can
+only be activated manually. In this mode the system is locked in inverter
+operation and the system can’t automatically switch mode. Certain
+alarms will be active to indicate that this is a temporary mode.</p>
+         <fig class="- topic/fig ">
+            <image href="../Images/Reality-Prime_System-Diagram_Online-mode_DD00611148.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+      </div>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Charge Modes</title>
+         <div class="- topic/div ">
+            <p class="- topic/p ">When the rectifier is
+in operation, the rectifier might be in different charge modes depending
+on the battery charge current or in case the charge mode has manually
+been changed.</p>
+            <p class="- topic/p ">Mainly relevant for the unit state <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Online mode</uicontrol>
+            </p>
+            <p class="- topic/p "> There different charge
+modes are:<ul class="- topic/ul ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Float charge, default charge mode.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Boost charge, used if allowed charge the batteries faster with
+a higher voltage.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Initial charge, used if allowed to charge the batteries with
+a higher voltage during commissioning or maintenance.</p>
+                  </li>
+               </ul>
+            </p>
+            <p class="- topic/p ">The defined levels for float, boost and initial charge
+can be found in the <i class="+ topic/ph hi-d/i ">Technical Data</i>.</p>
+         </div>
+      </section>
+   </conbody>
+</concept>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="GeneralDescriptionOfOperatingAndSys-57546990"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">General Description of Operating and System Modes</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-01+05:30" class="- topic/created "/>
+         <revised modified="2025-12-01" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience
+            type="role"
+            otherprops="operations,engineering,maintenance,commissioning,system designer,technical support"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>operating modes</indexterm>
+            <indexterm>system modes</indexterm>
+            <indexterm>normal operation</indexterm>
+            <indexterm>bypass operation</indexterm>
+            <indexterm>battery operation</indexterm>
+            <indexterm>static bypass</indexterm>
+            <indexterm>inverter mode</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>mode transition behavior</indexterm>
+            <indexterm>load transfer rules</indexterm>
+            <indexterm>synchronization logic</indexterm>
+            <indexterm>fault mode response</indexterm>
+            <indexterm>system protection workflow</indexterm>
+            <indexterm>operational state evaluation</indexterm>
+            <indexterm>mode selection logic</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>critical power environment</indexterm>
+            <indexterm>industrial UPS architecture</indexterm>
+            <indexterm>system reliability domain</indexterm>
+            <indexterm>power continuity requirements</indexterm>
+            <indexterm>electrical resilience context</indexterm>
+            <indexterm>fault-tolerant operation</indexterm>
+            <indexterm>facility backup system design</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta 
+            name="title"
+            content="General Description of Operating and System Modes"/>
+         
+         <othermeta 
+            name="shortdesc"
+            content="Provides an overview of the system’s operating and system modes, including normal, bypass, and battery operation, along with the logic for transitions and protective behavior."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta 
+            name="entities"
+            content="inverter; rectifier; static switch; battery system; load bus; controller; transfer logic"/>
+         
+         <othermeta 
+            name="taxonomy"
+            content="domain:industrial operation;usecase:mode-description;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta 
+            name="tags"
+            content="operating modes,system modes,normal operation,bypass,battery,UPS architecture"/>
+         
+         <othermeta 
+            name="usecase"
+            content="Provide a conceptual overview of all operating and system modes, including transitions and behavior"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <div class="- topic/div ">
+         <note class="- topic/note ">An example system is used to illustrate the operating modes.
+The function of the operating mode is similar in all applicable configurations,
+but the energized path will depend on the configuration.</note>
+         <p platform="WxW" class="- topic/p ">The operating mode depends on the status of the system,
+the DC input power and the bypass mains.</p>
+         <p platform="PxW WxW" class="- topic/p ">The operating priority is:<ol class="- topic/ol ">
+               <li platform="PxW WxW" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="1220236_Normal_Operation_CPT_DD00542605.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li otherprops="generalM 2pMBS 3pMBS noMBS"
+                   platform="PxW WxW"
+                   class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="1220236_Bypass_Operation_Static_Bypass_CPT_DD00542604.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+            </ol>
+         </p>
+         <p class="- topic/p ">Other modes that the system can be in during startup,
+charging, maintenance, troubleshooting and shutdown are:<ul class="- topic/ul ">
+               <li otherprops="generalM 2pMBS 3pMBS"
+                   platform="PxW WxW"
+                   class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="1220236_Manual_Bypass_Switch_in_Bypass_Position_Manual_Bypass_CPT_DD00542603.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="1220236_Standby_CPT_DD00542602.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="1220236_Off_CPT_DD00542601.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li platform="PxW WxW" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="../Independent_System_Surveillance_ISS_CPT_0001130321.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li otherprops="generalM ISBS" platform="PxW WxW" class="- topic/li ">
+                  <p class="- topic/p ">
+                     <b otherprops="generalM" class="+ topic/ph hi-d/b ">For systems with ISBS: </b>
+                     <xref href="../Independent_Static_Bypass_Switch_ISBS_Operation_CPT_0000320038.dita"
+                           scope="local"
+                           type="concept"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+            </ul>
+         </p>
+      </div>
+   </conbody>
+</concept>

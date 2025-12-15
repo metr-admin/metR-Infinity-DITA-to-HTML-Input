@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="EmergencyOperation-EF5B281A"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Emergency Operation</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-06T19:00:00+05:30"/>
+         <revised modified="2025-12-06T19:00:00+05:30"/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- product layer -->
+            <indexterm>emergency-operation-mode</indexterm>
+            <indexterm>limited-power-profile</indexterm>
+            <indexterm>redundancy-controller</indexterm>
+            <indexterm>alarm-suppression</indexterm>
+            <indexterm>operational-fallback</indexterm>
+            <!-- process layer -->
+            <indexterm>enter-emergency-mode</indexterm>
+            <indexterm>critical-load-prioritisation</indexterm>
+            <indexterm>hands-on-failover</indexterm>
+            <indexterm>operator-procedures</indexterm>
+            <indexterm>system-restart-sequence</indexterm>
+            <!-- context layer -->
+            <indexterm>blackout-recovery</indexterm>
+            <indexterm>data-center-emergency</indexterm>
+            <indexterm>oil-and-gas-station</indexterm>
+            <indexterm>transportation-hub</indexterm>
+            <indexterm>service-maintenance</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Emergency Operation"/>
+         <othermeta name="shortdesc" content="Procedures to place the system into emergency operational mode and restore normal operation"/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="redundancy-controller;critical-loads;alarm-system;fallback-configuration;operator-console"/>
+         <othermeta name="taxonomy" content="domain:industrial-power;usecase:emergency-management;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="emergency,operation,failover,restore,prioritisation"/>
+         <othermeta name="usecase" content="invoke-emergency-operation-and-manage-critical-loads"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <div class="- topic/div ">
+         <p class="- topic/p ">If the communication between the controller and the modules
+is interrupted, the modules switch to emergency operation.</p>
+         <p class="- topic/p ">The
+parameters for emergency operation are pre-configured and cannot be
+changed. The set voltage level depends on the modules, for the value
+see the <i class="+ topic/ph hi-d/i ">Technical Data</i>.</p>
+         <fig platform="Modular-DC" class="- topic/fig ">
+            <image href="../Images/Modular-DC_Operating_Modes_FloatBoost_Charge_0000735335.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <fig platform="Modular-AC" class="- topic/fig ">
+            <image href="../Images/Modular-AC_Modes-States_Emergency_0001084076.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <fig platform="Modular-Inverter" class="- topic/fig ">
+            <image href="../Images/Modular-AC_Modes-States_Inv-SSW_0001083820.svg"
+                   platform="Modular-Inverter"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <fig platform="Modular-DCDC-Converter Modular-DCDC-Converter-LV"
+              class="- topic/fig ">
+            <image href="../Images/Modular-DC_Operating_Modes_Direct_Feed-DCDCconverter_0000735333.svg"
+                   scope="local"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+      </div>
+      <table class="- topic/table ">
+         <tgroup cols="2" class="- topic/tgroup ">
+            <colspec colname="col1" colwidth="1*" class="- topic/colspec "/>
+            <colspec colname="col2" colwidth="3*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/Part-EF55D815"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/Status-EF55DA6E"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/RectifierMains-EF55DD82"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/AvailableAndWithinTheToleranceRange-EF57139D"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/RectifierMainsBreaker-EF55E0E0"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/Closed-EF55EA6C"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/RectifierModules-EF55E31C"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Running and suppling the load with the default voltage setting. Connection
+with controller is interrupted.</ph>
+                  </entry>
+               </row>
+               <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/Battery-EF55E539"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Available</ph>
+                  </entry>
+               </row>
+               <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/BatteryBreaker-EF55E6D8"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/Closed-EF55EA6C"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row platform="Modular-Inverter Modular-DCDC-Converter Modular-DCDC-Converter-LV"
+                    class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Inverter_via_Static_Switch_CPT_0001083440.dita#InverterViaStaticSwitch-F90F99C2/DCInput-F91A511F"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/AvailableAndWithinTheToleranceRange-EF57139D"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row platform="Modular-Inverter" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Inverter_via_Static_Switch_CPT_0001083440.dita#InverterViaStaticSwitch-F90F99C2/DCInputBreaker-00DEFC5F"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/Closed-EF55EA6C"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row platform="Modular-DCDC-Converter Modular-DCDC-Converter-LV"
+                    class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Direct_Feed_CPT_0000735392.dita#DirectFeed-EF591774/DCInputBreaker-BC897185"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Direct_Feed_CPT_0000735392.dita#DirectFeed-EF591774/ph-BC897DDF"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row platform="Modular-DCDC-Converter Modular-DCDC-Converter-LV"
+                    class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Direct_Feed_CPT_0000735392.dita#DirectFeed-EF591774/DC-DCConverterModules-BC8913F1"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Direct_Feed_CPT_0000735392.dita#DirectFeed-EF591774/Running-BC8931BB"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Inverter_via_Static_Switch_CPT_0001083440.dita#InverterViaStaticSwitch-F90F99C2/InverterModules-F91A52E9"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Inverter_via_Static_Switch_CPT_0001083440.dita#InverterViaStaticSwitch-F90F99C2/SupplyingSetVoltageToTheLoad.-F9225B3C"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Inverter_via_Static_Switch_CPT_0001083440.dita#InverterViaStaticSwitch-F90F99C2/BypassMains-F91A53F4"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/AvailableAndWithinTheToleranceRange-EF57139D"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Inverter_via_Static_Switch_CPT_0001083440.dita#InverterViaStaticSwitch-F90F99C2/BypassMainsBreaker-01D2363E"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/Closed-EF55EA6C"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Inverter_via_Static_Switch_CPT_0001083440.dita#InverterViaStaticSwitch-F90F99C2/StaticSwitchModule-F91A5565"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Inverter_via_Static_Switch_CPT_0001083440.dita#InverterViaStaticSwitch-F90F99C2/AvailableAndSuppliedFromTheInverter-F9225CDF"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Inverter_via_Static_Switch_CPT_0001083440.dita#InverterViaStaticSwitch-F90F99C2/ManualBypassSwitch-F91A568E"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Inverter_via_Static_Switch_CPT_0001083440.dita#InverterViaStaticSwitch-F90F99C2/Position0StaticSwitchOutput.-F91AA50C"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row platform="Modular-DC Modular-AC Modular-DCDC-Converter Modular-DCDC-Converter-LV"
+                    class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/Output-EF55E87E"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/AvailableAndWithinTheToleranceRange-EF57265F"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row platform="Modular-Inverter" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Inverter_via_Static_Switch_CPT_0001083440.dita#InverterViaStaticSwitch-F90F99C2/ACOutput-F91B7D67"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Inverter_via_Static_Switch_CPT_0001083440.dita#InverterViaStaticSwitch-F90F99C2/AvailableAndWithinTheToleranceRange-8DBD645E"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row platform="Modular-DC Modular-Inverter Modular-AC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/OutputBreaker-00DCE8F2"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Float_Charge_CPT_0000735395.dita#FloatCharge-EF558444/Closed-EF55EA6C"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row platform="Modular-DCDC-Converter Modular-DCDC-Converter-LV"
+                    class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Direct_Feed_CPT_0000735392.dita#DirectFeed-EF591774/ConverterDCOutputBreaker-C018BB8C"
+                         class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="M_Direct_Feed_CPT_0000735392.dita#DirectFeed-EF591774/CLosed-C018C4D9"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </conbody>
+</concept>

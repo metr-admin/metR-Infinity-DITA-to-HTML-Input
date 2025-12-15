@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="RedundantSystem-F5F43D4E"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Redundant System</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-04+05:30" class="- topic/created "/>
+         <revised modified="2025-12-04" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>redundant-system</indexterm>
+            <indexterm>parallel-ups</indexterm>
+            <indexterm>redundant-configuration</indexterm>
+            <indexterm>output-isolation-switch</indexterm>
+            <indexterm>load-sharing-module</indexterm>
+            <indexterm>synchronisation-unit</indexterm>
+            <!-- Process layer -->
+            <indexterm>system-redundancy</indexterm>
+            <indexterm>parallel-configuration</indexterm>
+            <indexterm>load-sharing</indexterm>
+            <indexterm>failover-testing</indexterm>
+            <indexterm>redundancy-commissioning</indexterm>
+            <indexterm>isolation-switch-operation</indexterm>
+            <!-- Context layer -->
+            <indexterm>data-centre</indexterm>
+            <indexterm>critical-power</indexterm>
+            <indexterm>high-availability</indexterm>
+            <indexterm>installation-site</indexterm>
+            <indexterm>maintenance-ops</indexterm>
+            <indexterm>uptime-requirement</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Redundant System"/>
+         <othermeta name="shortdesc" content="Explains redundant UPS system architecture and operational constraints; describes when redundancy is available and isolation switch requirements."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="redundant units;output isolation switches;bypass-breaker;load-sharing-cable"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:redundant-system-configuration;industry:uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="redundant-system,redundancy,high-availability"/>
+         <othermeta name="usecase" content="redundant-system-configuration"/>
+      </metadata>
+   </prolog>
+   <conbody>
+      <div class="- topic/div ">
+         <p class="- topic/p ">A redundant system consists of two units working together
+to supply one load. Each unit supplies 50% of the total load. If one
+unit in a redundant system becomes inoperable, the total load is supplied
+by the other unit.</p>
+         <note platform="PxW WxW" type="important" class="- topic/note ">The
+redundancy is only available if both output isolation switches are
+closed. If one output isolation switch is open the load is only supplied
+by one unit and the redundancy is lost. Never open the output isolation
+switches during normal operation.</note>
+         <note platform="SDC" class="- topic/note ">The units
+in redundant systems always have a blocking diode and a rectifier
+output switch.</note>
+         <note platform="SDC" class="- topic/note ">In redundant systems with
+individual batteries the rectifier output switches are placed after
+the battery connections.</note>
+         <fig platform="PxW" class="- topic/fig ">
+            <image href="../Images/FD_PxW_Configuration-Options_Redundant_System_0000348389.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <fig platform="WxW" class="- topic/fig ">
+            <image href="../Images/FD_WxW_Configuration-Options_Redundant_System_0000478924.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <fig platform="SDC" class="- topic/fig ">
+            <image href="../Images/FD_SDC_Configuration-Options_Redundant_0000517613.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+      </div>
+   </conbody>
+</concept>

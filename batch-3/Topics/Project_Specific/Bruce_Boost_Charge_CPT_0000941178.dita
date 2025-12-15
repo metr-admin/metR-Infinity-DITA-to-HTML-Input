@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="BoostCharge-89D01F6D"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Boost Charge</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-28+05:30" class="- topic/created "/>
+         <revised modified="2025-11-28" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience
+            type="role"
+            otherprops="operations,engineering,maintenance,battery specialist,commissioning,field technician"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>boost charge mode</indexterm>
+            <indexterm>battery subsystem</indexterm>
+            <indexterm>charging controller</indexterm>
+            <indexterm>rectifier charging circuit</indexterm>
+            <indexterm>battery strings</indexterm>
+            <indexterm>DC link</indexterm>
+            <indexterm>thermal monitoring sensors</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>boost charging process</indexterm>
+            <indexterm>voltage elevation workflow</indexterm>
+            <indexterm>current regulation procedure</indexterm>
+            <indexterm>battery recovery charging</indexterm>
+            <indexterm>temperature compensation steps</indexterm>
+            <indexterm>charging supervision</indexterm>
+            <indexterm>boost termination logic</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>battery maintenance operations</indexterm>
+            <indexterm>UPS recharge scenarios</indexterm>
+            <indexterm>deep discharge recovery</indexterm>
+            <indexterm>industrial energy storage</indexterm>
+            <indexterm>backup power restoration</indexterm>
+            <indexterm>battery reliability environment</indexterm>
+            <indexterm>charging safety context</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta 
+            name="title"
+            content="Boost Charge"/>
+         
+         <othermeta 
+            name="shortdesc"
+            content="Explains boost charging of the Bruce UPS battery system, including voltage elevation, current regulation, temperature compensation, and battery recovery mechanisms."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta 
+            name="entities"
+            content="battery strings; charging controller; rectifier; thermal sensors; DC link; protection relays; boost charge circuits"/>
+         
+         <othermeta 
+            name="taxonomy"
+            content="domain:industrial automation;usecase:boost-charging;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta 
+            name="tags"
+            content="boost charge,battery charging,UPS battery recovery,charging regulation,temperature compensation"/>
+         
+         <othermeta 
+            name="usecase"
+            content="Describe the boost charge process used to restore battery capacity after deep discharge or extended downtime"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <div class="- topic/div ">
+         <p class="- topic/p ">Boost charge mode can be entered manually through the system
+interface or automatically if auto boost charge is enabled. For example,
+boost charge can be activated automatically after a period of battery
+operation or a discharge test. In boost charge the rectifier output
+voltage is higher than in float charge.</p>
+         <p class="- topic/p ">It is possible to inhibit
+the change of charge mode. This inhibits both manual and automatic
+change of charge mode.</p>
+         <fig class="- topic/fig ">
+            <image href="../../Images/Bruce_SDC_Operating_Modes_Charge_0000941198.svg"
+                   scope="local"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+      </div>
+      <table class="- topic/table ">
+         <tgroup cols="2" class="- topic/tgroup ">
+            <colspec colname="col1" colwidth="40.00mm" class="- topic/colspec "/>
+            <colspec colname="col2" colwidth="2.00*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Part</p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Status</p>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Rectifier mains</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Available and within the tolerance range.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Rectifier mains
+breaker</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Closed</p>
+                  </entry>
+               </row>
+               <row platform="PxW SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">External battery</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Available, but may not be fully charged.</p>
+                  </entry>
+               </row>
+               <row platform="PxW SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">External battery breaker(s)</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Closed</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Output</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Available and within the tolerance range. The load is supplied.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <i class="+ topic/ph hi-d/i ">* Optional</i>Output breaker</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">Only for 48
+V DC systems: </b>Closed</p>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </conbody>
+</concept>

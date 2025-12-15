@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="HowToReplaceOrRotateAConverterModul-BF30C2E9"
+      translate="yes"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">How to Replace or Rotate a DC/DC Converter Module</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-06T19:12:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-06T19:12:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>dc-dc-converter-module</indexterm>
+            <indexterm>dc-dc-converter</indexterm>
+            <indexterm>isolated-converter</indexterm>
+            <indexterm>power-module</indexterm>
+            <indexterm>module-led</indexterm>
+            <!-- Process layer -->
+            <indexterm>replace-dc-dc-module</indexterm>
+            <indexterm>rotate-converter-module</indexterm>
+            <indexterm>verify-led-status</indexterm>
+            <indexterm>check-output-voltage</indexterm>
+            <indexterm>isolate-before-service</indexterm>
+            <!-- Context layer -->
+            <indexterm>electrical-safety</indexterm>
+            <indexterm>module-replacement</indexterm>
+            <indexterm>field-maintenance</indexterm>
+            <indexterm>control-and-power-systems</indexterm>
+            <indexterm>industrial-environment</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="How to Replace or Rotate a DC/DC Converter Module"/>
+         <othermeta name="shortdesc" content="Safety cautions and stepwise instructions to replace or rotate a DC DC converter module and verify correct LED and output status."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="dc-dc converter module; module LEDs; connectors; output test points; warning labels"/>
+         <othermeta name="taxonomy" content="domain:power-conversion/usecase:module-replacement/industry:uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="dc-dc converter, module replacement, led-verification"/>
+         <othermeta name="usecase" content="replace or rotate dc-dc converter modules during maintenance"/>
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <context class="- topic/section task/context ">
+         <hazardstatement id="ReplacePowerModuleLIVE-10C80C0F"
+                          type="danger"
+                          class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard ">HAZARD OF ELECTRIC SHOCK, EXPLOSION, OR ARC FLASH</typeofhazard>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid ">
+                  <sl class="- topic/sl ">
+                     <sli class="- topic/sli ">Always use appropriate personal protective equipment (PPE).</sli>
+                     <sli class="- topic/sli ">Follow safe electrical work practices. See NFPA 70E or CSA Z462.</sli>
+                     <sli class="- topic/sli ">Only qualified personnel are allowed to replace power modules.</sli>
+                     <sli class="- topic/sli ">All protective covers and blind covers must be installed when
+the module is replaced.</sli>
+                     <sli class="- topic/sli ">Do not install power modules that have been damaged in any way
+or that have an unknown operational state.</sli>
+                     <sli class="- topic/sli ">Keep a minimum distance of 200 mm (8 in) from the cabinet front
+while the system is energized.</sli>
+                     <sli class="- topic/sli ">Do not reach or use any tools inside the empty power module slot.</sli>
+                  </sl>
+               </howtoavoid>
+            </messagepanel>
+         </hazardstatement>
+         <hazardstatement type="warning" class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard ">Falling module and sharp edges</typeofhazard>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid ">
+                  <sl class="- topic/sl ">
+                     <sli class="- topic/sli ">Always wear protective gloves when handling modules.</sli>
+                     <sli class="- topic/sli ">If installing modules above shoulder height always use a hard
+hat.</sli>
+                     <sli class="- topic/sli ">If needed use an appropriate platform ladder to reach the rack.</sli>
+                     <sli class="- topic/sli ">Always follow your site's safety recommendations and any local
+laws and regulations.</sli>
+                  </sl>
+               </howtoavoid>
+            </messagepanel>
+         </hazardstatement>
+         <hazardstatement conref="M_Insert_DC_DC_Converter_Modules_DD00672124.dita#InsertTheDCDCConverterModules-BF34DCDE/NeverAttemptToInsertDifferentCoding-1245CD38"
+                          type="-dita-use-conref-target"
+                          class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+            </messagepanel>
+         </hazardstatement>
+         <p class="- topic/p ">To replace or rotate a module:</p>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Open the module input protection device.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd id="LoosenTheScrewAOfTheModule.-10C87055" class="- topic/ph task/cmd ">Loosen the screw <b class="+ topic/ph hi-d/b ">(A)</b> of the module.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <image href="../Images/Modular_Module_Replace-module1_0000708908.svg"
+                      scope="local"
+                      placement="inline"
+                      class="- topic/image "/>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd id="PullOutTheModule2.5Cm1InAndWait1Min-10C87FC2"
+                 class="- topic/ph task/cmd ">Pull
+out the module 2.5 cm (1 in) and wait 1 minute until the module LEDs
+are extinguished.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd id="RemoveTheModuleBCompletelyWithBothH-10C8A414"
+                 class="- topic/ph task/cmd ">Remove
+the module <b class="+ topic/ph hi-d/b ">(B)</b> completely with both hands.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <image href="../Images/Modular_Module_Replace-module2_0000708907.svg"
+                      placement="inline"
+                      class="- topic/image "/>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd id="IfTheModuleIsInoperableCorrectlyDis-10C8B3FB"
+                 class="- topic/ph task/cmd ">If the
+module is inoperable, correctly dispose of the module according to
+your local laws and regulations. If the module is
+being rotated with a module on stock, store the removed module in
+the same way as the module on stock was stored before.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Check that the rating of the module is according to the <i class="+ topic/ph hi-d/i ">Technical Data</i>. The module rating is hard coded on the back of
+the module. It can only be inserted into a rack with the same coding.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd id="CarefullyInsertTheNewModuleBWithBot-10C8C0B3"
+                 class="- topic/ph task/cmd ">Carefully
+insert the new module <b class="+ topic/ph hi-d/b ">(B)</b> with both hands.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <image href="../Images/Modular_Module_Replace-module3_0000708906.svg"
+                      placement="inline"
+                      class="- topic/image "/>
+            </info>
+         </step>
+         <step conref="M_Insert_Modules_in_the_Cabinet_TSK_0000667029.dita#InsertModulesInTheCabinet-CA415A6F/MakeSureThatTheModuleIsFullyInserte-1246B66F"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd id="TightenTheScrewAAtTheBottomByHand.-10C8CD4F"
+                 class="- topic/ph task/cmd ">Tighten
+the screw <b class="+ topic/ph hi-d/b ">(A)</b> at the bottom.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <image href="../Images/Modular_Module_Replace-module4_0000708905.svg"
+                      scope="local"
+                      placement="inline"
+                      class="- topic/image "/>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Close the module input protection device.</cmd>
+            <stepresult class="- topic/itemgroup task/stepresult ">When the module is initializing both the red LED and the
+green LED flashes fast. When the module is operating correctly only
+the green LED is illuminated.</stepresult>
+         </step>
+      </steps>
+   </taskbody>
+</task>

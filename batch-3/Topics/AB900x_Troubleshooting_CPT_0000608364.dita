@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="Troubleshooting-9D7F8019"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Troubleshooting the Gateway</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-04T14:00:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-04T14:00:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="maintenance,service,operations,engineering,safety"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>reality-troubleshooting-guide</indexterm>
+            <indexterm>ups-diagnostics</indexterm>
+            <indexterm>communication-debug-tools</indexterm>
+            <indexterm>bms-troubleshooting</indexterm>
+            <indexterm>inverter-diagnostics</indexterm>
+            <!-- Process layer -->
+            <indexterm>identify-fault</indexterm>
+            <indexterm>collect-logs</indexterm>
+            <indexterm>run-self-test</indexterm>
+            <indexterm>isolate-fault-domain</indexterm>
+            <indexterm>escalate-to-service</indexterm>
+            <!-- Context layer -->
+            <indexterm>field-service</indexterm>
+            <indexterm>plant-maintenance</indexterm>
+            <indexterm>emergency-response</indexterm>
+            <indexterm>preventive-maintenance</indexterm>
+            <indexterm>continuous-availability</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Troubleshooting"/>
+         <othermeta name="shortdesc" content="Structured troubleshooting procedures for Reality UPS, inverters, and battery systems including diagnostics and escalation steps."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="fault-code; event-log; battery-string; inverter; bms"/>
+         <othermeta name="taxonomy" content="domain:service-and-support;usecase:troubleshooting;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="diagnostics,troubleshooting,service"/>
+         <othermeta name="usecase" content="fault-identification-and-remediation"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <table class="- topic/table ">
+         <tgroup cols="2" class="- topic/tgroup ">
+            <colspec colname="col1" class="- topic/colspec "/>
+            <colspec colname="col2" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Problem</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Check</ph>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">LED(s) not illuminated</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">Check the status and connection of the power supply.</sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Can’t connect with a PC to the gateway.</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">Check that the correct cable (straight Ethernet cable (RJ45 connection))
+is used.</sli>
+                        <sli class="- topic/sli ">Check the Ethernet link 1 &amp; 2 LEDs (<b class="+ topic/ph hi-d/b ">LA1</b> &amp; <b class="+ topic/ph hi-d/b ">LA2</b>), see <xref href="AB900x_LEDs_CPT_0000588219.dita"
+                                 scope="local"
+                                 type="concept"
+                                 class="- topic/xref "/>.</sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">No Modbus TCP/IP communication from the NMC.</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">Check the status of the analog and digital transactions in the
+live list (Byte 8).</sli>
+                        <sli class="- topic/sli ">Check the status of the NMC card.</sli>
+                        <sli class="- topic/sli ">Check that the correct cable (straight Ethernet cable (RJ45 connection))
+is used.</sli>
+                        <sli class="- topic/sli ">Check the Modbus-TCP status LED (<b class="+ topic/ph hi-d/b ">MTCP</b>), see <xref href="AB900x_LEDs_CPT_0000588219.dita"
+                                 scope="local"
+                                 type="concept"
+                                 class="- topic/xref "/>.</sli>
+                        <sli class="- topic/sli ">Check the IP configuration is correct in the gateway.</sli>
+                        <sli class="- topic/sli ">Check the Modbus-TCP port configuration in the gateway.</sli>
+                        <sli class="- topic/sli ">Check that the cable is connected to correct Modbus-TCP port
+on the gateway, see <xref href="AB900x_Ports_CPT_0000588218.dita"
+                                 scope="local"
+                                 type="concept"
+                                 class="- topic/xref "/>.</sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph otherprops="AB9001" class="- topic/ph ">No ProfibusDP communication</ph>
+                     <ph otherprops="AB9006" class="- topic/ph ">No Ethernet/IP communication</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">Check the Modbus TCP/IP communication from the NMC.</sli>
+                        <sli otherprops="AB9001" class="- topic/sli ">Check the Profibus DP-V1 Network Status LED
+(<b class="+ topic/ph hi-d/b ">OP</b>), see <xref href="AB900x_LEDs_CPT_0000588219.dita"
+                                 scope="local"
+                                 type="concept"
+                                 class="- topic/xref "/>. </sli>
+                        <sli otherprops="AB9006" class="- topic/sli ">Check the EtherNet/IP Network Status LED
+(<b class="+ topic/ph hi-d/b ">NS</b>), see <xref href="AB900x_LEDs_CPT_0000588219.dita"
+                                 scope="local"
+                                 type="concept"
+                                 class="- topic/xref "/>.</sli>
+                     </sl>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </conbody>
+</concept>

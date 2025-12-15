@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="HowToResetTheModulesAfterEPO-719B62F9"
+      translate="yes"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">How to Reset the System After EPO</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-06T19:29:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-06T19:29:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- product layer -->
+            <indexterm>metr-pxc-reality</indexterm>
+            <indexterm>module-reset</indexterm>
+            <indexterm>control-board</indexterm>
+            <indexterm>system-firmware</indexterm>
+            <indexterm>epo-circuit</indexterm>
+            <!-- process layer -->
+            <indexterm>reset-modules-after-epo</indexterm>
+            <indexterm>clear-fault-conditions</indexterm>
+            <indexterm>power-cycling</indexterm>
+            <indexterm>verify-module-state</indexterm>
+            <indexterm>restore-normal-operation</indexterm>
+            <!-- context layer -->
+            <indexterm>post-epo-recovery</indexterm>
+            <indexterm>safety-procedure</indexterm>
+            <indexterm>service-recovery</indexterm>
+            <indexterm>industrial-operations</indexterm>
+            <indexterm>commissioning-checks</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="How to Reset the Modules After EPO"/>
+         <othermeta name="shortdesc" content="Steps to safely reset modules and restore the system after an Emergency Power Off event."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="modules;controller;epo-switch;fault-logs;firmware"/>
+         <othermeta name="taxonomy" content="domain:recovery-procedures;usecase:post-epo-reset;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="epo-reset,recovery,modules,service"/>
+         <othermeta name="usecase" content="recover and reset modules to restore normal operation after emergency shutdown"/>
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <context class="- topic/section task/context ">
+         <ph platform="Modular-DC Modular-Inverter Modular-DCDC-Converter"
+             class="- topic/ph ">If the
+emergency power off (EPO) signal has tripped the output breaker, the
+signal needs to reset and the output breaker needs to be closed.</ph>
+         <ph platform="Modular-AC" class="- topic/ph ">If the emergency power off (EPO) signal
+has tripped the output breaker(s), the signal needs to reset and the
+output breaker(s) need to be closed.</ph>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Make sure that the EPO signal is no longer active.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Check that the load is ready to be energized.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Reset the EPO signal from the <uicontrol class="+ topic/ph ui-d/uicontrol ">Display</uicontrol>:</cmd>
+            <substeps class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Make sure you are logged in as a user with at least <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Owner</uicontrol> access. </cmd>
+                  <info class="- topic/itemgroup task/info ">
+                     <note class="- topic/note "> If you are not logged in, a prompt to login will appear
+when trying to access the menu.</note>
+                  </info>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Press the <uicontrol class="+ topic/ph ui-d/uicontrol ">Main menu icon</uicontrol> and
+navigate to <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Service &gt; Remote control &gt; Remote
+control.</uicontrol>
+                  </cmd>
+               </substep>
+               <substep class="- topic/li task/substep ">
+                  <cmd class="- topic/ph task/cmd ">Press the <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Emergency Switch
+RESET</uicontrol> on button.</cmd>
+                  <stepresult class="- topic/itemgroup task/stepresult ">The EPO signal is now reset.</stepresult>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <ph platform="Modular-DC" class="- topic/ph ">Close the rectifier DC output
+breaker.</ph>
+               <ph platform="Modular-DCDC-Converter Modular-DCDC-Converter-LV"
+                   class="- topic/ph ">Close
+the converter DC output breaker.</ph>
+               <ph platform="Modular-Inverter" class="- topic/ph ">Close the system AC output breaker.</ph>
+               <ph platform="Modular-AC" class="- topic/ph ">Close the system AC output breaker and if available, close the rectifier
+DC output breaker.</ph>
+            </cmd>
+         </step>
+      </steps>
+   </taskbody>
+</task>

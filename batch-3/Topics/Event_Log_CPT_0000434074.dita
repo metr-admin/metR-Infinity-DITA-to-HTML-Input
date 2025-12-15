@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="EventLog-DCD9E1DA"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Event Log</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-04T15:20:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-04T15:20:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>event-log-specification</indexterm>
+            <indexterm>system-log-service</indexterm>
+            <indexterm>alarm-and-event-store</indexterm>
+            <indexterm>log-export-interface</indexterm>
+            <indexterm>historical-event-db</indexterm>
+            <!-- Process layer -->
+            <indexterm>record-system-events</indexterm>
+            <indexterm>export-log-to-csv</indexterm>
+            <indexterm>event-filtering-and-search</indexterm>
+            <indexterm>alarm-correlation</indexterm>
+            <indexterm>log-archival-procedure</indexterm>
+            <!-- Context layer -->
+            <indexterm>troubleshooting-and-audit</indexterm>
+            <indexterm>post-incident-analysis</indexterm>
+            <indexterm>regulatory-log-retention</indexterm>
+            <indexterm>operations-monitoring</indexterm>
+            <indexterm>remote-diagnostics</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Event log"/>
+         <othermeta name="shortdesc" content="Definition, schema and procedures for event logging, searching, exporting and archival for Reality systems."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="event-log;alarm-record;export-interface;archive-storage;timestamp"/>
+         <othermeta name="taxonomy" content="operations/logging/industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="event-log,alarm,export,archive,troubleshooting"/>
+         <othermeta name="usecase" content="capture-and-manage-system-events"/>
+      </metadata>
+   </prolog>
+   <conbody>
+      <p class="- topic/p ">The event log (log stack) can store up to 1000 events and alarms.
+The latest entry is listed first.</p>
+      <p class="- topic/p ">Colon “:” indicates that the event or alarm was set,
+reset it is indicated with a bar “|”. Example:<ul platform="PxW WxW" class="- topic/ul ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <b class="+ topic/ph hi-d/b ">SET:</b>
+                  <ph translate="no" class="- topic/ph ">67: Inverter volt out of tolerance</ph>
+               </p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <b class="+ topic/ph hi-d/b ">RESET:</b>
+                  <ph translate="no" class="- topic/ph ">67| Inverter volt out of tolerance</ph>
+               </p>
+            </li>
+         </ul>
+         <ul platform="SDC" class="- topic/ul ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <b class="+ topic/ph hi-d/b ">SET:</b>
+                  <ph translate="no" class="- topic/ph ">36: Battery current limit</ph>
+               </p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <b class="+ topic/ph hi-d/b ">RESET:</b>
+                  <ph translate="no" class="- topic/ph ">36| Battery current limit</ph>
+               </p>
+            </li>
+         </ul>
+      </p>
+      <section class="- topic/section ">
+         <title class="- topic/title ">How to Enter the Event Log</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">To
+enter the event log: <ol class="- topic/ol ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Press both the <b class="+ topic/ph hi-d/b ">Star/number 0 key</b> and the <b class="+ topic/ph hi-d/b ">Arrow up
+key</b> at the same time to enter the event log.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Use the <b class="+ topic/ph hi-d/b ">Arrow keys</b> to move up and down in the event
+log. The event log ends with the text <codeph class="+ topic/ph pr-d/codeph ">No (further) alarm</codeph>.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Back key</b> or wait 30 seconds to exit the event
+log.</p>
+                  </li>
+               </ol>
+            </p>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">View Time Stamp for an Entry</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">In the event log it is possible to view the time stamp of an entry.To view the time stamp: <ol class="- topic/ol ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Press both the <b class="+ topic/ph hi-d/b ">Star/number 0 key</b> and the <b class="+ topic/ph hi-d/b ">Arrow up
+key</b> at the same time to enter the event log.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">While in the event log navigate to an entry with the <b class="+ topic/ph hi-d/b ">Arrow
+keys</b>.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Clock/number 1 key</b>. The <b class="+ topic/ph hi-d/b ">Display</b> will
+show the <codeph class="+ topic/ph pr-d/codeph ">year, month, day / hours, minutes, seconds</codeph> for that entry.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Back key</b> or wait 30 seconds to exit the event
+log.</p>
+                  </li>
+               </ol>
+            </p>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Reset the Event Log</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">Exit any
+menu.To reset the event log: <ol id="reset-the-event-log_CSupdate" class="- topic/ol ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Press both the <b class="+ topic/ph hi-d/b ">Clock/number 1 key</b> and the <b class="+ topic/ph hi-d/b ">Number
+2 key</b> at the same time. The <b class="+ topic/ph hi-d/b ">Display</b> will show <codeph class="+ topic/ph pr-d/codeph ">Key
+in password : </codeph>.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Use the numpad keys to enter the password for <b class="+ topic/ph hi-d/b ">Master Mode</b>. The <b class="+ topic/ph hi-d/b ">Display</b> will show <codeph class="+ topic/ph pr-d/codeph ">Enter Password:</codeph>.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Use the numpad keys to enter the password for <b class="+ topic/ph hi-d/b ">Event Log
+Reset</b>. The <b class="+ topic/ph hi-d/b ">Display</b> will show <codeph class="+ topic/ph pr-d/codeph ">Log stack cleared</codeph>.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Back key</b> or wait 30 seconds to exit the event
+log.</p>
+                  </li>
+               </ol>
+            </p>
+         </sectiondiv>
+      </section>
+   </conbody>
+</concept>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="HowToStartTheBatteryCircuitTest-0056FABE"
+      translate="yes"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">How to Start the Battery Circuit Test</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-06T19:29:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-06T19:29:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- product layer -->
+            <indexterm>metr-pxc-reality</indexterm>
+            <indexterm>battery-management-system</indexterm>
+            <indexterm>ups-module</indexterm>
+            <indexterm>battery-cabinet</indexterm>
+            <indexterm>measurement-interface</indexterm>
+            <!-- process layer -->
+            <indexterm>start-battery-circuit-test</indexterm>
+            <indexterm>connect-test-leads</indexterm>
+            <indexterm>verify-voltage-levels</indexterm>
+            <indexterm>record-test-data</indexterm>
+            <indexterm>isolate-non-essential-circuits</indexterm>
+            <!-- context layer -->
+            <indexterm>commissioning-procedure</indexterm>
+            <indexterm>battery-health-assessment</indexterm>
+            <indexterm>industrial-power-system</indexterm>
+            <indexterm>maintenance-checklist</indexterm>
+            <indexterm>safety-lockout-tagout</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="How to Start the Battery Circuit Test"/>
+         <othermeta name="shortdesc" content="Step by step procedure to start and verify the battery circuit test for UPS battery systems."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="battery modules;test leads;measurement instrument;battery cabinet;control board"/>
+         <othermeta name="taxonomy" content="domain:power-systems;usecase:battery-testing;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="battery-test,battery-circuit,commissioning,voltage-verification"/>
+         <othermeta name="usecase" content="battery circuit verification for commissioning and maintenance"/>
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <prereq class="- topic/section task/prereq ">
+         <p class="- topic/p ">Before you start the battery circuit test check: <ul class="- topic/ul ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">That the settings for the test is correct.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">That the battery is connected.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">That the battery breaker is closed.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">That the rectifier modules are in float charge.</p>
+               </li>
+            </ul>
+            <note class="- topic/note ">It is not possible to start the test with the rectifier
+modules in boost charge (charge), equalization charge or battery operation
+(batterytest).</note>
+         </p>
+      </prereq>
+      <steps class="- topic/ol task/steps ">
+         <step conref="M_How_to_Start_the_Relay_Tests_TSK_0000752494.dita#HowToStartTheRelayTests-FD3177D6/M_User-Access_Service"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+         </step>
+         <step id="FromTheMenuBarNavigateToServiceDCSy-0057E33A"
+               class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Press
+the <uicontrol class="+ topic/ph ui-d/uicontrol ">Main menu icon</uicontrol> and navigate to <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Service &gt; Reality Modular DC 1 &gt; Battery tests</uicontrol>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Press the <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Start</uicontrol> button
+in line with <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">Start battery circuit test</uicontrol> to start the test.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <image href="../Images/Battery-tests_0000755264.png"
+                      placement="inline"
+                      class="- topic/image "/>
+            </info>
+         </step>
+      </steps>
+      <result class="- topic/section task/result ">
+         <p class="- topic/p ">This test does not discharge the battery, it only checks
+that the battery is correctly connected to the circuit.</p>
+         <p class="- topic/p ">If the
+voltage stays above the set voltage level for the set time, the battery
+circuit test is successful.</p>
+         <p class="- topic/p ">In case the voltage drops below
+the set voltage level at any time, the test is interrupted and considered
+unsuccessful.</p>
+      </result>
+   </taskbody>
+</task>

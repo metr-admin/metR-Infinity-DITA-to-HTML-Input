@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="TroubleshootHU250-2C1C7A96"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Troubleshooting the HU250 Gateway</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-02+05:30" class="- topic/created "/>
+         <revised modified="2025-12-02" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience
+            type="role"
+            otherprops="maintenance,technical support,engineering,system operator,service technician,field technician"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>HU250</indexterm>
+            <indexterm>HU250 controller</indexterm>
+            <indexterm>UPS control module</indexterm>
+            <indexterm>alarm indicators</indexterm>
+            <indexterm>status LEDs</indexterm>
+            <indexterm>system diagnostics</indexterm>
+            <indexterm>control electronics</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>HU250 troubleshooting</indexterm>
+            <indexterm>fault isolation steps</indexterm>
+            <indexterm>controller reset procedure</indexterm>
+            <indexterm>wiring verification workflow</indexterm>
+            <indexterm>firmware status checks</indexterm>
+            <indexterm>module replacement evaluation</indexterm>
+            <indexterm>error code interpretation</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>controller-level diagnostics</indexterm>
+            <indexterm>UPS monitoring environment</indexterm>
+            <indexterm>power electronics subsystem</indexterm>
+            <indexterm>fault response environment</indexterm>
+            <indexterm>equipment service domain</indexterm>
+            <indexterm>industrial reliability systems</indexterm>
+            <indexterm>operational continuity environment</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta
+            name="title"
+            content="Troubleshoot the HU250"/>
+         
+         <othermeta
+            name="shortdesc"
+            content="Provides diagnostic guidance for the HU250 controller, including error interpretation, wiring checks, LED indications, controller resets, and module-level troubleshooting."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta
+            name="entities"
+            content="HU250 controller; control board; status LEDs; wiring harness; fault logs; firmware; reset controls"/>
+         
+         <othermeta
+            name="taxonomy"
+            content="domain:controller diagnostics;usecase:HU250-troubleshooting;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta
+            name="tags"
+            content="HU250,troubleshooting,controller,LED indicators,diagnostics,error codes"/>
+         
+         <othermeta
+            name="usecase"
+            content="Help technicians diagnose and repair issues related to the HU250 UPS controller"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <div class="- topic/div ">
+         <table class="- topic/table ">
+            <tgroup cols="2" class="- topic/tgroup ">
+               <colspec colname="col1" class="- topic/colspec "/>
+               <colspec colname="col2" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">
+                        <ph class="- topic/ph ">Problem</ph>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <ph class="- topic/ph ">Check</ph>
+                     </entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">LED(s)
+not illuminated</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <sl class="- topic/sl ">
+                           <sli class="- topic/sli ">Check the status and connection of the power supply.</sli>
+                           <sli class="- topic/sli ">Test the LEDs by pressing the <b class="+ topic/ph hi-d/b ">Indicator test button</b> on
+the front panel to check if they illuminate.</sli>
+                           <sli class="- topic/sli ">Check status of the device, see <xref href="HU250_Device_Overview_CPT_0000493476.dita"
+                                    scope="local"
+                                    type="concept"
+                                    class="- topic/xref "/>.</sli>
+                        </sl>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Can’t connect with a PC to the HU250</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <sl class="- topic/sl ">
+                           <sli class="- topic/sli ">Check that the correct cable (straight Ethernet cable (RJ45 connection))
+is used.</sli>
+                           <sli class="- topic/sli ">Check that the cable is connected to the right LAN port (<b translate="no" class="+ topic/ph hi-d/b ">LAN right</b>).</sli>
+                           <sli class="- topic/sli ">Check that the local mode is enabled on the HU250.</sli>
+                           <sli class="- topic/sli ">Check that the <b translate="no" class="+ topic/ph hi-d/b ">LAN right</b> port is active,
+see <xref href="HU250_Network_Settings_CPT_0000493163.dita"
+                                    scope="local"
+                                    type="concept"
+                                    class="- topic/xref "/>.</sli>
+                        </sl>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-Inverter Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph platform="PXP PxW WxW SDC" class="- topic/ph ">No Modbus TCP/IP communication from the
+NMC</ph>
+                        <ph platform="Modular-DC Modular-Inverter Modular-AC" class="- topic/ph ">No Modbus
+TCP/IP communication from the Modular controller</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <sl class="- topic/sl ">
+                           <sli platform="PXP PxW WxW SDC" class="- topic/sli ">Check the status of the NMC card.</sli>
+                           <sli class="- topic/sli ">Check that the correct cable (straight Ethernet cable (RJ45 connection))
+is used.</sli>
+                           <sli class="- topic/sli ">Check that the cable is connected to the right WAN port (<b translate="no" class="+ topic/ph hi-d/b ">ETH1</b>).</sli>
+                           <sli class="- topic/sli ">Check that the <b translate="no" class="+ topic/ph hi-d/b ">ETH1</b> port is active, see <xref href="HU250_Network_Settings_CPT_0000493163.dita"
+                                    scope="local"
+                                    type="concept"
+                                    class="- topic/xref "/>.</sli>
+                           <sli platform="PXP PxW WxW SDC" class="- topic/sli ">Check the IP configuration for the
+WAN connection to the NMC, see <xref href="HU250_WAN_Settings_CPT_0000493473.dita"
+                                    scope="local"
+                                    type="concept"
+                                    class="- topic/xref "/>.</sli>
+                        </sl>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph otherprops="IEC61850" class="- topic/ph ">No IEC communication</ph>
+                        <ph otherprops="DNP3" class="- topic/ph ">No DNP communication</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <sl class="- topic/sl ">
+                           <sli class="- topic/sli ">Check the status of the device, see <xref href="HU250_Device_Overview_CPT_0000493476.dita"
+                                    scope="local"
+                                    type="concept"
+                                    class="- topic/xref "/>.</sli>
+                           <sli class="- topic/sli ">Check the status of the Modbus communication, see the customized
+LED <b class="+ topic/ph hi-d/b ">Modbus status</b>.</sli>
+                        </sl>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph platform="Prime-UPS" class="- topic/ph ">No Modbus RTU
+over RS485 communication from the Prime controller</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <sl class="- topic/sl ">
+                           <sli class="- topic/sli ">Check that the correct cable (straight Ethernet cable (RJ45 connection))
+is used.</sli>
+                           <sli class="- topic/sli ">Check that the <b translate="no" class="+ topic/ph hi-d/b ">ETH1</b> port is active, see <xref href="HU250_Network_Settings_CPT_0000493163.dita"
+                                    scope="local"
+                                    type="concept"
+                                    class="- topic/xref "/>.</sli>
+                        </sl>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </div>
+   </conbody>
+</concept>

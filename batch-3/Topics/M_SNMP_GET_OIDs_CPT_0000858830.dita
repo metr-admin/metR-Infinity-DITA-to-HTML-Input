@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="SNMPGETOIDs-4D19C88F"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">SNMP GET OIDs</title>
+   <shortdesc class="- topic/shortdesc ">There are several object identifiers (OID) available from
+the system via SNMP from the network management card (NMC). The OIDs
+needs to be requested with a GET from a MIB browser with correctly
+configured access to the NMC. The OIDs can show both analog and digital
+values, see respective section.</shortdesc>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-06+05:30" class="- topic/created "/>
+         <revised modified="2025-12-06" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>ups-system</indexterm>
+            <indexterm>network-management-card</indexterm>
+            <indexterm>snmp-agent</indexterm>
+            <indexterm>snmp-mib</indexterm>
+            <indexterm>battery-management-system</indexterm>
+            <indexterm>rectifier-module</indexterm>
+            <indexterm>inverter-module</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>snmp-get-request</indexterm>
+            <indexterm>oid-value-retrieval</indexterm>
+            <indexterm>system-monitoring</indexterm>
+            <indexterm>parameter-measurement</indexterm>
+            <indexterm>fault-diagnostics</indexterm>
+            <indexterm>battery-status-evaluation</indexterm>
+            <indexterm>environment-sensor-monitoring</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>ups-telemetry</indexterm>
+            <indexterm>remote-monitoring</indexterm>
+            <indexterm>industrial-ups-management</indexterm>
+            <indexterm>network-operations</indexterm>
+            <indexterm>maintenance-inspection</indexterm>
+            <indexterm>snmp-integrated-supervision</indexterm>
+            <indexterm>environmental-conditions-monitoring</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="SNMP GET OIDs"/>
+         <othermeta name="shortdesc" content="Describes available SNMP GET-based OIDs from the UPS system for monitoring model identity, firmware, battery status, power parameters, environmental sensors and modular subsystem diagnostics."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta name="entities" content="snmp-oid;ups-system-controller;network-management-card;battery-status-signals;rectifier-input-phase;inverter-output-readings;environment-sensor-unit;g-bms-telemetry;system-alarms;temperature-sensor"/>
+         
+         <othermeta name="taxonomy" content="domain:ups-telemetry;usecase:snmp-parameter-retrieval;industry:uninterruptible-power-supply-systems"/>
+         
+         <othermeta name="tags" content="snmp,get-oids,system-monitoring,ups-telemetry,battery-status,input-output-measurements,environment-sensor-data,network-management-card"/>
+         
+         <othermeta name="usecase" content="retrieve-system-parameters-through-snmp-get-operations"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Analog Values from OIDs</title>
+         <p class="- topic/p ">The following table
+shows the analog values that are available as GET requests. </p>
+         <note class="- topic/note ">Base OID Address for APC / Reality: .1.3.6.1.4.1.318.</note>
+         <note class="- topic/note ">If
+an OID is not supported it will return “No data available in
+this sub-tree” or “There is no such object in this MIB”.</note>
+         <table pgwide="1" class="- topic/table ">
+            <tgroup cols="3" class="- topic/tgroup ">
+               <colspec colname="col2" colwidth="2*" class="- topic/colspec "/>
+               <colspec colname="COLSPEC0" colwidth="4.00*" class="- topic/colspec "/>
+               <colspec colname="col4" colwidth="6*" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">
+                        <ph class="- topic/ph ">APC / Reality
+OID Address</ph>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <ph class="- topic/ph ">SNMP OID
+Name</ph>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <ph class="- topic/ph ">Description</ph>
+                     </entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.1.1.1</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsBasicIdentModel</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The system model name.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.1.1.4</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsBasicIdentModelType</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The detailed model information of the system used by the NMC.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.1.2.1</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsAdvIdentFirmwareRevision</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The firmware revision of the system controller (MCU).</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.1.2.2</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsAdvIdentDateOfManufacture</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The date when the system was manufactured. In the format mm/dd/yy
+or yyyy.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.1.2.3</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsAdvIdentSerialNumber</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">A unique identifying number for the system controller (MCU) set at
+the factory, the number is not related to any number on the system
+rating plate.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.2.1.1</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsBasicBatteryStatus</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Indicates the status of the battery.</ph>
+                        <sl class="- topic/sl ">
+                           <sli class="- topic/sli ">1 = Unknown</sli>
+                           <sli class="- topic/sli ">2 = Normal</sli>
+                           <sli class="- topic/sli ">3 = Low capacity</sli>
+                           <sli class="- topic/sli ">4 = Fault condition</sli>
+                           <sli class="- topic/sli ">5 = Battery not present</sli>
+                        </sl>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.2.1.3</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsBasicBatteryLastReplaceDate</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The date when the battery were last replaced. In the format mm/dd/yy
+or mm/dd/yyyy.</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.2.2.1</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsAdvBatteryCapacity</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conkeyref="signals/F4_5177_Description" class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.2.2.2</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsAdvBatteryTemperature</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conkeyref="signals/F4_5115_Description" class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.2.2.8</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsAdvBatteryActualVoltage</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The battery bus voltage. [V]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.2.2.9</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsAdvBatteryCurrent</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The battery current. [A]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.2.2.27</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsAdvBatteryBreakerStatus</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Indicates the status of the battery breaker(s) in the system.</ph>
+                        <sl class="- topic/sl ">
+                           <sli class="- topic/sli ">1 = All battery breakers are open</sli>
+                           <sli class="- topic/sli ">2 = At least one of the battery breakers are closed</sli>
+                           <sli class="- topic/sli ">3 = Breaker status is not present</sli>
+                        </sl>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.2.3.2</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsHighPrecBatteryTemperature</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured battery temperature by the system’s battery temperature
+sensor. The temperature unit depends on the NMC setting. Value is
+with one decimal (tenths), temperatures below zero reads as 0. [°C
+/ °F]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.2.3.5</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsHighPrecBatteryCurrent</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured battery current with one decimal (tenths). [A]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.2.3.7.1.3.1</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsHighPrecBatteryVoltage</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured battery bus voltage with one decimal (tenths). [V]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.3.2.4</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsAdvInputFrequency</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured frequency of the system input. [Hz]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.3.2.12</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsAdvInputTotalActivePower</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The total active input power (sum of all three phases) of the system.
+[kW]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.3.2.18</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsAdvInputNominalDCVoltage</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured voltage of the system input. [V]</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.3.3.4</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsHighPrecInputFrequency</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured frequency with one decimal (tenths). [Hz]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.3.3.6</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsHighPrecInputBypassVoltage</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured bypass voltage with one decimal (tenths). [V]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.3.3.8</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsHighPrecInputDCVoltage</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured voltage with one decimal (tenths). [V]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.4.2.1</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsAdvOutputVoltage</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured voltage of the system output. [V]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.4.2.2</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsAdvOutputFrequency</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured frequency of the system output. [Hz]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.4.2.4</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsAdvOutputCurrent</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured current of the system output. [A]</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.4.2.8</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsAdvOutputActivePower</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The total active output power (sum of all three phases) of the system.
+[W]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.4.2.9</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="yes" class="- topic/ph ">upsAdvOutputApparentPower</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The total apparent output power (sum of all three phases) of the
+system. [W]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.4.2.15</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="yes" class="- topic/ph ">upsAdvOutputInverterLoad</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured inverter load of the system output.</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.4.2.16</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="yes" class="- topic/ph ">upsAdvOutputPercentPower</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The total percent output power (sum of all three phases) of the system.
+[%]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.4.2.17</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="yes" class="- topic/ph ">upsAdvOutputInverterActivePower</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The total active inverter output power of the system. [W]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.4.2.18</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="yes" class="- topic/ph ">upsAdvOutputPercentLoad</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured percent load of the system output.</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.4.2.19</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="yes" class="- topic/ph ">upsAdvOutputInverterCurrent</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured inverter current of the system output.</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.4.2.20</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="yes" class="- topic/ph ">upsAdvOutputReactivePower</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured reactive power of the system output.</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.4.2.21</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="yes" class="- topic/ph ">upsAdvOutputInverterVoltage</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured inverter voltage of the system voltage.</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.4.3.1</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="yes" class="- topic/ph ">upsHighPrecOutputVoltage</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured output voltage with one decimal (tenths). [V]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-Inverter Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.4.3.2</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="yes" class="- topic/ph ">upsHighPrecOutputFrequency</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured output frequency with one decimal (tenths). [Hz]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.4.3.4</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="yes" class="- topic/ph ">upsHighPrecOutputCurrent</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured output current with one decimal (tenths). [A]</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.5.2.17</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsAdvConfigBattCabAmpHour</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The configured maximum ampere hours of the battery bank. The value
+shows the maximum battery capacity configured for the system regardless
+of the breaker positions. [Ah]</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.7.2.13</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsAdvTestBatteryLastDate</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The date of the latest performed battery diagnostic test. In the
+format YYYY-MM-DD.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.7.2.14</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsAdvTestBatteryProcessStatus</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The result of the latest performed battery discharge test.</ph>
+                        <sl class="- topic/sl ">
+                           <sli class="- topic/sli ">1 = Successful</sli>
+                           <sli class="- topic/sli ">2 = Precondition not meet</sli>
+                           <sli class="- topic/sli ">3 = In progress</sli>
+                           <sli class="- topic/sli ">4 = Refused</sli>
+                           <sli class="- topic/sli ">5 = Manually/Automatically cancelled</sli>
+                           <sli class="- topic/sli ">6 = Pending</sli>
+                           <sli class="- topic/sli ">7 = Unknown</sli>
+                           <sli platform="Modular-DC Modular-AC" class="- topic/sli ">8 = No battery present</sli>
+                        </sl>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.7.2.15</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsAdvTestBatteryConditionStatus</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The result of the latest successful battery discharge test.</ph>
+                        <sl class="- topic/sl ">
+                           <sli class="- topic/sli ">1 = Unknown</sli>
+                           <sli class="- topic/sli ">2 = Battery OK</sli>
+                           <sli class="- topic/sli ">3 = Battery capacity lower</sli>
+                           <sli class="- topic/sli ">4 = Battery defect</sli>
+                        </sl>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.8.1.0</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsCommStatus</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The status of the communication from the SNMP agent to the system.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.11.2.16</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsAdvStateRealityModularSpecificFaults</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">An ASCII string containing the 64 flags representing the active specific
+alarms for Reality Modular. For more information about the flags see
+the chapter <xref href="M_SNMP_Flags_CPT_0000939061.dita"
+                                 scope="local"
+                                 type="concept"
+                                 class="- topic/xref "/>.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.13.4.26.1.2</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsDiagSubSysNetworkComCardModelNumber</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conkeyref="signals/F4_1_Description" class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.13.4.26.1.3</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsDiagSubSysNetworkComCardSerialNumber</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conkeyref="signals/F4_10_Description" class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.13.4.26.1.4</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsDiagSubSysNetworkComCardDateOfManufacture</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conkeyref="signals/F4_36_Description" class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.13.4.26.1.5</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsDiagSubSysNetworkComCardHardwareRev</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The hardware revision of the NMC.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.13.4.26.1.6</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsDiagSubSysNetworkComCardFirmwareAppRev</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conkeyref="signals/F4_18_Description" class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.17.1.2.1.2</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsDCOutputStatusVoltageNominal</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The set nominal DC output voltage of the system with one decimal
+(tenths). [V]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.17.1.2.1.3</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsDCOutputStatusCurrentRating</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The set output current rating of the system with one decimal (tenths).
+[A]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.17.1.2.1.4</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsDCOutputStatusVoltage</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured DC output voltage of the system with one decimal (tenths).
+[V]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.1.17.1.2.1.5</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">upsDCOutputStatusCurrent</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured output current of the system with one decimal (tenths).
+[A]</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.25.1.2.1.1</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">uioSensorStatusPortID</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The assigned ID of the port on the NMC where the temperature (or
+temperature and humidity) sensor is attached.</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.25.1.2.1.2</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">uioSensorStatusSensorID</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The assigned ID of the temperature (or temperature and humidity)
+sensor connected to the NMC.</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.25.1.2.1.3</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">uioSensorStatusSensorName</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The entered name of the temperature (or temperature and humidity)
+sensor connected to the NMC. Can be changed from the NMC interface.</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.25.1.2.1.4</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">uioSensorStatusSensorLocation</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The entered location of the temperature (or temperature and humidity)
+sensor connected to the NMC. Can be changed from the NMC interface.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.25.1.2.1.5</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">uioSensorStatusTemperatureDegF</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured temperature by the temperature (or temperature and humidity)
+sensor in Fahrenheit. [°F]</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.25.1.2.1.6</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">uioSensorStatusTemperatureDegC</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured temperature by the temperature (or temperature and humidity)
+sensor in Celsius. [°C]</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.25.1.2.1.7</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">uioSensorStatusHumidity</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The measured relative humidity by the temperature and humidity sensor
+in percent. [%]</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.25.1.2.1.8</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">uioSensorStatusViolationStatus</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Indicates the reason for why an alarm is active for the sensor. Should
+be read as a bit map, where each bit represents if the alarm condition
+is active = 1 or inactive = 0.</ph>
+                        <sl class="- topic/sl ">
+                           <sli class="- topic/sli ">Bit 1 =  Maximum temperature exceeded</sli>
+                           <sli class="- topic/sli ">Bit 2 = High temperature exceeded</sli>
+                           <sli class="- topic/sli ">Bit 3 = Low temperature exceeded</sli>
+                           <sli class="- topic/sli ">Bit 4 = Minimum temperature exceeded</sli>
+                           <sli class="- topic/sli ">Bit 5 – Bit 8 = (Not used)</sli>
+                           <sli class="- topic/sli ">Bit 9 = Maximum humidity exceeded</sli>
+                           <sli class="- topic/sli ">Bit 10 = High humidity exceeded</sli>
+                           <sli class="- topic/sli ">Bit 11 = Low humidity exceeded</sli>
+                           <sli class="- topic/sli ">Bit 12 = Minimum humidity exceeded.</sli>
+                        </sl>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.25.1.2.1.9</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">uioSensorStatusAlarmStatus</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The alarm status of the temperature (or temperature and humidity)
+sensor connected to the NMC.</ph>
+                        <sl class="- topic/sl ">
+                           <sli class="- topic/sli ">1 = Normal</sli>
+                           <sli class="- topic/sli ">2 = Warning</sli>
+                           <sli class="- topic/sli ">3 = Critical</sli>
+                           <sli class="- topic/sli ">4 = N/A</sli>
+                        </sl>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.25.1.2.1.10</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">uioSensorStatusCommStatus</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The status of the communication between the NMC and the connected
+temperature or temperature and humidity sensor.</ph>
+                        <sl class="- topic/sl ">
+                           <sli class="- topic/sli ">1 = Not installed</sli>
+                           <sli class="- topic/sli ">2 = Communication OK</sli>
+                           <sli class="- topic/sli ">3 = Communication lost</sli>
+                        </sl>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.29.1.1</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">chargerIdentModel</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conkeyref="signals/F4_108_Description" class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.29.1.3</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">chargerIdentSerialNumber</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conkeyref="signals/F4_140_Description" class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.29.1.4</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">chargerIdentModelType</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conkeyref="signals/F4_124_Description" class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.29.2.1.1.1.1</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">chargerInputPhaseTableIndex</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Index for the first phase (L1) for the rectifier input.</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.29.2.1.1.1.2 </ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">chargerInputPhaseTableIndex</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Index for the first phase (L2) for the rectifier input.</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.29.2.1.1.1.3</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">chargerInputPhaseTableIndex</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Index for the first phase (L3) for the rectifier input.</ph>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.29.2.1.1.2.1</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">chargerInputPhaseVoltage</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conkeyref="signals/F4_5021_Description" class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.29.2.1.1.2.2</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">chargerInputPhaseVoltage</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conkeyref="signals/F4_5023_Description" class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.29.2.1.1.2.3</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">chargerInputPhaseVoltage</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conkeyref="signals/F4_5025_Description" class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.29.3.1</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">chargerOutputStatus</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">The current state or operation mode of the system.</ph>
+                        <sl class="- topic/sl ">
+                           <sli class="- topic/sli ">1 = Unknown</sli>
+                           <sli class="- topic/sli ">2 = Initializing</sli>
+                           <sli class="- topic/sli ">3 = Standby</sli>
+                           <sli class="- topic/sli ">4 = Battery operation</sli>
+                           <sli class="- topic/sli ">5 = Float charge</sli>
+                           <sli class="- topic/sli ">6 = Boost charge</sli>
+                           <sli class="- topic/sli ">7 = Equalizing (initial) charge</sli>
+                           <sli class="- topic/sli ">8 = Direct feed</sli>
+                        </sl>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.29.3.3</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">chargerOutputTotalCurrent</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conkeyref="signals/F4_5011_Description" class="- topic/ph "/>
+                     </entry>
+                  </row>
+                  <row platform="Modular-DC Modular-AC" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">1.1.29.3.4</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph translate="no" class="- topic/ph ">chargerOutputLoad</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph conkeyref="signals/F4_5017_Description" class="- topic/ph "/>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+   </conbody>
+</concept>

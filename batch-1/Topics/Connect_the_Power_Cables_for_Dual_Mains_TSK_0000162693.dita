@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="ConnectThePowerCablesForDualMains-138E3D6E"
+      otherprops="Public"
+      translate="yes"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">Connect the Power Cables for Dual Mains</title>
+   <shortdesc class="- topic/shortdesc ">
+      <keyword class="- topic/keyword ">Reality NAM UPS with transformer 75–100 kVA</keyword>
+   </shortdesc>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-11+05:30" class="- topic/created "/>
+         <revised modified="2025-11-11" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>dual-mains-configuration</indexterm>
+            <indexterm>mains-a</indexterm>
+            <indexterm>mains-b</indexterm>
+            <indexterm>transfer-switch</indexterm>
+            <indexterm>redundant-power-feed</indexterm>
+            <!-- Process layer -->
+            <indexterm>connect-power-cables-dual-mains</indexterm>
+            <indexterm>configure-transfer-paths</indexterm>
+            <indexterm>verify-redundancy</indexterm>
+            <indexterm>isolate-and-test-feed</indexterm>
+            <indexterm>label-mains-feeds</indexterm>
+            <!-- Context layer -->
+            <indexterm>redundant-power-systems</indexterm>
+            <indexterm>uptime-requirements</indexterm>
+            <indexterm>maintenance-window</indexterm>
+            <indexterm>site-power-architecture</indexterm>
+            <indexterm>commissioning-and-failsafe</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Connect the power cables for dual-mains"/>
+         <othermeta name="shortdesc" content="Procedure to wire and verify dual-mains (A/B) power feeds and associated transfer logic for redundant UPS power systems."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="mains-a;mains-b;transfer-switch;redundant-feed;power-cable"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:redundant-power-setup;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="redundancy,dual-mains,transfer,verification,uptime"/>
+         <othermeta name="usecase" content="connect-and-verify-dual-mains-feeds"/>
+      </metadata>
+   </prolog>
+   
+   <taskbody>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Route the bypass cables through the top or bottom of the
+I/O section of the UPS cabinet and connect the bypass cables to the
+bypass busbars (L1, L2, L3, N) and to the ground busbar.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd "/>
+            <choices class="- topic/ul task/choices ">
+               <choice class="- topic/li task/choice ">
+                  <b class="+ topic/ph hi-d/b ">For 3-wire input system</b>: Route the input cables through
+the top or bottom of the I/O section of the UPS cabinet and connect
+the input cables to the input busbars (L1, L2, L3) and to the ground
+busbar.</choice>
+               <choice class="- topic/li task/choice ">
+                  <b class="+ topic/ph hi-d/b ">For 4-wire input system</b>: Route the input cables through
+the top or bottom of the I/O section of the UPS cabinet and connect
+the input cables to the input busbars (L1, L2, L3, N) and to the ground
+busbar.</choice>
+            </choices>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Route the output cables through the top or bottom of the
+I/O section of the UPS cabinet and connect the output cables to the
+output busbars (L1, L2, L3, N) and to the ground busbar.</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <fig class="- topic/fig ">
+                  <title class="- topic/title ">Front View of the Busbars in the I/O Section of the UPS Cabinet</title>
+                  <image href="../Images/Reality_75-100kwupsdualcableconinput_w120mm_0000166008.svg"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Route the preinstalled cables labelled <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">UIB LOAD</uicontrol> through the right side into the
+transformer cabinet and connect to the busbars (input N to H0, L1
+to H1, L2 to H2, L3 to H3) on the input transformer.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Route the preinstalled cables labelled <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">W001</uicontrol> through the right side into the transformer
+cabinet and connect to the busbars (output N to X0, L1 to X1, L2 to
+X2, L3 to X3) on the input transformer.</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <fig expanse="page" class="- topic/fig ">
+                  <title class="- topic/title ">Front View of the Busbars in the I/O Section of the UPS Cabinet
+and Transformer Cabinet</title>
+                  <image href="../Images/Reality_75-100kwupsdual-inputtransformercables_w170mm_0000166007.svg"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Route the preinstalled cables labelled <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">BIB LOAD</uicontrol> through the right side into the
+transformer cabinet and connect to the busbars (bypass N to H0, L1
+to H1, L2 to H2, L3 to H3) on the bypass transformer.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Route the preinstalled cables labelled <uicontrol translate="no" class="+ topic/ph ui-d/uicontrol ">SSIB LINE</uicontrol> through the right side into the
+transformer cabinet and connect to the busbars (output N to X0, L1
+to X1, L2 to X2, L3 to X3) on the bypass transformer.</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <fig expanse="page" class="- topic/fig ">
+                  <title class="- topic/title ">Front View of the Busbars in the I/O Section of the UPS Cabinet
+and Transformer Cabinet</title>
+                  <image href="../Images/Reality_75-100kwupsdual-bypasstransformercables_w170mm_0000166006.svg"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <b class="+ topic/ph hi-d/b ">Only in systems with remote battery cabinet(s)</b>:
+Route the battery cables through the top or bottom of the I/O section
+of the UPS cabinet and connect the battery cables to the battery busbars
+(+, –) and to the ground busbar.</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <note class="- topic/note ">The battery busbars in the I/O section of the UPS cabinet
+are only for remote battery cabinets.</note>
+               <fig class="- topic/fig ">
+                  <title class="- topic/title ">Front View of the Busbars in the I/O Section of the UPS Cabinet</title>
+                  <image href="../Images/Reality_75-100kwupsdualonlybatterycables_w120mm_0000166775.svg"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">
+               <b class="+ topic/ph hi-d/b ">Only in systems with adjacent battery cabinet(s)</b>: Route the battery cables through the left side panel and connect
+them to the battery busbars (+, –) and the ground busbar in
+the power section of the UPS cabinet.</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <note class="- topic/note ">The battery busbars in the power section of the UPS
+cabinet are only for adjacent battery cabinets.</note>
+               <fig class="- topic/fig ">
+                  <title class="- topic/title ">Front View of the UPS Cabinet</title>
+                  <image href="../Images/Reality_pxc_nam_75-100_kva_adjacent_battery_cabinet_connect_power_cables_120mm_0000134961.svg"
+                         scalefit="yes"
+                         scope="local"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </stepxmp>
+         </step>
+      </steps>
+   </taskbody>
+</task>

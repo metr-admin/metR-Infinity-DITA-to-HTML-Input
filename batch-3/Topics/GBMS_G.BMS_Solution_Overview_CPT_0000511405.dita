@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="G.BMSSolutionOverview-45649E53"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">G.BMS Solution Overview</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-05T13:00:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-05T13:00:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,engineering,service"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>g.bms-system</indexterm>
+            <indexterm>gxr-aux-module</indexterm>
+            <indexterm>webmanager-interface</indexterm>
+            <indexterm>modbus-gateway</indexterm>
+            <indexterm>battery-management-unit</indexterm>
+            <!-- Process layer -->
+            <indexterm>system-overview-and-architecture</indexterm>
+            <indexterm>integration-guidelines</indexterm>
+            <indexterm>commissioning-sequence</indexterm>
+            <indexterm>networking-and-communication-setup</indexterm>
+            <indexterm>firmware-and-version-management</indexterm>
+            <!-- Context layer -->
+            <indexterm>ups-integration-for-data-centres</indexterm>
+            <indexterm>industrial-power-continuity</indexterm>
+            <indexterm>oil-and-gas-control-system</indexterm>
+            <indexterm>mining-electrical-rooms</indexterm>
+            <indexterm>transportation-substation-applications</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="G BMS Solution Overview"/>
+         <othermeta name="shortdesc" content="High level architecture and capabilities of the G BMS solution including modules communication and integration patterns."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="g.bms controller; gxr aux module; webmanager; modbus registers; ethernet switch"/>
+         <othermeta name="taxonomy" content="domain:industrial-power;usecase:system-overview;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="architecture,communication,commissioning"/>
+         <othermeta name="usecase" content="informational overview for engineering and integration"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">The Reality battery management system (G.BMS) is a solution that actively balances the charge of
+each battery block. The G.BMS continuously monitors the voltage, impedance, temperature and as
+an option the electrolyte level. The measured information is used
+to equalize the charge of the individual blocks to help them reach
+their designed lifetime.</p>
+      <p class="- topic/p ">Any Reality UPS, Reality charger or other standard industrial UPS can
+use the G.BMS solution, since
+it is installed separately from the system. Therefore the G.BMS solution can also be installed on your
+already existing UPS systems.</p>
+      <fig class="- topic/fig ">
+         <image href="../Images/GBMS_Solutions-Overview_0000511666.png"
+                scope="local"
+                placement="inline"
+                class="- topic/image "/>
+         <sl class="- topic/sl ">
+            <sli class="- topic/sli ">
+               <b class="+ topic/ph hi-d/b ">(A) Batteries: </b>The G.BMS solution can be used with multiple different battery types. The
+maximum number of individual battery blocks in one battery bank that
+can be monitored with one webmanager is 512, if three splitting boxes
+are used.</sli>
+            <sli class="- topic/sli ">
+               <b class="+ topic/ph hi-d/b ">(B) Modules: </b>One module is used for each battery block
+in the battery bank. In one battery bank all modules are connected
+to the same webmanager directly or through a splitting box.</sli>
+            <sli class="- topic/sli ">
+               <b class="+ topic/ph hi-d/b ">(C) Bus cables: </b>Bus cables connects all the parts in the
+solution with each other. One webmanager is connected to one bus,
+additional webmanagers can be used if there are multiple battery banks
+for example in a redundant Reality system. For long distances between
+devices, repeaters can be used to extend the bus.</sli>
+            <sli class="- topic/sli ">
+               <b class="+ topic/ph hi-d/b ">(D) Splitting Box: </b>Optional. With a splitting box it is
+possible to connect additional modules to the webmanager. A maximum
+number of 200 modules can be connected to one splitting box.</sli>
+            <sli class="- topic/sli ">
+               <b class="+ topic/ph hi-d/b ">(E) Webmanager: </b>The webmanager connects the G.BMS solution to a network. From the webmanagers
+web interface the solution can be monitored and configured. If no
+splitting box is used a maximum number of 50 modules can be connected
+in one string to the webmanager.</sli>
+            <sli class="- topic/sli ">
+               <b class="+ topic/ph hi-d/b ">(F) Cabinet: </b>Optional. With a cabinet some internal wiring
+is already done to reduce the on-site installation time. It also helps
+to protect the webmanager from environmental pollution and restricts
+physical access.</sli>
+            <sli class="- topic/sli ">
+               <b class="+ topic/ph hi-d/b ">(G) Current Sensor: </b>Battery current sensors monitor the
+total battery charge/discharge current to the Reality UPS, Reality charger
+or other system. The current sensors are connected to the webmanager.</sli>
+            <sli class="- topic/sli ">
+               <b class="+ topic/ph hi-d/b ">(H) Bus Interface: </b>Optional. A programmable device with
+digital inputs and relay outputs.</sli>
+            <sli class="- topic/sli ">
+               <b class="+ topic/ph hi-d/b ">(I) Stand-Alone Temperature and Humidity Sensor: </b>Optional.
+A stand-alone temperature and humidity sensor that can be connected
+directly to the webmanager.</sli>
+            <sli class="- topic/sli ">
+               <b class="+ topic/ph hi-d/b ">(J) Sensormanager: </b>Optional. Incase other sensors than
+the stand-alone temperature and humidity sensor are need, a sensormanager
+can be used.</sli>
+            <sli class="- topic/sli ">
+               <b class="+ topic/ph hi-d/b ">(K) Additional sensors: </b>Optional. Various additional sensors
+can be connected to the sensormanager to monitor or send signals to
+the webmanager.</sli>
+         </sl>
+      </fig>
+   </conbody>
+</concept>

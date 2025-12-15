@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="AlarmPanel-D901D2BC"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Alarm Panel</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-01+05:30" class="- topic/created "/>
+         <revised modified="2025-12-01" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience
+            type="role"
+            otherprops="operations,monitoring,engineering,maintenance,field technician,technical support"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>alarm panel</indexterm>
+            <indexterm>alarm indicators</indexterm>
+            <indexterm>status LEDs</indexterm>
+            <indexterm>display module</indexterm>
+            <indexterm>control keys</indexterm>
+            <indexterm>audible alarms</indexterm>
+            <indexterm>system controller interface</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>alarm navigation workflow</indexterm>
+            <indexterm>alarm acknowledgment procedure</indexterm>
+            <indexterm>LED interpretation steps</indexterm>
+            <indexterm>alert review process</indexterm>
+            <indexterm>fault confirmation</indexterm>
+            <indexterm>alert reset workflow</indexterm>
+            <indexterm>status monitoring sequence</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>industrial monitoring environment</indexterm>
+            <indexterm>UPS alert management</indexterm>
+            <indexterm>facility control room operations</indexterm>
+            <indexterm>real-time fault handling</indexterm>
+            <indexterm>critical equipment supervision</indexterm>
+            <indexterm>system status evaluation</indexterm>
+            <indexterm>operational diagnostics</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta 
+            name="title"
+            content="Alarm Panel"/>
+         
+         <othermeta 
+            name="shortdesc"
+            content="Describes the alarm panel layout, including LEDs, display elements, control keys, and the workflow for reviewing, acknowledging, and resetting alerts."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta 
+            name="entities"
+            content="LED indicators; alarm messages; display module; control keys; system controller; sounder; alert panel housing"/>
+         
+         <othermeta 
+            name="taxonomy"
+            content="domain:industrial monitoring;usecase:alarm-panel-operation;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta 
+            name="tags"
+            content="alarm panel,LEDs,alarm messages,user interface,alerts,diagnostics"/>
+         
+         <othermeta 
+            name="usecase"
+            content="Explain how operators review, interpret, and manage alarms using the alarm panel interface"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">The alarm panel has 23 LEDs that are used for indications and alarms.</p>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Alarm Indication</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">When an alarm
+is activated in the system the corresponding LED is activated on the
+alarm panel. The status of the LED indicates what alarm is the newest
+and if the alarms are unconfirmed or confirmed.</p>
+            <table class="- topic/table ">
+               <tgroup cols="2" class="- topic/tgroup ">
+                  <colspec colname="col1" colwidth="40.00mm" class="- topic/colspec "/>
+                  <colspec colname="col3" colwidth="2.00*" class="- topic/colspec "/>
+                  <thead class="- topic/thead ">
+                     <row class="- topic/row ">
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">LED Status</p>
+                        </entry>
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">Description</p>
+                        </entry>
+                     </row>
+                  </thead>
+                  <tbody class="- topic/tbody ">
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Off</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">The alarm is
+not active</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Fast flashing</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">The first (initial)
+unconfirmed alarm</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Slow flashing</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Unconfirmed alarm</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Constant</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Confirmed present alarm</p>
+                        </entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+            <p class="- topic/p ">Unconfirmed alarm will not be cleared even if the alarm
+is not active in the system anymore. Only confirmed alarms will be
+cleared when they are no longer present in the system.</p>
+         </sectiondiv>
+      </section>
+      <section id="AlarmConfirmationReset-D39B4898" class="- topic/section ">
+         <title class="- topic/title ">Confirm/Clear
+Alarms</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">To mute the audible alarm, press the <b class="+ topic/ph hi-d/b ">Mute key</b>.</p>
+            <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">C key</b> one time to:<ul class="- topic/ul ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Confirm any unconfirmed alarms. The LED will stay on but stop
+flashing.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Clear any confirmed and unconfirmed alarms that are resolved.
+The LED will extinguish.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Mute the audible alarm (if not already muted).</p>
+                  </li>
+               </ul>
+               <note class="- topic/note ">The fast flashing LED (the first unconfirmed alarm) will
+stay the same after pressing the <b class="+ topic/ph hi-d/b ">C key</b> only once.</note>
+            </p>
+         </sectiondiv>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">C key</b> a second time
+to:<ul class="- topic/ul ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Confirm the newest unconfirmed alarm. The LED will stay on
+but stop flashing.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Clear any confirmed and unconfirmed alarms that are resolved.
+The LED will extinguish.</p>
+                  </li>
+               </ul>
+            </p>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Alarm Descriptions</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <note class="- topic/note ">For a
+more details and troubleshooting see chapter <xref href="1230097_Troubleshoot_from_the_Alarm_Panel_CPT_DD00726524.dita"
+                     scope="local"
+                     type="concept"
+                     class="- topic/xref "/>.</note>
+         </sectiondiv>
+         <fig expanse="page" class="- topic/fig ">
+            <image href="../../Images/1230097_WxW_Alarm_Display_DD00726535.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <table pgwide="1" platform="WxW" class="- topic/table ">
+            <tgroup cols="3" class="- topic/tgroup ">
+               <colspec colname="col2" colwidth="40.00mm" class="- topic/colspec "/>
+               <colspec colname="COLSPEC1" colwidth="19.55mm" class="- topic/colspec "/>
+               <colspec colname="COLSPEC0" colwidth="8.00*" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">
+                        <p class="- topic/p ">Name</p>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <p class="- topic/p ">Time delay
+(seconds)</p>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <p class="- topic/p ">Description</p>
+                     </entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">DC out of tolerance</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The inverter will turn off because the DC voltage is out of tolerance.
+For tolerances see the technical data<fn class="- topic/fn "> The technical data for the
+system can be found in the manufacturing record book and depends on
+customer specification.</fn>.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p platform="PxW" class="- topic/p ">Battery discharged</p>
+                        <p platform="WxW" class="- topic/p ">DC low warning</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p platform="PxW" class="- topic/p ">The battery voltage is below the set DC low alarm level.</p>
+                        <p platform="WxW" class="- topic/p ">The DC voltage is below the set DC low alarm level.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Batt. disconnected</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The battery is disconnected from the system.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Inverter fault</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The inverter output is out of tolerance or the inverter is overheated.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p otherprops="2pMBS 3pMBS" class="- topic/p ">Overload inv./Bypass</p>
+                        <p otherprops="noByp" class="- topic/p ">Overload inverter</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">30</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p otherprops="2pMBS 3pMBS" class="- topic/p ">The inverter or bypass is overloaded.</p>
+                        <p otherprops="noByp" class="- topic/p ">The inverter is overloaded.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Inverter fuse blown</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">One or more inverter fuses are blown.</p>
+                     </entry>
+                  </row>
+                  <row otherprops="2pMBS 3pMBS" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Asynchronous</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">30</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The inverter is not synchronized to the bypass mains.</p>
+                     </entry>
+                  </row>
+                  <row otherprops="2pMBS 3pMBS" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Bypass input fault</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">30</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The bypass mains is out of tolerance measured at the input of static
+switch EN. For tolerances see the technical data<fn class="- topic/fn "> The technical
+data for the system can be found in the manufacturing record book
+and depends on customer specification.</fn>.</p>
+                     </entry>
+                  </row>
+                  <row otherprops="2pMBS 3pMBS" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Manual Bypass ON</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p otherprops="2pMBS" class="- topic/p "> The manual bypass switch is the <b class="+ topic/ph hi-d/b ">Bypass</b> position.</p>
+                        <p otherprops="3pMBS" class="- topic/p "> The manual bypass switch is the <b class="+ topic/ph hi-d/b ">Bypass</b> or <b class="+ topic/ph hi-d/b ">Test</b> position.</p>
+                     </entry>
+                  </row>
+                  <row otherprops="2pMBS 3pMBS" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">EN inhibited</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">30</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The input to the static switch EN is out of tolerance or the static
+switch EN is overheated. For tolerances see the technical data<fn class="- topic/fn "> The technical data for the system can be found in the manufacturing
+record book and depends on customer specification.</fn>.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">EA inhibited</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The input to the static switch EA is out of tolerance or the static
+switch EA is overheated. For tolerances see the technical data<fn class="- topic/fn "> The technical data for the system can be found in the manufacturing
+record book and depends on customer specification.</fn>.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Overtemperature</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">One or more of the following parts are overheated:<ul class="- topic/ul ">
+                              <li class="- topic/li ">
+                                 <p class="- topic/p ">DC choke</p>
+                              </li>
+                              <li class="- topic/li ">
+                                 <p class="- topic/p ">Power module</p>
+                              </li>
+                              <li class="- topic/li ">
+                                 <p class="- topic/p ">Inverter transformer</p>
+                              </li>
+                              <li class="- topic/li ">
+                                 <p class="- topic/p ">AC choke</p>
+                              </li>
+                              <li otherprops="2pMBS 3pMBS" class="- topic/li ">
+                                 <p class="- topic/p ">Static switch EN</p>
+                              </li>
+                              <li class="- topic/li ">
+                                 <p class="- topic/p ">Static switch EA</p>
+                              </li>
+                           </ul>
+                        </p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Fan failure</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">30</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">One or more fans are inoperable.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p otherprops="2pMBS 3pMBS" class="- topic/p ">Power supply fault</p>
+                        <p otherprops="noByp" class="- topic/p ">Control power fault</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p otherprops="2pMBS 3pMBS" class="- topic/p ">The output is out of tolerance or one of
+the inputs ( bypass or DC) are missing for at least one of the internal
+power supplies (+5 V / ±12 V / +20 V).</p>
+                        <p otherprops="noByp" class="- topic/p ">The output is out of tolerance or the input DC is missing for at
+least one of the internal power supplies (+5 V / ±12 V / +20
+V).</p>
+                     </entry>
+                  </row>
+                  <row otherprops="ISBS" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Parallel cable interrupted</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">At least one of the parallel cables have lost communication.</p>
+                     </entry>
+                  </row>
+                  <row otherprops="ISBS" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">ISBS Inoperable</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The ISBS cannot switch to bypass because it could not switch on the
+static switch EN.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p otherprops="2pMBS 3pMBS" class="- topic/p ">Q200 breaker
+open</p>
+                        <p otherprops="noByp" class="- topic/p ">Output breaker open</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p otherprops="2pMBS 3pMBS" class="- topic/p ">The breaker (Q200) is open or have tripped
+because of an overload or a short-circuit.</p>
+                        <p otherprops="noByp" class="- topic/p ">The output breaker is open or have tripped because of an overload
+or a short-circuit.</p>
+                     </entry>
+                  </row>
+                  <row otherprops="2pMBS 3pMBS" class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Surge protection blown</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">On or both surge
+protections have blown.</p>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+   </conbody>
+</concept>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="EventLog-74BA7CD5"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Event Log</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-28+05:30" class="- topic/created "/>
+         <revised modified="2025-11-28" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience
+            type="role"
+            otherprops="operations,engineering,maintenance,monitoring,field technician,service personnel"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>event log</indexterm>
+            <indexterm>Bruce UPS monitoring system</indexterm>
+            <indexterm>alarm history</indexterm>
+            <indexterm>system status records</indexterm>
+            <indexterm>fault event entries</indexterm>
+            <indexterm>data logging module</indexterm>
+            <indexterm>operator interface panel</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>event review workflow</indexterm>
+            <indexterm>alarm log interpretation</indexterm>
+            <indexterm>fault diagnostics procedure</indexterm>
+            <indexterm>historical event tracking</indexterm>
+            <indexterm>event filtering process</indexterm>
+            <indexterm>root cause analysis</indexterm>
+            <indexterm>system auditing steps</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>system monitoring environment</indexterm>
+            <indexterm>fault investigation context</indexterm>
+            <indexterm>critical power infrastructure</indexterm>
+            <indexterm>UPS reliability analysis</indexterm>
+            <indexterm>event-driven diagnostics</indexterm>
+            <indexterm>compliance reporting</indexterm>
+            <indexterm>operational supervision domain</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta 
+            name="title"
+            content="Event Log"/>
+         
+         <othermeta 
+            name="shortdesc"
+            content="Explains how to access, read, and interpret the event log of the Bruce UPS system, including event history, alarm entries, fault tracing, and diagnostic workflows."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta 
+            name="entities"
+            content="log memory; alarm entries; status records; fault events; control panel; timestamp records; diagnostic data"/>
+         
+         <othermeta 
+            name="taxonomy"
+            content="domain:industrial monitoring;usecase:diagnostic-logging;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta 
+            name="tags"
+            content="event log,alarm history,fault tracing,diagnostics,UPS monitoring"/>
+         
+         <othermeta 
+            name="usecase"
+            content="Guide operators in reading, analyzing, and interpreting the UPS event log for troubleshooting and monitoring"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">The event log (log stack) can store up to 1000 events and alarms.
+The latest entry is listed first.</p>
+      <p class="- topic/p ">Colon “:” indicates that the event or alarm was set,
+reset it is indicated with a bar “|”. Example:<ul platform="PxW WxW" class="- topic/ul ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <b class="+ topic/ph hi-d/b ">SET:</b> 67: Inverter volt out of tolerance</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <b class="+ topic/ph hi-d/b ">RESET:</b> 67| Inverter volt out of tolerance</p>
+            </li>
+         </ul>
+         <ul platform="SDC" class="- topic/ul ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <b class="+ topic/ph hi-d/b ">SET:</b> 36: Battery current limit</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">
+                  <b class="+ topic/ph hi-d/b ">RESET:</b> 36| Battery current limit</p>
+            </li>
+         </ul>
+      </p>
+      <section class="- topic/section ">
+         <title class="- topic/title ">How to Enter the Event Log</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">To
+enter the event log: <ol class="- topic/ol ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Press both the <b class="+ topic/ph hi-d/b ">Star/number 0 key</b> and the <b class="+ topic/ph hi-d/b ">Arrow up
+key</b> at the same time to enter the event log.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Use the <b class="+ topic/ph hi-d/b ">Arrow keys</b> to move up and down in the event
+log. The event log ends with the text <codeph translate="no" class="+ topic/ph pr-d/codeph ">No (further)
+alarm</codeph>.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Back key</b> or wait 30 seconds to exit the event
+log.</p>
+                  </li>
+               </ol>
+            </p>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">View Time Stamp for an Entry</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">In the event log it is possible to view the time stamp of an entry.To view the time stamp: <ol class="- topic/ol ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Press both the <b class="+ topic/ph hi-d/b ">Star/number 0 key</b> and the <b class="+ topic/ph hi-d/b ">Arrow up
+key</b> at the same time to enter the event log.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">While in the event log navigate to an entry with the <b class="+ topic/ph hi-d/b ">Arrow
+keys</b>.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Clock/number 1 key</b>. The <b class="+ topic/ph hi-d/b ">Display</b> will
+show the <codeph class="+ topic/ph pr-d/codeph ">year, month, day / hours, minutes, seconds</codeph> for that entry.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Back key</b> or wait 30 seconds to exit the event
+log.</p>
+                  </li>
+               </ol>
+            </p>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Reset the Event Log</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">Exit any
+menu.To reset the event log: <ol id="reset-the-event-log" class="- topic/ol ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Press both the <b class="+ topic/ph hi-d/b ">Clock/number 1 key</b> and the <b class="+ topic/ph hi-d/b ">Number
+2 key</b> at the same time. The <b class="+ topic/ph hi-d/b ">Display</b> will show <codeph translate="no" class="+ topic/ph pr-d/codeph ">Master Password: </codeph>.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Use the numpad keys to enter the password for <b class="+ topic/ph hi-d/b ">Master Mode</b>. The <b class="+ topic/ph hi-d/b ">Display</b> will show <codeph translate="no" class="+ topic/ph pr-d/codeph ">Enter Password:</codeph>.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Use the numpad keys to enter the password for <b class="+ topic/ph hi-d/b ">Event Log
+Reset</b>. The <b class="+ topic/ph hi-d/b ">Display</b> will show <codeph translate="no" class="+ topic/ph pr-d/codeph ">Log
+stack cleared</codeph>.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Back key</b> or wait 30 seconds to exit the event
+log.</p>
+                  </li>
+               </ol>
+            </p>
+         </sectiondiv>
+      </section>
+   </conbody>
+</concept>

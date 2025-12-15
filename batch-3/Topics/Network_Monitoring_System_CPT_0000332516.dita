@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="NetworkMonitoringSystem-5E20B173"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Network Monitoring System Overview</title>
+   <shortdesc class="- topic/shortdesc ">The network monitoring system in Reality <ph platform="PXP PxW" class="- topic/ph ">UPSs</ph>
+      <ph platform="WxW" class="- topic/ph ">Inverters</ph>
+      <ph platform="SDC" class="- topic/ph ">Chargers</ph> provides the possibility to obtain readings, measurements, events
+and logs via a secure one-way communication from the controller board.</shortdesc>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-05+05:30" class="- topic/created "/>
+         <revised modified="2025-12-05" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>reality-ups</indexterm>
+            <indexterm>reality-inverter</indexterm>
+            <indexterm>reality-charger</indexterm>
+            <indexterm>network-monitoring-system</indexterm>
+            <indexterm>controller-board</indexterm>
+            <indexterm>network-management-card</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>signal-translation-process</indexterm>
+            <indexterm>system-reading-collection</indexterm>
+            <indexterm>event-and-log-retrieval</indexterm>
+            <indexterm>secure-one-way-communication</indexterm>
+            <indexterm>communication-interface-linking</indexterm>
+            <indexterm>redundant-network-monitoring</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>low-voltage-section</indexterm>
+            <indexterm>ups-monitoring-environment</indexterm>
+            <indexterm>industrial-power-management</indexterm>
+            <indexterm>digital-input-handling</indexterm>
+            <indexterm>device-to-network-architecture</indexterm>
+            <indexterm>system-diagnostics-context</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="Network Monitoring System Overview"/>
+         <othermeta name="shortdesc" content="Overview of the network monitoring system that enables secure one-way communication for retrieving readings, measurements, events, and logs from Reality UPSs, inverters, and chargers."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta name="entities" content="reality-ups; reality-inverter; reality-charger; controller-board; controller-box; communication-interface; external-connection-board; smart-slot-translator; a070; a102; a076; a025; a830; a091; a092; a842; a093; a832; nmc-card; options-slot"/>
+         
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:network-monitoring-architecture;industry: uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta name="tags" content="network-monitoring, controller-board, communication-architecture, system-readings, secure-communication, nmc-components"/>
+         <othermeta name="usecase" content="explain-network-monitoring-system-components-and-flow"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <fig platform="PxW WxW" class="- topic/fig ">
+         <image href="../Images/Network-Management-System-Overview_Ports_0000354410.svg"
+                scope="local"
+                placement="inline"
+                class="- topic/image "/>
+      </fig>
+      <fig platform="SDC" class="- topic/fig ">
+         <image href="../Images/Network-Management-System-Overview_Ports-SDC_0000392210.svg"
+                placement="inline"
+                class="- topic/image "/>
+      </fig>
+      <fig platform="PXP" class="- topic/fig ">
+         <image href="../Images/Network-Management-System-Overview_Ports-PXP_0000392546.svg"
+                placement="inline"
+                class="- topic/image "/>
+      </fig>
+      <note platform="PxW WxW SDC" class="- topic/note ">The light grey ports are not connected<ph platform="SDC" class="- topic/ph "> or not used for the network monitoring system</ph>.</note>
+      <table class="- topic/table ">
+         <title class="- topic/title ">Network Monitoring System Parts</title>
+         <tgroup cols="3" class="- topic/tgroup ">
+            <colspec colname="col1" colwidth="46.00px" class="- topic/colspec "/>
+            <colspec colname="COLSPEC0" colwidth="125.00px" class="- topic/colspec "/>
+            <colspec colname="COLSPEC1" colwidth="3.00*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Part</p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Name</p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Description</p>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">(A)</b>
+                     </p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The <ph platform="PXP PxW" class="- topic/ph ">UPS</ph>
+                        <ph platform="WxW" class="- topic/ph ">Inverter</ph>
+                        <ph platform="SDC" class="- topic/ph ">Charger</ph>
+                     </p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Inside the system.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">(B)</b>
+                     </p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The network monitoring system</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The parts of the network monitoring system placed in the low voltage
+section<ph platform="SDC" class="- topic/ph "> (for SDC systems the <b class="+ topic/ph hi-d/b ">A091</b> is not
+located in the low voltage section.)</ph>.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b platform="PxW WxW SDC" class="+ topic/ph hi-d/b ">A070</b>
+                        <b platform="PXP" class="+ topic/ph hi-d/b ">A102</b>
+                     </p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <ph platform="PxW WxW SDC" class="- topic/ph ">Controller board</ph>
+                        <ph platform="PXP" class="- topic/ph ">Controller box</ph>
+                     </p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The <ph platform="PxW WxW SDC" class="- topic/ph ">controller board</ph>
+                        <ph platform="PXP" class="- topic/ph ">controller box</ph> sends information and status changes in the system
+to the <ph platform="PXP PxW WxW" class="- topic/ph ">communication interface</ph>
+                        <ph platform="SDC" class="- topic/ph ">external connection board</ph>.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b platform="PxW WxW" class="+ topic/ph hi-d/b ">A076</b>
+                        <b platform="SDC" class="+ topic/ph hi-d/b ">A025</b>
+                        <b platform="PXP" class="+ topic/ph hi-d/b ">A830</b>
+                     </p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p platform="PXP PxW WxW" class="- topic/p ">Communication interface</p>
+                     <p platform="SDC" class="- topic/p ">External connection board</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p platform="PxW WxW SDC" class="- topic/p ">Extends the signal from the controller board
+and to the smart slot translator.</p>
+                     <p platform="PXP" class="- topic/p ">Connects directly
+to the network management cards.</p>
+                  </entry>
+               </row>
+               <row platform="PxW WxW SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b platform="PxW WxW SDC" class="+ topic/ph hi-d/b ">A091</b>
+                     </p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Smart slot translator</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Converts the signal from the controller board to another type of
+protocol. Allows for local connection to the NMC.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b platform="PxW WxW SDC" class="+ topic/ph hi-d/b ">A092</b>
+                        <b platform="PXP" class="+ topic/ph hi-d/b ">A842</b>
+                     </p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Network management card (NMC)</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Offers secure local and/or remote monitoring of Reality systems.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b platform="PxW WxW SDC" class="+ topic/ph hi-d/b ">A093</b>
+                        <b platform="PXP" class="+ topic/ph hi-d/b ">A832</b>
+                     </p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Options slot</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">An additional slot for an optional second NMC card that can be used
+for:<ul class="- topic/ul ">
+                           <li class="- topic/li ">
+                              <p class="- topic/p ">Additional available ports with two NMCs.</p>
+                           </li>
+                           <li class="- topic/li ">
+                              <p class="- topic/p ">A second NMC with different settings.</p>
+                           </li>
+                           <li class="- topic/li ">
+                              <p class="- topic/p ">Redundant network communication.</p>
+                           </li>
+                           <li class="- topic/li ">
+                              <p class="- topic/p ">Two digital inputs.</p>
+                           </li>
+                        </ul>
+                     </p>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </conbody>
+</concept>

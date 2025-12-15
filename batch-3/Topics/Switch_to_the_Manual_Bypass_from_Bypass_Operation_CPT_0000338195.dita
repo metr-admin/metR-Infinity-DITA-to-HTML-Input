@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="SwitchToTheManualBypassFromBypassOp-68FCA13E"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">How to Switch from Normal Operation to Manual Bypass</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-03+05:30" class="- topic/created "/>
+         <revised modified="2025-12-03" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience
+            type="role"
+            otherprops="operations,maintenance,engineering,system operator,technical support,field technician"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>manual bypass switch</indexterm>
+            <indexterm>bypass operation</indexterm>
+            <indexterm>bypass line</indexterm>
+            <indexterm>static bypass</indexterm>
+            <indexterm>manual bypass mechanism</indexterm>
+            <indexterm>load transfer path</indexterm>
+            <indexterm>bypass cabinet components</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>switching to manual bypass</indexterm>
+            <indexterm>load transfer workflow</indexterm>
+            <indexterm>bypass-to-manual transition steps</indexterm>
+            <indexterm>safety verification procedure</indexterm>
+            <indexterm>operational confirmation steps</indexterm>
+            <indexterm>inverter isolation process</indexterm>
+            <indexterm>bypass condition checks</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>facility maintenance environment</indexterm>
+            <indexterm>critical load continuity context</indexterm>
+            <indexterm>operational safety domain</indexterm>
+            <indexterm>industrial power distribution</indexterm>
+            <indexterm>UPS service mode environment</indexterm>
+            <indexterm>electrical switching procedures</indexterm>
+            <indexterm>high-availability system operations</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta
+            name="title"
+            content="Switch to the Manual Bypass from Bypass Operation"/>
+         
+         <othermeta
+            name="shortdesc"
+            content="Explains how to switch the UPS from bypass operation to manual bypass, including transfer steps, safety checks, inverter isolation, and operator verification procedures."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta
+            name="entities"
+            content="manual bypass switch; static bypass; bypass line; inverter; load bus; control panel; status LEDs"/>
+         
+         <othermeta
+            name="taxonomy"
+            content="domain:operation modes;usecase:manual-bypass-engagement;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta
+            name="tags"
+            content="manual bypass,bypass operation,load transfer,inverter isolation,safety checks,UPS operation"/>
+         
+         <othermeta
+            name="usecase"
+            content="Guide operators in safely transferring the UPS from bypass operation to manual bypass mode"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <section class="- topic/section ">
+         <sectiondiv class="- topic/sectiondiv ">
+            <hazardstatement conref="../Library/Warnings_Library_0000325173.dita#war_lib/still_energized_MBS"
+                             class="+ topic/note hazard-d/hazardstatement ">
+               <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+                  <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+                  <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+               </messagepanel>
+            </hazardstatement>
+            <hazardstatement conref="../Library/Warnings_Library_0000325173.dita#war_lib/Never_Actuate_MBS"
+                             class="+ topic/note hazard-d/hazardstatement ">
+               <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+                  <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+                  <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+               </messagepanel>
+            </hazardstatement>
+            <hazardstatement conref="../Library/Warnings_Library_0000325173.dita#war_lib/no-backup-in-bypass"
+                             class="+ topic/note hazard-d/hazardstatement ">
+               <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+                  <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+                  <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+               </messagepanel>
+            </hazardstatement>
+            <note conref="../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/ForRedundantSystemsCheckThatEachSte-0FD805BD"
+                  class="- topic/note ">
+               <b class="+ topic/ph hi-d/b ">For redundant systems: </b> Check that each step is perform on
+both units before proceeding to next step.</note>
+            <note conref="../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/ForDualSystemsPerformAllTheStepsOnO-0FD807C7"
+                  class="- topic/note ">
+               <b class="+ topic/ph hi-d/b ">For dual systems: </b>Perform all the steps on one unit, then
+repeat the complete procedure for the other unit.</note>
+            <p class="- topic/p ">To switch
+from normal operation to manual bypass:<ol class="- topic/ol ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Make sure that the system is in normal operation and that the <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph class="+ topic/ph pr-d/codeph ">Normal operation</codeph>.</p>
+                     <note type="important" class="- topic/note ">The bypass mains needs to be available and within
+the tolerance range. The static switch EN needs to be available.</note>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Switch to bypass operation:</p>
+                     <ol conref="../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/Switch-to-bypass"
+                         class="- topic/ol ">
+                        <li class="- topic/li "/>
+                     </ol>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Make sure that the system is in bypass operation and that the <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph class="+ topic/ph pr-d/codeph ">bypass operation</codeph>.</p>
+                  </li>
+                  <li otherprops="generalM 3pMBS" class="- topic/li ">
+                     <p class="- topic/p ">
+                        <b otherprops="tempExclude" class="+ topic/ph hi-d/b ">Only
+for 3-position manual bypass switches: </b>Turn the manual bypass
+switch(es) to the <b class="+ topic/ph hi-d/b ">Test</b> position.</p>
+                  </li>
+                  <li otherprops="2pMBS" class="- topic/li ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">Only for 2-position manual bypass switches: </b>Turn the manual bypass switch(es) to the <b class="+ topic/ph hi-d/b ">Bypass</b> position.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Press both the <b class="+ topic/ph hi-d/b ">ON button</b> and the <b class="+ topic/ph hi-d/b ">OFF button</b> at
+the same time for two seconds. The <b class="+ topic/ph hi-d/b ">Display</b> now shows <codeph class="+ topic/ph pr-d/codeph ">Standby</codeph>.</p>
+                  </li>
+                  <li otherprops="generalM 3pMBS" class="- topic/li ">
+                     <p class="- topic/p ">
+                        <b otherprops="tempExclude" class="+ topic/ph hi-d/b ">Only
+for 3-position manual bypass switches: </b>Turn the manual bypass
+switch(es) to the <b class="+ topic/ph hi-d/b ">Bypass</b> position to isolate the static switch
+EN from the bypass mains.</p>
+                  </li>
+                  <li otherprops="2pMBS" class="- topic/li ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">Only for 2-position manual bypass switches: </b>Open the EN input switch(es) to isolate the static switch EN from
+the bypass mains.</p>
+                  </li>
+               </ol>The system is in standby and the load is supplied by the bypass
+via the manual bypass switch.</p>
+         </sectiondiv>
+      </section>
+   </conbody>
+</concept>

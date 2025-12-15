@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="FileTransfer-5F1D76BB"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">File Transfer</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-05+05:30" class="- topic/created "/>
+         <revised modified="2025-12-05" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>network-management-card</indexterm>
+            <indexterm>file-transfer-service</indexterm>
+            <indexterm>ftp-client</indexterm>
+            <indexterm>scp-client</indexterm>
+            <indexterm>file-system-interface</indexterm>
+            <indexterm>log-archive</indexterm>
+            <!-- Process layer -->
+            <indexterm>file-transfer</indexterm>
+            <indexterm>upload-files-to-server</indexterm>
+            <indexterm>download-files-from-nmc</indexterm>
+            <indexterm>configure-transfer-credentials</indexterm>
+            <indexterm>schedule-transfers</indexterm>
+            <indexterm>validate-transfer-success</indexterm>
+            <!-- Context layer -->
+            <indexterm>remote-management</indexterm>
+            <indexterm>maintenance-data-exchange</indexterm>
+            <indexterm>firmware-management</indexterm>
+            <indexterm>production-support</indexterm>
+            <indexterm>audit-and-logging</indexterm>
+            <indexterm>secure-transfer-usecase</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="File transfer"/>
+         <othermeta name="shortdesc" content="Overview of supported file transfer methods and configuration steps for FTP and SCP on the network management card."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="ftp client; scp client; network management card AP9635; file storage; transfer credentials; log archive"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:file-transfer-and-management; industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="file-transfer,ftp,scp,logs,management,nmc"/>
+         <othermeta name="usecase" content="perform-secure-file-transfers-for-logs-and-updates"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">File transfer is used both to update the firmware and to download
+logs. There are two different protocols that can be used with different
+security options: <ul class="- topic/ul ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">File transfer protocol (FTP): With FTP the information is transferred
+as plain text. Use SCP for increased security.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Secure copy protocol (SCP): With SCP the information is encrypted.
+SCP is automatically used when the SSH protocol is enabled and configured
+and the FTP protocol is disabled.</p>
+            </li>
+         </ul>
+      </p>
+   </conbody>
+</concept>

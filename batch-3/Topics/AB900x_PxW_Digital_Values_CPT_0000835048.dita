@@ -1,0 +1,1156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="DigitalValues-3A767634"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Digital Values</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-28+05:30" class="- topic/created "/>
+         <revised modified="2025-11-28" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience type="role" otherprops="engineering,operations,monitoring,maintenance,field technician,commissioning"/>
+         
+         <keywords>
+            <!-- Product layer (≥6) -->
+            <indexterm>AB900x gateway</indexterm>
+            <indexterm>PxW module</indexterm>
+            <indexterm>PxW digital values</indexterm>
+            <indexterm>metR-PXC-Reality</indexterm>
+            <indexterm>UPS communication platform</indexterm>
+            <indexterm>Modbus digital registers</indexterm>
+            <indexterm>binary status mapping</indexterm>
+            
+            <!-- Process layer (≥6) -->
+            <indexterm>digital data interpretation</indexterm>
+            <indexterm>boolean state evaluation</indexterm>
+            <indexterm>bit-level parameter decoding</indexterm>
+            <indexterm>alarm and event detection</indexterm>
+            <indexterm>Modbus coil analysis</indexterm>
+            <indexterm>status flag monitoring</indexterm>
+            <indexterm>fault condition validation</indexterm>
+            
+            <!-- Context layer (≥6) -->
+            <indexterm>UPS operational states</indexterm>
+            <indexterm>binary telemetry signals</indexterm>
+            <indexterm>industrial diagnostics</indexterm>
+            <indexterm>event-driven monitoring</indexterm>
+            <indexterm>real-time status reporting</indexterm>
+            <indexterm>digital sensor indicators</indexterm>
+            <indexterm>system fault signaling</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="PxW – Digital Values"/>
+         <othermeta 
+            name="shortdesc" 
+            content="Provides a reference list of PxW digital values, including bit-level status fields, Modbus coil mappings, alarms, warnings, and binary indicators."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta 
+            name="entities" 
+            content="digital status bits; Modbus coils; alarm flags; warning states; binary fields; PxW digital indicators; event registers"/>
+         <othermeta 
+            name="taxonomy" 
+            content="domain:industrial automation; usecase:data-monitoring; industry:uninterruptible power supply (UPS) systems"/>
+         <othermeta 
+            name="tags" 
+            content="digital values,Modbus coils,status bits,alarms,boolean indicators,PxW digital mapping,UPS telemetry"/>
+         <othermeta 
+            name="usecase" 
+            content="Provide reference for digital status fields and boolean indicators in the AB900x PxW module"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <div id="Profibus_digital-value_desc-3B119930" class="- topic/div ">
+         <p class="- topic/p ">The digital values are displayed for each byte as a decimal value. Convert the decimal value to binary and it will indicate what alarm bits are active in that byte.</p>
+         <p class="- topic/p ">For example if the decimal value 96 is shown for byte 9 (the first byte in the digital value list) this corresponds to the binary value of 01100000. This means that the alarms for bit 6 and 7 in byte 9 are active.</p>
+      </div>
+      <table pgwide="1" class="- topic/table ">
+         <tgroup cols="5" class="- topic/tgroup ">
+            <colspec colname="COLSPEC0" colwidth="30.00mm" class="- topic/colspec "/>
+            <colspec colname="COLSPEC1" colwidth="15.00mm" class="- topic/colspec "/>
+            <colspec colname="COLSPEC2" colwidth="15.00mm" class="- topic/colspec "/>
+            <colspec colname="COLSPEC4" colwidth="30.00mm" class="- topic/colspec "/>
+            <colspec colname="COLSPEC3" colwidth="8.00*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Byte (Decimal)</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Bit</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph conref="AB900x_PxW_Analog_Values_CPT_0000772859.dita#AnalogValues-0D11675F/ModbusRegister-266A4295"
+                         class="- topic/ph ">Modbus Register</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph conref="AB900x_PxW_Analog_Values_CPT_0000772859.dita#AnalogValues-0D11675F/Name-266A447E"
+                         class="- topic/ph ">Name</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph conref="AB900x_PxW_Analog_Values_CPT_0000772859.dita#AnalogValues-0D11675F/Description-266A483D"
+                         class="- topic/ph "/>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row class="- topic/row ">
+                  <entry morerows="7" class="- topic/entry ">
+                     <ph class="- topic/ph ">Byte 9</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph id="Bit1-0B1CB6C7" class="- topic/ph ">Bit 1</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00001</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00001_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00001_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph id="Bit2-0B1CB8CB" class="- topic/ph ">Bit 2</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00002</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00002_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00002_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph id="Bit3-0B1CBA69" class="- topic/ph ">Bit 3</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00003</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00003_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00003_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph id="Bit4-0B1CBBF7" class="- topic/ph ">Bit 4</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00004</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00004_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00004_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph id="Bit5-0B1CBD81" class="- topic/ph ">Bit 5</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00005</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00005_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00005_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph id="Bit6-0B1CBF0F" class="- topic/ph ">Bit 6</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00006</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00006_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00006_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph id="Bit7-0B1CC06A" class="- topic/ph ">Bit 7</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00007</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00007_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00007_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph id="Bit8-0B1CC236" class="- topic/ph ">Bit 8</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00008</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00008_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00008_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry morerows="7" class="- topic/entry ">
+                     <ph class="- topic/ph ">Byte 10</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit1-0B1CB6C7" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00009</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00009_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00009_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit2-0B1CB8CB" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00010</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00010_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00010_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit3-0B1CBA69" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00011</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00011_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00011_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit4-0B1CBBF7" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00012</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00012_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00012_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit5-0B1CBD81" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00013</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph id="ph-124171332-3B0375F8" translate="no" class="- topic/ph ">–</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit6-0B1CBF0F" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00014</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit7-0B1CC06A" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00015</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit8-0B1CC236" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00016</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00016_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00016_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry morerows="7" class="- topic/entry ">
+                     <ph class="- topic/ph ">Byte 11 </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit1-0B1CB6C7" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00017</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit2-0B1CB8CB" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00018</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit3-0B1CBA69" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00019</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit4-0B1CBBF7" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00020</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit5-0B1CBD81" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00021</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00021_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00021_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit6-0B1CBF0F" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00022</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit7-0B1CC06A" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00023</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00023_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00023_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit8-0B1CC236" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00024</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry morerows="7" class="- topic/entry ">
+                     <ph class="- topic/ph ">Byte 12 </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit1-0B1CB6C7" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00025</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00025_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00025_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit2-0B1CB8CB" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00026</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit3-0B1CBA69" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00027</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00027_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00027_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit4-0B1CBBF7" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00028</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00028_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00028_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit5-0B1CBD81" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00029</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit6-0B1CBF0F" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00030</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit7-0B1CC06A" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00031</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit8-0B1CC236" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00032</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry morerows="7" class="- topic/entry ">
+                     <ph class="- topic/ph ">Byte 13</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit1-0B1CB6C7" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00033</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit2-0B1CB8CB" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00034</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit3-0B1CBA69" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00035</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00035_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00035_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit4-0B1CBBF7" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00036</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit5-0B1CBD81" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00037</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00037_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00037_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit6-0B1CBF0F" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00038</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00038_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00038_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit7-0B1CC06A" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00039</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00039_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00039_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit8-0B1CC236" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00040</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00040_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00040_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry morerows="7" class="- topic/entry ">
+                     <ph class="- topic/ph ">Byte 14</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit1-0B1CB6C7" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00041</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit2-0B1CB8CB" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00042</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit3-0B1CBA69" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00043</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00043_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00043_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit4-0B1CBBF7" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00044</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit5-0B1CBD81" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00045</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit6-0B1CBF0F" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00046</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit7-0B1CC06A" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00047</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit8-0B1CC236" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00048</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00048_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00048_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry morerows="7" class="- topic/entry ">
+                     <ph class="- topic/ph ">Byte 15</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit1-0B1CB6C7" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00049</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00049_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00049_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit2-0B1CB8CB" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00050</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00050_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00050_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit3-0B1CBA69" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00051</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00051_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00051_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit4-0B1CBBF7" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00052</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00052_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00052_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit5-0B1CBD81" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00053</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit6-0B1CBF0F" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00054</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00054_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00054_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit7-0B1CC06A" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00055</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00055_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00055_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit8-0B1CC236" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00056</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00056_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00056_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry morerows="7" class="- topic/entry ">
+                     <ph class="- topic/ph ">Byte 16</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit1-0B1CB6C7" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00057</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00057_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00057_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit2-0B1CB8CB" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00058</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00058_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00058_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit3-0B1CBA69" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00059</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00059_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00059_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit4-0B1CBBF7" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00060</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00060_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00060_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit5-0B1CBD81" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00061</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00061_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00061_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit6-0B1CBF0F" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00062</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit7-0B1CC06A" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00063</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00063_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00063_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit8-0B1CC236" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00064</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry morerows="7" class="- topic/entry ">
+                     <ph class="- topic/ph ">Byte 17</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit1-0B1CB6C7" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00065</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00065_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00065_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit2-0B1CB8CB" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00066</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00066_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00066_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit3-0B1CBA69" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00067</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit4-0B1CBBF7" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00068</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit5-0B1CBD81" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">00069</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00069_Name" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conkeyref="signals/00069_Description" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit6-0B1CBF0F" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit7-0B1CC06A" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph conref="#./Bit8-0B1CC236" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph conref="#./ph-124171332-3B0375F8" class="- topic/ph "/>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </conbody>
+</concept>

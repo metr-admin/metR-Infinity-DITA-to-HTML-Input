@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="AnalogValuesFromOIDs-CBC189C1"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Analog Values from OIDs</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-05+05:30" class="- topic/created "/>
+         <revised modified="2025-12-05" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>network-management-card</indexterm>
+            <indexterm>snmp-agent</indexterm>
+            <indexterm>analog-oids</indexterm>
+            <indexterm>ap9635</indexterm>
+            <indexterm>mib</indexterm>
+            <indexterm>sensor-channels</indexterm>
+            <!-- Process layer -->
+            <indexterm>read-analog-values</indexterm>
+            <indexterm>map-oids-to-analog</indexterm>
+            <indexterm>configure-snmp-polling</indexterm>
+            <indexterm>validate-analog-data</indexterm>
+            <indexterm>export-telemetry</indexterm>
+            <indexterm>calibrate-sensor-inputs</indexterm>
+            <!-- Context layer -->
+            <indexterm>environmental-monitoring</indexterm>
+            <indexterm>ups-health-monitoring</indexterm>
+            <indexterm>scada-integration</indexterm>
+            <indexterm>maintenance-and-diagnostics</indexterm>
+            <indexterm>production-ops-monitoring</indexterm>
+            <indexterm>remote-telemetry-usecase</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Analog values from OIDs (xxW-SDC)"/>
+         <othermeta name="shortdesc" content="Mapping of SNMP OIDs to analog telemetry values for xxW SDC devices, with instructions for reading, validating and using analog data from the network management card."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="analog oids; sensor channels; network management card AP9635; mib entries; telemetry outputs"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:snmp-analog-telemetry-mapping; industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="snmp,analog,oids,telemetry,mib,nmc"/>
+         <othermeta name="usecase" content="map-and-collect-analog-telemetry-from-snmp-oids"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <div class="- topic/div ">
+         <p class="- topic/p ">The following table shows the analog values that are available
+as GET requests. </p>
+         <note class="- topic/note ">Base OID Address for APC / Reality: .1.3.6.1.4.1.318.</note>
+         <note class="- topic/note ">If an OID is not supported for the system the displayed value will
+be -1 (or if the OID returns a string instead of an integer it will
+display “NOT SUPPORTED”).</note>
+      </div>
+      <table pgwide="1" platform="PxW WxW" class="- topic/table ">
+         <tgroup cols="4" class="- topic/tgroup ">
+            <colspec colname="COLSPEC0" colwidth="4*" class="- topic/colspec "/>
+            <colspec colname="1" colwidth="4*" class="- topic/colspec "/>
+            <colspec colname="2" colwidth="2.5*" class="- topic/colspec "/>
+            <colspec colname="6" colwidth="4*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Parameter [Unit of Measure]</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">SNMP OID
+Name</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">APC / Reality OID Address</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Notes</ph>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row class="- topic/row ">
+                  <entry nameend="6" namest="COLSPEC0" class="- topic/entry ">
+                     <b class="+ topic/ph hi-d/b ">General</b>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Model name </ph>
+                  </entry>
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsBasicIdentModel</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.1.1.1</ph>
+                  </entry>
+                  <entry colname="6"
+                         morerows="0"
+                         nameend="6"
+                         namest="6"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">System name</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsBasicIdentName</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.1.1.2</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Model type </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsBasicIdentModelType</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.1.1.4</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Serial number </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsAdvIdentSerialNumber</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.1.2.3</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Last battery replacement </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsBasicBatteryLastReplaceDate</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.2.1.3</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">System mode</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsBasicOutputStatus</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.4.1.1</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Number of parallel units </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsParallelSysRemoteAddress</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.14.2</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry nameend="6" namest="COLSPEC0" class="- topic/entry ">
+                     <b class="+ topic/ph hi-d/b ">Input</b>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Input voltage orientation</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsPhaseInputVoltageOrientation</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.9.2.2.1.3</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Input type</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsPhaseInputType</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.9.2.2.1.5</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row platform="WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">DC input voltage [V]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsAdvInputDCVoltage</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.3.2.16</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row platform="WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">DC input current [A]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsAdvInputDCCurrent</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.3.2.17</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Input voltage (phase-to-phase) [V]</ph>
+                  </entry>
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsPhaseInputVoltage</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.9.2.3.1.3</ph>
+                  </entry>
+                  <entry colname="6"
+                         morerows="0"
+                         nameend="6"
+                         namest="6"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Index based (1.1.1-1.1.3)</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Bypass input voltage (phase-to-phase)
+[V]</ph>
+                  </entry>
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsPhaseInputVoltage</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.9.2.3.1.3</ph>
+                  </entry>
+                  <entry colname="6"
+                         morerows="0"
+                         nameend="6"
+                         namest="6"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Index based for three phase
+systems (2.1.1-2.1.3)</ph>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Input maximum voltage  (phase-to-phase)
+[V]</ph>
+                  </entry>
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsPhaseInputMaxVoltage</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.9.2.3.1.4</ph>
+                  </entry>
+                  <entry colname="6"
+                         morerows="0"
+                         nameend="6"
+                         namest="6"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Index based (1.1.1-1.1.3)</ph>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Input minimum voltage  (phase-to-phase)
+[V]</ph>
+                  </entry>
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsPhaseInputMinVoltage</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.9.2.3.1.5</ph>
+                  </entry>
+                  <entry colname="6"
+                         morerows="0"
+                         nameend="6"
+                         namest="6"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Index based (1.1.1-1.1.3)</ph>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Input current  (phase-to-neutral)
+[A]</ph>
+                  </entry>
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsPhaseInputCurrent</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.9.2.3.1.6</ph>
+                  </entry>
+                  <entry colname="6"
+                         morerows="0"
+                         nameend="6"
+                         namest="6"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Index based (1.1.1-1.1.3)</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry nameend="6" namest="COLSPEC0" class="- topic/entry ">
+                     <b class="+ topic/ph hi-d/b ">Output</b>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">System load [%]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsAdvOutputLoad</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.4.2.3</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Peak current (phase-to-neutral) [A]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsAdvOutputPeakCurrent</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.4.2.10.1.2</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Index based for three phase
+systems (1.1.1-1.1.3)</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Output frequency [Hz]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsPhaseOutputFrequency</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.9.3.2.1.4</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Output voltage (phase-to-neutral/phase)
+[V]</ph>
+                  </entry>
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsPhaseOutputVoltage</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.9.3.3.1.3</ph>
+                  </entry>
+                  <entry colname="6"
+                         morerows="0"
+                         nameend="6"
+                         namest="6"
+                         class="- topic/entry ">
+                     <ph class="- topic/ph ">Index based for three phase
+systems (1.1.1-1.1.3)</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Current (phase-to-neutral) [A]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsPhaseOutputCurrent</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.9.3.3.1.4</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Index based for three phase
+systems (1.1.1-1.1.3)</ph>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry nameend="6" namest="COLSPEC0" class="- topic/entry ">
+                     <b class="+ topic/ph hi-d/b ">Battery</b>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Battery status</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsBasicBatteryStatus</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.2.1.1</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Battery temperature [°C or °F]</ph>
+                  </entry>
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsAdvBatteryTemperature</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.2.2.2</ph>
+                  </entry>
+                  <entry colname="6"
+                         morerows="0"
+                         nameend="6"
+                         namest="6"
+                         class="- topic/entry "/>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Battery time left [minutes]</ph>
+                  </entry>
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsAdvBatteryRunTimeRemaining</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.2.2.3</ph>
+                  </entry>
+                  <entry colname="6"
+                         morerows="0"
+                         nameend="6"
+                         namest="6"
+                         class="- topic/entry "/>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Battery voltage [V]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsAdvBatteryActualVoltage</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.2.2.8</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Battery current [A]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsAdvBatteryCurrent</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.2.2.9</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Total DC current [A]</ph>
+                  </entry>
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsAdvTotalDCCurrent</ph>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.2.2.10</ph>
+                  </entry>
+                  <entry colname="6"
+                         morerows="0"
+                         nameend="6"
+                         namest="6"
+                         class="- topic/entry "/>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table pgwide="1" platform="SDC" class="- topic/table ">
+         <tgroup cols="4" class="- topic/tgroup ">
+            <colspec colname="col1" colwidth="4*" class="- topic/colspec "/>
+            <colspec colname="col2" colwidth="4*" class="- topic/colspec "/>
+            <colspec colname="col3" colwidth="2.5*" class="- topic/colspec "/>
+            <colspec colname="col4" colwidth="4*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Parameter [Unit of Measure]</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">SNMP OID Name</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">APC / Reality OID Address</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph class="- topic/ph ">Notes</ph>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row class="- topic/row ">
+                  <entry nameend="col4" namest="col1" class="- topic/entry ">
+                     <b class="+ topic/ph hi-d/b ">General</b>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Last battery replacement </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsBasicBatteryLastReplaceDate</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.2.1.3</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Number of parallel units </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsParallelSysRemoteAddress</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.14.2</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">User system name</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">chargerIdentModel</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.29.1.1</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Model name </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">chargerBasicIdentName</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.29.1.2</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Serial number</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">chargerIdentSerialNumber</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.29.1.3</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Model type </ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">chargerIdentModelType</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.29.1.4</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">System mode</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">chargerOutputStatus</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.29.3.1</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry nameend="col4" namest="col1" class="- topic/entry ">
+                     <b class="+ topic/ph hi-d/b ">Input</b>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Input voltage orientation</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsPhaseInputVoltageOrientation</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.9.2.2.1.3</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Input type</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsPhaseInputType</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.9.2.2.1.5</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Input voltage (phase-to-phase) [V]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">chargerInputPhaseVoltage</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.29.2.1.1.2</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Input maximum voltage (phase-to-phase)
+[V]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">chargerInputPhaseMinVoltage</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.29.2.1.1.3</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Input minimum voltage (phase-to-phase)
+[V]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">chargerInputPhaseMaxVoltage</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.29.2.1.1.4</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Input current (phase-to-neutral)
+[A]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">chargerInputPhaseCurrent</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.29.2.1.1.5</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry nameend="col4" namest="col1" class="- topic/entry ">
+                     <b class="+ topic/ph hi-d/b ">Output</b>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Vaux voltage [V]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">chargerOutputVauxVoltage</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.29.3.2</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Total current [A]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">chargerOutputTotalCurrent</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.29.3.3</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">System load [%]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">chargerOutputLoad</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.29.3.4</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry nameend="col4" namest="col1" class="- topic/entry ">
+                     <b class="+ topic/ph hi-d/b ">Battery</b>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Battery status</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsBasicBatteryStatus</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.2.1.1</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Battery temperature [°C or °F]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsAdvBatteryTemperature</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.2.2.2</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Battery time left [minutes]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsAdvBatteryRunTimeRemaining</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.2.2.3</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Only available if optional Reality
+battery ABM is installed in the system.</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Battery voltage [V]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsAdvBatteryActualVoltage</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.2.2.8</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Battery current [A]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">upsAdvBatteryCurrent</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">1.1.1.2.2.9</ph>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </conbody>
+</concept>

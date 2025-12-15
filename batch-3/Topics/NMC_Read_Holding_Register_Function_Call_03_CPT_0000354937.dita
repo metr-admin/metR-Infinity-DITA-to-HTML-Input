@@ -1,0 +1,2008 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="ReadHoldingRegisterFunctionCall03-8032EA76"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Modbus Read Holding Register (Function Call 03)</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-05+05:30" class="- topic/created "/>
+         <revised modified="2025-12-05" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-pxc-reality</indexterm>
+            <indexterm>modbus-holding-register</indexterm>
+            <indexterm>modbus-protocol</indexterm>
+            <indexterm>function-03</indexterm>
+            <indexterm>analog-measures</indexterm>
+            <indexterm>register-map</indexterm>
+            <!-- Process layer -->
+            <indexterm>read-holding-register</indexterm>
+            <indexterm>pdu-construction</indexterm>
+            <indexterm>value-scaling</indexterm>
+            <indexterm>register-mapping</indexterm>
+            <indexterm>response-validation</indexterm>
+            <indexterm>diagnostic-interpretation</indexterm>
+            <!-- Context layer -->
+            <indexterm>telemetry-acquisition</indexterm>
+            <indexterm>scada-integration</indexterm>
+            <indexterm>measurement-systems</indexterm>
+            <indexterm>commissioning</indexterm>
+            <indexterm>plant-monitoring</indexterm>
+            <indexterm>ups-network-management</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Modbus Read Holding Register (Function Call 03)"/>
+         <othermeta name="shortdesc" content="Reference for Modbus Read Holding Register (function 03) with addresses and mapping for analog values such as voltages and frequencies."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="holding-register; modbus-pdu; scaled-value; register-address; analog-sensor; measurement-unit"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:modbus-holding-register-read-and-scaling;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="modbus,function-03,holding-register,telemetry,analog,scada"/>
+         <othermeta name="usecase" content="read analog measured values via Modbus function 03 for telemetry and SCADA integration"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">The read holding register contains analog information, the measured
+value from the parameters.</p>
+      <p class="- topic/p ">The data is stored as 16-bit unsigned integer, with the hexadecimal
+format FFFF of 4 digits. This corresponds to a numeric value between
+0-65535.</p>
+      <p class="- topic/p ">
+         <ph platform="PxW WxW SDC" class="- topic/ph ">The factor for all values is 1. </ph>This information can be used to trigger alarms, actions or other
+events.</p>
+      <note class="- topic/note ">It is recommended that the delay poll is more than 10 seconds
+because the refresh rate of the register is about 10 seconds.</note>
+      <note platform="PxW WxW SDC" class="- topic/note ">All holding registers between 40001-40047
+are reserved even if not listed in the table.</note>
+      <table pgwide="1" platform="PxW WxW SDC" class="- topic/table ">
+         <title class="- topic/title ">Modbus Read Holding Register List</title>
+         <tgroup cols="3" class="- topic/tgroup ">
+            <colspec colname="1" colwidth="20.00mm" class="- topic/colspec "/>
+            <colspec colname="2" colwidth="70.00mm" class="- topic/colspec "/>
+            <colspec colname="3" colwidth="3.00*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Holding Register</p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Parameter
+[Unit of Measure]</p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Description</p>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="1"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40001</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">1–phase:</b> Output voltage L1 [V]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">1–phase:</b> Phase L1 to neutral.</p>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">3–phase: </b>Output voltage L1 [V]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">3–phase: </b>Phase L1 to phase L2.</p>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40002</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">3–phase: </b> Output voltage L2 [V]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">3–phase: </b> Phase L2 to phase L3. Only for three phase systems.</p>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40003</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">3–phase: </b> Output voltage L3 [V]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">3–phase: </b> Phase L3 to phase L1. Only for three phase systems.</p>
+                  </entry>
+               </row>
+               <row platform="PxW SDC" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40004</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Input voltage
+L1 [V]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Phase L1
+to phase L2.</p>
+                  </entry>
+               </row>
+               <row platform="PxW SDC" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40005</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Input voltage
+L2 [V]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Phase L2
+to phase L3.</p>
+                  </entry>
+               </row>
+               <row platform="PxW SDC" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40006</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Input voltage
+L3 [V]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Phase L3
+to phase L1.</p>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="1"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40007</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">1–phase: </b> Bypass voltage L1 [V]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">1–phase: </b> Phase L1 to neutral.</p>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">3–phase: </b> Bypass voltage L1 [V]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">3–phase: </b> Phase L1 to phase L2.</p>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40008</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">3–phase: </b> Bypass voltage L2 [V]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">3–phase: </b> Phase L2 to phase L3. Only for three phase systems.</p>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40009</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">3–phase: </b> Bypass voltage L3 [V]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">3–phase: </b> Phase L3 to phase L1. Only for three phase systems.</p>
+                  </entry>
+               </row>
+               <row platform="PxW SDC" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40010</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Input current
+L1 [A]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row platform="PxW SDC" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40011</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Input current
+L2 [A]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row platform="PxW SDC" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40012</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Input current
+L3 [A]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40013</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Output current
+L1 [A]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40014</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">3–phase: </b> Output current L2 [A]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Only for
+three phase systems.</p>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40015</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">3–phase: </b> Output current L3 [A]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Only for
+three phase systems.</p>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40016</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Output peak
+current L1 [A]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40017</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">3–phase: </b> Output peak current L2 [A]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Only for
+three phase systems.</p>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40018</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">
+                        <b class="+ topic/ph hi-d/b ">3–phase: </b> Output peak current L3 [A]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Only for
+three phase systems.</p>
+                  </entry>
+               </row>
+               <row platform="PxW SDC" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40019</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Total DC
+current [A]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40020</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p platform="PxW SDC" class="- topic/p ">Battery current [A]</p>
+                     <p platform="WxW" class="- topic/p ">DC current
+[A]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40022</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">System operation
+mode</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Value reflects
+the actual operation mode of the system: </p>
+                     <sl platform="PxW WxW" class="- topic/sl ">
+                        <sli class="- topic/sli ">1 = Standby.</sli>
+                        <sli class="- topic/sli ">2 = Charger only.</sli>
+                        <sli class="- topic/sli ">3 = Normal operation.</sli>
+                        <sli class="- topic/sli ">4 = Battery operation.</sli>
+                        <sli class="- topic/sli ">5 = Bypass operation.</sli>
+                        <sli class="- topic/sli ">6 = Hot standby.</sli>
+                        <sli class="- topic/sli ">7 = Economy operation.</sli>
+                        <sli class="- topic/sli ">8 = Battery test active.</sli>
+                     </sl>
+                     <sl platform="SDC" class="- topic/sl ">
+                        <sli class="- topic/sli ">1 = Initializing after reset.</sli>
+                        <sli class="- topic/sli ">2 = Standby.</sli>
+                        <sli class="- topic/sli ">3 = Battery operation.</sli>
+                        <sli class="- topic/sli ">4 = Float charge.</sli>
+                        <sli class="- topic/sli ">5 = Boost charge.</sli>
+                        <sli class="- topic/sli ">6 = Initial charge.</sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40029</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p platform="PxW SDC" class="- topic/p ">Battery voltage [V]</p>
+                     <p platform="WxW" class="- topic/p ">DC voltage
+[V]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40031</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Active systems</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">1 = Single.</sli>
+                        <sli class="- topic/sli ">2 = Parallel.</sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row platform="SDC" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40033</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">DC Vaux. voltage [V]</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row platform="PxW SDC" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40035</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Battery
+temperature [°C or °F]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Only available
+if optional battery temperature sensor is installed at the battery.
+Shows Fahrenheit or Celsius value depending on firmware setting. If
+the temperature sensor is not installed this field will show a default
+value (around 226).</p>
+                  </entry>
+               </row>
+               <row platform="PxW WxW" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40038</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Output frequency
+[Hz]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The phase
+output frequency of the system.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40040</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">System load
+[%]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Percent
+of the output power capacity currently used.</p>
+                  </entry>
+               </row>
+               <row platform="PxW SDC" class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40041</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Battery
+time left [minutes]</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p id="OnlyAvailableIfOptionalRealityBattery-2F36DB11" class="- topic/p ">Only available if
+optional Reality battery ABM is installed in the system.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40045</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">NMC AOS
+firmware version</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The APP
+firmware version for the NMC.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40046</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">NMC APP
+firmware version</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">The AOS
+firmware version for the NMC.</p>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table pgwide="1" platform="PXP" class="- topic/table ">
+         <title class="- topic/title ">Modbus Read Holding Register List</title>
+         <tgroup cols="4" class="- topic/tgroup ">
+            <colspec colname="1" colwidth="20.00mm" class="- topic/colspec "/>
+            <colspec colname="2" colwidth="70.00mm" class="- topic/colspec "/>
+            <colspec colname="COLSPEC0" colwidth="20.00mm" class="- topic/colspec "/>
+            <colspec colname="3" colwidth="6.00*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Holding
+Register</p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Parameter [Unit of Measure]</p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Factor<fn class="- topic/fn "> The actual measured value
+is multiplied with a factor.</fn>
+                     </p>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <p class="- topic/p ">Description</p>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40001</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">System load [% of VA]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40002</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">System load [% of W]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40003</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Apparent system load [kVA]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40004</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Real system load [kW]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40005</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Output apparent power L1 [kVA]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40006</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Output apparent power L2 [kVA]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40007</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Output apparent power L3 [kVA]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40008</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Output real power L1 [kW]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40009</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Output real power L2 [kW]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40010</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Output real power L3 [kW]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40011</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Output power factor L1</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">100</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40012</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Output power factor L2</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">100</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40013</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Output power factor L3</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">100</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40015</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Total output load [% of VA]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Only for
+redundant systems.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40016</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Total output load [% of W]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Only for
+redundant systems.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40017</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Total output load [VA]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Only for
+redundant systems.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40018</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Total Output load [W]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Only for
+redundant systems.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40019</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Output frequency [Hz]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40020</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Output voltage L1 [V]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40021</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Output voltage L2 [V]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40022</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Output voltage L3 [V]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40023</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Output current L1 [A]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40024</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Output current L2 [A]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40025</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Output current L3 [A]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40035</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Input frequency [Hz]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40036</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Input voltage L1 [V]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40037</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Input voltage L2 [V]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40038</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Input voltage L3 [V]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry colname="1"
+                         morerows="0"
+                         nameend="1"
+                         namest="1"
+                         class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40045</p>
+                  </entry>
+                  <entry colname="2"
+                         morerows="0"
+                         nameend="2"
+                         namest="2"
+                         class="- topic/entry ">
+                     <p class="- topic/p ">Input current L1 [A]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry colname="3"
+                         morerows="0"
+                         nameend="3"
+                         namest="3"
+                         class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40046</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Input current L2 [A]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40047</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Input current L3 [A]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40057</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Input bypass frequency [Hz]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40058</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Input bypass voltage L1 [V]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Phase L1 to Phase L2. 0 if not available.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40059</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Input bypass voltage L2 [V]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Phase L2 to Phase L3. 0 if not available.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40060</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Input bypass voltage L3 [V]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Phase L3 to Phase L1. 0 if not available.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40061</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Input bypass current L1 [A]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Measured before the bypass transformer.
+0 if not available.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40062</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Input bypass current L2 [A]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Measured before the bypass transformer.
+0 if not available.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40063</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Input bypass current L3 [A]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Measured before the bypass transformer.
+0 if not available.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40071</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Battery current [A]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40072</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Battery voltage [V]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40075</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Battery temperature [°C or °F]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">1</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p conref="#./OnlyAvailableIfOptionalRealityBattery-2F36DB11"
+                        class="- topic/p "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40076</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Expected battery runtime [minutes]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">1</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p conref="#./OnlyAvailableIfOptionalRealityBattery-2F36DB11"
+                        class="- topic/p "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40077</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Percentage of battery capacity [%]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">10</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p conref="#./OnlyAvailableIfOptionalRealityBattery-2F36DB11"
+                        class="- topic/p "/>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40090</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Temperature sensor 1 [°C or °F]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">1</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The temperature sensor needs to be
+installed.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40091</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Temperature sensor 2 [°C or °F]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">1</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The temperature sensor needs to be
+installed.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40092</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Temperature sensor 3 [°C or °F]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">1</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The temperature sensor needs to be
+installed.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40093</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Temperature T001 [°C or °F]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">1</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The temperature sensor needs to be
+installed.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40094</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Temperature T401 [°C or °F]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">1</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The temperature sensor needs to be
+installed.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40095</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Temperature T501 [°C or °F]</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">1</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The temperature sensor needs to be
+installed.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40245</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Read coil register 001-016</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">—</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">The registers are lined up the following
+way: 16-13 12-9 8-5 4-1.</p>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40246</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Read coil register 017-032</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">—</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40247</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Read coil register 033-048</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">—</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40248</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Read coil register 049-064</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">—</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40249</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Read coil register 065-080</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">—</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40250</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Read coil register 081-096</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">—</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40251</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Read coil register 097-112</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">—</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40252</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Read coil register 113-128</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">—</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40253</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Read coil register 129-144</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">—</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40254</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Read coil register 145-160</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">—</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40255</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Read coil register 161-176</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">—</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40256</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Read coil register 177-192</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">—</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">40257</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p class="- topic/p ">Read coil register 193-208</p>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <p translate="no" class="- topic/p ">—</p>
+                  </entry>
+                  <entry class="- topic/entry "/>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </conbody>
+</concept>

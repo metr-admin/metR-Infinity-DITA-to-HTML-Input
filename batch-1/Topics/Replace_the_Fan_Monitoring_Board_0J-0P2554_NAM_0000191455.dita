@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="ReplaceTheFanMonitoringBoard0J0P255-6A95AEE5"
+      translate="yes"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">Replace the Fan Monitoring Board 0J–0P2554</title>
+   <shortdesc class="- topic/shortdesc ">
+      <keyword class="- topic/keyword ">Reality NAM</keyword>
+      <keyword class="- topic/keyword ">25 kVA</keyword>
+      <keyword class="- topic/keyword ">50 kVA</keyword>
+      <keyword class="- topic/keyword ">75 kVA</keyword>
+      <keyword class="- topic/keyword ">100 kVA</keyword>
+   </shortdesc>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-14+05:30" class="- topic/created "/>
+         <revised modified="2025-11-14" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production, maintenance, quality, safety, engineering, management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-pxc-reality</indexterm>
+            <indexterm>fan-monitoring-board</indexterm>
+            <indexterm>monitoring-pcb</indexterm>
+            <indexterm>fan-sensor-interface</indexterm>
+            <indexterm>led-indicator-board</indexterm>
+            <indexterm>fan-status-module</indexterm>
+            <!-- Process layer -->
+            <indexterm>replace-fan-monitoring-board</indexterm>
+            <indexterm>verify-led-status</indexterm>
+            <indexterm>check-fan-feedback-signals</indexterm>
+            <indexterm>reconnect-sensor-wiring</indexterm>
+            <indexterm>firmware-check</indexterm>
+            <indexterm>post-replacement-functional-test</indexterm>
+            <!-- Context layer -->
+            <indexterm>fan-diagnostics</indexterm>
+            <indexterm>ups-monitoring</indexterm>
+            <indexterm>service-diagnostics</indexterm>
+            <indexterm>electrical-safety</indexterm>
+            <indexterm>on-site-maintenance</indexterm>
+            <indexterm>maintenance-logging</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Replace the Fan Monitoring Board 0J-0P2554"/>
+         <othermeta name="shortdesc" content="Guidance to replace the fan monitoring board and validate fan status LEDs and feedback signals."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="fan-monitoring-board;led-indicators;fan-feedback-sensors;sensor-wiring;firmware;diagnostic-tool"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:replace-component;industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="monitoring-board;led-verification;diagnostics;firmware-check;feedback-signals"/>
+         <othermeta name="usecase" content="replace-fan-monitoring-board"/>
+      </metadata>
+   </prolog>
+   <taskbody>
+      <context class="- topic/section task/context ">
+         <hazardstatement type="danger" class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard ">hazard of electric shock, explosion, or arc flash</typeofhazard>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid ">
+                  <sl class="- topic/sl ">
+                     <sli class="- topic/sli ">Electrical equipment must be installed, operated, serviced, and
+maintained only by qualified personnel.</sli>
+                     <sli class="- topic/sli ">Apply appropriate personal protective equipment (PPE) and follow
+safe electrical work practices.</sli>
+                     <sli class="- topic/sli ">Disconnection devices for AC and DC must be provided by others,
+be readily accessible, and the function of the disconnection device
+marked for its function.</sli>
+                     <sli class="- topic/sli ">Turn off all power supplying the UPS system before working on
+or inside the equipment.</sli>
+                     <sli class="- topic/sli ">Before working on the UPS system, check for hazardous voltage
+between all terminals including the protective earth.</sli>
+                     <sli class="- topic/sli ">The UPS contains an internal energy source. Hazardous voltage
+can be present even when disconnected from the mains supply. Before
+installing or servicing the UPS system, ensure that the units are
+OFF and that mains and batteries are disconnected. Wait five minutes
+before opening the UPS to allow the capacitors to discharge.</sli>
+                     <sli class="- topic/sli ">The UPS must be properly earthed/grounded and due to a high leakage
+current, the earthing/grounding conductor must be connected first.</sli>
+                  </sl>
+               </howtoavoid>
+            </messagepanel>
+         </hazardstatement>
+         <note class="- topic/note ">This procedure shows the 37.5
+kVA UPS but the procedure is identical for all UPS systems except
+for the 75–100 kVA system with transformer.</note>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Loosen the three screws on the right side and the two nuts
+on the left side of the cover and remove the cover.</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <fig class="- topic/fig ">
+                  <image href="../Images/replace_0j-0n-0914_37kw-fanass_removecover_w120mm_0000191448.png"
+                         scalefit="yes"
+                         scope="local"
+                         xml:lang="en"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Loosen the two nuts and slide out the fan module in front
+of the power module as far as the cables allow.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Note the location of the cables connected to the fan module
+and disconnect the cables.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Move the fan module completely out of the UPS cabinet.</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <fig class="- topic/fig ">
+                  <image href="../Images/replace_0j-0n-0914_37kw-fanass_removefanass_w120mm_0000191447.png"
+                         scope="local"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Note the location of the cables connected to the fan monitoring
+board and disconnect the cables.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">On the rear of the fan module, loosen the four nuts and
+slide out the fan monitoring board.</cmd>
+            <stepxmp class="- topic/itemgroup task/stepxmp ">
+               <fig class="- topic/fig ">
+                  <image href="../Images/img_80_kva_replace_fan_monitoring_board_0000102052.png"
+                         scalefit="yes"
+                         scope="local"
+                         placement="inline"
+                         class="- topic/image "/>
+               </fig>
+            </stepxmp>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Reverse the procedure for installation of the replacement
+fan monitoring board.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Set the switches in accordance with the DIP switch settings,
+see <xref href="DIP_Switch_Settings_REF_0000210418.dita"
+                     format="dita"
+                     scope="local"
+                     type="reference"
+                     class="- topic/xref "/>, and connect the fan to the fan
+monitoring board in accordance with the connection diagram, see <xref href="Connection_Diagram_for_Power_Module_Fan_Monitoring_Board_REF_0000148875.dita"
+                     format="dita"
+                     scope="local"
+                     type="reference"
+                     class="- topic/xref "/>.</cmd>
+         </step>
+      </steps>
+   </taskbody>
+</task>

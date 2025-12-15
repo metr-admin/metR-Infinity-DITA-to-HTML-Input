@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="ModulePortsLEDsAndButtons-586A4524"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Module Ports, LEDs and Buttons</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-06T15:00:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-06T15:00:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- product layer -->
+            <indexterm>module-ports</indexterm>
+            <indexterm>status-led</indexterm>
+            <indexterm>port-led</indexterm>
+            <indexterm>reset-button</indexterm>
+            <indexterm>service-interface</indexterm>
+            <!-- process layer -->
+            <indexterm>port-diagnostics</indexterm>
+            <indexterm>button-firmware-action</indexterm>
+            <indexterm>led-pattern-interpretation</indexterm>
+            <indexterm>port-configuration</indexterm>
+            <indexterm>service-mode-activation</indexterm>
+            <!-- context layer -->
+            <indexterm>field-service</indexterm>
+            <indexterm>maintenance-routine</indexterm>
+            <indexterm>commissioning</indexterm>
+            <indexterm>operator-interface</indexterm>
+            <indexterm>safety</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Module ports LEDs and buttons"/>
+         <othermeta name="shortdesc" content="Detailed description of module ports, LEDs and button functions used in GBMS modules for service and diagnostics."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="module-port;port-led;reset-button;service-interface;status-led"/>
+         <othermeta name="taxonomy" content="domain:ups;usecase:diagnostics-and-service; industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="ports,leds,buttons,diagnostics"/>
+         <othermeta name="usecase" content="support service teams in port diagnostics and button-based service actions"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <div class="- topic/div ">
+         <fig class="- topic/fig ">
+            <image href="../Images/GBMS_Overview_Module_0000529663.png"
+                   scope="local"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <table class="- topic/table ">
+            <tgroup cols="3" class="- topic/tgroup ">
+               <colspec colname="COLSPEC1" colwidth="1*" class="- topic/colspec "/>
+               <colspec colname="col1" colwidth="2*" class="- topic/colspec "/>
+               <colspec colname="col3" colwidth="5*" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">
+                        <ph class="- topic/ph ">Part</ph>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <ph class="- topic/ph ">Name</ph>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <ph class="- topic/ph ">Description/Status</ph>
+                     </entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">
+                           <b class="+ topic/ph hi-d/b ">(A)</b>
+                        </ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Operation mode status LED</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Depending on the color and flashing speed the module is
+in different modes:</ph>
+                        <sl class="- topic/sl ">
+                           <sli class="- topic/sli ">
+                              <b class="+ topic/ph hi-d/b ">Green: </b>Operation mode (address is programmed and communication
+is active).</sli>
+                           <sli class="- topic/sli ">
+                              <b class="+ topic/ph hi-d/b ">Flashing green: </b>Ready mode (address is programmed but
+communication is not active).</sli>
+                           <sli class="- topic/sli ">
+                              <b class="+ topic/ph hi-d/b ">Alternating green and red: </b>Search mode.</sli>
+                           <sli class="- topic/sli ">
+                              <b class="+ topic/ph hi-d/b ">Red: </b>Alarm mode (measurements are above or below the set
+threshold).</sli>
+                           <sli class="- topic/sli ">
+                              <b class="+ topic/ph hi-d/b ">Flashing red: </b>Default mode (no programmed address, default
+delivery state or after address reset).</sli>
+                           <sli class="- topic/sli ">
+                              <b class="+ topic/ph hi-d/b ">Fast flashing red: </b>Programming mode (address programming
+in progress, ready to be registered).</sli>
+                           <sli class="- topic/sli ">
+                              <b class="+ topic/ph hi-d/b ">Off: </b>Sleep mode (connected to the measuring cable but
+communication is not active).</sli>
+                        </sl>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">
+                           <b class="+ topic/ph hi-d/b ">(B)</b>
+                        </ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">BACS bus ports</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Two RJ10 ports
+for bus connection.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">
+                           <b class="+ topic/ph hi-d/b ">(C)</b>
+                        </ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Address registration button</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Used to register a module when programming
+the address range of the setup. Can be pressed with the special accessory
+pen.</ph>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">
+                           <b class="+ topic/ph hi-d/b ">(D)</b>
+                        </ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">Measurement cable port</ph>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <ph class="- topic/ph ">One port for the battery measurement
+cable connection.</ph>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </div>
+   </conbody>
+</concept>

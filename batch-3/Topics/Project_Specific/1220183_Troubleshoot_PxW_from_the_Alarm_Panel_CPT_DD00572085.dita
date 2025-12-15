@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="TroubleshootPxWFromTheAlarmPanel-6D55D1F6"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Troubleshoot PxW from the Alarm Panel</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-01+05:30" class="- topic/created "/>
+         <revised modified="2025-12-01" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience 
+            type="role" 
+            otherprops="operations,maintenance,field technician,technical support,engineering,monitoring"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>PxW system</indexterm>
+            <indexterm>alarm panel</indexterm>
+            <indexterm>PxW indicators</indexterm>
+            <indexterm>PxW modules</indexterm>
+            <indexterm>error messages</indexterm>
+            <indexterm>system display</indexterm>
+            <indexterm>I/O control logic</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>alarm-based troubleshooting</indexterm>
+            <indexterm>alarm interpretation workflow</indexterm>
+            <indexterm>step-by-step corrective actions</indexterm>
+            <indexterm>signal tracing procedure</indexterm>
+            <indexterm>fault source identification</indexterm>
+            <indexterm>reset and recovery steps</indexterm>
+            <indexterm>clearing alarm conditions</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>critical event handling</indexterm>
+            <indexterm>PxW monitoring environment</indexterm>
+            <indexterm>control room operations</indexterm>
+            <indexterm>fault diagnosis domain</indexterm>
+            <indexterm>equipment alert environment</indexterm>
+            <indexterm>real-time monitoring infrastructure</indexterm>
+            <indexterm>industrial alert processing</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta 
+            name="title"
+            content="Troubleshoot PxW from the Alarm Panel"/>
+         
+         <othermeta 
+            name="shortdesc"
+            content="Explains how to troubleshoot PxW issues using the alarm panel, including alarm interpretation, diagnostic steps, corrective actions, and condition clearing."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta name="entities" 
+            content="alarm panel; PxW controller; error messages; LEDs; signal lines; display messages; diagnostic tools"/>
+         
+         <othermeta name="taxonomy" 
+            content="domain:industrial diagnostics;usecase:alarm-panel-troubleshooting;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta name="tags"
+            content="PxW,alarms,troubleshooting,alarm panel,diagnostics"/>
+         
+         <othermeta 
+            name="usecase"
+            content="Guide operators in diagnosing PxW faults directly from the alarm panel interface"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <fig expanse="page" class="- topic/fig ">
+         <image href="../../Images/PxW_Alarm_Display_0000352230.svg"
+                placement="inline"
+                class="- topic/image "/>
+         <note class="- topic/note ">The alarm text is only displayed in English even if another
+system language is used.</note>
+      </fig>
+      <table pgwide="1" platform="PxW" class="- topic/table ">
+         <tgroup cols="3" class="- topic/tgroup ">
+            <colspec colname="COLSPEC0" colwidth="1*" class="- topic/colspec "/>
+            <colspec colname="COLSPEC1" colwidth="2*" class="- topic/colspec "/>
+            <colspec colname="COLSPEC2" colwidth="2*" class="- topic/colspec "/>
+            <thead class="- topic/thead ">
+               <row class="- topic/row ">
+                  <entry valign="top" class="- topic/entry ">
+                     <ph id="AlarmIndicator-0F3E4262" class="- topic/ph ">Alarm Indicator</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph id="AlarmNumberAndText-0F3E43BD" class="- topic/ph ">Alarm
+Number and Text</ph>
+                  </entry>
+                  <entry valign="top" class="- topic/entry ">
+                     <ph id="PossibleSource-0F3E4780" class="- topic/ph ">Possible
+Source</ph>
+                  </entry>
+               </row>
+            </thead>
+            <tbody class="- topic/tbody ">
+               <row platform="PxW" class="- topic/row ">
+                  <entry morerows="4" class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(A) </b>Rectifier mains fault[30 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">26: Rectifier not
+synchronized</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Unstable rectifier
+mains input</ph>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">27: Mains voltage
+out of tolerance</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The input voltage
+(average) is out of tolerance</ph>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">28: Mains freq out
+of tolerance</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The input frequency
+is out of tolerance</ph>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">29: Mains phase missing</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">At least one
+phase is not connected</ph>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">30: Mains phase order
+incorrect</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Wiring at the
+rectifier mains input terminal</ph>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry morerows="1" class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(B) </b>Rectifier failure[5 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">47: Rectifier UI deviation warning</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">and “Rectifier mains fault” is not active</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">Unstable rectifier mains input</sli>
+                        <sli class="- topic/sli ">Rectifier parameter setting</sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">106: Charger 30° temp shutdown</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">104: Charger 0° temp shutdown</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Charger module
+A030 / A031</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry morerows="1" class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(C) </b>DC out of tolerance[5 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">35: Low DC warning</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">36: Low DC shutdown</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">The DC is below the low DC warning/shutdown level</ph>
+                        </sli>
+                        <sli platform="PxW" class="- topic/sli ">
+                           <ph platform="PxW" class="- topic/ph ">Rectifier inoperable</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">37: High DC warning</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">38: High DC shutdown</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">The DC is above the high DC warning/shutdown level</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">High load variation</ph>
+                        </sli>
+                        <sli platform="PxW" class="- topic/sli ">
+                           <ph platform="PxW" class="- topic/ph ">Rectifier parameter setting</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(D) </b>Rectifier fuse blown[5 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">46: Rectifier fuse
+blown</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">The fuse trip indicator is not connected</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Rectifier output fuse F026 (F027) blown</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(E) </b>Battery operation[30 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">163: Battery operation</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli platform="PxW" class="- topic/sli ">
+                           <ph platform="PxW" class="- topic/ph ">Rectifier inoperable</ph>
+                        </sli>
+                        <sli platform="PxW" class="- topic/sli ">
+                           <ph platform="PxW" class="- topic/ph ">Inverter supplied by the battery</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry morerows="1" class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(F) </b>Battery discharged[5 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">35: Low DC warning</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The DC is below
+the low DC warning level</ph>
+                  </entry>
+               </row>
+               <row platform="PxW" class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">57: Battery monitor
+alarm</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Battery is
+discharged or disconnected</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(G) </b>Batt. disconnected[5 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">51: Battery breaker open</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">60: External battery breaker open</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Switch open
+or auxiliary contact not connected</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(H) </b>DC earth fault [5 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">58: Earth- leak warning</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">59: Earth+ leak warning</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">One of the battery poles is connected
+to earth</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry morerows="1" class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(I) </b>Inverter fault[5 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">67: Inverter volt out of tolerance</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">and no current overload (&lt; 105%)</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Inverter fuse blown</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">DC input too low</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Inverter inoperable</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">116-139: Power module
+temperature shutdown</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The inverter power unit temperature
+is too high</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(J) </b>Overload inv./bypass[30 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">76: OVERLOAD: load
+is &gt; 100%</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The load current
+is higher than the nominal current of the system</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(K) </b>Inverter fuse blown[5 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">68: Inverter fuse
+blown</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Power fuse F021 (F022... F023)</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Inverter input switch Q020 is open</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(L) </b>Asynchronous[30 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">66: Inverter not synchronized</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">The bypass mains frequency is out of tolerance or unstable</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">The inverter is off</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry morerows="1" class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(M) </b>Bypass mains fault[30 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">87: Bypass avg out of tolerance</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">88: Bypass fast out of tolerance</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">89: Bypass freq out of tolerance</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The bypass
+mains voltage or the frequency is out of tolerance</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">93: Bypass phase order
+incorrect</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Wiring at the
+bypass mains input terminal</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(N) </b>Manual bypass on[5 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">90: System set in
+manual bypass</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">Manual bypass
+switch Q050 is not at position <b class="+ topic/ph hi-d/b ">Auto</b>
+                     </ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry morerows="1" class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(O) </b>EN inhibited[30 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">87: Bypass avg out of tolerance</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">88: Bypass fast out of tolerance</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">89: Bypass freq out of tolerance</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The bypass
+mains voltage or the frequency is out of tolerance</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">114: SSW EN temp shutdown</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">The static
+switch EN temperature is too high</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(P) </b>EA inhibited [5 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">112: SSW EA temp shutdown</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">The inverter is off</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">The static switch EA temperature is too high</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(Q) </b>Overtemperature [5 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli platform="PxW" class="- topic/sli ">
+                           <ph platform="PxW" translate="no" class="- topic/ph ">103-106: Charger
+temperature warning or shutdown</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">107-110: Magnetics temperature warning or
+shutdown</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">111-114: Static switches temperature warning
+or shutdown</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">116-139: Power module temperature warning
+or shutdown</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Obstructed air inlet</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Too high ambient temperature </ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">The winding material is too hot </ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">The heat-sink of the power components is too hot</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(R) </b>Fan failure [30 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">82: Fan inoperable</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Fans</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Fan monitoring board (A055 / A056)</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Fan transformer (T051 / T052)</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Power supply for the fans</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(S) </b>Power supply fault [5 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">6: PSU AC or DC not working </ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">7: AC power supply for parallel inverter fault </ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">8: DC power supply for parallel inverter fault</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Power supply units : PSU A201 / A202</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">AC or DC power supply sources</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Interface A071</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(T) </b>Option 2 : Parallel cable interrupted</ph>
+                     <ph class="- topic/ph ">[5
+seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">96: At least one parallel cable interrupted</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph translate="no" class="- topic/ph ">141: Option 2</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">At least one
+of the parallel cables are inoperable or disconnected</ph>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(U) </b>Option 3: Distribution
+feeders tripped[5 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">142: Option 3</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(V) </b>Option 4: Battery bank
+common alarm[5 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">143: Option 4</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(W) </b>Option 5: UPS imminent
+shutdown[5 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">144: Option 5</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+               </row>
+               <row class="- topic/row ">
+                  <entry class="- topic/entry ">
+                     <ph class="- topic/ph ">
+                        <b class="+ topic/ph hi-d/b ">(X) </b>Option 6: Temperature high around capacitor bank[5 seconds]</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <ph translate="no" class="- topic/ph ">145: Option 6</ph>
+                  </entry>
+                  <entry class="- topic/entry ">
+                     <sl class="- topic/sl ">
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</ph>
+                        </sli>
+                        <sli class="- topic/sli ">
+                           <ph class="- topic/ph ">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</ph>
+                        </sli>
+                     </sl>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </conbody>
+</concept>

@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="OperationAndChargeModeBehavior-61B32E36"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Operation and Charge Mode Behavior</title>
+   <prolog>
+      <author>Pallavi</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-04+05:30" class="- topic/created "/>
+         <revised modified="2025-12-04" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>parallel-units</indexterm>
+            <indexterm>power-module</indexterm>
+            <indexterm>shared-bus</indexterm>
+            <indexterm>metr-pxc-reality</indexterm>
+            <indexterm>system-controller</indexterm>
+            <indexterm>rectifier</indexterm>
+            <!-- Process layer -->
+            <indexterm>charge-mode-behavior</indexterm>
+            <indexterm>parallel-operation</indexterm>
+            <indexterm>load-sharing</indexterm>
+            <indexterm>mode-transition</indexterm>
+            <indexterm>fault-detection</indexterm>
+            <indexterm>synchronization</indexterm>
+            <!-- Context layer -->
+            <indexterm>multi-unit-installation</indexterm>
+            <indexterm>redundant-power-system</indexterm>
+            <indexterm>industrial-plant</indexterm>
+            <indexterm>maintenance-scenario</indexterm>
+            <indexterm>ups-operation</indexterm>
+            <indexterm>power-management</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Operation and Charge Mode Behavior"/>
+         <othermeta name="shortdesc" content="Describes how units behave in parallel operation and how charge modes are shared and synchronized across units."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="unit;rectifier;shared-bus;controller;current-sensor;synchronizer"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:manage-charge-modes-in-parallel-systems; industry: uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="charge-mode-behavior,parallel-operation,load-sharing,mode-transition,fault-detection,synchronization"/>
+         <othermeta name="usecase" content="manage-charge-modes-in-parallel-systems"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <section class="- topic/section ">
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">In a system where the units work in parallel,
+the parallel communication shares the operation mode of each unit
+with the other units. The behavior of a redundant system will be different
+depending on if the system have individual batteries or a common battery.</p>
+            <note type="important" class="- topic/note ">Depending on parameter settings for your specific
+system design, the tables might not show all system behaviors or your
+system might behave differently in a certain situation.</note>
+            <note class="- topic/note ">The shown behaviors assume that boost charge is not inhibited.</note>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Redundant System with Individual Batteries</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">In a redundant system with individual batteries the
+parallel communication is used to share the operation mode and load
+status between the units. This will determine the operation mode of
+each unit in the system.</p>
+            <table pgwide="1" class="- topic/table ">
+               <tgroup align="center" cols="7" class="- topic/tgroup ">
+                  <colspec colname="col1" colwidth="1.73*" class="- topic/colspec "/>
+                  <colspec colname="col3" colwidth="1.75*" class="- topic/colspec "/>
+                  <colspec colname="col4" colwidth="1.75*" class="- topic/colspec "/>
+                  <colspec colname="col6" colwidth="1.75*" class="- topic/colspec "/>
+                  <colspec colname="col7" colwidth="30.00mm" class="- topic/colspec "/>
+                  <colspec colname="col8" colwidth="30.00mm" class="- topic/colspec "/>
+                  <colspec colname="COLSPEC1" colwidth="30.00mm" class="- topic/colspec "/>
+                  <thead class="- topic/thead ">
+                     <row class="- topic/row ">
+                        <entry nameend="col6"
+                               namest="col1"
+                               valign="middle"
+                               class="- topic/entry ">Redundant
+System with Individual Batteries Status</entry>
+                        <entry nameend="col8"
+                               namest="col7"
+                               valign="middle"
+                               class="- topic/entry ">Operation Mode</entry>
+                        <entry morerows="2" valign="middle" class="- topic/entry ">Load Supplied By</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry nameend="col3"
+                               namest="col1"
+                               valign="middle"
+                               class="- topic/entry ">Unit 1</entry>
+                        <entry nameend="col6"
+                               namest="col4"
+                               valign="middle"
+                               class="- topic/entry ">Unit 2</entry>
+                        <entry morerows="1" valign="middle" class="- topic/entry ">Unit 1</entry>
+                        <entry morerows="1" valign="middle" class="- topic/entry ">Unit 2</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry valign="middle" class="- topic/entry ">Rectifier
+Mains</entry>
+                        <entry valign="middle" class="- topic/entry ">Battery 1</entry>
+                        <entry valign="middle" class="- topic/entry ">Rectifier Mains</entry>
+                        <entry valign="middle" class="- topic/entry ">Battery 2</entry>
+                     </row>
+                  </thead>
+                  <tbody class="- topic/tbody ">
+                     <row valign="middle" class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry class="- topic/entry ">Float charge</entry>
+                        <entry class="- topic/entry ">Float charge</entry>
+                        <entry class="- topic/entry ">Both
+units</entry>
+                     </row>
+                     <row valign="middle" class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">Boost</b>
+                        </entry>
+                        <entry class="- topic/entry ">Float charge</entry>
+                        <entry class="- topic/entry ">Boost
+charge</entry>
+                        <entry class="- topic/entry ">Unit
+2<fn class="- topic/fn "> Because unit 2 is in boost charge the output voltage is higher
+in unit 2 and will supply the load.</fn>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry valign="middle" class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry valign="middle" class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">Boost</b>
+                        </entry>
+                        <entry valign="middle" class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry valign="middle" class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">Boost</b>
+                        </entry>
+                        <entry valign="middle" class="- topic/entry ">Boost charge</entry>
+                        <entry valign="middle" class="- topic/entry ">Boost charge</entry>
+                        <entry valign="middle" class="- topic/entry ">Both units</entry>
+                     </row>
+                     <row valign="middle" class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">X</b>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry class="- topic/entry ">Float charge</entry>
+                        <entry class="- topic/entry ">Battery operation<fn id="ThereIsNoDischargeCurrent.Unit1InFl-62409D6E" class="- topic/fn "> There is no discharge
+current. Unit 1 in float charge will supply the full load.</fn>
+                        </entry>
+                        <entry class="- topic/entry ">Unit
+1</entry>
+                     </row>
+                     <row valign="middle" class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">Boost</b>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">X</b>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry class="- topic/entry ">Boost charge</entry>
+                        <entry class="- topic/entry ">Battery operation<fn conref="#./ThereIsNoDischargeCurrent.Unit1InFl-62409D6E"
+                               class="- topic/fn "/>
+                        </entry>
+                        <entry class="- topic/entry ">Unit
+1</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry valign="middle" class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">X</b>
+                        </entry>
+                        <entry valign="middle" class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry valign="middle" class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">X</b>
+                        </entry>
+                        <entry valign="middle" class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry valign="middle" class="- topic/entry ">Battery operation</entry>
+                        <entry valign="middle" class="- topic/entry ">Battery operation</entry>
+                        <entry valign="middle" class="- topic/entry ">Both individual batteries</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry valign="middle" class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">X</b>
+                        </entry>
+                        <entry valign="middle" class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry valign="middle" class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">X</b>
+                        </entry>
+                        <entry valign="middle" class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">X</b>
+                        </entry>
+                        <entry valign="middle" class="- topic/entry ">Battery operation</entry>
+                        <entry valign="middle" class="- topic/entry ">Off</entry>
+                        <entry valign="middle" class="- topic/entry ">Battery 1</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry align="right"
+                               colsep="0"
+                               rowsep="0"
+                               valign="middle"
+                               class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry align="left"
+                               colsep="0"
+                               nameend="COLSPEC1"
+                               namest="col3"
+                               rowsep="0"
+                               valign="middle"
+                               class="- topic/entry ">Available / Charged.</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry align="right"
+                               colsep="0"
+                               rowsep="0"
+                               valign="middle"
+                               class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">Boost</b>
+                        </entry>
+                        <entry align="left"
+                               colsep="0"
+                               nameend="COLSPEC1"
+                               namest="col3"
+                               rowsep="0"
+                               valign="middle"
+                               class="- topic/entry ">Available and boost charging.</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry align="right" colsep="0" valign="middle" class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">X</b>
+                        </entry>
+                        <entry align="left"
+                               colsep="0"
+                               nameend="COLSPEC1"
+                               namest="col3"
+                               valign="middle"
+                               class="- topic/entry ">Unavailable
+/ Discharged.</entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Redundant System with a Common Battery</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">In a redundant system with a common battery the parallel communication
+is used to synchronize the units so that they both operate in the
+same mode, as long as it is possible.</p>
+            <table pgwide="1" class="- topic/table ">
+               <tgroup align="center" cols="6" class="- topic/tgroup ">
+                  <colspec colname="col1" colwidth="1.99*" class="- topic/colspec "/>
+                  <colspec colname="col3" colwidth="2.00*" class="- topic/colspec "/>
+                  <colspec colname="col4" colwidth="2.00*" class="- topic/colspec "/>
+                  <colspec colname="col7" colwidth="30.00mm" class="- topic/colspec "/>
+                  <colspec colname="col8" colwidth="30.00mm" class="- topic/colspec "/>
+                  <colspec colname="COLSPEC5" colwidth="30.00mm" class="- topic/colspec "/>
+                  <thead class="- topic/thead ">
+                     <row class="- topic/row ">
+                        <entry nameend="col4"
+                               namest="col1"
+                               valign="middle"
+                               class="- topic/entry ">Redundant
+System with a Common Battery Status</entry>
+                        <entry nameend="col8"
+                               namest="col7"
+                               valign="middle"
+                               class="- topic/entry ">Operation Mode</entry>
+                        <entry morerows="2" valign="middle" class="- topic/entry ">Load Supplied By</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry valign="middle" class="- topic/entry ">Unit 1</entry>
+                        <entry valign="middle" class="- topic/entry ">Unit 2</entry>
+                        <entry morerows="1" valign="middle" class="- topic/entry ">Common Battery</entry>
+                        <entry morerows="1" valign="middle" class="- topic/entry ">Unit 1</entry>
+                        <entry morerows="1" valign="middle" class="- topic/entry ">Unit 2</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry valign="middle" class="- topic/entry ">Rectifier
+Mains</entry>
+                        <entry valign="middle" class="- topic/entry ">Rectifier Mains</entry>
+                     </row>
+                  </thead>
+                  <tbody class="- topic/tbody ">
+                     <row valign="middle" class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry class="- topic/entry ">Float charge</entry>
+                        <entry class="- topic/entry ">Float charge</entry>
+                        <entry class="- topic/entry ">Both
+units</entry>
+                     </row>
+                     <row valign="middle" class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">Boost</b>
+                        </entry>
+                        <entry class="- topic/entry ">Boost charge</entry>
+                        <entry class="- topic/entry ">Boost
+charge</entry>
+                        <entry class="- topic/entry ">Both
+units</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry valign="middle" class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry valign="middle" class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">X</b>
+                        </entry>
+                        <entry valign="middle" class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry valign="middle" class="- topic/entry ">Float charge</entry>
+                        <entry valign="middle" class="- topic/entry ">Battery operation<fn conref="#./ThereIsNoDischargeCurrent.Unit1InFl-62409D6E"
+                               class="- topic/fn "/>
+                        </entry>
+                        <entry valign="middle" class="- topic/entry ">Unit 1</entry>
+                     </row>
+                     <row valign="middle" class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">X</b>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">X</b>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry class="- topic/entry ">Battery operation</entry>
+                        <entry class="- topic/entry ">Battery operation</entry>
+                        <entry class="- topic/entry ">Common
+Battery</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry align="right"
+                               colsep="0"
+                               rowsep="0"
+                               valign="middle"
+                               class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">OK</b>
+                        </entry>
+                        <entry align="left"
+                               colsep="0"
+                               nameend="COLSPEC5"
+                               namest="col3"
+                               rowsep="0"
+                               valign="middle"
+                               class="- topic/entry ">Available / Charged.</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry align="right"
+                               colsep="0"
+                               rowsep="0"
+                               valign="middle"
+                               class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">Boost</b>
+                        </entry>
+                        <entry align="left"
+                               colsep="0"
+                               nameend="COLSPEC5"
+                               namest="col3"
+                               rowsep="0"
+                               valign="middle"
+                               class="- topic/entry ">Available and boost charging.</entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry align="right" colsep="0" valign="middle" class="- topic/entry ">
+                           <b class="+ topic/ph hi-d/b ">X</b>
+                        </entry>
+                        <entry align="left"
+                               colsep="0"
+                               nameend="COLSPEC5"
+                               namest="col3"
+                               valign="middle"
+                               class="- topic/entry ">Unavailable
+/ Discharged.</entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+         </sectiondiv>
+      </section>
+   </conbody>
+</concept>

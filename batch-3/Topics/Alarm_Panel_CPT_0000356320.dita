@@ -1,0 +1,1281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="AlarmPanel-83C303AF"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Alarm Panel</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-04T14:00:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-04T14:00:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="operations,maintenance,service,engineering,safety"/>
+         <keywords>
+            <!-- product layer -->
+            <indexterm>alarm-panel</indexterm>
+            <indexterm>visual-audio-indicator</indexterm>
+            <indexterm>event-display-unit</indexterm>
+            <indexterm>alarm-logger</indexterm>
+            <indexterm>notification-interface</indexterm>
+            <!-- process layer -->
+            <indexterm>alarm-configuration</indexterm>
+            <indexterm>alarm-priority-mapping</indexterm>
+            <indexterm>event-acknowledgement</indexterm>
+            <indexterm>log-export</indexterm>
+            <indexterm>repeat-notification-setup</indexterm>
+            <!-- context layer -->
+            <indexterm>control-room-operations</indexterm>
+            <indexterm>site-safety-procedures</indexterm>
+            <indexterm>critical-event-escalation</indexterm>
+            <indexterm>building-management-integration</indexterm>
+            <indexterm>remote-monitoring-centre</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Alarm Panel"/>
+         <othermeta name="shortdesc" content="Details for configuring and operating the alarm panel including event display, acknowledgement, and logging."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="alarm-relays;panel-wiring;event-log-db;notification-scripts;acknowledge-buttons"/>
+         <othermeta name="taxonomy" content="domain:operations-monitoring;usecase:alarm-management;industry:uninterruptible power supply"/>
+         <othermeta name="tags" content="alarm,events,acknowledgement,logging"/>
+         <othermeta name="usecase" content="guide operators to configure and respond to alarms on the alarm panel"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">The alarm panel has 24 LEDs that are used for standard indications
+and selectable options.<note id="NotAllAlarmsAreUsedInAllSystemTypes-04605A90" class="- topic/note ">Not all LEDs are
+used in all system types or configurations.</note>
+      </p>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Alarm Indication</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">When an alarm
+is activated in the system the corresponding LED is activated on the
+alarm panel. The status of the LED indicates what alarm is the newest
+and if the alarms are unconfirmed or confirmed.</p>
+            <table class="- topic/table ">
+               <tgroup cols="2" class="- topic/tgroup ">
+                  <colspec colname="col1" colwidth="40.00mm" class="- topic/colspec "/>
+                  <colspec colname="col3" colwidth="2.00*" class="- topic/colspec "/>
+                  <thead class="- topic/thead ">
+                     <row class="- topic/row ">
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">LED Status</p>
+                        </entry>
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">Description</p>
+                        </entry>
+                     </row>
+                  </thead>
+                  <tbody class="- topic/tbody ">
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Off</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">The alarm is
+not active</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Fast flashing</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">The first (initial)
+unconfirmed alarm</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Slow flashing</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Unconfirmed alarm</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Constant</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Confirmed present alarm</p>
+                        </entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+            <p class="- topic/p ">Unconfirmed alarm will not be cleared even if the alarm
+is not active in the system anymore. Only confirmed alarms will be
+cleared when they are no longer present in the system.</p>
+         </sectiondiv>
+      </section>
+      <section id="AlarmConfirmationReset-D39B4898" class="- topic/section ">
+         <title class="- topic/title ">Confirm/Clear
+Alarms</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">To mute the audible alarm, press the <b class="+ topic/ph hi-d/b ">Mute key</b>.</p>
+            <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">C key</b> one time to:<ul class="- topic/ul ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Confirm any unconfirmed alarms. The LED will stay on but stop
+flashing.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Clear any confirmed and unconfirmed alarms that are resolved.
+The LED will extinguish.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Mute the audible alarm (if not already muted).</p>
+                  </li>
+               </ul>
+               <note class="- topic/note ">The fast flashing LED (the first unconfirmed alarm) will
+stay the same after pressing the <b class="+ topic/ph hi-d/b ">C key</b> only once.</note>
+            </p>
+         </sectiondiv>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">C key</b> a second time
+to:<ul class="- topic/ul ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Confirm the newest unconfirmed alarm. The LED will stay on
+but stop flashing.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Clear any confirmed and unconfirmed alarms that are resolved.
+The LED will extinguish.</p>
+                  </li>
+               </ul>
+            </p>
+         </sectiondiv>
+      </section>
+      <section class="- topic/section ">
+         <title class="- topic/title ">Alarm Descriptions</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <image href="../Images/PxW_Alarm_Display_0000352230.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+            <note conref="#./NotAllAlarmsAreUsedInAllSystemTypes-04605A90"
+                  class="- topic/note "/>
+            <note class="- topic/note ">For a more details and troubleshooting see chapter <xref href="Troubleshooting_the_System_CPT_0000325920.dita"
+                     scope="local"
+                     type="concept"
+                     class="- topic/xref "/>.</note>
+         </sectiondiv>
+         <table pgwide="1" platform="PxW WxW" class="- topic/table ">
+            <tgroup cols="4" class="- topic/tgroup ">
+               <colspec colname="col1" colwidth="20.00mm" class="- topic/colspec "/>
+               <colspec colname="col2" colwidth="40.00mm" class="- topic/colspec "/>
+               <colspec colname="COLSPEC1" colwidth="19.55mm" class="- topic/colspec "/>
+               <colspec colname="COLSPEC0" colwidth="8.00*" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">
+                        <p class="- topic/p ">Position</p>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <p class="- topic/p ">Name</p>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <p class="- topic/p ">Time delay
+(seconds)</p>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <p class="- topic/p ">Description</p>
+                     </entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(A)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p platform="PxW" class="- topic/p ">Rectifier mains fault</p>
+                        <p platform="WxW" class="- topic/p ">—</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p platform="PxW" class="- topic/p ">30</p>
+                        <p platform="WxW" class="- topic/p ">—</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p platform="PxW" class="- topic/p ">The rectifier mains is unavailable or out of tolerance.
+For tolerances see the technical data<fn class="- topic/fn "> The technical data for the
+system can be found in the manufacturing record book and depends on
+customer specification.</fn>.</p>
+                        <p platform="WxW" class="- topic/p ">(Not used)</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(B)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p platform="PxW" class="- topic/p ">Rectifier failure<fn class="- topic/fn "> Will not be active if the current
+limiter is active or if the alarm for rectifier mains fault is active.</fn>
+                        </p>
+                        <p platform="WxW" class="- topic/p ">—</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p platform="PxW" class="- topic/p ">5</p>
+                        <p platform="WxW" class="- topic/p ">—</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p platform="PxW" class="- topic/p ">The DC output is too low, the rectifier cannot synchronize
+or the rectifier is overheated.</p>
+                        <p platform="WxW" class="- topic/p ">(Not used)</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(C)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">DC out of tolerance</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The inverter will turn off because the DC voltage is out of tolerance.
+For tolerances see the technical data<fn class="- topic/fn "> The technical data for the
+system can be found in the manufacturing record book and depends on
+customer specification.</fn>.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(D)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p platform="PxW" class="- topic/p ">Rectifier fuse blown<fn id="ThisAlarmDependsOnConfigurationAndM-5CA050CE" class="- topic/fn "> This alarm depends
+on configuration and might not be present.</fn>
+                        </p>
+                        <p platform="WxW" class="- topic/p ">—</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p platform="PxW" class="- topic/p ">5</p>
+                        <p platform="WxW" class="- topic/p ">—</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p platform="PxW" class="- topic/p ">The rectifier fuse is blown. </p>
+                        <p platform="WxW" class="- topic/p ">(Not used)</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(E)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Battery operation<fn conref="#./ThisAlarmDependsOnConfigurationAndM-5CA050CE"
+                               class="- topic/fn "/>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">30</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p platform="PxW" class="- topic/p ">The system is in battery operation and the battery
+is supplying the load.</p>
+                        <p platform="WxW" class="- topic/p ">The inverter is supplied
+by the batteries in the external DC UPS system.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(F)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p platform="PxW" class="- topic/p ">Battery discharged</p>
+                        <p platform="WxW" class="- topic/p ">DC low warning</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p platform="PxW" class="- topic/p ">The battery voltage is below the set DC low alarm level.</p>
+                        <p platform="WxW" class="- topic/p ">The DC voltage is below the set DC low alarm level.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(G)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Batt. disconnected<fn conref="#./ThisAlarmDependsOnConfigurationAndM-5CA050CE"
+                               class="- topic/fn "/>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The battery is disconnected from the system.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(H)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">DC earth fault<fn conref="#./ThisAlarmDependsOnConfigurationAndM-5CA050CE"
+                               class="- topic/fn "/>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The DC earth fault current (positive or negative) for the battery
+is outside the alarm level. For tolerances see the technical data<fn class="- topic/fn "> The technical data for the system can be found in the manufacturing
+record book and depends on customer specification.</fn>.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(I)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Inverter fault</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The inverter output is out of tolerance or the inverter is overheated.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(J)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Overload inv./Bypass</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">30</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The inverter or bypass is overloaded.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(K)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Inverter fuse blown</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">One or more inverter fuses are blown.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(L)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Asynchronous</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">30</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The inverter is not synchronized to the bypass mains.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(M)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Bypass mains fault</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">30</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The bypass mains is out of tolerance measured at the input of static
+switch EN. For tolerances see the technical data<fn class="- topic/fn "> The technical
+data for the system can be found in the manufacturing record book
+and depends on customer specification.</fn>.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(N)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Manual Bypass ON</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p otherprops="2pMBS" class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">For 2-position manual bypass switches:</b> The
+manual bypass switch is the <b class="+ topic/ph hi-d/b ">Bypass</b> position.</p>
+                        <p otherprops="generalM 3pMBS" class="- topic/p ">
+                           <b otherprops="tempExclude" class="+ topic/ph hi-d/b ">For 3-position
+manual bypass switches:</b> The manual bypass switch is the <b class="+ topic/ph hi-d/b ">Bypass</b> or <b class="+ topic/ph hi-d/b ">Test</b> position.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(O)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">EN inhibited</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">30</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The input to the static switch EN is out of tolerance or the static
+switch EN is overheated. For tolerances see the technical data<fn class="- topic/fn "> The technical data for the system can be found in the manufacturing
+record book and depends on customer specification.</fn>.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(P)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">EA inhibited<fn conref="#./ThisAlarmDependsOnConfigurationAndM-5CA050CE"
+                               class="- topic/fn "/>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The input to the static switch EA is out of tolerance or the static
+switch EA is overheated. For tolerances see the technical data<fn class="- topic/fn "> The technical data for the system can be found in the manufacturing
+record book and depends on customer specification.</fn>.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(Q)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Overtemperature</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">One or more of the following parts are overheated:<ul class="- topic/ul ">
+                              <li platform="PxW" class="- topic/li ">
+                                 <p class="- topic/p ">Rectifier bridge</p>
+                              </li>
+                              <li platform="PxW" class="- topic/li ">
+                                 <p class="- topic/p ">Rectifier transformer</p>
+                              </li>
+                              <li class="- topic/li ">
+                                 <p class="- topic/p ">DC choke</p>
+                              </li>
+                              <li class="- topic/li ">
+                                 <p class="- topic/p ">Power module</p>
+                              </li>
+                              <li class="- topic/li ">
+                                 <p class="- topic/p ">Inverter transformer</p>
+                              </li>
+                              <li class="- topic/li ">
+                                 <p class="- topic/p ">AC choke</p>
+                              </li>
+                              <li class="- topic/li ">
+                                 <p class="- topic/p ">Static switch EN</p>
+                              </li>
+                              <li class="- topic/li ">
+                                 <p class="- topic/p ">Static switch EA</p>
+                              </li>
+                           </ul>
+                        </p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(R)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Fan failure</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">30</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">One or more fans are inoperable.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(S)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Power supply fault</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The output is out of tolerance or one of the inputs (<ph platform="PxW" class="- topic/ph ">rectifier,</ph> bypass or DC) are missing for at least one of the
+internal power supplies (+5 V / ±12 V / +20 V).</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(T)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Parallel cable interrupted<fn conref="#./ThisAlarmDependsOnConfigurationAndM-5CA050CE"
+                               class="- topic/fn "/>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">At least one of the parallel cables have lost communication.</p>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table pgwide="1" platform="SDC" class="- topic/table ">
+            <tgroup cols="4" class="- topic/tgroup ">
+               <colspec colname="col1" colwidth="20.00mm" class="- topic/colspec "/>
+               <colspec colname="col2" colwidth="40.00mm" class="- topic/colspec "/>
+               <colspec colname="COLSPEC1" colwidth="19.55mm" class="- topic/colspec "/>
+               <colspec colname="COLSPEC0" colwidth="8.00*" class="- topic/colspec "/>
+               <thead class="- topic/thead ">
+                  <row class="- topic/row ">
+                     <entry valign="top" class="- topic/entry ">
+                        <p class="- topic/p ">Position</p>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <p class="- topic/p ">Name</p>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <p class="- topic/p ">Time delay
+(seconds)</p>
+                     </entry>
+                     <entry valign="top" class="- topic/entry ">
+                        <p class="- topic/p ">Description</p>
+                     </entry>
+                  </row>
+               </thead>
+               <tbody class="- topic/tbody ">
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(A)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Rectifier mains fault</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">30</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The rectifier mains is unavailable or out of tolerance. For tolerances
+see the technical data<fn id="TheTechnicalDataForTheSystemCanBeFo-5C9F1843" class="- topic/fn "> The technical data
+for the system can be found in the manufacturing record book and depends
+on customer specification.</fn>.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(B)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Rectifier failure</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The rectifier voltage is out of tolerance, but the rectifier mains
+is within tolerance and the current limiter is not active.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(C)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">—</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">—</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">(Not used)</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(D)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">—</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">—</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">(Not used)</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(E)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">DC out of tolerance</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The DC voltage is below the set low DC/DC Vaux level. For alarm level
+settings see the technical data<fn conref="#./TheTechnicalDataForTheSystemCanBeFo-5C9F1843"
+                               class="- topic/fn "/>.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(F)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">DC Fuse blown</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The rectifier output fuse is blown.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(G)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Rect. overcurrent</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">30</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The rectifier output exceeds the current limit. For limit setting
+see the technical data<fn conref="#./TheTechnicalDataForTheSystemCanBeFo-5C9F1843"
+                               class="- topic/fn "/>.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(H)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Load sharing fault<fn conref="#./ThisAlarmDependsOnConfigurationAndM-5CA050CE"
+                               class="- topic/fn "/>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The units in a redundant system are not sharing the load equally.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(I)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Battery discharged</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The battery voltage is below the set DC low alarm level.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(J)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Battery disconnected</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The battery is disconnected from the system.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(K)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">DC earth fault<fn conref="#./ThisAlarmDependsOnConfigurationAndM-5CA050CE"
+                               class="- topic/fn "/>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">The DC earth fault current (positive or negative) for the battery
+is outside the alarm level. For tolerances see the technical data<fn class="- topic/fn "> The technical data for the system can be found in the manufacturing
+record book and depends on customer specification.</fn>.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(L)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">—</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">—</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">(Not used)</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(M)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Control power fault</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">One or more of the internal power supplies (+5 V / ±15 V) are
+unavailable or out of tolerance.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(N)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Overtemperature</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">5</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">One or more of the following parts are overheated:<ul class="- topic/ul ">
+                              <li class="- topic/li ">
+                                 <p class="- topic/p ">Rectifier bridge</p>
+                              </li>
+                              <li class="- topic/li ">
+                                 <p class="- topic/p ">Rectifier transformer</p>
+                              </li>
+                              <li class="- topic/li ">
+                                 <p class="- topic/p ">Blocking diode</p>
+                              </li>
+                              <li class="- topic/li ">
+                                 <p class="- topic/p ">DC choke</p>
+                              </li>
+                           </ul>
+                        </p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(O)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">Fan failure<fn conref="#./ThisAlarmDependsOnConfigurationAndM-5CA050CE"
+                               class="- topic/fn "/>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">30</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">One or more fans are inoperable.</p>
+                     </entry>
+                  </row>
+                  <row class="- topic/row ">
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">
+                           <b class="+ topic/ph hi-d/b ">(P)</b>
+                        </p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">—</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">—</p>
+                     </entry>
+                     <entry class="- topic/entry ">
+                        <p class="- topic/p ">(Not used)</p>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+      <section class="- topic/section ">
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">The four LEDs <ph platform="PxW WxW" class="- topic/ph ">
+                  <b class="+ topic/ph hi-d/b ">(U)</b>, <b class="+ topic/ph hi-d/b ">(V)</b>, <b class="+ topic/ph hi-d/b ">(X)</b>, <b class="+ topic/ph hi-d/b ">(Y)</b>
+               </ph>
+               <ph platform="SDC" class="- topic/ph ">
+                  <b class="+ topic/ph hi-d/b ">(Q)</b>, <b class="+ topic/ph hi-d/b ">(R)</b>, <b class="+ topic/ph hi-d/b ">(S)</b>, <b class="+ topic/ph hi-d/b ">(T)</b>
+               </ph> are used for optional alarms.
+A selection of some optional alarms is shown in the table. Refer to
+the specific system <i class="+ topic/ph hi-d/i ">Drawings</i> for any selected optional alarms.</p>
+            <note class="- topic/note ">Additional optional alarms are available on request.</note>
+            <table pgwide="1" platform="PxW WxW" class="- topic/table ">
+               <tgroup cols="3" class="- topic/tgroup ">
+                  <colspec colname="col1" colwidth="40.00mm" class="- topic/colspec "/>
+                  <colspec colname="COLSPEC2" colwidth="20.00mm" class="- topic/colspec "/>
+                  <colspec colname="col2" colwidth="4.00*" class="- topic/colspec "/>
+                  <thead class="- topic/thead ">
+                     <row class="- topic/row ">
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">Name</p>
+                        </entry>
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">Time delay
+(seconds)</p>
+                        </entry>
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">Description</p>
+                        </entry>
+                     </row>
+                  </thead>
+                  <tbody class="- topic/tbody ">
+                     <row platform="PxW" class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Q003 open<fn id="ThisAlarmIsOptionalAndMightAndMight-1378EB1A" class="- topic/fn "> This alarm is optional and might and might not be present.</fn>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">5</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Rectifier output switch Q003 is open and the rectifier output
+is disconnected from the battery and the inverter. The
+rectifier will turn off.</p>
+                        </entry>
+                     </row>
+                     <row platform="PxW WxW" class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Q020 open<fn conref="Alarm_Panel_CPT_0000356320.dita#AlarmPanel-83C303AF/ThisAlarmIsOptionalAndMightAndMight-1378EB1A"
+                                  class="- topic/fn "/>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">5</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Inverter input switch Q020 is open and the inverter is disconnected
+from the <ph platform="PxW" class="- topic/ph ">rectifier and battery</ph>
+                              <ph platform="WxW" class="- topic/ph ">DC input power</ph>. The alarm “Inverter fuse blown”
+will activate.</p>
+                        </entry>
+                     </row>
+                     <row platform="PxW WxW" class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Q030 open<fn conref="Alarm_Panel_CPT_0000356320.dita#AlarmPanel-83C303AF/ThisAlarmIsOptionalAndMightAndMight-1378EB1A"
+                                  class="- topic/fn "/>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">5</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Inverter output switch Q030 is open and the inverter is
+disconnected from the load.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Q100 open<fn conref="Alarm_Panel_CPT_0000356320.dita#AlarmPanel-83C303AF/ThisAlarmIsOptionalAndMightAndMight-1378EB1A"
+                                  class="- topic/fn "/>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">5</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Distribution input Q100 is open and the system output is
+disconnected from the inverter<ph platform="PxW" class="- topic/ph "> and the battery</ph>.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Distribution MCB tripped<fn conref="Alarm_Panel_CPT_0000356320.dita#AlarmPanel-83C303AF/ThisAlarmIsOptionalAndMightAndMight-1378EB1A"
+                                  class="- topic/fn "/>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">5</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">One or more of the feeders Q101-Q1xx have tripped because
+of an overload or a short-circuit.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Distribution MCB open<fn conref="Alarm_Panel_CPT_0000356320.dita#AlarmPanel-83C303AF/ThisAlarmIsOptionalAndMightAndMight-1378EB1A"
+                                  class="- topic/fn "/>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">5</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">One or more of the feeders Q101-Q1xx have been manually
+opened or have tripped because of an overload or a short-circuit.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Distribution AC earth fault<fn conref="Alarm_Panel_CPT_0000356320.dita#AlarmPanel-83C303AF/ThisAlarmIsOptionalAndMightAndMight-1378EB1A"
+                                  class="- topic/fn "/>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">5</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">An earth fault on the AC output is detected. The isolation
+resistance to the earth on one or more of the outputs are below the
+alarm level.</p>
+                        </entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+            <table pgwide="1" platform="SDC" class="- topic/table ">
+               <tgroup cols="3" class="- topic/tgroup ">
+                  <colspec colname="col1" colwidth="40.00mm" class="- topic/colspec "/>
+                  <colspec colname="COLSPEC2" colwidth="20.00mm" class="- topic/colspec "/>
+                  <colspec colname="col2" colwidth="4.00*" class="- topic/colspec "/>
+                  <thead class="- topic/thead ">
+                     <row class="- topic/row ">
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">Name</p>
+                        </entry>
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">Time delay
+(seconds)</p>
+                        </entry>
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">Description</p>
+                        </entry>
+                     </row>
+                  </thead>
+                  <tbody class="- topic/tbody ">
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Q003 open<fn conref="Alarm_Panel_CPT_0000356320.dita#AlarmPanel-83C303AF/ThisAlarmIsOptionalAndMightAndMight-1378EB1A"
+                                  class="- topic/fn "/>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">5</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Rectifier output switch Q003 is open and the rectifier output
+is disconnected from the output.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Q100 open<fn conref="Alarm_Panel_CPT_0000356320.dita#AlarmPanel-83C303AF/ThisAlarmIsOptionalAndMightAndMight-1378EB1A"
+                                  class="- topic/fn "/>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">5</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Distribution input Q100 is open and the system output is
+disconnected from the rectifier and the battery.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">High DC warning<fn conref="Alarm_Panel_CPT_0000356320.dita#AlarmPanel-83C303AF/ThisAlarmIsOptionalAndMightAndMight-1378EB1A"
+                                  class="- topic/fn "/>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">5</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">The DC voltage is above the upper alarm level. For level value see
+the technical data<fn conref="#./TheTechnicalDataForTheSystemCanBeFo-5C9F1843"
+                                  class="- topic/fn "/>.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Low DC warning<fn conref="Alarm_Panel_CPT_0000356320.dita#AlarmPanel-83C303AF/ThisAlarmIsOptionalAndMightAndMight-1378EB1A"
+                                  class="- topic/fn "/>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">5</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">The DC voltage is below the lower alarm level. For level value see
+the technical data<fn conref="#./TheTechnicalDataForTheSystemCanBeFo-5C9F1843"
+                                  class="- topic/fn "/>.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Dropper voltage out of tolerance<fn conref="Alarm_Panel_CPT_0000356320.dita#AlarmPanel-83C303AF/ThisAlarmIsOptionalAndMightAndMight-1378EB1A"
+                                  class="- topic/fn "/>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">5</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">The output voltage of the voltage dropper is out of tolerance. For
+tolerance levels see the technical data<fn conref="#./TheTechnicalDataForTheSystemCanBeFo-5C9F1843"
+                                  class="- topic/fn "/>.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Dropper fan failure<fn conref="Alarm_Panel_CPT_0000356320.dita#AlarmPanel-83C303AF/ThisAlarmIsOptionalAndMightAndMight-1378EB1A"
+                                  class="- topic/fn "/>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">30</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">One or more fans in the voltage dropper cubicle are inoperable.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Distribution MCB tripped<fn conref="Alarm_Panel_CPT_0000356320.dita#AlarmPanel-83C303AF/ThisAlarmIsOptionalAndMightAndMight-1378EB1A"
+                                  class="- topic/fn "/>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">5</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">One or more of the feeders Q101-Q1xx are tripped because
+of an overload or a short-circuit.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Distribution MCB open<fn conref="Alarm_Panel_CPT_0000356320.dita#AlarmPanel-83C303AF/ThisAlarmIsOptionalAndMightAndMight-1378EB1A"
+                                  class="- topic/fn "/>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">5</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">One or more of the feeders Q101-Q1xx are manually opened
+or tripped because of an overload or a short-circuit.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Distribution DC earth fault<fn conref="Alarm_Panel_CPT_0000356320.dita#AlarmPanel-83C303AF/ThisAlarmIsOptionalAndMightAndMight-1378EB1A"
+                                  class="- topic/fn "/>
+                           </p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">5</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">An earth fault on the DC output is detected. The isolation
+resistance to the earth on one or more of the outputs are below the
+alarm level.</p>
+                        </entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+         </sectiondiv>
+         <sectiondiv platform="SDC" class="- topic/sectiondiv ">
+            <p class="- topic/p ">The four LEDs <b class="+ topic/ph hi-d/b ">(U)</b>, <b class="+ topic/ph hi-d/b ">(V)</b>, <b class="+ topic/ph hi-d/b ">(X)</b>, <b class="+ topic/ph hi-d/b ">(Y)</b> are used for programmable
+relays on the relay board (K013-K016). The programmable options are
+shown in table. Refer to the specific system <i class="+ topic/ph hi-d/i ">Drawings</i> if any
+programmable options are used.</p>
+            <table pgwide="1" class="- topic/table ">
+               <tgroup cols="3" class="- topic/tgroup ">
+                  <colspec colname="col1" colwidth="40.00mm" class="- topic/colspec "/>
+                  <colspec colname="COLSPEC2" colwidth="20.00mm" class="- topic/colspec "/>
+                  <colspec colname="col2" colwidth="4.00*" class="- topic/colspec "/>
+                  <thead class="- topic/thead ">
+                     <row class="- topic/row ">
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">Name</p>
+                        </entry>
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">Time delay
+(seconds)</p>
+                        </entry>
+                        <entry valign="top" class="- topic/entry ">
+                           <p class="- topic/p ">Description</p>
+                        </entry>
+                     </row>
+                  </thead>
+                  <tbody class="- topic/tbody ">
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Float reduce</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">5</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">The float voltage is reduced by a set amount.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Battery charge active</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">5</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">The total current limitation is changed to the battery current
+limitation level.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">External synchronization</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">5</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">The internal clock is set to a default time, used for synchronization.</p>
+                        </entry>
+                     </row>
+                     <row class="- topic/row ">
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">DC bus connection</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">5</p>
+                        </entry>
+                        <entry class="- topic/entry ">
+                           <p class="- topic/p ">Indicates the
+status of the output couple breaker. Only available for redundant
+systems with individual batteries.</p>
+                        </entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+         </sectiondiv>
+      </section>
+   </conbody>
+</concept>

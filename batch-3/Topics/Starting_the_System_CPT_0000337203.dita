@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="StartingTheSystem-66F82D0A"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Starting the System</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-03+05:30" class="- topic/created "/>
+         <revised modified="2025-12-03" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience
+            type="role"
+            otherprops="operations,system operator,maintenance,engineering,commissioning team,technical support"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>system start-up</indexterm>
+            <indexterm>UPS start sequence</indexterm>
+            <indexterm>rectifier activation</indexterm>
+            <indexterm>inverter start process</indexterm>
+            <indexterm>bypass line readiness</indexterm>
+            <indexterm>control panel start actions</indexterm>
+            <indexterm>system initialization</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>start-up procedure</indexterm>
+            <indexterm>commissioning workflow</indexterm>
+            <indexterm>power-up verification steps</indexterm>
+            <indexterm>safety checks before startup</indexterm>
+            <indexterm>load transfer preparation</indexterm>
+            <indexterm>operational readiness confirmation</indexterm>
+            <indexterm>system boot sequence</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>initial commissioning environment</indexterm>
+            <indexterm>facility operational readiness</indexterm>
+            <indexterm>critical power initialization</indexterm>
+            <indexterm>industrial power-up procedures</indexterm>
+            <indexterm>equipment start context</indexterm>
+            <indexterm>electrical infrastructure activation</indexterm>
+            <indexterm>live system startup environment</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta 
+            name="title"
+            content="Starting the System"/>
+         
+         <othermeta
+            name="shortdesc"
+            content="Provides the complete procedure for starting the UPS system, including safety prerequisites, activation steps, and verification of operational readiness."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta
+            name="entities"
+            content="rectifier; inverter; static bypass; control panel; system controller; load bus; front panel indicators"/>
+         
+         <othermeta
+            name="taxonomy"
+            content="domain:operation procedures;usecase:ups-start-up-sequence;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta
+            name="tags"
+            content="start-up procedure,UPS activation,commissioning,system start,load readiness"/>
+         
+         <othermeta
+            name="usecase"
+            content="Guide operators and commissioning teams through the correct procedure for safely and effectively starting the UPS system"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <hazardstatement conref="../Library/Warnings_Library_0000325173.dita#war_lib/high_current_cap-inverter"
+                       platform="WxW"
+                       class="+ topic/note hazard-d/hazardstatement ">
+         <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+            <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+            <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+         </messagepanel>
+      </hazardstatement>
+      <hazardstatement conref="../Library/Warnings_Library_0000325173.dita#war_lib/high_current_capacitors"
+                       platform="PxW SDC"
+                       class="+ topic/note hazard-d/hazardstatement ">
+         <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+            <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+            <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+         </messagepanel>
+      </hazardstatement>
+      <note conref="../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/ForRedundantSystemsCheckThatEachSte-0FD805BD"
+            class="- topic/note ">
+         <b class="+ topic/ph hi-d/b ">For redundant systems: </b> Check that each step is perform on
+both units before proceeding to next step.</note>
+      <note conref="../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/ForDualSystemsPerformAllTheStepsOnO-0FD807C7"
+            otherprops="typeD"
+            class="- topic/note ">
+         <b class="+ topic/ph hi-d/b ">For dual systems: </b>Perform all the steps
+on one unit, then repeat the complete procedure for the other unit.</note>
+      <note platform="WxW" type="important" class="- topic/note "> The DC capacitors needs to
+be charged before the inverter input switch is closed.</note>
+      <ol class="- topic/ol ">
+         <li class="- topic/li ">
+            <p class="- topic/p ">Check that the system is turned off.</p>
+         </li>
+         <li otherprops="generalM 2pMBS 3pMBS"
+             platform="PxW WxW"
+             class="- topic/li ">
+            <p class="- topic/p ">
+               <b otherprops="generalM" class="+ topic/ph hi-d/b ">Only for systems with a manual bypass switch: </b>Make sure the manual bypass switch is in <b class="+ topic/ph hi-d/b ">Auto</b> position. If
+not turn the manual bypass switch(es) to the <b class="+ topic/ph hi-d/b ">Auto</b> position.</p>
+         </li>
+         <li platform="PxW SDC" class="- topic/li ">
+            <p class="- topic/p ">Close the rectifier mains breaker to turn
+on the power supply to the rectifier.</p>
+         </li>
+         <li platform="WxW" class="- topic/li ">
+            <p class="- topic/p ">Make sure the external source of the DC input
+power is available.</p>
+         </li>
+         <li platform="WxW" class="- topic/li ">
+            <p class="- topic/p ">Charge the DC capacitors:</p>
+            <ol class="- topic/ol ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Keep the charging/discharging switch it in position 2 (charge)
+until the warning LED turns off.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">With the charging/discharging switch still in position 2 (charge),
+close the inverter input switch. If not possible, release the charging/discharging
+switch and quickly close the inverter input switch.</p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">Release the charging/discharging switch.</p>
+               </li>
+            </ol>
+         </li>
+         <li class="- topic/li ">
+            <p class="- topic/p ">After about 10 seconds the <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph class="+ topic/ph pr-d/codeph ">Standby</codeph>.</p>
+            <note conref="../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/autostart_start-up"
+                  class="- topic/note "/>
+         </li>
+         <li class="- topic/li ">
+            <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">ON button</b> for one second, if the unit did
+not start from the autostart. After a few seconds or if any key is
+pressed the <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph platform="PxW WxW" class="+ topic/ph pr-d/codeph ">Normal
+operation load power ...%</codeph>
+               <codeph platform="SDC" class="+ topic/ph pr-d/codeph ">Float charge
+load ...%</codeph>.</p>
+         </li>
+         <li platform="PxW SDC" class="- topic/li ">
+            <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Number 8 key</b> to check the
+DC voltage.</p>
+         </li>
+         <li platform="PxW SDC" class="- topic/li ">
+            <p class="- topic/p ">If the DC voltage is within tolerance, close
+the battery breaker and battery protection breaker if applicable.</p>
+         </li>
+         <li platform="PxW WxW" class="- topic/li ">
+            <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Number 9 key</b> to check that
+the inverter output voltage is within the tolerance range.</p>
+         </li>
+         <li otherprops="generalM 2pMBS 3pMBS noMBS"
+             platform="PxW WxW"
+             class="- topic/li ">
+            <p class="- topic/p ">
+               <b otherprops="generalM" class="+ topic/ph hi-d/b ">Only for systems with a bypass: </b>Close
+the bypass mains breaker to connect the bypass.</p>
+         </li>
+         <li class="- topic/li ">
+            <p class="- topic/p ">Confirm any alarms by pressing the <b class="+ topic/ph hi-d/b ">C key</b> twice.</p>
+         </li>
+         <li class="- topic/li ">
+            <p class="- topic/p ">Make sure the system operates correctly and no alarms are present.</p>
+         </li>
+      </ol>
+   </conbody>
+</concept>

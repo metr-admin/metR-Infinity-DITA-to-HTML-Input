@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="HU250SafetyInformation-12D98C8F"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Safety Information</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-06T17:00:00+05:30" class="- topic/created "/>
+         <revised modified="2025-12-06T17:00:00+05:30" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- product layer -->
+            <indexterm>reality-ups</indexterm>
+            <indexterm>battery-management-system</indexterm>
+            <indexterm>inverter-module</indexterm>
+            <indexterm>communication-module</indexterm>
+            <indexterm>front-panel-display</indexterm>
+            <!-- process layer -->
+            <indexterm>installation-safety-checklist</indexterm>
+            <indexterm>earthing-and-bonding</indexterm>
+            <indexterm>battery-handling-procedure</indexterm>
+            <indexterm>emergency-shutdown-procedure</indexterm>
+            <indexterm>isolation-and-lockout</indexterm>
+            <!-- context layer -->
+            <indexterm>hazardous-area-commissioning</indexterm>
+            <indexterm>data-centre-power-protection</indexterm>
+            <indexterm>oil-and-gas-site-safety</indexterm>
+            <indexterm>mining-site-electrical-safety</indexterm>
+            <indexterm>power-generation-plant-integration</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Safety information"/>
+         <othermeta name="shortdesc" content="Safety rules, battery handling, earthing and emergency procedures for Reality UPS installations."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="ups cabinet;battery modules;inverter boards;earthing terminals;safety interlocks"/>
+         <othermeta name="taxonomy" content="domain:industrial-electrical;usecase:safety-and-compliance;industry:uninterruptible power supply (UPS) systems"/>
+         <othermeta name="tags" content="safety,battery,earthing,emergency-shutdown,personal-protection"/>
+         <othermeta name="usecase" content="inform operators and technicians of required safety measures during installation and maintenance"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <p class="- topic/p ">
+         <hazardstatement type="danger" class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard ">
+                  <b class="+ topic/ph hi-d/b ">HAZARD OF ELECTRIC SHOCK, EXPLOSION, OR ARC FLASH</b>
+               </typeofhazard>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid ">
+                  <sl class="- topic/sl ">
+                     <sli class="- topic/sli ">Apply appropriate personal protective equipment (PPE) and follow
+safe electrical work practices. See NFPA 70E, NOM-029-STPS-2011, and
+CSA Z462.</sli>
+                     <sli class="- topic/sli ">This unit must be installed and serviced only by qualified electrical
+personnel.</sli>
+                     <sli class="- topic/sli ">Turn off all power supplying this unit before working on or inside
+the unit.</sli>
+                     <sli class="- topic/sli ">Always use a properly rated voltage sensing device to confirm
+that the power is off.</sli>
+                     <sli class="- topic/sli ">A live current transformer secondary circuit must not be opened
+without turning off the primary side of the transformer and short
+circuiting transformer secondary circuit first.</sli>
+                     <sli class="- topic/sli ">Replace all devices, doors and covers before turning on power
+to this unit.</sli>
+                  </sl>
+               </howtoavoid>
+            </messagepanel>
+         </hazardstatement>
+         <hazardstatement type="warning" class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard ">LOSS OF CONTROL</typeofhazard>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid ">
+                  <sl class="- topic/sl ">
+                     <sli class="- topic/sli ">The designer of any control scheme must consider the potential
+failure modes of control paths and, for certain critical control functions,
+provide a means to achieve a safe state during and after a path failure.
+Example: Emergency power off.</sli>
+                     <sli class="- topic/sli ">Separate or redundant control paths must be provided for critical
+control functions.</sli>
+                     <sli class="- topic/sli ">System control paths may include communication links. Consideration
+must be given to the implications of anticipated transmission delays
+or failures of the link.</sli>
+                  </sl>
+               </howtoavoid>
+            </messagepanel>
+         </hazardstatement>
+         <hazardstatement type="notice" class="+ topic/note hazard-d/hazardstatement ">
+            <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+               <typeofhazard class="+ topic/li hazard-d/typeofhazard ">INCORRECT POWER SUPPLY ORIENTATION</typeofhazard>
+               <howtoavoid class="+ topic/li hazard-d/howtoavoid ">The polarity of the power supply must be correctly oriented.<sl class="- topic/sl ">
+                     <sli class="- topic/sli ">The negative terminal of the DC voltage supply for the HU250
+must be connected to the negative terminal of the DC supply</sli>
+                     <sli class="- topic/sli ">The positive terminal of the DC voltage supply for the HU250
+must be connected to the positive terminal of the DC supply</sli>
+                  </sl>
+               </howtoavoid>
+            </messagepanel>
+         </hazardstatement>
+      </p>
+   </conbody>
+</concept>

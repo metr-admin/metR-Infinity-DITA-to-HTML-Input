@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="DualSystem-F5F410CE"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Dual System</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates>
+         <created date="2025-12-04T15:00:00+05:30"/>
+         <revised modified="2025-12-04T15:00:00+05:30"/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="installation-engineer,commissioning-engineer,operations-staff,maintenance-technician,service-engineer"/>
+         <keywords>
+            <!-- product layer -->
+            <indexterm>dual-system-configuration</indexterm>
+            <indexterm>redundant-ups-pair</indexterm>
+            <indexterm>master-slave-controller</indexterm>
+            <indexterm>synchronic-communication-link</indexterm>
+            <indexterm>redundancy-module</indexterm>
+            <!-- process layer -->
+            <indexterm>redundancy-commissioning-procedure</indexterm>
+            <indexterm>load-sharing-setup</indexterm>
+            <indexterm>failover-test-sequence</indexterm>
+            <indexterm>synchronization-check</indexterm>
+            <indexterm>maintenance-switchover</indexterm>
+            <!-- context layer -->
+            <indexterm>high-availability-power</indexterm>
+            <indexterm>data-center-redundancy</indexterm>
+            <indexterm>critical-infrastructure</indexterm>
+            <indexterm>continuous-power-supply</indexterm>
+            <indexterm>industrial-process-continuity</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="dual system operation and configuration"/>
+         <othermeta name="shortdesc" content="Covers configuration and testing of dual redundant systems including synchronization, load sharing and failover verification."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="primary ups;secondary ups;synchronization link;load-sharing controller;transfer contactors"/>
+         <othermeta name="taxonomy" content="domain:system-redundancy;usecase:high-availability-setup;industry:uninterruptible power supply systems"/>
+         <othermeta name="tags" content="redundancy,failover,dual-system,synchronization,load-sharing"/>
+         <othermeta name="usecase" content="configure and validate dual redundant ups systems for continuous power"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <div class="- topic/div ">
+         <p class="- topic/p ">A dual system consists of two independent units, that supply
+two independent loads. As an option, a normally open (NO) couple switch
+makes it possible for a dual system to function as a parallel system.
+For information about the couple switch see section <xref href="Optional_Couple_Switch_in_Systems_with_Multiple_Units_CPT_0000380144.dita"
+                  scope="local"
+                  type="concept"
+                  class="- topic/xref "/>.</p>
+         <note platform="PxW WxW" type="important" class="- topic/note ">If a dual system uses a couple switch, or the outputs
+are connected downstream the bypass mains must be connected to the
+same source. In these cases, both inverters must be synchronized to
+the same frequency. For more information about the synchronization
+in parallel systems see <xref href="Output_Synchronization_in_Systems_with_Multiple_Units_CPT_0000380145.dita"
+                  format="dita"
+                  scope="local"
+                  type="concept"
+                  class="- topic/xref "/>.</note>
+         <note platform="SDC" type="important" class="- topic/note ">If a dual system uses a couple switch, or the outputs
+are connected downstream a blocking diode in both systems are necessary.</note>
+         <fig platform="PxW" class="- topic/fig ">
+            <image href="../Images/FD_PxW_Configuration-Options_Dual_System_0000348390.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <fig platform="WxW" class="- topic/fig ">
+            <image href="../Images/FD_WxW_Configuration-Options_Dual_System_2Byp_0000478925.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <fig platform="SDC" class="- topic/fig ">
+            <image href="../Images/FD_SDC_Configuration-Options_Dual_0000517614.svg"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+      </div>
+   </conbody>
+</concept>

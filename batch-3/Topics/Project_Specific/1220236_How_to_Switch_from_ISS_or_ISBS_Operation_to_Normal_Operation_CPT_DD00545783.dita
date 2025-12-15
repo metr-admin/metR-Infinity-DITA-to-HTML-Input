@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="HowToSwitchFromISSOrISBSOperationTo-5AEB8E5E"
+         translate="yes"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">How to Switch from ISS or ISBS Operation to Normal Operation</title>
+   <prolog>
+      <author>Pallavi</author>
+      
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-01+05:30" class="- topic/created "/>
+         <revised modified="2025-12-01" class="- topic/revised "/>
+      </critdates>
+      
+      <metadata>
+         <audience
+            type="role"
+            otherprops="operations,engineering,maintenance,field technician,system operator,technical support"/>
+         
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>ISS operation</indexterm>
+            <indexterm>ISBS operation</indexterm>
+            <indexterm>normal operation</indexterm>
+            <indexterm>static switch</indexterm>
+            <indexterm>manual bypass switch</indexterm>
+            <indexterm>inverter module</indexterm>
+            <indexterm>rectifier module</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>mode transition workflow</indexterm>
+            <indexterm>switching procedure</indexterm>
+            <indexterm>transfer from ISS to normal mode</indexterm>
+            <indexterm>ISBS to normal operation steps</indexterm>
+            <indexterm>load transfer process</indexterm>
+            <indexterm>synchronization verification</indexterm>
+            <indexterm>operational safety confirmation</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>industrial power continuity</indexterm>
+            <indexterm>UPS operational modes</indexterm>
+            <indexterm>critical load environment</indexterm>
+            <indexterm>facility power routing</indexterm>
+            <indexterm>transition safety protocols</indexterm>
+            <indexterm>equipment mode behavior</indexterm>
+            <indexterm>high-availability systems</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-PXC-Reality</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta 
+            name="title"
+            content="How to Switch from ISS or ISBS Operation to Normal Operation"/>
+         
+         <othermeta 
+            name="shortdesc"
+            content="Explains the steps required to switch the system from ISS or ISBS operation back to normal operation, including verification, safety checks, and transfer sequence details."/>
+         
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta
+            name="entities"
+            content="ISS; ISBS; inverter; rectifier; bypass path; static switch; control panel"/>
+         
+         <othermeta
+            name="taxonomy"
+            content="domain:power operation modes;usecase:transition-to-normal-operation;industry:uninterruptible power supply (UPS) systems"/>
+         
+         <othermeta 
+            name="tags"
+            content="ISS,ISBS,normal operation,mode switching,UPS transition,load transfer"/>
+         
+         <othermeta 
+            name="usecase"
+            content="Guide operators in safely transitioning from ISS/ISBS operational states to normal UPS operation"/>
+      </metadata>
+   </prolog>
+   
+   <conbody>
+      <section class="- topic/section ">
+         <sectiondiv class="- topic/sectiondiv ">
+            <hazardstatement conref="../../Library/Warnings_Library_0000325173.dita#war_lib/high_current_cap-inverter"
+                             platform="WxW"
+                             class="+ topic/note hazard-d/hazardstatement ">
+               <messagepanel class="+ topic/ul hazard-d/messagepanel ">
+                  <typeofhazard class="+ topic/li hazard-d/typeofhazard "/>
+                  <howtoavoid class="+ topic/li hazard-d/howtoavoid "/>
+               </messagepanel>
+            </hazardstatement>
+            <p class="- topic/p ">If the independent system surveillance
+(ISS) or independent static bypass switch (ISBS) has triggered the
+unit is locked in bypass operation. Before switching to normal operation
+the unit must first switch to manual bypass so that the system can
+restart.</p>
+            <note type="important" class="- topic/note ">Always contact <xref conref="../../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/Reality_service_centers"
+                     scope="local"
+                     class="- topic/xref "/> if
+the ISS or ISBS was triggered during operation to analyze the cause.</note>
+            <p class="- topic/p ">To switch back to normal operation there are two steps:</p>
+            <ol class="- topic/ol ">
+               <li class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="#./TurnOffTheSystem-842A43A3_1220236"
+                           format="dita"
+                           scope="local"
+                           type="section"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+               <li class="- topic/li ">
+                  <p class="- topic/p ">
+                     <xref href="#./RestartTheSystem-842A4554_1220236"
+                           format="dita"
+                           scope="local"
+                           type="section"
+                           class="- topic/xref "/>
+                  </p>
+               </li>
+            </ol>
+         </sectiondiv>
+      </section>
+      <section id="TurnOffTheSystem-842A43A3_1220236" class="- topic/section ">
+         <title class="- topic/title ">Switch to Manual
+Bypass and Turn Off the System</title>
+         <sectiondiv class="- topic/sectiondiv ">
+            <p class="- topic/p ">The unit needs
+to be turned off to allow the controller board to reset. To turn off
+the system:</p>
+            <ol class="- topic/ol ">
+               <li otherprops="2pMBS" class="- topic/li ">
+                  <p class="- topic/p ">Turn the manual bypass switch to the <b class="+ topic/ph hi-d/b ">Bypass</b> position.</p>
+               </li>
+               <li platform="WxW" class="- topic/li ">
+                  <p class="- topic/p ">Open the inverter input switch to disconnect
+the DC power supply.</p>
+               </li>
+               <li platform="WxW" class="- topic/li ">
+                  <p class="- topic/p ">Discharge the DC capacitor by keeping the charging/discharge
+switch in position 1 (discharge) until the warning LED turns off.</p>
+               </li>
+               <li otherprops="2pMBS" class="- topic/li ">
+                  <p class="- topic/p ">Open the EN (BYP SSW) input switch.</p>
+               </li>
+            </ol>
+            <p class="- topic/p ">The system is turned off and the load is supplied by the bypass.</p>
+         </sectiondiv>
+      </section>
+      <section id="RestartTheSystem-842A4554_1220236" class="- topic/section ">
+         <title class="- topic/title ">Restart the
+System</title>
+         <p class="- topic/p ">After the controller board have been reset the system
+can be started again, if the controller board is operable. To restart
+the system:</p>
+         <note platform="WxW" type="important" class="- topic/note ">The DC capacitors
+needs to be charged before the inverter input switch is closed.</note>
+         <ol id="ISBS-restart_1220236" class="- topic/ol ">
+            <li class="- topic/li ">
+               <p class="- topic/p ">Check that the manual bypass switch is in the <b class="+ topic/ph hi-d/b ">Bypass</b> position.</p>
+            </li>
+            <li otherprops="2pMBS" class="- topic/li ">
+               <p class="- topic/p ">Close the EN (BYP SSW) input switch.</p>
+            </li>
+            <li platform="WxW" class="- topic/li ">
+               <p class="- topic/p ">Make sure the external source of the DC input
+power is available.</p>
+            </li>
+            <li platform="WxW" class="- topic/li ">
+               <p class="- topic/p ">Charge the DC capacitors:</p>
+               <ol class="- topic/ol ">
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Keep the charging/discharging switch it in position 2 (charge)
+until the warning LED turns off.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">With the charging/discharging switch still in position 2 (charge),
+close the inverter input switch. If not possible, release the charging/discharging
+switch and quickly close the inverter input switch.</p>
+                  </li>
+                  <li class="- topic/li ">
+                     <p class="- topic/p ">Release the charging/discharging switch.</p>
+                  </li>
+               </ol>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">After about 10 seconds the <b class="+ topic/ph hi-d/b ">Display</b> shows <codeph class="+ topic/ph pr-d/codeph ">Standby</codeph>.</p>
+               <note conref="../../Library/Reference_Library_CPT_0000338844.dita#Reference_Library-69E2C789/autostart_start-up"
+                     class="- topic/note "/>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Lamp test button</b> and check that all operating
+status and alarm LED’s are illuminated.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">ON button</b> for one second on the front panel.
+After a few seconds the <b class="+ topic/ph hi-d/b ">Display</b> will show <codeph class="+ topic/ph pr-d/codeph ">Normal operation
+load power ...%</codeph>.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Press the <b class="+ topic/ph hi-d/b ">Number 9 key</b> to check that the system output
+voltage is within the tolerance range.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Switch to bypass operation:</p>
+               <note class="- topic/note ">The bypass mains needs
+to be available and within tolerance. The static switch EN (BYP SSW)
+needs to be available.</note>
+               <ol conref="1220236_How_to_Switch_from_Normal_Operation_to_Bypass_Operation_CPT_DD00545782.dita#HowToSwitchFromNormalOperationToByp-5AF57FF1/Switch-to-bypass_1220236"
+                   class="- topic/ol ">
+                  <li class="- topic/li "/>
+               </ol>
+               <note type="important" class="- topic/note ">Never turn the manual bypass switch from <b class="+ topic/ph hi-d/b ">Bypass</b> to <b class="+ topic/ph hi-d/b ">UPS</b> if the static switch EN (BYP SSW) is not
+active.</note>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Turn the manual bypass switch to the <b class="+ topic/ph hi-d/b ">UPS</b> position.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Switch to normal operation:</p>
+               <ol conref="1220236_How_to_Switch_from_Bypass_Operation_to_Normal_Operation_CPT_DD00545781.dita#HowToSwitchFromBypassOperationToNor-5AF6A01C/Switch-to-normal_1220236"
+                   class="- topic/ol ">
+                  <li class="- topic/li "/>
+               </ol>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Confirm any alarms by pressing the <b class="+ topic/ph hi-d/b ">C key</b> twice.</p>
+            </li>
+            <li class="- topic/li ">
+               <p class="- topic/p ">Make sure the system operates correctly and no alarms are present.</p>
+            </li>
+         </ol>
+         <p class="- topic/p ">The system is in normal operation and the load is supplied
+by the system.</p>
+      </section>
+   </conbody>
+</concept>
