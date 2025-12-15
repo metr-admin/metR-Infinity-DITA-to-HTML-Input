@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      xml:lang="en-us"
+      id="t3D141E2-CAB3-11F0-9641-09173F13E4C5"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">Batch Charger Failure</title>
+   <prolog>
+      <author>Yashshree</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-12-02+05:30" class="- topic/created "/>
+         <revised modified="2025-12-02" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="machine-operators, maintenance-personnel, industrial-engineers, reliability-engineers, safety-compliance-officers, management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>batch-charger</indexterm>
+            <indexterm>batch-system</indexterm>
+            <indexterm>melter-scada</indexterm>
+            <indexterm>drive-chain</indexterm>
+            <indexterm>drive-shaft</indexterm>
+            <indexterm>bearing</indexterm>
+            <indexterm>conveyor</indexterm>
+            <!-- Process layer -->
+            <indexterm>diagnosis</indexterm>
+            <indexterm>troubleshooting</indexterm>
+            <indexterm>fault-isolation</indexterm>
+            <indexterm>preventive-maintenance</indexterm>
+            <indexterm>component-replacement</indexterm>
+            <!-- Context layer -->
+            <indexterm>glass-manufacturing</indexterm>
+            <indexterm>cold-end-operations</indexterm>
+            <indexterm>process-automation</indexterm>
+            <indexterm>production-line</indexterm>
+            <indexterm>safety-compliance</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-BAT-Soul</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Batch Charger Failure"/>
+         <othermeta name="shortdesc" content="See the following to diagnose and resolve a batch charger ..."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="Batch charger;Batch system;drive chain;drive shaft;Bearing"/>
+         <othermeta name="taxonomy" content="domain:industrial-engineering;usecase:maintenance-troubleshooting;industry:glass-manufacturing"/>
+         <othermeta name="tags" content="batch-charger-failure,batch-charger_failure"/>
+         <othermeta name="usecase" content="diagnose-and-resolve-equipment-failure"/>
+      </metadata>
+   </prolog>
+   <taskbody>
+      <context class="- topic/section task/context ">
+         <p class="- topic/p ">See the following to diagnose and resolve a batch charger failure:</p>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Common symptoms of charger failure:</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <ul class="- topic/ul ">
+                  <li class="- topic/li ">A sudden decrease in melter weight</li>
+                  <li class="- topic/li ">A sudden increase in melter temperature</li>
+               </ul>
+               <p class="- topic/p ">The charger can fail in multiple ways:</p>
+               <ul id="ul_un4_trw_rcc" class="- topic/ul ">
+                  <li class="- topic/li ">Motor failure </li>
+                  <li class="- topic/li ">Gearbox failure</li>
+                  <li class="- topic/li ">Drive chain failure</li>
+                  <li class="- topic/li ">Drive shaft failure</li>
+                  <li class="- topic/li ">Bearing failure</li>
+                  <li class="- topic/li ">Screw failure</li>
+                  <li class="- topic/li ">Water jacket failure</li>
+                  <li class="- topic/li ">VFD fault or deviation</li>
+               </ul>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <note id="note_ar3_zgw_rcc" class="- topic/note ">
+               <table id="table_bbv_zgw_rcc" class="- topic/table ">
+                  <tgroup cols="2" class="- topic/tgroup ">
+                     <colspec colname="c1" colnum="1" colwidth="1*" class="- topic/colspec "/>
+                     <colspec colname="c2" colnum="2" colwidth="1*" class="- topic/colspec "/>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">
+                                 <b class="+ topic/ph hi-d/b ">PPE Required</b>: Respirator or PAPR.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Dust hazard.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Toxic materials.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Pinch hazard.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Fall hazard. Utilize 3 points of contact on ladders.</p>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </note>
+            <cmd class="- topic/ph task/cmd ">Inspect the charger surge hopper.</cmd>
+            <info class="- topic/itemgroup task/info ">If the surge hopper is empty,<ul class="- topic/ul ">
+                  <li class="- topic/li ">Check the SBS for alarms or faults.</li>
+                  <li class="- topic/li ">Clean buildup off the sides of the surge hopper. Buildup can interfere with
+                     the surge hopper level sensor.</li>
+               </ul>
+               <p class="- topic/p ">im</p>
+               <p class="- topic/p ">If the surge hopper is full,</p>
+               <ul id="ul_kwc_wrw_rcc" class="- topic/ul ">
+                  <li class="- topic/li ">There might be an issue with the charger or the batch inlet could be
+                     clogged.</li>
+               </ul>
+               <note type="note" id="note_lsv_wrw_rcc" class="- topic/note ">
+                  <p class="- topic/p ">Do not damage nearby instruments such as the moisture analyzer.</p>
+               </note>
+               <p class="- topic/p ">
+                  <fig id="fig_csn_c3w_rcc" class="- topic/fig ">
+                     <image href="media/image1.jpg"
+                            placement="break"
+                            id="image_cdz_dsw_rcc"
+                            align="center"
+                            class="- topic/image "/>
+                  </fig>
+               </p>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <note id="note_lk4_ghw_rcc" class="- topic/note ">
+               <table id="table_hmg_hhw_rcc" class="- topic/table ">
+                  <tgroup cols="2" class="- topic/tgroup ">
+                     <colspec colname="c1" colnum="1" colwidth="1*" class="- topic/colspec "/>
+                     <colspec colname="c2" colnum="2" colwidth="1*" class="- topic/colspec "/>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">
+                                 <b class="+ topic/ph hi-d/b ">PPE Required</b>: Respirator or PAPR, fire-resistant jacket,
+                                 heat-resistant gloves, face shield with IR shade 5.0 lens.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Dust hazard.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Caution: Hot surfaces.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Bright molten glass.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Trip hazard. Use caution near pipes and wires.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Falling hot objects.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Heat Stress. Use the buddy system.</p>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </note>
+            <cmd class="- topic/ph task/cmd ">Inspect the inlet tube.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <ul class="- topic/ul ">
+                  <li class="- topic/li ">Remove the outer top cover from the inlet tube.</li>
+                  <li class="- topic/li ">The cover weighs approximately 7 kg (15 lbs) and has a handle.</li>
+                  <li class="- topic/li ">Leave the inner perforated cover on to contain any splashing glass.</li>
+               </ul>
+               <p class="- topic/p ">
+                  <fig id="fig_rvj_f3w_rcc" class="- topic/fig ">
+                     <image href="media/image2.jpg"
+                            placement="break"
+                            id="image_b1l_qtw_rcc"
+                            align="center"
+                            class="- topic/image "/>
+                  </fig>
+               </p>
+               <p class="- topic/p ">
+                  <fig id="fig_x1d_stw_rcc" class="- topic/fig ">
+                     <image href="media/image3.jpg"
+                            placement="break"
+                            id="image_vvn_stw_rcc"
+                            align="center"
+                            class="- topic/image "/>
+                  </fig>
+               </p>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">If the inlet tube is dark:</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <ul class="- topic/ul ">
+                  <li class="- topic/li ">The batch inlet is clogged.</li>
+                  <li class="- topic/li ">Complete all the steps in BAT-ET-101A Clearning Plugs from the Batch System.</li>
+               </ul>
+               <p class="- topic/p ">If the inlet tube is bright:</p>
+               <ul id="ul_qv3_wtw_rcc" class="- topic/ul ">
+                  <li class="- topic/li ">The batch inlet is clear.</li>
+                  <li class="- topic/li ">There might be an issue with the charger.</li>
+               </ul>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">At the operator station, go to the <uicontrol class="+ topic/ph ui-d/uicontrol ">Overview</uicontrol> tab.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <ul class="- topic/ul ">
+                  <li class="- topic/li ">Check if <b class="+ topic/ph hi-d/b ">CH1SPD</b> is operating at the expected speed.</li>
+               </ul>
+               <p class="- topic/p ">
+                  <fig id="fig_utt_g3w_rcc" class="- topic/fig ">
+                     <image href="media/image4.jpg"
+                            placement="break"
+                            id="image_qls_b5w_rcc"
+                            align="center"
+                            class="- topic/image "/>
+                  </fig>
+               </p>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Physically inspect the Batch Charger VFD.</cmd>
+            <info class="- topic/itemgroup task/info ">Check the current reading, displayed at the bottom of the screen.<ul class="- topic/ul ">
+                  <li class="- topic/li ">If the current is 0, the motor fuses might be blown.</li>
+                  <li class="- topic/li ">If the VFD shows an overcurrent fault, the charger might be jammed.</li>
+                  <li class="- topic/li ">If the VFD shows that the motor is running at a normal current (between 1-7
+                     amps), the drive chain might be broken.</li>
+               </ul>
+               <note type="note" id="note_fr3_25w_rcc" class="- topic/note ">
+                  <p class="- topic/p ">The issue must be resolved before resetting any faults.</p>
+               </note>
+               <p class="- topic/p ">
+                  <fig id="fig_abd_33w_rcc" class="- topic/fig ">
+                     <title class="- topic/title ">Streator VFD Shown</title>
+                     <image href="media/image5.jpg"
+                            placement="break"
+                            id="image_l14_35w_rcc"
+                            align="center"
+                            class="- topic/image "/>
+                  </fig>
+               </p>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">If the VFD values are not the same as the operator station values:</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <ul class="- topic/ul ">
+                  <li class="- topic/li ">Run the charger off of the VFD.</li>
+                  <li class="- topic/li ">Tell the Tech 5 there is a discrepancy between the operator station and VFD.</li>
+               </ul>
+               <p class="- topic/p ">
+                  <fig id="fig_qpq_m3w_rcc" class="- topic/fig ">
+                     <image href="media/image6.jpg"
+                            placement="break"
+                            id="image_unf_p5w_rcc"
+                            align="center"
+                            class="- topic/image "/>
+                  </fig>
+               </p>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <note id="note_rdh_n3w_rcc" class="- topic/note ">
+               <table id="table_ydz_n3w_rcc" class="- topic/table ">
+                  <tgroup cols="2" class="- topic/tgroup ">
+                     <colspec colname="c1" colnum="1" colwidth="1*" class="- topic/colspec "/>
+                     <colspec colname="c2" colnum="2" colwidth="1*" class="- topic/colspec "/>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Lockout tagout.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Electric shock.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Rotating parts.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Pinch hazard.</p>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </note>
+            <cmd class="- topic/ph task/cmd ">If the VFD shows 0 “zero” current or an overcurrent fault: </cmd>
+            <info class="- topic/itemgroup task/info ">
+               <ul class="- topic/ul ">
+                  <li class="- topic/li ">LO/TO the charger.</li>
+                  <li class="- topic/li ">Remove any large obstructions in the discharge of the charger surge
+                     hopper.</li>
+                  <li class="- topic/li ">Contact the line leader.</li>
+                  <li class="- topic/li ">The Tech 5 can briefly reverse the screw to clear small clogs.</li>
+                  <li class="- topic/li ">The Tech 5 replaces fuses if necessary.</li>
+               </ul>
+               <p class="- topic/p ">
+                  <fig id="fig_t2f_s5w_rcc" class="- topic/fig ">
+                     <image href="media/image7.jpg"
+                            placement="break"
+                            id="image_wb3_t5w_rcc"
+                            align="center"
+                            class="- topic/image "/>
+                  </fig>
+               </p>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">If the VFD shows that the motor is running at a normal current, physically inspect the charger.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <ul class="- topic/ul ">
+                  <li class="- topic/li ">Check if the fan of the motor is spinning.</li>
+                  <li class="- topic/li ">Check if the drive chain is broken.</li>
+               </ul>
+               <p class="- topic/p ">If the fan of the motor is spinning but the drive chain is not moving</p>
+               <ul id="ul_rzr_w5w_rcc" class="- topic/ul ">
+                  <li class="- topic/li ">The gearbox might have failed.</li>
+               </ul>
+               <p class="- topic/p ">If the fan of the motor is spinning and the drive chain is moving:</p>
+               <ul id="ul_bzz_y5w_rcc" class="- topic/ul ">
+                  <li class="- topic/li ">The screw might have failed.</li>
+               </ul>
+               <p class="- topic/p ">
+                  <fig id="fig_fyw_s3w_rcc" class="- topic/fig ">
+                     <title class="- topic/title ">Holzminden Charger Shown</title>
+                     <image href="media/image8.jpg"
+                            placement="break"
+                            id="image_hxs_bvw_rcc"
+                            align="center"
+                            class="- topic/image "/>
+                  </fig>
+               </p>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">If the obstruction cannot be removed from the charger or the motor, gearbox, drive chain, or the screw has failed:</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <ul class="- topic/ul ">
+                  <li class="- topic/li ">Inform the Tech 5 that the charger requires service.</li>
+                  <li class="- topic/li ">The melter needs to be put in a Hot Hold until the fault can be resolved.</li>
+               </ul>
+               <p class="- topic/p ">
+                  <fig id="fig_ddp_t3w_rcc" class="- topic/fig ">
+                     <image href="media/image9.jpg"
+                            placement="break"
+                            id="image_yvg_gvw_rcc"
+                            align="center"
+                            class="- topic/image "/>
+                  </fig>
+               </p>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Complete all steps in MLT-OP-101H to set the melter to a Hot Hold.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">To confirm that the screw has failed:</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <ul class="- topic/ul ">
+                  <li class="- topic/li ">Remove the heat shield wrap around the charger barrel.</li>
+                  <li class="- topic/li ">Loosen and remove any bolts if needed.</li>
+                  <li class="- topic/li ">Remove any straps if needed.</li>
+               </ul>
+               <p class="- topic/p ">
+                  <fig id="fig_tln_53w_rcc" class="- topic/fig ">
+                     <title class="- topic/title ">Streator Charger Barrel Shown</title>
+                     <image href="media/image10.jpg"
+                            placement="break"
+                            id="image_lnw_qvw_rcc"
+                            align="center"
+                            class="- topic/image "/>
+                  </fig>
+               </p>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <note id="note_j4v_v3w_rcc" class="- topic/note ">
+               <table id="table_eb4_w3w_rcc" class="- topic/table ">
+                  <tgroup cols="2" class="- topic/tgroup ">
+                     <colspec colname="c1" colnum="1" colwidth="1*" class="- topic/colspec "/>
+                     <colspec colname="c2" colnum="2" colwidth="1*" class="- topic/colspec "/>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">
+                                 <b class="+ topic/ph hi-d/b ">PPE Required: </b>Respirator or PAPR.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Lockout tagout. </p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Dust hazard.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Toxic materials</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Pinch hazard.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Fall hazard. Utilize 3 points of contact on ladders.</p>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+               <b class="+ topic/ph hi-d/b ">Tools Required</b>: Rubber mallet, pry bar, vacuum, screwdriver.</note>
+            <cmd class="- topic/ph task/cmd "/>
+            <info class="- topic/itemgroup task/info ">
+               <ul class="- topic/ul ">
+                  <li class="- topic/li ">Close the surge hopper gate.</li>
+                  <li class="- topic/li ">LO/TO the charger.</li>
+                  <li class="- topic/li ">Disconnect the charger from the chopper.</li>
+                  <li class="- topic/li ">Remove the retaining nut on the front left leg of the charger.</li>
+               </ul>
+               <note type="note" id="note_y1m_1ww_rcc" class="- topic/note ">
+                  <p class="- topic/p ">Do not damage nearby instruments, such as the moisture analyzer.</p>
+               </note>
+               <p class="- topic/p ">
+                  <fig id="fig_lls_fww_rcc" class="- topic/fig ">
+                     <title class="- topic/title ">Streator Shown</title>
+                     <image href="media/image11.jpg"
+                            placement="break"
+                            id="image_vwg_gww_rcc"
+                            align="center"
+                            class="- topic/image "/>
+                  </fig>
+               </p>
+            </info>
+            <substeps id="substeps_q33_cww_rcc" class="- topic/ol task/substeps ">
+               <substep class="- topic/li task/substep ">
+                  <note id="note_tzt_pjw_rcc" class="- topic/note ">
+                     <table id="table_rck_qjw_rcc" class="- topic/table ">
+                        <tgroup cols="2" class="- topic/tgroup ">
+                           <colspec colname="c1" colnum="1" colwidth="1*" class="- topic/colspec "/>
+                           <colspec colname="c2" colnum="2" colwidth="1*" class="- topic/colspec "/>
+                           <tbody class="- topic/tbody ">
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "/>
+                                 <entry class="- topic/entry ">
+                                    <p class="- topic/p ">
+                                       <b class="+ topic/ph hi-d/b ">PPE Required</b>: Respirator or PAPR.</p>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "/>
+                                 <entry class="- topic/entry ">
+                                    <p class="- topic/p ">Dust hazard.</p>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "/>
+                                 <entry class="- topic/entry ">
+                                    <p class="- topic/p ">Toxic materials.</p>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "/>
+                                 <entry class="- topic/entry ">
+                                    <p class="- topic/p ">Pinch hazard.</p>
+                                 </entry>
+                              </row>
+                              <row class="- topic/row ">
+                                 <entry class="- topic/entry "/>
+                                 <entry class="- topic/entry ">
+                                    <p class="- topic/p ">Fall hazard. Utilize 3 points of contact on ladders.</p>
+                                 </entry>
+                              </row>
+                           </tbody>
+                        </tgroup>
+                     </table>
+                  </note>
+                  <cmd class="- topic/ph task/cmd "/>
+                  <info class="- topic/itemgroup task/info ">
+                     <ul id="ul_ery_dww_rcc" class="- topic/ul ">
+                        <li class="- topic/li ">Remove the brakes from the rear wheels.</li>
+                        <li class="- topic/li ">Pull the charger fully away from the melter so the screw is
+                           exposed.</li>
+                        <li class="- topic/li ">Reinstall the charger brakes once the screw is exposed.</li>
+                        <li class="- topic/li ">Cover the melter opening with fiber board.</li>
+                     </ul>
+                  </info>
+               </substep>
+            </substeps>
+         </step>
+         <step class="- topic/li task/step ">
+            <note id="note_d3s_mww_rcc" class="- topic/note ">
+               <table id="table_g15_nww_rcc" class="- topic/table ">
+                  <tgroup cols="2" class="- topic/tgroup ">
+                     <colspec colname="c1" colnum="1" colwidth="1*" class="- topic/colspec "/>
+                     <colspec colname="c2" colnum="2" colwidth="1*" class="- topic/colspec "/>
+                     <tbody class="- topic/tbody ">
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">
+                                 <b class="+ topic/ph hi-d/b ">PPE Required</b>: Respirator or PAPR.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Dust hazard.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Toxic materials.</p>
+                           </entry>
+                        </row>
+                        <row class="- topic/row ">
+                           <entry class="- topic/entry "/>
+                           <entry class="- topic/entry ">
+                              <p class="- topic/p ">Pinch hazard.</p>
+                           </entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </note>
+            <cmd class="- topic/ph task/cmd ">Inspect the charger screw.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <ul class="- topic/ul ">
+                  <li class="- topic/li ">Check if the screw is damaged or out of position.</li>
+                  <li class="- topic/li ">Repair and replace as needed.</li>
+               </ul>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">If the chopper failed:</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <ul class="- topic/ul ">
+                  <li class="- topic/li ">See BAT-ET-101F.</li>
+               </ul>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">If the inlet is clogged:</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <ul class="- topic/ul ">
+                  <li class="- topic/li ">See BAT-ET-101G.</li>
+               </ul>
+            </info>
+         </step>
+      </steps>
+   </taskbody>
+</task>
