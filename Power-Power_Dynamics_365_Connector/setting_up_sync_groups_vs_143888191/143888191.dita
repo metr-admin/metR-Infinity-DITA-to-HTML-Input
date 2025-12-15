@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="c247B04C-BDF2-11F0-2106-09173F13E4C5"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Setting up Sync Groups</title>
+   <prolog>
+      <author>Yashshree</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-24+05:30" class="- topic/created "/>
+         <revised modified="2025-11-24" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>metr-365-power</indexterm>
+            <indexterm>doc-manager</indexterm>
+            <indexterm>doc-migration</indexterm>
+            <indexterm>doc-editor</indexterm>
+            <indexterm>doc-publisher</indexterm>
+            <indexterm>gatsby</indexterm>
+            <!-- Process layer -->
+            <indexterm>doc-conversion</indexterm>
+            <indexterm>metadata-enrichment</indexterm>
+            <indexterm>ingestion-pipeline</indexterm>
+            <indexterm>tagging-and-indexing</indexterm>
+            <indexterm>validation-workflow</indexterm>
+            <indexterm>sync-configuration</indexterm>
+            <!-- Context layer -->
+            <indexterm>revenue-lifecycle-management</indexterm>
+            <indexterm>revenue-operations</indexterm>
+            <indexterm>revenue-lifecycle-management</indexterm>
+            <indexterm>revenue-lifecycle-management</indexterm>
+            <indexterm>crm-integration</indexterm>
+            <indexterm>billing-cycle</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-365-Power</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Updating an Existing Sync Group"/>
+         <othermeta name="shortdesc" content="Update an existing sync group: add/remove objects and fields; subsequent runs pick up the changes."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="sync-group;object;field;power-automate;dynamics-365;document;topic;doc-manager"/>
+         <othermeta name="taxonomy" content="domain:revenue-operations;usecase:metadata-enrichment;industry:revenue-lifecycle-management"/>
+         <othermeta name="tags" content="sync-group,update,object,field,metadata,enrichment"/>
+         <othermeta name="usecase" content="metadata-enrichment"/>
+      </metadata>
+   </prolog>
+   <conbody>
+      <p class="- topic/p ">A Sync Group is a logical group of objects that will be synced together. Each Sync Group has an associated scheduler and a connection. When the scheduler associated with the Sync Group runs, the system will use the connection parameters specified in <xref href="../configuring_data_sync_con_143899280/143899280.dita"
+               format="dita"
+               class="- topic/xref ">Configuring Data Sync Connections</xref> associated to the Sync Group to connect with the CRM instance.</p>
+      <p class="- topic/p ">To get started, create a new sync group and add objects and fields to be synced between the Dynamics 365 and Power.</p>
+      <note type="warning" class="- topic/note ">
+         <p class="- topic/p ">A sync group should consists of inter-related objects only. Configuring many objects with multiple lookup fields in a single sync group will impact the performance adversely.</p>
+      </note>
+      <note type="note" class="- topic/note ">
+         <p class="- topic/p ">Before setting up a sync group, make sure to verify that the PowerAutomate flow has been configured and the connection includes the flow Id — otherwise any schedule created for the sync group will not run. Refer to <xref href="../deploying_the_connector_v_154927375/154927375.dita"
+                  format="dita"
+                  class="- topic/xref ">Deploying the Connector</xref> and <xref href="../configuring_data_sync_con_143899280/143899280.dita"
+                  format="dita"
+                  class="- topic/xref ">Configuring Data Sync Connections</xref> for steps.</p>
+      </note>
+      <note type="note" class="- topic/note ">
+         <p class="- topic/p ">If you are configuring the connector for Power Quote-to-Cash for Dynamics 365, do not create new sync groups. Instead, refer to <xref href="to_update_punch_out_sync_groups_for_Power_quote_to_cash_for_dynamics_365.dita#c2482EDF-BDF2-11F0-2143-09173F13E4C5"
+                  class="- topic/xref ">Updating Sync Groups</xref>. To add objects and fields to be synced from Power to Dynamics 365, edit the "Punch Out 1 (Read only)" sync group. To add objects and fields to be synced from Dynamics 365 to Power, edit the "Punch Out 2 (Read only)" sync group. </p>
+      </note>
+   </conbody>
+</concept>

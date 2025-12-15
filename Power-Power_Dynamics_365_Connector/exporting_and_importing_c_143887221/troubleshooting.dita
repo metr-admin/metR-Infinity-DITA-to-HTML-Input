@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="t245994A-BDF2-11F0-1048-09173F13E4C5"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">Troubleshooting</title>
+   <prolog>
+      <author>Yashshree</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-24+05:30" class="- topic/created "/>
+         <revised modified="2025-11-24" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- PRODUCT -->
+            <indexterm>troubleshooting</indexterm>
+            <indexterm>metr-365-power</indexterm>
+            <indexterm>diagnostic-module</indexterm>
+            <indexterm>sync-module</indexterm>
+            <indexterm>config-module</indexterm>
+            <indexterm>integration-service</indexterm>
+            
+            <!-- PROCESS -->
+            <indexterm>troubleshooting</indexterm>
+            <indexterm>error-analysis</indexterm>
+            <indexterm>synchronizing</indexterm>
+            <indexterm>validating</indexterm>
+            <indexterm>mapping</indexterm>
+            <indexterm>retrying</indexterm>
+            
+            <!-- CONTEXT -->
+            <indexterm>revenue-lifecycle-management</indexterm>
+            <indexterm>revenue-lifecycle-management</indexterm>
+            <indexterm>revenue-operations</indexterm>
+            <indexterm>data-integration</indexterm>
+            <indexterm>cloud-environment</indexterm>
+            <indexterm>sync-ecosystem</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-365-Power</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="Troubleshooting"/>
+         <othermeta name="shortdesc" content="Identify and resolve common synchronisation issues using diagnostic tools and error logs."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="configuration;object;id-field;sync-job;error-log;mapping-table"/>
+         <othermeta name="taxonomy" content="domain:revenue-operations;usecase:troubleshooting;industry:revenue-lifecycle-management"/>
+         <othermeta name="tags" content="troubleshooting,error-analysis,revenue-lifecycle-management"/>
+         <othermeta name="usecase" content="troubleshooting"/>
+      </metadata>
+   </prolog>
+   <taskbody>
+      <context id="context_yzc_pqg_c2c" class="- topic/section task/context ">
+         <p class="- topic/p ">Following the steps as described above should result in an import with no errors, as
+            long as the target environment does not contain the data exported from the source
+            environment. In some cases, manual modifications to either Excel file may result in some
+            records not being imported. If there is a problem with the Excel file during the import
+            process, Dynamics 365 will usually display a warning to the user.</p>
+         <p class="- topic/p ">If the import fails but no error messages are displayed, follow these steps to locate
+            the import error report:</p>
+      </context>
+      <steps id="steps_xfj_qqg_c2c" class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Go to <menucascade class="+ topic/ph ui-d/menucascade ">
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Advanced Settings</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Settings</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Data Management</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Import</uicontrol>
+               </menucascade>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click the link under <b class="+ topic/ph hi-d/b ">Import Name</b> that corresponds to your import job (it
+               will match the filename of the file you imported).</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">View data in the log that is displayed, showing all rows in the Excel file that
+               failed as part of the import.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <note type="note" id="note_zzc_pqg_c2c" class="- topic/note ">
+                  <p class="- topic/p ">There is no descriptive information displayed in the log that will pinpoint the
+                     exact reason for any failure. If you want to investigate further, check the
+                     number provided in the <b class="+ topic/ph hi-d/b ">Error Code </b>column. Convert this decimal to a
+                     hexadecimal and run a search in your browser using the numeric value of the
+                     hexadecimal. You should find the error code in Microsoft's documentation.</p>
+               </note>
+            </info>
+         </step>
+      </steps>
+   </taskbody>
+</task>

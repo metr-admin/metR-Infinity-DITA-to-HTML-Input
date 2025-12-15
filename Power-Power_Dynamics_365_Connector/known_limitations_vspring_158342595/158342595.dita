@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+         id="c245D33A-BDF2-11F0-5348-09173F13E4C5"
+         xml:lang="en"
+         ditaarch:DITAArchVersion="1.3"
+         domains="(topic concept)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "
+         class="- topic/topic concept/concept ">
+   <title class="- topic/title ">Known Limitations</title>
+   <prolog>
+      <author>Yashshree</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-24+05:30" class="- topic/created "/>
+         <revised modified="2025-11-24" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- PRODUCT -->
+            <indexterm>158342595</indexterm>
+            <indexterm>metr-365-power</indexterm>
+            <indexterm>config-module</indexterm>
+            <indexterm>sync-module</indexterm>
+            <indexterm>mapping-module</indexterm>
+            <indexterm>integration-service</indexterm>
+            
+            <!-- PROCESS -->
+            <indexterm>reviewing</indexterm>
+            <indexterm>evaluating</indexterm>
+            <indexterm>troubleshooting</indexterm>
+            <indexterm>mapping</indexterm>
+            <indexterm>validating</indexterm>
+            <indexterm>synchronizing</indexterm>
+            
+            <!-- CONTEXT -->
+            <indexterm>revenue-lifecycle-management</indexterm>
+            <indexterm>revenue-lifecycle-management</indexterm>
+            <indexterm>revenue-operations</indexterm>
+            <indexterm>data-integration</indexterm>
+            <indexterm>cloud-environment</indexterm>
+            <indexterm>sync-ecosystem</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-365-Power</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="Known Limitations"/>
+         <othermeta name="shortdesc" content="Review the currently known limitations of the synchronisation and configuration system."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="configuration;object;id-field;sync-job;error-log;mapping-table"/>
+         <othermeta name="taxonomy" content="domain:revenue-operations;usecase:known-limitations;industry:revenue-lifecycle-management"/>
+         <othermeta name="tags" content="known-limitations,reviewing,revenue-lifecycle-management"/>
+         <othermeta name="usecase" content="known-limitations"/>
+      </metadata>
+   </prolog>
+   <conbody>
+      <p class="- topic/p ">The following are known limitations for the Power-Dynamics 365 Connector as of the current release:</p>
+      <ul class="- topic/ul ">
+         <li class="- topic/li ">After creating a sync group, the user must provide a value for "Last Sync Time" as a one-time only task. "Last Sync Time" is the time when the first data sync operation is run.</li>
+         <li class="- topic/li ">The Address field is not supported. <b class="+ topic/ph hi-d/b ">Workaround: </b>Copy fields of type Address, convert them into individual fields such as "Street" (Text), Country (picklist), State (picklist), and Zip (numerical, text, or picklist), and then sync. </li>
+         <li class="- topic/li ">The Composite field is not supported.</li>
+         <li class="- topic/li ">If there is a discrepancy between the source and destination field type, the sync will not be successful.</li>
+         <li class="- topic/li ">Dynamics 365 has a limitation where a process cannot be run for more than 2 minutes. When this occurs, the connector will pause the sync and resume at the next scheduled run.</li>
+      </ul>
+   </conbody>
+</concept>

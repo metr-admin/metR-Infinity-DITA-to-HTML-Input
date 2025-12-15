@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="t2474719-BDF2-11F0-6621-09173F13E4C5"
+      xml:lang="en"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">To find the code for your Dynamics 365 picklist value</title>
+   <prolog>
+      <author>Yashshree</author>
+      <critdates class="- topic/critdates ">
+         <created date="2025-11-24+05:30" class="- topic/created "/>
+         <revised modified="2025-11-24" class="- topic/revised "/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="production,maintenance,quality,safety,engineering,management"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>dynamics-365</indexterm>
+            <indexterm>metr-365-power</indexterm>
+            <indexterm>power</indexterm>
+            <indexterm>picklist-service</indexterm>
+            <indexterm>crm-ui</indexterm>
+            <indexterm>option-metadata-engine</indexterm>
+            
+            <!-- Process layer -->
+            <indexterm>retrieve-picklist-code</indexterm>
+            <indexterm>view-option-metadata</indexterm>
+            <indexterm>identify-picklist-values</indexterm>
+            <indexterm>open-advanced-settings</indexterm>
+            <indexterm>inspect-system-customization</indexterm>
+            <indexterm>locate-attribute-metadata</indexterm>
+            
+            <!-- Context layer -->
+            <indexterm>crm-customization</indexterm>
+            <indexterm>revenue-lifecycle-management</indexterm>
+            <indexterm>metadata-discovery</indexterm>
+            <indexterm>revenue-lifecycle-management</indexterm>
+            <indexterm>dynamics-power-integration</indexterm>
+            <indexterm>picklist-mapping-context</indexterm>
+         </keywords>
+         
+         <prodinfo>
+            <prodname>metR-365-Power</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         
+         <othermeta name="title" content="To find the code for your Dynamics 365 picklist value"/>
+         <othermeta name="shortdesc" content="Retrieve the numeric code for a picklist value in Dynamics 365 so it can be mapped correctly to a matching value in Power."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         
+         <othermeta name="entities" content="Dynamics 365;Power;picklist;metadata;field;option code"/>
+         <othermeta name="taxonomy" content="domain:revenue-operations;usecase:retrieve-picklist-code;industry:revenue-lifecycle-management"/>
+         <othermeta name="tags" content="picklist,metadata,code,dynamics-365,mapping,option-values"/>
+         <othermeta name="usecase" content="retrieve picklist codes for cross-system mapping"/>
+      </metadata>
+   </prolog>
+   <taskbody>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Navigate to <menucascade class="+ topic/ph ui-d/menucascade ">
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Settings</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Customizations</uicontrol>
+                  <uicontrol class="+ topic/ph ui-d/uicontrol ">Customize the System</uicontrol>
+               </menucascade>.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">From the left navigation bar, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Entities</uicontrol> under Components.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <fig class="- topic/fig ">
+                  <image height="400"
+                         placement="break"
+                         href="../attachments/143887218/143887232.png"
+                         class="- topic/image "/>
+               </fig>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Use Ctrl+F (Command+F on a Mac) to search for the entity where the picklist field exists and double-click the entity (for example, "Agreement").</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">From the left navigation bar, click <uicontrol class="+ topic/ph ui-d/uicontrol ">Fields</uicontrol> under the entity name.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <fig class="- topic/fig ">
+                  <image height="400"
+                         placement="break"
+                         href="../attachments/143887218/143887231.png"
+                         class="- topic/image "/>
+               </fig>
+            </info>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Use Ctrl+F (Command + F on a Mac) to search for the picklist field and double-click the field name (the type must be "Option Set").</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Click an <uicontrol class="+ topic/ph ui-d/uicontrol ">Option</uicontrol> to see its value displayed in the <uicontrol class="+ topic/ph ui-d/uicontrol ">Value</uicontrol> field to the right.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <fig class="- topic/fig ">
+                  <image height="150"
+                         placement="break"
+                         href="../attachments/143887218/143887233.png"
+                         class="- topic/image "/>
+               </fig>
+            </info>
+         </step>
+      </steps>
+   </taskbody>
+</task>
