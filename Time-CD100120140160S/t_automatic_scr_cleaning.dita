@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+      id="t38A7B26-BDF3-11F0-2033-09173F13E4C5"
+      xml:lang="en-us"
+      ditaarch:DITAArchVersion="1.3"
+      domains="(topic task)                            (topic abbrev-d)                            a(props deliveryTarget)                            (topic equation-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic mathml-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic svg-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)                            (topic task strictTaskbody-c)   "
+      class="- topic/topic task/task ">
+   <title class="- topic/title ">Automatic SCR Cleaning</title>
+   <prolog>
+      <author>Suchitra</author>
+      <critdates>
+         <created date="2025-11-15T15:30:00+05:30"/>
+         <revised modified="2025-11-15T15:30:00+05:30"/>
+      </critdates>
+      <metadata>
+         <audience type="role" otherprops="maintenance-personnel,automation-technicians,reliability-engineers,industrial-engineers,safety-compliance-officers"/>
+         <keywords>
+            <!-- Product layer -->
+            <indexterm>scr-cleaner</indexterm>
+            <indexterm>automatic-cleaning-system</indexterm>
+            <indexterm>cleaning-controller</indexterm>
+            <indexterm>brush-assembly</indexterm>
+            <indexterm>scr-module</indexterm>
+            <!-- Process layer -->
+            <indexterm>automatic-clean-cycle</indexterm>
+            <indexterm>cleaning-parameter-setup</indexterm>
+            <indexterm>nozzle-cleaning</indexterm>
+            <indexterm>filter-backflush</indexterm>
+            <indexterm>system-diagnostics</indexterm>
+            <!-- Context layer -->
+            <indexterm>preventive-maintenance</indexterm>
+            <indexterm>equipment-cleaning</indexterm>
+            <indexterm>operational-uptime</indexterm>
+            <indexterm>warehouse-hygiene</indexterm>
+            <indexterm>material-handling</indexterm>
+         </keywords>
+         <prodinfo>
+            <prodname>metR-Time-CD100120140160S</prodname>
+            <platform>web</platform>
+         </prodinfo>
+         <othermeta name="title" content="Automatic scr cleaning"/>
+         <othermeta name="shortdesc" content="Guidance for using and servicing the automatic scr cleaning system including cycle configuration and troubleshooting."/>
+         <othermeta name="language" content="en-GB"/>
+         <othermeta name="version" content="1.0.0"/>
+         <othermeta name="docStage" content="approved"/>
+         <othermeta name="access.role" content="internal"/>
+         <othermeta name="data.classification" content="non-sensitive"/>
+         <othermeta name="retention.policy" content="standard-36m"/>
+         <othermeta name="entities" content="scr-cleaner;controller;nozzle;brush;filter"/>
+         <othermeta name="taxonomy" content="domain:maintenance;usecase:automatic-cleaning;industry:heavy machinery and industrial equipment"/>
+         <othermeta name="tags" content="cleaning,automatic,scr,service,maintenance"/>
+         <othermeta name="usecase" content="automatic-scr-cleaning-and-service"/>
+      </metadata>
+   </prolog>
+   <taskbody>
+      <context class="- topic/section task/context ">
+         <p class="- topic/p ">The ECU attempts to start SCR cleaning during working—“automatic SCR cleaning”—at a proper
+      moment after determining the moment. Once automatic SCR cleaning starts, the high temperature
+      indicator lamp lights up with a popup appearing for the operator to notice it.</p>
+         <p class="- topic/p ">
+            <fig id="fig_kwk_44z_5gc" class="- topic/fig ">
+               <image href="media/image718(1).png"
+                      id="image_mwk_44z_5gc"
+                      placement="inline"
+                      class="- topic/image "/>
+            </fig>
+         </p>
+         <p class="- topic/p ">&lt;Display that notifies the operator of automatic SCR cleaning &gt;</p>
+         <p class="- topic/p ">If automatic SCR cleaning is failed due to a low exhaust temperature, you should perform it
+      after the vehicle stops. Therefore, it is recommended to keep the vehicle working as far as
+      possible in order to ensure automatic SCR cleaning is fully completed. While automatic SCR
+      cleaning is being carried out, exhaust emissions above 500°C may cause fires or burns.</p>
+         <p class="- topic/p ">Setting this switch to position "3" prohibits automatic SCR Cleaning in an environment
+      subject to dust, explosion or regulated noise level. At position "3", a pop-up appears as
+      shown below:</p>
+         <fig id="fig_zbd_p4z_5gc" class="- topic/fig ">
+            <image href="media/image849.png"
+                   id="image_ccd_p4z_5gc"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <p class="- topic/p ">&lt;SCR Cleaning inhibited&gt;</p>
+         <p class="- topic/p ">If automatic SCR cleaning is failed, you should carry it out a while after the vehicle starts
+      working.<ul class="- topic/ul ">
+               <li class="- topic/li ">A pop-up on the SCR Display warns the operator to perform SCR Cleaning. (3 warnings: at 10
+          hrs remaining, 5 hrs remaining, Immediate)</li>
+            </ul>
+         </p>
+         <fig id="fig_ugn_p4z_5gc" class="- topic/fig ">
+            <image href="media/image850.png"
+                   id="image_wgn_p4z_5gc"
+                   placement="inline"
+                   class="- topic/image "/>
+         </fig>
+         <p class="- topic/p ">&lt;Exemplary warning – 10 hrs remaining&gt;</p>
+         <p class="- topic/p ">Limit the engine power and stop the current work when SCR cleaning is not used; you will be
+      violating the exhaust regulations if you do not.</p>
+         <p class="- topic/p ">To carry out SCR cleaning safely, observe the following steps:</p>
+      </context>
+      <steps class="- topic/ol task/steps ">
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Park the vehicle at a safe place. White smoke can be emitted during SCR Cleaning.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Remove the flammable material or stained oil from exhaust system. High temperature of
+        exhaust system and gas can cause fire.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Engage the parking brake, and make sure the gear is in neutral.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Allow engine to warm up sufficiently; the SCR cleaning is not possible in cold
+        condition.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">After holding down the switch at the “3” position for three seconds, check that SCR
+        cleaning has started.</cmd>
+         </step>
+         <step class="- topic/li task/step ">
+            <cmd class="- topic/ph task/cmd ">Once SCR cleaning finishes, the LCD display will show a notification.</cmd>
+            <info class="- topic/itemgroup task/info ">
+               <p class="- topic/p ">Press this switch and release it after 3 sec, SCREEN Cleaning will be started and the engine
+          speed will be increased. Screen pop-up provides information on the warning up and cleaning
+          process.</p>
+               <p class="- topic/p ">
+                  <fig id="fig_oz4_q4z_5gc" class="- topic/fig ">
+                     <image href="media/image718(2).png"
+                            id="image_qz4_q4z_5gc"
+                            placement="inline"
+                            class="- topic/image "/>
+                  </fig>
+               </p>
+               <p class="- topic/p ">&lt;Proceeding&gt;</p>
+               <p class="- topic/p ">
+                  <fig id="fig_vc1_r4z_5gc" class="- topic/fig ">
+                     <image href="media/image719(1).png"
+                            id="image_xc1_r4z_5gc"
+                            placement="inline"
+                            class="- topic/image "/>
+                  </fig>
+               </p>
+               <p class="- topic/p ">&lt;Completed&gt;</p>
+            </info>
+         </step>
+      </steps>
+   </taskbody>
+</task>
