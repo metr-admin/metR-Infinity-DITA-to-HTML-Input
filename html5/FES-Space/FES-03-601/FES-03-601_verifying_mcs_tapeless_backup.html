@@ -1,0 +1,204 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metr-fes-space,mcs,machine-control-server,tapeless-backup,backup-repository,nas,nfs,smb,s3-compatible-storage,verify-backup,backup-validation,restore-readiness-test,checksum-verification,log-analysis,incremental-backup,full-backup,differential-backup,snapshot,replication,deduplication,encryption-at-rest,encryption-in-transit,manual-trigger,backup-agent,agentless-backup,rsync,scp,ftp,restore-point,rpo,rto,glass-manufacturing,production-floor,furnace-control-systems,plc,scada,hmi,historian,opc-ua,modbus,ethernet-ip,maintenance-window,operator-console,control-room,site-backup-policy,backup-infrastructure,backup-scheduler,backup-policy,purpose-and-application,backup-scope,data-retention,backup-frequency,policy-compliance,archive-rotation,audit-trail,approval-workflow,production-ops,regulatory-compliance,operational-continuity,shift-handover,vendor-support,safety-requirements,ppe,lockout-tagout,hazard-assessment,electrical-safety,ergonomics,incident-reporting,confined-space,production-environment,site-compliance,regional-regulation,safety-officer,log-aggregator,monitoring-tool,procedure,step-by-step-verification,manual-backup-trigger,check-backup-log,tail-log,grep-errors,validate-checksum,mount-backup,perform-restore-test,check-permissions,verify-file-ownership,service-restart,systemd-timer,cronjob,backup-manifest,runbook,escalation,incident-ticket,production-safety,uptime-assurance,control-system-readiness,shift-coordination,training-module,required-training,competency-assessment,restore-test-training,log-analysis-training,security-awareness,refresher-training,certification,operator-skills,maintenance-readiness,reference-docs,vendor-manual,references,standards,approval-records,kb-article,archive,knowledge-base,regulatory-guidance,contact-matrix,collaboration,escalation-path,communication-protocol,handover,incident-escalation,support-ticket,site-coordinator,regional-support,cross-site-support,revision-history,change-log,document-version,approval-record"><meta name="keywords" content="metr-fes-space, mcs, machine-control-server, tapeless-backup, backup-repository, nas, nfs, smb, s3-compatible-storage, verify-backup, backup-validation, restore-readiness-test, checksum-verification, log-analysis, incremental-backup, full-backup, differential-backup, snapshot, replication, deduplication, encryption-at-rest, encryption-in-transit, manual-trigger, backup-agent, agentless-backup, rsync, scp, ftp, restore-point, rpo, rto, glass-manufacturing, production-floor, furnace-control-systems, plc, scada, hmi, historian, opc-ua, modbus, ethernet-ip, maintenance-window, operator-console, control-room, site-backup-policy, backup-infrastructure, backup-scheduler, backup-policy, purpose-and-application, backup-scope, data-retention, backup-frequency, policy-compliance, archive-rotation, audit-trail, approval-workflow, production-ops, regulatory-compliance, operational-continuity, shift-handover, vendor-support, safety-requirements, ppe, lockout-tagout, hazard-assessment, electrical-safety, ergonomics, incident-reporting, confined-space, production-environment, site-compliance, regional-regulation, safety-officer, log-aggregator, monitoring-tool, procedure, step-by-step-verification, manual-backup-trigger, check-backup-log, tail-log, grep-errors, validate-checksum, mount-backup, perform-restore-test, check-permissions, verify-file-ownership, service-restart, systemd-timer, cronjob, backup-manifest, runbook, escalation, incident-ticket, production-safety, uptime-assurance, control-system-readiness, shift-coordination, training-module, required-training, competency-assessment, restore-test-training, log-analysis-training, security-awareness, refresher-training, certification, operator-skills, maintenance-readiness, reference-docs, vendor-manual, references, standards, approval-records, kb-article, archive, knowledge-base, regulatory-guidance, contact-matrix, collaboration, escalation-path, communication-protocol, handover, incident-escalation, support-ticket, site-coordinator, regional-support, cross-site-support, revision-history, change-log, document-version, approval-record"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-FES-Space"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-11-11+05:30"><meta name="DC.date.modified" content="2025-11-11+05:30"><meta name="RevisionDate" content="05-09-2022"><meta name="DocumentNumber" content="FES-03-601"><meta name="title" content="Verifying MCS Tapeless Backup"><meta name="shortdesc" content="How to verify tapeless backups on the Machine Control Server (MCS): check logs, validate checksums, and run restore-readiness checks."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="entities" content="MCS;Backup agent;NAS;Snapshot;Restore point;Checksum;Backup log"><meta name="taxonomy" content="domain:glass-manufacturing;usecase:verify-mcs-tapeless-backup;industry:manufacturing"><meta name="tags" content="backup,verify,tapeless,mcs,nas,restore"><meta name="usecase" content="Validate tapeless backup success and readiness for restore"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c2129EDC-BB02-11F0-1298-09173F13E4C5"><meta name="DC.language" content="en-us"><title>Verifying MCS Tapeless Backup</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c2129EDC-BB02-11F0-1298-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Verifying MCS Tapeless Backup</h1>
+   
+   <div class="body conbody"></div>
+<article class="topic concept nested1" aria-labelledby="ariaid-title2" lang="en-us" id="c212255A-BB02-11F0-1932-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">Purpose and Application</h2>
+   
+   <div class="body conbody">
+      <p class="p">This document describes how to verify that MCS tapeless backups, as configured in FES-03-600, are occurring. Backups are scheduled every Saturday morning.</p>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title3" lang="en-us" id="c21286DB-BB02-11F0-1875-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">Safety</h2>
+   
+   <div class="body conbody">
+      <div class="p">Observe Space standard safety requirements and procedures defined by the Global Environmental
+         Health , andamp; Safety (EH, andamp;S) organization, as well as all applicable local, regional, and
+         national requirements. Safety equipment and instructions specific to the completion of this
+         work instruction are detailed in the Instructions Section.<table class="simpletable" id="c21286DB-BB02-11F0-1875-09173F13E4C5__table_f4p_1y1_rzb"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">
+                  <div class="p">
+                     <figure class="fig fignone" id="c21286DB-BB02-11F0-1875-09173F13E4C5__fig_g4p_1y1_rzb"><figcaption><span class="fig--title-label">Figure 1. </span>Electricity</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="c21286DB-BB02-11F0-1875-09173F13E4C5__image_h4p_1y1_rzb" src="media/image1.jpg"></div><br>
+                     </figure>
+                  </div>
+               </td>
+               <td class="stentry">
+                  <div class="p">
+                     <figure class="fig fignone" id="c21286DB-BB02-11F0-1875-09173F13E4C5__fig_i4p_1y1_rzb"><figcaption><span class="fig--title-label">Figure 2. </span>High Noise Level</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="c21286DB-BB02-11F0-1875-09173F13E4C5__image_j4p_1y1_rzb" src="media/image2.jpg"></div><br>
+                     </figure>
+                  </div>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title4" lang="en-us" id="r2120DE6-BB02-11F0-3974-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title4">Procedure</h2>
+   
+   <div class="body refbody">
+      <section class="section">
+         <ol class="ol">
+            <li class="li">Log onto the MCS Windows Server as Administrator.</li>
+            <li class="li">Open Windows Explorer.</li>
+            <li class="li">Navigate to <strong class="ph b">G:\Backups\Archive</strong>
+               <figure class="fig fignone">
+                  <br><div class="imagecenter"><img class="image imagecenter" src="media/image3.jpg"></div><br>
+               </figure>
+            </li>
+            <li class="li">Verify the most recent files were written last Saturday. Each backup has a set of three files.<ol class="ol" type="a">
+                  <li class="li">MCS, andlt;system, andgt;_Full_, andlt;date and time, andgt;.zip – Full backup of the Windows server.</li>
+                  <li class="li">MCS, andlt;system, andgt;_SQL_, andlt;date and time, andgt;.zip – Backup of the SQL database.</li>
+                  <li class="li">MCS, andlt;system, andgt;_VMS_, andlt;date and time, andgt;.zip – Full backup of the VMS server.</li>
+               </ol>
+            </li>
+         </ol>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title5" lang="en-us" id="c212566A-BB02-11F0-8637-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title5">Required Training</h2>
+   
+   <div class="body conbody">
+      <p class="p">Before performing this work instruction, applicable personnel must be trained by an authorized trainer on the required training contents listed in this document.</p>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title6" lang="en-us" id="r2123D38-BB02-11F0-1061-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title6">References</h2>
+   
+   <div class="body refbody">
+      <section class="section">
+         <ul class="ul">
+            <li class="li">FES-03-600 Adding Tapeless Backup Capability to MCS Systems.</li>
+         </ul>
+      </section>
+      <section class="section" id="r2123D38-BB02-11F0-1061-09173F13E4C5__section_v3c_py1_rzb"><h3 class="title sectiontitle">Document Classification</h3>
+         
+         <ul class="ul" id="r2123D38-BB02-11F0-1061-09173F13E4C5__ul_z2w_py1_rzb">
+            <li class="li">Asset Protection and Stability</li>
+            <li class="li">Organization and Training</li>
+         </ul>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title7" lang="en-us" id="c211F5E9-BB02-11F0-5126-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title7">Collaboration</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c211F5E9-BB02-11F0-5126-09173F13E4C5__table_qxf_sy1_rzb"><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Country Group</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Role</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Name</strong>
+                  </p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Americas North</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Forming Electronics Specialist</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Dan Knuckles</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Europe</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Forming Electronics Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Remko Beckers</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Central Europe</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Regional Leader Forming Electronics</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Ruud Bormans</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">France - Spain</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jean-Pierre Locato</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jean-Pierre Locato</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Latin America</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">IS Machine Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Miguel Morales</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Engineering - Forming</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Associate Engineer</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jose Gonzalez</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Global</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Global Forming Electronics Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Franklin Barrios</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title8" lang="en-us" id="c2126EDC-BB02-11F0-1284-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title8">Revision History</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c2126EDC-BB02-11F0-1284-09173F13E4C5__table_stf_5y1_rzb"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">2021-03-04</td>
+               <td class="stentry">
+                  <p class="p">Originally Released as Process Control SOP-21-001</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2021-10-12</td>
+               <td class="stentry">
+                  <p class="p">Approved by Franklin Barrios, Global Leader FES Network.</p>
+                  <p class="p">SOP changed into GMF Work Instruction MAC-03-424</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2022-05-09</td>
+               <td class="stentry">
+                  <p class="p">Approved by Franklin Barrios, Global Leader FES Network.</p>
+                  <p class="p">Moved to GMF Site as FES-03-601</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article></article></article></main></body></html>

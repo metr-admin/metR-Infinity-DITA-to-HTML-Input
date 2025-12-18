@@ -1,0 +1,259 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metR-fes-space,machine-server,scs-0237-gr223,backup-utility,system-software,backup-verification,server-validation,data-integrity-check,backup-scheduling,machine-server-maintenance,glass-manufacturing,industrial-automation,production-environment,server-reliability,system-recovery-procedure,metr-fes-space,production-line-system,machine-server-validation,system-monitoring,configuration-management,data-consistency-check,industrial-engineering,server-backup-process,process-reliability,backup-agent,restore-utility,logging-service,backup-verification-process,apply-restore-test,log-review,scheduled-backup-check,configuration-validation,system-reliability,data-protection,operational-testing,backup-system,electrical-control-unit,data-storage-system,safety-precautions,backup-procedure,server-inspection,electrical-safety-check,emergency-shutdown,machine-operation,industrial-safety,equipment-handling,server-maintenance,standard-operating-procedure,backup-process,operational-sop,sop-application,procedure-reference,process-integration,task-mapping,operational-compliance,production-operations,maintenance-routines,quality-procedures,safety-procedures,backup-hardware,storage-device,network-interface,equipment-setup,hardware-inspection,backup-validation,system-connection-check,preventive-maintenance,server-backup-procedure,maintenance-environment,swset-223,backup-utility-manual,verification-guidelines,restore-procedure-docs,operational-standards,configuration-references,support-guides,industry-standards,maintenance-procedures,technical-references,support-tools,monitoring-console,cross-team-collaboration,escalation-procedure,handover-process,incident-communication,backup-coordination,maintenance-window,service-level-agreement,operational-governance,document-history,change-log,version-record,revision-tracking,change-management,document-approval,release-notes,update-procedure,quality-assurance,compliance-record,archive-management"><meta name="keywords" content="metR-fes-space, machine-server, scs-0237-gr223, backup-utility, system-software, backup-verification, server-validation, data-integrity-check, backup-scheduling, machine-server-maintenance, glass-manufacturing, industrial-automation, production-environment, server-reliability, system-recovery-procedure, metr-fes-space, production-line-system, machine-server-validation, system-monitoring, configuration-management, data-consistency-check, industrial-engineering, server-backup-process, process-reliability, backup-agent, restore-utility, logging-service, backup-verification-process, apply-restore-test, log-review, scheduled-backup-check, configuration-validation, system-reliability, data-protection, operational-testing, backup-system, electrical-control-unit, data-storage-system, safety-precautions, backup-procedure, server-inspection, electrical-safety-check, emergency-shutdown, machine-operation, industrial-safety, equipment-handling, server-maintenance, standard-operating-procedure, backup-process, operational-sop, sop-application, procedure-reference, process-integration, task-mapping, operational-compliance, production-operations, maintenance-routines, quality-procedures, safety-procedures, backup-hardware, storage-device, network-interface, equipment-setup, hardware-inspection, backup-validation, system-connection-check, preventive-maintenance, server-backup-procedure, maintenance-environment, swset-223, backup-utility-manual, verification-guidelines, restore-procedure-docs, operational-standards, configuration-references, support-guides, industry-standards, maintenance-procedures, technical-references, support-tools, monitoring-console, cross-team-collaboration, escalation-procedure, handover-process, incident-communication, backup-coordination, maintenance-window, service-level-agreement, operational-governance, document-history, change-log, version-record, revision-tracking, change-management, document-approval, release-notes, update-procedure, quality-assurance, compliance-record, archive-management"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-FES-Space"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-11-10+05:30"><meta name="DC.date.modified" content="2025-11-10+05:30"><meta name="RevisionDate" content="07-05-2022"><meta name="DocumentNumber" content="FES-03-117"><meta name="title" content="Verifying Machine Server Backups"><meta name="shortdesc" content="This procedure explains how to verify that Machine Server backups are properly occurring when using SWSet 223 (SCS-0237-GR223) or higher."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="machine-server;backup-system;scs-0237-gr223;data-storage;system-software"><meta name="taxonomy" content="domain:industrial-engineering;usecase:server-backup-verification;industry:glass-manufacturing"><meta name="tags" content="backup-verification, machine-server, system-integrity, production-maintenance, swset-223"><meta name="usecase" content="verify-machine-server-backup-process"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c2095C2E-BB02-11F0-9405-09173F13E4C5"><meta name="DC.language" content="en-us"><title>Verifying Machine Server Backups</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c2095C2E-BB02-11F0-9405-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Verifying Machine Server Backups</h1>
+   
+   <div class="body conbody"></div>
+<article class="topic concept nested1" aria-labelledby="ariaid-title2" lang="en-us" id="c208E49D-BB02-11F0-3475-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">Purpose</h2>
+   
+   <div class="body conbody">
+      <p class="p">This document describes how to verify that Machine Server backups are properly occurring.
+         It assumes that SWSet 223 (SCS-0237-GR223) or greater is being used.</p>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title3" lang="en-us" id="c20884DA-BB02-11F0-1598-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">Application</h2>
+   
+   <div class="body conbody">
+      <p class="p">This work instruction applies to all Space Plants that have FSC and Space IS Machines.</p>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title4" lang="en-us" id="c2092C3C-BB02-11F0-1327-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title4">Safety</h2>
+   
+   <div class="body conbody">
+      <p class="p">Follow all plant safety requirements.</p>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title5" lang="en-us" id="r208CC81-BB02-11F0-8283-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title5">Procedure</h2>
+   
+   <div class="body refbody">
+      <section class="section">
+         <ol class="ol">
+            <li class="li">On the backup Machine Server, log off the <strong class="ph b">obop</strong> account (using the sequence Start-, andgt;Shutdown-, andgt;Log Off).</li>
+            <li class="li">Log onto the backup Machine Server using the administrator account (password: <strong class="ph b">scsgolden</strong>).</li>
+            <li class="li">Right-click the <span class="ph uicontrol">My Computer</span> icon, and select
+               <strong class="ph b">explore</strong>.</li>
+            <li class="li">Navigate to the C:\SpaceApps\Backups\, andlt;server
+               name, andgt;directory, where , andlt;server name, andgt; is the name of the Machine Server backup
+               to be verified.</li>
+            <li class="li">In this directory, confirm the presence of a file named <strong class="ph b">backup.zip</strong>. It should
+               have the current (today’s) date in the Date Modified column, with a time of
+               approximately 1:00AM (see Figure <a class="xref" href="FES-03-117_verifying_machine_server_backups.html#r208CC81-BB02-11F0-8283-09173F13E4C5__fig_izw_d3z_qzb">1</a>). <figure class="fig fignone" id="r208CC81-BB02-11F0-8283-09173F13E4C5__fig_izw_d3z_qzb"><figcaption><span class="fig--title-label">Figure 1. </span>Figure 1: Restore Machine Server Utility</figcaption>
+                  
+                  <br><div class="imagecenter"><img class="image imagecenter" id="r208CC81-BB02-11F0-8283-09173F13E4C5__image_kzw_d3z_qzb" src="media/image1.jpg"></div><br>
+               </figure>
+            </li>
+            <li class="li">Double-click the <span class="ph uicontrol">backup.zip</span> file.</li>
+            <li class="li">Open the temp directory in the backup.zip file (see Figure <a class="xref" href="FES-03-117_verifying_machine_server_backups.html#r208CC81-BB02-11F0-8283-09173F13E4C5__fig_kg1_g3z_qzb">2</a>). <figure class="fig fignone" id="r208CC81-BB02-11F0-8283-09173F13E4C5__fig_kg1_g3z_qzb"><figcaption><span class="fig--title-label">Figure 2. </span>Figure 2: Temp Directory Contents</figcaption>
+                  
+                  <br><div class="imagecenter"><img class="image imagecenter" id="r208CC81-BB02-11F0-8283-09173F13E4C5__image_lg1_g3z_qzb" src="media/image2.jpg"></div><br>
+               </figure>
+            </li>
+            <li class="li">Verify that the following files are present:<ol class="ol" type="a">
+                  <li class="li">
+                     <strong class="ph b">eso1</strong> (directory).<ol class="ol" type="i">
+                        <li class="li">Empty directory</li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">
+               <strong class="ph b">eso2</strong> (directory).<ol class="ol" type="a">
+                  <li class="li">Empty directory.</li>
+               </ol>
+            </li>
+            <li class="li">
+               <strong class="ph b">esov1</strong> (directory).<ol class="ol" type="a">
+                  <li class="li">Profiles for the ESO.</li>
+               </ol>
+            </li>
+            <li class="li">
+               <strong class="ph b">esov2</strong> (directory).<ol class="ol" type="a">
+                  <li class="li">Empty directory.</li>
+               </ol>
+            </li>
+            <li class="li">
+               <strong class="ph b">ldr1</strong> (directory).<ol class="ol" type="a">
+                  <li class="li">Profiles for the lehr loader.</li>
+               </ol>
+            </li>
+            <li class="li">
+               <strong class="ph b">ldr2</strong> (directory).<ol class="ol" type="a">
+                  <li class="li">Empty directory</li>
+               </ol>
+            </li>
+            <li class="li">
+               <strong class="ph b">ndl1</strong> (directory).<ol class="ol" type="a">
+                  <li class="li">Profiles for the needles.</li>
+               </ol>
+            </li>
+            <li class="li">
+               <strong class="ph b">ndl2</strong> (directory).<ol class="ol" type="a">
+                  <li class="li">Empty directory.</li>
+               </ol>
+            </li>
+            <li class="li">
+               <strong class="ph b">BackupFiles.bat</strong>.</li>
+            <li class="li">
+               <strong class="ph b">BAK.tkn</strong>.</li>
+            <li class="li">
+               <strong class="ph b">CS3.ini</strong>.</li>
+            <li class="li">CS3_1xx.DAT.<ol class="ol" type="a">
+                  <li class="li">The xx indicates the section’s IP address.</li>
+                  <li class="li">These files exist for COM-SOC 3 lines only.</li>
+                  <li class="li">These are the primary backup for the current running timing on the forming Machine.  They should have a modified time between 12:40AM and 1AM of the current day.</li>
+               </ol>
+            </li>
+            <li class="li">CS3_1xx.BAK.<ol class="ol" type="a">
+                  <li class="li">The xx indicates the section’s IP address.</li>
+                  <li class="li">This files exist for OSI/EICOM lines only.</li>
+                  <li class="li">These are the secondary backup for the current running timing on the forming Machine.  They should have a modified time between 12:40AM and 1:00 AM of the current day.</li>
+               </ol>
+            </li>
+            <li class="li">DEVICE.tkn.</li>
+            <li class="li">Machine_Configuration.txt</li>
+         </ol>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title6" lang="en-us" id="c2094436-BB02-11F0-1213-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title6">SOP Used In</h2>
+   
+   <div class="body conbody">
+      <ol class="ol">
+         <li class="li">SOP-06-004-B Activating a Backup Machine Server</li>
+         <li class="li">SOP-16-009 Configuring MDMS Backups</li>
+         <li class="li">SOP-16-010 Manual MDMS Backup</li>
+      </ol>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title7" lang="en-us" id="c208B463-BB02-11F0-3984-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title7">Equipment</h2>
+   
+   <div class="body conbody">
+      <p class="p">Space Forming Machine Server Backup System</p>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title8" lang="en-us" id="r208FC61-BB02-11F0-5180-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title8">References</h2>
+   
+   <div class="body refbody">
+      <section class="section" id="r208FC61-BB02-11F0-5180-09173F13E4C5__section_x22_1jz_qzb"><h3 class="title sectiontitle">Document Classification</h3>
+         
+         <ul class="ul" id="r208FC61-BB02-11F0-5180-09173F13E4C5__ul_gyx_1jz_qzb">
+            <li class="li">Asset Protection and Stability</li>
+            <li class="li">Organization and Training</li>
+         </ul>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title9" lang="en-us" id="c2089C3F-BB02-11F0-1737-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title9">Collaboration</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c2089C3F-BB02-11F0-1737-09173F13E4C5__table_fcv_djz_qzb"><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Country Group</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Role</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Name</strong>
+                  </p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Americas North</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Forming Electronics Specialist</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Dan Knuckles</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Europe</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Forming Electronics Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Remko Beckers</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Central Europe</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Regional Leader Forming Electronics</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Ruud Bormans</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">France - Spain</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jean-Pierre Locato</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jean-Pierre Locato</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Latin America</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">IS Machine Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Miguel Morales</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Engineering - Forming</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Associate Engineer</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jose Gonzalez</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Global</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Global Forming Electronics Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Franklin Barrios</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title10" lang="en-us" id="c2091437-BB02-11F0-3444-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title10">Revision History</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c2091437-BB02-11F0-3444-09173F13E4C5__table_g43_gjz_qzb"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">2016-12-01</td>
+               <td class="stentry">
+                  <p class="p">Originally Released as Process Control SOP-16-008</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2022-07-05</td>
+               <td class="stentry">
+                  <p class="p">Approved by Franklin Barrios, Global Leader FES Network</p>
+                  <p class="p">Moved to GMF Site as FES-03-117</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article></article></article></main></body></html>

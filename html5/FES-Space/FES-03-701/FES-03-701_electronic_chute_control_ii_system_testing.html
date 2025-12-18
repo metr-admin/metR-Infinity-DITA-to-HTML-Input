@@ -1,0 +1,567 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metR-fes-space,electronic-chute-control-ii,chute-assembly-ii,servo-actuator,encoder-feedback,proportional-valve,io-link,canopen,plc-io,system-testing,functional-test,pid-tuning,encoder-calibration,actuator-response-time,hysteresis-check,deadband-adjustment,pneumatic-flow-test,proportional-valve-calibration,diagnostic-scan,fault-code-clearing,signal-integrity,loopback-test,glass-manufacturing,gob-handling,control-room,production-floor,safety-interlock,vendor-metapercept,operator-tuning,advanced-actuation,closed-loop-control,networked-io,purpose-and-application,scope-of-testing,acceptance-criteria,failure-modes,preventive-maintenance,calibration-schedule,production-line,quality-control,vendor-support,site-policy,process-stability,electrical-panel,servo-drive,safety-requirements,lockout-tagout,ppe,electrical-isolation,safe-torque-off,emergency-stop,arc-flash-assessment,risk-assessment,production-environment,site-compliance,incident-reporting,safety-officer,operator-awareness,encoder,io-link-sensor,stepwise-instructions,power-up-sequence,encoder-zeroing,pid-parameter-entry,io-link-commission,canopen-node-config,wiring-verification,manual-override,hmi-commands,safe-mode-init,production-ops,operator-guidance,maintenance-window,shift-coordination,chute-ii-training,servo-drive-training,io-link-training,canopen-training,required-training,competency-assessment,pid-tuning-training,diagnostics-training,safety-training,refresher-training,authorized-personnel,certified-technician,trainer,maintenance-readiness,vendor-manuals,servo-manual,io-link-spec,canopen-spec,references,kb-articles,diagnostic-guides,wiring-diagrams,calibration-sheets,site-procedures,regulatory-guidance,knowledge-base,appendix-a,wiring-diagram,pneumatic-layout,io-link-mapping,canopen-network,pid-table,encoder-specification,schematic-reference,parameter-mapping,signal-assignment,connector-reference,harness-verification,sensor-addressing,actuator-configuration,power-supply-check,machine-installation,commissioning,maintenance-reference,engineering-drawings,appendix-b,test-records,calibration-data,diagnostic-log,trend-graph,sensor-feedback,actuator-performance,data-recording,test-log-validation,performance-analysis,tolerance-check,benchmark-comparison,error-trace,result-documentation,report-generation,system-qualification,factory-acceptance-test,site-acceptance-test,production-readiness,quality-assurance,approval-record,approver,sign-off,release-authorization,chute-control-ii,revision-history,change-log,fes-03-700,document-version"><meta name="keywords" content="metR-fes-space, electronic-chute-control-ii, chute-assembly-ii, servo-actuator, encoder-feedback, proportional-valve, io-link, canopen, plc-io, system-testing, functional-test, pid-tuning, encoder-calibration, actuator-response-time, hysteresis-check, deadband-adjustment, pneumatic-flow-test, proportional-valve-calibration, diagnostic-scan, fault-code-clearing, signal-integrity, loopback-test, glass-manufacturing, gob-handling, control-room, production-floor, safety-interlock, vendor-metapercept, operator-tuning, advanced-actuation, closed-loop-control, networked-io, purpose-and-application, scope-of-testing, acceptance-criteria, failure-modes, preventive-maintenance, calibration-schedule, production-line, quality-control, vendor-support, site-policy, process-stability, electrical-panel, servo-drive, safety-requirements, lockout-tagout, ppe, electrical-isolation, safe-torque-off, emergency-stop, arc-flash-assessment, risk-assessment, production-environment, site-compliance, incident-reporting, safety-officer, operator-awareness, encoder, io-link-sensor, stepwise-instructions, power-up-sequence, encoder-zeroing, pid-parameter-entry, io-link-commission, canopen-node-config, wiring-verification, manual-override, hmi-commands, safe-mode-init, production-ops, operator-guidance, maintenance-window, shift-coordination, chute-ii-training, servo-drive-training, io-link-training, canopen-training, required-training, competency-assessment, pid-tuning-training, diagnostics-training, safety-training, refresher-training, authorized-personnel, certified-technician, trainer, maintenance-readiness, vendor-manuals, servo-manual, io-link-spec, canopen-spec, references, kb-articles, diagnostic-guides, wiring-diagrams, calibration-sheets, site-procedures, regulatory-guidance, knowledge-base, appendix-a, wiring-diagram, pneumatic-layout, io-link-mapping, canopen-network, pid-table, encoder-specification, schematic-reference, parameter-mapping, signal-assignment, connector-reference, harness-verification, sensor-addressing, actuator-configuration, power-supply-check, machine-installation, commissioning, maintenance-reference, engineering-drawings, appendix-b, test-records, calibration-data, diagnostic-log, trend-graph, sensor-feedback, actuator-performance, data-recording, test-log-validation, performance-analysis, tolerance-check, benchmark-comparison, error-trace, result-documentation, report-generation, system-qualification, factory-acceptance-test, site-acceptance-test, production-readiness, quality-assurance, approval-record, approver, sign-off, release-authorization, chute-control-ii, revision-history, change-log, fes-03-700, document-version"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-FES-Space"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-11-11+05:30"><meta name="DC.date.modified" content="2025-11-11+05:30"><meta name="RevisionDate" content="05-09-2022"><meta name="DocumentNumber" content="FES-03-701"><meta name="title" content="Electronic Chute Control II — System Testing"><meta name="shortdesc" content="System-level tests for Electronic Chute Control II: servo and encoder checks, PID tuning, IO-Link/CANopen communications, proportional valve calibration and diagnostic procedures."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="entities" content="servo-actuator;encoder;PID;proportional-valve;IO-Link;CANopen;PLC I/O;diagnostic log"><meta name="taxonomy" content="domain:glass-manufacturing;usecase:electronic-chute-control-ii-testing;industry:glass-manufacturing"><meta name="tags" content="chute-ii,servo,encoder,pid,canopen,iolink,proportional-valve,diagnostics"><meta name="usecase" content="Verify advanced chute-control behaviour, feedback loops, communications and acceptance criteria"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c2147607-BB02-11F0-2760-09173F13E4C5"><meta name="DC.language" content="en-us"><title>Electronic Chute Control II System Testing</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c2147607-BB02-11F0-2760-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Electronic Chute Control II System Testing</h1>
+   
+   <div class="body conbody"></div>
+<article class="topic concept nested1" aria-labelledby="ariaid-title2" lang="en-us" id="c214A515-BB02-11F0-5101-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">Purpose and Application</h2>
+   
+   <div class="body conbody">
+      <section class="section" id="c214A515-BB02-11F0-5101-09173F13E4C5__section_kqx_qzf_rzb"><h3 class="title sectiontitle">Purpose</h3>
+         
+         <p class="p">To define a work instruction for testing the electronic chute control II system. This
+            document is designed to prevent future failures.</p>
+      </section>
+      <section class="section" id="c214A515-BB02-11F0-5101-09173F13E4C5__section_r12_rzf_rzb"><h3 class="title sectiontitle">Application</h3>
+         
+         <p class="p">This work instruction applies to Space manufacturing facilities.</p>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title3" lang="en-us" id="c2150813-BB02-11F0-1489-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">Safety</h2>
+   
+   <div class="body conbody">
+      <div class="p">Observe Space standard safety requirements and procedures defined by the Global Environmental
+         Health , andamp; Safety (EH, andamp;S) organization, as well as all applicable local, regional, and
+         national requirements. Safety equipment and instructions specific to the completion of this
+         work instruction are detailed in the <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5">Instructions</a> Section.<table class="simpletable" id="c2150813-BB02-11F0-1489-09173F13E4C5__table_ury_vzf_rzb"><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">
+                  <div class="p">
+                     <figure class="fig fignone" id="c2150813-BB02-11F0-1489-09173F13E4C5__fig_vry_vzf_rzb"><figcaption><span class="fig--title-label">Figure 1. </span>Danger</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="c2150813-BB02-11F0-1489-09173F13E4C5__image_wry_vzf_rzb" src="media/image1.jpg"></div><br>
+                     </figure>
+                  </div>
+               </td>
+               <td class="stentry">
+                  <div class="p">
+                     <figure class="fig fignone" id="c2150813-BB02-11F0-1489-09173F13E4C5__fig_xry_vzf_rzb"><figcaption><span class="fig--title-label">Figure 2. </span>Electricity</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="c2150813-BB02-11F0-1489-09173F13E4C5__image_yry_vzf_rzb" src="media/image2.jpg"></div><br>
+                     </figure>
+                  </div>
+               </td>
+               <td class="stentry">
+                  <div class="p">
+                     <figure class="fig fignone" id="c2150813-BB02-11F0-1489-09173F13E4C5__fig_zry_vzf_rzb"><figcaption><span class="fig--title-label">Figure 3. </span>Hot Surface</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="c2150813-BB02-11F0-1489-09173F13E4C5__image_asy_vzf_rzb" src="media/image3.jpg"></div><br>
+                     </figure>
+                  </div>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title4" lang="en-us" id="r2148D86-BB02-11F0-1121-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title4">Instructions</h2>
+   
+   <div class="body refbody">
+      <section class="section">
+         <ol class="ol">
+            <li class="li">Before starting the work instruction activity, perform the following steps:<ol class="ol" type="a">
+                  <li class="li">Do not begin these tasks without confirmation that personnel directly involved have completed the required training associated with the work instruction activity and have reviewed this document.</li>
+                  <li class="li">Gather necessary tools and equipment as identified below in the Equipment Section.</li>
+                  <li class="li">Wear and use additional Personal Protective Equipment (PPE) and safety equipment required for this specific work instruction</li>
+                  <li class="li">Obey all applicable safety requirements and procedures</li>
+                  <li class="li">Follow all Lockout/Tagout procedures when work instruction activity requires isolating energy in the designated area. Verify energy is isolated before starting work.</li>
+               </ol>
+            </li>
+            <li class="li">To ensure the functionality of the chute control system, perform the following steps: <div class="note note note_note"><span class="note__title">Note:</span> 
+                  <p class="p">These steps should be performed during preventative maintenance, shutdowns, job
+                     changes, and/or production down time.</p>
+               </div>
+               <p class="p">Refer to drawings OIS-03002, OIS-03394, OIS-03429, and
+                  SCS-5-40.</p>
+               <p class="p">Setup parameters for the servo controller, and a maintenance
+                  record, have been provided in the <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#c214460F-BB02-11F0-1595-09173F13E4C5">Appendix</a> to aid in logging operating parameters and work performed on
+                  the pneumatic chute control system.</p>
+               <ol class="ol" type="a">
+                  <li class="li">Verify that the chute air supply is high pressure, dry (instrument) air. <div class="note note note_note"><span class="note__title">Note:</span> 
+                        <p class="p">On old installation drawings, 3.4 bar (50 psi) was specified. The new
+                           standard is to supply 6.9 bar (100 psi) for chute air. </p>
+                     </div>
+                  </li>
+                  <li class="li">Verify that the air pressure switch tubing is connected before the check valve
+                     and receiver tank. (Reference the “L-P” airline on the above mentioned
+                     drawings.) <ol class="ol" type="i">
+                        <li class="li">Calibrate and set the pressure switch to 3.1 bar (45 psi). </li>
+                        <li class="li">Adjust the regulator to operate at 3.8 to 4.1 Bar (55 to 60 psi).</li>
+                     </ol>
+                  </li>
+                  <li class="li">Verify that the air hoses are not cut or damaged. <div class="note note note_note"><span class="note__title">Note:</span> 
+                        <p class="p">Use braided stainless steel supply hoses, not rubber hoses.</p>
+                     </div>
+                  </li>
+                  <li class="li">Repair or replace the following solenoid valves, pressure switches, and
+                     proximity switches once per year. The quantity and part number for each
+                     component are shown below. <ol class="ol" type="i">
+                        <li class="li">1 shear lockout solenoid valve 115 VAC (HF-3556)</li>
+                        <li class="li">4 pressure switches 24 VDC (chute, machine “A”, machine “B”, plunger
+                           cool) (OIS-204-665)</li>
+                        <li class="li">1 pilot air pressure switch 24 VDC (SCS-3-329)</li>
+                        <li class="li">1 gob reject solenoid valve 24 VDC (OIS-204-3159)</li>
+                        <li class="li">1 guide funnel solenoid valve 24 VDC (OIS-204-3108)</li>
+                        <li class="li">1 chute solenoid valve 24 VDC (OIS-204-3108)</li>
+                        <li class="li">1 gob accelerator solenoid valve 24 VDC (OIS-204-3108)</li>
+                        <li class="li">1 upper funnel solenoid valve 24 VDC (OIS-204-3108)</li>
+                        <li class="li">1 chute water flow solenoid valve 24 VDC (OIS-204-3178)</li>
+                        <li class="li">3 proximity switches 24 VDC (OIS-204-3133)</li>
+                     </ol>
+                  </li>
+                  <li class="li">On the MICC 5480, MICC Laser, Flexdrive II, and Flexdrive III, there are two
+                     ammeter relays: one for the feeder, and one for the gob distributor. There is a
+                     high current trip, and a low current trip. <ol class="ol" type="i">
+                        <li class="li">Approximate guidelines for the feeder: The high current setpoint should
+                           be at 3 amps above the operating current, and the low current setpoint
+                           should be at 3 amps below the operating current.</li>
+                        <li class="li">Approximate guidelines for the gob distributor: The high current
+                           setpoint should be at 2 amps above the operating current, and the low
+                           current setpoint should be at 2 amps below the operating current.</li>
+                        <li class="li">These setpoints can be adjusted to be closer to, or farther from, the
+                           operating current depending on the mechanical cam and the motor current
+                           variation.</li>
+                        <li class="li">The operating current should be observed and the setpoints set, based on
+                           the amount of fluctuation in the current.</li>
+                        <li class="li">Adjustments may be required due to shear cam changes during job
+                           changes.</li>
+                     </ol>
+                  </li>
+                  <li class="li">If Servo Needles, Servo Shears, and/or Servo Gob Distributor are installed,
+                     there is a chute enable relay on the SDFL Interface board (SCS-0314). This
+                     relay enables the chute to go up if the Needles, Shears, or Gob Distributor
+                     stop for any reason. <ol class="ol" type="i">
+                        <li class="li">There is also a pressure switch (OIS-204-665) used to monitor the air
+                           supplied to the lockout solenoid valve. Calibrate test this switch, and
+                           then set it at 3.1 bar (45 psi).</li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">To test the chute control system, perform the following steps:
+         <ol class="ol" type="a">
+                  <li class="li">Lower the tube down to shut off the glass flow.  Then plug the orifice to ensure that glass will not flow.</li>
+                  <li class="li">Start the feeder, shears, and gob distributor.</li>
+                  <li class="li">Ensure that setup/operating parameters are correct. Refer to the ECCSII manual,
+                     section 4.</li>
+                  <li class="li" id="r2148D86-BB02-11F0-1121-09173F13E4C5__li_l22_4cg_rzb">Place the chute control system in operating mode. To operate the
+                     chute control system in operating mode, perform the following sequence <ol class="ol" type="i" id="r2148D86-BB02-11F0-1121-09173F13E4C5__ol_m22_4cg_rzb">
+                        <li class="li">Bring the funnels into the glass.</li>
+                        <li class="li">Bring the reject cylinder into the glass.</li>
+                        <li class="li">Bring the chute down.</li>
+                        <li class="li">Bring the gob accelerator into the glass (if applicable).</li>
+                     </ol>
+                  </li>
+                  <li class="li">Stop the feeder. When the feeder stops, the gob accelerator will retract, the chute will come up, the reject cylinder will retract, and the guide funnels will retract.
+            <ol class="ol" type="i">
+                        <li class="li">Restart the feeder, shears, and gob distributor.</li>
+                        <li class="li">Repeat step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_l22_4cg_rzb">4</a> above, then go to step
+                              <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_vgq_4cg_rzb">6</a> below</li>
+                     </ol>
+                  </li>
+                  <li class="li" id="r2148D86-BB02-11F0-1121-09173F13E4C5__li_vgq_4cg_rzb">Stop the shears. When the shears stop, the gob accelerator will
+                     retract, the chute will come up, the reject cylinder will retract, and the
+                     guide funnels will retract. <ol class="ol" type="i" id="r2148D86-BB02-11F0-1121-09173F13E4C5__ol_wgq_4cg_rzb">
+                        <li class="li">Restart the shears.</li>
+                        <li class="li">Repeat step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_l22_4cg_rzb">4</a> above, then go
+                           to step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_pf5_4cg_rzb">7</a> below</li>
+                     </ol>
+                  </li>
+                  <li class="li" id="r2148D86-BB02-11F0-1121-09173F13E4C5__li_pf5_4cg_rzb">With the gob distributor run/setup switch in the run position,
+                     stop the gob distributor. When the gob distributor stops, the gob accelerator
+                     will retract, the chute will come up, the reject cylinder will retract, and the
+                     guide funnels will retract <ol class="ol" type="i" id="r2148D86-BB02-11F0-1121-09173F13E4C5__ol_rf5_4cg_rzb">
+                        <li class="li">Repeat step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_l22_4cg_rzb">4</a> above, then go
+                           to step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_fky_4cg_rzb">8</a> below</li>
+                     </ol>
+                  </li>
+                  <li class="li" id="r2148D86-BB02-11F0-1121-09173F13E4C5__li_fky_4cg_rzb">With the gob distributor run/setup switch in the setup position,
+                     start the gob distributor. Stop the gob distributor. When it stops the chute
+                     should not come up. Remember to put the switch back in the run position when
+                     loading glass. <ol class="ol" type="i" id="r2148D86-BB02-11F0-1121-09173F13E4C5__ol_gky_4cg_rzb">
+                        <li class="li">Restart the gob distributor.</li>
+                        <li class="li">Repeat step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_l22_4cg_rzb">4</a> above, then go
+                           to step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_hbc_pcg_rzb">9</a> below</li>
+                     </ol>
+                  </li>
+                  <li class="li" id="r2148D86-BB02-11F0-1121-09173F13E4C5__li_hbc_pcg_rzb">Push the <span class="ph uicontrol">chute-up</span> button on the main
+                     panel. This will cause the gob accelerator to retract, the chute to come up,
+                     and the funnels and reject cylinders to retract. <ol class="ol" type="i" id="r2148D86-BB02-11F0-1121-09173F13E4C5__ol_ibc_pcg_rzb">
+                        <li class="li">Repeat step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_l22_4cg_rzb">4</a> above, then go
+                           to step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_fmh_pcg_rzb">10</a> below.</li>
+                     </ol>
+                  </li>
+                  <li class="li" id="r2148D86-BB02-11F0-1121-09173F13E4C5__li_fmh_pcg_rzb">Push the button on the main panel that retracts the reject
+                     cylinder out of glass. This will cause the gob accelerator to retract, the
+                     chute to come up, the reject cylinder to retract, and the guide funnels to
+                     retract. <ol class="ol" type="i" id="r2148D86-BB02-11F0-1121-09173F13E4C5__ol_gmh_pcg_rzb">
+                        <li class="li">Repeat step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_l22_4cg_rzb">4</a> above, then go
+                           to step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_r24_pcg_rzb">11</a> below.</li>
+                     </ol>
+                  </li>
+                  <li class="li" id="r2148D86-BB02-11F0-1121-09173F13E4C5__li_r24_pcg_rzb">Push the emergency <span class="ph uicontrol">chute-up</span> button on the
+                     main panel. This will cause the gob accelerator to retract, the chute to come
+                     up, the reject cylinder to retract, and the guide funnels to retract <ol class="ol" type="i" id="r2148D86-BB02-11F0-1121-09173F13E4C5__ol_s24_pcg_rzb">
+                        <li class="li">Repeat step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_l22_4cg_rzb">4</a> above, then go
+                           to step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_xjs_pcg_rzb">12</a> below.</li>
+                     </ol>
+                  </li>
+                  <li class="li" id="r2148D86-BB02-11F0-1121-09173F13E4C5__li_xjs_pcg_rzb">Push the button on the remote panel that retracts the reject
+                     cylinder out of glass. The gob accelerator will retract, the chute will come
+                     up, the reject cylinder will retract, and the funnels will retract. <ol class="ol" type="i" id="r2148D86-BB02-11F0-1121-09173F13E4C5__ol_yjs_pcg_rzb">
+                        <li class="li">Repeat step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_l22_4cg_rzb">4</a> above, then go
+                           to step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_tpw_pcg_rzb">13</a> below.</li>
+                     </ol>
+                  </li>
+                  <li class="li" id="r2148D86-BB02-11F0-1121-09173F13E4C5__li_tpw_pcg_rzb">Push the <span class="ph uicontrol">chute-up</span> button on the remote
+                     panel. The gob accelerator will retract, the chute will come up, and the funnel
+                     and reject cylinders will retract. <ol class="ol" type="i" id="r2148D86-BB02-11F0-1121-09173F13E4C5__ol_upw_pcg_rzb">
+                        <li class="li">Repeat step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_l22_4cg_rzb">4</a> above, then go
+                           to step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_lk1_qcg_rzb">14</a> below.</li>
+                     </ol>
+                  </li>
+                  <li class="li" id="r2148D86-BB02-11F0-1121-09173F13E4C5__li_lk1_qcg_rzb">Push the emergency chute-up <span class="ph uicontrol">stand-alone</span>
+                     button. This will cause the gob accelerator to retract, the chute will come up,
+                     the reject cylinder will retract, and the guide funnels will retract. <ol class="ol" type="i" id="r2148D86-BB02-11F0-1121-09173F13E4C5__ol_mk1_qcg_rzb">
+                        <li class="li">Repeat step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_l22_4cg_rzb">4</a> above, then go
+                           to step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_hxh_qcg_rzb">15</a> below.</li>
+                     </ol>
+                  </li>
+                  <li class="li" id="r2148D86-BB02-11F0-1121-09173F13E4C5__li_hxh_qcg_rzb">Individually test and calibrate the chute air, machine “A” air,
+                     machine “B” air, plunger cooling, and pilot air pressure switches. <ol class="ol" type="i" id="r2148D86-BB02-11F0-1121-09173F13E4C5__ol_ixh_qcg_rzb">
+                        <li class="li">Rotate the dial to a setpoint higher than the operating pressure.</li>
+                        <li class="li">When the set point on the dial goes above the operating pressure, the
+                           gob accelerator will retract, the chute will come up, the reject cylinder
+                           will retract, and the guide funnels will retract.</li>
+                        <li class="li">At the point that the pressure switch trips, pull off the dial and set
+                           it at the proper position determined by the chute air pressure
+                           gauge.</li>
+                        <li class="li">Then adjust the dial to be 0.34-0.69 bar (5-10 psi) below the operating
+                           pressure. <div class="note note note_note" id="r2148D86-BB02-11F0-1121-09173F13E4C5__note_jxh_qcg_rzb"><span class="note__title">Note:</span> 
+                              <p class="p">For machines that change processes, the pressure switches must be
+                                 set for the proper pressure.</p>
+                           </div>
+                           <div class="note note note_note" id="r2148D86-BB02-11F0-1121-09173F13E4C5__note_kxh_qcg_rzb"><span class="note__title">Note:</span> 
+                              <p class="p">To save production time, pre-calibrate the spare pressure switches
+                                 before use. This can be done by using a calibrated air source.</p>
+                           </div>
+                        </li>
+                        <li class="li">Repeat step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_l22_4cg_rzb">4</a> above, then go
+                           to step <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#r2148D86-BB02-11F0-1121-09173F13E4C5__li_mt5_rcg_rzb">16</a> below.</li>
+                     </ol>
+                  </li>
+                  <li class="li" id="r2148D86-BB02-11F0-1121-09173F13E4C5__li_mt5_rcg_rzb">Test the water flow solenoid (if present) by moving the chute to
+                     the up position. Water flow should automatically increase. <ol class="ol" type="i" id="r2148D86-BB02-11F0-1121-09173F13E4C5__ol_nt5_rcg_rzb">
+                        <li class="li">Next, move the chute down and press the <span class="ph uicontrol">glass</span>
+                           switch to reject gobs.</li>
+                        <li class="li">If the number for the gob count is greater than the parameter setpoint
+                           in the servo system, the water flow will increase <ol class="ol" id="r2148D86-BB02-11F0-1121-09173F13E4C5__ol_ot5_rcg_rzb">
+                              <li class="li"> The parameter is adjustable on the Servo Display Station. </li>
+                              <li class="li">For example, if the parameter for number of rejects in one machine
+                                 cycle before high water flow is set at two, then, when two sections
+                                 are rejected in one machine cycle, the water flow should
+                                 increase.</li>
+                           </ol>
+                        </li>
+                        <li class="li">For the high water flow to reduce to low water flow, if the reject count
+                           is below the Rejects Before High Flow parameter, the count begins for the
+                           Cycles Before Low Flow parameter.</li>
+                        <li class="li">The water flow will automatically decrease when the reject count is
+                           below the Rejects Before High Flow parameter for the specified number of
+                           cycles, which ranges from 1 to 8 machine cycles.</li>
+                        <li class="li">Refer to the Electronic Chute Control II manual, section 4.</li>
+                     </ol>
+                  </li>
+                  <li class="li">Adjust the speed screws, located on the solenoid valves (which are used for regulating how quickly the funnel cylinder, reject cylinder, gob accelerator cylinder, and chute cylinder move), to a proper setting.
+            <ol class="ol" type="i">
+                        <li class="li">The mechanisms should extend and retract fast enough to provide adequate safety conditions, yet not so fast so that the mechanisms are slamming. Slamming causes the cylinders to stick in an unsafe condition.</li>
+                     </ol>
+                  </li>
+                  <li class="li">Refer to Appendix <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#c2143D07-BB02-11F0-1823-09173F13E4C5">A</a> for the setup
+                     parameter information for the servo controller.</li>
+                  <li class="li">Refer to Appendix <a class="xref" href="FES-03-701_electronic_chute_control_ii_system_testing.html#c214460F-BB02-11F0-1595-09173F13E4C5">B</a> for s a setup and
+                     maintenance record for the plant engineer and/or machine repair supervisor to
+                     insure that proper testing, repair, and operation of the chute control are
+                     completed for each machine.</li>
+               </ol>
+            </li>
+            <li class="li">Upon completion of tasks, perform the following steps:
+        <ol class="ol" type="a">
+                  <li class="li">After the designated work area is confirmed clear and personnel are aware of the pending restart, follow all Lockout/Tagout procedures to restart energy supplied to the designated area. Verify energy is active.</li>
+                  <li class="li">Notify appropriate personnel that the work instruction activity has been completed.</li>
+                  <li class="li">Record and report findings and results.</li>
+                  <li class="li">Follow appropriate instructions for notification of findings and results relating to specifications, targets and/or reaction limits.</li>
+               </ol>
+            </li>
+         </ol>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title5" lang="en-us" id="c214D6BA-BB02-11F0-6093-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title5">Required Training</h2>
+   
+   <div class="body conbody">
+      <p class="p">Before performing this work instruction, applicable personnel must be trained by an
+         authorized trainer on the required training contents listed in this document.</p>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title6" lang="en-us" id="r214BE1A-BB02-11F0-7282-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title6">References</h2>
+   
+   <div class="body refbody">
+      <section class="section" id="r214BE1A-BB02-11F0-7282-09173F13E4C5__section_nrm_22g_rzb"><h3 class="title sectiontitle">Document Classification</h3>
+         
+         <ul class="ul" id="r214BE1A-BB02-11F0-7282-09173F13E4C5__ul_bz4_f2g_rzb">
+            <li class="li">Asset Protection and Stability</li>
+            <li class="li">Safety and Environment</li>
+         </ul>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title7" lang="en-us" id="c2143D07-BB02-11F0-1823-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title7">Appendix A</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <strong class="ph b">Servo Chute Control II Settings</strong>
+         <table class="table" id="c2143D07-BB02-11F0-1823-09173F13E4C5__table_axv_pbg_rzb"><caption></caption><colgroup><col><col></colgroup><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" colspan="2">Screen Saver, andgt; Main Menu, andgt; Auxiliary
+                        Systems, andgt; ECCII, andgt; Setup, andgt; <strong class="ph b">Machine</strong>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">Upper Guide Funnels </td>
+                     <td class="entry">Select present if the reject cylinder and guide funnel are
+                        separate</td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">Guide Funnel 2 </td>
+                     <td class="entry">Select present if there are two separate guide funnel cylinders</td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">Gob Accelerator Funnels </td>
+                     <td class="entry">Select present if gob accelerators are used</td>
+                  </tr>
+               </tbody></table>
+         <table class="table" id="c2143D07-BB02-11F0-1823-09173F13E4C5__table_khw_rbg_rzb"><caption></caption><colgroup><col><col></colgroup><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" colspan="2">Screen Saver, andgt; Main Menu, andgt; Auxiliary
+                        Systems, andgt; ECCII, andgt; Setup, andgt; <strong class="ph b">Emergency Chute Up</strong>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">Pilot Air Fault</td>
+                     <td class="entry">Enable – Chute moves up with loss of Pilot</td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">Machine Air Fault</td>
+                     <td class="entry">Enable – Chute moves up with loss of Machine Air </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">Plunger Cooling Air Fault</td>
+                     <td class="entry">Enable – Chute moves up with loss of PLGR cool air </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">B Air Fault</td>
+                     <td class="entry">Enable if B air is used</td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">Spare 1 Air Fault</td>
+                     <td class="entry">Disable unless spare air pressure switch is connected </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">Spare 2 Air Fault</td>
+                     <td class="entry">Disable unless spare air pressure switch is connected. </td>
+                  </tr>
+               </tbody></table>
+         <table class="table" id="c2143D07-BB02-11F0-1823-09173F13E4C5__table_xpf_5bg_rzb"><caption></caption><colgroup><col><col></colgroup><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" colspan="2">Screen Saver, andgt; Main Menu, andgt; Auxiliary
+                        Systems, andgt; ECCII, andgt; Setup, andgt; <strong class="ph b">I.S. Timing P-Stop</strong>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">Pilot Air Fault</td>
+                     <td class="entry">Enable</td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">Machine Air Fault</td>
+                     <td class="entry">Enable</td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">Plunger Cooling Air Fault</td>
+                     <td class="entry">Enable</td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">B Air Fault</td>
+                     <td class="entry">Enable</td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">Spare 1 Air Fault</td>
+                     <td class="entry">Disable</td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">Spare 2 Air Fault</td>
+                     <td class="entry">Disable</td>
+                  </tr>
+               </tbody></table>
+         <table class="table" id="c2143D07-BB02-11F0-1823-09173F13E4C5__table_yyw_5bg_rzb"><caption></caption><colgroup><col><col></colgroup><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" colspan="2">
+                        <strong class="ph b">Water Flow Setup</strong>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">Chute Water Flow Control</td>
+                     <td class="entry">Present if the water flow control solenoid is installed </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">Reject before high flow</td>
+                     <td class="entry">2 – After two gob rejects the water will increase flow.</td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">Cycles before low flow</td>
+                     <td class="entry">2 – The machine will complete two cycles before reducing the amount of
+                        water flow.</td>
+                  </tr>
+               </tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title8" lang="en-us" id="c214460F-BB02-11F0-1595-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title8">Appendix B</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c214460F-BB02-11F0-1595-09173F13E4C5__table_fp5_m2g_rzb"><colgroup><col style="width:100%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">PNEUMATIC CHUTE CONTROL MAINTENANCE RECORD</strong>
+                  </p>
+                  <p class="p">Date: ________________ Checked by: _________________________</p>
+                  <p class="p">1. Chute air supply is _______ bar / psi Pressure switch is set at _______ bar
+                     / psi </p>
+                  <p class="p">2. Machine air “A” supply is _______ bar / psi Pressure switch is set at _____
+                     bar / psi </p>
+                  <p class="p">3. Machine air “B” supply is _______ bar / psi Pressure switch is set at _____
+                     bar / psi </p>
+                  <p class="p">4. Plunger cooling air supply is _______ bar / psi Pressure switch is set at
+                     _____ bar / psi </p>
+                  <p class="p">5. Pilot air supply is _______ bar / psi Pressure switch is set at _______ bar
+                     / psi </p>
+                  <p class="p">6. The air hoses are in satisfactory condition. ________</p>
+                  <p class="p">7. <u class="ph u">Quantity Replaced</u>
+                     <u class="ph u">Quantity Repaired</u>
+                     <u class="ph u">Part number</u>
+                  </p>
+                  <p class="p"> _______ _______ HF-3556</p>
+                  <p class="p"> _______ _______ SCS-3-29</p>
+                  <p class="p"> _______ _______ OIS-204-3159</p>
+                  <p class="p"> _______ _______ OIS-204-3108</p>
+                  <p class="p"> _______ _______ OIS-204-3133</p>
+                  <p class="p"> _______ _______ OIS-204-665</p>
+                  <p class="p">8. Feeder ammeter setpoints:</p>
+                  <p class="p"> Low current trip _____ Amps Operating current (Avg.) _____ Amps</p>
+                  <p class="p"> High current trip _____ Amps</p>
+                  <p class="p">9. Gob Distributor ammeter setpoints:</p>
+                  <p class="p"> Low current trip _____ Amps Operating current (Avg.) _____ Amps</p>
+                  <p class="p"> High current trip _____ Amps</p>
+                  <p class="p">10. Shear lockout air pressure switch is _______ bar / psi Pressure switch is
+                     set at _______ bar / psi </p>
+                  <p class="p">11. Chute control testing.</p>
+                  <p class="p"> A. Stop the feeder. Chute control functions correctly. _____</p>
+                  <p class="p"> B. Stop the shears. Chute control functions correctly. _____</p>
+                  <p class="p"> C. Stop the gob distributor. Chute control functions correctly. _____</p>
+                  <p class="p"> D. Gob distributor run/setup switch functions correctly. _____</p>
+                  <p class="p"> E. Push the chute-up button on the main panel. Chute control functions
+                     correctly. _____</p>
+                  <p class="p"> F. Push the reject button on the main panel. Chute control functions
+                     correctly. _____</p>
+                  <p class="p"> G. Push the emergency chute-up button on the main panel. Chute control
+                     functions correctly. _____</p>
+                  <p class="p"> H. Push the reject button on the remote panel. Chute control functions
+                     correctly. _____</p>
+                  <p class="p"> I. Push the chute-up button on the remote panel. Chute control functions
+                     correctly. _____</p>
+                  <p class="p"> J. Push the emergency chute-up stand-alone button. Chute control functions
+                     correctly. ____</p>
+                  <p class="p"> K. Test and calibrate the chute air, machine air “A”, machine air “B”, plunger
+                     cooling, and pilot air pressure switches. Chute control functions correctly.
+                     _____</p>
+                  <p class="p"> L. Test the chute water flow solenoid. The solenoid is functional. _____</p>
+                  <p class="p">9. The speed screws are adjusted correctly. ______</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title9" lang="en-us" id="c2145E92-BB02-11F0-1458-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title9">Approval</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c2145E92-BB02-11F0-1458-09173F13E4C5__table_kzp_nfg_rzb"><colgroup><col style="width:37.5%"><col style="width:62.5%"></colgroup><thead><tr class="sthead">
+               <th class="stentry" scope="col" id="c2145E92-BB02-11F0-1458-09173F13E4C5__table_kzp_nfg_rzb__stentry__1">
+                  <p class="p">Region</p>
+               </th>
+               <th class="stentry" scope="col" id="c2145E92-BB02-11F0-1458-09173F13E4C5__table_kzp_nfg_rzb__stentry__2">
+                  <p class="p">Representative</p>
+               </th>
+            </tr></thead><tbody><tr class="strow">
+               <td class="stentry" headers="c2145E92-BB02-11F0-1458-09173F13E4C5__table_kzp_nfg_rzb__stentry__1">
+                  <p class="p">Asia Pacific</p>
+               </td>
+               <td class="stentry" headers="c2145E92-BB02-11F0-1458-09173F13E4C5__table_kzp_nfg_rzb__stentry__2">
+                  <p class="p">John Pillen</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry" headers="c2145E92-BB02-11F0-1458-09173F13E4C5__table_kzp_nfg_rzb__stentry__1">
+                  <p class="p">Europe</p>
+               </td>
+               <td class="stentry" headers="c2145E92-BB02-11F0-1458-09173F13E4C5__table_kzp_nfg_rzb__stentry__2">
+                  <p class="p">Jean-Pierre Locato, Marco Marchelli, Ruud Bormans, Rafal Szkoda</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry" headers="c2145E92-BB02-11F0-1458-09173F13E4C5__table_kzp_nfg_rzb__stentry__1">
+                  <p class="p">Americas South</p>
+               </td>
+               <td class="stentry" headers="c2145E92-BB02-11F0-1458-09173F13E4C5__table_kzp_nfg_rzb__stentry__2">
+                  <p class="p">Paul Arriz</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry" headers="c2145E92-BB02-11F0-1458-09173F13E4C5__table_kzp_nfg_rzb__stentry__1">
+                  <p class="p">Americas North</p>
+               </td>
+               <td class="stentry" headers="c2145E92-BB02-11F0-1458-09173F13E4C5__table_kzp_nfg_rzb__stentry__2">
+                  <p class="p">Daniel Devries</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry" headers="c2145E92-BB02-11F0-1458-09173F13E4C5__table_kzp_nfg_rzb__stentry__1">
+                  <p class="p">Global Operations</p>
+               </td>
+               <td class="stentry" headers="c2145E92-BB02-11F0-1458-09173F13E4C5__table_kzp_nfg_rzb__stentry__2">
+                  <p class="p">Juan Ishiguro, Franklin Barrios</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title10" lang="en-us" id="c214EF04-BB02-11F0-1167-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title10">Revision History</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="table" id="c214EF04-BB02-11F0-1167-09173F13E4C5__table_rjg_pfg_rzb"><caption></caption><colgroup><col style="width:45.08%"><col style="width:45.08%"></colgroup><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry align-left">2020-02-21</td>
+                     <td class="entry align-left">
+                        <p class="p">Approved by Juan Ishiguro, IS Machines Discipline Leader</p>
+                        <p class="p">Original Issue</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry align-left">2022-05-09</td>
+                     <td class="entry align-left">
+                        <p class="p">Approved by Franklin Barrios, Global Leader FES Network.</p>
+                        <p class="p">Moved to GMF Site as FES-03-701</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+   </div>
+</article></article></article></main></body></html>

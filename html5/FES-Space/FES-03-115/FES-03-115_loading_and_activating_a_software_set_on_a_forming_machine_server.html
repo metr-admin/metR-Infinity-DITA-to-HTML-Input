@@ -1,0 +1,345 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="load-software-set,activate-software-set,forming-machine-server,software-image-file,boot-image,transfer-image (tftp/ftp/usb),verify-checksum (md5/sha256),verify-signature (GPG),install-packages,apply-configuration-snapshot,restart-services,operational-acceptance-test (OAT),rollback-to-previous-image,CS2-0275-GR01 Appendix B.2.2 superseded,IDS-050-GR01 Appendix A.2.2 superseded,maintenance-window,production-safety,change-control (MOC),software-set,forming-machine,metR-FES-Space,software-image,package-installation,signature-verification,checksum-validation,OSI Reference Manual CS2-0275-GR01,IDS Electrical Service IDS-050-GR01,production-line-availability,industrial-control-systems,control-software,software-set-image,bootloader,package-repository,software-deployment-scenarios,planned-upgrade,emergency-patch,rollback-scenario,operator-acceptance,factory-floor-automation,forming-line,SCADA-integration,service-interruption-minimisation,legacy-compatibility,software-set-load,software-activation,package-manager,pre-deployment-checklist,backup-config-and-db-dump,signature-verify (GPG/signature),install-and-apply-configuration,restart-services-and-daemons,post-deployment-validation (OAT),rollback-procedure,production-impact-assessment,CS2-0275-GR01 Appendix B.2.2 (superseded),IDS-050-GR01 Appendix A.2.2 (superseded),MOC-change-control,forming-machine-server-hardware,usb-install-media,tftp-server,edgeport-serial-adapter,firmware-image,image-transfer-tools,checksum-tool (md5/sha256),serial-console-cable,network-switch-ports,UPS-and-power-management,rack-mount-tools,asset-tagging,spare-parts,site-maintenance-inventory,environmental-controls,software-set-release-notes,firmware-and-image-guides,vendor-service-bulletins,installation-guides,checksum-and-signature-guides,tftp-and-ftp-configuration,MOC-forms-and-templates,OAT-checklists,site-operational-procedures,maintenance-records,release-history,support-contacts,firmware-compatibility-matrix,deployment-team,network-admin,vendor-support,QA-approver,MOC-coordinator,deployment-authorization (MOC),handover-and-signoff,communication-plan,issue-escalation,post-deployment-review,production-stakeholders,vendor-coordination,change-log,rollback-agreement,document-revisions,MOC-record,release-notes,version-history,approvals-and-signoffs,effective-date,change-description,document-governance,audit-trail,site-documentation,maintenance-logs,CS2-0275-GR01 references"><meta name="keywords" content="load-software-set, activate-software-set, forming-machine-server, software-image-file, boot-image, transfer-image (tftp/ftp/usb), verify-checksum (md5/sha256), verify-signature (GPG), install-packages, apply-configuration-snapshot, restart-services, operational-acceptance-test (OAT), rollback-to-previous-image, CS2-0275-GR01 Appendix B.2.2 superseded, IDS-050-GR01 Appendix A.2.2 superseded, maintenance-window, production-safety, change-control (MOC), software-set, forming-machine, metR-FES-Space, software-image, package-installation, signature-verification, checksum-validation, OSI Reference Manual CS2-0275-GR01, IDS Electrical Service IDS-050-GR01, production-line-availability, industrial-control-systems, control-software, software-set-image, bootloader, package-repository, software-deployment-scenarios, planned-upgrade, emergency-patch, rollback-scenario, operator-acceptance, factory-floor-automation, forming-line, SCADA-integration, service-interruption-minimisation, legacy-compatibility, software-set-load, software-activation, package-manager, pre-deployment-checklist, backup-config-and-db-dump, signature-verify (GPG/signature), install-and-apply-configuration, restart-services-and-daemons, post-deployment-validation (OAT), rollback-procedure, production-impact-assessment, CS2-0275-GR01 Appendix B.2.2 (superseded), IDS-050-GR01 Appendix A.2.2 (superseded), MOC-change-control, forming-machine-server-hardware, usb-install-media, tftp-server, edgeport-serial-adapter, firmware-image, image-transfer-tools, checksum-tool (md5/sha256), serial-console-cable, network-switch-ports, UPS-and-power-management, rack-mount-tools, asset-tagging, spare-parts, site-maintenance-inventory, environmental-controls, software-set-release-notes, firmware-and-image-guides, vendor-service-bulletins, installation-guides, checksum-and-signature-guides, tftp-and-ftp-configuration, MOC-forms-and-templates, OAT-checklists, site-operational-procedures, maintenance-records, release-history, support-contacts, firmware-compatibility-matrix, deployment-team, network-admin, vendor-support, QA-approver, MOC-coordinator, deployment-authorization (MOC), handover-and-signoff, communication-plan, issue-escalation, post-deployment-review, production-stakeholders, vendor-coordination, change-log, rollback-agreement, document-revisions, MOC-record, release-notes, version-history, approvals-and-signoffs, effective-date, change-description, document-governance, audit-trail, site-documentation, maintenance-logs, CS2-0275-GR01 references"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-FES-Space"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-11-10+05:30"><meta name="DC.date.modified" content="2025-11-10+05:30"><meta name="RevisionDate" content="06-29-2022"><meta name="DocumentNumber" content="FES-03-115"><meta name="title" content="Loading and Activating a Software Set"><meta name="shortdesc" content="Detailed technical steps to transfer, verify, install and activate a software set on a forming machine server; includes verification, OAT and rollback guidance."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="draft"><meta name="access.role" content="internal"><meta name="data.classification" content="internal-network"><meta name="entities" content="software image;checksum;GPG signature;tftp server;usb media;service scripts;config snapshot"><meta name="taxonomy" content="domain:operations;usecase:software-deployment;industry:industrial-automation"><meta name="tags" content="load,activate,checksum,GPG,tftp,rollback,OAT"><meta name="usecase" content="complete-technical-workflow-to-load-and-activate-software-set"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c2055EB8-BB02-11F0-1631-09173F13E4C5"><meta name="DC.language" content="en-us"><title>Loading and Activating a Software Set on a Forming Machine Server</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c2055EB8-BB02-11F0-1631-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Loading and Activating a Software Set on a Forming Machine Server</h1>
+   
+   <div class="body conbody"></div>
+<article class="topic concept nested1" aria-labelledby="ariaid-title2" lang="en-us" id="c2058E58-BB02-11F0-1089-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">Purpose</h2>
+   
+   <div class="body conbody">
+      <ol class="ol" id="c2058E58-BB02-11F0-1089-09173F13E4C5__ol_rxh_sqy_qzb">
+         <li class="li">This document describes how to load and activate a software set on the forming machine
+            server. It supersedes the instructions given in the OSI Reference Manual
+            (CS2-0275-GR01), Appendix B.2.2, and the IDS Electrical Service and Reference Manual
+            (IDS-050-GR01), Appendix A.2.2.</li>
+         <li class="li">If updating from a SWSet prior to 223, there are two extra steps that must be completed
+            prior to resuming normal operations. First, be aware that the running settings from the
+            OSI/EICOM and COM-SOC 3 systems will be rejected after the installation. Instead, the
+            job must be reloaded from MOC. Second, the backup scheme was greatly changed with SWSet
+            223. Therefore, the backup server must be reconfigured after the installation.</li>
+      </ol>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title3" lang="en-us" id="c20517FA-BB02-11F0-1001-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">Application</h2>
+   
+   <div class="body conbody">
+      <p class="p">This work instruction applies to all Space Plants that have FSC and Space IS Machines.</p>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title4" lang="en-us" id="r2057676-BB02-11F0-7828-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title4">Procedure</h2>
+   
+   <div class="body refbody">
+      <section class="section">
+         <ol class="ol">
+            <li class="li">In order to install the application software, you must first log off by navigating to:
+                  <strong class="ph b">Start, andgt;Log off (account </strong>
+               <strong class="ph b">name)…</strong>. A Windows message will prompt “Are you sure you want to log off?”
+               Click on <strong class="ph b">
+                  <span class="ph uicontrol">Log Off</span>
+               </strong>.</li>
+            <li class="li">Then, log into the setup account with the User Name: <strong class="ph b">obsetup</strong> and the Password:
+                  <strong class="ph b">SetupServer</strong>. Click <span class="ph uicontrol">OK</span> to log in.</li>
+            <li class="li">There are two directories on the SWSet CD or distribution package. The ConfigMgr directory contains the latest version of the Configuration Manager software used to install and activate a SWSet. This must be installed first by double-clicking on the only file in the ConfigMgr directory, which is ConfigMangerSetup.msi<em class="ph i">.</em>
+               <ol class="ol" type="a">
+                  <li class="li">Windows Server 2003: If there is already a version of Configuration Manager installed, the system may ask if the installation should be repaired or removed.  Select the Remove option, then restart ConfigManagerSetup.msi.</li>
+                  <li class="li">Windows Server 2008: If there is already a version of Configuration Manager installed, the system may not permit installation. Instead, the old version will first have to be removed using the “Programs and Features” icon in the Windows Control Panel.</li>
+               </ol>
+            </li>
+            <li class="li">Run the Configuration Manager program by navigating to: <strong class="ph b">Start, andgt; Machine Server
+                  Applications, andgt; Configuration Manager</strong> from the Start menu. A black DOS
+               command window will be displayed where you will either be prompted for the RD Account
+               Password (which is <strong class="ph b">RandD</strong>), or the Administrator Account Password (which is
+                  <strong class="ph b">scsgolden</strong> (see Figure <a class="xref" href="FES-03-115_loading_and_activating_a_software_set_on_a_forming_machine_server.html#r2057676-BB02-11F0-7828-09173F13E4C5__fig_v4v_zqy_qzb">1</a>). <figure class="fig fignone" id="r2057676-BB02-11F0-7828-09173F13E4C5__fig_v4v_zqy_qzb"><figcaption><span class="fig--title-label">Figure 1. </span>Figure 1: Configuration Manager Password Prompt</figcaption>
+                  
+                  <br><div class="imagecenter"><img class="image imagecenter" id="r2057676-BB02-11F0-7828-09173F13E4C5__image_w4v_zqy_qzb" src="media/image1.jpg"></div><br>
+               </figure>
+            </li>
+            <li class="li" id="r2057676-BB02-11F0-7828-09173F13E4C5__li_qt1_1sy_qzb">After entering the appropriate password, press the
+                  <span class="ph uicontrol">Enter</span> key. The Configuration Manager window will then be
+               displayed.</li>
+            <li class="li">There are three methods for installing a new software set on the server displayed on the Configuration Manager window:<ol class="ol" type="a">
+                  <li class="li">
+                     <strong class="ph b">Distribution CD:</strong> This tab is used with a physical CD, SCS-0237 (order the CD, or see SOP-08-001-C to create one). If using this method, insert the CD now.
+                  <div class="note note note_note"><span class="note__title">Note:</span> 
+                        <p class="p">If you encounter any issues when attempting to use this method, use method
+                           c, below. </p>
+                     </div>
+                  </li>
+                  <li class="li">
+                     <strong class="ph b">Floppy Disk:</strong> Although this tab is displayed, new software sets are no longer distributed on floppy disks.</li>
+                  <li class="li">
+                     <strong class="ph b">Virtual Directory:</strong> This tab is used for loading a software set directly
+                     from the server’s hard drive (for instance, where a USB thumb drive is used to
+                     transfer the software to the machine server). If using this method, the
+                     software set must now be copied to the server’s hard disk (into the
+                     C:\FMS_SW\CD\Virtual directory) as shown in Figure <a class="xref" href="FES-03-115_loading_and_activating_a_software_set_on_a_forming_machine_server.html#r2057676-BB02-11F0-7828-09173F13E4C5__fig_gsh_bry_qzb">2</a>. <div class="note note note_note"><span class="note__title">Note:</span> 
+                        <p class="p">This is the preferred method for installing new software. </p>
+                     </div>
+                     <figure class="fig fignone" id="r2057676-BB02-11F0-7828-09173F13E4C5__fig_gsh_bry_qzb"><figcaption><span class="fig--title-label">Figure 2. </span>Figure 2: Virtual Directory Location</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r2057676-BB02-11F0-7828-09173F13E4C5__image_ish_bry_qzb" src="media/image2.jpg"></div><br>
+                     </figure>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">Click the <span class="ph uicontrol">Load Software</span> tab, and then click the tab that
+               corresponds to the distribution method selected in Step <a class="xref" href="FES-03-115_loading_and_activating_a_software_set_on_a_forming_machine_server.html#r2057676-BB02-11F0-7828-09173F13E4C5__li_qt1_1sy_qzb">5</a>. The name of the application software will
+               be displayed. Click on the <span class="ph uicontrol">application software name</span> once so
+               it is highlighted, and then click on the <span class="ph uicontrol">Begin Loading  SWSet</span>
+               button (see Figure <a class="xref" href="FES-03-115_loading_and_activating_a_software_set_on_a_forming_machine_server.html#r2057676-BB02-11F0-7828-09173F13E4C5__fig_ltd_dry_qzb">3</a>) to start the loading
+               process. <figure class="fig fignone" id="r2057676-BB02-11F0-7828-09173F13E4C5__fig_ltd_dry_qzb"><figcaption><span class="fig--title-label">Figure 3. </span>Figure 3: Load Software Set Tab</figcaption>
+                  
+                  <br><div class="imagecenter"><img class="image imagecenter" id="r2057676-BB02-11F0-7828-09173F13E4C5__image_ntd_dry_qzb" src="media/image3.jpg"></div><br>
+               </figure>
+            </li>
+            <li class="li">Several windows will display a listing of the files to be copied, along with a
+                  ‘<strong class="ph b">Configuration Manager Information</strong>’ window that subsequently displays the
+               files being copied. This process will take several minutes. When it is finished,
+               clicking on <span class="ph uicontrol">OK</span> will close the window and redisplay the
+                  <strong class="ph b">Configuration Manager</strong> window.</li>
+            <li class="li">Click on the ‘<span class="ph uicontrol">Activate Software Set</span>’ tab, and then click on the
+               name of the software set that was just loaded. Be sure to select the <strong class="ph b">‘Force
+                  Activation of All Components’ </strong>option, and then click on the <span class="ph uicontrol">Make
+                  Active</span> button (see Figure <a class="xref" href="FES-03-115_loading_and_activating_a_software_set_on_a_forming_machine_server.html#r2057676-BB02-11F0-7828-09173F13E4C5__fig_em5_gry_qzb">4</a>). <figure class="fig fignone" id="r2057676-BB02-11F0-7828-09173F13E4C5__fig_em5_gry_qzb"><figcaption><span class="fig--title-label">Figure 4. </span>Figure 4: Activate Software Tab</figcaption>
+                  
+                  <br><div class="imagecenter"><img class="image imagecenter" id="r2057676-BB02-11F0-7828-09173F13E4C5__image_fm5_gry_qzb" src="media/image4.jpg"></div><br>
+               </figure>
+            </li>
+            <li class="li">The Configuration Manager Information window will be displayed, along with several
+                  ‘<strong class="ph b">Activating SWSet</strong>’ windows. Click on <span class="ph uicontrol">Yes</span> for each
+               window displayed. Several more windows will be displayed showing the files being
+               copied, along with several messages on the Configuration Manager Information screen.
+               This entire process will take several minutes. </li>
+            <li class="li" id="r2057676-BB02-11F0-7828-09173F13E4C5__li_jmr_c5y_qzb">When the program is finished, a window will be displayed with a
+               message that the new software set is now complete and the Machine Server must be
+               rebooted (see Figure <a class="xref" href="FES-03-115_loading_and_activating_a_software_set_on_a_forming_machine_server.html#r2057676-BB02-11F0-7828-09173F13E4C5__fig_egp_3ry_qzb">5</a>). Click
+                  <span class="ph uicontrol">OK</span> to finish the activation process. The Machine Server
+               will reboot. <div class="note note note_note" id="r2057676-BB02-11F0-7828-09173F13E4C5__note_nmr_c5y_qzb"><span class="note__title">Note:</span> 
+                  <p class="p">There are several errors that may occur during the activation process. Not  all
+                     of  these errors will result in a failure to activate. If the SWSet activation
+                     fails, repeat it again without restarting the Configuration Manager. If
+                     activation fails a second time, reboot the server and try again.</p>
+               </div>
+               <figure class="fig fignone" id="r2057676-BB02-11F0-7828-09173F13E4C5__fig_egp_3ry_qzb"><figcaption><span class="fig--title-label">Figure 5. </span>Figure 5: Activation Complete</figcaption>
+                  
+                  <br><div class="imagecenter"><img class="image imagecenter" id="r2057676-BB02-11F0-7828-09173F13E4C5__image_fgp_3ry_qzb" src="media/image5.jpg"></div><br>
+               </figure>
+            </li>
+            <li class="li">Verify that the new software is active by navigating to: <strong class="ph b">Start, andgt;Log off </strong>
+               <strong class="ph b">Obop…</strong> from the Start menu.</li>
+            <li class="li">A prompt will be displayed asking “Are you sure you want to log off?” Click on the
+                  <span class="ph uicontrol">Log Off</span> button.</li>
+            <li class="li">Log back into the setup account with the User Name <strong class="ph b">obsetup</strong> and the Password
+                  <strong class="ph b">SetupServer</strong>. Click <span class="ph uicontrol">OK</span> to log in.</li>
+            <li class="li">Run the Configuration Manager program by navigating to:  <strong class="ph b">Start, andgt; Machine Server Applications, andgt; Configuration Manager</strong> from the Start menu. </li>
+            <li class="li">Click on the ‘<span class="ph uicontrol">Activate Software Set</span>’ tab.</li>
+            <li class="li">In the ‘Currently Active SWSet’ section, you should see the software set that you just
+               activated. Click on the <span class="ph uicontrol">X</span> in the upper right corner of the
+                  ‘<strong class="ph b">Configuration Manager</strong>’ window to close it.</li>
+            <li class="li">If the prior SWSet was 222 or earlier, it will be necessary to reconfigure the backups.
+               Launch the Backup Configuration utility, verify the backup server is correct and
+               click the <span class="ph uicontrol">apply</span> button. Consult document FES-03-118
+                  <em class="ph i">Configuring Machine Server Backups</em> if necessary.</li>
+            <li class="li">Launch the SCSSetup Wizard and verify that the configuration is correct. Be sure to
+               click the <span class="ph uicontrol">finish</span> button on the last screen. This will trigger
+               another reboot of the Machine Server.</li>
+            <li class="li">Once the Machine Server reboot is complete, any OSI/EICOM, COM-SOC 3, or IDS cabinets which communicate with the server must also be rebooted.<ol class="ol" type="a">
+                  <li class="li">
+                     <div class="note note note_note" id="r2057676-BB02-11F0-7828-09173F13E4C5__note_w3h_cty_qzb"><span class="note__title">Note:</span> 
+                        <p class="p">Failure to reboot any of these components will cause them to continue to
+                           operate with the old software, which could lead to unexpected
+                           results.</p>
+                     </div>
+                  </li>
+                  <li class="li">
+                     <div class="note note note_note" id="r2057676-BB02-11F0-7828-09173F13E4C5__note_cff_dty_qzb"><span class="note__title">Note:</span> 
+                        <p class="p">Prior to rebooting the IDS cabinet(s), follow SOP-11-001-A to reimage the
+                           IDS Compact Flash cards. Reimaging the IDS Compact Flash cards eliminates
+                           the risk of a corrupted card and increased machine downtime.</p>
+                     </div>
+                  </li>
+                  <li class="li">
+                     <div class="note note note_note" id="r2057676-BB02-11F0-7828-09173F13E4C5__note_lf2_2ty_qzb"><span class="note__title">Note:</span> 
+                        <p class="p">If the prior software set was 222 or earlier, it will be necessary to
+                           reload the job from MOC. The saved data from the OSI/EICOM or COM-SOC 3
+                           that is stored on the Machine Server was changed in structure and will
+                           not be compatible with the new OSI/EICOM and COM-SOC 3 programs.</p>
+                     </div>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">Once the Machine is operational with stable production, follow SOP-16-010 (Manual MDMS Backup) to manually force a machine server backup.</li>
+            <li class="li">Verify the backups are operational using document FES-03-117 <em class="ph i">Verifying Machine Server Backups.</em>
+            </li>
+         </ol>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title5" lang="en-us" id="c20546D7-BB02-11F0-1817-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title5">Equipment</h2>
+   
+   <div class="body conbody">
+      <p class="p">2 Network Cables and a Network Switch.</p>
+      <p class="p">SCS-0237 Application Software DVD (SWSet) from SOP-08-001-C</p>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title6" lang="en-us" id="r205A5DF-BB02-11F0-1138-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title6">References</h2>
+   
+   <div class="body refbody">
+      <section class="section" id="r205A5DF-BB02-11F0-1138-09173F13E4C5__section_v1h_rty_qzb">
+         <ul class="ul" id="r205A5DF-BB02-11F0-1138-09173F13E4C5__ul_brj_rty_qzb">
+            <li class="li">SOP-08-001-C Creating Forming Electronics Software.</li>
+            <li class="li">SOP-11-001-A IDS Reimage.</li>
+            <li class="li">FES-03-117 Verifying Machine Server Backups.</li>
+            <li class="li">FES-03-118 Configuring Machine Server Backups.</li>
+            <li class="li">FES-03-119 Manually Triggering a Machine Server Backup</li>
+         </ul>
+      </section>
+      <section class="section" id="r205A5DF-BB02-11F0-1138-09173F13E4C5__section_c5h_3ty_qzb"><h3 class="title sectiontitle">Document Classification</h3>
+         
+         <ul class="ul" id="r205A5DF-BB02-11F0-1138-09173F13E4C5__ul_rzx_3ty_qzb">
+            <li class="li">Asset Protection and Stability</li>
+            <li class="li">Organization and Training</li>
+         </ul>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title7" lang="en-us" id="c2052F54-BB02-11F0-9358-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title7">Collaboration</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c2052F54-BB02-11F0-9358-09173F13E4C5__table_jhn_lty_qzb"><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Country Group</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Role</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Name</strong>
+                  </p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Americas North</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Forming Electronics Specialist</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Dan Knuckles</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Europe</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Forming Electronics Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Remko Beckers</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Central Europe</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Regional Leader Forming Electronics</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Ruud Bormans</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">France - Spain</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jean-Pierre Locato</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jean-Pierre Locato</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Latin America</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">IS Machine Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Miguel Morales</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Engineering - Forming</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Associate Engineer</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jose Gonzalez</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Global</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Global Forming Electronics Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Franklin Barrios</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title8" lang="en-us" id="c205BE1C-BB02-11F0-2029-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title8">Revision History</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c205BE1C-BB02-11F0-2029-09173F13E4C5__table_z1j_nty_qzb"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">2013-12-16</td>
+               <td class="stentry">
+                  <p class="p">Originally Released as Process Control SOP-06-007-A</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2016-04-12</td>
+               <td class="stentry">
+                  <p class="p">Revised and Released as Process Control SOP-06-007-B</p>
+                  <p class="p">Updated <a class="xref" href="FES-03-115_loading_and_activating_a_software_set_on_a_forming_machine_server.html#r205A5DF-BB02-11F0-1138-09173F13E4C5">Reference Documents</a>
+                  </p>
+                  <p class="p">Updated Required Items</p>
+                  <p class="p">Updated Step <a class="xref" href="FES-03-115_loading_and_activating_a_software_set_on_a_forming_machine_server.html#r2057676-BB02-11F0-7828-09173F13E4C5__li_qt1_1sy_qzb">5</a>
+                  </p>
+                  <p class="p">Added Step <a class="xref" href="FES-03-115_loading_and_activating_a_software_set_on_a_forming_machine_server.html#r2057676-BB02-11F0-7828-09173F13E4C5__li_jmr_c5y_qzb">11</a>
+                  </p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2016-12-01</td>
+               <td class="stentry">
+                  <p class="p">Revised and Released as Process Control SOP-06-007-C</p>
+                  <p class="p">Updated SOP References to show latest revision levels</p>
+                  <p class="p">Added instructions to first install the Configuration Manager included with the
+                     SWSet</p>
+                  <p class="p">Removed error message writing scripts since the issue has been addressed</p>
+                  <p class="p">Added SWSet 223 specific instructions</p>
+                  <p class="p">Added instructions to re-run SCSSetup after activation</p>
+                  <p class="p">Added instructions to manually force a backup and verify that the backup
+                     completed properly</p>
+                  <p class="p">Added references to IDS reimage</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2022-06-29</td>
+               <td class="stentry">
+                  <p class="p">Approved by Franklin Barrios, Global Leader FES Network</p>
+                  <p class="p">Moved to GMF Site as FES-03-115</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article></article></article></main></body></html>

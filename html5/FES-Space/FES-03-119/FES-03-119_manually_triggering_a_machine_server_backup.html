@@ -1,0 +1,262 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metR-fes-space,machine-server,backup-server,server-backup-system,fes-module,manual-backup,server-maintenance,backup-configuration,restore-procedure,backup-verification,glass-manufacturing,production-line-automation,equipment-safety,data-protection,system-recovery,backup-system,primary-server,backup-synchronization,system-validation,configuration-check,server-monitoring,manual-triggering,system-reliability,data-integrity,production-continuity,industrial-automation,backup-module,fes-controller,application-setup,server-configuration,backup-policy-definition,data-sync-verification,software-deployment,plant-operations,server-automation,industrial-network,fes-hardware,network-switch,safety-precautions,power-shutdown-procedure,equipment-lockout,data-integrity-check,fire-safety,industrial-safety,plant-environment,server-room-protection,maintenance-protocols,emergency-recovery,manual-backup-trigger,backup-scheduler-check,backup-log-review,verification-step,rollback-procedure,production-line-uptime,data-integrity-validation,maintenance-window,ethernet-adapter,equipment-setup,hardware-connection,network-cabling,component-verification,hardware-testing,glass-plant-infrastructure,industrial-networking,server-room-layout,backup-equipment,hardware-maintenance,reference-docs,system-manual,backup-logs,configuration-files,troubleshooting-guide,verification-checklist,runbook,manufacturing-operations,it-operations,compliance-guidelines,support-procedures,service-documentation,backup-team,it-ops,maintenance-team,task-handover,approval-workflow,incident-escalation,change-notification,post-backup-validation,cross-functional-coordination,service-level-agreement,operation-readiness,shift-handovers,backup-procedure,fes-documentation,revision-control,document-tracking,change-management,update-validation,qa-approval,content-governance,quality-assurance,traceability,versioning-policy,manufacturing-standards"><meta name="keywords" content="metR-fes-space, machine-server, backup-server, server-backup-system, fes-module, manual-backup, server-maintenance, backup-configuration, restore-procedure, backup-verification, glass-manufacturing, production-line-automation, equipment-safety, data-protection, system-recovery, backup-system, primary-server, backup-synchronization, system-validation, configuration-check, server-monitoring, manual-triggering, system-reliability, data-integrity, production-continuity, industrial-automation, backup-module, fes-controller, application-setup, server-configuration, backup-policy-definition, data-sync-verification, software-deployment, plant-operations, server-automation, industrial-network, fes-hardware, network-switch, safety-precautions, power-shutdown-procedure, equipment-lockout, data-integrity-check, fire-safety, industrial-safety, plant-environment, server-room-protection, maintenance-protocols, emergency-recovery, manual-backup-trigger, backup-scheduler-check, backup-log-review, verification-step, rollback-procedure, production-line-uptime, data-integrity-validation, maintenance-window, ethernet-adapter, equipment-setup, hardware-connection, network-cabling, component-verification, hardware-testing, glass-plant-infrastructure, industrial-networking, server-room-layout, backup-equipment, hardware-maintenance, reference-docs, system-manual, backup-logs, configuration-files, troubleshooting-guide, verification-checklist, runbook, manufacturing-operations, it-operations, compliance-guidelines, support-procedures, service-documentation, backup-team, it-ops, maintenance-team, task-handover, approval-workflow, incident-escalation, change-notification, post-backup-validation, cross-functional-coordination, service-level-agreement, operation-readiness, shift-handovers, backup-procedure, fes-documentation, revision-control, document-tracking, change-management, update-validation, qa-approval, content-governance, quality-assurance, traceability, versioning-policy, manufacturing-standards"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-FES-Space"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-11-10+05:30"><meta name="DC.date.modified" content="2025-11-10+05:30"><meta name="RevisionDate" content="07-05-2022"><meta name="DocumentNumber" content="FES-03-119"><meta name="title" content="Manually Triggering a Machine Server Backup"><meta name="shortdesc" content="Describes how to manually start a Machine Server backup after updates or configuration changes to ensure synchronization between the backup and primary servers."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="machine-server;backup-server;primary-server;fes-module;backup-scheduler"><meta name="taxonomy" content="domain:server-backup;usecase:manual-triggering;industry:glass-manufacturing"><meta name="tags" content="backup,manual-process,server-maintenance,system-recovery,configuration-check,failover-validation"><meta name="usecase" content="manually trigger a machine server backup for configuration validation and synchronization"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c20B0B87-BB02-11F0-3307-09173F13E4C5"><meta name="DC.language" content="en-us"><title>Manually Triggering a Machine Server Backup</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c20B0B87-BB02-11F0-3307-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Manually Triggering a Machine Server Backup</h1>
+   
+   <div class="body conbody"></div>
+<article class="topic concept nested1" aria-labelledby="ariaid-title2" lang="en-us" id="c20B3C8E-BB02-11F0-5568-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">Purpose</h2>
+   
+   <div class="body conbody">
+      <ol class="ol" id="c20B3C8E-BB02-11F0-5568-09173F13E4C5__ol_q4w_mmz_qzb">
+         <li class="li">This document describes how to manually start a backup of a Machine Server. This
+            procedure is useful after installing a new version of software, configuring new backup
+            or primary machine servers, or whenever it is desired to ensure that the backup machine
+            server is up to date. Normal backups of the Machine Server are scheduled to occur at 1
+            AM in the morning (local time).</li>
+         <li class="li">This procedure only applies to Machine Servers which are using SWSet 223 (SCS-0237
+            GR-223) or later.</li>
+      </ol>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title3" lang="en-us" id="c20AC4E3-BB02-11F0-1442-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">Application</h2>
+   
+   <div class="body conbody">
+      <p class="p">This work instruction applies to all Space Plants that have FSC and Space IS Machines.</p>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title4" lang="en-us" id="c20B8619-BB02-11F0-1466-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title4">Safety</h2>
+   
+   <div class="body conbody">
+      <p class="p">Follow all plant safety requirements.</p>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title5" lang="en-us" id="r20B23C2-BB02-11F0-7096-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title5">Procedure</h2>
+   
+   <div class="body refbody">
+      <section class="section">
+         <ol class="ol">
+            <li class="li">Log off the <strong class="ph b">obop</strong> account (using the sequence Start-, andgt;Shutdown-, andgt;Log Off).</li>
+            <li class="li">Log onto the Machine Server with the administrator account (password: scsgolden).</li>
+            <li class="li" id="r20B23C2-BB02-11F0-7096-09173F13E4C5__li_n2g_rnz_qzb">Trigger the scheduled tasks.<div class="note note note_note" id="r20B23C2-BB02-11F0-7096-09173F13E4C5__note_bkx_4nz_qzb"><span class="note__title">Note:</span> 
+                  <p class="p">This step is for Windows Server 2003 systems only. If using Windows Server 2008
+                     (SCS-0716 GR04 or greater), use step <a class="xref" href="FES-03-119_manually_triggering_a_machine_server_backup.html#r20B23C2-BB02-11F0-7096-09173F13E4C5__li_g2r_qnz_qzb">4</a> instead.</p>
+               </div>
+               <ol class="ol" type="a" id="r20B23C2-BB02-11F0-7096-09173F13E4C5__ol_o2g_rnz_qzb">
+                  <li class="li">Navigate to the Control Panel (Start -, andgt; Settings -, andgt; Control Panel or see
+                     Figure <a class="xref" href="FES-03-119_manually_triggering_a_machine_server_backup.html#r20B23C2-BB02-11F0-7096-09173F13E4C5__fig_zsz_1nz_qzb">1</a> below). <figure class="fig fignone" id="r20B23C2-BB02-11F0-7096-09173F13E4C5__fig_zsz_1nz_qzb"><figcaption><span class="fig--title-label">Figure 1. </span>Figure 1: Navigating to the Control Panel (Windows Server 2003
+                           Systems)</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r20B23C2-BB02-11F0-7096-09173F13E4C5__image_atz_1nz_qzb" src="media/image1.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Locate the Scheduled Tasks control and double-click it (see Figure <a class="xref" href="FES-03-119_manually_triggering_a_machine_server_backup.html#r20B23C2-BB02-11F0-7096-09173F13E4C5__fig_c2v_cnz_qzb">2</a>). <figure class="fig fignone" id="r20B23C2-BB02-11F0-7096-09173F13E4C5__fig_c2v_cnz_qzb"><figcaption><span class="fig--title-label">Figure 2. </span>Figure 2: Scheduled Tasks Control (Windows Server 2003)</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r20B23C2-BB02-11F0-7096-09173F13E4C5__image_d2v_cnz_qzb" src="media/image2.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">The scheduled tasks will now be displayed. Right-click each of the following
+                     scheduled tasks (in order), and then select <strong class="ph b">Run</strong>: <ol class="ol" type="i" id="r20B23C2-BB02-11F0-7096-09173F13E4C5__ol_p2g_rnz_qzb">
+                        <li class="li">DBBackup.</li>
+                        <li class="li">DBMonitorBackup.</li>
+                        <li class="li">BackupFiles <div class="note note note_note" id="r20B23C2-BB02-11F0-7096-09173F13E4C5__note_q2g_rnz_qzb"><span class="note__title">Note:</span> 
+                              <p class="p">Wait for the system to stop displaying the message “<strong class="ph b">Running</strong>”
+                                 prior to moving onto the next one. (See Figure <a class="xref" href="FES-03-119_manually_triggering_a_machine_server_backup.html#r20B23C2-BB02-11F0-7096-09173F13E4C5__fig_mpf_lnz_qzb">3</a> for an example of a
+                                 running scheduled task).</p>
+                           </div>
+                           <figure class="fig fignone" id="r20B23C2-BB02-11F0-7096-09173F13E4C5__fig_mpf_lnz_qzb"><figcaption><span class="fig--title-label">Figure 3. </span>Figure 3: Scheduled Tasks Window</figcaption>
+                              
+                              <p class="p">
+                                 <em class="ph i">
+                                    <strong class="ph b">(Note that the DBBackup Task is Currently
+                                 Running)</strong>
+                                 </em>
+                              </p>
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20B23C2-BB02-11F0-7096-09173F13E4C5__image_qpf_lnz_qzb" src="media/image3.jpg"></div><br>
+                           </figure>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="li">When the BackupFiles scheduled task is complete, the backup will have been
+                     copied to the backup server.</li>
+               </ol>
+            </li>
+            <li class="li" id="r20B23C2-BB02-11F0-7096-09173F13E4C5__li_g2r_qnz_qzb">Trigger the scheduled tasks. This step is for Windows Server 2008
+               systems only. If using Windows Server 2003 (SCS-0716 GR03 or prior), use step <a class="xref" href="FES-03-119_manually_triggering_a_machine_server_backup.html#r20B23C2-BB02-11F0-7096-09173F13E4C5__li_n2g_rnz_qzb">3</a> instead. <ol class="ol" type="a" id="r20B23C2-BB02-11F0-7096-09173F13E4C5__ol_h2r_qnz_qzb">
+                  <li class="li">Open the Server Manager by clicking on the <span class="ph uicontrol">Start</span> Menu,
+                     then right-clicking the <span class="ph uicontrol">Computer</span> icon, and then
+                     selecting <strong class="ph b">Manage</strong> (see Figure <a class="xref" href="FES-03-119_manually_triggering_a_machine_server_backup.html#r20B23C2-BB02-11F0-7096-09173F13E4C5__fig_r5t_lnz_qzb">4</a>). <figure class="fig fignone" id="r20B23C2-BB02-11F0-7096-09173F13E4C5__fig_r5t_lnz_qzb"><figcaption><span class="fig--title-label">Figure 4. </span>Figure 4: Opening Server Manager (Windows Server 2008)</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r20B23C2-BB02-11F0-7096-09173F13E4C5__image_s5t_lnz_qzb" src="media/image4.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">When Server Manager opens, navigate to the task scheduler library as shown in
+                     Figure <a class="xref" href="FES-03-119_manually_triggering_a_machine_server_backup.html#r20B23C2-BB02-11F0-7096-09173F13E4C5__fig_elf_nnz_qzb">5</a>. <figure class="fig fignone" id="r20B23C2-BB02-11F0-7096-09173F13E4C5__fig_elf_nnz_qzb"><figcaption><span class="fig--title-label">Figure 5. </span>Figure 5: Scheduled Tasks (WindowsServer 2008) DBBackup
+                           Running</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r20B23C2-BB02-11F0-7096-09173F13E4C5__image_flf_nnz_qzb" src="media/image5.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">The scheduled tasks will now be displayed. Right-click each of the following
+                     scheduled tasks (in order) and then select “<strong class="ph b">Run</strong>.” <ol class="ol" type="i" id="r20B23C2-BB02-11F0-7096-09173F13E4C5__ol_i2r_qnz_qzb">
+                        <li class="li">DBBackup</li>
+                        <li class="li">DBMonitorBackup</li>
+                        <li class="li">BackupFiles <div class="note note note_note" id="r20B23C2-BB02-11F0-7096-09173F13E4C5__note_j2r_qnz_qzb"><span class="note__title">Note:</span> 
+                              <p class="p">Wait for the system to stop displaying the message “
+                                 <strong class="ph b">Running</strong>” prior to moving onto the next task. With Windows
+                                 Server 2008, the task status does not automatically refresh, and
+                                 the <span class="ph uicontrol">F5</span> key must be pressed to refresh the
+                                 task status.</p>
+                           </div>
+                           <div class="note note note_note" id="r20B23C2-BB02-11F0-7096-09173F13E4C5__note_k2r_qnz_qzb"><span class="note__title">Note:</span> 
+                              <p class="p">See Figure <a class="xref" href="FES-03-119_manually_triggering_a_machine_server_backup.html#r20B23C2-BB02-11F0-7096-09173F13E4C5__fig_elf_nnz_qzb">5</a> for an
+                                 example of a running scheduled task </p>
+                           </div>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="li">When the BackupFiles scheduled task is complete, the backup will have been
+                     copied to the backup server. </li>
+               </ol>
+            </li>
+            <li class="li">Follow the instructions in FES-03-117 <em class="ph i">Verifying Machine Server Backups</em> to validate that the backup worked correctly</li>
+         </ol>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title6" lang="en-us" id="c20AF49E-BB02-11F0-1919-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title6">Equipment</h2>
+   
+   <div class="body conbody">
+      <p class="p">A Machine Server with a configured backup device.</p>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title7" lang="en-us" id="r20B552F-BB02-11F0-5987-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title7">References</h2>
+   
+   <div class="body refbody">
+      <section class="section">
+         <ul class="ul">
+            <li class="li">FES-03-117 Verifying Machine Server Backups</li>
+         </ul>
+      </section>
+      <section class="section" id="r20B552F-BB02-11F0-5987-09173F13E4C5__section_xkr_34z_qzb"><h3 class="title sectiontitle">Document Classification</h3>
+         
+         <ul class="ul" id="r20B552F-BB02-11F0-5987-09173F13E4C5__ul_fzr_j4z_qzb">
+            <li class="li">Asset Protection and Stability</li>
+            <li class="li">Organization and Training</li>
+         </ul>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title8" lang="en-us" id="c20ADD24-BB02-11F0-6407-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title8">Collaboration</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c20ADD24-BB02-11F0-6407-09173F13E4C5__table_xdr_m4z_qzb"><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Country Group</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Role</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Name</strong>
+                  </p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Americas North</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Forming Electronics Specialist</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Dan Knuckles</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Europe</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Forming Electronics Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Remko Beckers</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Central Europe</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Regional Leader Forming Electronics</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Ruud Bormans</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">France - Spain</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jean-Pierre Locato</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jean-Pierre Locato</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Latin America</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">IS Machine Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Miguel Morales</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Engineering - Forming</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Associate Engineer</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jose Gonzalez</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Global</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Global Forming Electronics Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Franklin Barrios</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title9" lang="en-us" id="c20B6D15-BB02-11F0-7977-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title9">Revision History</h2>
+      
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c20B6D15-BB02-11F0-7977-09173F13E4C5__table_sr1_p4z_qzb"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">2016-12-01</td>
+               <td class="stentry">
+                  <p class="p">Originally Released as Process Control SOP-16-010</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2022-07-05</td>
+               <td class="stentry">
+                  <p class="p">Approved by Franklin Barrios, Global Leader FES Network</p>
+                  <p class="p">Moved to GMF Site as FES-03-119</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article></article></article></main></body></html>

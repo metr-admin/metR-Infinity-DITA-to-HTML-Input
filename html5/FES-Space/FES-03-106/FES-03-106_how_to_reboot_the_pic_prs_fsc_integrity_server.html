@@ -1,0 +1,472 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="PIC controller reboot,PRS controller reboot,FSC integrity server restart,metR-FES-Space,Edgeport power supply,pre-reboot checks,stop services,shutdown commands,power-cycle,serial console,SSH login,check service-status,verify telemetry and sensors,post-reboot validation,rollback steps,capture logs (syslog),maintenance window,production impact,UPS and power considerations,backup configuration,FSC system,PIC/PRS controllers,edge interface,sensors and actuators,purpose and scope,operational boundaries,intended use,deployment scenarios,integration points,limitations and exclusions,glass-production-line,furnace automation,site-network integration,plant operational context,PIC controller,PRS controller,FSC integrity server,lockout-tagout (LOTO),isolation procedure,permit-to-work,personal protective equipment (PPE),electrical safety checks,hot work restrictions,hazard assessment,emergency stop procedure,confined-space awareness,furnace control room,glass-manufacturing safety,plant-safety-compliance,safety escalation,safety-training-records,control panel,shutdown sequence,reboot sequence,pre-checks and preconditions,service-stop commands,check system logs,confirm sensor telemetry,operator confirmation,rollback plan,operator training,maintenance technician training,safety certification,system familiarisation,training prerequisites,competency assessment,hands-on practical,refresher schedule,training matrix,knowledge checks,site onboarding,regulatory compliance training,skill levels,certification records,control cables and connectors,equipment list,specification checks,spare parts,replacement instructions,wiring verification,tools required,site inventory,serviceability and MTTR,recommended spares,installation environment,manufacturer manuals,service bulletins,installation guides,technical standards,normative references,informative references,cross reference list,support contacts,versioned artifacts,site procedures,regulatory guidance,vendor documentation,service history,site engineering,vendor support,control room team,field technician,handover procedure,support escalation,communication protocol,RACI matrix,maintenance window coordination,service-level agreement (SLA),vendor coordination,site continuity,operational escalation paths,third-party integrations,revision history,version control,change log,approval records,revision entries,approver names,change descriptions,effective dates,document governance,site documentation,compliance records,audit trail"><meta name="keywords" content="PIC controller reboot, PRS controller reboot, FSC integrity server restart, metR-FES-Space, Edgeport power supply, pre-reboot checks, stop services, shutdown commands, power-cycle, serial console, SSH login, check service-status, verify telemetry and sensors, post-reboot validation, rollback steps, capture logs (syslog), maintenance window, production impact, UPS and power considerations, backup configuration, FSC system, PIC/PRS controllers, edge interface, sensors and actuators, purpose and scope, operational boundaries, intended use, deployment scenarios, integration points, limitations and exclusions, glass-production-line, furnace automation, site-network integration, plant operational context, PIC controller, PRS controller, FSC integrity server, lockout-tagout (LOTO), isolation procedure, permit-to-work, personal protective equipment (PPE), electrical safety checks, hot work restrictions, hazard assessment, emergency stop procedure, confined-space awareness, furnace control room, glass-manufacturing safety, plant-safety-compliance, safety escalation, safety-training-records, control panel, shutdown sequence, reboot sequence, pre-checks and preconditions, service-stop commands, check system logs, confirm sensor telemetry, operator confirmation, rollback plan, operator training, maintenance technician training, safety certification, system familiarisation, training prerequisites, competency assessment, hands-on practical, refresher schedule, training matrix, knowledge checks, site onboarding, regulatory compliance training, skill levels, certification records, control cables and connectors, equipment list, specification checks, spare parts, replacement instructions, wiring verification, tools required, site inventory, serviceability and MTTR, recommended spares, installation environment, manufacturer manuals, service bulletins, installation guides, technical standards, normative references, informative references, cross reference list, support contacts, versioned artifacts, site procedures, regulatory guidance, vendor documentation, service history, site engineering, vendor support, control room team, field technician, handover procedure, support escalation, communication protocol, RACI matrix, maintenance window coordination, service-level agreement (SLA), vendor coordination, site continuity, operational escalation paths, third-party integrations, revision history, version control, change log, approval records, revision entries, approver names, change descriptions, effective dates, document governance, site documentation, compliance records, audit trail"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-FES-Space"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-11-10+05:30"><meta name="DC.date.modified" content="2025-11-10+05:30"><meta name="RevisionDate" content="05-09-2022"><meta name="DocumentNumber" content="FES-03-106"><meta name="title" content="How to reboot the PIC, PRS , and FSC integrity server"><meta name="shortdesc" content="Detailed pre-check, shutdown, reboot and verification steps for PIC/PRS controllers and the FSC integrity server, including log capture and rollback."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="PIC controller;PRS controller;FSC integrity server;serial console;SSH;system logs"><meta name="taxonomy" content="domain:operations;usecase:server-reboot;industry:glass-manufacturing"><meta name="tags" content="reboot,ssh,serial,logs,validation"><meta name="usecase" content="clear-stepwise-reboot-and-validation-procedure"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c20073DD-BB02-11F0-7411-09173F13E4C5"><meta name="DC.language" content="en-us"><title>How to Reboot the PIC PRS FSC Integrity Server</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c20073DD-BB02-11F0-7411-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">How to Reboot the PIC PRS FSC Integrity Server</h1>
+   
+   <div class="body conbody"></div>
+<article class="topic concept nested1" aria-labelledby="ariaid-title2" lang="en-us" id="c200A3D8-BB02-11F0-1160-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">Purpose and Application</h2>
+   
+   <div class="body conbody">
+      <p class="p">This document describes how to correctly shutdown an Integrity Server FSC and reboot it again.  Rebooting with this method avoids the risk of corrupting the data that the FSC uses and maintains for proper operation. The risk of data corruption caused by abrupt power shutdown of the Integrity Server is similar to the risk with Microsoft Windows.</p>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title3" lang="en-us" id="c201028F-BB02-11F0-4601-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">Safety</h2>
+   
+   <div class="body conbody">
+      <div class="p">Observe Space standard safety requirements and procedures defined by the Global Environmental
+         Health , andamp; Safety (EH, andamp;S) organization, as well as all applicable local, regional, and
+         national requirements. Safety equipment and instructions specific to the completion of this
+         work instruction are detailed in the Instructions Section.<table class="simpletable" id="c201028F-BB02-11F0-4601-09173F13E4C5__table_ehf_b2s_qzb"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">
+                  <div class="p">
+                     <figure class="fig fignone" id="c201028F-BB02-11F0-4601-09173F13E4C5__fig_fhf_b2s_qzb"><figcaption><span class="fig--title-label">Figure 1. </span>Electricity</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="c201028F-BB02-11F0-4601-09173F13E4C5__image_ghf_b2s_qzb" src="media/image1.jpg"></div><br>
+                     </figure>
+                  </div>
+               </td>
+               <td class="stentry">
+                  <div class="p">
+                     <figure class="fig fignone" id="c201028F-BB02-11F0-4601-09173F13E4C5__fig_hhf_b2s_qzb"><figcaption><span class="fig--title-label">Figure 2. </span>High Noise Level</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="c201028F-BB02-11F0-4601-09173F13E4C5__image_ihf_b2s_qzb" src="media/image2.jpg"></div><br>
+                     </figure>
+                  </div>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title4" lang="en-us" id="r2008C33-BB02-11F0-1798-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title4">Procedure</h2>
+   
+   <div class="body refbody">
+      <section class="section">
+         <ol class="ol">
+            <li class="li" id="r2008C33-BB02-11F0-1798-09173F13E4C5__li_r4x_pfs_qzb">Shutting down the FSC required logging onto the original FSC menus
+               that have been part of the FSC since before the MOC program became the standard user
+               interface. To log on to the menus, it is recommend that a network “telnet” session be
+               established with the FSC. Telnet sessions can be made with the Reflection for Windows
+               program, the Chameleon telnet program or the PuTTY telnet program. All of these are
+               available from Run Advertised Programs.</li>
+            <li class="li">This procedure will describe the methods for connecting to the Integrity Server using a
+               telnet program or Reflection for Windows in the “Connection with Telnet” section. If
+               you do not get the results described when you do a <em class="ph i">Search Programs</em> (step <a class="xref" href="FES-03-106_how_to_reboot_the_pic_prs_fsc_integrity_server.html#r2008C33-BB02-11F0-1798-09173F13E4C5__li_r4x_pfs_qzb">1</a>), the program you want will need to be
+               installed first. The Global Service Desk can assist if you have not done this
+               function.</li>
+            <li class="li">There are two methods of connecting to the Integrity Server over the network:<ol class="ol" type="a">
+                  <li class="li">Connecting to the same IP address as used for MOC and JES operations.<ol class="ol" type="i">
+                        <li class="li">This is simpler, but results in a “blind” shutdown and reboot where you cannot see when the shutdown is completed or when the reboot has completed.</li>
+                     </ol>
+                  </li>
+                  <li class="li">Connecting to the Management Port IP address.<ol class="ol" type="i">
+                        <li class="li">This is slightly more involved because the Management Port requires a login and then typing a command to connect to the Console where you then log in the same way as the first method.</li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">Connection with Telnet<ol class="ol" type="a">
+                  <li class="li">
+                     <div class="note note note_note" id="r2008C33-BB02-11F0-1798-09173F13E4C5__note_imz_sfs_qzb"><span class="note__title">Note:</span> 
+                        <p class="p">Setting up the programs so that Backspace works as Delete is out of scope
+                           for this document. If a mistake is made in typing a password, just try
+                           again.</p>
+                     </div>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">Chameleon Method<ol class="ol" type="a">
+                  <li class="li">Click on the <span class="ph uicontrol">Windows Start</span> button and type
+                           <em class="ph i">
+                        <kbd class="ph userinput">telnet</kbd>
+                     </em> in the <em class="ph i">Search Programs and Files
+                     </em>box. If the program is installed, you should see <em class="ph i">Telnet and ASCII
+                        Terminal </em>in the Programs list at the top of the popup window (Figure
+                        <a class="xref" href="FES-03-106_how_to_reboot_the_pic_prs_fsc_integrity_server.html#r2008C33-BB02-11F0-1798-09173F13E4C5__fig_yry_xfs_qzb">1</a>). <figure class="fig fignone" id="r2008C33-BB02-11F0-1798-09173F13E4C5__fig_yry_xfs_qzb"><figcaption><span class="fig--title-label">Figure 3. </span>Figure 1</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r2008C33-BB02-11F0-1798-09173F13E4C5__image_asy_xfs_qzb" src="media/image3.jpg"></div><br>
+                     </figure>
+                  </li>
+               </ol>
+            </li>
+            <li class="li" id="r2008C33-BB02-11F0-1798-09173F13E4C5__li_z24_yhs_qzb">Click on the program and the <strong class="ph b">telnet</strong> window should appear
+               (Figure <a class="xref" href="FES-03-106_how_to_reboot_the_pic_prs_fsc_integrity_server.html#r2008C33-BB02-11F0-1798-09173F13E4C5__fig_ml2_yfs_qzb">2</a>). <div class="note note note_note" id="r2008C33-BB02-11F0-1798-09173F13E4C5__note_k34_fgs_qzb"><span class="note__title">Note:</span> 
+                  <p class="p">The background color may be simply white by default.</p>
+               </div>
+               <figure class="fig fignone" id="r2008C33-BB02-11F0-1798-09173F13E4C5__fig_ml2_yfs_qzb"><figcaption><span class="fig--title-label">Figure 4. </span>Figure 2</figcaption>
+                  
+                  <br><div class="imagecenter"><img class="image imagecenter" id="r2008C33-BB02-11F0-1798-09173F13E4C5__image_nl2_yfs_qzb" src="media/image4.jpg"></div><br>
+               </figure>
+            </li>
+            <li class="li">Click the menu word Connect or the left-most <span class="ph uicontrol">icon</span> button to
+               display the <strong class="ph b">connection dialog</strong> window (Figure <a class="xref" href="FES-03-106_how_to_reboot_the_pic_prs_fsc_integrity_server.html#r2008C33-BB02-11F0-1798-09173F13E4C5__fig_g3j_yfs_qzb">3</a>). <figure class="fig fignone" id="r2008C33-BB02-11F0-1798-09173F13E4C5__fig_g3j_yfs_qzb"><figcaption><span class="fig--title-label">Figure 5. </span>Figure 3</figcaption>
+                  
+                  <br><div class="imagecenter"><img class="image imagecenter" id="r2008C33-BB02-11F0-1798-09173F13E4C5__image_h3j_yfs_qzb" src="media/image5.jpg"></div><br>
+               </figure>
+            </li>
+            <li class="li" id="r2008C33-BB02-11F0-1798-09173F13E4C5__li_jsb_b3s_qzb">In the space titled “<strong class="ph b">Host</strong>:”, type in the IP address you are
+               going to use. The other two boxes should say “<strong class="ph b">Emulate: VT320</strong>” and “<strong class="ph b">Port:
+                  23</strong>”.</li>
+            <li class="li">Click <span class="ph uicontrol">OK</span> to start the connection. Some sort of announcement and
+               prompt should appear for you to log in. See the Shutdown/Reboot Procedure for what to
+               do next.</li>
+            <li class="li">Reflection for Windows Method<ol class="ol" type="a">
+                  <li class="li">Click on the <span class="ph uicontrol">Windows Start</span> button and type
+                           <em class="ph i">
+                        <kbd class="ph userinput">host</kbd>
+                     </em> in the <em class="ph i">Search Programs and Files
+                     </em>box. If the program is installed, you should see <em class="ph i">Host – ReGIS Graphics
+                     </em>in the Programs list at the top of the popup window (Figure <a class="xref" href="FES-03-106_how_to_reboot_the_pic_prs_fsc_integrity_server.html#r2008C33-BB02-11F0-1798-09173F13E4C5__fig_w1r_yfs_qzb">4</a>). <figure class="fig fignone" id="r2008C33-BB02-11F0-1798-09173F13E4C5__fig_w1r_yfs_qzb"><figcaption><span class="fig--title-label">Figure 6. </span>Figure 4</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r2008C33-BB02-11F0-1798-09173F13E4C5__image_x1r_yfs_qzb" src="media/image6.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Click on the program and the Reflection window should appear (Figure <a class="xref" href="FES-03-106_how_to_reboot_the_pic_prs_fsc_integrity_server.html#r2008C33-BB02-11F0-1798-09173F13E4C5__fig_qdv_yfs_qzb">5</a>). <figure class="fig fignone" id="r2008C33-BB02-11F0-1798-09173F13E4C5__fig_qdv_yfs_qzb"><figcaption><span class="fig--title-label">Figure 7. </span>Figure 5</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r2008C33-BB02-11F0-1798-09173F13E4C5__image_rdv_yfs_qzb" src="media/image7.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Click the menu word Connection to display the connection dialog window (Figure <a class="xref" href="FES-03-106_how_to_reboot_the_pic_prs_fsc_integrity_server.html#r2008C33-BB02-11F0-1798-09173F13E4C5__fig_unz_yfs_qzb">6</a>). <figure class="fig fignone" id="r2008C33-BB02-11F0-1798-09173F13E4C5__fig_unz_yfs_qzb"><figcaption><span class="fig--title-label">Figure 8. </span>Figure 6</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r2008C33-BB02-11F0-1798-09173F13E4C5__image_vnz_yfs_qzb" src="media/image8.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">In the space titled “<strong class="ph b">Host/Service name</strong>:”, type in the IP address you are
+                     going to use.</li>
+                  <li class="li">Click the <span class="ph uicontrol">Connect</span> button to start the connection. Some sort
+                     of announcement and prompt should appear for you to log in. See the
+                     Shutdown/Reboot Procedure for what to do next.</li>
+               </ol>
+            </li>
+            <li class="li">PuTTY Method
+         <ol class="ol" type="a">
+                  <li class="li">Click on the <span class="ph uicontrol">Windows Start</span> button and type
+                           <em class="ph i">
+                        <kbd class="ph userinput">putty</kbd>
+                     </em> in the <em class="ph i">Search Programs and Files
+                     </em>box. If the program is installed, you should see <em class="ph i">Telnet and ASCII
+                        Terminal </em>in the Programs list at the top of the popup window (Figure
+                        <a class="xref" href="FES-03-106_how_to_reboot_the_pic_prs_fsc_integrity_server.html#r2008C33-BB02-11F0-1798-09173F13E4C5__fig_ex2_zfs_qzb">7</a>). <figure class="fig fignone" id="r2008C33-BB02-11F0-1798-09173F13E4C5__fig_ex2_zfs_qzb"><figcaption><span class="fig--title-label">Figure 9. </span>Figure 7</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r2008C33-BB02-11F0-1798-09173F13E4C5__image_gx2_zfs_qzb" src="media/image9.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Click on the program and the Putty telnet window should appear (Figure <a class="xref" href="FES-03-106_how_to_reboot_the_pic_prs_fsc_integrity_server.html#r2008C33-BB02-11F0-1798-09173F13E4C5__fig_ihj_zfs_qzb">8</a>). <figure class="fig fignone" id="r2008C33-BB02-11F0-1798-09173F13E4C5__fig_ihj_zfs_qzb"><figcaption><span class="fig--title-label">Figure 10. </span>Figure 8</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r2008C33-BB02-11F0-1798-09173F13E4C5__image_jhj_zfs_qzb" src="media/image10.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">In the space titled “<strong class="ph b">Host Name</strong> (or IP address)”, type in the IP address you
+                     are going to use. Change the Connection type to “Telnet” (Figure <a class="xref" href="FES-03-106_how_to_reboot_the_pic_prs_fsc_integrity_server.html#r2008C33-BB02-11F0-1798-09173F13E4C5__fig_k54_zfs_qzb">9</a>). <figure class="fig fignone" id="r2008C33-BB02-11F0-1798-09173F13E4C5__fig_k54_zfs_qzb"><figcaption><span class="fig--title-label">Figure 11. </span>Figure 9</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r2008C33-BB02-11F0-1798-09173F13E4C5__image_l54_zfs_qzb" src="media/image11.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">The settings can be saved by typing a name into the line under Saved Sessions and
+                     clicking the <span class="ph uicontrol">Save</span> button. The next time that you start
+                     the program, click on the name that you created (which will appear in the
+                     window where the words Default Settings are shown). When the
+                        <span class="ph uicontrol">Load</span> button is clicked on, you should be able to do
+                     the next step immediately.</li>
+                  <li class="li">Click <strong class="ph b">OK</strong> to start the connection. Some sort of announcement and prompt should
+                     appear for you to log in. See the Shutdown/Reboot Procedure for what to do
+                     next.</li>
+               </ol>
+            </li>
+            <li class="li">Shutdown/Reboot Procedure <ol class="ol" type="a">
+                  <li class="li">If you have connected to the MOC/JES address, the following procedure will
+                     shut down or reboot the Integrity Server. If you connected instead to the
+                     Management Port, you should jump ahead to the Logging onto the Management Port
+                     procedure and then come back to this procedure after you are connected to the
+                     Console.</li>
+                  <li class="li">Right after you make a connection to the FSC, there will be an announcement
+                     confirming that you are connected and then a prompt for a username.</li>
+                  <li class="li">At the prompt for username, type in fsc in either upper or lower case letters
+                     and press the <span class="ph uicontrol">Enter</span> key.</li>
+                  <li class="li">The system will log you on and display the Space copyright information.
+                     Eventually the main FSC menu will appear (Figure <a class="xref" href="FES-03-106_how_to_reboot_the_pic_prs_fsc_integrity_server.html#r2008C33-BB02-11F0-1798-09173F13E4C5__fig_njv_zfs_qzb">10</a>). <figure class="fig fignone" id="r2008C33-BB02-11F0-1798-09173F13E4C5__fig_njv_zfs_qzb"><figcaption><span class="fig--title-label">Figure 12. </span>Figure 10</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r2008C33-BB02-11F0-1798-09173F13E4C5__image_ojv_zfs_qzb" src="media/image12.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Type the number <kbd class="ph userinput">4</kbd> or move the highlight with the arrow
+                     keys to select the <em class="ph i">
+                        <span class="ph uicontrol">Utilities</span>
+                     </em> menu. Press
+                        <span class="ph uicontrol">Enter</span> to display the <strong class="ph b">menu</strong> (Figure <a class="xref" href="FES-03-106_how_to_reboot_the_pic_prs_fsc_integrity_server.html#r2008C33-BB02-11F0-1798-09173F13E4C5__fig_xmb_1gs_qzb">11</a>). <figure class="fig fignone" id="r2008C33-BB02-11F0-1798-09173F13E4C5__fig_xmb_1gs_qzb"><figcaption><span class="fig--title-label">Figure 13. </span>Figure 11</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r2008C33-BB02-11F0-1798-09173F13E4C5__image_ymb_1gs_qzb" src="media/image13.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Type the number <kbd class="ph userinput">10</kbd> or move the highlight to select
+                           <em class="ph i">
+                        <span class="ph uicontrol">Shutdown/Reboot System.</span>
+                     </em> Press
+                        <span class="ph uicontrol">Enter</span> to get the next menu (Figure <a class="xref" href="FES-03-106_how_to_reboot_the_pic_prs_fsc_integrity_server.html#r2008C33-BB02-11F0-1798-09173F13E4C5__fig_s1g_1gs_qzb">12</a>). <figure class="fig fignone" id="r2008C33-BB02-11F0-1798-09173F13E4C5__fig_s1g_1gs_qzb"><figcaption><span class="fig--title-label">Figure 14. </span>Figure 12</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r2008C33-BB02-11F0-1798-09173F13E4C5__image_t1g_1gs_qzb" src="media/image14.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Enter the number for the operation that you need to perform and press
+                        <span class="ph uicontrol">Enter</span>. The system will prompt for a Password.
+                     Passwords are established by using the MOC utility for setting up user
+                     privileges. The password used will require the necessary privilege to permit
+                     doing a reboot or shutdown this way. <ol class="ol" type="i">
+                        <li class="li">Recommendation: Set up a special user account that is the only one
+                           having the privilege and provide it to personnel who are the most likely
+                           to be responsible for doing maintenance like this</li>
+                     </ol>
+                  </li>
+                  <li class="li">If the password is correct, the text will display to explain what the function
+                     will do and prompt you to confirm that this is your intention. Type
+                        <kbd class="ph userinput">Y</kbd> to proceed or <kbd class="ph userinput">N</kbd> to
+                     cancel.</li>
+                  <li class="li">The procedure will next display a screen where you can choose how long to
+                     delay the start of the shutdown (Figure <a class="xref" href="FES-03-106_how_to_reboot_the_pic_prs_fsc_integrity_server.html#r2008C33-BB02-11F0-1798-09173F13E4C5__fig_ypl_1gs_qzb">13</a>). To start the shutdown immediately, type a
+                        <kbd class="ph userinput">zero</kbd> and then press <span class="ph uicontrol">Enter</span> to
+                     complete the question. This is an old option that types a warning on the screen
+                     of other telnet sessions. If this were a combo system, it would alert the PIC
+                     and PRS users that the system is about to shut down. <figure class="fig fignone" id="r2008C33-BB02-11F0-1798-09173F13E4C5__fig_ypl_1gs_qzb"><figcaption><span class="fig--title-label">Figure 15. </span>Figure 13</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r2008C33-BB02-11F0-1798-09173F13E4C5__image_zpl_1gs_qzb" src="media/image15.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">The procedure will provide one final opportunity to safely exit from the
+                     procedure (Figure <a class="xref" href="FES-03-106_how_to_reboot_the_pic_prs_fsc_integrity_server.html#r2008C33-BB02-11F0-1798-09173F13E4C5__fig_kcj_hfs_qzb">14</a>). If you answer
+                     it to proceed, the shutdown will begin.<ol class="ol" type="i" id="r2008C33-BB02-11F0-1798-09173F13E4C5__ol_jcx_2fs_qzb">
+                        <li class="li">
+                           <div class="note note note_note" id="r2008C33-BB02-11F0-1798-09173F13E4C5__note_thj_ffs_qzb"><span class="note__title">Note:</span> 
+                              <p class="p">All Integrity systems will say that you are shutting down “PIC”
+                                 even though it is an FSC only system.</p>
+                              <figure class="fig fignone" id="r2008C33-BB02-11F0-1798-09173F13E4C5__fig_kcj_hfs_qzb"><figcaption><span class="fig--title-label">Figure 16. </span>Figure 14</figcaption>
+                                 
+                                 <br><div class="imagecenter"><img class="image imagecenter" id="r2008C33-BB02-11F0-1798-09173F13E4C5__image_lcj_hfs_qzb" src="media/image16.jpg"></div><br>
+                              </figure>
+                           </div>
+                        </li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">There will be messages displayed as the process takes place. If this session is not connected to the Console, it will stop logging messages and after a time, it might disconnect. If you are doing the “blind” method, you will need to wait about five to ten minutes for the system to reboot. To check when it is ready, make the telnet program disconnect (if it did not by itself) and then try to connect. When the system has rebooted, you will be able to connect.</li>
+            <li class="li">When using the blind method, always wait 10 minutes after telling the system to shut down before turning off power. If the system has failed to reboot after 15 minutes, you can try powering off and back on to restart it, but it is likely that the failure to boot is a serious problem requiring technical assistance.</li>
+            <li class="li">Logging onto the Management Port<ol class="ol" type="a">
+                  <li class="li">When you connect to the Management Port IP address, the special computer that is
+                     the Management Port will prompt you for “MP Login” (the username) and “MP
+                     Password”. These are both case-sensitive, so be sure to type the
+                        “<kbd class="ph userinput">O</kbd>” in “<strong class="ph b">Oper</strong>” so that it is capitalized.<ol class="ol" type="i">
+                        <li class="li">When the prompt “MP Login” appears, type <kbd class="ph userinput">Oper</kbd> and
+                           press <span class="ph uicontrol">Enter</span> (Figure <a class="xref" href="FES-03-106_how_to_reboot_the_pic_prs_fsc_integrity_server.html#r2008C33-BB02-11F0-1798-09173F13E4C5__fig_ir3_bgs_qzb">15</a>).</li>
+                        <li class="li">When the prompt “MP Password appears, type
+                              <kbd class="ph userinput">console</kbd> and press
+                           <span class="ph uicontrol">Enter</span>.</li>
+                        <li class="li">If the login was successful, there will be a menu of Management Port
+                           functions that are accessed by typing the two letter heading for the one
+                           required (Figure <a class="xref" href="FES-03-106_how_to_reboot_the_pic_prs_fsc_integrity_server.html#r2008C33-BB02-11F0-1798-09173F13E4C5__fig_ir3_bgs_qzb">15</a>). <figure class="fig fignone" id="r2008C33-BB02-11F0-1798-09173F13E4C5__fig_ir3_bgs_qzb"><figcaption><span class="fig--title-label">Figure 17. </span>Figure 15</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r2008C33-BB02-11F0-1798-09173F13E4C5__image_kr3_bgs_qzb" src="media/image17.jpg"></div><br>
+                           </figure>
+                        </li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">Type the letters <kbd class="ph userinput">CO</kbd> (upper or lower case) and press
+                  <span class="ph uicontrol">Enter</span> to connect to the console.</li>
+            <li class="li">There will now be three possible outcomes after you are connected to the Console:<ol class="ol" type="a">
+                  <li class="li">When you press <span class="ph uicontrol">Enter</span>, the prompt for Username might come
+                     up just as in step <a class="xref" href="FES-03-106_how_to_reboot_the_pic_prs_fsc_integrity_server.html#r2008C33-BB02-11F0-1798-09173F13E4C5__li_r4x_pfs_qzb">1</a> of the
+                     Shutdown/Reboot Procedure. If you get the Username prompt, simply follow the
+                     Shutdown/Reboot Procedure (page 8).</li>
+                  <li class="li">When you press <span class="ph uicontrol">Enter</span>, something results from the FSC
+                     menu already being logged on, or else someone left an administrative session
+                     running by accident. Follow the instructions in step <a class="xref" href="FES-03-106_how_to_reboot_the_pic_prs_fsc_integrity_server.html#r2008C33-BB02-11F0-1798-09173F13E4C5__li_z24_yhs_qzb">6</a>.</li>
+                  <li class="li">You can press <span class="ph uicontrol">Enter</span> and a message will say that another
+                     session is already connected to the Console and the other session has control
+                     of the keyboard (don’t panic). Follow the instructions in step <a class="xref" href="FES-03-106_how_to_reboot_the_pic_prs_fsc_integrity_server.html#r2008C33-BB02-11F0-1798-09173F13E4C5__li_jsb_b3s_qzb">8</a>.</li>
+               </ol>
+            </li>
+            <li class="li">If you get an indication that you are in the FSC menu and the menu has started doing something, you can use Ctrl-z to cancel and the menu that was left on the session should appear. (Ctrl-w will also refresh a menu.) You can then take the Exit choices until the main menu is displayed. Then select the Utilities option and proceed from there per the instructions in Shutdown/Reboot Procedure (page 8).</li>
+            <li class="li">If there is a prompt that looks like the name of the FSC followed by “, andgt;” and
+               repeating the Enter just repeats the prompt, type the letters
+                  <kbd class="ph userinput">LO</kbd> to make it log off and then press
+                  <span class="ph uicontrol">Enter</span> again to get the Username prompt.</li>
+            <li class="li">If you get the message that there is another Console session, the way to take control of the keyboard is to type a three letter sequence shown on the screen (Ctrl-Ecf). The first letter must be combined with pressing the Ctrl key but the second and third keys are typed without Ctrl. The sequence must be typed within a short time period, (i.e., no longer than saying “1-2-3”). Use lowercase letters. After you have taken control, the alternatives in step 5a or 5b will apply.</li>
+            <li class="li">During a shutdown using the Management Port, you will be able to see the final message of the shutdown and know when to either power off for maintenance or that, in a moment, the self-testing will begin and then the server will reboot.</li>
+            <li class="li">Additional Notes<ol class="ol" type="a">
+                  <li class="li">Console Terminal<ol class="ol" type="i">
+                        <li class="li">Often the console VT terminal of the MicroVAX FSC is connected to the Integrity FSC as the console. If this is the case, you have the option to use the procedure to log on the Management Port and do the reboot. The video terminal may already be logged on, so you will need to determine the appropriate starting point in the previous methods.</li>
+                     </ol>
+                  </li>
+                  <li class="li">Booting to the Backup Disk<ol class="ol" type="i">
+                        <li class="li">One other reason for using the Management Port is to allow booting to the
+                           Alternative boot disk in an emergency when the main disk is not bootable.
+                           To do this, you must wait until the EFI Boot menu appears during the boot
+                           process and then press the <span class="ph uicontrol">down-arrow</span> to move the
+                           choice from the first option on the list to the Alternative disk which is
+                           the second one on the list (in normal situations). </li>
+                        <li class="li">You might find that the choices are listed differently and that the Alternative disk became the top choice. In this case, the backup disk has become the main disk from some previous situation. You may discover that the other disk is failed and someone forgot to get it replaced. Call for technical support if both disks are now unbootable.</li>
+                     </ol>
+                  </li>
+                  <li class="li">Running on the Backup Disk<ol class="ol" type="i">
+                        <li class="li">Be aware that the data on the backup disk may be entirely out of date. Therefore, before doing anything else, use MOC to “<em class="ph i">Take Job Off Without Saving</em>” on all of the machines. Then do a simple Save on each machine to recover the current job information so that the FSC will know which jobs are actually operating. <em class="ph i">If there are changes in COM-SOC II box configuration, there may be Time-Out messages when the boxes fail to respond.</em>
+                        </li>
+                        <li class="li">The status of whether the machine was configured to be On-Line or Off-Line may have also changed since the backup to the disk was done. Use the Configure Machines and Configure COM-SOC II boxes options to ensure that the configuration is correct (network address and software versions) and if necessary repeat the Save function. At each COM-SOC II section, request that it do a Save function to ensure that the job data will be correct when the section is rebooted.</li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title5" lang="en-us" id="c200D273-BB02-11F0-1894-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title5">Required Training</h2>
+   
+   <div class="body conbody">
+      <p class="p">Before performing this work instruction, applicable personnel must be trained by an authorized trainer on the required training contents listed in this document.</p>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title6" lang="en-us" id="c2005D0B-BB02-11F0-1015-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title6">Equipment</h2>
+   
+   <div class="body conbody">
+      <p class="p">Windows PC.</p>
+      <p class="p">Telnet utility such as Reflection, Chameleon or PuTTY.</p>
+      <p class="p">Integrity FSC (Forming Supervisory Computer).</p>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title7" lang="en-us" id="r200BAF0-BB02-11F0-8042-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title7">References</h2>
+   
+   <div class="body refbody">
+      <section class="section">
+         <ul class="ul">
+            <li class="li">FSC Manual</li>
+         </ul>
+      </section>
+      <section class="section" id="r200BAF0-BB02-11F0-8042-09173F13E4C5__section_ock_q3s_qzb"><h3 class="title sectiontitle">Document Classification</h3>
+         
+         <ul class="ul" id="r200BAF0-BB02-11F0-8042-09173F13E4C5__ul_hrf_r3s_qzb">
+            <li class="li">Asset Protection and Stability</li>
+            <li class="li">Organization and Training</li>
+         </ul>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title8" lang="en-us" id="c2004614-BB02-11F0-1100-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title8">Collaboration</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c2004614-BB02-11F0-1100-09173F13E4C5__table_kk3_53s_qzb"><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Country Group</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Role</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Name</strong>
+                  </p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Americas North</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Forming Electronics Specialist</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Dan Knuckles</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Europe</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Forming Electronics Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Remko Beckers</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Central Europe</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Regional Leader Forming Electronics</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Ruud Bormans</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">France - Spain</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jean-Pierre Locato</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jean-Pierre Locato</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Latin America</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">IS Machine Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Miguel Morales</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Engineering - Forming</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Associate Engineer</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jose Gonzalez</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Global</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Global Forming Electronics Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Franklin Barrios</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title9" lang="en-us" id="c200EB14-BB02-11F0-1032-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title9">Revision History</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c200EB14-BB02-11F0-1032-09173F13E4C5__table_xkb_x3s_qzb"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">2021-07-29</td>
+               <td class="stentry">
+                  <p class="p">Originally Released as Process Control SOP-21-003</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2021-10-29</td>
+               <td class="stentry">
+                  <p class="p">Approved by Franklin Barrios, Global Leader FES Network.</p>
+                  <p class="p">SOP changed into GMF Work Instruction MAC-03-427.</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2022-05-09</td>
+               <td class="stentry">
+                  <p class="p">Approved by Franklin Barrios, Global Leader FES Network.</p>
+                  <p class="p">Moved to GMF Site as FES-03-106</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article></article></article></main></body></html>

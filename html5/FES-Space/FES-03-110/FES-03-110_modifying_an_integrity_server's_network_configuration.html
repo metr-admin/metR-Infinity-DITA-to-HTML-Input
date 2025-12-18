@@ -1,0 +1,403 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="integrity-fsc-server,network-interface,MOC,JES,telnet-service,assign-static-ip,configure-dhcp-reservation,update-gateway-and-dns,configure-management-vlan,backup-and-restore-network-config,verify-connectivity-ping,test-telnet-session,validate-JES-communication,plant-network-topology,industrial-ethernet,segmented-control-vlan,cybersecurity-baseline,remote-console-access,telnet,COM-SOC II,purpose-definition,intended-use,boot-mode-description,network-management-scope,maintenance-of-change-process,industrial-control-networks,furnace-control,plant-operations,COM-SOC-II-booting-context,legacy-serial-management,PIC-PRS-integration,MOC-workflow,JES-job-entry,telnet-management,application-scenarios,control-network-integration,serial-console-operations,telnet-session-usage,COM-SOC-II-boot-flow,furnace-control-automation,plant-scada-interface,remote-management-over-telnet,maintenance-change-control,legacy-protocol-support,power-supply-safety,serial-cable-safety,COM-SOC II boot hardware,telnet-access-controls,lockout-tagout,electrical-isolation,ESD-protection,safe-handling-firmware-media,secure-console-access,plant-safety-standards,maintenance-permits (MOC),operator-notification,fire-and-electrical-hazard,controlled-access,PIC-PRS,COM-SOC II boot,telnet-access,JES-integration,pre-change-checklist,backup-configuration,perform-network-change,verify-services-JES-and-telnet,COM-SOC-II-boot-procedure,capture-logs-and-validate,rollback-procedure,maintenance-window,production-impact-assessment,operator-confirmation,change-ticket (MOC),COM-SOC II adapter,serial-console-cable,edgeport-serial-gateway,power-supply-PSU,equipment-list,serial-port-identification,baud-rate-configuration,firmware-flash-tools,tftp-boot-support,spare-parts,recommended-tools,installation-environment,maintenance-spares,COM-SOC-II-booting-equipment,reference-list,manuals-and-guides,firmware-and-boot-guides,network-configuration-guides,MOC-procedures-and-forms,JES-job-definitions,telnet-usage-and-security,COM-SOC-II-boot-procedures,industrial-control-standards,plant-network-architecture,serial-console-reference,vendor-service-bulletins,site-operational-procedures,MOC-owner,JES-operator,vendor-support,COM-SOC II-field-team,change-authorization (MOC),support-escalation,handover-and-rollback,testing-coordination,documenting-JES-changes,site-operations,vendor-coordination,maintenance-scheduling,production-stakeholders,security-and-access-management,revision-history,change-log,MOC-record,JES-change-notes,version-control,approvals-and-signoffs,effective-dates,document-audit-trail,release-notes,site-documentation,compliance-records,maintenance-logs"><meta name="keywords" content="integrity-fsc-server, network-interface, MOC, JES, telnet-service, assign-static-ip, configure-dhcp-reservation, update-gateway-and-dns, configure-management-vlan, backup-and-restore-network-config, verify-connectivity-ping, test-telnet-session, validate-JES-communication, plant-network-topology, industrial-ethernet, segmented-control-vlan, cybersecurity-baseline, remote-console-access, telnet, COM-SOC II, purpose-definition, intended-use, boot-mode-description, network-management-scope, maintenance-of-change-process, industrial-control-networks, furnace-control, plant-operations, COM-SOC-II-booting-context, legacy-serial-management, PIC-PRS-integration, MOC-workflow, JES-job-entry, telnet-management, application-scenarios, control-network-integration, serial-console-operations, telnet-session-usage, COM-SOC-II-boot-flow, furnace-control-automation, plant-scada-interface, remote-management-over-telnet, maintenance-change-control, legacy-protocol-support, power-supply-safety, serial-cable-safety, COM-SOC II boot hardware, telnet-access-controls, lockout-tagout, electrical-isolation, ESD-protection, safe-handling-firmware-media, secure-console-access, plant-safety-standards, maintenance-permits (MOC), operator-notification, fire-and-electrical-hazard, controlled-access, PIC-PRS, COM-SOC II boot, telnet-access, JES-integration, pre-change-checklist, backup-configuration, perform-network-change, verify-services-JES-and-telnet, COM-SOC-II-boot-procedure, capture-logs-and-validate, rollback-procedure, maintenance-window, production-impact-assessment, operator-confirmation, change-ticket (MOC), COM-SOC II adapter, serial-console-cable, edgeport-serial-gateway, power-supply-PSU, equipment-list, serial-port-identification, baud-rate-configuration, firmware-flash-tools, tftp-boot-support, spare-parts, recommended-tools, installation-environment, maintenance-spares, COM-SOC-II-booting-equipment, reference-list, manuals-and-guides, firmware-and-boot-guides, network-configuration-guides, MOC-procedures-and-forms, JES-job-definitions, telnet-usage-and-security, COM-SOC-II-boot-procedures, industrial-control-standards, plant-network-architecture, serial-console-reference, vendor-service-bulletins, site-operational-procedures, MOC-owner, JES-operator, vendor-support, COM-SOC II-field-team, change-authorization (MOC), support-escalation, handover-and-rollback, testing-coordination, documenting-JES-changes, site-operations, vendor-coordination, maintenance-scheduling, production-stakeholders, security-and-access-management, revision-history, change-log, MOC-record, JES-change-notes, version-control, approvals-and-signoffs, effective-dates, document-audit-trail, release-notes, site-documentation, compliance-records, maintenance-logs"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-FES-Space"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-11-10+05:30"><meta name="DC.date.modified" content="2025-11-10+05:30"><meta name="RevisionDate" content="05-12-2022"><meta name="DocumentNumber" content="FES-03-110"><meta name="title" content="Modifying an Integrity Server's Network Configuration"><meta name="shortdesc" content="Stepwise guidance to change IP/DNS/Gateway/VLAN settings on the Integrity FSC Server; includes Telnet/JES verification and MOC considerations."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="internal-network"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="network interface;Telnet service;JES endpoint;MOC ticket;management VLAN"><meta name="taxonomy" content="domain:networking;usecase:config-change;industry:industrial-automation"><meta name="tags" content="network,ip,dns,gateway,telnet,JES,MOC"><meta name="usecase" content="change-network-settings-and-validate-management-access"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c202A5D2-BB02-11F0-6030-09173F13E4C5"><meta name="DC.language" content="en-us"><title>Modifying an Integrity Server's Network Configuration</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c202A5D2-BB02-11F0-6030-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Modifying an Integrity Server's Network Configuration</h1>
+   
+   <div class="body conbody"></div>
+<article class="topic concept nested1" aria-labelledby="ariaid-title2" lang="en-us" id="c202D648-BB02-11F0-6982-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">Purpose</h2>
+   
+   <div class="body conbody">
+      <p class="p">This document describes how to configure the HP TCP/IP and DECnet networks to allow users to log onto the Integrity FSC Server with MOC, JES and Telnet and allow COM-SOC II booting.</p>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title3" lang="en-us" id="c2025C7E-BB02-11F0-1880-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">Application</h2>
+   
+   <div class="body conbody">
+      <p class="p">This work instruction applies to all Space Plants that have FSC and Space IS Machines</p>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title4" lang="en-us" id="c2031CD8-BB02-11F0-2039-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title4">Safety</h2>
+   
+   <div class="body conbody">
+      <div class="p">Observe Space standard safety requirements and procedures defined by the Global Environmental
+         Health , andamp; Safety (EH, andamp;S) organization, as well as all applicable local, regional, and
+         national requirements. Safety equipment and instructions specific to the completion of this
+         work instruction are detailed in the Instructions Section.<table class="simpletable" id="c2031CD8-BB02-11F0-2039-09173F13E4C5__table_pdd_rft_qzb"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">
+                  <div class="p">
+                     <figure class="fig fignone" id="c2031CD8-BB02-11F0-2039-09173F13E4C5__fig_qdd_rft_qzb"><figcaption><span class="fig--title-label">Figure 1. </span>Electricity</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="c2031CD8-BB02-11F0-2039-09173F13E4C5__image_rdd_rft_qzb" src="media/image1.jpg"></div><br>
+                     </figure>
+                  </div>
+               </td>
+               <td class="stentry">
+                  <div class="p">
+                     <figure class="fig fignone" id="c2031CD8-BB02-11F0-2039-09173F13E4C5__fig_sdd_rft_qzb"><figcaption><span class="fig--title-label">Figure 2. </span>High Noise Level</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="c2031CD8-BB02-11F0-2039-09173F13E4C5__image_tdd_rft_qzb" src="media/image2.jpg"></div><br>
+                     </figure>
+                  </div>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title5" lang="en-us" id="r202BDB2-BB02-11F0-1241-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title5">Procedure</h2>
+   
+   <div class="body refbody">
+      <section class="section">
+         <ol class="ol">
+            <li class="li">TCP/IP Configuration<ol class="ol" type="a">
+                  <li class="li" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__li_v4y_hkt_qzb">Connect to the Management Port and then connect to the
+                     Console.</li>
+                  <li class="li">Log on as username SYSTEM</li>
+                  <li class="li">Start the TCP/IP configuration utility. Command:   @tcpip$config</li>
+                  <li class="li">When the first menu displays (Figure <a class="xref" href="FES-03-110_modifying_an_integrity_server's_network_configuration.html#r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_iws_jht_qzb">1</a>), select <strong class="ph b">
+                        <em class="ph i">Core environment</em>
+                     </strong> by typing a
+                        ‘<kbd class="ph userinput">1</kbd>’ and pressing <span class="ph uicontrol">Enter</span>.</li>
+                  <li class="li">Set the Domain name by typing ‘<kbd class="ph userinput">1</kbd>’ and
+                        <span class="ph uicontrol">Enter</span> to begin the dialog. (See Figure <a class="xref" href="FES-03-110_modifying_an_integrity_server's_network_configuration.html#r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_ibc_4ht_qzb">2</a>.) At the prompt, you can type in a
+                     new domain name to replace “na.Space.intra”. If you wish to leave it alone, just
+                     press <span class="ph uicontrol">Enter</span> and no change will be made. <figure class="fig fignone" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_iws_jht_qzb"><figcaption><span class="fig--title-label">Figure 3. </span> Figure 1: TCPIP$CONFIG Main Menu</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__image_jws_jht_qzb" src="media/image3.jpg"></div><br>
+                     </figure>
+                     <figure class="fig fignone" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_ibc_4ht_qzb"><figcaption><span class="fig--title-label">Figure 4. </span>Figure 2: TCPIP$CONFIG Core Environment Menu</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__image_jbc_4ht_qzb" src="media/image4.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">To begin changing the IP address, type ‘<kbd class="ph userinput">2</kbd>’ and
+                        <span class="ph uicontrol">Enter</span> when the Core Environment Menu (Figure <a class="xref" href="FES-03-110_modifying_an_integrity_server's_network_configuration.html#r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_ibc_4ht_qzb">2</a>) is displayed. Figure <a class="xref" href="FES-03-110_modifying_an_integrity_server's_network_configuration.html#r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_ejw_43t_qzb">3</a> shows the menu for OpenVMS 8.4. If
+                     your operating system is version 8.3, the choice “0” will be absent. <figure class="fig fignone" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_ejw_43t_qzb"><figcaption><span class="fig--title-label">Figure 5. </span>Figure 3: Interface , andamp; Address Configuration Menu</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__image_fjw_43t_qzb" src="media/image5.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Type the number ‘<kbd class="ph userinput">2</kbd>’ in the <em class="ph i">Interface and Address
+                        Configuration Menu</em>. This selects the pre-configured IP address. The
+                     result will be the menu shown in Figure <a class="xref" href="FES-03-110_modifying_an_integrity_server's_network_configuration.html#r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_kq1_w3t_qzb">4</a>. <figure class="fig fignone" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_kq1_w3t_qzb"><figcaption><span class="fig--title-label">Figure 6. </span>Figure 4: Address Configuration Menu</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__image_lq1_w3t_qzb" src="media/image6.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">To change the address, type the number ‘<kbd class="ph userinput">1</kbd>’ in the <em class="ph i">Address
+                        Configuration Menu</em>. The utility will begin a dialog immediately below
+                     the last prompt. An example is shown in Figure <a class="xref" href="FES-03-110_modifying_an_integrity_server's_network_configuration.html#r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_vgt_y3t_qzb">5</a>. <figure class="fig fignone" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_vgt_y3t_qzb"><figcaption><span class="fig--title-label">Figure 7. </span>Figure 5: Address Configuration Dialog</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__image_xgt_y3t_qzb" src="media/image7.jpg"></div><br>
+                     </figure>
+                     <ol class="ol" type="i" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__ol_zkq_qgt_qzb">
+                        <li class="li">
+                           <div class="note note note_note" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__note_qgz_rgt_qzb"><span class="note__title">Note:</span> 
+                              <p class="p">The first question is always “NO” and can be answered by just
+                                 pressing <span class="ph uicontrol">Enter</span>. Prompts where there is a
+                                 value in [brackets] will use the enclosed answer as the default by
+                                 pressing only the <span class="ph uicontrol">Enter</span> key to answer.</p>
+                           </div>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="li">If you made an error in the information, answering “n” will restart the dialog so
+                     that you can enter corrections. Once you are satisfied, press
+                        <span class="ph uicontrol">Enter</span>.</li>
+                  <li class="li">Answer the next two questions with “y” as shown in Figure <a class="xref" href="FES-03-110_modifying_an_integrity_server's_network_configuration.html#r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_vgt_y3t_qzb">5</a> to complete the IP changes. The menu
+                     shown in Figure <a class="xref" href="FES-03-110_modifying_an_integrity_server's_network_configuration.html#r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_ejw_43t_qzb">3</a> will be presented
+                     again with the updated information.</li>
+                  <li class="li">Type a “<kbd class="ph userinput">2</kbd>” to choose the IP <em class="ph i">Address Configuration Menu</em>
+                     again. This time the menu in Figure <a class="xref" href="FES-03-110_modifying_an_integrity_server's_network_configuration.html#r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_kq1_w3t_qzb">4</a> will show the new hostname in option #2.</li>
+                  <li class="li">Choose the option #2 Set “, andlt;newhostname, andgt;” as the default hostname where
+                     , andlt;newhostname, andgt; is the name you used in the previous change. This will
+                     result in the prompts shown in Figure <a class="xref" href="FES-03-110_modifying_an_integrity_server's_network_configuration.html#r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_v1n_fjt_qzb">6</a> (below). <figure class="fig fignone" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_v1n_fjt_qzb"><figcaption><span class="fig--title-label">Figure 8. </span>Figure 6: Address Configuration Dialog</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__image_w1n_fjt_qzb" src="media/image8.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Type “<kbd class="ph userinput">E</kbd>” to leave the IP <em class="ph i">Address Configuration Menu</em>.
+                     This will place you back in the Core Environment Menu (Figure <a class="xref" href="FES-03-110_modifying_an_integrity_server's_network_configuration.html#r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_ibc_4ht_qzb">2</a>).</li>
+                  <li class="li" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__li_qxk_ljt_qzb">Type “<kbd class="ph userinput">3</kbd>” (Routing) for the next choice in
+                     the Core Environment Menu. This will cause a long explanation to print out
+                     followed by the question: <p class="p">* Do you want to configure dynamic ROUTED or GATED
+                        routing [NO]:</p>
+                  </li>
+                  <li class="li" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__li_vwp_ljt_qzb">Answer “no” by just pressing <span class="ph uicontrol">Enter</span>. The
+                     dialog in Figure <a class="xref" href="FES-03-110_modifying_an_integrity_server's_network_configuration.html#r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_n22_3jt_qzb">7</a> shows how to add
+                     the correct Default Gateway <figure class="fig fignone" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_n22_3jt_qzb"><figcaption><span class="fig--title-label">Figure 9. </span>Figure 7: Default Gateway Dialog</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__image_o22_3jt_qzb" src="media/image9.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">To confirm whether the gateway address changed, repeat steps <a class="xref" href="FES-03-110_modifying_an_integrity_server's_network_configuration.html#r202BDB2-BB02-11F0-1241-09173F13E4C5__li_qxk_ljt_qzb">14</a> and <a class="xref" href="FES-03-110_modifying_an_integrity_server's_network_configuration.html#r202BDB2-BB02-11F0-1241-09173F13E4C5__li_vwp_ljt_qzb">15</a> to see the new address. You can
+                     answer “no” to the prompt that follows the report.</li>
+                  <li class="li">This completes the changes to be done in the TCPIP$CONFIG utility. Type the letter
+                        <kbd class="ph userinput">E</kbd> and <span class="ph uicontrol">Enter</span> to exit from the
+                     menus to the command line prompt.</li>
+                  <li class="li">Start the utility TCPIP by just typing the name “<kbd class="ph userinput">tcpip</kbd>” and
+                        <span class="ph uicontrol">Enter</span>.</li>
+                  <li class="li">Type the command “show config name” to display the currently configured Domain Name
+                     Services (DNS). If the configuration is OK, you can simply exit (type
+                        ‘<kbd class="ph userinput">exit’</kbd>).</li>
+                  <li class="li">The next few commands in Figure <a class="xref" href="FES-03-110_modifying_an_integrity_server's_network_configuration.html#r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_zc1_wjt_qzb">8</a> show
+                     how to change the configuration. <ol class="ol" type="i">
+                        <li class="li">The command switch /nopath= and /noserver= allow you to remove those
+                           parameters. Use the switch /path= to establish one for each potential
+                           domain that exists in your network. Use the switch /server=(IP) to
+                           identify each alternative server where the FSC can try <ol class="ol">
+                              <li class="li">Tip: Start with the local plant server so that it might work in
+                                 spite of a wide area network problem, and then add the non-local
+                                 servers. (For Space plants, reference SOP-16-001-A for recommended
+                                 DNS servers.)</li>
+                           </ol>
+                        </li>
+                        <li class="li">When a user connects to the FSC, the operating system automatically
+                           tries to learn the hostname by asking each reachable DNS server if it
+                           knows. If DNS is not set up correctly, this will result in long waits for
+                           the user while the process times out before it will complete the
+                           connection “anonymously.” <figure class="fig fignone" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__fig_zc1_wjt_qzb"><figcaption><span class="fig--title-label">Figure 10. </span>Figure 8: Default Gateway Dialog</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__image_ad1_wjt_qzb" src="media/image10.jpg"></div><br>
+                           </figure>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="li">To put this all into complete effect, reboot the FSC. From the command line prompt,
+                     try typing “<kbd class="ph userinput">reboot</kbd>” and
+                     <span class="ph uicontrol">Enter</span>.</li>
+               </ol>
+            </li>
+            <li class="li">DECnet Setup 
+         <ol class="ol" type="a">
+                  <li class="li">If you are using DECnet based COM-SOC II, or will be installing the FSC on a network with other DECnet systems (PIC, MCS), then you should configure the DECnet network.</li>
+                  <li class="li">The COM-SOC II will identify the FSC by the DECnet node name and displays this on a screen in the COM-SOC II.  </li>
+                  <li class="li">The default setup for DECnet has the node name set to TEMP99 and the address as 1.10  (Area 1, address 10). If you already have a DECnet node running at this address, it will be necessary to change to an address that is not being used.</li>
+                  <li class="li">To change the DECnet address, type the following command: <p class="p">MC NCP DEFINE EXEC
+                     ADDRESS 1.xxxx</p>
+                     <p class="p">(where xxxx is any number between 1 and 1023)</p>
+                  </li>
+                  <li class="li">Note that if this FSC is in an Space plant, and replacing an existing FSC, the node names must match to allow the global downtime reporting to continue to function. However, if this is not a replacement FSC, a new name must picked for this computer (skip to part b.).
+            <ol class="ol" type="i">
+                        <li class="li">To view the current DECnet node name on the original FSC, use the command: <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 11. </span>MC NCP LIST EXEC</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" src="media/image11.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">To change the DECnet node name, use the command below. Note that the name is
+                           limited to 6 letters and numbers and must start with a letter: <p class="p">MC NCP
+                              DEFINE EXEC NAME XXXXX</p>
+                           <p class="p">where XXXXX is the name of the original
+                              FSC (IDEV99 in the example screen capture) and xxxx is the address of
+                              the Executor. If you changed the Executor address in step <a class="xref" href="FES-03-110_modifying_an_integrity_server's_network_configuration.html#r202BDB2-BB02-11F0-1241-09173F13E4C5__li_v4y_hkt_qzb">1</a>, use that number, otherwise
+                              it will be 1.10. Note that this address is also displayed with the
+                              command shown in part a above (examples shows 1.16).</p>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="li">To enable booting of RTVAX-based COM-SOC II, the following is necessary: <p class="p">MC NCP
+                        SHOW KNOWN CIRCUIT</p>
+                     <ol class="ol" type="i">
+                        <li class="li">Use the output of this command to identify the supported service circuit
+                           of the system. The following table shows the expected values <table class="simpletable" id="r202BDB2-BB02-11F0-1241-09173F13E4C5__simpletable_bzn_hht_qzb"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr class="strow">
+                                 <td class="stentry">
+                                    <p class="p">
+                                       <strong class="ph b">System Type</strong>
+                                    </p>
+                                 </td>
+                                 <td class="stentry">
+                                    <p class="p">
+                                       <strong class="ph b">Expected Circuit</strong>
+                                    </p>
+                                 </td>
+                              </tr><tr class="strow">
+                                 <td class="stentry">
+                                    <p class="p">rx2620</p>
+                                 </td>
+                                 <td class="stentry">
+                                    <p class="p">EIA-0</p>
+                                 </td>
+                              </tr><tr class="strow">
+                                 <td class="stentry">
+                                    <p class="p">rx2660</p>
+                                 </td>
+                                 <td class="stentry">
+                                    <p class="p">EWA-0</p>
+                                 </td>
+                              </tr><tr class="strow">
+                                 <td class="stentry">
+                                    <p class="p">rx2800</p>
+                                 </td>
+                                 <td class="stentry">
+                                    <p class="p">EIA-0</p>
+                                 </td>
+                              </tr></tbody></table>
+                        </li>
+                        <li class="li">Once the service circuit has been identified, use the following command
+                           to enable booting (note: substitute , andlt;circuit, andgt; with the correct
+                           service circuit as identified in part a: <p class="p">MC NCP DEFINE CIRCUIT
+                              , andlt;circuit, andgt; SERVICE ENABLED</p>
+                        </li>
+                        <li class="li">If you are supporting COM-SOC II on DECnet, the following command is
+                           recommended to provide faster diagnosis by the FSC programs when there is
+                           a communication problem with the machine sections. This command sets the
+                           FSC to be a DECnet router. Please note that using the feature requires a
+                           full-function DECnet license to be loaded on the computer (Product Name:
+                           DVNETEXT). Normally, one VMS system is the router within a plant. <p class="p">MC
+                              NCP DEFINE EXEC TYPE ROUTING IV</p>
+                        </li>
+                        <li class="li">Once all the changes are made, reboot the FSC to make them take
+                           effect.</li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title6" lang="en-us" id="c2028E6D-BB02-11F0-8544-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title6">Equipment</h2>
+   
+   <div class="body conbody">
+      <p class="p">Access to the Management Port console (recommended)</p>
+      <p class="p">Password to the SYSTEM account</p>
+      <p class="p">Company IT assigned IP address, network mask, default gateway and DNS server addresses. If
+         more than one domain name is in use, a list of domain names will be needed. Consult
+         SOP-16-001-A for the recommended DNS settings for Space plants.</p>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title7" lang="en-us" id="r202EDD4-BB02-11F0-1639-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title7">References</h2>
+   
+   <div class="body refbody">
+      <section class="section">
+         <ul class="ul">
+            <li class="li">SOP-16-001-A – Recommended DNS Settings for Space Plants</li>
+         </ul>
+      </section>
+      <section class="section" id="r202EDD4-BB02-11F0-1639-09173F13E4C5__section_gzm_xpt_qzb"><h3 class="title sectiontitle">Document Classification</h3>
+         
+         <ul class="ul" id="r202EDD4-BB02-11F0-1639-09173F13E4C5__ul_e2x_ypt_qzb">
+            <li class="li">Asset Protection and Stability</li>
+            <li class="li">Organization and Training</li>
+         </ul>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title8" lang="en-us" id="c20276E1-BB02-11F0-9231-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title8">Collaboration</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c20276E1-BB02-11F0-9231-09173F13E4C5__table_xby_dqt_qzb"><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Country Group</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Role</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Name</strong>
+                  </p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Americas North</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Forming Electronics Specialist</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Dan Knuckles</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Europe</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Forming Electronics Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Remko Beckers</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Central Europe</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Regional Leader Forming Electronics</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Ruud Bormans</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">France - Spain</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jean-Pierre Locato</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jean-Pierre Locato</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Latin America</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">IS Machine Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Miguel Morales</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Engineering - Forming</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Associate Engineer</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jose Gonzalez</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Global</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Global Forming Electronics Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Franklin Barrios</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title9" lang="en-us" id="c2030509-BB02-11F0-1456-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title9">Revision History</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c2030509-BB02-11F0-1456-09173F13E4C5__table_n3d_gqt_qzb"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">2014-03-18</td>
+               <td class="stentry">
+                  <p class="p">Originally Released as Process Control SOP-14-002-A</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2018-05-07</td>
+               <td class="stentry">
+                  <p class="p">Revision SOP-14-002-A Released </p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2022-05-12</td>
+               <td class="stentry">
+                  <p class="p">Approved by Franklin Barrios, Global Leader FES Network.</p>
+                  <p class="p">Moved to GMF Site as FES-03-110</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article></article></article></main></body></html>

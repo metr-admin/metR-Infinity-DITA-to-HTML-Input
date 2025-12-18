@@ -1,0 +1,1449 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metR-fes-space,machine-control-system,mcs-server,tapeless-backup-hardware,backup-software,system-upgrade,tapeless-backup-installation,disk-drive-integration,server-configuration,backup-validation-procedure,glass-manufacturing,industrial-engineering,production-automation,server-maintenance,data-protection-compliance,mcs-server-backup,tapeless-backup-capability,backup-hardware-and-software,system-integration-scope,scope-definition,purpose-statement,installation-boundaries,out-of-scope-items,assumptions-and-prerequisites,roles-and-responsibilities,success-criteria,implementation-timeline,acceptance-criteria,risk-and-mitigation,glass-manufacturing-operations,production-uptime-requirements,on-site-installation-restrictions,third-party-vendor-interaction,safety-and-compliance-requirements,asset-lifecycle-impact,operational-readiness,project-scope-governance,stakeholder-engagement,change-control-procedures,mcs-system,power-supply-unit,backup-hardware,system-cabinet,safety-procedures,electrical-isolation,shutdown-sequence,lockout-tagout,installation-safety,workplace-safety,equipment-protection,maintenance-compliance,mcs-system-training,backup-software-training,hardware-installation-training,safety-training,hands-on-workshop,drive-installation-lab,firmware-update-practice,partitioning-and-formatting-lab,backup-and-restore-exercise,command-line-practice,configuration-management-session,incident-response-drill,assessment-and-certification,refresher-course-schedule,production-maintenance-readiness,engineering-skills-development,operational-safety-compliance,knowledge-transfer,on-site-skill-assessment,trainer-certification,training-matrix,role-based-competency,continuing-professional-development,training-records,tapeless-backup-system,backup-hard-disk,system-console,linux-operating-environment,mcs-filesystem,backup-image,ethernet-interface,disk-formatting,partition-creation,mounting-filesystem,unmounting-drive,tar-archive-extraction,dd-disk-cloning,file-copy-verification,ftp-transfer,ip-configuration,mount-point-validation,filesystem-check-fsck,permissions-validation,logfile-verification,shutdown-and-reboot,service-restart,production-maintenance,data-integrity-validation,server-reliability,disaster-recovery,system-verification,backup-restoration,hardware-software-integration,system-availability,network-connectivity,configuration-management,root-access-privilege,command-line-procedure,linux-shell-operations,hp-proliant-dl380-manual,u320-controller-manual,raid-controller-spec,backup-software-guide,seagate-product-datasheet,scsi-interface-spec,linux-system-administration-guide,filesystem-reference,installation-guide,firmware-release-notes,compatibility-matrix,configuration-reference,command-reference,maintenance-checklist,validation-protocol,troubleshooting-guide,safety-standards-reference,service-procedure-docs,industrial-engineering-standards,glass-manufacturing-references,regulatory-compliance-guides,vendor-support-contacts,part-number-catalogue,spare-parts-list,document-change-log,corporate-knowledge-base,on-site-support-procedures,manuals-and-datasheets,SOP-0077-C,PCS-0372 MCSII,backup-infrastructure,data-recovery-system,tapeless-backup-environment,cross-functional-collaboration,installation-coordination,workflow-alignment,change-management,communication-protocol,project-governance,operations-integration,production-efficiency,mcs-system-documentation,fes-03-600,revision-log,document-versioning,revision-history-record,change-request-tracking,approval-workflow,document-review,release-notes-creation,version-tagging,author-assignment,modified-date-record,doc-change-annotation,rollback-procedure,audit-trail,compliance-records,document-retention-policy,internal-audit,technical-publication-standards,knowledge-management,release-cycle,stakeholder-approvals"><meta name="keywords" content="metR-fes-space, machine-control-system, mcs-server, tapeless-backup-hardware, backup-software, system-upgrade, tapeless-backup-installation, disk-drive-integration, server-configuration, backup-validation-procedure, glass-manufacturing, industrial-engineering, production-automation, server-maintenance, data-protection-compliance, mcs-server-backup, tapeless-backup-capability, backup-hardware-and-software, system-integration-scope, scope-definition, purpose-statement, installation-boundaries, out-of-scope-items, assumptions-and-prerequisites, roles-and-responsibilities, success-criteria, implementation-timeline, acceptance-criteria, risk-and-mitigation, glass-manufacturing-operations, production-uptime-requirements, on-site-installation-restrictions, third-party-vendor-interaction, safety-and-compliance-requirements, asset-lifecycle-impact, operational-readiness, project-scope-governance, stakeholder-engagement, change-control-procedures, mcs-system, power-supply-unit, backup-hardware, system-cabinet, safety-procedures, electrical-isolation, shutdown-sequence, lockout-tagout, installation-safety, workplace-safety, equipment-protection, maintenance-compliance, mcs-system-training, backup-software-training, hardware-installation-training, safety-training, hands-on-workshop, drive-installation-lab, firmware-update-practice, partitioning-and-formatting-lab, backup-and-restore-exercise, command-line-practice, configuration-management-session, incident-response-drill, assessment-and-certification, refresher-course-schedule, production-maintenance-readiness, engineering-skills-development, operational-safety-compliance, knowledge-transfer, on-site-skill-assessment, trainer-certification, training-matrix, role-based-competency, continuing-professional-development, training-records, tapeless-backup-system, backup-hard-disk, system-console, linux-operating-environment, mcs-filesystem, backup-image, ethernet-interface, disk-formatting, partition-creation, mounting-filesystem, unmounting-drive, tar-archive-extraction, dd-disk-cloning, file-copy-verification, ftp-transfer, ip-configuration, mount-point-validation, filesystem-check-fsck, permissions-validation, logfile-verification, shutdown-and-reboot, service-restart, production-maintenance, data-integrity-validation, server-reliability, disaster-recovery, system-verification, backup-restoration, hardware-software-integration, system-availability, network-connectivity, configuration-management, root-access-privilege, command-line-procedure, linux-shell-operations, hp-proliant-dl380-manual, u320-controller-manual, raid-controller-spec, backup-software-guide, seagate-product-datasheet, scsi-interface-spec, linux-system-administration-guide, filesystem-reference, installation-guide, firmware-release-notes, compatibility-matrix, configuration-reference, command-reference, maintenance-checklist, validation-protocol, troubleshooting-guide, safety-standards-reference, service-procedure-docs, industrial-engineering-standards, glass-manufacturing-references, regulatory-compliance-guides, vendor-support-contacts, part-number-catalogue, spare-parts-list, document-change-log, corporate-knowledge-base, on-site-support-procedures, manuals-and-datasheets, SOP-0077-C, PCS-0372 MCSII, backup-infrastructure, data-recovery-system, tapeless-backup-environment, cross-functional-collaboration, installation-coordination, workflow-alignment, change-management, communication-protocol, project-governance, operations-integration, production-efficiency, mcs-system-documentation, fes-03-600, revision-log, document-versioning, revision-history-record, change-request-tracking, approval-workflow, document-review, release-notes-creation, version-tagging, author-assignment, modified-date-record, doc-change-annotation, rollback-procedure, audit-trail, compliance-records, document-retention-policy, internal-audit, technical-publication-standards, knowledge-management, release-cycle, stakeholder-approvals"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-FES-Space"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-11-10+05:30"><meta name="DC.date.modified" content="2025-11-10+05:30"><meta name="RevisionDate" content="05-09-2022"><meta name="DocumentNumber" content="FES-03-600"><meta name="title" content="Adding Tapeless Backup Capability to MCS System"><meta name="shortdesc" content="Explains the steps for support engineers to install and configure tapeless backup drives and software for MCS systems."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="mcs-server;tapeless-backup-drive;backup-software;disk-controller;support-tools"><meta name="taxonomy" content="domain:industrial-engineering;usecase:server-backup-upgrade;industry:glass-manufacturing"><meta name="tags" content="tapeless-backup,server-upgrade,backup-configuration,mcs-system,data-protection"><meta name="usecase" content="installation-and-upgrade-of-tapeless-backup-on-mcs-system"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c20D4C5E-BB02-11F0-1250-09173F13E4C5"><meta name="DC.language" content="en-us"><title>Adding Tapeless Backup Capability to MCS System</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c20D4C5E-BB02-11F0-1250-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Adding Tapeless Backup Capability to MCS System</h1>
+   
+   <div class="body conbody"></div>
+<article class="topic concept nested1" aria-labelledby="ariaid-title2" lang="en-us" id="c20DAD9E-BB02-11F0-4595-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">Purpose and Scope</h2>
+   
+   <div class="body conbody">
+      <ol class="ol">
+         <li class="li">This document explains the procedures that support engineers must follow to add tapeless backup hard disk drives and backup software to the existing family of MCS servers.</li>
+         <li class="li">Older MCS servers are configured to perform system backups from their internal hard disk to a tape drive. These image backups are initiated by manual operator requests submitted through the MCS user interface.</li>
+         <li class="li">The tapeless backup scheme was designed because tape drives are becoming increasingly
+            difficult to maintain and/or replace, and hard drives are relatively inexpensive and
+            easily maintained. This new backup scheme will allow the hard disk backups to be
+            scheduled and performed automatically (<em class="ph i">although it will still be necessary to
+               manually verify backups on a weekly basis</em> – consult FES-03-601 for
+            information).</li>
+         <li class="li">The tapeless backup option functions by adding an additional dedicated backup disk to the VMS and Windows Servers. Backups for both systems are copied to the other system so that if one server is lost, it can be recovered from the other server. Scheduled tasks on the Windows server control the creation of both server backups. This occurs every Saturday morning as driven by scheduled tasks on the Windows server.</li>
+         <li class="li">To use this new backup scheme, it is necessary to install a disk drive into an existing server, transfer files, and then update several command files.</li>
+         <li class="li">This document applies to the following MCS server/operating system (OS) configurations:<ol class="ol" type="a">
+               <li class="li">HP Integrity rx2660 (VMS OS)</li>
+               <li class="li">HP Alpha DS15 (VMS OS)</li>
+               <li class="li">HP Alpha DS20 (VMS OS)</li>
+               <li class="li">HP Alpha 1200 (VMS OS)</li>
+               <li class="li">HP Alpha 4000 (VMS OS)</li>
+               <li class="li">HP Proliant DL380, Gen 7 (Windows OS)</li>
+               <li class="li">HP Proliant DL380, Gen 6 (Windows OS)</li>
+               <li class="li">HP Proliant DL380, Gen 5 (Windows OS)</li>
+               <li class="li">HP Proliant DL380, Gen 4 (Windows OS)</li>
+               <li class="li">HP Proliant DL380, Gen 3 (Windows OS)</li>
+               <li class="li">HP Proliant DL380, Gen 2 (Windows OS)</li>
+            </ol>
+         </li>
+      </ol>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title3" lang="en-us" id="c20E0B28-BB02-11F0-1851-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">Safety</h2>
+   
+   <div class="body conbody">
+      <div class="p">Observe Space standard safety requirements and procedures defined by the Global Environmental
+         Health , andamp; Safety (EH, andamp;S) organization, as well as all applicable local, regional, and
+         national requirements. Safety equipment and instructions specific to the completion of this
+         work instruction are detailed in the Instructions Section.<table class="simpletable" id="c20E0B28-BB02-11F0-1851-09173F13E4C5__table_zvg_2b1_rzb"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">
+                  <div class="p">
+                     <figure class="fig fignone" id="c20E0B28-BB02-11F0-1851-09173F13E4C5__fig_awg_2b1_rzb"><figcaption><span class="fig--title-label">Figure 1. </span>Electricity</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="c20E0B28-BB02-11F0-1851-09173F13E4C5__image_bwg_2b1_rzb" src="media/image1.jpg"></div><br>
+                     </figure>
+                  </div>
+               </td>
+               <td class="stentry">
+                  <div class="p">
+                     <figure class="fig fignone" id="c20E0B28-BB02-11F0-1851-09173F13E4C5__fig_cwg_2b1_rzb"><figcaption><span class="fig--title-label">Figure 2. </span>High Noise Level</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="c20E0B28-BB02-11F0-1851-09173F13E4C5__image_dwg_2b1_rzb" src="media/image2.jpg"></div><br>
+                     </figure>
+                  </div>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title4" lang="en-us" id="r20D9500-BB02-11F0-1597-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title4">Procedure</h2>
+   
+   <div class="body refbody">
+      <section class="section">
+         <ol class="ol">
+            <li class="li">Procedures for Installing Tapeless Backup<ol class="ol" type="a">
+                  <li class="li">These general steps are used to install and configure tapeless backup on an MCS system, regardless of the server model or operating system:</li>
+                  <li class="li">Identify the server models.</li>
+                  <li class="li">Determine the part number for the backup disk drive recommended for the particular server model.</li>
+                  <li class="li">Purchase the hard disk drive.</li>
+                  <li class="li">Purchase a “WinZip” license (Windows only – If required).</li>
+                  <li class="li">Copy all required files to the MCS server.</li>
+                  <li class="li">Install the disk drive in the MCS server.</li>
+                  <li class="li">Configure the files.</li>
+                  <li class="li">Run a backup.</li>
+                  <li class="li">Use Backup Tools to verify the integrity of the backed-up file.</li>
+                  <li class="li">Create Scheduled Tasks.</li>
+                  <li class="li">After a week has passed, and periodically thereafter, use FES-03-601 to verify that the backup is occurring</li>
+               </ol>
+            </li>
+            <li class="li">Installing Tapeless Backup on VMS-based Servers<ol class="ol" type="a">
+                  <li class="li">
+                     <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_t33_gg1_rzb"><span class="note__title">Note:</span> 
+                        <p class="p">Before starting this procedure, verify that there is a recent successful
+                           backup of the targeted server.</p>
+                     </div>
+                  </li>
+                  <li class="li">
+                     <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_ymd_hg1_rzb"><span class="note__title">Note:</span> 
+                        <p class="p">In the typed commands shown in this section, the # character is always
+                           used to denote a typed blank space.</p>
+                     </div>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">Copying the Backup Software to a VMS Server<ol class="ol" type="a">
+                  <li class="li" id="r20D9500-BB02-11F0-1597-09173F13E4C5__li_zxm_wg1_rzb">Log onto the Windows Server.</li>
+                  <li class="li">Use the Reflections shortcut (MCSAdmin) to access the VMS Server command line.</li>
+                  <li class="li">Log in with the username process.</li>
+                  <li class="li">When you reach the “PC” prompt, type <kbd class="ph userinput">KING</kbd>, and then press
+                     the <span class="ph uicontrol">Enter</span> key. This will display the “<strong class="ph b">$$</strong>”
+                     prompt.</li>
+                  <li class="li" id="r20D9500-BB02-11F0-1597-09173F13E4C5__li_lwy_wg1_rzb">Type <kbd class="ph userinput">COM</kbd>, and then press the
+                        <span class="ph uicontrol">Enter</span> key.</li>
+                  <li class="li">File transfer steps (text to be entered is in bold)</li>
+                  <li class="li">Type <kbd class="ph userinput">FTP#IDEV99.NA.Space.INTRA</kbd>
+                  </li>
+                  <li class="li">
+                     <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_x1y_lg1_rzb"><span class="note__title">Note:</span> 
+                        <p class="p">If this fails, use the IP address 10.126.128.65 instead</p>
+                     </div>
+                  </li>
+                  <li class="li">Type <kbd class="ph userinput">KITFTP</kbd> for the username</li>
+                  <li class="li">Password is NEWVERSION</li>
+                  <li class="li">CD#MCS.TAPELESS</li>
+                  <li class="li">Type <kbd class="ph userinput">TYPE BINARY</kbd>
+                  </li>
+                  <li class="li">The following depends on the VMS Server’s hardware model<ol class="ol" type="i">
+                        <li class="li">For Integrity RX2660: GET#TAPELESS_2660.BCK</li>
+                        <li class="li">For Alpha DS15: GET#TAPELESS_DS15.BCK</li>
+                        <li class="li">For Alpha DS20: GET#TAPELESS_DS20.BCK</li>
+                        <li class="li">For Alpha Server 1200/4000: GET#TAPELESS_40_12.BCK</li>
+                     </ol>
+                  </li>
+                  <li class="li">Type <kbd class="ph userinput">bye</kbd> and press <span class="ph uicontrol">enter</span> to exit
+                     FTP.</li>
+                  <li class="li">When the “<strong class="ph b">PC</strong>” prompt is displayed, type:
+                        <kbd class="ph userinput">@COPY_TAPELESS_FILES_TO_SERVER</kbd>, and then press the
+                        <span class="ph uicontrol">Enter</span> key.</li>
+                  <li class="li">When prompted, enter the number corresponding to the targeted “VMS server type”
+                     and “IP address,” and then press the <span class="ph uicontrol">Enter</span> key.</li>
+                  <li class="li">A “<strong class="ph b">successful transfer</strong>” message will be displayed when the backup software
+                     files have been successfully transferred to the targeted VMS server, as show in
+                     REF _Ref417306284 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_n2n_pb1_rzb">1</a>.</li>
+                  <li class="li">Proceed to the next section depending on the hardware model of the VMS Server.
+                     These steps assume that you are already logged onto the VMS server following
+                     steps 3.3.<a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__li_zxm_wg1_rzb">A</a>-<a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__li_lwy_wg1_rzb">E</a> above<ol class="ol" type="i">
+                        <li class="li">For the Integrity RX2660 – 3.4</li>
+                        <li class="li">For the Alpha DS15 – 3.5</li>
+                        <li class="li">For the Alpha DS20 – 3.6</li>
+                        <li class="li">For the Alpha Server 1200/4000 – 3.7 <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_n2n_pb1_rzb"><figcaption><span class="fig--title-label">Figure 3. </span>Figure 1: Successful Transfer Message</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_p2n_pb1_rzb" src="media/image52.jpg"></div><br>
+                           </figure>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="li">If difficulties are encountered in copying this file, contact your Process Control Country Group Regional Network Leader.</li>
+               </ol>
+            </li>
+            <li class="li">HP Integrity rx2660 VMS Server<ol class="ol" type="a">
+                  <li class="li">As supplied, the MCS Integrity rx2660 VMS server contains two hard disk drives which are configured to operate in tandem as a RAID1 (Redundant Array of Independent Disks) system drive.  These two disk drives are physically installed in slots 7 and 8. This system is configured to perform image backups from the RAID1disk to a tape drive.  </li>
+                  <li class="li">Follow these specific steps to add hard disk drive backup to an Integrity rx2600 server.</li>
+                  <li class="li">Install an HP Integrity 146GB Disk Drive (Space part number “SEP-3-177”) in Slot 6.  NOTE: there must be no empty slots between installed drives.</li>
+                  <li class="li">Type <kbd class="ph userinput">DIR#TAPELESS*</kbd>, and then press the
+                        <span class="ph uicontrol">Enter</span> key. The file named “Tapeless_2660.bck” should
+                     be listed, along with its size and date.</li>
+                  <li class="li">Type <kbd class="ph userinput">BACKUP##TAPELESS_2660.BCK/SAV###*/BY_OWN=PAREN</kbd>, and
+                     then press the <span class="ph uicontrol">Enter</span> key, which will “unpack” the
+                     procedure file.</li>
+                  <li class="li">Type <kbd class="ph userinput">@CONFIG_TAPELESS_BACKUP_2660</kbd>, and then press the
+                        <span class="ph uicontrol">Enter</span> key. This will start the execution of the main
+                     procedure, which will take several minutes to complete.</li>
+                  <li class="li">Type <kbd class="ph userinput">SHOW#DEV#D</kbd>, and then press the
+                        <span class="ph uicontrol">Enter</span> key. Confirm that “<strong class="ph b">dka600:</strong>” is displayed
+                     on the list (indicating that step 7 was successful) before proceeding.</li>
+                  <li class="li" id="r20D9500-BB02-11F0-1597-09173F13E4C5__li_bgl_131_rzb">Type <kbd class="ph userinput">MOUN/OVER=ID#DKA600:</kbd> and press
+                     the <span class="ph uicontrol">Enter</span> key. This will mount the newly installed
+                     drive. The procedure will be successful when a message is displayed confirming
+                     that “xxxBACKUP” has been mounted.</li>
+                  <li class="li">Type <kbd class="ph userinput">DISM#DKA600:</kbd>, and then press the
+                        <span class="ph uicontrol">Enter</span> key. This will dismount “xxxBACKUP.”</li>
+                  <li class="li">Use a text editor to add a definition to the “SYSINI:LOGICAL_INIT.COM” file.
+                        <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_u4q_lh1_rzb"><span class="note__title">Note:</span> 
+                        <p class="p">This editing must be performed very carefully because any incorrect
+                           changes will prevent the MCS server from starting the next time it is
+                           turned on or restarted.</p>
+                     </div>
+                     <ol class="ol" type="i">
+                        <li class="li">Type <kbd class="ph userinput">SET#DEF#SYSINI</kbd>, and then press the
+                              <span class="ph uicontrol">Enter</span> key.</li>
+                        <li class="li">Type <kbd class="ph userinput">EVE#LOGICAL_INIT.COM</kbd>, and then press the
+                              <span class="ph uicontrol">Enter</span> key.</li>
+                        <li class="li">Use the Down Arrow key to move the cursor down until you see the lines
+                           displayed in REF _Ref417306251 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_u1r_sb1_rzb">2</a>. <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_u1r_sb1_rzb"><figcaption><span class="fig--title-label">Figure 4. </span>Figure 2: Logical_Init.com file (opened in Text Editor)</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_v1r_sb1_rzb" src="media/image4.jpg"></div><br>
+                           </figure>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="li">Position the cursor at the very beginning of the blank line:<ol class="ol" type="i">
+                        <li class="li">Type <kbd class="ph userinput">$</kbd>
+                        </li>
+                        <li class="li">Press the <span class="ph uicontrol">TAB</span> key</li>
+                        <li class="li">Type <kbd class="ph userinput">DEFINE/SYSTEM</kbd>
+                        </li>
+                        <li class="li">Press the <span class="ph uicontrol">TAB</span> key</li>
+                        <li class="li">Type <kbd class="ph userinput">MCS_BACKUP_DISK#DKA600:</kbd>
+                        </li>
+                        <li class="li">Press the <span class="ph uicontrol">Enter</span> key</li>
+                        <li class="li">Confirm that the line is typed exactly as shown to the left of the arrow in
+                           REF _Ref417306240 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_z4j_zb1_rzb">4</a> before proceeding <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_mkg_vb1_rzb"><figcaption><span class="fig--title-label">Figure 5. </span>Figure 3: Definition added to the Logical_Init.com file</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_nkg_vb1_rzb" src="media/image5.jpg"></div><br>
+                           </figure>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="li">The changes made to the file must now either be saved or discarded.  <ol class="ol" type="i">
+                        <li class="li">To save the changes:</li>
+                        <li class="li">Press the <span class="ph uicontrol">DO</span> key (or, if using Reflection, press the
+                           key that is mapped to DO), which will display a “<strong class="ph b">Command</strong>:” prompt
+                           at the bottom left-hand corner of the screen.</li>
+                        <li class="li">Type <kbd class="ph userinput">EXIT</kbd>.</li>
+                        <li class="li">Press the <span class="ph uicontrol">Enter</span> key. </li>
+                     </ol>
+                  </li>
+                  <li class="li">If you made a mistake and need to discard the changes:<ol class="ol" type="i">
+                        <li class="li">Press the <span class="ph uicontrol">DO</span> key (or, if using Reflection, press the
+                           key that is mapped to DO), which will display a “<strong class="ph b">Command</strong>:” prompt
+                           at the bottom left-hand corner of the screen.</li>
+                        <li class="li">Type <kbd class="ph userinput">Quit</kbd>.</li>
+                        <li class="li">Press the <span class="ph uicontrol">Enter</span> key. </li>
+                        <li class="li">Go back to step <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__li_bgl_131_rzb">8</a> to re-edit the
+                           file.</li>
+                     </ol>
+                  </li>
+                  <li class="li">Type <kbd class="ph userinput">LO</kbd> (for log out) and then press the
+                        <span class="ph uicontrol">Enter</span> key.</li>
+                  <li class="li">Use the MCS User Interface screen to start a VMS/Integrity backup.  Check for successful completion. Reference the MCSII Operators Manual (PCS-0372) for more details.</li>
+                  <li class="li">MCS Integrity server backups must be manually requested by an operator unless the associated Windows server has also been configured for tapeless backup. If configured, the Windows server will automatically request VMS backups according to the recommended schedule. Operators should periodically confirm that backups are completing successfully.</li>
+               </ol>
+            </li>
+            <li class="li">HP Alpha DS15 Server<ol class="ol" type="a">
+                  <li class="li">As supplied, the MCS Alpha DS15 VMS server uses a single disk drive to serve as its “system” drive. This server is configured to perform image backups from this system disk drive to an internal tape drive.</li>
+                  <li class="li">Follow these steps to add tapeless backup capability to this server.  </li>
+                  <li class="li">
+                     <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_swd_231_rzb"><span class="note__title">Note:</span> 
+                        <p class="p">In the typed commands shown in this section, the # character is always
+                           used to denote a typed blank space.</p>
+                     </div>
+                  </li>
+                  <li class="li">Install an HP 72GB 10K Disk Drive (HP Part “DS-RZ3GA-WA” or its equivalent) in the spare internal slot. This will require powering the system down. Reference the MCSII Operators Manual as required.</li>
+                  <li class="li">Log in to the targeted MCS Alpha server with the Username Process and the appropriate password.</li>
+                  <li class="li">At the “PC” prompt, type <kbd class="ph userinput">KING</kbd>, and the press the
+                        <span class="ph uicontrol">Enter</span> key. This will display a “<strong class="ph b">$$</strong>”
+                     prompt.</li>
+                  <li class="li">Type <kbd class="ph userinput">COM</kbd> and press the <span class="ph uicontrol">Enter</span>
+                     key.</li>
+                  <li class="li">Type <kbd class="ph userinput">BACKUP##TAPELESS_DS15.BCK/SAV###*/BY_OWN=PAREN</kbd>, and
+                     press the <span class="ph uicontrol">Enter</span> key, which will “unpack” the procedure
+                     file.</li>
+                  <li class="li">Type <kbd class="ph userinput">@CONFIG_TAPELESS_BACKUP_DS15</kbd> and press the
+                        <span class="ph uicontrol">Enter</span> key. This will start the execution of the main
+                     procedure, which will take several minutes to complete.</li>
+                  <li class="li" id="r20D9500-BB02-11F0-1597-09173F13E4C5__li_p5m_t31_rzb">Type <kbd class="ph userinput">SHOW#DEV#D</kbd>, and then press the
+                        <span class="ph uicontrol">Enter</span> key. Confirm that <strong class="ph b">dka100:</strong> is displayed
+                     in the list before proceeding.</li>
+                  <li class="li">Type <kbd class="ph userinput">MOUN/OVER=ID#DKA100:</kbd>, and press the
+                        <span class="ph uicontrol">Enter</span> key. This will mount the newly installed drive.
+                     The procedure will be successful when a message is displayed confirming that
+                     “xxxBACKUP” has been mounted.</li>
+                  <li class="li">Type <kbd class="ph userinput">DISM#DKA100:</kbd> and press the
+                        <span class="ph uicontrol">Enter</span> key. This will dismount “xxxBACKUP.”</li>
+                  <li class="li">Use a text editor to add a definition to the “SYSINI:LOGICAL_INIT.COM” file.<div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_ocr_l31_rzb"><span class="note__title">Note:</span> 
+                        <p class="p">This editing must be performed very carefully because any incorrect
+                           changes will prevent the MCS server from starting the next time it is
+                           turned on or restarted.</p>
+                     </div>
+                  </li>
+                  <li class="li">Type <kbd class="ph userinput">SET#DEF#SYSINI</kbd>, and then press the
+                        <span class="ph uicontrol">Enter</span> key.</li>
+                  <li class="li">Type <kbd class="ph userinput">EVE#LOGICAL_INIT.COM</kbd>, and then press the
+                        <span class="ph uicontrol">Enter</span> key.</li>
+                  <li class="li">The text at the top of the file will be displayed. Use the Down Arrow key to move
+                     the cursor down until you see the lines displayed in REF _Ref417306214 \h \*
+                     MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_z4j_zb1_rzb">4</a>. <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_z4j_zb1_rzb"><figcaption><span class="fig--title-label">Figure 6. </span>Figure 4: Logical_Init.com file (opened in Text Editor)</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_apj_zb1_rzb" src="media/image6.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Position the cursor at the very beginning of the blank line:</li>
+                  <li class="li">Type <kbd class="ph userinput">$</kbd>
+                  </li>
+                  <li class="li">Press the <span class="ph uicontrol">TAB</span> key</li>
+                  <li class="li">Type <kbd class="ph userinput">DEFINE/SYSTEM</kbd>
+                  </li>
+                  <li class="li">Press the <span class="ph uicontrol">TAB</span> key</li>
+                  <li class="li">Type <kbd class="ph userinput">MCS_BACKUP_DISK#DKA100:</kbd>
+                  </li>
+                  <li class="li">Press the <span class="ph uicontrol">Enter</span> key</li>
+                  <li class="li">Confirm that the line is typed exactly as shown to the left of the arrow in REF
+                     _Ref417306202 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_cjp_bc1_rzb">5</a> before proceeding <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_cjp_bc1_rzb"><figcaption><span class="fig--title-label">Figure 7. </span>Figure 5: Definition added to the Logical_Init.com file</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_ejp_bc1_rzb" src="media/image7.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">The changes made to the file must now either be saved or discarded.  </li>
+                  <li class="li">To save the changes:</li>
+                  <li class="li">Press the <span class="ph uicontrol">DO</span> key (or, if using Reflection, press the key
+                     that is mapped to DO), which will display a “<strong class="ph b">Command</strong>:” prompt at the
+                     bottom left-hand corner of the screen.</li>
+                  <li class="li">Type <kbd class="ph userinput">EXIT</kbd>.</li>
+                  <li class="li">Press the <span class="ph uicontrol">Enter</span> key. </li>
+                  <li class="li">If you made a mistake and need to discard the changes:</li>
+                  <li class="li">Press the <span class="ph uicontrol">DO</span> key (or, if using Reflection, press the key
+                     that is mapped to DO), which will display a “<strong class="ph b">Command</strong>:” prompt at the
+                     bottom left-hand corner of the screen.</li>
+                  <li class="li">Type <kbd class="ph userinput">Quit</kbd>.</li>
+                  <li class="li">Press the <span class="ph uicontrol">Enter</span> key. </li>
+                  <li class="li">Go back to Step <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__li_p5m_t31_rzb">10</a> to re-edit the file.<ol class="ol" type="i">
+                        <li class="li">Type <kbd class="ph userinput">LO</kbd> (for log out) and then press the
+                              <span class="ph uicontrol">Enter</span> key.</li>
+                        <li class="li">Navigate to the MCS user interface screen and start a VMS/Alpha
+                           backup.</li>
+                     </ol>
+                  </li>
+                  <li class="li">Check for successful completion with the MCS Backup Tools. Reference the MCSII Operators Manual (PCS-0372) for more details. If issues are noted, contact MCS Support.</li>
+                  <li class="li">
+                     <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_fnx_w31_rzb"><span class="note__title">Note:</span> 
+                        <p class="p">MCS Alpha server backups must be manually requested by an operator unless
+                           an associated Windows server has also been configured for tapeless
+                           backup. If the Windows server has been configured for tapeless backup,
+                           the Windows server will automatically request VMS backups according to
+                           the recommended schedule. Operators should periodically confirm that
+                           backups are completing successfully.</p>
+                     </div>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">HP Alpha DS20 Server<ol class="ol" type="a">
+                  <li class="li">As supplied, the MCS Alpha DS20 VMS server uses a single disk drive installed in slot 1 to serve as its “system” drive. This system is configured to perform image backups from the system disk to an attached tape drive.</li>
+                  <li class="li">To implement tapeless backup, a backup disk must be installed in slot 4 of this server.</li>
+                  <li class="li">
+                     <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_psh_z31_rzb"><span class="note__title">Note:</span> 
+                        <p class="p">Some systems may already have a spare disk installed in slot 2. If this
+                           is the case, do not move it. It is acceptable to have empty slots between
+                           drives on this server. The backup drive typically should have a minimum
+                           capacity of at least 72GB.</p>
+                     </div>
+                  </li>
+                  <li class="li">Follow these steps to add tapeless backup capability to this server. <ol class="ol" type="i">
+                        <li class="li">
+                           <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_kkg_1j1_rzb"><span class="note__title">Note:</span> 
+                              <p class="p">In the typed commands shown in this section, the # character is
+                                 always used to denote a typed blank space.</p>
+                           </div>
+                        </li>
+                        <li class="li">Install an HP 72GB 10K Disk Drive (HP Part “3R-A6419-AA”) in internal slot 4. Empty slots are permitted between drives. Some systems may have a spare disk already installed in slot 2 -- do not move any existing spare disk drives.</li>
+                        <li class="li">Type <kbd class="ph userinput">BACKUP##TAPELESS_DS20.BCK/SAV###*/BY_OWN=PAREN</kbd>,
+                           and press the <span class="ph uicontrol">Enter</span> key, which will “unpack” the
+                           procedure file.</li>
+                        <li class="li">Type <kbd class="ph userinput">@CONFIG_TAPELESS_BACKUP_DS20</kbd>, and then press
+                           the <span class="ph uicontrol">Enter</span> key. This will start the execution of
+                           the main procedure, which will take several minutes to complete.</li>
+                        <li class="li">Type <kbd class="ph userinput">SHOW#DEV#D</kbd>, and press the
+                              <span class="ph uicontrol">Enter</span> key. Confirm that <strong class="ph b">dka300:</strong> is
+                           displayed in the list before proceeding.</li>
+                        <li class="li">Type <kbd class="ph userinput">MOUN/OVER=ID DKA300:</kbd>, and press the
+                              <span class="ph uicontrol">Enter</span> key. This will mount the newly installed
+                           drive. The procedure will be successful when a message is displayed
+                           confirming that “xxxBACKUP” has been mounted</li>
+                        <li class="li">Type <kbd class="ph userinput">DISM#DKA300:</kbd> and press the
+                              <span class="ph uicontrol">Enter</span> key. This will dismount xxxBACKUP.</li>
+                        <li class="li">Use a text editor to add a definition to the “SYSINI:LOGICAL_INIT.COM”
+                           file. <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_fml_fj1_rzb"><span class="note__title">Note:</span> 
+                              <p class="p">This editing must be performed very carefully because any incorrect
+                                 changes will prevent the MCS server from starting the next time it
+                                 is turned on or restarted.</p>
+                           </div>
+                           <ol class="ol" id="r20D9500-BB02-11F0-1597-09173F13E4C5__ol_vdh_3j3_pzb">
+                              <li class="li">Type <kbd class="ph userinput">SET#DEF#SYSINI</kbd>, and then press the
+                                    <span class="ph uicontrol">Enter</span> key.</li>
+                              <li class="li">Type <kbd class="ph userinput">EVE#LOGICAL_INIT.COM</kbd>, and then press
+                                 the <span class="ph uicontrol">Enter</span> key.</li>
+                              <li class="li">The text at the top of the file will be displayed. Use the Down
+                                 Arrow key to move the cursor down until you see the lines displayed
+                                 in Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_wdf_hc1_rzb">6</a>. <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_wdf_hc1_rzb"><figcaption><span class="fig--title-label">Figure 8. </span>Figure 6: Logical_Init.com file (opened in Text
+                                       Editor)</figcaption>
+                                    
+                                    <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_ydf_hc1_rzb" src="media/image8.jpg"></div><br>
+                                 </figure>
+                              </li>
+                           </ol>
+                        </li>
+                        <li class="li">Position the cursor at the very beginning of the blank line:<ol class="ol" id="r20D9500-BB02-11F0-1597-09173F13E4C5__ol_ipw_kj3_pzb">
+                              <li class="li">Type <kbd class="ph userinput">$</kbd>
+                              </li>
+                              <li class="li">Press the <span class="ph uicontrol">TAB</span> key</li>
+                              <li class="li">Type <kbd class="ph userinput">DEFINE/SYSTEM</kbd>
+                              </li>
+                              <li class="li">Press the <span class="ph uicontrol">TAB</span> key</li>
+                              <li class="li">Type <kbd class="ph userinput">MCS_BACKUP_DISK#DKA300:</kbd>
+                              </li>
+                              <li class="li">Press the <span class="ph uicontrol">Enter</span> key</li>
+                              <li class="li">Confirm that the line is typed exactly as shown to the left of the
+                                 arrow in Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_vpx_jc1_rzb">7</a> before
+                                 proceeding <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_vpx_jc1_rzb"><figcaption><span class="fig--title-label">Figure 9. </span>Figure 7: Definition added to the Logical_Init.com
+                                       file</figcaption>
+                                    
+                                    <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_wpx_jc1_rzb" src="media/image9.jpg"></div><br>
+                                 </figure>
+                              </li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="li">The changes made to the file must now either be saved or discarded.<ol class="ol" type="i">
+                        <li class="li">To save the changes:<ol class="ol" id="r20D9500-BB02-11F0-1597-09173F13E4C5__ol_rlm_nj3_pzb">
+                              <li class="li">Press the <span class="ph uicontrol">DO</span> key (or, if using Reflection,
+                                 press the key that is mapped to DO), which will display a
+                                    “<strong class="ph b">Command</strong>:” prompt at the bottom left-hand corner of the
+                                 screen.</li>
+                              <li class="li">Type <kbd class="ph userinput">EXIT</kbd>.</li>
+                              <li class="li"> Press the <span class="ph uicontrol">Enter</span> key. </li>
+                           </ol>
+                        </li>
+                        <li class="li">If you made a mistake and need to discard the changes:<ol class="ol" id="r20D9500-BB02-11F0-1597-09173F13E4C5__ol_m2d_qj3_pzb">
+                              <li class="li">Press the <kbd class="ph userinput">DO</kbd> key (or, if using Reflection,
+                                 press the key that is mapped to DO), which will display a
+                                    “<strong class="ph b">Command</strong>:” prompt at the bottom left-hand corner of the
+                                 screen.</li>
+                              <li class="li">Type <kbd class="ph userinput">Quit</kbd>.</li>
+                              <li class="li">Press the <span class="ph uicontrol">Enter</span> key. </li>
+                              <li class="li">Go back to step 7 to re-edit the file.</li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="li">Type <kbd class="ph userinput">LO</kbd> (for log out) and then press the
+                        <span class="ph uicontrol">Enter</span> key.</li>
+                  <li class="li">Use the MCS User Interface screen to start a VMS/Alpha backup.  Check for successful completion. Reference the MCSII Operators Manual (PCS-0372) for more details. If issues are encountered, contact the MCS Support.</li>
+                  <li class="li">MCS Alpha server backups must be manually requested by an operator unless the associated Windows server has also been configured for tapeless backup. If configured, the Windows server will automatically request VMS backups according to the recommended schedule. Operators should periodically confirm that backups are completing successfully.</li>
+               </ol>
+            </li>
+            <li class="li">HP Alpha 1200 and 4000 Servers<ol class="ol" type="a">
+                  <li class="li">As supplied, the MCS Alpha 4000 and 1200 VMS servers both have single disk drives installed in slot 1 which serve as their “system” drives. These servers are configured to perform image backups from their system disks to an internal tape drive.</li>
+                  <li class="li">Follow these steps to add tapeless backup capability to these two servers.  </li>
+                  <li class="li">
+                     <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_isy_tj1_rzb"><span class="note__title">Note:</span> 
+                        <p class="p">In the typed commands shown in this section, the # character is always
+                           used to denote a typed blank space.</p>
+                     </div>
+                     <ol class="ol" type="i">
+                        <li class="li">Install a backup disk in a spare slot. REF _Ref413670586 \h \*
+                           MERGEFORMAT Required/Suggested Equipment Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_n2n_pb1_rzb">1</a>: Suggested Hard Drives for
+                           Tapeless Backup provides a listing of the suggested disk for each
+                              server.<ol class="ol" id="r20D9500-BB02-11F0-1597-09173F13E4C5__ol_ixt_rj3_pzb">
+                              <li class="li">For MCS Alpha 1200 servers, install the backup disk in slot number
+                                 4.</li>
+                              <li class="li">For MCS Alpha 4000 servers, also install the backup disk in slot
+                                 number 4, but do not count the slot with the power supply.</li>
+                           </ol>
+                        </li>
+                        <li class="li">
+                           <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_w55_vj1_rzb"><span class="note__title">Note:</span> 
+                              <p class="p">Some systems may already have a spare disk installed in slot 2. If
+                                 this is the case, do not move it. Install the backup drive in slot
+                                 4. It is allowable to have empty slots between installed
+                                 drives.</p>
+                           </div>
+                        </li>
+                        <li class="li">The backup drive typically has a capacity of at least 9GB for the 4000,
+                           and 18GB for the 1200. When installing a drive, first check carefully to
+                           confirm that the connector is aligned correctly before attempting to seat
+                           the drive.</li>
+                        <li class="li">Type
+                              <kbd class="ph userinput">BACKUP##TAPELESS_40_12.BCK/SAV###*/BY_OWN=PAREN</kbd>,
+                           and then press the <span class="ph uicontrol">Enter</span> key, which will “unpack”
+                           the procedure file.</li>
+                        <li class="li">Type <kbd class="ph userinput">$$ @CONFIG_TAPELESS_BACKUP_40_12</kbd>, and then
+                           press the <span class="ph uicontrol">Enter</span> key. This will start the execution
+                           of the main procedure, which will take several minutes to complete.</li>
+                        <li class="li">Type <kbd class="ph userinput">SHOW#DEV#D</kbd> and then press the
+                              <span class="ph uicontrol">Enter</span> key. Confirm that “<strong class="ph b">dkb300:</strong>” is
+                           displayed in the list before proceeding.</li>
+                        <li class="li">Type <kbd class="ph userinput">MOUN/OVER=ID#DKB300:</kbd> and then press the
+                              <span class="ph uicontrol">Enter</span> key. This will mount the newly installed
+                           drive. The procedure will be successful when a message is displayed
+                           confirming that “xxxBACKUP” has been mounted.</li>
+                        <li class="li">Type <kbd class="ph userinput">DISM#DKB300:</kbd>, and then press the
+                              <span class="ph uicontrol">Enter</span> key. This will dismount “xxxBACKUP.”</li>
+                        <li class="li">Use a text editor to add a definition to the “SYSINI:LOGICAL_INIT.COM”
+                           file. <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_ur1_dk1_rzb"><span class="note__title">Note:</span> 
+                              <p class="p">This editing must be performed very carefully because any incorrect
+                                 changes will prevent the MCS server from booting up successfully
+                                 the next time it is turned on or restarted:</p>
+                           </div>
+                           <ol class="ol" id="r20D9500-BB02-11F0-1597-09173F13E4C5__ol_qjg_tj3_pzb">
+                              <li class="li">Type <kbd class="ph userinput">SET#DEF#SYSINI</kbd>, and then press the
+                                    <span class="ph uicontrol">Enter</span> key.</li>
+                              <li class="li">Type <kbd class="ph userinput">EVE#LOGICAL_INIT.COM</kbd>, and then press
+                                 the <span class="ph uicontrol">Enter</span> key.</li>
+                              <li class="li">The text at the top of the file will be displayed. Use the Down
+                                 Arrow key to move the cursor down until the lines shown in Figure
+                                    <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_h5k_nc1_rzb">8</a> are displayed. <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_h5k_nc1_rzb"><figcaption><span class="fig--title-label">Figure 10. </span>Figure 8: Logical_Init.com file (opened in Text
+                                       Editor)</figcaption>
+                                    
+                                    <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_j5k_nc1_rzb" src="media/image10.jpg"></div><br>
+                                 </figure>
+                              </li>
+                              <li class="li">Position the cursor at the very beginning of the blank line:<ol class="ol" type="a" id="r20D9500-BB02-11F0-1597-09173F13E4C5__ul_oyj_zj3_pzb">
+                                    <li class="li">Type <kbd class="ph userinput">$</kbd>
+                                    </li>
+                                    <li class="li">Press the <span class="ph uicontrol">TAB</span> key</li>
+                                    <li class="li">Type <kbd class="ph userinput">DEFINE/SYSTEM</kbd>
+                                    </li>
+                                    <li class="li">Press the <span class="ph uicontrol">TAB</span> key</li>
+                                    <li class="li">Type <kbd class="ph userinput">MCS_BACKUP_DISK#DKB300:</kbd>
+                                    </li>
+                                    <li class="li"> Press the <span class="ph uicontrol">Enter</span> key</li>
+                                    <li class="li">Confirm that the line is typed exactly as shown to the left
+                                       of the arrow in Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_z1k_pc1_rzb">9</a> before proceeding <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_z1k_pc1_rzb"><figcaption><span class="fig--title-label">Figure 11. </span>Figure 9: Definition added to the Logical_Init.com
+                                             file</figcaption>
+                                          
+                                          <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_bbk_pc1_rzb" src="media/image11.jpg"></div><br>
+                                       </figure>
+                                    </li>
+                                 </ol>
+                              </li>
+                           </ol>
+                        </li>
+                        <li class="li">The changes made to the file must now either be saved or discarded.<ol class="ol" id="r20D9500-BB02-11F0-1597-09173F13E4C5__ol_e42_dk3_pzb">
+                              <li class="li">To save the changes:<ol class="ol" type="a" id="r20D9500-BB02-11F0-1597-09173F13E4C5__ul_f42_dk3_pzb">
+                                    <li class="li">Press the <span class="ph uicontrol">DO</span> key (or if using
+                                       Reflection, press the key that is mapped to DO), which will
+                                       display a “<strong class="ph b">Command</strong>:” prompt in the bottom left-hand
+                                       corner of the screen.</li>
+                                    <li class="li">Type <kbd class="ph userinput">EXIT</kbd>.</li>
+                                    <li class="li">Press the <span class="ph uicontrol">Enter</span> key.</li>
+                                 </ol>
+                              </li>
+                              <li class="li">To discard the changes:<ol class="ol" type="a" id="r20D9500-BB02-11F0-1597-09173F13E4C5__ul_g42_dk3_pzb">
+                                    <li class="li">Press the <kbd class="ph userinput">DO</kbd> key (or if using
+                                       Reflection, press the key that is mapped to DO), which will
+                                       display a “<strong class="ph b">Command</strong>:” prompt at the bottom left-hand
+                                       corner of the screen.</li>
+                                    <li class="li">Type <kbd class="ph userinput">QUIT</kbd>.</li>
+                                    <li class="li">Press the <span class="ph uicontrol">Enter</span> key.</li>
+                                    <li class="li">Go back to Step 7 to re-edit the file.</li>
+                                 </ol>
+                              </li>
+                           </ol>
+                        </li>
+                        <li class="li">Type <kbd class="ph userinput">LO</kbd> (for log out) and then press the
+                              <span class="ph uicontrol">Enter</span> key.</li>
+                        <li class="li">Use the MCS user interface screen to start a VMS/Alpha backup session.
+                           Check for successful completion. Reference the MCSII Operators Manual
+                           (PCS-0372) for more details. If issues are encountered, contact MCS
+                           Support.</li>
+                        <li class="li">
+                           <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_cjs_zk1_rzb"><span class="note__title">Note:</span> 
+                              <p class="p">MCS Alpha server backups must be manually requested by an operator
+                                 unless the associated Windows server has also been configured for
+                                 tapeless backup. If configured, the Windows server will
+                                 automatically request VMS backups according to the recommended
+                                 schedule. Operators should periodically confirm that backups are
+                                 completing successfully.</p>
+                           </div>
+                        </li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">Installing Tapeless Backup on Windows Based Servers<ol class="ol" type="a">
+                  <li class="li">
+                     <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_i32_bl1_rzb"><span class="note__title">Note:</span> 
+                        <p class="p">Before starting this procedure, verify that there is a recent successful
+                           backup of the targeted server.</p>
+                     </div>
+                  </li>
+                  <li class="li">Copying the Backup Software to a Windows Server<ol class="ol" type="i">
+                        <li class="li">Log onto the MCS Windows Server as Administrator.</li>
+                        <li class="li">The backup files are located on the Space Manufacturing Software Site, in the
+                        “Process Control\Tapeless” directory. Reference FES-03-500 for connecting
+                        the MCS server to the Manufacturing Software Site.</li>
+                        <li class="li">Copy MCS3 Backup Files.zip to the desktop.</li>
+                        <li class="li">When the save operation completes, right-click the “<span class="ph uicontrol">MCS Backup
+                              Files.zip</span>” file displayed on the MCSII_Server share, and
+                           then select WinZip followed by Extract To (see REF _Ref417306614 \h \*
+                           MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_wnk_tc1_rzb">10</a>). <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_wnk_tc1_rzb"><figcaption><span class="fig--title-label">Figure 12. </span>Figure 10: Extract All… Drop Down</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_xnk_tc1_rzb" src="media/image12.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">You will be prompted to “Select a Destination and Extract Files,” (see REF
+                           _Ref417306805 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_tkk_vc1_rzb">11</a>). Navigate to D:\MSCII_Server
+                           as shown. Click on the <span class="ph uicontrol">Extract</span> button start the
+                           extraction process to unzip all of the MCS backup files into the MCS3
+                           Backup files folder. <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_tkk_vc1_rzb"><figcaption><span class="fig--title-label">Figure 13. </span>Figure 11: Extraction Folder Selection</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_vkk_vc1_rzb" src="media/image13.jpg"></div><br>
+                           </figure>
+                        </li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">When the process is successful, the new directory will be created, as shown in REF
+               _Ref417308145 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_wxz_xc1_rzb">12</a>.
+                  <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_wxz_xc1_rzb"><figcaption><span class="fig--title-label">Figure 14. </span>Figure 12: Successfully Created MCS3 Backup Folder</figcaption>
+                  
+                  <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_yxz_xc1_rzb" src="media/image53.jpg"></div><br>
+               </figure>
+               <ol class="ol" type="a">
+                  <li class="li">WinZip Version Confirmation<ol class="ol" type="i">
+                        <li class="li">The file compression/decompression software “WinZip” is used to
+                           decompress the server backup files after they have been copied to the
+                           server. Also, it is needed to compress the MCS Backup file for storage
+                           and/or transfer. Because early versions of “WinZip” have limitations on
+                           the size of the files they can compress and decompress, it is necessary
+                           to confirm that the version installed on the targeted server is version
+                           9.0 (or greater) before attempting this procedure.</li>
+                        <li class="li">To check the version, select <span class="ph uicontrol">Start/Programs</span> as
+                           shown in REF _Ref417308330 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_ywd_bd1_rzb">13</a>. If the version is not shown
+                           on the drop-down menu listing, then open “WinZip,” select Help, and then
+                           select About WinZip. <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_ywd_bd1_rzb"><figcaption><span class="fig--title-label">Figure 15. </span>Figure 13: WinZip Version Listing</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_axd_bd1_rzb" src="media/image20.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">If the “WinZip” version is 9.0 or higher, then you can proceed directly
+                           to Section C, WinZip Command-Line Add-On.</li>
+                     </ol>
+                  </li>
+                  <li class="li">Updating WinZip to Version 11.0<ol class="ol" type="i">
+                        <li class="li">If the “WinZip” version is 8.0 (or less), it will be necessary to
+                           upgrade the “WinZip” program on the targeted server to version 11.0
+                           before proceeding. Because “WinZip” software is a licensed product, it is
+                           necessary to purchase a single user license/copy for the most current
+                           version before updating the version on the server. <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_efq_rl1_rzb"><span class="note__title">Note:</span> 
+                              <p class="p">It is easiest to purchase the required “WinZip” license along with
+                                 the hard disk drive. Once a license has been purchased, the actual
+                                 program file can be copied from the Space collaboration website,
+                                 using the following steps:</p>
+                           </div>
+                        </li>
+                        <li class="li">After a current “WinZip” Version license has been acquired, the software
+                           can be downloaded to the targeted MCS server. (<div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_vld_tl1_rzb"><span class="note__title">Note:</span> 
+                              <p class="p">MCSII will use WinZip version 11.0, regardless of the current
+                                 available version.)</p>
+                           </div>
+                        </li>
+                        <li class="li">The “WinZip” installation folder (WinZip11Pro.zip) can be copied from
+                           the using the same procedures described Section 1.2.1, Copying the Backup
+                           Software to a Windows Server.<ol class="ol" id="r20D9500-BB02-11F0-1597-09173F13E4C5__ol_n3x_2v3_pzb">
+                              <li class="li">Once the “WinZip” software has been copied, use Add/Remove
+                                 Programs to uninstall WinZip V8 (Figure 14).</li>
+                              <li class="li">Use <strong class="ph b">Add/Remove Programs</strong> to install WinZip V11. Browse to
+                                 D:\MCSII_Server\WinZip11Pro. </li>
+                              <li class="li">
+                                 <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_whz_vl1_rzb"><span class="note__title">Note:</span> 
+                                    <p class="p">Be sure to direct the installation to the “D:\Program Files”
+                                       drive and folder, and not to the default C:\ drive.</p>
+                                 </div>
+                                 <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_wlh_dd1_rzb"><figcaption><span class="fig--title-label">Figure 16. </span>Figure 14: WinZip Removal Screen</figcaption>
+                                    
+                                    <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_ylh_dd1_rzb" src="media/image54.jpg"></div><br>
+                                 </figure>
+                              </li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="li">WinZip Command-Line Add-On <ol class="ol" type="i">
+                        <li class="li">To operate properly, servers using “WinZip” versions greater than 8.0
+                           must have an add-on command line copied to their D:\Program Files\WinZip
+                           folder. To do this:<ol class="ol" id="r20D9500-BB02-11F0-1597-09173F13E4C5__ol_trx_mv3_pzb">
+                              <li class="li">Open Windows Explorer and navigate to D:\MCSII_Server\MCS3 Backup
+                                 Files\ WinZipAddons (and the Version folder that corresponds to the
+                                 version of “WinZip” that is installed on the targeted server).
+                                    <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_zhh_xl1_rzb"><span class="note__title">Note:</span> 
+                                    <p class="p">These add-on files were copied to the server along with the
+                                       other tapeless backup files.</p>
+                                 </div>
+                              </li>
+                              <li class="li">Open another Windows Explorer window and navigate to D:\Program
+                                 Files\WinZip. Copy the files from the correct version folder and
+                                 paste them in the D:\Program Files\WinZip folder. Available
+                                 versions are shown in Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_hqw_nd1_rzb">15</a>. <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_hqw_nd1_rzb"><figcaption><span class="fig--title-label">Figure 17. </span>Figure 15: WinZip Add-On Files Available</figcaption>
+                                    
+                                    <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_jqw_nd1_rzb" src="media/image19.jpg"></div><br>
+                                 </figure>
+                              </li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="li">Physically Installing Backup Disk Drives in Windows Servers<ol class="ol" type="i">
+                        <li class="li">Configuring the Disk Array for Windows G4, G5, G6 and G7 Servers<ol class="ol" id="r20D9500-BB02-11F0-1597-09173F13E4C5__ol_fsf_rv3_pzb">
+                              <li class="li">The disk drives used in these servers are all “hot-pluggable,” so
+                                 it is not necessary to power down a server when installing a disk
+                                 drive. <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_bsy_yl1_rzb"><span class="note__title">Note:</span> 
+                                    <p class="p">Figure 1 provides a listing of suggested disks for each
+                                       server.Hard drive installation directions can typically be
+                                       found on the drive manufacturer’s web site.</p>
+                                 </div>
+                              </li>
+                              <li class="li">To configure a Windows G4, G5, G6, or G7 server, follow these
+                                 steps:</li>
+                              <li class="li">Physically install the hard disk drive into Drive Bay 3 of the
+                                 Windows Server, and then if the server is not already running, turn
+                                 it on and let it boot-up completely.</li>
+                              <li class="li">Start the Array Configuration Utility (ACU) by using Windows
+                                 Explorer to browse to the HP Array Configuration Utility listing
+                                 (see Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_rly_rd1_rzb">16</a>). <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_rly_rd1_rzb"><figcaption><span class="fig--title-label">Figure 18. </span>Figure 16: HP Array Configuration Utility Startup for G4,
+                                       G5, G6, and G7 Servers</figcaption>
+                                    
+                                    <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_tly_rd1_rzb" src="media/image20.jpg"></div><br>
+                                 </figure>
+                              </li>
+                              <li class="li">Double-click on <span class="ph uicontrol">HP Array Configuration
+                                    Utility</span>. This will display the HP Array
+                                 Configuration Utility Available Device screen (see Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_tql_5d1_rzb">17</a>).</li>
+                              <li class="li">Select the device by clicking as indicated. <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_tql_5d1_rzb"><figcaption><span class="fig--title-label">Figure 19. </span>Figure 17: HP Array Configuration Utility Smart Array
+                                       Selection Screen</figcaption>
+                                    
+                                    <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_vql_5d1_rzb" src="media/image21.jpg"></div><br>
+                                 </figure>
+                              </li>
+                              <li class="li">Click on the <span class="ph uicontrol">Down Arrow</span> key and choose
+                                 Physical View to display the available devices. Then, double-click
+                                 on <span class="ph uicontrol">Smart Array P410i in Embedded Slot</span> to
+                                 display the array. Click once on <span class="ph uicontrol">Unassigned Drives
+                                    (1)</span> which will be listed as an “Unassigned Drive.”
+                                 This will display the HP Array Configuration Utility Unassigned
+                                 Drives screen, (see Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_m5l_wd1_rzb">18</a>). <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_m5l_wd1_rzb"><figcaption><span class="fig--title-label">Figure 20. </span>Figure 18: HP Array Configuration Utility Unassigned
+                                       Drives Screen</figcaption>
+                                    
+                                    <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_o5l_wd1_rzb" src="media/image22.jpg"></div><br>
+                                 </figure>
+                              </li>
+                              <li class="li">Click on the <span class="ph uicontrol">Unassigned Drive</span> to highlight
+                                 it, and then click on the <span class="ph uicontrol">Create Array</span>
+                                 button (see Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_cvp_yd1_rzb">19</a>).
+                                 This will start the array configuration process and display the
+                                 Create Array Unassigned drives screen, as shown in Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_tpm_b21_rzb">20</a>. <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_cvp_yd1_rzb"><figcaption><span class="fig--title-label">Figure 21. </span>Figure 19: HP Array Configuration Utility Unassigned
+                                       Drives Selection Screen</figcaption>
+                                    
+                                    <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_evp_yd1_rzb" src="media/image23.jpg"></div><br>
+                                 </figure>
+                              </li>
+                              <li class="li">When the Physical Drive Selection screen is displayed (see Figure
+                                    <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_tpm_b21_rzb">20</a>), click on the
+                                 newly installed drive (in this case Bay 3) to highlight it, and
+                                 then click on the <span class="ph uicontrol">OK</span> button to start the
+                                 configuration process. <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_tpm_b21_rzb"><figcaption><span class="fig--title-label">Figure 22. </span>Figure 20: Physical Drive Selection Screen</figcaption>
+                                    
+                                    <img class="image" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_vpm_b21_rzb" src="media/image24.jpg">
+                                 </figure>
+                              </li>
+                              <li class="li">When the <strong class="ph b">Create Logical Drive</strong> screen is displayed (see
+                                 Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_gzk_d21_rzb">21</a>), highlight
+                                 the targeted drive and click on the <span class="ph uicontrol">Create Logical
+                                    Drive</span> button. This will initiate the drive creation
+                                 process and display a drive parameter confirmation screen (see
+                                 Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_d3b_f21_rzb">22</a>). <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_gzk_d21_rzb"><figcaption><span class="fig--title-label">Figure 23. </span>Figure 21: Create Logical Drive Selection Screen</figcaption>
+                                    
+                                    <br><div class="imagecenter"><img class="image imagecenter" src="media/image25.jpg"></div><br>
+                                 </figure>
+                                 <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_d3b_f21_rzb"><figcaption><span class="fig--title-label">Figure 24. </span>Figure 22: Drive Parameter Confirmation Screen</figcaption>
+                                    
+                                    <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_f3b_f21_rzb" src="media/image26.jpg"></div><br>
+                                 </figure>
+                              </li>
+                              <li class="li">Accept the default values displayed on this screen by clicking on
+                                 the <span class="ph uicontrol">Save</span> button. The system will complete
+                                 the drive creation process and display the system status screen,
+                                 showing the status of the newly configured drive (see Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_n1h_h21_rzb">23</a>). <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_n1h_h21_rzb"><figcaption><span class="fig--title-label">Figure 25. </span>Figure 23: System Status Screen</figcaption>
+                                    
+                                    <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_o1h_h21_rzb" src="media/image27.jpg"></div><br>
+                                 </figure>
+                              </li>
+                              <li class="li">Pressing the <span class="ph uicontrol">Exit ACU</span> button will complete
+                                 the configuration process and exit you from the array configuration
+                                 utility program.</li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="li">Configuring a Disk Array for a Windows G3 Server<ol class="ol" type="i">
+                        <li class="li">The disk drives used in this server are all “hot-pluggable,” so it is
+                           not necessary to power down the server when installing a disk drive. REF
+                           _Ref413670586 \h \* MERGEFORMAT Required/Suggested Equipment Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_n2n_pb1_rzb">1</a>: Suggested Hard Drives for
+                           Tapeless Backup provides a listing of suggested disks for each server.
+                           Hard drive installation directions can typically be found on the drive
+                           manufacturer’s web site.</li>
+                        <li class="li">
+                           <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_qbq_4m1_rzb"><span class="note__title">Note:</span> 
+                              <p class="p">The screens used during the configuration of G3 disk arrays are
+                                 very similar to those used when configuring G4, G5, G6 and G7
+                                 arrays. However, some minor differences do exist. See Section
+                                 1.2.5.1, Configuring the Disk Array for Windows G4, G5, G6 and G7
+                                 Servers for representative examples of the screens that will be
+                                 encountered during the configuration of G3 arrays.</p>
+                           </div>
+                        </li>
+                        <li class="li">To configure a Windows G3 server, follow these steps. <ol class="ol" id="r20D9500-BB02-11F0-1597-09173F13E4C5__ul_arj_sw3_pzb">
+                              <li class="li">Physically install the hard disk drive into Drive Bay 2 of the MCS
+                                 G3 Windows Server, and then if the server is not already running,
+                                 turn it on and let it boot-up completely. <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_v1t_pm1_rzb"><span class="note__title">Note:</span> 
+                                    <p class="p">Figure 1 provides a listing of suggested disks for each
+                                       server. Hard drive installation directions can typically be
+                                       found on the drive manufacturer’s web site.</p>
+                                 </div>
+                                 <ol class="ol" type="a" id="r20D9500-BB02-11F0-1597-09173F13E4C5__ul_brj_sw3_pzb">
+                                    <li class="li">Click on <span class="ph uicontrol">Start Programs</span>.</li>
+                                    <li class="li">Click on <span class="ph uicontrol">Compaq System Tools</span>.</li>
+                                    <li class="li">Click on <span class="ph uicontrol">HP Array Configuration
+                                          Utility</span>.</li>
+                                    <li class="li">Click (again) on <span class="ph uicontrol">HP Array Configuration
+                                          Utility</span> (see Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_jhq_j21_rzb">24</a>). <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_jhq_j21_rzb"><figcaption><span class="fig--title-label">Figure 26. </span>Figure 24: HP Array Configuration Utility Startup
+                                             Selection, G3 Server</figcaption>
+                                          
+                                          <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_mhq_j21_rzb" src="media/image28.jpg"></div><br>
+                                       </figure>
+                                    </li>
+                                    <li class="li">Select the <span class="ph uicontrol">Device</span> (the newly
+                                       installed hard drive).</li>
+                                    <li class="li">Select <span class="ph uicontrol">Physical View</span>. The newly
+                                       installed drive will be displayed as the “<strong class="ph b">Unassigned
+                                          Drive</strong>.” Click on the “<span class="ph uicontrol">Unassigned
+                                          Drive</span>” line to highlight it.</li>
+                                    <li class="li">Select <span class="ph uicontrol">Create Array</span> (accept all the
+                                       default values).</li>
+                                    <li class="li">Click on <span class="ph uicontrol">Save</span>.</li>
+                                    <li class="li">Click on <span class="ph uicontrol">Exit</span>, which will shut down
+                                       the ACU.</li>
+                                 </ol>
+                              </li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="li">Configuring a Disk Array for a Windows G2 Server<ol class="ol" type="i">
+                        <li class="li">
+                           <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_edy_5m1_rzb"><span class="note__title">Note:</span> 
+                              <p class="p">The screens used during the configuration of a G2 disk array are
+                                 very similar to those used when configuring G4, G5, G6 and G7
+                                 arrays. However, some minor differences do exist. See Section
+                                 1.2.5.1, Configuring the Disk Array for Windows G4, G5, G6 and G7
+                                 Servers for representative examples of the screens that will be
+                                 encountered during the configuration of G2 arrays.</p>
+                           </div>
+                        </li>
+                        <li class="li">The disk drives used in this server are all “hot-pluggable,” so it is
+                           not necessary to power down the server when installing a disk drive.</li>
+                        <li class="li">To configure a Windows G2 Server, follow these steps:<ol class="ol" id="r20D9500-BB02-11F0-1597-09173F13E4C5__ol_a11_bx3_pzb">
+                              <li class="li">Physically install the hard disk drive into Drive Bay 2 of the MCS
+                                 G2 Windows Server, and then if the server is not already running,
+                                 turn it on and let it boot-up completely. Required/Suggested
+                                 Equipment Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_n2n_pb1_rzb">1</a>:
+                                 Suggested Hard Drives for Tapeless Backup provides a listing of
+                                 suggested disks for each server. Hard drive installation directions
+                                 can typically be found on the drive manufacturer’s web site.</li>
+                              <li class="li">Start the Array Configuration Utility (ACU) by navigating to the
+                                 Start/Programs/Compaq System Tools/HP Array Configuration Utility/
+                                 HP Array Configuration Utility.</li>
+                              <li class="li">Click on <span class="ph uicontrol">Start Programs</span>.</li>
+                              <li class="li">Click on <span class="ph uicontrol">Compaq System Tools</span>.</li>
+                              <li class="li">Click on <span class="ph uicontrol">HP Array Configuration Utility</span>
+                                 (see Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_czv_l21_rzb">25</a>). <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_czv_l21_rzb"><figcaption><span class="fig--title-label">Figure 27. </span>Figure 25: HP Array Configuration Utility Startup, G2
+                                       Server</figcaption>
+                                    
+                                    <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_ezv_l21_rzb" src="media/image29.jpg"></div><br>
+                                 </figure>
+                              </li>
+                              <li class="li">Select the <span class="ph uicontrol">Device</span> (the newly installed hard
+                                 drive).</li>
+                              <li class="li">Select <span class="ph uicontrol">Physical View</span>. The newly installed
+                                 drive will be displayed as the <strong class="ph b">Unassigned Drive</strong>. Click on
+                                 the <span class="ph uicontrol">Unassigned Drive</span> line to highlight
+                                 it.</li>
+                              <li class="li">Select <span class="ph uicontrol">Create Array</span> (choose all the default
+                                 values).</li>
+                              <li class="li">Click on <span class="ph uicontrol">Save</span>.</li>
+                              <li class="li">Click on <span class="ph uicontrol">Exit</span>, which will shut down the
+                                 ACU.</li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="li">Initializing Windows Backup Disk Drives<ol class="ol" type="i">
+                        <li class="li">Right-click on the <span class="ph uicontrol">My Computer</span> icon to highlight
+                           it and display a <strong class="ph b">drop-down</strong> menu.</li>
+                        <li class="li">Select <span class="ph uicontrol">Manage</span>. This will display the <strong class="ph b">Computer
+                              Management</strong> screen, as shown in Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_x3y_v21_rzb">31</a>.</li>
+                        <li class="li">Select <span class="ph uicontrol">Disk Management</span>. </li>
+                        <li class="li">Right-click on the <span class="ph uicontrol">Disk1</span> tab to highlight the
+                           disk listing and display a <strong class="ph b">drop-down</strong> menu.</li>
+                        <li class="li">Select <span class="ph uicontrol">Initialize Disk</span> (see REF _Ref417309637 \h
+                           \* MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_t45_n21_rzb">26</a>).
+                           When the initialization process is complete, the “<strong class="ph b">Disk Management</strong>”
+                           screen will be redisplayed, as shown in REF _Ref417309668 \h \*
+                           MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_zcd_p21_rzb">27</a>, <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_t45_n21_rzb"><figcaption><span class="fig--title-label">Figure 28. </span>Figure 26: Initialize Disk Selection</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_w45_n21_rzb" src="media/image30.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">Right-click on the name of the initialized disk (to highlight it and
+                           display a <strong class="ph b">drop-down</strong> menu) and select <span class="ph uicontrol">New
+                              Partition</span> (see REF _Ref417309668 \h \* MERGEFORMAT Figure
+                              <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_zcd_p21_rzb">27</a>). <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_zcd_p21_rzb"><figcaption><span class="fig--title-label">Figure 29. </span>Figure 27: New Partition Selection</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_bdd_p21_rzb" src="media/image31.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">
+                           <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_a4l_3n1_rzb"><span class="note__title">Note:</span> 
+                              <p class="p">Make sure the initialized disk is listed as “Primary,” see REF
+                                 _Ref417309716 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_xwb_r21_rzb">28</a>.</p>
+                           </div>
+                           <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_xwb_r21_rzb"><figcaption><span class="fig--title-label">Figure 30. </span>Figure 28: Select Partition Type Screen</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_axb_r21_rzb" src="media/image32.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">Click on the <span class="ph uicontrol">Next</span> button. You will be prompted to
+                              “<strong class="ph b">Specify Partition Size</strong>,” (see REF _Ref417309755 \h \*
+                           MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_znz_s21_rzb">29</a>). <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_znz_s21_rzb"><figcaption><span class="fig--title-label">Figure 31. </span>Figure 29: Default Partition Parameters Selection
+                                 Screen</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_c4z_s21_rzb" src="media/image33.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">Accept the default values by clicking the <span class="ph uicontrol">Next</span>
+                           button. This will display a prompt to “<strong class="ph b">Assign a Drive Letter or
+                              Path</strong>,” see REF _Ref417311229 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_u5j_521_rzb">30</a>. <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_u5j_521_rzb"><figcaption><span class="fig--title-label">Figure 32. </span>Figure 30: Assign a Drive Letter Screen</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_x5j_521_rzb" src="media/image34.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">Select <span class="ph uicontrol">G</span>: as the drive letter and click on the
+                              <span class="ph uicontrol">Next</span> button, which will display the “<strong class="ph b">Format
+                              Partition</strong>” selection screen (see REF _Ref417370536 \h \*
+                           MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_x3y_v21_rzb">31</a>). <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_x3y_v21_rzb"><figcaption><span class="fig--title-label">Figure 33. </span>Figure 31: Select Defaults and Format Partition Screen</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_ajy_v21_rzb" src="media/image35.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">Click on the <span class="ph uicontrol">Next</span> button to use the defaults to
+                           start formatting the partition.</li>
+                        <li class="li">When the partition formatting process is completed, the “<strong class="ph b">Completing
+                              the New Partition Wizard</strong> Screen will be displayed (with the
+                           currently selected settings), as shown in REF _Ref417370584 \h \*
+                           MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_h34_x21_rzb">32</a>. To
+                           accept these settings and complete the partitioning operation, click on
+                           the <span class="ph uicontrol">Finish</span> button. <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_h34_x21_rzb"><figcaption><span class="fig--title-label">Figure 34. </span>Figure 32: Completing the New Partition Wizard Screen</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_k34_x21_rzb" src="media/image36.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">When the partitioning process is complete, the “<strong class="ph b">Disk Management</strong>”
+                           screen will be redisplayed, as shown in REF _Ref417370606 \h \*
+                           MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_cvf_z21_rzb">33</a>. <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_cvf_z21_rzb"><figcaption><span class="fig--title-label">Figure 35. </span>Figure 33: Disk Management Screen</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_fvf_z21_rzb" src="media/image37.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">Right-click on the initialized disk once to highlight it and display the
+                           drop-down menu, and then select Properties.</li>
+                        <li class="li">Click on the <span class="ph uicontrol">General</span> Tab to display the general
+                           volume information, and then type the new volume name Backups, (see REF
+                           _Ref417370631 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_sxc_bf1_rzb">34</a>). <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_sxc_bf1_rzb"><figcaption><span class="fig--title-label">Figure 36. </span>Figure 34: General Properties Tab</figcaption>
+                              
+                              <img class="image" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_vxc_bf1_rzb" src="media/image38.jpg">
+                           </figure>
+                        </li>
+                        <li class="li">Click on the <span class="ph uicontrol">Sharing</span> tab to display the sharing
+                           information screen (see REF _Ref417370659 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_h33_cf1_rzb">35</a>). <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_h33_cf1_rzb"><figcaption><span class="fig--title-label">Figure 37. </span>Figure 35: New Share Button on Sharing Tab</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_k33_cf1_rzb" src="media/image39.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">On the <span class="ph uicontrol">Sharing</span> Tab, click the <span class="ph uicontrol">New
+                              Share</span> button. This will display the “<strong class="ph b">New Share</strong>”
+                           naming prompt, (see REF _Ref417370742 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_ec1_2f1_rzb">36</a>). <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_ec1_2f1_rzb"><figcaption><span class="fig--title-label">Figure 38. </span>Figure 36: New Share Naming Prompt Screen</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_hc1_2f1_rzb" src="media/image40.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">When prompted to provide a “Share name,” Type <kbd class="ph userinput">G</kbd>,
+                           and then click on the <span class="ph uicontrol">OK</span> button. This will update
+                           the new share information and return you to the “<strong class="ph b">Sharing</strong>” tab (see
+                           REF _Ref417370782 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_cvn_ff1_rzb">37</a>). <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_cvn_ff1_rzb"><figcaption><span class="fig--title-label">Figure 39. </span>Figure 37: Sharing Tab</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_fvn_ff1_rzb" src="media/image41.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">Clicking the <span class="ph uicontrol">Apply</span> button will create the new
+                           share and return you to the Disk Management Screen where information will
+                           be displayed for the targeted disk drive (see REF _Ref417370819 \h \*
+                           MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_a4b_hf1_rzb">38</a>). <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_a4b_hf1_rzb"><figcaption><span class="fig--title-label">Figure 40. </span>Figure 38: Disk Management Screen</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_d4b_hf1_rzb" src="media/image42.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">
+                           <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_khl_141_rzb"><span class="note__title">Note:</span> 
+                              <p class="p">The backup drive should now be configured as RAID 0 (zero), Simple,
+                                 NTFS, Primary Partition, defined as G:, named Backups, and
+                                 Shared.</p>
+                           </div>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="li">Copying the Backups Folder and Files<ol class="ol" type="i">
+                        <li class="li">The Backups file folder downloaded earlier and extracted to the D:\
+                           drive (D:\MCSII_Server\MCS3 Backup Files\Backups -- see REF _Ref417370868
+                           \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_bvr_3f1_rzb">39</a>)
+                           must now be copied to the new G: drive.</li>
+                        <li class="li">Open Windows Explorer.</li>
+                        <li class="li">Highlight D:\ MCSII_Server\MCS3 Backup Files\Backups (see REF
+                           _Ref417370868 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_bvr_3f1_rzb">39</a>). <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_bvr_3f1_rzb"><figcaption><span class="fig--title-label">Figure 41. </span>Figure 39: Copy Backups Folder from this Location</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_evr_3f1_rzb" src="media/image43.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">Right-click, and then select <span class="ph uicontrol">Copy</span>.</li>
+                        <li class="li">Navigate to G:\</li>
+                        <li class="li">Right-click, and then select <span class="ph uicontrol">Paste</span>. The Backups
+                           folder and its contents should be copied to the G: drive (see REF
+                           _Ref417370901 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_rbh_lf1_rzb">40</a>). <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_rbh_lf1_rzb"><figcaption><span class="fig--title-label">Figure 42. </span>Figure 40: Paste Backups Folder to this Location</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_vbh_lf1_rzb" src="media/image44.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">Older installations using SQL Server 2000 will require the copying of
+                           alternate backup-related files to handle communications with older
+                           versions of the VMS operating system.</li>
+                        <li class="li">Verify the SQL version of a server by inspecting the icon on the Admin
+                           desktop. SQL Server 2005 icons are titled “SQL Server Management Studio.”
+                           SQL Server 2000 installation icons are titled “SQL2K Enterprise Manager.”
+                           Step b. is only done for SQL Server 2000 systems.</li>
+                        <li class="li">If the system operates with SQL Server 2000, it will be necessary to
+                           copy the separate files located in the folder named “D:\MCSII_Server\MCS3
+                           Backup Files\Replacement Files for Older Alpha Systems” to the
+                           “G:\Backups” folder (replacing the files in that folder which have the
+                           same names).</li>
+                     </ol>
+                  </li>
+                  <li class="li">How to Create Scheduled Tasks<ol class="ol" type="i">
+                        <li class="li">
+                           <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_imd_241_rzb"><span class="note__title">Note:</span> 
+                              <p class="p">Before creating tasks, verify that there is a recent successful
+                                 backup of the server.</p>
+                           </div>
+                        </li>
+                        <li class="li">Two scheduled tasks (both running as Administrator) must be set up on
+                           the server to run the backup routine automatically:</li>
+                        <li class="li">Click on <span class="ph uicontrol">Programs</span>.</li>
+                        <li class="li">Click on <span class="ph uicontrol">Accessories</span>.</li>
+                        <li class="li">Click on <span class="ph uicontrol">System Tools</span>.</li>
+                        <li class="li">Right-click on <span class="ph uicontrol">Scheduled Tasks</span> (see REF
+                           _Ref417370964 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_y5y_nf1_rzb">41</a>), and then drag the cursor to
+                           an open spot on the desktop. When you release the right
+                              <span class="ph uicontrol">mouse</span> button, you will be prompted to
+                              “<strong class="ph b">Create a Shortcut</strong>.” <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_y5y_nf1_rzb"><figcaption><span class="fig--title-label">Figure 43. </span>Figure 41: Scheduled Tasks</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_bvy_nf1_rzb" src="media/image45.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">Select <span class="ph uicontrol">Create Shortcut Here</span>.</li>
+                        <li class="li">Double-click the icon you just created to open Scheduled Tasks.</li>
+                        <li class="li">Select <span class="ph uicontrol">Add Scheduled Task</span> to open the
+                           Wizard.</li>
+                        <li class="li">Browse to the G:\ drive and select G:\Backups\Runbackup.cmd. <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_mcs_341_rzb"><span class="note__title">Note:</span> 
+                              <p class="p">The task name should default to the name of the CMD file.</p>
+                           </div>
+                        </li>
+                        <li class="li">Confirm that the settings on the Task Tab match those shown in REF
+                           _Ref417371028 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_e5z_tf1_rzb">42</a>
+                           <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_e5z_tf1_rzb"><figcaption><span class="fig--title-label">Figure 44. </span>Figure 42: Run Backup Task Screen</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_i5z_tf1_rzb" src="media/image46.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">Set the schedule, as shown in REF _Ref417371063 \h \* MERGEFORMAT Figure
+                              <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_ls5_wf1_rzb">43</a>. <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_ls5_wf1_rzb"><figcaption><span class="fig--title-label">Figure 45. </span>Figure 43: Run Backup Schedule Screen</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_ps5_wf1_rzb" src="media/image47.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">The tasks must run under the Administrator account. When prompted,
+                           supply the username MCSxxS0\Administrator, and then enter the
+                           Administrator Password.</li>
+                        <li class="li">Repeat the process to schedule the other task. </li>
+                        <li class="li">Select <span class="ph uicontrol">Add Scheduled Task</span> to open the
+                           Wizard.</li>
+                        <li class="li">Browse to the G:\ drive and select G:\Backups\StartVMSbackup.bat. <div class="note note note_note" id="r20D9500-BB02-11F0-1597-09173F13E4C5__note_ixp_l41_rzb"><span class="note__title">Note:</span> 
+                              <p class="p">The task name should default to the name of the “.bat file.”</p>
+                           </div>
+                        </li>
+                        <li class="li">Confirm that the settings on the Task Tab match those shown in REF
+                           _Ref417371101 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_h2s_zf1_rzb">44</a>. <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_h2s_zf1_rzb"><figcaption><span class="fig--title-label">Figure 46. </span>Figure 44: Start VMS Backup Task Screen</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_l2s_zf1_rzb" src="media/image48.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">Set the schedule as shown in REF _Ref417371135 \h \* MERGEFORMAT Figure
+                              <a class="xref" href="FES-03-600_adding_tapeless_backup_capability_to_mcs_system.html#r20D9500-BB02-11F0-1597-09173F13E4C5__fig_rfd_dg1_rzb">45</a>. <figure class="fig fignone" id="r20D9500-BB02-11F0-1597-09173F13E4C5__fig_rfd_dg1_rzb"><figcaption><span class="fig--title-label">Figure 47. </span>Figure 45: Start VMS Backup Schedule Screen</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r20D9500-BB02-11F0-1597-09173F13E4C5__image_vfd_dg1_rzb" src="media/image49.jpg"></div><br>
+                           </figure>
+                        </li>
+                        <li class="li">The tasks must run under the Administrator account. When prompted,
+                           supply the username MCSxxS0\Administrator, and then enter the
+                           Administrator Password.</li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title5" lang="en-us" id="c20DDCE6-BB02-11F0-1158-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title5">Required Training</h2>
+   
+   <div class="body conbody">
+      <p class="p">Before performing this work instruction, applicable personnel must be trained by an authorized trainer on the required training contents listed in this document.</p>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title6" lang="en-us" id="c20D7C76-BB02-11F0-6873-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title6">Equipment</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable frame-all" id="c20D7C76-BB02-11F0-6873-09173F13E4C5__simpletable_zqg_dp1_rzb"><colgroup><col style="width:16.666666666666664%"><col style="width:16.666666666666664%"><col style="width:16.666666666666664%"><col style="width:16.666666666666664%"><col style="width:16.666666666666664%"><col style="width:16.666666666666664%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">For these VMS Server Models:</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">HP Integrity rx2660</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">HP Alpha DS15</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">HP Alpha DS20</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">HP Alpha 1200</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">HP Alpha 4000</strong>
+                  </p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Use these VMS Hard Disk Drives:</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">HP 146GB Disk Drive</strong>
+                     <em class="ph i">(Space Part SEP-3-177)</em>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">HP 72GB 10K Disk Drive</strong>
+                     <em class="ph i">(HP Part # DS-RZ3GA-WA)</em>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">HP 72GB U320 80P 15K-MXT Disk Drive</strong>
+                     <em class="ph i">(HP Part # 3R-A6419-AA)</em>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">HP 36GB, 10K UWSCSI Disk Drive</strong> (HP Part # DS-RZ1FC-VW)</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">HP 9.1GB, 10K</strong>
+                  </p>
+                  <strong class="ph b">UWSCSI Disk Drive</strong>
+                  <em class="ph i">(HP Part # DS-RZ1DD-VW)</em>
+               </td>
+            </tr></tbody></table>
+      </div>
+      <div class="p">
+         <table class="table frame-all" id="c20D7C76-BB02-11F0-6873-09173F13E4C5__table_ljw_rp1_rzb"><caption></caption><colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:20%"></colgroup><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry colsep-1 rowsep-1">
+                        <p class="p">
+                           <strong class="ph b">For these Windows Server Models:</strong>
+                        </p>
+                     </td>
+                     <td class="entry colsep-1 rowsep-1">
+                        <p class="p">
+                           <strong class="ph b">HP ProLiant DL380 G5, G6, G7</strong>
+                        </p>
+                     </td>
+                     <td class="entry colsep-1 rowsep-1">
+                        <p class="p">
+                           <strong class="ph b">HP ProLiant DL380 G4</strong>
+                        </p>
+                     </td>
+                     <td class="entry colsep-1 rowsep-1">
+                        <p class="p">
+                           <strong class="ph b">HP ProLiant DL380 G3</strong>
+                        </p>
+                     </td>
+                     <td class="entry rowsep-1">
+                        <p class="p">
+                           <strong class="ph b">HP ProLiant DL380 G2</strong>
+                        </p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry colsep-1 rowsep-1">
+                        <p class="p">Use these Windows Hard Disk Drives:</p>
+                     </td>
+                     <td class="entry colsep-1 rowsep-1">
+                        <p class="p">
+                           <strong class="ph b">HP Integrity 146GB Disk Drive</strong>
+                        </p>
+                        <em class="ph i">(Space Part SEP-3-154
+                           revision A)</em>
+                     </td>
+                     <td class="entry colsep-1 rowsep-1">
+                        <p class="p">
+                           <strong class="ph b">HP 146GB U320 10K Disk Drive</strong>
+                           <em class="ph i">(HP Part # 286716-B22)</em>
+                        </p>
+                     </td>
+                     <td class="entry colsep-1 rowsep-1">
+                        <p class="p">
+                           <strong class="ph b">HP 72.8GB U320 10K Universal Disk Drive</strong>, or </p>
+                        <p class="p">
+                           <strong class="ph b">HP 72.8GB U320 15K Universal Disk Drive</strong>
+                           <em class="ph i">(Both are HP Part # 286714-B22)</em>
+                        </p>
+                     </td>
+                     <td class="entry rowsep-1">
+                        <p class="p">
+                           <strong class="ph b">HP 72.8GB U320 10K Universal Disk Drive</strong>
+                           <em class="ph i">(HP part 286714-B22)</em>, or <strong class="ph b">HP</strong>
+                        </p>
+                        <p class="p">
+                           <strong class="ph b">72.8GB U320 15K Universal Disk Drive</strong>
+                           <em class="ph i">(HP Part # 286778-B22)</em>
+                        </p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry colsep-1"></td>
+                     <td class="entry colsep-1" colspan="2">
+                        <p class="p">WinZip Single user license, current version, media not required</p>
+                     </td>
+                     <td class="entry colsep-1"></td>
+                     <td class="entry"></td>
+                  </tr>
+               </tbody></table>
+      </div>
+      <p class="p">
+         <strong class="ph b">
+            <u class="ph u">Suppliers</u>
+         </strong>
+      </p>
+      <p class="p">CDW</p>
+      <p class="p">Contact: Scott Depersio | (877) 465-3214 | <a class="xref" href="scotdep@cdw.com" target="_blank" rel="external noopener">scotdep@cdw.com</a>
+      </p>
+      <p class="p">SAP Vendor: 1004153</p>
+      <p class="p">Pomeroy</p>
+      <p class="p">Contact: Mary Pat Hollenbeck <a class="xref" href="marypat.hollenbeck@pomeroy.com" target="_blank" rel="external noopener">marypat.hollenbeck@pomeroy.com</a>
+      </p>
+      <p class="p">SAP Vendor: 1213285</p>
+      <div class="p">
+         <div class="note note note_note" id="c20D7C76-BB02-11F0-6873-09173F13E4C5__note_qqm_vq1_rzb"><span class="note__title">Note:</span> 
+            <p class="p">Pomeroy has been known to ship drives without the hot swap caddy installed. When
+               asking for a quote, you must clarify that this piece will be included.</p>
+         </div>
+      </div>
+      <p class="p">Island Computer</p>
+      <p class="p">
+         <a class="xref" href="https://www.islandco.com/" target="_blank" rel="external noopener">https://www.islandco.com/</a>
+      </p>
+      <p class="p">Hard Drives Direct</p>
+      <p class="p">
+         <a class="xref" href="https://www.harddrivesdirect.com/" target="_blank" rel="external noopener">https://www.harddrivesdirect.com/</a>
+      </p>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title7" lang="en-us" id="r20DC501-BB02-11F0-1464-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title7">References</h2>
+   
+   
+   <div class="body refbody">
+      <section class="section">
+         <ul class="ul">
+            <li class="li">SOP-0077-C (or later): Connecting to the Space Mfg. Software Site</li>
+            <li class="li">PCS-0372 MCSII Operators Manual Version 1.6, Revision 1.0.</li>
+            <li class="li">FES-03-601 Verifying MCS Tapeless Backups</li>
+         </ul>
+      </section>
+      <section class="section" id="r20DC501-BB02-11F0-1464-09173F13E4C5__section_vrd_zq1_rzb"><h3 class="title sectiontitle">Document Classification</h3>
+         
+         <ul class="ul" id="r20DC501-BB02-11F0-1464-09173F13E4C5__ul_pqg_zq1_rzb">
+            <li class="li">Asset Protection and Stability</li>
+            <li class="li">Organization and Training</li>
+         </ul>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title8" lang="en-us" id="c20D649E-BB02-11F0-1636-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title8">Collaboration</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c20D649E-BB02-11F0-1636-09173F13E4C5__table_opq_cr1_rzb"><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Country Group</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Role</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Name</strong>
+                  </p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Americas North</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Forming Electronics Specialist</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Dan Knuckles</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Europe</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Forming Electronics Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Remko Beckers</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Central Europe</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Regional Leader Forming Electronics</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Ruud Bormans</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">France - Spain</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jean-Pierre Locato</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jean-Pierre Locato</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Latin America</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">IS Machine Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Miguel Morales</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Engineering - Forming</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Associate Engineer</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jose Gonzalez</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Global</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Global Forming Electronics Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Franklin Barrios</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title9" lang="en-us" id="c20DF3E5-BB02-11F0-6957-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title9">Revision History</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c20DF3E5-BB02-11F0-6957-09173F13E4C5__table_mhv_2r1_rzb"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">2015-04-28</td>
+               <td class="stentry">
+                  <p class="p">Originally Released as Process Control SOP-15-005-A</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2021-02-11</td>
+               <td class="stentry">
+                  <p class="p">Approved by Franklin Barrios, Global Leader FES Network</p>
+                  <p class="p">Restructured to simplify the procedure</p>
+                  <p class="p">Relocated necessary backup files to more accessible locations</p>
+                  <p class="p">Added new source of supply for the disks</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2021-02-11</td>
+               <td class="stentry">
+                  <p class="p">Approved by Franklin Barrios, Global Leader FES Network.</p>
+                  <p class="p">SOP changed into GMF Work Instruction MAC-03-423</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2022-05-09</td>
+               <td class="stentry">
+                  <p class="p">Approved by Franklin Barrios, Global Leader FES Network.</p>
+                  <p class="p">Moved to GMF Site as FES-03-600</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article></article></article></main></body></html>

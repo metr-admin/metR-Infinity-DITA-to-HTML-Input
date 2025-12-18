@@ -1,0 +1,215 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metr-fes-space,machine-server,backup-utility,backup-target,monitoring-service,configure-backup-server,assign-backup-targets,schedule-full-and-incremental,configure-retention,validate-backup-through-restore,production-environment,server-administration,glass-manufacturing,swset-223-compliance,furnace-machine-network,backup-agent,backup-server,storage-device,configure-backups,backup-scheduling,backup-validation,restore-testing,retention-configuration,production-network,furnace-machine-ops,restore-utility,logging-service,configure-backup-schedule,select-backup-targets,apply-retention-policies,validate-backup-jobs,test-restore-procedure,operational-reliability,data-protection,power-isolation,electrical-panel,backup-storage,isolation-procedure,lockout-tagout,safe-connection-practices,data-security-controls,environmental-protections,industrial-safety,operator-safety,electrical-safety,configure-backup-jobs,schedule-backups,verify-backup-completion,test-restore,monitor-backup-logs,swset-223,furnace-machine-support,backup-sop,operational-procedure,maintenance-sop,sop-application,process-mapping,task-integration,procedure-reference,compliance-checks,production-operations,maintenance-routines,quality-processes,safety-procedures,network-switch,console-cable,equipment-preparation,storage-provisioning,network-connection,hardware-verification,firmware-check,server-room,production-floor,redundancy-planning,infrastructure-readiness,scs-0237-gr223,vendor-manual,backup-utility-manual,configuration-guidelines,installation-instructions,support-knowledgebase,troubleshooting-guides,compliance-references,technical-standards,documentation-references,operational-guides,support-team,it-ops,maintenance-team,installation-coordination,change-window-scheduling,escalation-path,handover-procedure,incident-notification,service-level-agreement,operational-governance,maintenance-windows,version-history,change-log,revision-record,revision-tracking,approval-workflow,document-update,change-management,release-notes,compliance-records,document-control,archive-management"><meta name="keywords" content="metr-fes-space, machine-server, backup-utility, backup-target, monitoring-service, configure-backup-server, assign-backup-targets, schedule-full-and-incremental, configure-retention, validate-backup-through-restore, production-environment, server-administration, glass-manufacturing, swset-223-compliance, furnace-machine-network, backup-agent, backup-server, storage-device, configure-backups, backup-scheduling, backup-validation, restore-testing, retention-configuration, production-network, furnace-machine-ops, restore-utility, logging-service, configure-backup-schedule, select-backup-targets, apply-retention-policies, validate-backup-jobs, test-restore-procedure, operational-reliability, data-protection, power-isolation, electrical-panel, backup-storage, isolation-procedure, lockout-tagout, safe-connection-practices, data-security-controls, environmental-protections, industrial-safety, operator-safety, electrical-safety, configure-backup-jobs, schedule-backups, verify-backup-completion, test-restore, monitor-backup-logs, swset-223, furnace-machine-support, backup-sop, operational-procedure, maintenance-sop, sop-application, process-mapping, task-integration, procedure-reference, compliance-checks, production-operations, maintenance-routines, quality-processes, safety-procedures, network-switch, console-cable, equipment-preparation, storage-provisioning, network-connection, hardware-verification, firmware-check, server-room, production-floor, redundancy-planning, infrastructure-readiness, scs-0237-gr223, vendor-manual, backup-utility-manual, configuration-guidelines, installation-instructions, support-knowledgebase, troubleshooting-guides, compliance-references, technical-standards, documentation-references, operational-guides, support-team, it-ops, maintenance-team, installation-coordination, change-window-scheduling, escalation-path, handover-procedure, incident-notification, service-level-agreement, operational-governance, maintenance-windows, version-history, change-log, revision-record, revision-tracking, approval-workflow, document-update, change-management, release-notes, compliance-records, document-control, archive-management"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-FES-Space"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-11-10+05:30"><meta name="DC.date.modified" content="2025-11-10+05:30"><meta name="RevisionDate" content="07-05-2022"><meta name="DocumentNumber" content="FES-03-118"><meta name="title" content="Configuring Machine Server Backups"><meta name="shortdesc" content="Detailed configuration guide to set up machine server backups per furnace: assign targets, configure schedules and retention, and verify restores."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="backup-server;backup-target;backup-schedule;retention-policy;restore-test"><meta name="taxonomy" content="domain:server-administration;usecase:configure-machine-server-backups;industry:glass-manufacturing"><meta name="tags" content="configure, backup-server, schedule, retention, restore-validate"><meta name="usecase" content="configure-machine-server-backups-across-furnace-network"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c209CDD7-BB02-11F0-2263-09173F13E4C5"><meta name="DC.language" content="en-us"><title>Configuring Machine Server Backups</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c209CDD7-BB02-11F0-2263-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Configuring Machine Server Backups</h1>
+   
+   <div class="body conbody"></div>
+<article class="topic concept nested1" aria-labelledby="ariaid-title2" lang="en-us" id="c20A1556-BB02-11F0-1230-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">Purpose</h2>
+   
+   <div class="body conbody">
+      <ol class="ol" id="c20A1556-BB02-11F0-1230-09173F13E4C5__ol_n3n_lkz_qzb">
+         <li class="li">This document describes how to configure a Machine Server to back up critical files.
+            Ideally, one backup machine server will be operational on the network for every furnace
+            that has machines requiring a machine server. This procedure assumes that SWSet 223
+            (SCS-0237-GR223) or higher is being used.</li>
+         <li class="li">This document supersedes instructions provided in the IDS Electronic Service , andamp;
+            Reference Manual, Appendix A.</li>
+      </ol>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title3" lang="en-us" id="c2099D1E-BB02-11F0-1036-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">Application</h2>
+   
+   <div class="body conbody">
+      <p class="p">This work instruction applies to all Space Plants that have FSC and Space IS Machines.</p>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title4" lang="en-us" id="c20A5CE0-BB02-11F0-1033-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title4">Safety</h2>
+   
+   <div class="body conbody">
+      <p class="p">Follow all plant safety requirements.</p>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title5" lang="en-us" id="r209FDAE-BB02-11F0-8723-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title5">Procedure</h2>
+   
+   <div class="body refbody">
+      <section class="section">
+         <ol class="ol">
+            <li class="li">On the Machine Server, log off the <strong class="ph b">obop</strong> account (using the sequence Start-, andgt;Shutdown-, andgt;Log Off).</li>
+            <li class="li">Log onto the Machine Server using the obsetup account (password: <strong class="ph b">SetupServer</strong>).</li>
+            <li class="li">Start the Backup Configuration Utility (Start -, andgt; Machine Server Applications -, andgt;
+               Backup Configuration Utility), as shown in Figure <a class="xref" href="FES-03-118_configuring_machine_server_backups.html#r209FDAE-BB02-11F0-8723-09173F13E4C5__fig_mc1_rkz_qzb">1</a>. <figure class="fig fignone" id="r209FDAE-BB02-11F0-8723-09173F13E4C5__fig_mc1_rkz_qzb"><figcaption><span class="fig--title-label">Figure 1. </span>Figure 1: Accessing the Backup Configuration Utility</figcaption>
+                  
+                  <br><div class="imagecenter"><img class="image imagecenter" id="r209FDAE-BB02-11F0-8723-09173F13E4C5__image_nc1_rkz_qzb" src="media/image1.jpg"></div><br>
+               </figure>
+            </li>
+            <li class="li">Use the drop-down box labeled Backup Server to confirm that the desired server has been
+               added to the list of backup servers (see Figure <a class="xref" href="FES-03-118_configuring_machine_server_backups.html#r209FDAE-BB02-11F0-8723-09173F13E4C5__fig_hvv_skz_qzb">2</a>). If it has, skip to step <a class="xref" href="FES-03-118_configuring_machine_server_backups.html#r209FDAE-BB02-11F0-8723-09173F13E4C5__li_ehj_vkz_qzb">6</a>.</li>
+            <li class="li">Add the backup server.  (Note, if desired, the <strong class="ph b">Tab</strong> key can be used to toggle through the necessary fields)<ol class="ol" type="a">
+                  <li class="li">Enter a <strong class="ph b">Server Name</strong> in the box provided.</li>
+                  <li class="li">Enter the four <strong class="ph b">IP Address Segments</strong> in the next box.</li>
+                  <li class="li">Click the <span class="ph uicontrol">Add Server</span> button to add the server.</li>
+               </ol>
+            </li>
+            <li class="li" id="r209FDAE-BB02-11F0-8723-09173F13E4C5__li_ehj_vkz_qzb">Select the desired backup server from the Backup Server
+               drop-down.</li>
+            <li class="li">Click the <span class="ph uicontrol">Apply</span> button to apply the changes.</li>
+            <li class="li">Click the <span class="ph uicontrol">Close</span> button to close the backup configuration
+               utility.</li>
+            <li class="li">Log off the <strong class="ph b">obsetup</strong> account.</li>
+            <li class="li">Follow the directions in SOP-16-010 (Manual MDMS Backup) to manually trigger a server
+               backup. <figure class="fig fignone" id="r209FDAE-BB02-11F0-8723-09173F13E4C5__fig_hvv_skz_qzb"><figcaption><span class="fig--title-label">Figure 2. </span>Figure 2: Checking Currently Configured Backup Servers</figcaption>
+                  
+                  <br><div class="imagecenter"><img class="image imagecenter" id="r209FDAE-BB02-11F0-8723-09173F13E4C5__image_jvv_skz_qzb" src="media/image2.jpg"></div><br>
+               </figure>
+            </li>
+         </ol>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title6" lang="en-us" id="c20A744E-BB02-11F0-9533-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title6">SOP Used In</h2>
+   
+   <div class="body conbody">
+      <ol class="ol">
+         <li class="li">FES-03-115 Loading and Activating a Software Set on a Forming Machine server</li>
+         <li class="li">FES-03-116 Configuring a Forming Machine Server for Machine Operation</li>
+      </ol>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title7" lang="en-us" id="c209E650-BB02-11F0-1242-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title7">Equipment</h2>
+   
+   <div class="body conbody">
+      <p class="p">Space Forming Machine Server</p>
+      <p class="p">Space Forming Machine Server backup system</p>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title8" lang="en-us" id="r20A2E35-BB02-11F0-5376-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title8">References</h2>
+   
+   <div class="body refbody">
+      <section class="section">
+         <ul class="ul">
+            <li class="li">FES-03-119 Manually Triggering a Machine Server Backup</li>
+         </ul>
+      </section>
+      <section class="section" id="r20A2E35-BB02-11F0-5376-09173F13E4C5__section_wsk_2lz_qzb"><h3 class="title sectiontitle">Document Classification</h3>
+         
+         <ul class="ul" id="r20A2E35-BB02-11F0-5376-09173F13E4C5__ul_c1b_flz_qzb">
+            <li class="li">Asset Protection and Stability</li>
+            <li class="li">Organization and Training</li>
+         </ul>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title9" lang="en-us" id="c209B5B8-BB02-11F0-5176-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title9">Collaboration</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c209B5B8-BB02-11F0-5176-09173F13E4C5__table_hq5_3lz_qzb"><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Country Group</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Role</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Name</strong>
+                  </p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Americas North</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Forming Electronics Specialist</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Dan Knuckles</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Europe</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Forming Electronics Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Remko Beckers</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Central Europe</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Regional Leader Forming Electronics</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Ruud Bormans</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">France - Spain</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jean-Pierre Locato</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jean-Pierre Locato</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Latin America</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">IS Machine Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Miguel Morales</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Engineering - Forming</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Associate Engineer</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jose Gonzalez</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Global</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Global Forming Electronics Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Franklin Barrios</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title10" lang="en-us" id="c20A45D4-BB02-11F0-1261-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title10">Revision History</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c20A45D4-BB02-11F0-1261-09173F13E4C5__table_hqf_llz_qzb"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">2016-12-01</td>
+               <td class="stentry">
+                  <p class="p">Originally Released as Process Control SOP-16-009</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2022-07-05</td>
+               <td class="stentry">
+                  <p class="p">Approved by Franklin Barrios, Global Leader FES Network</p>
+                  <p class="p">Moved to GMF Site as FES-03-118</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article></article></article></main></body></html>

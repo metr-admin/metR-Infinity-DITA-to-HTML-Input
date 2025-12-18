@@ -1,0 +1,615 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="forming-machine-server,SCS-0716-GR01,metR-FES-Space,machine-control-system,IO-module,configure-forming-machine-server,factory-default-restore,parameter-import,machine-id-assignment,I/O-mapping-and-calibration,network-interface-assignment,firmware-compatibility-check,operational-acceptance-test (OAT),record-configuration-checksum,forming-line-commissioning,factory-installation,standard-operating-procedure (SOP),maintenance-window,production-readiness,factory-defaults,server-configuration,machine-initialization,parameter-setup,SOP-reset,commissioning-checklist,forming-line-operations,factory-commissioning,industrial-control-environment,plant-network-integration,control-modules,I/O-controller,network-gateway,machine-specific-configuration,ip-assignment,parameter-mapping,firmware-versioning,integration-with-SCADA,forming-line,plant-automation,commissioning-scenarios,legacy-compatibility,forming-machine-server-configuration,machine-ID-assignment,I/O-mapping,firmware-apply,configure-network-interfaces,import-parameter-set,calibrate-I/O,validate-communication-links,restart-services,commissioning-window,SOP-referenced-reset,machine-startup,SCS-0716-GR01 hardware,forming-machine-server-hardware,edgeport-serial-adapter,industrial-switch,UPS/PSU,console-cable,network-cabling,firmware-media (USB/TFTP),spare-parts-list,rack-mount-kit,server-room-environment,asset-tagging,maintenance-tools,site-spares-management,environmental-controls,SCS-0716-GR01 manual,forming-machine-server-guides,vendor-setup-notes,SOP-document,firmware-release-notes,configuration-templates,network-setup-guides,MOC-forms,OAT-checklists,QA-templates,site-operations-manuals,maintenance-archives,vendor-bulletins,plant-standards,asset-register,configuration-team,network-engineer,vendor-support,QA-approver,maintenance-lead,MOC-authorization,handover-and-signoff,issue-escalation,validation-coordination,rollback-planning,cross-team-coordination,vendor-communication,production-stakeholders,change-log,document-revision,MOC-record,version-history,SCS-0716-updates,approvals-and-signoffs,effective-dates,change-descriptions,document-governance,audit-trail,site-documentation,maintenance-logs,vendor-updates"><meta name="keywords" content="forming-machine-server, SCS-0716-GR01, metR-FES-Space, machine-control-system, IO-module, configure-forming-machine-server, factory-default-restore, parameter-import, machine-id-assignment, I/O-mapping-and-calibration, network-interface-assignment, firmware-compatibility-check, operational-acceptance-test (OAT), record-configuration-checksum, forming-line-commissioning, factory-installation, standard-operating-procedure (SOP), maintenance-window, production-readiness, factory-defaults, server-configuration, machine-initialization, parameter-setup, SOP-reset, commissioning-checklist, forming-line-operations, factory-commissioning, industrial-control-environment, plant-network-integration, control-modules, I/O-controller, network-gateway, machine-specific-configuration, ip-assignment, parameter-mapping, firmware-versioning, integration-with-SCADA, forming-line, plant-automation, commissioning-scenarios, legacy-compatibility, forming-machine-server-configuration, machine-ID-assignment, I/O-mapping, firmware-apply, configure-network-interfaces, import-parameter-set, calibrate-I/O, validate-communication-links, restart-services, commissioning-window, SOP-referenced-reset, machine-startup, SCS-0716-GR01 hardware, forming-machine-server-hardware, edgeport-serial-adapter, industrial-switch, UPS/PSU, console-cable, network-cabling, firmware-media (USB/TFTP), spare-parts-list, rack-mount-kit, server-room-environment, asset-tagging, maintenance-tools, site-spares-management, environmental-controls, SCS-0716-GR01 manual, forming-machine-server-guides, vendor-setup-notes, SOP-document, firmware-release-notes, configuration-templates, network-setup-guides, MOC-forms, OAT-checklists, QA-templates, site-operations-manuals, maintenance-archives, vendor-bulletins, plant-standards, asset-register, configuration-team, network-engineer, vendor-support, QA-approver, maintenance-lead, MOC-authorization, handover-and-signoff, issue-escalation, validation-coordination, rollback-planning, cross-team-coordination, vendor-communication, production-stakeholders, change-log, document-revision, MOC-record, version-history, SCS-0716-updates, approvals-and-signoffs, effective-dates, change-descriptions, document-governance, audit-trail, site-documentation, maintenance-logs, vendor-updates"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-FES-Space"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-11-10+05:30"><meta name="DC.date.modified" content="2025-11-10+05:30"><meta name="RevisionDate" content="06-29-2022"><meta name="DocumentNumber" content="FES-03-116"><meta name="title" content="Configuring a Forming Machine Server for Machine Operation"><meta name="shortdesc" content="Step-by-step guidance to configure an SCS-0716 GR01 (and higher) forming machine server for machine-specific operation after factory reset or new installation."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="internal-network"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="SCS-0716-GR01;configuration-files;I/O modules;network interfaces;SOP references"><meta name="taxonomy" content="domain:operations;usecase:machine-configuration;industry:glass-manufacturing"><meta name="tags" content="configuration,SCS-0716,commissioning,I/O,network"><meta name="usecase" content="configure-forming-machine-server-for-machine-operation"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c206723B-BB02-11F0-9688-09173F13E4C5"><meta name="DC.language" content="en-us"><title>Configuring a Forming Machine Server for Machine Operation</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c206723B-BB02-11F0-9688-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Configuring a Forming Machine Server for Machine Operation</h1>
+   
+   <div class="body conbody"></div>
+<article class="topic concept nested1" aria-labelledby="ariaid-title2" lang="en-us" id="c206B8E6-BB02-11F0-1665-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">Purpose</h2>
+   
+   <div class="body conbody">
+      <p class="p">This document describes how to configure a Forming Machine Server (SCS-0716 GR01 and
+         higher) for factory and machine-specific installation. It assumes a newly configured
+         machine server (or one that has been reset to factory defaults by following the applicable
+         SOP). See the <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206D113-BB02-11F0-9707-09173F13E4C5">reference documents</a> for
+         relevant document numbers.</p>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title3" lang="en-us" id="c20642FF-BB02-11F0-1437-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">Application</h2>
+   
+   <div class="body conbody">
+      <p class="p">This work instruction applies to all Space Plants that have FSC and Space IS Machines</p>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title4" lang="en-us" id="r206A130-BB02-11F0-1728-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title4">Procedure</h2>
+   
+   <div class="body refbody">
+      <section class="section">
+         <ol class="ol">
+            <li class="li">In The initial configuration of the server (SCS-0716 or equivalent) is a “generic” setup. For this reason, when a server is sent to a factory, additional specific configuration is required. Any modifications done to the server that are not described in this procedure can result in complications which might affect functionality. It is not recommended to change the regional settings of Windows.</li>
+            <li class="li">The following configuration checklist presents the steps necessary to configure the Forming Machine Server for operation (as presented in this document):<ol class="ol" type="a">
+                  <li class="li">Configuration Checklist<ol class="ol" type="i">
+                        <li class="li">Connect the server to the plant network and the machine network.</li>
+                        <li class="li">Run MSDiagnostics to change the IP address and the computer name.</li>
+                        <li class="li">Verify DHCP is functional</li>
+                        <li class="li">Change the website bindings (Windows Server 2003 systems only).</li>
+                        <li class="li">Install and activate the application software (SOP-06-007-C).</li>
+                        <li class="li">Install the virus scan software (SOP-15-004-C) (Space Plants only).</li>
+                        <li class="li">Install necessary Windows Updates</li>
+                        <li class="li">Run the SCS setup program.</li>
+                        <li class="li">Set the correct time, date, and time zone.</li>
+                        <li class="li">Register ActiveX Controls.</li>
+                        <li class="li">Run the backup configuration utility (not performed on the backup server).</li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">
+               <strong class="ph b">Connect the Server to the Plant Network and the Machine Network</strong>
+               <ol class="ol" type="a">
+                  <li class="li">Plug one end of an Ethernet cable into port 1 (on the left) at the back of the
+                     server (see REF _Ref435793918 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_yqm_yzy_qzb">1</a> and REF _Ref435794015 \h \*
+                     MERGEFORMAT Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_t5z_11z_qzb">2</a>), and
+                     plug the other end into the network drop which is connected to the plant-wide
+                     network. <div class="note note note_note" id="r206A130-BB02-11F0-1728-09173F13E4C5__note_br3_lcz_qzb"><span class="note__title">Note:</span> 
+                        <p class="p">The drop must be active.</p>
+                     </div>
+                  </li>
+                  <li class="li">Plug one end of another Ethernet cable into port 2 (on the right) at the back of the server, and plug the other end into any port of the multi-port switch.</li>
+                  <li class="li">Plug in the power cable of the switch. <figure class="fig fignone" id="r206A130-BB02-11F0-1728-09173F13E4C5__fig_yqm_yzy_qzb"><figcaption><span class="fig--title-label">Figure 1. </span>Figure 1: Machine Server Network Connections </figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r206A130-BB02-11F0-1728-09173F13E4C5__image_arm_yzy_qzb" src="media/image1.jpg"></div><br>
+                     </figure>
+                     <figure class="fig fignone" id="r206A130-BB02-11F0-1728-09173F13E4C5__fig_t5z_11z_qzb"><figcaption><span class="fig--title-label">Figure 2. </span>Figure 2: Machine Server Network Connections for SEP-3-562</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r206A130-BB02-11F0-1728-09173F13E4C5__image_u5z_11z_qzb" src="media/image2.jpg"></div><br>
+                     </figure>
+                     <div class="note note note_note"><span class="note__title">Note:</span> 
+                        <p class="p">Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_yqm_yzy_qzb">1</a> is valid for
+                           SCS-3-414-D and SCS-3-414-E. Older servers have an add-on board for the
+                           machine network located below the connections shown. Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_t5z_11z_qzb">2</a> shows the ports on
+                           SEP-3-562. The machine network connection has a yellow network  cable</p>
+                     </div>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">
+               <strong class="ph b">Run MSDiagnostics to Change the IP Address and the Computer Name</strong>
+               <ol class="ol" type="a">
+                  <li class="li">Log onto the obsetup account (password <strong class="ph b">SetupServer</strong>).</li>
+                  <li class="li">Enter the MSDiagnostics program by clicking on <strong class="ph b">Start, andgt; Machine Server
+                        Applications, andgt; MSDiagnostics</strong>.</li>
+                  <li class="li">The MSDiagnostics window will open, prompting for a password. Type
+                           <strong class="ph b">
+                        <kbd class="ph userinput">scsgolden</kbd>
+                     </strong> and press the
+                        <span class="ph uicontrol">Enter</span> key.</li>
+                  <li class="li">The Machine Server Diagnostics window will be displayed, as shown in REF
+                     _Ref435794113 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_tv4_h1z_qzb">3</a>. Click on the
+                        ‘<span class="ph uicontrol">Initial MDMS Setup</span>’ tab and enter a unique name to
+                     identify the server (for example: <strong class="ph b">A3MachineServer)</strong> in the field labeled
+                     ‘New Computer Name.’</li>
+                  <li class="li">Click on the network adapter that is connected to the Machine Network (this
+                     will be the first network adapter radio button, labeled <strong class="ph b">Adapter
+                     #1</strong>).</li>
+                  <li class="li">Enter the <kbd class="ph userinput">IP address</kbd> that has been assigned for the
+                     server in the IP Address fields. Enter the <kbd class="ph userinput">Default Gateway field
+                        address</kbd> as the same first three octets used for the Plant
+                     Network IP address. The fourth (last) octet will be <strong class="ph b">1</strong>(numeral one). For
+                     example, if the Plant IP address is 10.126.12.101, then the Default Gateway IP
+                     address will be 10.126.12.1.</li>
+                  <li class="li">Obtain the IP addresses for the Primary and Secondary DNS Servers and enter
+                     them into the appropriate boxes. <div class="note note note_note"><span class="note__title">Note:</span> 
+                        <p class="p">This step is necessary for anti-virus updates to function.</p>
+                     </div>
+                     <figure class="fig fignone" id="r206A130-BB02-11F0-1728-09173F13E4C5__fig_tv4_h1z_qzb"><figcaption><span class="fig--title-label">Figure 3. </span>Figure 3: Initial MDMS Network Setup Screen</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r206A130-BB02-11F0-1728-09173F13E4C5__image_vv4_h1z_qzb" src="media/image3.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">When finished, click on the <span class="ph uicontrol">APPLY SETTINGS</span> button.</li>
+                  <li class="li">A status window will display the progress of the changes being made. When the
+                     changes are completed, the bottom line will display the message: ‘<strong class="ph b">MDMS
+                        CONFIGURATION COMPLETE</strong>,’ as shown in REF _Ref435794876 \h \* MERGEFORMAT
+                     Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_w4b_k1z_qzb">4</a>.<figure class="fig fignone" id="r206A130-BB02-11F0-1728-09173F13E4C5__fig_w4b_k1z_qzb"><figcaption><span class="fig--title-label">Figure 4. </span>Figure 4: Network Settings Being Applied</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r206A130-BB02-11F0-1728-09173F13E4C5__image_x4b_k1z_qzb" src="media/image4.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Click on the <span class="ph uicontrol">Close</span> button, which will display the main
+                     page.</li>
+                  <li class="li">Click on the <span class="ph uicontrol">Exit</span> Button located on the main page (see
+                     REF _Ref435794981 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_qhn_n1z_qzb">5</a>). <figure class="fig fignone" id="r206A130-BB02-11F0-1728-09173F13E4C5__fig_qhn_n1z_qzb"><figcaption><span class="fig--title-label">Figure 5. </span>Figure 5: Exit Button on the Main Page</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r206A130-BB02-11F0-1728-09173F13E4C5__image_shn_n1z_qzb" src="media/image5.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Clicking the <span class="ph uicontrol">Exit</span> button initiates a process that
+                     displays several command line windows while the controls are being registered
+                     and enabled on the system. Once the controls are registered and enabled, the
+                     system then automatically starts several forming system’s applications (for
+                     example FSC2COMSOC.exe, MSGAgent.exe, MDB_Agent.exe, and BDSAgent.exe).<div class="note note note_note" id="r206A130-BB02-11F0-1728-09173F13E4C5__note_ov2_jdz_qzb"><span class="note__title">Note:</span> 
+                        <p class="p"> This is new behavior associated with Software Set 222</p>
+                     </div>
+                  </li>
+                  <li class="li">It will now be necessary to stop the automatically started forming system
+                     applications and close their setup windows. Wait several minutes to insure that
+                     the command windows have all completed their execution (see REF _Ref435795121
+                     \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_sgk_t1z_qzb">8</a>),
+                     and then stop and close each application window one-by-one. As an example, REF
+                     _Ref435795033 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_llj_p1z_qzb">6</a> shows the
+                        <span class="ph uicontrol">Stop</span> button that is used for stopping the
+                     FSC2COMSOC.exe application. <figure class="fig fignone" id="r206A130-BB02-11F0-1728-09173F13E4C5__fig_llj_p1z_qzb"><figcaption><span class="fig--title-label">Figure 6. </span>Figure 6: Stopping a Forming Systems Application.</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r206A130-BB02-11F0-1728-09173F13E4C5__image_mlj_p1z_qzb" src="media/image6.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Once each application has been stopped, close the associated setup window by
+                     clicking the <span class="ph uicontrol">X</span> located in the upper right-hand corner of
+                     the title bar (see REF _Ref435795158 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_pps_r1z_qzb">7</a>) <figure class="fig fignone" id="r206A130-BB02-11F0-1728-09173F13E4C5__fig_pps_r1z_qzb"><figcaption><span class="fig--title-label">Figure 7. </span>Figure 7: Exiting a Forming Systems Application</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r206A130-BB02-11F0-1728-09173F13E4C5__image_qps_r1z_qzb" src="media/image7.jpg"></div><br>
+                     </figure>
+                     <div class="note note note_note"><span class="note__title">Note:</span> 
+                        <p class="p">Confirm that all command windows are displaying prompts similar to those
+                           shown in Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_sgk_t1z_qzb">8</a>,
+                           indicating that the command has been fully executed and the controls have
+                           been registered and enabled before closing them. Closing command prompt
+                           windows before their commands have executed completely prevents that
+                           control from being registered and enabled.</p>
+                     </div>
+                     <figure class="fig fignone" id="r206A130-BB02-11F0-1728-09173F13E4C5__fig_sgk_t1z_qzb"><figcaption><span class="fig--title-label">Figure 8. </span>Figure 8: Completed DOS window</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r206A130-BB02-11F0-1728-09173F13E4C5__image_tgk_t1z_qzb" src="media/image8.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Next, a pop-up window will be displayed prompting for a server reboot. Click
+                     on the <span class="ph uicontrol">OK</span> button (see REF _Ref435795247 \h \*
+                     MERGEFORMAT Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_yff_v1z_qzb">9</a>) <figure class="fig fignone" id="r206A130-BB02-11F0-1728-09173F13E4C5__fig_yff_v1z_qzb"><figcaption><span class="fig--title-label">Figure 9. </span>Figure 9: Reboot Prompt</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r206A130-BB02-11F0-1728-09173F13E4C5__image_zff_v1z_qzb" src="media/image9.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Consult SOP-16-002-A (Updating DNS Information to the Current Space Global
+                     Standard) to ensure DNS services are properly configured.</li>
+               </ol>
+            </li>
+            <li class="li">
+               <strong class="ph b">Verify DHCP is Functional</strong>
+               <ol class="ol" type="a">
+                  <li class="li">After the reboot, log out of <strong class="ph b">Obop</strong> and log back in as <strong class="ph b">Obdev</strong>.</li>
+                  <li class="li">Enter the MSDiagnostics program by clicking on <span class="ph uicontrol">Start, andgt; Machine Server
+                        Applications, andgt; MSDiagnostics</span>.</li>
+                  <li class="li">The MSDiagnostics window will open, prompting for a password. Type
+                           <strong class="ph b">
+                        <kbd class="ph userinput">scsgolden</kbd>
+                     </strong> and press the
+                        <span class="ph uicontrol">Enter</span> key.</li>
+                  <li class="li">Navigate to the DHCP tab to check operation of the DHCP server. Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_vsr_x1z_qzb">10</a> below shows a broken DHCP
+                     configuration. <figure class="fig fignone" id="r206A130-BB02-11F0-1728-09173F13E4C5__fig_vsr_x1z_qzb"><figcaption><span class="fig--title-label">Figure 10. </span>Figure 10: Failed DHCP</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r206A130-BB02-11F0-1728-09173F13E4C5__image_wsr_x1z_qzb" src="media/image10.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">If the DHCP tab shows “<strong class="ph b">No Information Available</strong>,” as shown in Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_vsr_x1z_qzb">10</a>, then click the
+                        <span class="ph uicontrol">Configure</span> button to restore the DHCP configuration. <div class="note note note_note"><span class="note__title">Note:</span> 
+                        <p class="p">MS Diagnostics will not give any indication while it is correcting the
+                           DHCP configuration. DHCP is functional when the DHCP tab appears, as
+                           shown in Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_c2n_cbz_qzb">11</a>
+                        </p>
+                     </div>
+                     <figure class="fig fignone" id="r206A130-BB02-11F0-1728-09173F13E4C5__fig_c2n_cbz_qzb"><figcaption><span class="fig--title-label">Figure 11. </span>Figure 11: Functional DHCP</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r206A130-BB02-11F0-1728-09173F13E4C5__image_d2n_cbz_qzb" src="media/image11.jpg"></div><br>
+                     </figure>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">
+               <strong class="ph b">Change the Website Bindings (Windows Server 2003 Systems Only)</strong>
+               <div class="note note note_note"><span class="note__title">Note:</span> 
+                  <p class="p">This section pertains to Server 2003 installations, only.</p>
+               </div>
+               <ol class="ol" type="a">
+                  <li class="li">If logged onto the operator account, log out of <strong class="ph b">Obop</strong> and log back in as
+                        <strong class="ph b">Obdev</strong>. Check the webserver bindings (important for the operation of
+                     the Space Servo Control System) by clicking the <span class="ph uicontrol">Internet Explorer
+                        icon</span> on the Start menu. If the Website does not display, it will
+                     be necessary to manually change the webserver bindings. To do this, browse to
+                     Start Menu, Programs, Administrative Tools, and then then double-click on
+                        <span class="ph uicontrol">IIS Services Manager</span>.</li>
+                  <li class="li">Expand the <strong class="ph b">Internet
+                        Information Services Node</strong>. Expand the <strong class="ph b">Server Node</strong>. Then, expand <strong class="ph b">Web Sites</strong>.
+                     Right-click on the <span class="ph uicontrol">SpaceRemote
+                        Website</span> (displayed on the right) and then display the <strong class="ph b">SpaceRemote Properties</strong>. Click on the
+                        “<span class="ph uicontrol">Advanced…</span>” button
+                     next to IP Address to modify the bindings (see REF _Ref435796581 \h \*
+                     MERGEFORMAT). </li>
+                  <li class="li">Confirm that 10.126.10.XX (the plant network) is displayed
+                     first in the listing, and 192.168.167. </li>
+                  <li class="li">If the display order is not correct, remove 192.168.167.48 and then re-add it
+                     with the Add/Edit Web Site Identification menu (see REF _Ref435796709 \h \*
+                     MERGEFORMAT Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_oqw_hbz_qzb">14</a>). This
+                     should now display it as the second listing in the box. <figure class="fig fignone" id="r206A130-BB02-11F0-1728-09173F13E4C5__fig_oqw_hbz_qzb"><figcaption><span class="fig--title-label">Figure 12. </span>Figure 14: Adding Binding Information</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r206A130-BB02-11F0-1728-09173F13E4C5__image_pqw_hbz_qzb" src="media/image14.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Now, highlight the <strong class="ph b">SpaceRemote Website</strong> in the Internet Information Services Manager. Click
+                     the <span class="ph uicontrol">Stop</span> radio button
+                     and then click the <span class="ph uicontrol">Start
+                        radio</span> button to restart the website. <div class="note note note_note" id="r206A130-BB02-11F0-1728-09173F13E4C5__note_hy5_v2z_qzb"><span class="note__title">Note:</span> 
+                        <p class="p">An alternate method is to open a command prompt
+                           window, type <strong class="ph b">
+                              <kbd class="ph userinput">iisrestart</kbd>
+                           </strong>, and then press the <span class="ph uicontrol">Enter</span> key.</p>
+                     </div>
+                  </li>
+               </ol>
+            </li>
+            <li class="li" id="r206A130-BB02-11F0-1728-09173F13E4C5__li_opd_kgz_qzb">
+               <strong class="ph b">Install and Activate the Application Software (SCS-0237)</strong>
+               <ol class="ol" type="a" id="r206A130-BB02-11F0-1728-09173F13E4C5__ol_tpd_kgz_qzb">
+                  <li class="li">Execute document FES-03-115 to install and activate the latest version of the
+                     Machine Server software (SCS-0237).</li>
+               </ol>
+            </li>
+            <li class="li">
+               <strong class="ph b">Install the Virus Scan Software (SOP-15-004-C) (Space
+                  Plants only)</strong>
+               <ol class="ol" type="a">
+                  <li class="li">Execute SOP-15-004-C to install Antivirus Software. <div class="note note note_note"><span class="note__title">Note:</span> 
+                        <p class="p">This procedure is intended for Space Plants only. The
+                           expectation is that Licensee plants will install antivirus software at
+                           this time, per instructions and with licenses provided by their IT
+                           departments. </p>
+                     </div>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">
+               <strong class="ph b">Install necessary Windows Updates</strong>
+               <ol class="ol" type="a">
+                  <li class="li">Review relevant process control bulletins (example PCB-17-003) for any Windows Server OS patches that must be installed to protect the company’s network.  Alternatively, the Windows Updates top level folder of the Space Manufacturing Software Download Site can be reviewed for updates to be applied. As of September 2018, there are two that are still relevant for the Machine Server, Conficker (Windows Server 2003 only) and WannaCrypt (applies to Windows Server 2003 and 2008).</li>
+               </ol>
+            </li>
+            <li class="li">
+               <strong class="ph b">Run the SCS Setup Program</strong>
+               <ol class="ol" type="a">
+                  <li class="li">The SCS Setup program is used to accurately configure which forming electronic systems are on the machine for the Machine Server to load. Consult the Machine Server User’s Manual (SCS-0288) for instructions on using SCS Setup.</li>
+               </ol>
+            </li>
+            <li class="li">
+               <strong class="ph b">Set the Correct Time, Date, and Time Zone</strong>
+               <ol class="ol" type="a">
+                  <li class="li">Log onto the Administrator account.</li>
+                  <li class="li">Double-click on the time/date display in the bottom-right corner of the screen and set the time, the date, and the time zone for the desired location</li>
+               </ol>
+            </li>
+            <li class="li">
+               <strong class="ph b">Register ActiveX Controls</strong>
+               <ol class="ol" type="a">
+                  <li class="li">Check the status of the ActiveX controls used by the NUI by opening the webpage
+                     and then selecting the monitor in the lower left of the screen (see REF
+                     _Ref435796797 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_t3r_jbz_qzb">15</a>). <figure class="fig fignone" id="r206A130-BB02-11F0-1728-09173F13E4C5__fig_t3r_jbz_qzb"><figcaption><span class="fig--title-label">Figure 13. </span>Figure 15: NUI Webpage</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r206A130-BB02-11F0-1728-09173F13E4C5__image_u3r_jbz_qzb" src="media/image15.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Next, press the <span class="ph uicontrol">ActiveX Verification</span> tab and the screen
+                     will be shown as in REF _Ref435797322 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_dxr_zbz_qzb">16</a>. If the screen appears as
+                     shown in REF _Ref435797835 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_yxc_gcz_qzb">20</a>, the ActiveX controls are
+                     properly registered and no further action is necessary for this section <figure class="fig fignone" id="r206A130-BB02-11F0-1728-09173F13E4C5__fig_dxr_zbz_qzb"><figcaption><span class="fig--title-label">Figure 14. </span>Figure 16: NUI Webpage Showing ActiveX Not Installed</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r206A130-BB02-11F0-1728-09173F13E4C5__image_exr_zbz_qzb" src="media/image16.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">On the “Information Bar” popup, click the “<span class="ph uicontrol">Don’t show this message
+                        again box</span>” and press the <span class="ph uicontrol">close</span> button to
+                     get rid of the popup, which will leave the screen in the state shown in REF
+                     _Ref435797387 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_cgg_bcz_qzb">17</a>. <figure class="fig fignone" id="r206A130-BB02-11F0-1728-09173F13E4C5__fig_cgg_bcz_qzb"><figcaption><span class="fig--title-label">Figure 15. </span>Figure 17: NUI Webpage Showing ActiveX Not Installed</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r206A130-BB02-11F0-1728-09173F13E4C5__image_dgg_bcz_qzb" src="media/image17.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Left-click in the left-hand white box, and select “<strong class="ph b">Install ActiveX
+                        Control…</strong>” (also shown in REF _Ref435797387 \h \* MERGEFORMAT Figure
+                        <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_cgg_bcz_qzb">17</a>). Once this is done,
+                     the first step of installing ActiveX will be completed, and the NUI Webpage
+                     will return to the page shown in REF _Ref435796797 \h \* MERGEFORMAT Figure
+                        <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_t3r_jbz_qzb">15</a>. Return to the
+                        <span class="ph uicontrol">ActiveX Status</span> tab again to complete the
+                     installation, as shown in REF _Ref435797739 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_jmv_ccz_qzb">18</a>. <figure class="fig fignone" id="r206A130-BB02-11F0-1728-09173F13E4C5__fig_jmv_ccz_qzb"><figcaption><span class="fig--title-label">Figure 16. </span>Figure 18: Completing the ActiveX Installation</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r206A130-BB02-11F0-1728-09173F13E4C5__image_kmv_ccz_qzb" src="media/image18.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Click the <span class="ph uicontrol">install</span> buttons as they are displayed (see REF
+                     _Ref435797822 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_lfk_2cz_qzb">19</a> and REF _Ref435797835 \h \*
+                     MERGEFORMAT Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_yxc_gcz_qzb">20</a>). <figure class="fig fignone" id="r206A130-BB02-11F0-1728-09173F13E4C5__fig_lfk_2cz_qzb"><figcaption><span class="fig--title-label">Figure 17. </span>Figure 19: Completing the ActiveX Installation, Part 2</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r206A130-BB02-11F0-1728-09173F13E4C5__image_mfk_2cz_qzb" src="media/image19.jpg"></div><br>
+                     </figure>
+                     <figure class="fig fignone" id="r206A130-BB02-11F0-1728-09173F13E4C5__fig_yxc_gcz_qzb"><figcaption><span class="fig--title-label">Figure 18. </span>Figure 20: Completing the ActiveX Installation, Part 3</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r206A130-BB02-11F0-1728-09173F13E4C5__image_zxc_gcz_qzb" src="media/image20.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Finally, click the <span class="ph uicontrol">X</span> on the Microsoft License Manager to
+                     skip its installation, and then click on the <span class="ph uicontrol">home</span> button
+                     to return to the main NUI webpage. Display the <strong class="ph b">ActiveX Status</strong> tab to
+                     verify that the ActiveX controls have been properly installed. The screen
+                     should appear as shown in REF _Ref435797890 \h \* MERGEFORMAT Figure <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__fig_fcr_hcz_qzb">21</a> if the ActiveX controls were
+                     successfully installed. <figure class="fig fignone" id="r206A130-BB02-11F0-1728-09173F13E4C5__fig_fcr_hcz_qzb"><figcaption><span class="fig--title-label">Figure 19. </span>Figure 21: ActiveX Controls Correctly Installed</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r206A130-BB02-11F0-1728-09173F13E4C5__image_gcr_hcz_qzb" src="media/image21.jpg"></div><br>
+                     </figure>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">
+               <strong class="ph b">Run the Backup Configuration Utility (not performed on the Backup Server)</strong>
+               <ol class="ol" type="a">
+                  <li class="li">Consult the Machine Server User’s Manual (SCS-0288) for instructions on configuring the Machine Server Backups.
+                  <div class="note note note_note"><span class="note__title">Note:</span> 
+                        <p class="p">This procedure is not performed on the backup Machine Server.</p>
+                     </div>
+                  </li>
+               </ol>
+            </li>
+         </ol>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title5" lang="en-us" id="c2068939-BB02-11F0-1756-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title5">Equipment</h2>
+   
+   <div class="body conbody">
+      <p class="p">Two network cables and a network switch.</p>
+      <p class="p">SCS-0237 Application Software DVD (SWSet) from SOP-08-001-E.</p>
+      <p class="p">SCS-0234 Virus Scan Software DVD from SOP-08-001-E</p>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title6" lang="en-us" id="r206D113-BB02-11F0-9707-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title6">References</h2>
+   
+   <div class="body refbody">
+      <section class="section" id="r206D113-BB02-11F0-9707-09173F13E4C5__section_ts4_gvy_qzb">
+         <ul class="ul" id="r206D113-BB02-11F0-9707-09173F13E4C5__ul_xqf_hvy_qzb">
+            <li class="li">SOPs covering the restoration of Machine Server Factory Default Software:, as shown
+               in the table below: <table class="simpletable" id="r206D113-BB02-11F0-9707-09173F13E4C5__table_n45_hvy_qzb"><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><tbody><tr class="strow">
+                     <td class="stentry">
+                        <p class="p">
+                           <strong class="ph b">Space Server Part #</strong>
+                        </p>
+                     </td>
+                     <td class="stentry">
+                        <p class="p">
+                           <strong class="ph b">Server Model</strong>
+                        </p>
+                     </td>
+                     <td class="stentry">
+                        <p class="p">
+                           <strong class="ph b">Restore SOP</strong>
+                        </p>
+                     </td>
+                  </tr><tr class="strow">
+                     <td class="stentry">
+                        <p class="p">SCS-0716-GR06</p>
+                     </td>
+                     <td class="stentry">
+                        <p class="p">Portwell Ruby D711 (for Space plants)</p>
+                     </td>
+                     <td class="stentry">
+                        <p class="p">SOP-15-010-A</p>
+                     </td>
+                  </tr><tr class="strow">
+                     <td class="stentry">
+                        <p class="p">SCS-0716-GR05</p>
+                     </td>
+                     <td class="stentry">
+                        <p class="p">Portwell Ruby D711 (for Licensees)</p>
+                     </td>
+                     <td class="stentry">
+                        <p class="p">SOP-15-009-A</p>
+                     </td>
+                  </tr><tr class="strow">
+                     <td class="stentry">
+                        <p class="p">SCS-0716-GR04</p>
+                     </td>
+                     <td class="stentry">
+                        <p class="p">HP ML350p G8</p>
+                     </td>
+                     <td class="stentry">
+                        <p class="p">SOP-15-001-B</p>
+                     </td>
+                  </tr><tr class="strow">
+                     <td class="stentry">
+                        <p class="p">SCS-0716-GR03</p>
+                     </td>
+                     <td class="stentry">
+                        <p class="p">HP ML110 G7</p>
+                     </td>
+                     <td class="stentry">
+                        <p class="p">SOP-12-007</p>
+                     </td>
+                  </tr><tr class="strow">
+                     <td class="stentry">
+                        <p class="p">SCS-0716-GR02</p>
+                     </td>
+                     <td class="stentry">
+                        <p class="p">HP ML310 G5P</p>
+                     </td>
+                     <td class="stentry">
+                        <p class="p">SOP-09-006-C</p>
+                     </td>
+                  </tr><tr class="strow">
+                     <td class="stentry">
+                        <p class="p">SCS-0716-GR01</p>
+                     </td>
+                     <td class="stentry">
+                        <p class="p">HP ML310 G5</p>
+                     </td>
+                     <td class="stentry">
+                        <p class="p">SOP-09-006-C</p>
+                     </td>
+                  </tr></tbody></table>
+            </li>
+            <li class="li">Machine Server User’s Manual (SCS-0288).</li>
+            <li class="li">Creating Forming Electronics Software (SOP-08-001-E).</li>
+            <li class="li">Installing Antivirus on a Forming Machine Server (SOP-15-004-C).</li>
+            <li class="li">Updating DNS Information to the Current Space Global Standard (SOP-16-002-A).</li>
+            <li class="li">Loading and Activating the Software Set on the Forming Machine Server
+               (FES-03-115)</li>
+         </ul>
+      </section>
+      <section class="section" id="r206D113-BB02-11F0-9707-09173F13E4C5__section_l5p_jvy_qzb"><h3 class="title sectiontitle">Document Classification</h3>
+         
+         <ul class="ul" id="r206D113-BB02-11F0-9707-09173F13E4C5__ul_mcw_lvy_qzb">
+            <li class="li">Asset Protection and Stability</li>
+            <li class="li">Organization and Training</li>
+         </ul>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title7" lang="en-us" id="c2065A6A-BB02-11F0-2081-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title7">Collaboration</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c2065A6A-BB02-11F0-2081-09173F13E4C5__table_fhn_1gz_qzb"><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Country Group</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Role</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Name</strong>
+                  </p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Americas North</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Forming Electronics Specialist</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Dan Knuckles</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Europe</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Forming Electronics Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Remko Beckers</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Central Europe</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Regional Leader Forming Electronics</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Ruud Bormans</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">France - Spain</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jean-Pierre Locato</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jean-Pierre Locato</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Latin America</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">IS Machine Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Miguel Morales</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Engineering - Forming</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Associate Engineer</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jose Gonzalez</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Global</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Global Forming Electronics Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Franklin Barrios</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title8" lang="en-us" id="c206E8E2-BB02-11F0-1707-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title8">Revision History</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c206E8E2-BB02-11F0-1707-09173F13E4C5__table_hfv_cgz_qzb"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">2013-12-16</td>
+               <td class="stentry">
+                  <p class="p">Originally Released as Process Control SOP-10-003-A</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2015-04-21</td>
+               <td class="stentry">
+                  <p class="p">Revised and Released as Process Control SOP-10-003-C</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2015-12-15</td>
+               <td class="stentry">
+                  <p class="p">Revised and Released as Process Control SOP-10-003-D</p>
+                  <p class="p">Updated part numbers to match the drawings and Global Sales purchasing
+                     scheme</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2016-12-01</td>
+               <td class="stentry">
+                  <p class="p">Revised and Released as Process Control SOP-10-003-E</p>
+                  <p class="p">Corrected SOP reference to DNS configuration from SOP-16-003 to
+                     SOP-16-003-A</p>
+                  <p class="p">Updated remaining SOP references to latest revisions</p>
+                  <p class="p">Added reference to SOP-16-009 rather than instructions in the IDS Manual</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2018-09-12</td>
+               <td class="stentry">
+                  <p class="p">Revised and Released as Process Control SOP-10-003-F</p>
+                  <p class="p">Updated references to external SOPs to current revisions.</p>
+                  <p class="p">Added Step <a class="xref" href="FES-03-116_configuring_a_forming_machine_server_for_machine_operation.html#r206A130-BB02-11F0-1728-09173F13E4C5__li_opd_kgz_qzb">7</a> to look for and install other OS updates.</p>
+                  <p class="p">Added references to Machine Server User’s Manual (SCS-0288) rather than other
+                     manuals and SOPs</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2022-06-29</td>
+               <td class="stentry">
+                  <p class="p">Approved by Franklin Barrios, Global Leader FES Network</p>
+                  <p class="p">Moved to GMF Site as FES-03-116</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article></article></article></main></body></html>

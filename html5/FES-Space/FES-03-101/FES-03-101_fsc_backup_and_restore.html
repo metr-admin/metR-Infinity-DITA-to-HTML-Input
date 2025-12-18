@@ -1,0 +1,694 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metR-FES-Space,fsc,Forming Supervisory Computer,backup-agent,repository-server,configuration-image,full-backup,incremental-backup,restore-to-point-in-time,restore-validation,schedule-and-retention,glass-manufacturing,furnace-supervision,disaster-recovery,operational-availability,it-ot-boundary,supervisory-computer,backup-system,restore-module,backup-and-restore,configuration-management,data-archival,commissioning-checklist,furnace-control,plant-operations,operational-continuity,regulatory-compliance,control-room-safety,electrical-isolation,safe-maintenance-kit,lockout-tagout,electrical-safety-checks,hotwork-prohibition,emergency-stop-procedure,incident-reporting,furnace-safety,plant-emergency-response,personnel-protection,regulatory-safety-standards,recovery-console,pre-backup-checklist,execute-backup,restore-execution,post-restore-verification,rollback-procedure,furnace-operations,production-restart,operational-safety,compliance-records,backup-operator-training,restore-practice-environment,simulation-lab,training-curriculum,hands-on-exercises,competency-assessment,refresher-training,exercise-scheduling,furnace-operations-training,operational-readiness,safety-competency,regulatory-requirements,supervisory-computer-hardware,storage-repository,network-backup-appliance,hardware-identification,disk-provisioning,connectivity-checks,firmware-compatibility,spare-parts-allocation,furnace-control-room,plant-infrastructure,asset-management,installation-requirements,system-recovery,asset-tag,backup-retention,checksum-verification,versioning,change-control,plant-it-ot-boundary,compliance-terminology,vendor-manuals,wiring-diagrams,backup-software-guides,standards-and-procedures,installation-guidelines,test-protocols,vendor-compatibility,operational-handbooks,electrical-standards,plant-operation-manuals,regulatory-guidance,vendor-support,sample-scripts,backup-schedule-examples,restore-log-template,script-examples,config-snippets,test-cases,checklist-templates,troubleshooting-steps,plant-templates,operational-reference,training-material,knowledge-base,backup-repository,support-vendor,plant-it-team,escalation-paths,vendor-engagement,change-notification,handover-checklist,audit-trail-sharing,third-party-support,compliance-reporting,service-levels,fes-03-101,revision-log,document-version,version-control,change-management,approval-record,audit-trail,release-notes,compliance-tracking,operational-traceability,quality-assurance,document-governance"><meta name="keywords" content="metR-FES-Space, fsc, Forming Supervisory Computer, backup-agent, repository-server, configuration-image, full-backup, incremental-backup, restore-to-point-in-time, restore-validation, schedule-and-retention, glass-manufacturing, furnace-supervision, disaster-recovery, operational-availability, it-ot-boundary, supervisory-computer, backup-system, restore-module, backup-and-restore, configuration-management, data-archival, commissioning-checklist, furnace-control, plant-operations, operational-continuity, regulatory-compliance, control-room-safety, electrical-isolation, safe-maintenance-kit, lockout-tagout, electrical-safety-checks, hotwork-prohibition, emergency-stop-procedure, incident-reporting, furnace-safety, plant-emergency-response, personnel-protection, regulatory-safety-standards, recovery-console, pre-backup-checklist, execute-backup, restore-execution, post-restore-verification, rollback-procedure, furnace-operations, production-restart, operational-safety, compliance-records, backup-operator-training, restore-practice-environment, simulation-lab, training-curriculum, hands-on-exercises, competency-assessment, refresher-training, exercise-scheduling, furnace-operations-training, operational-readiness, safety-competency, regulatory-requirements, supervisory-computer-hardware, storage-repository, network-backup-appliance, hardware-identification, disk-provisioning, connectivity-checks, firmware-compatibility, spare-parts-allocation, furnace-control-room, plant-infrastructure, asset-management, installation-requirements, system-recovery, asset-tag, backup-retention, checksum-verification, versioning, change-control, plant-it-ot-boundary, compliance-terminology, vendor-manuals, wiring-diagrams, backup-software-guides, standards-and-procedures, installation-guidelines, test-protocols, vendor-compatibility, operational-handbooks, electrical-standards, plant-operation-manuals, regulatory-guidance, vendor-support, sample-scripts, backup-schedule-examples, restore-log-template, script-examples, config-snippets, test-cases, checklist-templates, troubleshooting-steps, plant-templates, operational-reference, training-material, knowledge-base, backup-repository, support-vendor, plant-it-team, escalation-paths, vendor-engagement, change-notification, handover-checklist, audit-trail-sharing, third-party-support, compliance-reporting, service-levels, fes-03-101, revision-log, document-version, version-control, change-management, approval-record, audit-trail, release-notes, compliance-tracking, operational-traceability, quality-assurance, document-governance"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-FES-Space"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-11-07+05:30"><meta name="DC.date.modified" content="2025-11-07"><meta name="RevisionDate" content="05-09-2022"><meta name="DocumentNumber" content="FES-03-101"><meta name="title" content="FES-03-101 — FSC backup and restore"><meta name="shortdesc" content="Detailed backup and restore procedures for FSCs: full/incremental backups, scheduling, restore steps and validation checks for supervisory computers."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="backup-job;repository;snapshot;restore-point;validation-report"><meta name="taxonomy" content="domain:operations;usecase:fsc-backup-restore;industry:glass-manufacturing"><meta name="tags" content="backup,restore,schedule,validation"><meta name="usecase" content="procedure"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c1FA3ED7-BB01-11F0-3212-09173F13E4C5"><meta name="DC.language" content="en-us"><title>FSC Backup and Restore</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c1FA3ED7-BB01-11F0-3212-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">FSC Backup and Restore</h1>
+   
+   <div class="body conbody"></div>
+<article class="topic concept nested1" aria-labelledby="ariaid-title2" lang="en-us" id="c1FA6C76-BB01-11F0-2103-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">Purpose and Application</h2>
+   
+   <div class="body conbody">
+      <section class="section" id="c1FA6C76-BB01-11F0-2103-09173F13E4C5__section_mcw_1gx_pzb"><h3 class="title sectiontitle">Purpose</h3>
+         
+         <p class="p">To define a work instruction for describing the new scheme and procedures for backing up
+            the FSC (Forming Supervisory Computer) to a spare drive or a USB memory device. Backups
+            should be done on a regular basis to protect against extended FSC downtime. Also
+            described are the restore procedures for performing an emergency recovery by booting
+            from the spare drive, or by loading a backup image from a USB device to a replacement
+            hard drive in the event both the operating and backup drives have failed.</p>
+      </section>
+      <section class="section" id="c1FA6C76-BB01-11F0-2103-09173F13E4C5__section_f5d_cgx_pzb"><h3 class="title sectiontitle">Application</h3>
+         
+         <p class="p">This work instruction applies to all Space Plants that has FSC and Space IS Machines.</p>
+         <div class="note note note_note" id="c1FA6C76-BB01-11F0-2103-09173F13E4C5__note_aqc_fgx_pzb"><span class="note__title">Note:</span> 
+            <p class="p">It is highly recommended that you always use the server console terminal for making
+               the backups. Following this practice avoids the risk that the backup will be
+               corrupted. Using a telnet session directly to the FSC (instead of the Integrity
+               console) introduces the possibility that the session could be interrupted by network
+               or PC problems. That kind of interruption immediately stops the backup before it can
+               be completed and leaves you with a corrupted (unusable) result.</p>
+         </div>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title3" lang="en-us" id="c1FAC7D7-BB01-11F0-2448-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">Safety</h2>
+   
+   <div class="body conbody">
+      <div class="p">Observe Space standard safety requirements and procedures defined by the Global Environmental
+         Health , andamp; Safety (EH, andamp;S) organization, as well as all applicable local, regional, and
+         national requirements. Safety equipment and instructions specific to the completion of this
+         work instruction are detailed in the Instructions Section.<table class="simpletable" id="c1FAC7D7-BB01-11F0-2448-09173F13E4C5__table_vkm_sgx_pzb"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">
+                  <div class="p">
+                     <figure class="fig fignone" id="c1FAC7D7-BB01-11F0-2448-09173F13E4C5__fig_wkm_sgx_pzb"><figcaption><span class="fig--title-label">Figure 1. </span>Electricity</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="c1FAC7D7-BB01-11F0-2448-09173F13E4C5__image_xkm_sgx_pzb" src="media/image1.jpg"></div><br>
+                     </figure>
+                  </div>
+               </td>
+               <td class="stentry">
+                  <div class="p">
+                     <figure class="fig fignone" id="c1FAC7D7-BB01-11F0-2448-09173F13E4C5__fig_ykm_sgx_pzb"><figcaption><span class="fig--title-label">Figure 2. </span>High Noise Level</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="c1FAC7D7-BB01-11F0-2448-09173F13E4C5__image_zkm_sgx_pzb" src="media/image2.jpg"></div><br>
+                     </figure>
+                  </div>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title4" lang="en-us" id="r1FA557A-BB01-11F0-9728-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title4">Procedure</h2>
+   
+   <div class="body refbody">
+      <section class="section">
+         <ol class="ol">
+            <li class="li" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__li_enm_jpx_pzb">Backup and Recovery Scheme (FSC Version 6.1-0 or Later)<ol class="ol" type="a" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__ol_gnm_jpx_pzb">
+                  <li class="li">Two new backup options are available to supplement the magnetic tape option
+                     for plants with Integrity server based FSCs. The new options are located within
+                     the legacy FSC Utilities Menu that can be accessed from either the console
+                     terminal or via network telnet protocol. These options provide the following
+                        functionality:<ol class="ol" type="i" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__ol_hnm_jpx_pzb">
+                        <li class="li">The operating hard drive can be cloned to the spare hard drive. This can
+                           be done manually as often as desired to ensure up-to-date data on the
+                           spare drive. The Clone option will also work on Alpha Servers if an
+                           operating spare drive is available.</li>
+                        <li class="li">The spare hard drive can be backed up onto USB flash drives. This is a
+                           unique capability of the Integrity server that is not available on
+                           earlier Alpha Servers.</li>
+                     </ol>
+                  </li>
+                  <li class="li">All FSCs that have been deployed on the Integrity platform contain a spare
+                     hard drive which is intended to be the fastest way to get the FSC back into
+                     operation in the event of a system hard drive failure. Therefore, frequent
+                     cloning to the spare drive helps your plant ensure that:<ol class="ol" type="i" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__ol_inm_jpx_pzb">
+                        <li class="li">Operational data such as the active jobs and COM-SOC 2 boot assignments
+                           are as recent as possible.</li>
+                        <li class="li">The spare drive is in good working condition just in case there is a
+                           failure.</li>
+                        <li class="li">On a Combo system where the FSC is sharing the server with a PIC, the
+                           database for the PIC has a current backup on the spare drive.</li>
+                     </ol>
+                  </li>
+                  <li class="li">Hardware errors that might be noted during the clone procedure should be acted
+                     upon promptly by getting the malfunctioning drive checked out by your repair
+                     service provider and replaced before an unexpected shutdown occurs.</li>
+                  <li class="li">In the severe situation where both hard drives have to be replaced and
+                     reloaded, it will be necessary to boot to the Standalone Backup disk. The menu
+                     on the Standalone Backup system allows restoring from either a tape or a USB
+                     drive backup that was made as a safety contingency. The new USB backup
+                     procedure uses the spare hard drive as the source and then performs a
+                     verification to ensure that the backup is reliable.<ol class="ol" type="i" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__ol_jnm_jpx_pzb">
+                        <li class="li">The procedure will check the spare hard drive to ensure that it has been
+                           cloned from the system hard drive within the past two days.</li>
+                        <li class="li">This test ensures that the more important image on the spare drive is
+                           current.</li>
+                     </ol>
+                  </li>
+                  <li class="li">It is recommended to obtain between seven to ten USB drives (16GB should be
+                     sufficient) so that you can use a different drive each day in rotation. If the
+                     basic drive size is too small, the backup utility will tell you. Keep track of
+                     the dates on which you use each drive so that you can always tell which was the
+                     most recent (for a recovery), or which was the oldest (for the next backup).<ol class="ol" type="i" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__ol_knm_jpx_pzb">
+                        <li class="li">Conventional tags used to identify equipment status can be attached with
+                           the wire to a lanyard hole in the drive. You can log dates right on the
+                           tags when they are used for a backup. Tip: Write a warning on the tag
+                           that the drive should never be plugged into a PC to see what is on it.
+                           The PC will want to format the drive and that erases the backup(s) on
+                           it.</li>
+                        <li class="li">You might be able to write an indelible ID number on the drives with a
+                           fine point felt marker. Keep a log book showing the date/time and ID
+                           number each time a backup is made. Tip: Store the drives in a container
+                           marked with the warning to never plug them into a PC due to possible
+                           erasure</li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">Clone Backup Process:<ol class="ol" type="a">
+                  <li class="li">Log onto the console terminal with the username “fsc”. No password is required.</li>
+                  <li class="li">Select <span class="ph uicontrol">option 4</span> (Utilities) from the FSC Main Menu and
+                     press <span class="ph uicontrol">Enter</span> (Return on DEC keyboards).</li>
+                  <li class="li">Select <span class="ph uicontrol">option 1</span> (Backup) from the FSC Utilities Menu and
+                     press Enter.</li>
+                  <li class="li">Select <span class="ph uicontrol">option 1</span> (Clone system to standby disk) from the
+                     FSC Backup Options Menu and press <span class="ph uicontrol">Enter</span>.</li>
+                  <li class="li">Type in a password for a user that is authorized to make backups. Authorized users are set up using MOC.</li>
+                  <li class="li">Acknowledge the prompt listing the source and destination drive to start the
+                     backup. <figure class="fig fignone" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__fig_k1z_rlx_pzb"><figcaption><span class="fig--title-label">Figure 3. </span>Figure 1: FSC Backup Options Menu</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__image_n1z_rlx_pzb" src="media/image3.jpg"></div><br>
+                     </figure>
+                  </li>
+                  <li class="li">Monitor the backup for fatal error messages that indicate that the backup is faulty. A fatal message will have “-F-“ in the middle of the all caps part of the message. Also look for any disk errors occurring during the backup. If these are excessive or increase during subsequent backups, contact your repair service provider to have the hard drives checked.</li>
+                  <li class="li">If the FSC is on an Integrity server, the procedure tests and automatically
+                     revalidates the entry in the Boot Manager Menu. This step is critical to
+                     allowing the spare drive to boot. Become familiar with the normal messages
+                     shown in Figure <a class="xref" href="FES-03-101_fsc_backup_and_restore.html#r1FA557A-BB01-11F0-9728-09173F13E4C5__fig_yy2_plx_pzb">2</a> so that you are
+                     aware of what is happening since the word “failed” might cause unnecessary
+                     concern. <figure class="fig fignone" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__fig_yy2_plx_pzb"><figcaption><span class="fig--title-label">Figure 4. </span>Figure 2: Clone Backup – Normal Validation Messages</figcaption>
+                        
+                        <br><div class="imagecenter"><img class="image imagecenter" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__image_zy2_plx_pzb" src="media/image4.jpg"></div><br>
+                     </figure>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">USB Backup Procedure: <p class="p">The best time to make the USB backup is immediately after you
+                  have made a Clone backup. The USB procedure makes a backup of the image on the
+                  spare disk. If the spare disk has not been recently cloned from the operating
+                  disk, the USB procedure will require you to perform the Clone backup before
+                  allowing a backup to the USB drive. Use the following steps to access the Backup
+                  Options menu shown in Figure <a class="xref" href="FES-03-101_fsc_backup_and_restore.html#r1FA557A-BB01-11F0-9728-09173F13E4C5__fig_k1z_rlx_pzb">1</a> and
+                  start the USB backup procedure: </p>
+               <ol class="ol" type="a">
+                  <li class="li">Log onto the console terminal with the username “fsc”. No password is
+                     required.</li>
+                  <li class="li">Insert a USB flash drive that has at least 16GB capacity.</li>
+                  <li class="li">Select <span class="ph uicontrol">option 4</span> (Utilities) from the FSC Main Menu and
+                     press <span class="ph uicontrol">Enter</span> (Return on DEC keyboards).</li>
+                  <li class="li">Select <span class="ph uicontrol">option 1</span> (Backup) from the FSC Utilities Menu
+                     and press <span class="ph uicontrol">Enter</span>.</li>
+                  <li class="li">Select <span class="ph uicontrol">option 2</span> (Back up standby disk to USB disk) from
+                     the FSC Backup Options Menu and press <span class="ph uicontrol">Enter</span>.</li>
+                  <li class="li">Type in a password for a user that is authorized to make backups. Authorized
+                     users are set up using MOC.</li>
+                  <li class="li">The backup program will locate the spare (standby) drive and prompt “<strong class="ph b">
+                        <em class="ph i">OK
+                           to use , andlt;</em>
+                        <em class="ph i">drivename</em>
+                        <em class="ph i">, andgt; as source? (Y or N):</em>
+                     </strong>” (See Figure <a class="xref" href="FES-03-101_fsc_backup_and_restore.html#r1FA557A-BB01-11F0-9728-09173F13E4C5__fig_oln_fmx_pzb">3</a> for example dialog.) <ol class="ol" type="i">
+                        <li class="li">Enter “<kbd class="ph userinput">Y</kbd>” to confirm the backup source.</li>
+                        <li class="li">If another spare drive is plugged in, the program will propose the one
+                           with the lowest drive ID number first. For example, drive DKA100 will be
+                           proposed before DKA200 if both positions have a spare drive
+                           installed.</li>
+                        <li class="li">If you enter “<kbd class="ph userinput">N</kbd>”, the program will check to see
+                           if there is another hard drive that is not the active system drive. If
+                           another drive is found, it will prompt you to use this alternative drive
+                           as the source. If you respond with “<kbd class="ph userinput">N</kbd>”, this
+                           dialog will continue if there are more hard drives but if there are none
+                           it will simply display a message “Press <span class="ph uicontrol">Enter</span> to
+                           resume...” pressing Enter returns you to the Backup Options Menu.</li>
+                        <li class="li">Once the backup source is confirmed, the program will verify that the
+                           spare drive has been cloned from the operating drive within the past 48
+                           hours. If it has, the USB backup will continue. If it has not, the
+                           program will request that you perform a Clone backup on the source drive
+                           and pause for you to press <span class="ph uicontrol">Enter</span> to return to the
+                           Backup Options Menu.</li>
+                     </ol>
+                  </li>
+                  <li class="li">Allow the program to scan and identify a useable USB flash drive for the
+                     backup. <ol class="ol" type="i">
+                        <li class="li">If a usable USB drive cannot be located, the program will display
+                              “<strong class="ph b">Backup to USB not performed</strong>” and prompt you to press
+                              <span class="ph uicontrol">Enter</span> to return to the Backup Options
+                           menu.</li>
+                        <li class="li">If a USB drive is identified, the program will display “<strong class="ph b">Drive DNA?:
+                              is the proposed destination</strong>.”<div class="note note note_note" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__note_gf1_ynx_pzb"><span class="note__title">Note:</span> 
+                              <p class="p">There will be a number where the ? is shown. Each drive will be
+                                 assigned a different number.</p>
+                           </div>
+                        </li>
+                        <li class="li">If the USB drive is not formatted, the program will format it for VMS if
+                           you type “<kbd class="ph userinput">y</kbd>” at the prompt to approve this
+                           action.</li>
+                        <li class="li">If the USB drive capacity is not sufficient to accept the expected
+                           backup file, the program will display a message advising you to use a
+                           larger drive.</li>
+                        <li class="li">If the USB drive capacity is sufficient, but there is not enough free
+                           space, the program will display a message showing the number of blocks
+                           needed and the number available. It will also display the oldest backup
+                           found and ask permission to delete this file to free up space. <ol class="ol">
+                              <li class="li"> If you enter “<kbd class="ph userinput">N</kbd>” to save a backup file
+                                 from being deleted, the program will scan for another USB drive
+                                 and, if found, display “<strong class="ph b">Drive DNA?: is the proposed
+                                    destination</strong>” </li>
+                              <li class="li">If you enter “<kbd class="ph userinput">Y</kbd>” to allow a backup file to
+                                 be deleted, the program will again determine if the USB drive
+                                 capacity is sufficient. This process will continue until there is
+                                 enough space on the drive or you decide to save a backup file
+                                 proposed for deletion.</li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="li">Once a USB drive is located which has sufficient capacity for the backup, the
+                     program will display: “<strong class="ph b">Backing up _PIC$DKA?00: to DNA?:[BACKUP]dnetname.
+                        PIC$DKA?00 Are you sure? (Y or N):</strong>” <div class="note note note_note" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__note_bd5_f4x_pzb"><span class="note__title">Note:</span> 
+                        <p class="p">The drive number IDs will appear where the ? is shown. The “dnet-name” is
+                           the DECnet node name of the server (if configured during
+                           installation).</p>
+                     </div>
+                     <ol class="ol" type="i">
+                        <li class="li">Enter “<kbd class="ph userinput">Y</kbd>” to start the backup.</li>
+                     </ol>
+                  </li>
+                  <li class="li">After the backup has completed, the file created on the USB device will be
+                     verified by comparing the file contents to the disk contents <ol class="ol" type="i">
+                        <li class="li">If there is an error, determine if the USB drive is defective by trying
+                           another USB drive.</li>
+                        <li class="li">If you get the same errors with multiple USB drives, the hard drive may
+                           be the problem. Contact your repair service provider to have the drive
+                           checked. <figure class="fig fignone" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__fig_oln_fmx_pzb"><figcaption><span class="fig--title-label">Figure 5. </span>Figure 3: Example Dialogue – Backup to USB</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__image_rln_fmx_pzb" src="media/image5.jpg"></div><br>
+                           </figure>
+                           <div class="p">Example Dialog NOTES: <ul class="ul">
+                                 <li class="li">The example is from a backup done on a development server
+                                    (named TEST2800) so the drive IDs are different. The system was
+                                    operating on the DKA800 drive. </li>
+                                 <li class="li">If “<kbd class="ph userinput">N</kbd>” had been entered at the
+                                       “<strong class="ph b">source</strong>” prompt to use the DKA100 drive, the program
+                                    would have identified the DKA700 drive as another option. DKA800
+                                    would not be a source option.</li>
+                                 <li class="li">Two USB flash drives were plugged in. DNA2 already contained 2
+                                    backups; DNA5 had no backups.</li>
+                                 <li class="li">It was decided not to delete the older backup file on DNA2 to
+                                    free up space so the program checked and found that DNA5 was
+                                    available and had sufficient capacity.</li>
+                                 <li class="li">The time required for the backup was about 28 minutes. The
+                                    DKA100 drive had FSC software only. If the FSC shares the server
+                                    with the PIC application (called a Combo system), the backup
+                                    would take longer and generate a larger backup file. If the
+                                    system utilizes OpenVMS 8.3, the file cannot be compressed so
+                                    the file size and backup time will be significantly
+                                    increased.</li>
+                              </ul>
+                           </div>
+                        </li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">Recovery Using the Spare Drive
+            <p class="p">If the operating drive fails, it will be necessary to boot from the spare drive. It is also recommended to boot from the spare drive if the operating drive is showing a steady increase in the number of disk errors during the Clone backups, to avoid an unexpected shutdown at an inconvenient time</p>
+               <ol class="ol" type="a">
+                  <li class="li">Log onto the console terminal with the username “fsc”. No password is required.</li>
+                  <li class="li">Select <span class="ph uicontrol">option 4</span> (Utilities) from the FSC Main Menu and press
+                        <span class="ph uicontrol">Enter</span> (Return on DEC keyboards).</li>
+                  <li class="li">Select <span class="ph uicontrol">option 10</span> (Shutdown/Reboot System) from the Utilities
+                     Menu and press <span class="ph uicontrol">Enter</span>.</li>
+                  <li class="li">Select<span class="ph uicontrol"> item 1</span> (Reboot system after shutting down) from the
+                     Shutdown System Menu and press <span class="ph uicontrol">Enter</span>.</li>
+                  <li class="li">Type in a password for a user that is authorized to perform a shutdown. Authorized users are set up using MOC.</li>
+                  <li class="li">At the prompt “<strong class="ph b">Are you sure [NO]?”, type a “y” (or “Y”)</strong> to confirm that you
+                     want to perform this reboot.</li>
+                  <li class="li">To override the two minute delay, type a “<kbd class="ph userinput">0</kbd>” (zero) for an
+                     immediate shutdown.</li>
+                  <li class="li">Stay at the console and monitor the boot progress so that you can respond
+                     immediately when the menu is displayed. You have only a few seconds to
+                     intercept the timer countdown. If you miss this opportunity, let the system
+                     continue to boot and try again from step <a class="xref" href="FES-03-101_fsc_backup_and_restore.html#r1FA557A-BB01-11F0-9728-09173F13E4C5__li_enm_jpx_pzb">1</a>. <ol class="ol" type="i">
+                        <li class="li">If the server is a rx2800, a System Menu will be initially displayed.
+                           (See Figure <a class="xref" href="FES-03-101_fsc_backup_and_restore.html#r1FA557A-BB01-11F0-9728-09173F13E4C5__fig_ejy_npx_pzb">4</a>.) You must press
+                           the letter “<span class="ph uicontrol">b</span>” when this menu is displayed to stop
+                           the timer and launch the Boot Manager Menu shown in Figure <a class="xref" href="FES-03-101_fsc_backup_and_restore.html#r1FA557A-BB01-11F0-9728-09173F13E4C5__fig_qzp_qpx_pzb">5</a>. </li>
+                        <li class="li">If the server is a rx2660, the EFI Boot Manager Menu will be initially
+                           displayed. (See Figure <a class="xref" href="FES-03-101_fsc_backup_and_restore.html#r1FA557A-BB01-11F0-9728-09173F13E4C5__fig_ls5_tpx_pzb">6</a>.) You
+                           must press the down arrow when this menu is displayed to stop the timer.
+                              <figure class="fig fignone" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__fig_ejy_npx_pzb"><figcaption><span class="fig--title-label">Figure 6. </span>Figure 4: rx2800 – Initial Menu Displayed at Boot Up</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__image_hjy_npx_pzb" src="media/image6.jpg"></div><br>
+                           </figure>
+                           <figure class="fig fignone" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__fig_qzp_qpx_pzb"><figcaption><span class="fig--title-label">Figure 7. </span>Figure 5: rx2800 – Boot Manager Menu</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__image_szp_qpx_pzb" src="media/image7.jpg"></div><br>
+                           </figure>
+                           <figure class="fig fignone" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__fig_ls5_tpx_pzb"><figcaption><span class="fig--title-label">Figure 8. </span>Figure 6: rx2660 EFI Boot Manager Menu</figcaption>
+                              
+                              <br><div class="imagecenter"><img class="image imagecenter" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__image_ms5_tpx_pzb" src="media/image8.jpg"></div><br>
+                           </figure>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="li">Use the arrow keys to position the highlight on the option for the spare disk
+            <ol class="ol" type="i">
+                        <li class="li">The first entry in the Boot Manager Menu is the default and should be the drive that has malfunctioned. Locate the spare drive further down in the list, usually the second entry and the one labeled “Alternate boot to…”
+                  
+               </li>
+                        <li class="li">When the menu highlight is on the spare disk option, press the
+                              <span class="ph uicontrol">Enter</span> key to start the boot on that disk.</li>
+                     </ol>
+                  </li>
+                  <li class="li">If the server is a Combo system shared with the PIC, it will be necessary to log onto the PIC Backup account and perform a database restore. If the database restore is not done, the PIC database will likely be corrupt which will cause issues with getting the PIC to work correctly.</li>
+                  <li class="li">Contact your repair service provider to have the failed disk replaced as soon as
+                     possible. <div class="note note note_note" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__note_r4z_xpx_pzb"><span class="note__title">Note:</span> 
+                        <p class="p">You can use the Clone backup procedure in Section <a class="xref" href="FES-03-101_fsc_backup_and_restore.html#c1FA99F6-BB01-11F0-1067-09173F13E4C5">4</a> to clone the spare
+                           disk back to the empty replacement disk to resynchronize them. If you are
+                           booted to the former spare drive, it is considered the data source for
+                           the clone.</p>
+                     </div>
+                  </li>
+                  <li class="li">Troubleshooting Tip: If the clone has not been performed recently enough, an active job shown by MOC may be incorrect. To fix this, tell MOC to take the Job Off but without doing a Save of the Job History. Then tell MOC to do a second Save. The second Save will have all the settings for the active job running on the machine and will create or update the Job History on the FSC.</li>
+               </ol>
+            </li>
+            <li class="li">Recovering Using a USB Drive
+          <ol class="ol" type="a">
+                  <li class="li">The following are two situations where it may become necessary to perform a restore from a USB backup:
+             <ol class="ol" type="i">
+                        <li class="li">If the system drive begins failing, it may corrupt the spare drive during the clone process. Then when you try to use the spare drive, it has similar issues.</li>
+                        <li class="li">A severe mechanical bump to the server can cause the server to begin logging errors when the affected areas of the drives are accessed. Eventually, both drives may fail in succession.
+                   <div class="note note note_note"><span class="note__title">Note:</span> 
+                              <p class="p">Before starting this procedure, review step 8 in Section 6 to determine the
+                                 appropriate key to press to interrupt the automatic boot process
+                                 based on your server type (rx2800 or rx2660). </p>
+                           </div>
+                        </li>
+                     </ol>
+                  </li>
+                  <li class="li">Use the console terminal of the FSC and log onto the Management Port as user
+                        “<strong class="ph b">Oper</strong>” (password is “console”).</li>
+                  <li class="li">Ensure that the server power is on. (The power button will be green.)</li>
+                  <li class="li">Insert the Standalone Backup DVD (PCS-0397) into the optical drive.</li>
+                  <li class="li">Type “<kbd class="ph userinput">co</kbd>” at the Management Port menu to start the
+                     console.</li>
+                  <li class="li">Determine the state of the server
+             <ol class="ol" type="i">
+                        <li class="li">If the server is in the Halted state, you will typically see the following
+                           report on the screen followed by the Halt prompt. If this is case, simply
+                           press the <span class="ph uicontrol">Enter</span> key to attempt a boot up. <p class="p">
+                              <em class="ph i">SYSTEM SHUTDOWN COMPLETE</em>
+                           </p>
+                           <p class="p">
+                              <em class="ph i">**** Primary HALTED with code HWRPB_HALT$K_REMAIN_HALTED</em>
+                           </p>
+                           <p class="p">
+                              <em class="ph i">**** Hit any key to cold reboot ****</em>
+                           </p>
+                           <p class="p">
+                              <em class="ph i">P00, andgt;, andgt;, andgt;</em>
+                           </p>
+                        </li>
+                        <li class="li">If the FSC software is actually running but is corrupted, use the FSC account menu to access the Utilities Menu and perform a reboot.</li>
+                        <li class="li">If you cannot determine the state, hold the <span class="ph uicontrol">power</span> button
+                           in for about 10 seconds to force the server to turn off and then press
+                           the power button to turn it back on.</li>
+                     </ol>
+                  </li>
+                  <li class="li">Stay at the console and monitor the boot progress so that you can respond
+                     immediately when the menu is displayed. You have only a few seconds to
+                     intercept the timer countdown. If you miss this opportunity, let the system
+                     continue to boot and try again from step <a class="xref" href="FES-03-101_fsc_backup_and_restore.html#r1FA557A-BB01-11F0-9728-09173F13E4C5__li_enm_jpx_pzb">1</a>. <ol class="ol" type="i">
+                        <li class="li">If the server is a rx2800, a System Menu will be initially displayed.
+                           You must press the letter “<span class="ph uicontrol">b</span>” when this menu is
+                           displayed to stop the timer and launch the Boot Manager Menu. (Figures
+                              <a class="xref" href="FES-03-101_fsc_backup_and_restore.html#r1FA557A-BB01-11F0-9728-09173F13E4C5__fig_ejy_npx_pzb">4</a> , andamp; <a class="xref" href="FES-03-101_fsc_backup_and_restore.html#r1FA557A-BB01-11F0-9728-09173F13E4C5__fig_qzp_qpx_pzb">5</a>)</li>
+                        <li class="li">If the server is a rx2660, the EFI Boot Manager Menu will be initially
+                           displayed. You must press the <span class="ph uicontrol">down</span> arrow when this
+                           menu is displayed to stop the timer. (See Figure <a class="xref" href="FES-03-101_fsc_backup_and_restore.html#r1FA557A-BB01-11F0-9728-09173F13E4C5__fig_ls5_tpx_pzb">6</a>)</li>
+                     </ol>
+                  </li>
+                  <li class="li">Use the arrow keys to position the highlight on the option for the “Internal
+                     Bootable DVD” in the Boot Manager Menu and press the
+                        <span class="ph uicontrol">Enter</span> key to start the boot on that disk. <div class="note note note_note" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__note_l4l_nqx_pzb"><span class="note__title">Note:</span> 
+                        <p class="p">Do not plug in the USB flash drive until the DVD has booted up completely
+                           to the menu shown in Figure <a class="xref" href="FES-03-101_fsc_backup_and_restore.html#r1FA557A-BB01-11F0-9728-09173F13E4C5__fig_yjp_4qx_pzb">7</a>.
+                           Be patient, this can take 5 to 10 minutes.</p>
+                     </div>
+                     <figure class="fig fignone" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__fig_yjp_4qx_pzb"><figcaption><span class="fig--title-label">Figure 9. </span>Figure 7: Standalone Backup DVD Menu</figcaption>
+                        
+                        <img class="image" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__image_bkp_4qx_pzb" src="media/image9.jpg">
+                     </figure>
+                  </li>
+                  <li class="li">When the DVD has booted up completely, insert the USB flash drive containing the
+                     latest backup.<div class="note note note_note" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__note_om2_qqx_pzb"><span class="note__title">Note:</span> 
+                        <p class="p">If you are not certain which USB drive has the latest backup, DO NOT plug
+                           the USB drives into a Windows PC. Follow steps 9 and 10 to find the
+                           latest backup.</p>
+                     </div>
+                  </li>
+                  <li class="li">If you are not certain which USB drive has the latest backup, you can plug in as many drives as there are ports in the server. If the plant has a Digi Edgeport serial interface, this device has four USB ports that can also be used if they are accessible</li>
+                  <li class="li">Enter a “<kbd class="ph userinput">3</kbd>” to select the “<span class="ph uicontrol">Load hard drive from
+                        USB drive backup image</span>” option. Then enter the drive ID of the
+                     destination drive. (See Figure <a class="xref" href="FES-03-101_fsc_backup_and_restore.html#r1FA557A-BB01-11F0-9728-09173F13E4C5__p_dyb_wqx_pzb">8</a> for
+                     example dialog.) <ol class="ol" type="i">
+                        <li class="li">The destination drive ID will typically be DKA700 or DKA800. Since the
+                           backups are made from the spare drive, you will see that drive ID in the
+                           name of the backup. You can load the backup on the drive that is normally
+                           the system drive.</li>
+                        <li class="li">The load program will locate the backup file on the USB drive and
+                           display a confirmation prompt which includes the backup date. Enter
+                              “<kbd class="ph userinput">Y</kbd>” to start the load.</li>
+                        <li class="li">If you have multiple USB drives plugged in, the program will locate the
+                           first backup file on the first drive it finds. Note the date of this
+                           backup. Then enter “<kbd class="ph userinput">N</kbd>” at the confirmation prompt
+                           to allow the program to find the next backup. Repeat this process to
+                           determine the dates associated with each backup. After reviewing all the
+                           dates, repeat the search with option “3” and when the latest backup is
+                           displayed again, enter “<kbd class="ph userinput">Y</kbd>” at the prompt to start
+                           loading that backup.</li>
+                        <li class="li">After the image has been restored, the program will validate the drive
+                           so that it can be booted.</li>
+                     </ol>
+                  </li>
+                  <li class="li">Enter a “<kbd class="ph userinput">9</kbd>” to select the “<span class="ph uicontrol">Shut down this
+                        system</span>” option. When the shutdown is complete, a message will
+                     displayed to press any key to start the boot up. <ol class="ol" type="i">
+                        <li class="li">If the drive you just loaded is the only bootable hard drive, it will
+                           boot even if you restored the backup to the spare drive instead of the
+                           system drive. After the system is stable, you can use the Clone backup
+                           procedure in Section <a class="xref" href="FES-03-101_fsc_backup_and_restore.html#c1FA99F6-BB01-11F0-1067-09173F13E4C5">4</a> to clone the system to the other drive and then do a reboot
+                           to access the Boot Manager Menu and get the correct drive operating.<div class="p" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__p_dyb_wqx_pzb">
+                              <strong class="ph b">
+                                 <em class="ph i">Figure 8: Example Dialog – Restore from
+                                    USB</em>
+                              </strong>
+                              <table class="simpletable" id="r1FA557A-BB01-11F0-9728-09173F13E4C5__simpletable_etj_vhx_pzb"><colgroup><col style="width:100%"></colgroup><tbody><tr class="strow">
+                                    <td class="stentry">
+                                       <p class="p">1) Clone hard drive to hard drive</p>
+                                       <p class="p">2) Save hard drive backup image to USB drive</p>
+                                       <p class="p">3) Load hard drive from USB drive backup image</p>
+                                       <p class="p">4) Install O‐I Software PCS‐0408 from this DVD</p>
+                                       <p class="p">5) Save hard drive backup image to DAT tape</p>
+                                       <p class="p">6) Load hard drive from DAT tape backup image</p>
+                                       <p class="p">7) Execute DCL commands and procedures</p>
+                                       <p class="p">8) Configure boot menu</p>
+                                       <p class="p">9) Shut down this system</p>
+                                       <p class="p">Enter CHOICE or ? for help: (1/2/3/4/5/6/7/8/9/?) 3</p>
+                                       <p class="p">Destination drive: dka700</p>
+                                       <p class="p">%MOUNT‐I‐MOUNTED, BACKUPS mounted on _DNA1:</p>
+                                       <p class="p">Do you want to load _DNA1:[BACKUP]FSCISX.PIC$DKA700;1
+                                          (created 28‐JUN‐2017 16:14:55.69)? [Y]n</p>
+                                       <p class="p">No backup found. (press Enter)</p>
+                                       <p class="p">Process Space_INSTALLER logged out at
+                                          29‐JUN‐2017 09:31:53.09</p>
+                                       <p class="p">Press Return to continue...</p>
+                                       <p class="p">1) Clone hard drive to hard drive</p>
+                                       <p class="p">2) Save hard drive backup image to USB drive</p>
+                                       <p class="p">3) Load hard drive from USB drive backup image</p>
+                                       <p class="p">4) Install O‐I Software PCS‐0408 from this DVD</p>
+                                       <p class="p">5) Save hard drive backup image to DAT tape</p>
+                                       <p class="p">6) Load hard drive from DAT tape backup image</p>
+                                       <p class="p">7) Execute DCL commands and procedures</p>
+                                       <p class="p">8) Configure boot menu</p>
+                                       <p class="p">9) Shut down this system</p>
+                                       <p class="p">Enter CHOICE or ? for help: (1/2/3/4/5/6/7/8/9/?) 3</p>
+                                       <p class="p">Destination drive: dka700</p>
+                                       <p class="p">Do you want to load _DNA1:[BACKUP]FSCISX.PIC$DKA700;1
+                                          (created 28‐JUN‐2017 16:14:55.69)? [Y]</p>
+                                       <p class="p">Restoring up _DNA1:[BACKUP]FSCISX.PIC$DKA700;1 to
+                                          _DKA700:</p>
+                                       <p class="p">Are you sure? (Y/N): y</p>
+                                       <p class="p">%MOUNT‐I‐MOUNTED, I64V084 mounted on _DKA700:</p>
+                                       <p class="p">Restore started 29‐JUN‐2017 09:32:20.24</p>
+                                       <p class="p">%BACKUP‐I‐STARTVERIFY, starting verification pass at
+                                          29‐JUN‐2017 09:56:31.86</p>
+                                       <p class="p">Restore finished 29‐JUN‐2017 10:04:53.75</p>
+                                       <p class="p">%MOUNT‐I‐MOUNTED, I64V084 mounted on _DKA700:</p>
+                                       <p class="p">Validate EFI Boot Options list: Timeout = 7 secs.</p>
+                                       <p class="p">‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐</p>
+                                       <p class="p">4 hp I64 OpenVMS PKA0.0A04‐A7EF‐191B‐B8EF ‐fl 0,0</p>
+                                       <p class="p">DKA700 PCI(0|1|1|0) Sas(5000C500095AE25D,Lun0)</p>
+                                       <p class="p">efi$bcfg: Option Failed. Fixing Boot Entry
+                                          automatically.</p>
+                                       <p class="p">efi$bcfg: Entry 4 Boot0005 removed.</p>
+                                       <p class="p">efi$bcfg: DKA700 PCI(0|1|1|0) Sas(5000C500095AE25D,Lun0)
+                                          (Boot0005) Option successfully added</p>
+                                       <p class="p">‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐</p>
+                                       <p class="p">1 entries validated.</p>
+                                       <p class="p">Process Space_INSTALLER logged out at
+                                          29‐JUN‐2017 10:05:02.58</p>
+                                    </td>
+                                 </tr></tbody></table>
+                           </div>
+                        </li>
+                     </ol>
+                  </li>
+               </ol>
+            </li>
+         </ol>
+         <div class="p">Example Dialog NOTES: 
+      <ul class="ul">
+               <li class="li">The USB drive DNA1 had only one backup on it. When the backup date was presented the first time, the prompt was answered with “n” so the program would search for another backup that might possibly have a later date. When no more backups could be found, the program returned to the menu.
+            
+         </li>
+               <li class="li">The restore was initiated a second time and this time the backup file proposed was approved for loading.</li>
+               <li class="li">After the image was restored to the drive, the program did a verification pass to ensure that the drive has the original copy correctly restored. Then the entry in the Boot Manager Menu was validated so that the drive will boot.</li>
+            </ul>
+         </div>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title5" lang="en-us" id="c1FA99F6-BB01-11F0-1067-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title5">Required Training</h2>
+   
+   <div class="body conbody">
+      <p class="p">Before performing this work instruction, applicable personnel must be trained by an authorized trainer on the required training contents listed in this document.</p>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title6" lang="en-us" id="c1FA2875-BB01-11F0-3556-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title6">Equipment</h2>
+   
+   <div class="body conbody">
+      <p class="p"> FSC version 6.1-0 or later software.</p>
+      <p class="p">PCS-0397 Standalone Backup DVD from 2016 or later. Space plants can make this DVD by
+         following the instructions in Appendix <a class="xref" href="FES-03-101_fsc_backup_and_restore.html#c1F9F179-BB01-11F0-9708-09173F13E4C5__fig_hwp_nrx_pzb">A</a>. Licensee plants should
+         obtain the DVD from their Global Technical Assistance Account Manager.</p>
+      <p class="p">Working optical drive in the FSC Integrity server.</p>
+      <p class="p"> USB attachable flash drive(s) with 16GB or greater capacity.</p>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title7" lang="en-us" id="c1FA10C2-BB01-11F0-1144-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title7">Definitions</h2>
+   
+   <div class="body conbody">
+      <dl class="dl" id="c1FA10C2-BB01-11F0-1144-09173F13E4C5__dl_pll_qrx_pzb">
+         
+            <dt class="dt dlterm">FSC</dt>
+            <dd class="dd">Forming Supervising Computer – The server computer that connects to the Space Forming
+               Machines</dd>
+         
+      </dl>
+   </div>
+</article><article class="topic reference nested1" aria-labelledby="ariaid-title8" lang="en-us" id="r1FA837E-BB01-11F0-1937-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title8">References</h2>
+   
+   <div class="body refbody">
+      <section class="section" id="r1FA837E-BB01-11F0-1937-09173F13E4C5__section_wfv_trx_pzb"><h3 class="title sectiontitle">Document Classification</h3>
+         
+         <ul class="ul" id="r1FA837E-BB01-11F0-1937-09173F13E4C5__ul_idh_vrx_pzb">
+            <li class="li">Asset Protection and Stability</li>
+            <li class="li">Organization and Training</li>
+         </ul>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title9" lang="en-us" id="c1F9F179-BB01-11F0-9708-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title9">Appendix</h2>
+   
+   <div class="body conbody">
+      <figure class="fig fignone" id="c1F9F179-BB01-11F0-9708-09173F13E4C5__fig_hwp_nrx_pzb">
+         <br><div class="imagecenter"><img class="image imagecenter" id="c1F9F179-BB01-11F0-9708-09173F13E4C5__image_jwp_nrx_pzb" src="media/image10.jpg"></div><br>
+      </figure>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title10" lang="en-us" id="c1FA076F-BB01-11F0-2480-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title10">Collaboration</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c1FA076F-BB01-11F0-2480-09173F13E4C5__table_ft2_zrx_pzb"><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Country Group</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Role</strong>
+                  </p>
+               </td>
+               <td class="stentry">
+                  <p class="p">
+                     <strong class="ph b">Name</strong>
+                  </p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Americas North</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Forming Electronics Specialist</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Dan Knuckles</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Europe</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Forming Electronics Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Remko Beckers</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Central Europe</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Regional Leader Forming Electronics</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Ruud Bormans</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">France - Spain</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jean-Pierre Locato</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jean-Pierre Locato</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Latin America</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">IS Machine Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Miguel Morales</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Engineering - Forming</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Associate Engineer</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Jose Gonzalez</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">
+                  <p class="p">Global</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Global Forming Electronics Leader</p>
+               </td>
+               <td class="stentry">
+                  <p class="p">Franklin Barrios</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title11" lang="en-us" id="c1FAB076-BB01-11F0-2414-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title11">Revision History</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="simpletable" id="c1FAB076-BB01-11F0-2414-09173F13E4C5__table_ztt_bsx_pzb"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr class="strow">
+               <td class="stentry">2017-09-20</td>
+               <td class="stentry">
+                  <p class="p">Originally Released as Process Control SOP-17-009</p>
+               </td>
+            </tr><tr class="strow">
+               <td class="stentry">2022-05-09</td>
+               <td class="stentry">
+                  <p class="p">Approved by Franklin Barrios, Global Leader FES Network.</p>
+                  <p class="p">Moved to GMF Site as FES-03-101</p>
+               </td>
+            </tr></tbody></table>
+      </div>
+   </div>
+</article></article></article></main></body></html>
