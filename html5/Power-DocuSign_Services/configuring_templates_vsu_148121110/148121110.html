@@ -1,0 +1,423 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metr-dsign-power,docusign-services,document-templates,x-author,docusign-anchor-tags,esignature-documents,configure-templates,insert-docusign-tags,define-anchor-tag-syntax,map-tags-to-signers,prepare-documents-for-signing,generate-signing-fields,template-preparation,document-generation-context,esignature-tagging,multi-signer-documents,anchor-tag-based-signing,enterprise-transaction-management,salesforce-platform,docusign-tags,template-configuration,configure-templates-for-docusign-tags,map-template-fields,validate-tag-placement,save-template-configuration,test-template-output,template-preparation-context,document-tagging-workflows,esignature-field-mapping,salesforce-configuration-context,document-signing-workflows"><meta name="DC.subject" content="metr-dsign-power,docusign-services,document-templates,x-author,docusign-anchor-tags,esignature-documents,configure-templates,insert-docusign-tags,define-anchor-tag-syntax,map-tags-to-signers,prepare-documents-for-signing,generate-signing-fields,template-preparation,document-generation-context,esignature-tagging,multi-signer-documents,anchor-tag-based-signing,enterprise-transaction-management,salesforce-platform,docusign-tags,template-configuration,configure-templates-for-docusign-tags,map-template-fields,validate-tag-placement,save-template-configuration,test-template-output,template-preparation-context,document-tagging-workflows,esignature-field-mapping,salesforce-configuration-context,document-signing-workflows"><meta name="keywords" content="metr-dsign-power, docusign-services, document-templates, x-author, docusign-anchor-tags, esignature-documents, configure-templates, insert-docusign-tags, define-anchor-tag-syntax, map-tags-to-signers, prepare-documents-for-signing, generate-signing-fields, template-preparation, document-generation-context, esignature-tagging, multi-signer-documents, anchor-tag-based-signing, enterprise-transaction-management, metr-dsign-power, docusign-services, salesforce-platform, document-templates, docusign-tags, template-configuration, configure-templates-for-docusign-tags, insert-docusign-tags, map-template-fields, validate-tag-placement, save-template-configuration, test-template-output, template-preparation-context, document-tagging-workflows, esignature-field-mapping, salesforce-configuration-context, document-signing-workflows, enterprise-transaction-management"><meta name="DC.relation" scheme="URI" content="../../Power-DocuSign_Services/configuring_docusign_serv_143889342/143889342.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-Dsign-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-16+05:30"><meta name="DC.date.modified" content="2025-12-16"><meta name="title" content="Configuring Templates"><meta name="shortdesc" content="Explains how to configure document templates using DocuSign anchor tags in X-Author to generate signing fields for multiple signers."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="document-templates;docusign-anchor-tags;x-author;signer-tags"><meta name="taxonomy" content="domain:sales-operations;usecase:template-tag-configuration;industry:enterprise software and digital transaction management"><meta name="tags" content="templates,anchor-tags,docusign-tags,esignature,x-author"><meta name="usecase" content="understand how to configure templates with anchor tags for docusign signing"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="d41aA"><meta name="DC.language" content="en"><title>Configuring Templates</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="d41aA">
+   <h1 class="title topictitle1" id="ariaid-title1">Configuring Templates</h1>
+   
+   
+   <div class="body conbody">
+      <p class="p">Templates are configured in the typical way using X-Author; however, you can add DocuSign specific markup that indicates you want to have a tag inserted in the document when it is generated.</p>
+      <p class="p">These tags are used to display the <strong class="ph b">Sign Here</strong> and<strong class="ph b"> Initial Here</strong> notes within the generated documents that are sent for eSignature. You can include these tags for multiple signatories, the below table showing tags for up to four. It is based on the suggested tag types, and characters to use with them, listed for configuring the DocuSign tags.</p>
+      <p class="p">The tag types are entered into the templates as standard text.</p>
+      <div class="p">
+         <table class="table"><caption></caption><colgroup><col><col><col><col><col></colgroup><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Tag Type</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">Signer 1</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">Signer 2</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">Signer 3</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">Signer 4</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Signature</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\si1\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\si2\</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\si3\</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\si4\</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Initial</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\in1\</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\in2\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\in3\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\in4\</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Optional Initial</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\oin1\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\oin2\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\oin3\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\oin4\</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Name</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\na1\</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\na2\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\na3\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\na4\</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Company</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\cy1\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\cy2\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\cy3\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\cy4\</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Title</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\ti1\</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\ti2\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\ti3\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\ti4\</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Date Signed</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\ds1\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\ds2\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\ds3\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\ds4\</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Checkbox</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\cb1\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\cb2\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\cb3\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\cb4\</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Company</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\co1\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\co2\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\co3\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\co4\</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Date</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\dt1\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\dt2\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\dt3\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\dt4\</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Date Signed</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\ds1\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\ds2\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\ds3\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\ds4\</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Email Address</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\em1\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\em2\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\em3\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\em4\</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">First Name</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\fn1\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\fn2\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\fn3\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\fn4\</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Full Name</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\fna1\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\fna2\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\fna3\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\fna4\</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Last Name</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\ln1\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\ln2\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\ln3\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\ln4\</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Note</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\nt1\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\nt2\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\nt3\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\nt4\</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Number</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\no1\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\no2\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\no3\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\no4\</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Radio Group</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\rg1\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\rg2\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\rg3\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\rg4\</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">SSN</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\sn1\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\sn2\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\sn3\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\sn4\</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Text</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\txt1\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\txt2\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\txt3\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\txt4\</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Zip</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\zi1\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\zi2\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\zi3\ </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">\zi4\</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+      <p class="p">For more information on tags and how they are displayed in documents, see <a class="xref" href="https://www.docusign.com/sites/default/files/Using%20Anchor%20Tags.pdf" target="_blank" rel="external noopener">
+            <u class="ph u">Using Anchor Tags</u>
+         </a> from the DocuSign site.</p>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-DocuSign_Services/configuring_docusign_serv_143889342/143889342.html">Configuring DocuSign Services</a></div></div></nav><article class="topic task nested1" aria-labelledby="ariaid-title2" lang="en" id="id_ConfiguringTemplatesvSummer21_ToconfiguretemplatestouseDocuSigntags">
+   <h2 class="title topictitle2" id="ariaid-title2">To configure templates to use DocuSign tags</h2>
+   
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Connect to X-Author Contracts and go the <span class="ph uicontrol">Templates</span> tab.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click<span class="ph uicontrol"> New</span> and create a new template or click <span class="ph uicontrol">Check-Out</span> to open an existing template.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To include a marker in the template that will be used as a DocuSign tag when the document is generated, type in the desired text, per the Tag Type table.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To anchor a tag to a particular word, such as Employee ID or Employee name, add a tag to the agreement such as \employee.name\. Specify the same tag name in the Anchor field of a custom tag in DocuSign. For more information about specifying anchor tags, refer the DocuSign documents. For example, these tags (\in1\, \si1\, \na1\, \ds1\) are used below to include the customer initials, signature, name, and signing date.</span>
+            <div class="itemgroup info">
+               <figure class="fig fignone">
+                  <br><img class="image" src="../attachments/148121110/148121109.png" width="598"><br>
+               </figure>After typing the tags, you should highlight them one at a time and change their font color to white or to the background color for the document. This ensures the characters used for the tags are not displayed in the generated document.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Finish editing the template as required and then click <span class="ph uicontrol">Check-in</span> to have the template checked into Salesforce.</span>
+         </li></ol></section>
+      <section class="section postreq">
+         <p class="p">The template can now be used with agreements that will be sent for signature via DocuSign. When the document is opened — and the corresponding tags have been created in DocuSign — the tags will be displayed.</p>
+         <div class="p">
+            <figure class="fig fignone">
+               <br><img class="image" height="250" src="../attachments/148121110/148121107.png" width="547"><br>
+            </figure>
+         </div>
+         <p class="p">The template can also be used for standard documents you want to have manually signed. As long as you have made the tag characters white or the same as the background color, they will not show up in the document.</p>
+      </section>
+   </div>
+</article></article></article></main></body></html>

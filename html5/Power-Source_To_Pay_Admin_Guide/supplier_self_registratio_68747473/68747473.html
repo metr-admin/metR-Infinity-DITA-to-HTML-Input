@@ -1,0 +1,61 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metr-payag-power,supplier-module,approval-workflow,workflow-engine,supplier-dashboard,web-platform,approving-suppliers,rejecting-suppliers,reviewing-supplier-submissions,validating-supplier-data,updating-approval-status,executing-approval-rules,supplier-governance,revenue-operations,enterprise-compliance,vendor-risk-management,process-governance,approval-controls,supplier-portal,self-registration-module,registration-link,generating-registration-link,sharing-registration-link,configuring-self-registration,initiating-supplier-onboarding,capturing-supplier-details,validating-registration-data,vendor-onboarding,external-supplier-access,enterprise-software,supplier-collaboration,process-automation"><meta name="DC.subject" content="metr-payag-power,supplier-module,approval-workflow,workflow-engine,supplier-dashboard,web-platform,approving-suppliers,rejecting-suppliers,reviewing-supplier-submissions,validating-supplier-data,updating-approval-status,executing-approval-rules,supplier-governance,revenue-operations,enterprise-compliance,vendor-risk-management,process-governance,approval-controls,supplier-portal,self-registration-module,registration-link,generating-registration-link,sharing-registration-link,configuring-self-registration,initiating-supplier-onboarding,capturing-supplier-details,validating-registration-data,vendor-onboarding,external-supplier-access,enterprise-software,supplier-collaboration,process-automation"><meta name="keywords" content="metr-payag-power, supplier-module, approval-workflow, workflow-engine, supplier-dashboard, web-platform, approving-suppliers, rejecting-suppliers, reviewing-supplier-submissions, validating-supplier-data, updating-approval-status, executing-approval-rules, supplier-governance, revenue-operations, enterprise-compliance, vendor-risk-management, process-governance, approval-controls, metr-payag-power, supplier-portal, self-registration-module, registration-link, supplier-module, web-platform, generating-registration-link, sharing-registration-link, configuring-self-registration, initiating-supplier-onboarding, capturing-supplier-details, validating-registration-data, vendor-onboarding, external-supplier-access, revenue-operations, enterprise-software, supplier-collaboration, process-automation"><meta name="DC.relation" scheme="URI" content="../../Power-Source_To_Pay_Admin_Guide/prospective_supplier_regi_68747478/68747478.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PayAG-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Yashshree"><meta name="DC.date.created" content="2025-11-24+05:30"><meta name="DC.date.modified" content="2025-11-24"><meta name="title" content="Supplier Self-Registration"><meta name="shortdesc" content="Describes how reviewers approve or reject supplier submissions using workflows."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="supplier; approval-workflow; reviewer; approval-status"><meta name="taxonomy" content="domain:revenue-operations;usecase:supplier-approval;industry:revenue-lifecycle-management"><meta name="tags" content="approval, rejection, supplier, workflow, compliance"><meta name="usecase" content="approve or reject suppliers"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="d13aAjan735"><meta name="DC.language" content="en"><title>Supplier Self-Registration</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="d13aAjan735">
+   <h1 class="title topictitle1" id="ariaid-title1">Supplier Self-Registration</h1>
+   
+   <div class="body conbody">
+      <p class="p">
+         <strong class="ph b">Supplier Self-Registration</strong> allows suppliers to have access to the 3rd party link to submit the Prospective Supplier Request Form. Onboarding surveys are also attached with the form to collect more details. The Supplier will fill the surveys and send the responses to you. You must create a supplier self-registration link and provide that link on your website or send the link via an email to the prospective suppliers. </p>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">
+         <p class="p">Use Case</p>
+         <p class="p">Sam receives the Prospective Supplier Requests via an email. It may be a direct request or a reference. To reduce his work, Sam can provide the supplier self-registration link on the website of Tier 1 Mobiles or send this link via an email. In our case, following suppliers register themselves using this link.</p>
+         <ul class="ul">
+            <li class="li">Archive Hardwares - Christopher Fusco</li>
+            <li class="li">Fly Hardwares - Anna Gilliland</li>
+            <li class="li">LED World - William Morales</li>
+            <li class="li">Fast Speakers - Charles Miller</li>
+         </ul>
+      </div></div>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-Source_To_Pay_Admin_Guide/prospective_supplier_regi_68747478/68747478.html">Prospective Supplier Registration</a></div></div></nav><article class="topic task nested1" aria-labelledby="ariaid-title2" lang="en" id="SupplierSelfRegistration_Tocreateasupplierself_registrationlink">
+   <h2 class="title topictitle2" id="ariaid-title2">To create a supplier self-registration link</h2>
+   
+   <div class="body taskbody">
+      <section class="section context">
+         <p class="p">You must have an existing community that you use for public RFI. </p>
+      </section>
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Go to <span class="ph uicontrol">Setup &gt; App Setup &gt; Customize</span> and select <span class="ph uicontrol">All Communities</span>. </span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Copy URL of the community that is used for public RFI. </span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Append text <span class="ph uicontrol">/apex/Apttus_SRM__SupplierOnboardingRequest?type= </span> to the copied URL.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Append the Onboarding Type ID to the text obtained from the above step. </span>
+            <div class="itemgroup info">
+               <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">
+                  <p class="p">To obtain the Onboarding Type ID,</p>
+                  <p class="p">1. Click the <span class="ph uicontrol">Onboarding Types</span> tab.</p>
+                  <p class="p">2. Select the onboarding type that you want to assign to the supplier.</p>
+                  <p class="p">3. Copy the onboarding type ID, text between <span class="ph uicontrol">=</span> and <span class="ph uicontrol">&amp;</span>.</p>
+                  <figure class="fig fignone">
+                     <img class="image" src="../attachments/68747473/68749573.png">
+                  </figure>
+                  <p class="p">For example, in https://c.cs26.visual.force.com/apex/OnboardingType?id=<span class="ph uicontrol">a5r2800000000kW</span>&amp;sfdc.override=1 URL, <span class="ph uicontrol">a5r2800000000kW</span>
+                     <span class="ph uicontrol"></span> is the onboarding type ID. </p>
+               </div></div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">At the end, your link will look like. </span>
+            <div class="itemgroup info">
+               <pre class="pre">https://amttussuppliers-developer-edition.ap2.force.com/suppliers/apex/Apttus_SRM__SupplierOnboardingRequest?type=a5r2800000000kWAAQ</pre>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Paste the entire link in the above step on your website or send this link to your suppliers via an email.</span>
+         </li></ol></section>
+      <section class="section postreq">
+         <p class="p">You will receive the supplier self-registration request when any supplier self-registers using this link that you provide. </p>
+         <p class="p">After you receive the request, you must review and approve or reject the request. For more information on reviewing and approving or rejecting the request, refer to <a class="xref" href="../supplier_review_and_appro_68747476/68747476.html">Supplier Review and Approvals</a>. </p>
+      </section>
+   </div>
+</article></article></article></main></body></html>

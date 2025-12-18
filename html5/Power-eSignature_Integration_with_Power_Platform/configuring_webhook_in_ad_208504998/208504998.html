@@ -1,0 +1,64 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metR-cesign-power,adobe-sign-webhook,webhook-configuration,callback-endpoint,event-subscription,validate-signature-event,retry-policy,security-verification,notification-handling,error-handling,metr-cesign-power,adobe-sign,adobe-webhook,agreement-events,webhook-notifications,configure-webhook,create-webhook,select-events,set-notification-parameters,save-webhook-configuration,esignature-integration,adobe-sign-admin-console,webhook-scope-account,document-status-events,platform-webhook-callback"><meta name="DC.subject" content="metR-cesign-power,adobe-sign-webhook,webhook-configuration,callback-endpoint,event-subscription,validate-signature-event,retry-policy,security-verification,notification-handling,error-handling,metr-cesign-power,adobe-sign,adobe-webhook,agreement-events,webhook-notifications,configure-webhook,create-webhook,select-events,set-notification-parameters,save-webhook-configuration,esignature-integration,adobe-sign-admin-console,webhook-scope-account,document-status-events,platform-webhook-callback"><meta name="keywords" content="metR-cesign-power, adobe-sign-webhook, webhook-configuration, callback-endpoint, event-subscription, validate-signature-event, retry-policy, security-verification, notification-handling, error-handling, metr-cesign-power, adobe-sign, adobe-webhook, agreement-events, webhook-notifications, configure-webhook, create-webhook, select-events, set-notification-parameters, save-webhook-configuration, esignature-integration, adobe-sign-admin-console, webhook-scope-account, document-status-events, platform-webhook-callback"><meta name="DC.relation" scheme="URI" content="../../Power-eSignature_Integration_with_Power_Platform/setting_up_adobe_sign_208_208504971/208504971.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-Cesign-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-11-24T18:17:00+05:30"><meta name="DC.date.modified" content="2025-11-24T18:17:00+05:30"><meta name="title" content="Configuring Webhook in Adobe Sign"><meta name="shortdesc" content="A webhook is a user-defined HTTPS request that enables Adobe Sign to notify your connector about envelope and agreement events."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="webhook;callback-endpoint;subscription;event;signature-agreement"><meta name="taxonomy" content="domain:e-signature;usecase:webhook-configuration;industry:enterprise-software"><meta name="tags" content="webhook,adobe-sign,events,callback,notifications"><meta name="usecase" content="configure-webhook"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c276EB44-BDF2-11F0-1247-09173F13E4C5"><meta name="DC.language" content="en"><title>Configuring Webhook in Adobe Sign</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c276EB44-BDF2-11F0-1247-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Configuring Webhook in Adobe Sign</h1>
+   
+   <div class="body conbody">
+      <p class="p">A webhook is a user-defined HTTPS request that is triggered when a subscribed event occurs
+         at the Adobe Acrobat Sign. When a subscribed event occurs, Acrobat Sign creates an HTTPS
+         POST with a JSON body and delivers that to the URL specified. Webhook enables real-time
+         notification of workflow events such as “signed” or “created” without the need to check
+         Acrobat Sign for status; your app is automatically notified when an event occurs.</p>
+      <p class="p">You must configure two webhooks in your Adobe Sign account:</p>
+      <ul class="ul">
+         <li class="li">Webhook to receive notifications when your document is signed or declined.</li>
+         <li class="li">Webhook to receive notifications when your document is sent for signature.</li>
+      </ul>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-eSignature_Integration_with_Power_Platform/setting_up_adobe_sign_208_208504971/208504971.html">Setting Up Adobe Sign</a></div></div></nav><article class="topic task nested1" aria-labelledby="ariaid-title2" lang="en" id="t2771B97-BDF2-11F0-2135-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">To configure webhook in Adobe Sign</h2>
+   
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Log in to your Adobe Sign account as an administrator.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Navigate to the Account tab.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Webhooks</span>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click Add icon (<img class="image" src="../attachments/208504998/208504999.png" width="16">) to add a new webhook.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter the name of the webhook.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Keep the Account option in the Scope field.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter Url: <code class="ph codeph">{Power Platform Instance Url}/api/esign/v1/webhook/adobesign</code>
+            </span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Select Agreement in the Events, and then:</span>
+            <ol type="a" class="ol substeps" id="t2771B97-BDF2-11F0-2135-09173F13E4C5__substeps_dvt_x5z_5cc">
+               <li class="li substep">
+                  <span class="ph cmd">Select <em class="ph i">Agreement workflow completed</em> and <em class="ph i">Agreement rejected</em> to
+                     receive notifications when your document is signed and declined,
+                     respectively.</span>
+               </li>
+               <li class="li substep">
+                  <span class="ph cmd">Select <em class="ph i">Agreement sent</em> to receive notifications when your document is
+                     sent for signature.</span>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">In the Notification Parameters, select <em class="ph i">Agreement Info</em>, <em class="ph i">Agreement Document Info</em>, <em class="ph i">Agreement Participant Info</em>, and <em class="ph i">Agreement Signed Document</em> options.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save</span>.</span>
+            <div class="itemgroup info">
+               <div class="note note note_note" id="t2771B97-BDF2-11F0-2135-09173F13E4C5__note_h3s_s5z_5cc"><span class="note__title">Note:</span> <div class="note__body">
+                  <p class="p">If the Power Platform Instance Url specified in the Url field is not active,
+                     Adobe Sign removes the configured webhooks. In this scenario, you must
+                     reconfigure webhooks in your Adobe Sign account.</p>
+               </div></div>
+            </div>
+         </li></ol></section>
+   </div>
+</article></article></article></main></body></html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metR-cesign-power,send-with-docusign,field-mapping,envelope-creation,recipient-definition,template-usage,callback-events,status-tracking,error-handling,document-generation,metr-cesign-power,docusign,docusign-account-setup,esignature-provider,integration-parameters,create-apps-and-keys,generate-integration-key,configure-redirect-url,set-up-provider-configuration,retrieve-secret-key,esignature-platform,provider-authentication,api-integration-setup,enterprise-signing-environment,digital-contract-workflow,oauth-integration,esignature-service,docusign-configuration,create-docusign-config,generate-consent-url,authorize-docusign,configure-auth-code,put-configurations,esignature-workflow,oauth-authorization-flow,provider-integration,transaction-setup,enterprise-esignature-integration,esignature-transaction,transaction-object,settings-endpoint,create-transaction,prepare-payload,api-request-body,generate-transaction-id,embedded-signing,payload-configuration,recipient-mapping,document-routing,enterprise-contract-process,transaction-id,recipient-id,tagging-url,prepare-for-signature,retrieve-tagging-url,add-recipient-fields,send-for-esignature,transaction-processing,document-signing-flow,tagging-page-usage,enterprise-signing-process,recipient-signing-sequence,transaction-details,transaction-api,get-transaction-details,retrieve-recipient-info,retrieve-document-info,api-response-handling,api-request-parameters,transaction-lifecycle,recipient-management,document-metadata,transaction-endpoint,get-tagging-url,open-tagging-page,send-document,recipient-signing-flow,tagging-page-behavior,document-preparation,power-esignature-integration,transaction-service,generate-signing-url,embedded-signing-flow,send-transaction,api-invocation,recipient-signing,esignature-operations,digital-transaction-processing,recipient-authentication,web-signing-environment,enterprise-approval-lifecycle"><meta name="DC.subject" content="metR-cesign-power,send-with-docusign,field-mapping,envelope-creation,recipient-definition,template-usage,callback-events,status-tracking,error-handling,document-generation,metr-cesign-power,docusign,docusign-account-setup,esignature-provider,integration-parameters,create-apps-and-keys,generate-integration-key,configure-redirect-url,set-up-provider-configuration,retrieve-secret-key,esignature-platform,provider-authentication,api-integration-setup,enterprise-signing-environment,digital-contract-workflow,oauth-integration,esignature-service,docusign-configuration,create-docusign-config,generate-consent-url,authorize-docusign,configure-auth-code,put-configurations,esignature-workflow,oauth-authorization-flow,provider-integration,transaction-setup,enterprise-esignature-integration,esignature-transaction,transaction-object,settings-endpoint,create-transaction,prepare-payload,api-request-body,generate-transaction-id,embedded-signing,payload-configuration,recipient-mapping,document-routing,enterprise-contract-process,transaction-id,recipient-id,tagging-url,prepare-for-signature,retrieve-tagging-url,add-recipient-fields,send-for-esignature,transaction-processing,document-signing-flow,tagging-page-usage,enterprise-signing-process,recipient-signing-sequence,transaction-details,transaction-api,get-transaction-details,retrieve-recipient-info,retrieve-document-info,api-response-handling,api-request-parameters,transaction-lifecycle,recipient-management,document-metadata,transaction-endpoint,get-tagging-url,open-tagging-page,send-document,recipient-signing-flow,tagging-page-behavior,document-preparation,power-esignature-integration,transaction-service,generate-signing-url,embedded-signing-flow,send-transaction,api-invocation,recipient-signing,esignature-operations,digital-transaction-processing,recipient-authentication,web-signing-environment,enterprise-approval-lifecycle"><meta name="keywords" content="metR-cesign-power, send-with-docusign, field-mapping, envelope-creation, recipient-definition, template-usage, callback-events, status-tracking, error-handling, document-generation, metr-cesign-power, docusign, docusign-account-setup, esignature-provider, integration-parameters, create-apps-and-keys, generate-integration-key, configure-redirect-url, set-up-provider-configuration, retrieve-secret-key, esignature-platform, provider-authentication, api-integration-setup, enterprise-signing-environment, digital-contract-workflow, metr-cesign-power, docusign, oauth-integration, esignature-service, docusign-configuration, create-docusign-config, generate-consent-url, authorize-docusign, configure-auth-code, put-configurations, esignature-workflow, oauth-authorization-flow, provider-integration, transaction-setup, enterprise-esignature-integration, metr-cesign-power, docusign, esignature-transaction, transaction-object, settings-endpoint, create-transaction, prepare-payload, api-request-body, generate-transaction-id, embedded-signing, esignature-workflow, payload-configuration, recipient-mapping, document-routing, enterprise-contract-process, metr-cesign-power, esignature-service, transaction-id, recipient-id, tagging-url, prepare-for-signature, retrieve-tagging-url, add-recipient-fields, send-for-esignature, transaction-processing, esignature-workflow, document-signing-flow, tagging-page-usage, enterprise-signing-process, recipient-signing-sequence, metr-cesign-power, docusign, transaction-details, esignature-service, transaction-api, get-transaction-details, retrieve-recipient-info, retrieve-document-info, api-response-handling, api-request-parameters, esignature-workflow, transaction-lifecycle, recipient-management, document-metadata, enterprise-esignature-integration, metr-cesign-power, docusign, tagging-url, esignature-service, transaction-endpoint, get-tagging-url, api-request-parameters, open-tagging-page, add-recipient-fields, send-document, esignature-workflow, recipient-signing-flow, tagging-page-behavior, transaction-processing, document-preparation, metr-cesign-power, power-esignature-integration, docusign, transaction-service, embedded-signing, generate-signing-url, embedded-signing-flow, send-transaction, api-invocation, recipient-signing, esignature-operations, digital-transaction-processing, recipient-authentication, web-signing-environment, enterprise-approval-lifecycle"><meta name="DC.relation" scheme="URI" content="../../Power-eSignature_Integration_with_Power_Platform/Power_esignature_api_refe_213452720/213452720.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-Cesign-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-11-24T18:17:00+05:30"><meta name="DC.date.modified" content="2025-11-24T18:17:00+05:30"><meta name="title" content="Sending Documents for eSignature with DocuSign"><meta name="shortdesc" content="This use case describes how to integrate DocuSign with Power Platform flows and send generated documents for signature."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="docusign-envelope;document;recipient;template;callback"><meta name="taxonomy" content="domain:e-signature;usecase:send-with-docusign;industry:enterprise-software"><meta name="tags" content="docusign,send,envelope,template,callback"><meta name="usecase" content="send-for-signature-docusign"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="t27970A2-BDF2-11F0-5157-09173F13E4C5"><meta name="DC.language" content="en"><title>Sending Documents for eSignature with DocuSign Using the Power eSignature API</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="t27970A2-BDF2-11F0-5157-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Sending Documents for eSignature with DocuSign Using the Power eSignature API</h1>
+   
+   <div class="body taskbody">
+      <section class="section context">
+         <p class="p">This use case describes how to integrate DocuSign with Power eSignature service, create
+            a transaction, and send the documents for eSignature using the Power eSignature
+            integration API. Perform the following tasks to send documents for eSignature:</p>
+      </section>
+      <section><ol class="ol steps"><li class="li step">
+            <span class="ph cmd">
+               <a class="xref" href="213452714.html#c27A3598-BDF2-11F0-2807-09173F13E4C5">Set up a DocuSign account</a>
+            </span>
+         </li><li class="li step">
+            <span class="ph cmd">
+               <a class="xref" href="213452714.html#t279EBF5-BDF2-11F0-1779-09173F13E4C5">Integrate DocuSign with the Power eSignature service</a>
+            </span>
+         </li><li class="li step">
+            <span class="ph cmd">
+               <a class="xref" href="213452714.html#c2799FD0-BDF2-11F0-1164-09173F13E4C5">Create a transaction</a>
+            </span>
+         </li><li class="li step">
+            <span class="ph cmd">
+               <a class="xref" href="213452714.html#c27A0503-BDF2-11F0-2692-09173F13E4C5">Send for eSignature</a>
+            </span>
+         </li></ol></section>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-eSignature_Integration_with_Power_Platform/Power_esignature_api_refe_213452720/213452720.html">Power eSignature API Reference</a></div></div></nav><article class="topic concept nested1" aria-labelledby="ariaid-title2" lang="en" id="c27A3598-BDF2-11F0-2807-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">Set Up a DocuSign Account</h2>
+   
+   
+   <div class="body conbody">
+      <p class="p">Before you start the setup, you must have a DocuSign account. Then, create apps and keys in
+         your DocuSign account. While creating apps and keys, you get integration key, secret key,
+         and redirect URL parameter values. These parameter values are required to create the
+         configuration for DocuSign.</p>
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+         <p class="p">For more information on creating apps and keys, see 
+<a class="xref" href="../creating_apps_and_keys_in_213452756/213452756.html">Creating Apps and Keys in DocuSign</a>. </p>
+      </div></div>
+   </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title3" lang="en" id="t279EBF5-BDF2-11F0-1779-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">Integrate DocuSign with the Power eSignature Service</h2>
+   
+   
+   <div class="body taskbody">
+      <section class="section context">
+         <p class="p">Integrating DocuSign with the Power eSignature service is a two-step OAuth process:</p>
+      </section>
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Create a configuration for DocuSign, which returns a consent URL. Open the consent URL in a browser, log in to your DocuSign account, and grant consent. After giving consent, you are redirected to the configured redirect URL in a new browser window. This URL contains an auth code. Copy the auth code from the URL. To create the configuration, call the following API:</span>
+            <div class="itemgroup info">
+               <div class="p">
+                  <table class="table"><caption></caption><colgroup><col><col></colgroup><tbody class="tbody">
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <span class="ph uicontrol">Method</span>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">PUT</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <span class="ph uicontrol">Endpoint</span>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">/configurations</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <span class="ph uicontrol">Request Body</span>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <pre class="pre">{
+    "signProvider": "DocuSign",
+        "value": "{\"integrationKey\":\"&lt;integrationKey&gt;\",
+              \"secretKey\":\"&lt;secretKey&gt;\",
+              \"redirectUri\":\"&lt;redirectUri&gt;\"}"
+        "default": false,
+        "active": true,      
+}</pre>
+                                 <p class="p">Replace &lt;integration key&gt;, &lt;secret key&gt;, and &lt;redirect URI&gt; with the exact values.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <span class="ph uicontrol">Response</span>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">A 200 response code with a consent URL.</p>
+                              </td>
+                           </tr>
+                        </tbody></table>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Configure the auth code using the following API:</span>
+            <div class="itemgroup info">
+               <div class="p">
+                  <table class="table"><caption></caption><colgroup><col><col></colgroup><tbody class="tbody">
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <span class="ph uicontrol">Method</span>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">PUT</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <span class="ph uicontrol">Endpoint</span>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">/configurations/codes</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <span class="ph uicontrol">Request Parameter</span>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">signProvider: Select DocuSign from the drop-down list.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <span class="ph uicontrol">Request Body</span>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <pre class="pre">{
+  "code": "string"
+}</pre>
+                                 <p class="p">Replace the string with the auth code.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <span class="ph uicontrol">Response</span>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">A 204 response code.</p>
+                              </td>
+                           </tr>
+                        </tbody></table>
+               </div>
+            </div>
+         </li></ol></section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title4" lang="en" id="c2799FD0-BDF2-11F0-1164-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title4">Create a Transaction</h2>
+   
+   
+   <div class="body conbody">
+      <p class="p">Once DocuSign and the Power eSignature service are integrated, you can create a
+         transaction. To create a transaction, you must prepare a transaction payload. Call the
+         following API to get the exact transaction payload field data:</p>
+      <div class="p">
+         <table class="table"><caption></caption><colgroup><col><col></colgroup><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">
+                           <span class="ph uicontrol">Method</span>
+                        </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">GET</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">
+                           <span class="ph uicontrol">Endpoint</span>
+                        </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">/settings</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">
+                           <span class="ph uicontrol">Request Parameter</span>
+                        </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">signProvider: Select DocuSign from the drop-down list.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">
+                           <span class="ph uicontrol">Response</span>
+                        </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">This API returns a transaction object with each field's settings, such as
+                           which fields are required, optional, or not supported, the data type, and
+                           the name and description of the fields.</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+      <p class="p">After preparing a transaction payload, call the following API to create a transaction:</p>
+      <div class="p">
+         <table class="table"><caption></caption><colgroup><col><col></colgroup><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">
+                           <span class="ph uicontrol">Method</span>
+                        </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">POST</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">
+                           <span class="ph uicontrol">Endpoint</span>
+                        </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">/transactions</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">
+                           <span class="ph uicontrol">Request Body</span>
+                        </p>
+                     </td>
+                     <td class="entry">
+                        <ul class="ul" id="c2799FD0-BDF2-11F0-1164-09173F13E4C5__ul_bbh_2dg_vcc">
+                           <li class="li">signProvider: Select DocuSign from the drop-down list.</li>
+                           <li class="li">Payload: Enter payload.<p class="p">
+                                 <strong class="ph b">Sample
+                              Payload</strong>
+                              </p>
+                              <pre class="pre" id="c2799FD0-BDF2-11F0-1164-09173F13E4C5__pre_cbh_2dg_vcc">{
+"name": "Agreement Document",
+"embeddedSigning": "true",
+"returnUrl": "&lt;Any URL&gt;",
+"recipients": [
+{
+"firstName": "First",
+"lastName": "Last",
+"email": "flast@Power.com",
+"signerType": "SIGNER",
+"index": "0"
+}
+],
+"email": {
+"subject": "Agreement Document for Sign"
+}
+}</pre>
+                           </li>
+                           <li class="li">File: Select the document.</li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">
+                           <span class="ph uicontrol">Response</span>
+                        </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">This API returns a transaction ID, which you can use to send the
+                           transaction to the recipients.</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+         <p class="p">When the embeddedSigning value is true, the recipient does not receive an invitation
+            email to review and sign the document. You must generate a signing URL from the API and
+            send it to the recipients.</p>
+      </div></div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title5" lang="en" id="c27A0503-BDF2-11F0-2692-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title5">Send for Signature</h2>
+   
+   
+   <div class="body conbody">
+      <p class="p">After creating a transaction, you need a transaction ID, recipient ID, and document ID to get the tagging URL. Once you get the tagging URL, you can add fields for each recipient to your document and send the document for eSignature. </p>
+   </div>
+<article class="topic reference nested2" aria-labelledby="ariaid-title6" lang="en" id="r279D266-BDF2-11F0-1581-09173F13E4C5">
+   <h3 class="title topictitle3" id="ariaid-title6">Get transaction details</h3>
+   
+   
+   <div class="body refbody">
+      <section class="section">
+         <p class="p">Call the following API to get the transaction ID, recipient ID, and document ID:</p>
+         <div class="p">
+            <table class="table"><caption></caption><colgroup><col><col></colgroup><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry">
+                           <p class="p">
+                              <span class="ph uicontrol">Method</span>
+                           </p>
+                        </td>
+                        <td class="entry">
+                           <p class="p">GET</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry">
+                           <p class="p">
+                              <span class="ph uicontrol">Endpoint</span>
+                           </p>
+                        </td>
+                        <td class="entry">
+                           <p class="p">/transaction/{transactionId}</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry">
+                           <p class="p">
+                              <span class="ph uicontrol">Request Parameters</span>
+                           </p>
+                        </td>
+                        <td class="entry">
+                           <ul class="ul" id="r279D266-BDF2-11F0-1581-09173F13E4C5__ul_fzx_kdg_vcc">
+                              <li class="li">transactionId: Enter a transaction ID.</li>
+                              <li class="li">signProvider: Select DocuSign from the drop-down list.</li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry">
+                           <p class="p">
+                              <span class="ph uicontrol">Response</span>
+                           </p>
+                        </td>
+                        <td class="entry">
+                           <p class="p">This API returns transaction details such as recipient details, document details, and reminder and expiration settings.</p>
+                        </td>
+                     </tr>
+                  </tbody></table>
+         </div>
+      </section>
+   </div>
+</article><article class="topic concept nested2" aria-labelledby="ariaid-title7" lang="en" id="c279B915-BDF2-11F0-1062-09173F13E4C5">
+   <h3 class="title topictitle3" id="ariaid-title7">Get a tagging URL</h3>
+   
+   
+   <div class="body conbody">
+      <p class="p">Call the following API to get the tagging URL:</p>
+      <div class="p">
+         <table class="table"><caption></caption><colgroup><col><col></colgroup><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">
+                           <span class="ph uicontrol">Method</span>
+                        </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">GET</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">
+                           <span class="ph uicontrol">Endpoint</span>
+                        </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">/transaction/{transactionId}/taggingurls</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">
+                           <span class="ph uicontrol">Request Parameters</span>
+                        </p>
+                     </td>
+                     <td class="entry">
+                        <ul class="ul" id="c279B915-BDF2-11F0-1062-09173F13E4C5__ul_m44_f2g_vcc">
+                           <li class="li">transactionId: Enter a transaction ID.</li>
+                           <li class="li">signProvider: Select DocuSign from the drop-down list.</li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">
+                           <span class="ph uicontrol">Response</span>
+                        </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">This API returns a tagging URL, transaction ID, recipient ID and Document
+                           ID.</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+      <p class="p">Open the tagging URL in a browser to view the tagging page, which enables you to add fields
+         for each recipient to your document. Click <span class="ph uicontrol">Send</span> to send the document
+         for eSignature. If you set the embeddedSigning parameter value to false when creating a
+         transaction, the recipient receives an invitation email to review and sign the document.
+         The recipient can open the document from the email and sign it.</p>
+   </div>
+</article><article class="topic concept nested2" aria-labelledby="ariaid-title8" lang="en" id="c27A1D4C-BDF2-11F0-4042-09173F13E4C5">
+   <h3 class="title topictitle3" id="ariaid-title8">Send the transaction</h3>
+   
+   
+   <div class="body conbody">
+      <p class="p">If you set the embeddedSigning parameter value to true when creating a transaction, the
+         recipient does not receive an invitation email to review and sign the document. You must
+         generate a signing URL and send it to the recipients. Call the following API to get the
+         signing URL:</p>
+      <div class="p">
+         <table class="table"><caption></caption><colgroup><col><col></colgroup><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">
+                           <span class="ph uicontrol">Method</span>
+                        </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">GET</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">
+                           <span class="ph uicontrol">Endpoint</span>
+                        </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">/transaction/{transactionId}/recipients/{recipientId}/signingurls</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">
+                           <span class="ph uicontrol">Request Parameters</span>
+                        </p>
+                     </td>
+                     <td class="entry">
+                        <ul class="ul" id="c27A1D4C-BDF2-11F0-4042-09173F13E4C5__ul_kzy_h2g_vcc">
+                           <li class="li">transactionId: Enter a transaction ID.</li>
+                           <li class="li">recipientId: Enter a recipient ID.</li>
+                           <li class="li">signProvider: Select DocuSign from the drop-down list.</li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">
+                           <span class="ph uicontrol">Response</span>
+                        </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">This API returns a signing URL, transaction ID, recipient ID, and
+                           Document ID.</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+      <p class="p">Once you get the signing URL, you can send it to the recipients. Call the following API to send the transaction:</p>
+      <div class="p">
+         <table class="table"><caption></caption><colgroup><col><col></colgroup><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">
+                           <span class="ph uicontrol">Method</span>
+                        </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">POST</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">
+                           <span class="ph uicontrol">Endpoint</span>
+                        </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">/transaction/{transactionId}</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">
+                           <span class="ph uicontrol">Request Parameters</span>
+                        </p>
+                     </td>
+                     <td class="entry">
+                        <ul class="ul" id="c27A1D4C-BDF2-11F0-4042-09173F13E4C5__ul_alb_m2g_vcc">
+                           <li class="li">transactionId: Enter a transaction ID.</li>
+                           <li class="li">signProvider: Select DocuSign from the drop-down list.</li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">
+                           <span class="ph uicontrol">Response</span>
+                        </p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">A 204 response code.</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+      <p class="p">The recipient can open the document from the signing URL and sign it.</p>
+   </div>
+</article></article></article></article></main></body></html>

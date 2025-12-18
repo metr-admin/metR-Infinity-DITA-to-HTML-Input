@@ -1,0 +1,68 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metr-cesign-power,docusign-integration,webhook-integration,event-notification,callback-handler,configure-webhook,set-up-oauth,subscribe-events,verify-payload,retry-handling,signing-event-notification,document-lifecycle-events,integration-testing,pre-production-validation,enterprise-automation,docusign,oauth-2-0,authorization-server,client-credentials,configure-oauth,enter-client-id,enter-client-secret,admin-login,navigate-settings,esignature-authentication,integration-security,authorization-flow,account-administration,power-esignature-environment,custom-application,webhook-configuration,docusign-webhooks,power-platform-esignature,add-application,configure-webhook-events,include-oauth-settings,save-configuration,select-triggering-events,workflow-integration,envelope-events,esignature-notification-flow,administration-settings,enterprise-esignature-environment"><meta name="DC.subject" content="metr-cesign-power,docusign-integration,webhook-integration,event-notification,callback-handler,configure-webhook,set-up-oauth,subscribe-events,verify-payload,retry-handling,signing-event-notification,document-lifecycle-events,integration-testing,pre-production-validation,enterprise-automation,docusign,oauth-2-0,authorization-server,client-credentials,configure-oauth,enter-client-id,enter-client-secret,admin-login,navigate-settings,esignature-authentication,integration-security,authorization-flow,account-administration,power-esignature-environment,custom-application,webhook-configuration,docusign-webhooks,power-platform-esignature,add-application,configure-webhook-events,include-oauth-settings,save-configuration,select-triggering-events,workflow-integration,envelope-events,esignature-notification-flow,administration-settings,enterprise-esignature-environment"><meta name="keywords" content="metr-cesign-power, docusign-integration, webhook-integration, event-notification, callback-handler, configure-webhook, set-up-oauth, subscribe-events, verify-payload, retry-handling, signing-event-notification, document-lifecycle-events, integration-testing, pre-production-validation, enterprise-automation, metr-cesign-power, docusign, oauth-2-0, authorization-server, client-credentials, configure-oauth, enter-client-id, enter-client-secret, admin-login, navigate-settings, esignature-authentication, integration-security, authorization-flow, account-administration, power-esignature-environment, metr-cesign-power, custom-application, webhook-configuration, docusign-webhooks, power-platform-esignature, add-application, configure-webhook-events, include-oauth-settings, save-configuration, select-triggering-events, workflow-integration, envelope-events, esignature-notification-flow, administration-settings, enterprise-esignature-environment"><meta name="DC.relation" scheme="URI" content="../../Power-eSignature_Integration_with_Power_Platform/setting_up_docusign_vjune_213456521/213456521.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-Cesign-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-11-24T18:00:00+05:30"><meta name="DC.date.modified" content="2025-11-24T18:00:00+05:30"><meta name="title" content="Configuring Webhook in DocuSign"><meta name="shortdesc" content="How to configure DocuSign webhooks to notify the connector about signing events and how to set up OAuth and event subscriptions."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="webhook;event-subscription;oauth-client;callback-url;signature-event"><meta name="taxonomy" content="domain:electronic-signature;usecase:event-notification;industry:enterprise-software"><meta name="tags" content="docusign,webhook,oauth,event-notification,callback"><meta name="usecase" content="configure-docusign-webhook"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c277349E-BDF2-11F0-3932-09173F13E4C5"><meta name="DC.language" content="en"><title>Configuring Webhook in DocuSign</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c277349E-BDF2-11F0-3932-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Configuring Webhook in DocuSign</h1>
+   
+   <div class="body conbody">
+      <p class="p">Webhook notifies when certain triggering events occur in your eSignature workflows. For
+         example, you can receive a notification whenever an individual recipient signs a document
+         or when an envelope is fully signed and completed. To configure the webhook for DocuSign,
+         you must set up OAUTH2.0 and add an application to your DocuSign account.</p>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-eSignature_Integration_with_Power_Platform/setting_up_docusign_vjune_213456521/213456521.html">Setting Up DocuSign</a></div></div></nav><article class="topic task nested1" aria-labelledby="ariaid-title2" lang="en" id="t2777D5C-BDF2-11F0-1544-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">To set up OAUTH 2.0</h2>
+   
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Log in to your DocuSign account as an administrator.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Go to <span class="ph uicontrol">Settings</span>. In the options menu on the left under Integrations, click <span class="ph uicontrol">Connect</span>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Navigate to the OAUTH 2.0 tab.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter the client ID, client secret, and authorization server URL.</span>
+            <div class="itemgroup info">
+               <div class="note note note_note" id="t2777D5C-BDF2-11F0-1544-09173F13E4C5__note_odp_nt2_vcc"><span class="note__title">Note:</span> <div class="note__body">
+                  <p class="p">Contact Power support for the client ID, client secret, and authorization
+                     server URL.</p>
+               </div></div>
+            </div>
+         </li></ol></section>
+   </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title3" lang="en" id="t2776418-BDF2-11F0-8795-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">To add an application</h2>
+   
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Navigate to the Applications tab.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Add Configurations </span>and select
+                  <span class="ph uicontrol">Custom</span> from the pull-down menu.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter the name of the application in the <span class="ph uicontrol">Name</span> field.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter <code class="ph codeph">{Power Platform Instance Url}/api/esign/v1/webhook/docusign</code> in the <span class="ph uicontrol">URL to Publish </span>field.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Select the following Envelope and Recipients triggering events:</span>
+            <div class="itemgroup info">
+               <ol class="ol" type="a">
+                  <li class="li">Envelope Sent</li>
+                  <li class="li">Envelope Signed/Completed</li>
+                  <li class="li">Envelope Declined</li>
+                  <li class="li">Envelope Voided</li>
+               </ol>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">In the Integration and Security Settings, select <span class="ph uicontrol">Include OAuth (Recommended)</span>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save Configuration</span>.</span>
+            <div class="itemgroup info">
+               <div class="note note note_note" id="t2776418-BDF2-11F0-8795-09173F13E4C5__note_aj1_5t2_vcc"><span class="note__title">Note:</span> <div class="note__body">
+                  <p class="p">Keep the default options in the remaining fields.</p>
+               </div></div>
+            </div>
+         </li></ol></section>
+   </div>
+</article></article></article></main></body></html>

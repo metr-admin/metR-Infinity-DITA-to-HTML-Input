@@ -1,0 +1,44 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metr-365-power,dynamics-365,power,modifiedon-mapper,timestamp-sync-service,sync-trigger,map-modifiedon,configure-modified-date,prepare-object-sync,ensure-modified-field,timestamp-validation,sync-sequencing,revenue-lifecycle-management,data-consistency,record-auditing,dynamics-power-integration,object-sync-lifecycle,modifiedon-field,timestamp-service,sync-engine,map-modifiedon-field,configure-timestamp-mapping,validate-modifiedon,prepare-sync,enable-timestamp-alignment,map-audit-fields,object-sync,record-tracking,data-integrity,audit-trail-consistency"><meta name="DC.subject" content="metr-365-power,dynamics-365,power,modifiedon-mapper,timestamp-sync-service,sync-trigger,map-modifiedon,configure-modified-date,prepare-object-sync,ensure-modified-field,timestamp-validation,sync-sequencing,revenue-lifecycle-management,data-consistency,record-auditing,dynamics-power-integration,object-sync-lifecycle,modifiedon-field,timestamp-service,sync-engine,map-modifiedon-field,configure-timestamp-mapping,validate-modifiedon,prepare-sync,enable-timestamp-alignment,map-audit-fields,object-sync,record-tracking,data-integrity,audit-trail-consistency"><meta name="keywords" content="metr-365-power, dynamics-365, power, modifiedon-mapper, timestamp-sync-service, sync-trigger, map-modifiedon, configure-modified-date, prepare-object-sync, ensure-modified-field, timestamp-validation, sync-sequencing, revenue-lifecycle-management, revenue-lifecycle-management, data-consistency, record-auditing, dynamics-power-integration, object-sync-lifecycle, dynamics-365, power, metr-365-power, modifiedon-field, timestamp-service, sync-engine, map-modifiedon-field, configure-timestamp-mapping, validate-modifiedon, prepare-sync, enable-timestamp-alignment, map-audit-fields, object-sync, record-tracking, data-integrity, revenue-lifecycle-management, dynamics-power-integration, audit-trail-consistency"><meta name="DC.relation" scheme="URI" content="../../Power-Power_Dynamics_365_Connector/mapping-fields_143887215_143887215/importing_and_exporting_field_mapping.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-365-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Yashshree"><meta name="DC.date.created" content="2025-11-24+05:30"><meta name="DC.date.modified" content="2025-11-24"><meta name="title" content="Mapping Modified On Date"><meta name="shortdesc" content="Create a mapping for the Modified Date/On field before initiating an object sync so change timestamps stay consistent between Dynamics 365 and Power."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="Dynamics 365;Power;ModifiedOn;field;object"><meta name="taxonomy" content="domain:revenue-operations;usecase:map-modifiedon;industry:revenue-lifecycle-management"><meta name="tags" content="modifiedon,timestamps,data-sync,dynamics-365,power,object-sync"><meta name="usecase" content="map the Modified Date/On field to maintain timestamp consistency during object synchronization"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c246CAAD-BDF2-11F0-5214-09173F13E4C5"><meta name="DC.language" content="en"><title>Mapping Modified On Date</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c246CAAD-BDF2-11F0-5214-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Mapping Modified On Date</h1>
+   
+   <div class="body conbody">
+      <p class="p">You must create a mapping for the Modified Date/On field prior to initiating an object sync.</p>
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+         <p class="p">There is no need to create a "ModifiedOn" custom field as it already exists in both Dynamics 365 and Power.</p>
+      </div></div>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-Power_Dynamics_365_Connector/mapping-fields_143887215_143887215/importing_and_exporting_field_mapping.html">Importing and Exporting Field Mapping</a></div></div></nav><article class="topic task nested1" aria-labelledby="ariaid-title2" lang="en" id="t246F28C-BDF2-11F0-4439-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">To map the ModifiedOn field for object sync</h2>
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">From the left panel under Groups, select <span class="ph uicontrol">Map Fields</span>.</span>
+            <div class="itemgroup stepresult"> The Map Fields page is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">From the ribbon at the top of the page, click <span class="ph uicontrol">New</span>. </span>
+            <div class="itemgroup stepresult">The New Map Field page is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter "ModifiedOn" in the <span class="ph uicontrol">Name</span> field.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter "ModifiedOn" in the <span class="ph uicontrol">Display Name </span>field.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter "DateTime" in the <span class="ph uicontrol">Type </span>field.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter "modifiedon" in the <span class="ph uicontrol">Dynamics Field Name </span>field. </span>
+            <div class="itemgroup info">
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">To avoid errors, copy-and-paste the field name from Dynamics 365.</div></div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter "LastModifiedDate" in the <span class="ph uicontrol">Power Field Name</span> field.</span>
+            <div class="itemgroup info">
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">To avoid errors, copy-and-paste the field name from Power.</div></div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Search and select the <span class="ph uicontrol">Object Mapping Name</span>. This is the mapping name of the field's object (for example "Opportunity").</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save</span> or <span class="ph uicontrol">Save &amp; Close</span>.</span>
+         </li></ol></section>
+   </div>
+</article></article></article></main></body></html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metr-contractmac-power,power-x-author-mac,clm-dashboard,document-lifecycle-service,salesforce-connector,document-check-out,document-versioning,edit-permissions,audit-and-trace,metadata-sync,contract-authoring,enterprise-salesforce-workflow,legal-compliance,cross-functional-collaboration,document-approval-life-cycle,x-author-contracts,document-locking-service,clm-platform,release-document-lock,force-unlock,check-in-procedure,unlock-notification,conflict-resolution,stale-lock-recovery,document-check-in-process,user-session-termination,salesforce-integrated-documents,legal-operations,salesforce-integration,clm-system,refresh-document-lock-status,check-out-check-in-workflow,lock-status-refresh,sync-lock-state,alert-and-notification,contract-editing-workflow,document-lock-management,concurrent-editing-controls,salesforce-org,legal-team-collaboration,document-editor,check-out-service,open-checked-out-document,resume-editing,local-changes-sync,conflict-detection,save-and-publish,in-progress-editing,authoring-session,collaborative-editing,document-lock,legal-document-preparation"><meta name="DC.subject" content="metr-contractmac-power,power-x-author-mac,clm-dashboard,document-lifecycle-service,salesforce-connector,document-check-out,document-versioning,edit-permissions,audit-and-trace,metadata-sync,contract-authoring,enterprise-salesforce-workflow,legal-compliance,cross-functional-collaboration,document-approval-life-cycle,x-author-contracts,document-locking-service,clm-platform,release-document-lock,force-unlock,check-in-procedure,unlock-notification,conflict-resolution,stale-lock-recovery,document-check-in-process,user-session-termination,salesforce-integrated-documents,legal-operations,salesforce-integration,clm-system,refresh-document-lock-status,check-out-check-in-workflow,lock-status-refresh,sync-lock-state,alert-and-notification,contract-editing-workflow,document-lock-management,concurrent-editing-controls,salesforce-org,legal-team-collaboration,document-editor,check-out-service,open-checked-out-document,resume-editing,local-changes-sync,conflict-detection,save-and-publish,in-progress-editing,authoring-session,collaborative-editing,document-lock,legal-document-preparation"><meta name="keywords" content="metr-contractmac-power, power-x-author-mac, clm-dashboard, document-lifecycle-service, salesforce-connector, document-check-out, document-versioning, edit-permissions, audit-and-trace, metadata-sync, contract-authoring, enterprise-salesforce-workflow, legal-compliance, cross-functional-collaboration, document-approval-life-cycle, metr-contractmac-power, x-author-contracts, power-x-author-mac, document-locking-service, clm-platform, release-document-lock, force-unlock, check-in-procedure, unlock-notification, conflict-resolution, stale-lock-recovery, document-check-in-process, user-session-termination, salesforce-integrated-documents, legal-operations, metr-contractmac-power, x-author-contracts, power-x-author-mac, salesforce-integration, clm-system, refresh-document-lock-status, check-out-check-in-workflow, lock-status-refresh, sync-lock-state, alert-and-notification, contract-editing-workflow, document-lock-management, concurrent-editing-controls, salesforce-org, legal-team-collaboration, metr-contractmac-power, power-x-author-mac, document-editor, check-out-service, salesforce-connector, open-checked-out-document, resume-editing, local-changes-sync, conflict-detection, save-and-publish, in-progress-editing, authoring-session, collaborative-editing, document-lock, legal-document-preparation"><meta name="DC.relation" scheme="URI" content="../../Power-X-Author_Contracts_for_Mac/checking_out_an_agreement_45220108/to_check_out_a_document.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-contractmac-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-11-24T17:43:00+05:30"><meta name="DC.date.modified" content="2025-11-24T17:43:00+05:30"><meta name="title" content="Document lifecycle and check-out reference (45220101)"><meta name="shortdesc" content="Reference material covering document check-out, version tracking and lifecycle within the CLM system."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="check-out-record;version-id;approval-request;metadata-fields;user-permissions"><meta name="taxonomy" content="domain:revenue-lifecycle-management;usecase:document-lifecycle;industry:financial-services"><meta name="tags" content="check-out,versioning,audit,metadata-sync"><meta name="usecase" content="reference for document lifecycle operations and version control"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c295DBBA-BDF2-11F0-5086-09173F13E4C5"><meta name="DC.language" content="en"><title>Locking and Unlocking Documents</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c295DBBA-BDF2-11F0-5086-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Locking and Unlocking Documents</h1>
+   
+   <div class="body conbody">
+      <p class="p">When you check out a document in X-Author, the document is locked for editing and cannot be checked out by anyone else. Anyone with proper permissions for the document's agreement record can still view and/or download the document, but they cannot make edits and check the document back in while you have it locked.</p>
+      <p class="p">You can always check the lock status of a document by clicking on the <img class="image" id="c295DBBA-BDF2-11F0-5086-09173F13E4C5__image_m3w_dkn_12c" src="../attachments/45220101/49676309.png" width="16">
+         <strong class="ph b">Lock Status</strong> tab.</p>
+      <p class="p">Locks can only be released when a user either manually releases the lock, or checks the document into Salesforce.</p>
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+         <p class="p">By default, document locks are used for agreement documents. However, if the Comply
+            System Property <strong class="ph b">Use Agreement Locks for Versioning</strong> is enabled the agreement will
+            be locked instead of a single document. This means that while you or anyone else has a
+            document checked out that no other documents for the same agreement record can be
+            checked out. Be sure to check whether or not this property is enabled before you begin
+            editing a contract document.</p>
+      </div></div>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-X-Author_Contracts_for_Mac/checking_out_an_agreement_45220108/to_check_out_a_document.html">To check out a document</a></div></div></nav><article class="topic task nested1" aria-labelledby="ariaid-title2" lang="en" id="t296354E-BDF2-11F0-4210-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">To release a document lock</h2>
+   
+   <div class="body taskbody">
+      <section class="section context">
+         <p class="p">Before you can release a lock on a document, it must be checked out. Releasing a lock reverts the check-out of the document you are working on <em class="ph i">without checking it in</em>. You can only release a lock when you have the document open in X-Author.</p>
+      </section>
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">From the X-Author pane, click on the <img class="image" id="t296354E-BDF2-11F0-4210-09173F13E4C5__image_cp1_gkn_12c" src="../attachments/45220101/49676309.png" width="16">
+               <span class="ph uicontrol">Lock Status</span> tab icon.</span>
+            <div class="itemgroup stepresult">
+               <p class="p">The Lock Status page shows agreement details and information on the current
+                  document lock.</p>
+               <figure class="fig fignone" id="t296354E-BDF2-11F0-4210-09173F13E4C5__fig_lgl_r4j_12c">
+                  <br><img class="image" id="t296354E-BDF2-11F0-4210-09173F13E4C5__image_mgl_r4j_12c" height="400" src="../attachments/45220101/49676310.png"><br>
+               </figure>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Release Lock</span> on the Lock Status page.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">If you chose to release the lock, the document check-out is reverted. Any changes
+               you made while the document was checked out are not saved.</span>
+            <div class="itemgroup stepresult">
+               <p class="p"> The page refreshes to reflect unlocked status and most menu options are
+                  disabled.</p>
+               <figure class="fig fignone" id="t296354E-BDF2-11F0-4210-09173F13E4C5__fig_px2_m2q_12c">
+                  <br><img class="image" id="t296354E-BDF2-11F0-4210-09173F13E4C5__image_rx2_m2q_12c" height="400" src="../attachments/45220101/49676311.png"><br>
+               </figure>
+            </div>
+         </li></ol></section>
+      <section class="section postreq">
+         <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+            <p class="p">If you release a document lock in error and want to continue working with the document, go to the Lock Status page and click <span class="ph uicontrol">Acquire Lock</span>.</p>
+         </div></div>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title3" lang="en" id="c2961DB4-BDF2-11F0-1685-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">Refreshing document lock status</h2>
+   
+   <div class="body conbody">
+      <p class="p">Because more than one user may have access to agreement documents on an agreement record,
+         you may come across a situation where another user has checked out the document. </p>
+      <p class="p">From the Lock Status tab, you can click the <span class="ph uicontrol">Refresh Lock</span> button at
+         any time to display the current lock status for the open document (except for when you have
+         checked out the document already). If the document is checked out by another user, the only
+         actions you can take are to <strong class="ph b">List Agreements</strong> and Refresh Lock. </p>
+      <p class="p">Consider the following example:</p>
+      <div class="note note note_note" id="c2961DB4-BDF2-11F0-1685-09173F13E4C5__note_afc_rkn_12c"><span class="note__title">Note:</span> <div class="note__body">
+         <p class="p">Use Case: Reacquiring the document lock from another user</p>
+         <p class="p">You have opened a contract document version from the agreement's Document Version
+            Details in Microsoft Word. Another user checks out the document before you.</p>
+         <p class="p">A message is displayed showing that the other user controls the lock.</p>
+         <figure class="fig fignone" id="c2961DB4-BDF2-11F0-1685-09173F13E4C5__fig_hd5_hpj_12c">
+            <br><img class="image" id="c2961DB4-BDF2-11F0-1685-09173F13E4C5__image_id5_hpj_12c" height="400" src="../attachments/45220101/49676312.png"><br>
+         </figure>
+         <p class="p">The document cannot be checked out, because another user has already locked it. </p>
+         <p class="p">You click on the <span class="ph uicontrol">Lock Status</span> tab to view the current lock status.
+            The "Document locked by" field shows the document is locked by another user.</p>
+         <figure class="fig fignone" id="c2961DB4-BDF2-11F0-1685-09173F13E4C5__fig_pmh_lpj_12c">
+            <br><img class="image" id="c2961DB4-BDF2-11F0-1685-09173F13E4C5__image_qmh_lpj_12c" height="400" src="../attachments/45220101/49676313.png"><br>
+         </figure>
+         <p class="p">The other user releases the document lock or checks in a new version. You click
+               <span class="ph uicontrol">Refresh Lock</span> to refresh the current lock status. The pane
+            refreshes, showing updated lock status details.</p>
+         <figure class="fig fignone" id="c2961DB4-BDF2-11F0-1685-09173F13E4C5__fig_vn4_npj_12c">
+            <br><img class="image" id="c2961DB4-BDF2-11F0-1685-09173F13E4C5__image_wn4_npj_12c" height="400" src="../attachments/45220101/49676311.png"><br>
+         </figure>
+         <p class="p">You click <span class="ph uicontrol">Acquire Lock</span> to lock the document and start working.
+            All menu items are enabled.</p>
+      </div></div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title4" lang="en" id="c2960738-BDF2-11F0-1901-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title4">Opening a Document You Have Already Checked Out</h2>
+   
+   <div class="body conbody">
+      <p class="p">In some situations, you may close an open document in X-Author which you have checked out, without releasing the lock or checking in the document. The document remains locked by you, and cannot be edited by anyone else until you release the lock or complete a check-in.</p>
+      <p class="p">When you open an agreement document in X-Author that is already locked by you, you should see the following message displayed at the bottom of the X-Author pane.</p>
+      <figure class="fig fignone" id="c2960738-BDF2-11F0-1901-09173F13E4C5__fig_y5w_qpj_12c">
+         <br><img class="image" id="c2960738-BDF2-11F0-1901-09173F13E4C5__image_z5w_qpj_12c" src="../attachments/45220101/49676307.png" width="300"><br>
+      </figure>
+      <p class="p">Continue working on the document as normal.</p>
+   </div>
+</article></article></article></main></body></html>

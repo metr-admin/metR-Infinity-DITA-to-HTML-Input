@@ -1,0 +1,429 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="description" content="This section contains the frequently asked questions. It also provides the solution to frequently occurring errors."><meta name="DC.subject" content="docusign-services,frequently-asked-questions,support-content,reference-information,service-documentation,metR-dsign-power,reviewing-faqs,resolving-common-questions,addressing-known-issues,finding-answers,understanding-service-behaviour,troubleshooting-problems,user-support,service-troubleshooting,help-content,operational-guidance,enterprise-software,issue-resolution"><meta name="keywords" content="docusign-services, frequently-asked-questions, support-content, reference-information, service-documentation, metR-dsign-power, reviewing-faqs, resolving-common-questions, addressing-known-issues, finding-answers, understanding-service-behaviour, troubleshooting-problems, user-support, service-troubleshooting, help-content, operational-guidance, enterprise-software, issue-resolution"><meta name="DC.relation" scheme="URI" content="../../Power-DocuSign_Services/docusign_services_for_use_154938290/154938290.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-Dsign-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-15+05:30"><meta name="DC.date.modified" content="2025-12-15"><meta name="title" content="FAQs"><meta name="shortdesc" content="Provides answers to frequently asked questions and solutions to common issues in DocuSign Services."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="DocuSign Services;frequently asked questions;support content"><meta name="taxonomy" content="domain:support;usecase:resolve-common-questions;industry:enterprise software and digital transaction management"><meta name="tags" content="faqs,support,questions,troubleshooting"><meta name="usecase" content="resolve common questions and issues in DocuSign Services"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="d208aA"><meta name="DC.language" content="en"><title>FAQs</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="d208aA"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">FAQs</h1>
+   
+   
+   
+   <div class="body conbody"><p class="shortdesc">This section contains the frequently asked questions. It also provides the solution to frequently occurring errors.</p>
+      <p class="p">I am getting a Timeout Error.</p>
+      <p class="p">When you send a document out for signature, you would sometimes not receive an email or would be taken back to the agreement screen with no visible change; the tags would not show up properly; you might get a locked template error.</p>
+      <p class="p">This error is diagnosed in the debug log as a <strong class="ph b">Locked Template</strong> error.</p>
+      <p class="p">This error occurs when the server takes long time to respond, meanwhile, the other REST calls would keep on trying; causing the lock on the template.</p>
+      <p class="p">
+         <strong class="ph b">Solution:</strong> Increase the HTTP Timeout time by performing the following steps.</p>
+      <p class="p">Go to <strong class="ph b">Setup &gt; Develop &gt; Custom Settings &gt; DocuSign System Properties</strong> and click <strong class="ph b">Edit</strong>.</p>
+      <p class="p">In <strong class="ph b">HTTP Timeout</strong>, enter 30,000.</p>
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+         <p class="p">
+            <strong class="ph b">Note</strong>
+         </p>
+         <p class="p">You can enter any value from 30,000 to 120,000 as 120,000 is the SFDC limit for setting the Timeout Time.</p>
+      </div></div>
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">I am getting a System Error displaying the message: Your request could not be completed. Try again or contact your support team, if the error persists. <p class="p">When you send a document out for signature, you might get a System Error displaying the following message: Your request could not be completed. Try again or contact your support team, if the error persists. </p>
+         <p class="p">This error occurs when the REST Call was unsuccessful in being processed by the DocuSign server and could be due to multiple reasons like locking of template, signing issues,or timeout error.</p>
+         <p class="p">
+            <strong class="ph b">Solution:</strong> Ask your system admin to view the Apex Jobs and determine the issue.</p>
+         <p class="p">In order to access the Apex Jobs, go to <strong class="ph b">Setup &gt; Monitor &gt; Jobs &gt; Apex Jobs</strong> and view the job that was aborted.</p>
+         <div class="p">
+            <figure class="fig fignone">
+               <br><img class="image" src="../attachments/143889373/143889392.png" width="500"><br>
+            </figure>
+         </div>After I send the document for eSignature, the status of record will not update automatically. <p class="p">Once you send the document for eSignature, the status of the record can take a little longer to update and may require a page refresh. </p>How do I know the format for a Salesforce merge field when editing the email? <p class="p">You can go to the Email Templates in Salesforce and use their template creation as a way of finding the field's merge field syntax. It will allow you to choose the object and field to generate the merge field. </p>Which file formats are supported while sending the document for eSignature? <p class="p">The following formats are supported while sending a document for signature:</p>
+         <p class="p">DOCX, DOC, PDF, RTF </p> I am missing the "_____" button<p class="p"> Buttons in the eSignature screens are exposed through the custom settings and need to be set by the admin. Button on the record are exposed via the page layout editor. </p>Can I filter the attachments that are displayed on the Add Attachments page? <p class="p">Yes, you can filter the attachments that are displayed on the Add Attachments page.</p>
+         <p class="p">DocuSign Connector provides an option to pass a list of attachment ids (CSV) as a parameter. The parameter name is <strong class="ph b">documentIdsCsv. </strong>
+         </p>
+         <p class="p">You have to create a custom formula field on the Agreement / Proposal object that redirects to the Select Attachment page and passes the document ids to it in the parameter, and use the formula field for sending the document(s) for eSignature.</p>How do I implement Get Custom Tabs and Set Custom Tabs Callback Classes?<p class="p">When you send the documents for eSignature, you can add custom DocuSign tags to the document. You can choose to set some initial values to the fields and also fetch the updated values if any from the fields in the template.</p>
+         <p class="p">In order to perform such activities, you must implement callback classes. </p>
+         <p class="p">You must perform the following steps to implement the classes.</p>
+         <ol class="ol">
+            <li class="li"> Add <strong class="ph b">Custom Fields</strong> to the DocuSignDefaultRecipient2_c object. <p class="p">For more information on adding custom fields, refer to 
+<a class="xref" href="../adding_custom_fields_to_t_203495850/203495850.html">Adding Custom Fields</a>.</p>
+            </li>
+            <li class="li">Create the <strong class="ph b">Custom Tags</strong> in DocuSign account.<p class="p">For more information on creating custom tags, refer to 
+<a class="xref" href="../configuring_docusign_tags_143889343/143889343.html">Creating DocuSign Tags</a>.</p>
+            </li>
+            <li class="li">Create the <strong class="ph b">Template</strong> with the appropriate Custom Tags.<p class="p">For more information on creating templates, refer to 
+<a class="xref" href="../configuring_templates_vsu_148121110/148121110.html">Creating Templates</a>.</p>
+            </li>
+            <li class="li">Add the classes under <strong class="ph b">Apex Classes</strong>.<p class="p">a. Go to <strong class="ph b">Setup &gt; Build &gt; Apex Classes</strong> and click <strong class="ph b">New</strong>.</p>
+               <p class="p">b. Enter the code of API.</p>
+               <p class="p">c. Click <strong class="ph b">Save</strong>.</p>
+               <p class="p">For Sample Code ofGet Custom Tabs and Set Custom Tabs, refer to Custom APIs.</p>
+            </li>
+            <li class="li">Ensure that <strong class="ph b">DocuSign Custom Classes</strong> in System Properties has the callback class names populated with appropriate class names.<p class="p">a. Go to <strong class="ph b">Setup &gt; Build &gt; Custom Settings</strong> and click <strong class="ph b">Manage</strong> for DocuSign Custom Classes.</p>
+               <p class="p">b. Click <strong class="ph b">New</strong>.</p>
+               <p class="p">c. Enter <strong class="ph b">Name</strong>.</p>
+               <p class="p">d. Enter the name of <strong class="ph b">Add Recipient Tabs Callback Class</strong> and<strong class="ph b"> Return Recipient Tabs Callback Class</strong>.</p>
+               <p class="p">e. Click <strong class="ph b">Save</strong>.</p>
+            </li>
+            <li class="li">Ensure that <strong class="ph b">Recipient Tabs Enabled</strong> in DocuSign System Properties is selected.<p class="p">a. Go to <strong class="ph b">Setup &gt; Build &gt; Custom Settings</strong> and click<strong class="ph b"> Manage</strong> for DocuSign System Properties.</p>
+               <p class="p">b. Click<strong class="ph b"> Edit</strong> for System Properties.</p>
+               <p class="p">c. Select <strong class="ph b">Recipient Tabs Enabled</strong> check box.</p>
+               <p class="p">d. Click <strong class="ph b">Save</strong>.</p>
+            </li>
+         </ol>After I send the document for eSignature, the Status of Envelope is blank.<p class="p">Once you send the document for eSignature, the status of the envelope that is sent gets updated. </p>
+         <p class="p">The status of envelope can be checked in two ways - Manual or automatic.</p>
+         <p class="p">To check the status of envelope sent(manually), </p>
+         <ol class="ol">
+            <li class="li">Click <strong class="ph b">Agreements</strong> tab.<p class="p">If you are using DocuSign with Quote/ Proposal, Click <strong class="ph b">Proposals</strong> tab.</p>
+            </li>
+            <li class="li">Select the appropriate agreement (or Proposal).</li>
+            <li class="li">Click <strong class="ph b">Check eSignature Status</strong>.</li>
+         </ol>
+         <p class="p">The Envelope Status of all the envelopes will be updated.</p>
+         <p class="p">In order to update the status of envelope sent automatically, your system admin must set up batch jobs.</p>Can I use Auto-Provisioning with One Click Send?<p class="p">No, you can not use Auto-Provisioning with One Click Send.</p>I cannot drag and drop the DocuSign Tags in Finalize in DocuSign.<p class="p"> If you are not able to drag and drop the DocuSign tags you may want to try one of the following.</p>
+         <ul class="ul">
+            <li class="li">Add a Recipient in the envelope.</li>
+            <li class="li">Review the permissions to add tags in Send or Correct View. Contact your System admin in case you do not have permissions to add tags.</li>
+         </ul>I logged in through the DocuSign Configuration Home tab, but still the sender's name is different than mine.<p class="p">When you login through the DocuSign Configuration Home tab, you are one of the DocuSign Users. </p>
+         <p class="p">Solution: You must delete extra record of the users from the DocuSign Users.</p>
+         <ol class="ol">
+            <li class="li">Click the <strong class="ph b">DocuSign Users</strong> tab.</li>
+            <li class="li">Select the user that you want to delete.</li>
+            <li class="li">Click <strong class="ph b">Delete</strong>.</li>
+         </ol>When I login to DocuSign Account in Salesforce org, i get an error displaying the following message: There is an issue with my DocuSign User Account Information (Login / Password).<p class="p">When you login to DocuSign User Account through DocuSign Configuration Home, you might get an error displaying the following message: There is an issue with my DocuSign User Account Information (Login / Password). </p>
+         <p class="p">Soultion: There are several potential solutions to this error when attempting to add a new DocuSign User. </p>
+         <ol class="ol">
+            <li class="li">Verify the Credentials</li>
+            <li class="li">Verify the Remote Site Settings</li>
+            <li class="li">Verify DocuSign System Properties</li>
+         </ol>
+         <ol class="ol">
+            <li class="li">
+               <strong class="ph b">Verify the Credentials</strong>The credentials that are being added must match exactly to the credentials used to login to the DocuSign website. The best approach is to first open the DocuSign website and login, noting the Username and Password. Once logged in the DocuSign successfully go to the upper right dropdown in DocuSign typically under the User image (next to Help) and locate the DocuSign Account ID. Take this information and create the DocuSign User in Salesforce.</li>
+            <li class="li">
+               <strong class="ph b">Verify the Remote Site URL</strong>Remote Site Settings allow outbound access to DocuSign location.<p class="p">a. Go to <strong class="ph b">Setup  &gt; Administer &gt; Security Controls &gt; Remote Site Settings</strong>.</p>
+               <p class="p">b. If there is no entry for DocuSign Server, then add an appropriate entry by clicking <strong class="ph b">New Remote Site</strong>. If you are using NA2, then add enter Remote Site URL as <a class="xref" href="https://na11.salesforce.com/0rpG0000000DvFl" target="_blank" rel="external noopener">
+                     <u class="ph u">https://na2.docusign.net</u>
+                  </a>. If you are using DEMO, then enter Remote Site URL as <a class="xref" href="https://na11.salesforce.com/0rpG0000000DvFl" target="_blank" rel="external noopener">
+                     <u class="ph u">https://demo.docusign.net</u>
+                  </a>.</p>
+               <p class="p">c. Click <strong class="ph b">Save</strong>.</p>
+            </li>
+            <li class="li">
+               <strong class="ph b">Verify DocuSign Environment</strong>DocuSign has several environments (DEMO, PROD, NA1, NA2, EU1) it is important that the correct environment is listed in the DocuSign System Properties. You may need to verify with DocuSign support which environment you are currently using before proceeding with the next steps.<p class="p">a. Go to <strong class="ph b">Setup &gt; Build &gt; Develop &gt; Custom Settings</strong> and click <strong class="ph b">Manage</strong> for DocuSign System Properties.</p>
+               <p class="p">b. Click <strong class="ph b">Edit</strong> for System Properties.</p>
+               <p class="p">c. Add the appropriate value for Production Server Pod of your environment. For example, DEMO, PROD, NA1, NA2, EU1 and many more.</p>
+               <p class="p">d. Click <strong class="ph b">Save</strong>.</p>
+            </li>
+         </ol>Why do I see a large number of DocuSign scheduled items the first time the DocuSign scheduled jobs are created? <p class="p">The scheduled batch job pulls all the envelopes from the DocuSign account that is configured in the Salesforce Org since its last synchronized time.  If this is the first time the scheduled batch jobs have been run then you may see a large number of items that need to be synchronized. </p>
+         <p class="p">Each envelope that was created can have up to 5 associated batches that need to be run during the scheduled job as described below. 1) One for getting the envelope status  2) One for getting the recipient status 3) One for getting the signed document 4) One for updating the envelope status on the Salesforce object 5) One for updating the recipient status on the Salesforce object  </p>
+         <p class="p">Therefore, potentially if 100 envelopes were created prior to the DocuSign scheduled jobs, the first time the scheduled job is run it may show up to 500 batches being processed. </p>How do I create a Template using DocuSign Tags?<p class="p">For information on creating templates using DocuSign Tags, refer to 
+<a class="xref" href="../configuring_docusign_tags_143889343/143889343.html">Configuring DocuSign Tags</a>.</p>The scheduled batch job is not updating the status or is failing.<p class="p">If the scheduled batch job is not updating the status or is failing, then you should check the batch jobs.</p>
+         <p class="p">To check the scheduled batch jobs, go to Setup &gt; Monitor &gt; Jobs &gt; Apex Jobs and navigate to DocuSignBatchGetEnevelopeStatus batch job.</p>
+         <p class="p">If you get an error as shown in the following table, it is because the batch job is kicking off the first time (or after a long time), and is trying to query a large number of envelopes; and, it is not able to process all the records because the Salesforce heap size is limited to 12 MB. </p>
+         <p class="p"></p>
+         <div class="p">
+            <table class="table"><caption></caption><colgroup><col><col><col><col></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry" id="d208aA__entry__1">
+                           <p class="p">Job Type</p>
+                        </th>
+                        <th class="entry" id="d208aA__entry__2">
+                           <p class="p">Status</p>
+                        </th>
+                        <th class="entry" id="d208aA__entry__3">
+                           <p class="p">Status Detail</p>
+                        </th>
+                        <th class="entry" id="d208aA__entry__4">
+                           <p class="p">Apex Class</p>
+                        </th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry" headers="d208aA__entry__1">
+                           <p class="p">Batch Apex</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__2">
+                           <p class="p">Failed</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__3">
+                           <p class="p">First error: Apex heap size too large: XXXXXXX</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__4">
+                           <p class="p">DocuSignBatchGetEnevelopeStatus</p>
+                        </td>
+                     </tr>
+                  </tbody></table>
+         </div>
+         <p class="p">
+            <strong class="ph b">Solution</strong>: Perform the following steps.</p>
+         <ol class="ol">
+            <li class="li">Delete the currently scheduled DocuSign batch jobs.</li>
+            <li class="li">Click the <strong class="ph b">DocuSign Users</strong> tab. <p class="p">a. Select the appropriate user and click <strong class="ph b">Edit</strong>.</p>
+               <p class="p">
+                  <strong class="ph b">Note:</strong> You must have only one relevant user as the DocuSign User.</p>
+               <p class="p">b. Select <strong class="ph b">COMPLETE</strong> from the CurrentSyncJobState picklist menu.</p>
+               <p class="p">c. Set the <strong class="ph b">Last Sync Completed Envelope</strong> Time field to a date-time value which is not too far back in past. For example, if today is 8/27/2015, then set the date-time value to 8/25/2015 11:00 PM.</p>
+            </li>
+            <li class="li">Reschedule the batch jobs. <p class="p">a. Go to <strong class="ph b">Setup &gt; Build &gt; Develop &gt; Pages</strong> and select <strong class="ph b">Batch Job Setup</strong>.</p>
+               <p class="p">b. Click <strong class="ph b">Preview</strong>.</p>
+            </li>
+            <li class="li">Wait for the next batch run and see if it completes.</li>
+         </ol>Can I send multiple documents for signature together?<p class="p">Yes, you can send multiple documents from the same record for eSignature together.</p>Can I have defaulted recipients? Multiple defaulted recipients?<p class="p">You can default recipients by doing one of the following.</p>
+         <ul class="ul">
+            <li class="li">Use Defaulted API specified contact field.</li>
+            <li class="li">Use DocuSign Default Recipients related list to specify recipients.</li>
+         </ul>When installing into Production where users are already set up in the DocuSign Admin tab, what configuration needs to be done in the Apttus managed package to ensure that all users sending through the connector are going through our production DocuSign environment?<p class="p">On DocuSign System Properties, there is a check-box<strong class="ph b">Production Environment? </strong>Selecting this check-box, we will ensure that the connector sends to the DocuSign Production Server.</p>DocuSign wants to copy over attachments to a custom object and route eSignature from there. Does the Apttus connector supports sending documents for eSignature from a custom object?<p class="p">Currently, DocuSign does not support this feature.</p>Is there a way to customize the email text that is sent via the Send for eSignature button? <p class="p">Yes, you can customize the email text the email text that is sent via the <strong class="ph b">Send for eSignature</strong> button.</p>
+         <p class="p">It can be done using EmailBodyText option under the Custom Labels.</p>
+         <p class="p">Go to <strong class="ph b">Setup &gt; Build &gt; Create &gt; Custom Labels</strong> and select EmailBodyText.</p>
+         <p class="p">Click <strong class="ph b">Edit</strong> and modify the Translation to the customized text that you want as your email body.</p>Can I remove the Finalize in DocuSign button?<p class="p">Yes, you can remove the<strong class="ph b"> Finalize in Docusign</strong> button.</p>
+         <p class="p">Go to <strong class="ph b">Setup &gt; Build &gt; Develop &gt; Custom Settings</strong> and click <strong class="ph b">Manage</strong> for DocuSign System Properties.</p>
+         <p class="p">Click <strong class="ph b">Edit</strong> for System Properties.</p>
+         <p class="p">Deselect <strong class="ph b">View in DocuSign Enabled </strong>check box.</p>Can I hide the Finalize in DocuSign button conditionally based on User/ Profile?<p class="p">No, you cannot hide the <strong class="ph b">Finalize in DocuSign</strong> button based on User / Profile.</p>Is it possible to customize the emails sent to the recipient? 2 different templates for e-signature/manual signature?<p class="p">Currently, this feature is not available. It might be available in one of our future releases.</p>Is it possible to attach documents not to be signed by the recipient (sending the contract + documents for information)? <p class="p">Yes, you can attach documents from Notes &amp; Attachments related list and specify the documents to be signed. You need to specify by adding DocuSign tags to the documents you want signed.</p>Is the recipient the signatory or is it possible to forward the contract for e-signature to someone else? <p class="p">The recipient is the person you send the email to. DocuSign does allow you to forward to a different person to sign the document.</p>Is there smartphone support for e-signature? <p class="p">Currently we support One Click Send. However, other additional features might be available in our future releases.</p>Is it possible to copy any recipient? <p class="p">Yes, there is a recipient type called "Carbon Copy" which allows you to send a copy of the document to recipients. This does not mean that they automatically get the copy once it has been signed completely. This means you can specify a recipient to get a copy, and you choose when they would get the copy (get it after the first signer signs, get after everyone has signed).</p>What about the reply from the recipient – if the recipient has signed via e-signature, is there an email sent to all recipients or only to ALE signatory? Are the other people still copied? Is it possible to decide who will receive the contract duly signed by the recipient?<p class="p">Only the user that has signed the document will get an email. Once everyone has signed, the sender will receive an email. If you want other recipients to receive a copy after it has been signed by the last recipient, then you need to add them as Carbon Copy recipients after the last signer. Only the sender will receive the final signed document by default.</p>Can you use non-Contact fields as Default DocuSign recipients?<p class="p">You cannot use a field on the agreement record that is not a contact field. But emails can be added under the DocuSign Default Recipients related list.</p>Can you have different templates for different countries or regions?<p class="p">You can edit the main email template through Setup. And you can select <strong class="ph b">Add Additional Details</strong> to modify the email when sending for signature each time, but there no option for multiple email templates at this time.</p>Is it possible to include an e-signature block for initials on each page of a contract document similar to a footer that does not require this to be manually added to each page?<p class="p">You need to manually add the initial tag into the template footer either when you create the template, or when you use Finalize in DocuSign.</p>What is the process for sending a revised document (for example, to correct a typo) after a recipient has signed and returned the submitted version?<p class="p">That's dependent on their workflow. Out of the box, it follows the usual contract business flow where after the contract has been signed the button disappears and you can now activate the agreement. You can customize your flow so that the button does not disappear or reappear based on a certain status so you can send for signature when you require it.</p>Behavior of Include Certificate custom setting<p class="p">
+            <strong class="ph b">Include Certificate</strong> custom setting works in combination with <strong class="ph b">Retrieve as a Combined Document</strong> custom setting. Refer to the following table to learn more about the behavior. To enable this feature, at least one attachment must be attached in the Notes &amp; Attachments section. And, one recipient must be added to DocuSign Recipients related list.</p>
+         <div class="p">
+            <table class="table"><caption></caption><colgroup><col><col><col><col><col></colgroup><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry">
+                           <p class="p">Scenario</p>
+                        </td>
+                        <td class="entry">
+                           <p class="p">Include Certificate checked?</p>
+                        </td>
+                        <td class="entry">
+                           <p class="p">Retrieve as a Combined Document checked?</p>
+                        </td>
+                        <td class="entry">
+                           <p class="p">Attach Certificate of Completion to the EnvelopePDfchecked? (In DocuSign Account)</p>
+                        </td>
+                        <td class="entry">
+                           <p class="p">Behavior</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry">
+                           <p class="p">Scenario 1</p>
+                        </td>
+                        <td class="entry">
+                           <p class="p">Yes</p>
+                        </td>
+                        <td class="entry">
+                           <p class="p">Yes</p>
+                        </td>
+                        <td class="entry">
+                           <p class="p">Yes</p>
+                        </td>
+                        <td class="entry">
+                           <p class="p">Admin receives the final signed PDF with the last page containing the DocuSign Certificate of Completion.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry">
+                           <p class="p">Scenario 2</p>
+                        </td>
+                        <td class="entry">
+                           <p class="p">Yes</p>
+                        </td>
+                        <td class="entry">
+                           <p class="p">No</p>
+                        </td>
+                        <td class="entry">
+                           <p class="p">No</p>
+                        </td>
+                        <td class="entry">
+                           <p class="p">Admin receives the final signed PDF and Certificate of Completion both as separate document.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry">
+                           <p class="p">Scenario 3</p>
+                        </td>
+                        <td class="entry">
+                           <p class="p">Yes</p>
+                        </td>
+                        <td class="entry">
+                           <p class="p">Yes</p>
+                        </td>
+                        <td class="entry">
+                           <p class="p">No</p>
+                        </td>
+                        <td class="entry">
+                           <p class="p">Admin receives the final signed PDF but the certificate of Completion is not received.</p>
+                        </td>
+                     </tr>
+                  </tbody></table>
+         </div>How do I enable the Attach Certificate of Completion to the Envelope PDF setting in DocuSign Account?<p class="p">To enable the Attach Certificate of Completion to the Envelope PDF setting in DocuSign account,</p>
+         <ol class="ol">
+            <li class="li">Click the User Menu and select <strong class="ph b">Preferences</strong>.</li>
+            <li class="li">Under Account Administration, select <strong class="ph b">Features</strong>.</li>
+            <li class="li">Select the <strong class="ph b">Attach the Certificate of Completion to the Envelope PDF</strong> check box.</li>
+            <li class="li">Click <strong class="ph b">Save</strong>.</li>
+         </ol>How can I disable the users from configuring recipients and attachments?<p class="p">Add Attachments Enabled and Add Recipients Enabled custom settings control the configurations of recipients and attachments. Refer to the following table to learn more about the behavior. To enable this feature, at least one attachment must be attached in the Notes &amp; Attachments section. And, one recipient must be added to DocuSign Recipients related list.</p>
+         <div class="p">
+            <table class="table"><caption></caption><colgroup><col><col><col><col></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry" id="d208aA__entry__29">
+                           <p class="p">Scenario</p>
+                        </th>
+                        <th class="entry" id="d208aA__entry__30">
+                           <p class="p">Add Attachments Enabled checked?</p>
+                        </th>
+                        <th class="entry" id="d208aA__entry__31">
+                           <p class="p">Add Recipients Enabled checked?</p>
+                        </th>
+                        <th class="entry" id="d208aA__entry__32">
+                           <p class="p">Behavior</p>
+                        </th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry" headers="d208aA__entry__29">
+                           <p class="p">Scenario 1</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__30">
+                           <p class="p">No</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__31">
+                           <p class="p">No</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__32">
+                           <p class="p">The user will not be able to add any new attachments.</p>
+                           <p class="p">The user will not be able to add or configure recipients.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="d208aA__entry__29">
+                           <p class="p">Scenario 2</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__30">
+                           <p class="p">Yes</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__31">
+                           <p class="p">No</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__32">
+                           <p class="p">The user will be able to add or select attachments.</p>
+                           <p class="p">The user will not be able to add or configure recipients.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="d208aA__entry__29">
+                           <p class="p">Scenario 3</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__30">
+                           <p class="p">No</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__31">
+                           <p class="p">Yes</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__32">
+                           <p class="p">The user will not be able to add or select attachments.</p>
+                           <p class="p">The user will be able to add or configure recipients.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="d208aA__entry__29">
+                           <p class="p">Scenario 4</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__30">
+                           <p class="p">Yes</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__31">
+                           <p class="p">Yes</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__32">
+                           <p class="p">The user will be able to add or select attachments.</p>
+                           <p class="p">The user will be able to add or configure recipients.</p>
+                        </td>
+                     </tr>
+                  </tbody></table>
+         </div>Why do I see the processing screen for a long time, when I send a document for eSignature using the Send for eSignature button or Finalize in DocuSign button?<p class="p">You might see the processing screen for a long time,when you send a document for eSignature. This screen may never resolve.</p>
+         <p class="p">
+            <strong class="ph b">Reason</strong>: This can be due to a high number of batch processes going on in your org. After sending the document for eSignature, the Apex Jobs in Setup will display if the batch job is in<strong class="ph b"> Holding</strong> status. If it is, then it is attributed to a Salesforce known issue concerning queue size and the number of batches running.</p>
+         <p class="p">For more information, refer to <a class="xref" href="https://success.salesforce.com/issues_view?id=a1p300000008YgIAAU" target="_blank" rel="external noopener">
+               <u class="ph u">https://success.salesforce.com/issues_view?id=a1p300000008YgIAAU</u>
+            </a>.</p>For One-Click Send, which Email Subject and Body text is used?<p class="p">The default text of email subject for the envelopes sent using one click is <strong class="ph b">Document Signature Required</strong>,and the email body is defaulted to DocuSign's default Email Body text.</p>Which Email Templates are used for One-Click Send? Can I use Merge Fields in my Email Templates for One-Click Send?<p class="p">Recipient level email templates are picked, but merge fields will not be evaluated. So if templates are used to define recipient level emails, they should not contain any merge fields.</p>Which custom setting should I select if I want to select all the attachments on the Add Attachments page, by default? <p class="p">In order to automatically select all the documents on the Add Attachments page, you must select the Select All Attachments custom setting in Comply System Properties or Proposal System Properties, depending on which package have you installed DocuSign for.</p>
+         <p class="p">
+            <strong class="ph b">Select All Attachments</strong> custom setting and <strong class="ph b">Select First Document Default</strong> custom setting can affect your result. For a clear understanding, refer to the Scenario table below.</p>
+         <div class="p">
+            <table class="table"><caption></caption><colgroup><col><col><col></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry" id="d208aA__entry__49">
+                           <p class="p">Select First Document Default checked?</p>
+                           <p class="p">(System Properties)</p>
+                        </th>
+                        <th class="entry" id="d208aA__entry__50">
+                           <p class="p">Select All Attachments checked?</p>
+                           <p class="p">(Comply System Properties / Proposal System Properties)</p>
+                        </th>
+                        <th class="entry" id="d208aA__entry__51">
+                           <p class="p">Result</p>
+                        </th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry" headers="d208aA__entry__49">
+                           <p class="p">Yes</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__50">
+                           <p class="p">Yes</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__51">
+                           <p class="p">All the documents on the Add Attachments page are auto-selected.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="d208aA__entry__49">
+                           <p class="p">Yes</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__50">
+                           <p class="p">No</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__51">
+                           <p class="p">Only the first document on the Add Attachments page is auto-selected. </p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="d208aA__entry__49">
+                           <p class="p">No</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__50">
+                           <p class="p">Yes</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__51">
+                           <p class="p">All the documents on the Add Attachments page are auto-selected. </p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="d208aA__entry__49">
+                           <p class="p">No</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__50">
+                           <p class="p">No</p>
+                        </td>
+                        <td class="entry" headers="d208aA__entry__51">
+                           <p class="p">None of the documents on the Add Attachments page are auto-selected. </p>
+                        </td>
+                     </tr>
+                  </tbody></table>
+         </div>How do I customize the signing experience of different types of agreements by using different types of branding? <p class="p">DocuSign Services now enables you to associate a different brand for different types of agreements. You can customize the signing experience for recipients based on the agreement factors. You can pass the Brand Id using a new parameter called brand. If you do not pass any brand Id, the system will send the document with the default brand associated with the account.</p>
+         <p class="p">Note: We are documenting the steps for Agreements object here. You can perform the same steps for Proposals as well. </p>
+         <p class="p">For example, you have different brands associated with different types of agreement. You want to send documents with different look and feel. You can associate different Brand Ids with different types of agreements in order to do so.</p>
+         <p class="p">You must perform the following steps in order to send the document for eSignature</p>
+         <p class="p">To send documents for eSignature with a specific Brand ID</p>
+         <ol class="ol">
+            <li class="li">Login to your DocuSign account.</li>
+            <li class="li">Click the User Profile and select <strong class="ph b">Preferences</strong>.</li>
+            <li class="li">Click <strong class="ph b">Branding</strong>. Create new branding with new colors and images as per your business requirements.</li>
+            <li class="li">Copy the Brand Id from branding.</li>
+            <li class="li">Create a new button on the Agreement object by copying existing button and applying parameter.<ol class="ol" type="a">
+                  <li class="li">Go to <strong class="ph b">Setup &gt; Build &gt; Create &gt; Objects</strong> and select <strong class="ph b">Agreement</strong> (Installed Package: Apttus Contract Management Package).</li>
+                  <li class="li">Under Custom Fields &amp; Relationships related list, click <strong class="ph b">New</strong>.</li>
+                  <li class="li">Select <strong class="ph b">Formula </strong>radio button and click <strong class="ph b">Next</strong>.</li>
+                  <li class="li">Enter the <strong class="ph b">Field Label</strong> as Send for eSignature.The Field Name will be auto-populated.</li>
+                  <li class="li">Select <strong class="ph b">Text </strong>as Formula Return Type.</li>
+                  <li class="li">Click <strong class="ph b">Next.</strong>
+                  </li>
+                  <li class="li">In the formula editor, enter the following formula.<pre class="pre">IF( OR( ISPICKVAL(Apttus__Status_Category__c,"In Authoring"), (AND(ISPICKVAL(Apttus__Status_Category__c,"In Signatures"), ISPICKVAL(Apttus__Status__c,"Ready for Signatures")  )), (AND(ISPICKVAL(Apttus__Status_Category__c,"In Signatures"), ISPICKVAL(Apttus__Status__c,"Signature Declined") ) ) ), HYPERLINK("/apex/Apttus_CMDSign__CMDocuSignCreateEnvelope?brand=ee5bf510-7070-4931-a1f8-2823da145b1b&amp;id="&amp;Id, IMAGE("/resource/Apttus_DocuApi__eSignature","Send For eSignatures"), "_self"), NULL )</pre>
+                  </li>
+               </ol>
+            </li>
+            <li class="li">Send your document using new button.</li>
+         </ol>Does DocuSign have API call rate limit?<p class="p">There are no limits for outbound calls from Contract Management to DocuSign but DocuSign has implemented API Call Rate Limits to balance loads. For more information, see <a class="xref" href="https://developers.docusign.com/esign-soap-api/reference/introduction-changes/api-call-limits#:~:text=DocuSign%20has%20implemented%20the%20following,calls%20per%20hour%20per%20account" target="_blank" rel="external noopener">
+               <u class="ph u">API Call Rate Limits</u>
+            </a>.</p>
+      </div></div>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-DocuSign_Services/docusign_services_for_use_154938290/154938290.html">DocuSign Services for Users</a></div></div></nav></article></main></body></html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metr-cesign-power,docusign,docusign-api,esignature-api-connection,configure-docusign,connect-docusign-credentials,setup-auth-server,integration-key-setup,account-id-setup,key-pair-setup,oauth-consent-process,esignature-integration,authentication-flow,admin-console-configuration,power-platform-integration,credential-management,docusign-prerequisites,admin-user-api-id,auth-server-configuration,account-base-url,key-pair-management,esignature-api-connections,docusign-setup,docusign-integration,enter-admin-credentials,enable-consent,set-toggle-options,retrieve-account-details,esignature-administration,docusign-authentication-flow,platform-integration,admin-console-config,compliance-settings"><meta name="DC.subject" content="metr-cesign-power,docusign,docusign-api,esignature-api-connection,configure-docusign,connect-docusign-credentials,setup-auth-server,integration-key-setup,account-id-setup,key-pair-setup,oauth-consent-process,esignature-integration,authentication-flow,admin-console-configuration,power-platform-integration,credential-management,docusign-prerequisites,admin-user-api-id,auth-server-configuration,account-base-url,key-pair-management,esignature-api-connections,docusign-setup,docusign-integration,enter-admin-credentials,enable-consent,set-toggle-options,retrieve-account-details,esignature-administration,docusign-authentication-flow,platform-integration,admin-console-config,compliance-settings"><meta name="keywords" content="metr-cesign-power, docusign, docusign-api, esignature-api-connection, configure-docusign, connect-docusign-credentials, setup-auth-server, integration-key-setup, account-id-setup, key-pair-setup, oauth-consent-process, esignature-integration, authentication-flow, admin-console-configuration, power-platform-integration, credential-management, metr-cesign-power, docusign, docusign-api, esignature-api-connection, docusign-prerequisites, admin-user-api-id, integration-key-setup, auth-server-configuration, account-base-url, key-pair-management, esignature-integration, authentication-flow, credential-management, power-platform-integration, metr-cesign-power, docusign, esignature-api-connections, docusign-setup, docusign-integration, configure-docusign, enter-admin-credentials, enable-consent, set-toggle-options, retrieve-account-details, esignature-administration, docusign-authentication-flow, platform-integration, admin-console-config, compliance-settings"><meta name="DC.relation" scheme="URI" content="../../Power-eSignature_Integration_with_Power_Platform/setting_up_docusign_vjune_213456521/213456521.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-Cesign-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-11-26T17:00:00+05:30"><meta name="DC.date.modified" content="2025-11-26T17:00:00+05:30"><meta name="title" content="Set up DocuSign"><meta name="shortdesc" content="Configure DocuSign in Power Platform by adding authentication parameters, enabling signing features, and completing the OAuth consent process."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="docusign;integration-key;account-id;auth-server;private-key;public-key;oauth-consent"><meta name="taxonomy" content="domain:e-signature;usecase:docusign-setup;industry:enterprise-software"><meta name="tags" content="docusign,setup,oauth,authentication,esignature,power-platform"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c276733C-BDF2-11F0-9440-09173F13E4C5"><meta name="DC.language" content="en"><title>Configuring DocuSign Parameters in Power Platform</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c276733C-BDF2-11F0-9440-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Configuring DocuSign Parameters in Power Platform</h1>
+   
+   
+   <div class="body conbody">
+      <p class="p">This topic explains the steps required to integrate DocuSign with Power Platform.</p>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-eSignature_Integration_with_Power_Platform/setting_up_docusign_vjune_213456521/213456521.html">Setting Up DocuSign</a></div></div></nav><article class="topic concept nested1" aria-labelledby="ariaid-title2" lang="en" id="c2769E82-BDF2-11F0-1410-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">Prerequisites</h2>
+   
+   
+   <div class="body conbody">
+      <p class="p">The following information from your DocuSign Account: </p>
+      <ul class="ul">
+         <li class="li">DocuSign admin user API ID</li>
+         <li class="li">DocuSign API account ID</li>
+         <li class="li">DocuSign auth server</li>
+         <li class="li">Integration key</li>
+         <li class="li">DocuSign account base URL</li>
+         <li class="li">DocuSign account ID</li>
+         <li class="li">Private key</li>
+         <li class="li">Public key</li>
+      </ul>
+   </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title3" lang="en" id="t276B60C-BDF2-11F0-6053-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">To set up DocuSign</h2>
+   
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Log in to Power Platform.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click the menu icon (<img class="image" height="23" src="../attachments/250773905/250773904.png">) on the top right corner, and go
+               to <span class="ph uicontrol">Admin Console</span>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Integrations</span>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Navigate to the eSignature API Connections tab.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Under the Action column, click <span class="ph uicontrol">Configure</span> or
+                  <span class="ph uicontrol">Edit</span> for DocuSign.</span>
+            <div class="itemgroup stepresult"> The DocuSign Setup page opens.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter the following details: </span>
+            <div class="itemgroup info">
+               <div class="p">
+                  <table class="table"><caption></caption><colgroup><col><col></colgroup><thead class="thead">
+                           <tr class="row">
+                              <th class="entry" id="t276B60C-BDF2-11F0-6053-09173F13E4C5__entry__1">
+                                 <p class="p">Field Name</p>
+                              </th>
+                              <th class="entry" id="t276B60C-BDF2-11F0-6053-09173F13E4C5__entry__2">
+                                 <p class="p">Description</p>
+                              </th>
+                           </tr>
+                        </thead><tbody class="tbody">
+                           <tr class="row">
+                              <td class="entry" headers="t276B60C-BDF2-11F0-6053-09173F13E4C5__entry__1">
+                                 <p class="p">DocuSign Admin User API ID</p>
+                              </td>
+                              <td class="entry" headers="t276B60C-BDF2-11F0-6053-09173F13E4C5__entry__2">
+                                 <p class="p">To get the DocuSign admin user API ID, log in to DocuSign as an
+                                    administrator, go to Settings &gt; Apps and Keys and enter the
+                                    user ID value in the DocuSign Admin User API ID field.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry" headers="t276B60C-BDF2-11F0-6053-09173F13E4C5__entry__1">
+                                 <p class="p">DocuSign API Account ID</p>
+                              </td>
+                              <td class="entry" headers="t276B60C-BDF2-11F0-6053-09173F13E4C5__entry__2">
+                                 <p class="p">To get the DocuSign API account ID, log in to DocuSign as an administrator, go to Settings &gt; Apps and Keys, and enter the API account ID value in the DocuSign API Account ID field.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry" headers="t276B60C-BDF2-11F0-6053-09173F13E4C5__entry__1">
+                                 <p class="p">DocuSign Auth Server</p>
+                              </td>
+                              <td class="entry" headers="t276B60C-BDF2-11F0-6053-09173F13E4C5__entry__2">
+                                 <p class="p">Enter <a class="xref" href="https://account.docusign.com/" target="_blank" rel="external noopener">
+                                       <u class="ph u">https://account.docusign.com</u>
+                                    </a>.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry" headers="t276B60C-BDF2-11F0-6053-09173F13E4C5__entry__1">
+                                 <p class="p">Integration Key</p>
+                              </td>
+                              <td class="entry" headers="t276B60C-BDF2-11F0-6053-09173F13E4C5__entry__2">
+                                 <p class="p">To get the integration key, log in to DocuSign as an
+                                    administrator, go to Settings &gt; Apps and Keys, and enter the
+                                    integration key value in the Integration Key field.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry" headers="t276B60C-BDF2-11F0-6053-09173F13E4C5__entry__1">
+                                 <p class="p">DocuSign Account Base URL</p>
+                              </td>
+                              <td class="entry" headers="t276B60C-BDF2-11F0-6053-09173F13E4C5__entry__2">
+                                 <p class="p">To get the DocuSign account base URL, log in to DocuSign as an administrator, go to Settings &gt; Apps and Keys, and enter the account base URI value in the DocuSign Account Base URL field.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry" headers="t276B60C-BDF2-11F0-6053-09173F13E4C5__entry__1">
+                                 <p class="p">DocuSign Account ID</p>
+                              </td>
+                              <td class="entry" headers="t276B60C-BDF2-11F0-6053-09173F13E4C5__entry__2">
+                                 <p class="p">To get the DocuSign Account ID, log in to your DocuSign account and, click your profile image in the upper-right corner. Your account number is under your name and/or org name in the drop-down menu. Copy and add it to DocuSign Account ID field. </p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry" headers="t276B60C-BDF2-11F0-6053-09173F13E4C5__entry__1">
+                                 <p class="p">Private Key and Public Key</p>
+                              </td>
+                              <td class="entry" headers="t276B60C-BDF2-11F0-6053-09173F13E4C5__entry__2">
+                                 <p class="p">To get the private and public Keys, see <a class="xref" href="https://documentation.Power.com/display/ROC/.Creating+Apps+and+Keys+in+DocuSign+vDecember-22" target="_blank" rel="external noopener">
+                                       <u class="ph u">Creating Apps and Keys in
+                                          DocuSign Account</u>
+                                    </a>.</p>
+                              </td>
+                           </tr>
+                        </tbody></table>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Turn on the <span class="ph uicontrol">Retrieve as Combined Document</span> toggle button to enable the generation of a single PDF document containing all documents that were signed during the eSignature process.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Turn on the<span class="ph uicontrol"> Default Option for Signature </span>toggle button to make DocuSign the default option while sending documents for eSignature.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Turn on the<span class="ph uicontrol"> Active </span>toggle button to make the DocuSign option
+               available for selection while sending documents for eSignature.</span>
+            <div class="itemgroup info">
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+                  <p class="p">When the Default Option for Signature toggle button is turned on, you can not
+                     turn off the Active toggle button.</p>
+               </div></div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Turn on the<span class="ph uicontrol"> Admin Consent</span> toggle button to grant consent at the administrator level.</span>
+            <ol type="a" class="ol substeps" id="t276B60C-BDF2-11F0-6053-09173F13E4C5__substeps_inf_lq2_vcc">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Click <span class="ph uicontrol">Save</span>.</span>
+                  <div class="itemgroup stepresult">You are redirected to the DocuSign login page. Enter your email and
+                     password to log in.</div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Select your organization, and click <span class="ph uicontrol">Access</span>.</span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Click <span class="ph uicontrol">Allow Access </span>to grant consent.</span>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Keep the <span class="ph uicontrol">Admin Consent</span> toggle button turned off to grant the consent at individual level.</span>
+            <ol type="a" class="ol substeps" id="t276B60C-BDF2-11F0-6053-09173F13E4C5__substeps_jkq_qq2_vcc">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Click <span class="ph uicontrol">Save</span>.</span>
+                  <div class="itemgroup stepresult">You are redirected to the DocuSign login page. Enter your email and
+                     password to log in.</div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Click <span class="ph uicontrol">Allow Access </span>to grant consent.</span>
+               </li>
+            </ol>
+            <div class="itemgroup info">
+               <div class="note note note_note" id="t276B60C-BDF2-11F0-6053-09173F13E4C5__note_t3p_vq2_vcc"><span class="note__title">Note:</span> <div class="note__body">
+                  <p class="p">The following are the prerequisites to grant consent at administrator
+                     level:</p>
+                  <ul class="ul" id="t276B60C-BDF2-11F0-6053-09173F13E4C5__ul_u3p_vq2_vcc">
+                     <li class="li">Your account must include the Access Management with SSO feature. The
+                        administrative consent does not require that you install SSO, but you do
+                        need the product feature which includes SSO. For testing purposes, if your
+                        developer demo account does not include the feature, you can contact
+                        DocuSign at <a class="xref" href="mailto:go-live@docusign.com" target="_blank" rel="external noopener">
+                           <u class="ph u">go-live@docusign.com</u>
+                        </a> and request that the
+                        feature be added to your account. Be sure to provide your Developer Demo
+                        Account ID.</li>
+                     <li class="li">You must claim your email DNS domain via the DocuSign administration tool.
+                        A domain can be claimed both by the DocuSign developer demo account and
+                        DocuSign production account.</li>
+                     <li class="li">Your users' email domains must match the claimed email domain.</li>
+                     <li class="li">Your integration keys management account must be one of the accounts in the
+                        DocuSign organization.</li>
+                  </ul>
+               </div></div>
+            </div>
+         </li></ol></section>
+      <section class="section postreq">
+         <p class="p">After granting the consent, you are redirected to the DocuSign setup page. DocuSign is configured in your org. To edit the configuration, click <span class="ph uicontrol">Edit</span> under the Action column.  </p>
+      </section>
+   </div>
+</article></article></article></main></body></html>

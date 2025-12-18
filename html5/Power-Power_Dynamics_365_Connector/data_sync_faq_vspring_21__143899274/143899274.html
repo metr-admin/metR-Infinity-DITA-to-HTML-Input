@@ -1,0 +1,160 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="data-sync-service,dynamics-connector,power-platform-sync-engine,agreement-object,field-mapping-module,sync-admin-console,schedule-data-sync,map-fields-between-systems,resolve-sync-limitations,validate-data-transfer,configure-sync-interval,troubleshoot-data-mapping,revenue-lifecycle-management,revenue-operations,cross-system-data-integration,revenue-lifecycle-management-environment,data-consistency-management,integration-governance"><meta name="keywords" content="data-sync-service, dynamics-connector, power-platform-sync-engine, agreement-object, field-mapping-module, sync-admin-console, schedule-data-sync, map-fields-between-systems, resolve-sync-limitations, validate-data-transfer, configure-sync-interval, troubleshoot-data-mapping, revenue-lifecycle-management, revenue-operations, cross-system-data-integration, revenue-lifecycle-management-environment, data-consistency-management, integration-governance"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-365-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Yashshree"><meta name="DC.date.created" content="2025-11-24+05:30"><meta name="DC.date.modified" content="2025-11-24"><meta name="title" content="Data Sync FAQ"><meta name="shortdesc" content="Frequently asked questions covering data sync behavior, field mappings, scheduling rules, and connector limitations between Dynamics and Power."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="agreement-object;mapping-name;mapping-fields;dynamics-system;power-platform;sync-connector;sync-admin;scheduled-sync-interval"><meta name="taxonomy" content="domain:revenue-operations;usecase:data-sync-faq;industry:revenue-lifecycle-management"><meta name="tags" content="data-sync,field-mapping,connector,scheduled-sync,limitations,faq"><meta name="usecase" content="clarify common questions and constraints related to data synchronization between Dynamics and Power"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c244B82F-BDF2-11F0-1015-09173F13E4C5"><meta name="DC.language" content="en"><title>Data Sync FAQ</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="c244B82F-BDF2-11F0-1015-09173F13E4C5"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Data Sync FAQ</h1>
+   
+   <div class="body conbody">
+      <p class="p">Refer to the following Frequently Asked Questions (FAQ) about the Power-Dynamics 365 Data Sync connector.</p>
+      <p class="p">
+         <strong class="ph b">Q: Where does the connector run?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A:</strong> The connector runs in Dynamics. The connector's logic retrieves data from Power or pushes data into Power. </p>
+      <p class="p">
+         <strong class="ph b">Q: What is a Sync Group and why do you need it?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A:</strong> A Sync Group specifies the group of fields that must be synced at the same frequency from the same Source-Destination combination.</p>
+      <p class="p">
+         <strong class="ph b">Q: What objects are covered as part of the connector?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A: </strong>Any object from Dynamics 365 or Power can be used for syncing.</p>
+      <p class="p">
+         <strong class="ph b">Q: Can I configure objects or does the effort require assistance from Professional Services?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A</strong>: You can configure any object in Dynamics 365 or Power. Follow the standard object creation steps in the respective platform. Data Sync does not participate in this step.</p>
+      <p class="p">
+         <strong class="ph b">Q: Can data be bi-directionally synced between two systems?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A</strong>: Yes and no. Data sync is bi-directional for more than one object, but each object can only be synced in a single direction. For example, you can set up a sync group to sync the Agreement object and its fields from Power to Dynamics, but you cannot at the same time set up another sync group to sync the Agreement object and its fields from Dynamics to Power. </p>
+      <p class="p">
+         <strong class="ph b">Q: Can the connector sync data in real time?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A</strong>: No, the connector currently supports scheduled sync only based on a pre-defined interval.</p>
+      <p class="p">
+         <strong class="ph b">Q: There is no "Money" type in Power, it is "Currency" instead.</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A:</strong> The data sync admin is responsible to set up field types to map equivalent fields.</p>
+      <p class="p">
+         <strong class="ph b">Q: Is there a character limit for the Mapping Name field?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A:</strong> Yes. The limit is 100 characters.</p>
+      <p class="p">
+         <strong class="ph b">Q: Can MultiSelect fields be synced?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A: </strong>The MultiSelect field/picklist data type is not currently supported.</p>
+      <p class="p">
+         <strong class="ph b">Q: How can I sync lookups to an object that was part of the initial load?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A: </strong>The Id field must contain data as part of the initial load. The Id field at the destination should match the source record Id. For example, if 50,000 agreements are loaded in Power and Dynamics and the sync is from Power to Dynamics, then each agreement's record Id field in Dynamics must have the same value as the corresponding Power Id.</p>
+      <p class="p">
+         <strong class="ph b">Q: Can the sync frequency be set for each entity?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A:</strong> The data sync frequency is set for each sync group, which consists of one or more entities.</p>
+      <p class="p">
+         <strong class="ph b">Q: Which CRUD operations are supported by Data Sync?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A: </strong>All operations (insert, update, upsert, and delete) are supported.</p>
+      <p class="p">
+         <strong class="ph b">Q:</strong>
+         <strong class="ph b">Is there an option in the connector through which a user can control the specific operations (insert, update, delete, and so on) to be executed on sync?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A: </strong>This feature is not currently supported.</p>
+      <p class="p">
+         <strong class="ph b">Q: What level of support is provided for transformation?</strong>
+      </p>
+      <p class="p">A: The connector does not support transformation of data and there are no plans to support it. The data is synced as is from the source to destination. Use of a middleware or ETL is suggested for supporting transformations.</p>
+      <p class="p">
+         <strong class="ph b">Q: Do we have the option to configure customer External Id fields?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A: </strong>The External Id can be a custom field. However, it always stores the source record Id at the destination.</p>
+      <p class="p">
+         <strong class="ph b">Q: What is the shortest sync interval supported? Would it be possible to set it for 1 - 2 minutes for some entities?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A:</strong> The minimum sync interval is 3 minutes. Refer to Setting Up a Scheduler for Data Sync for details on creating sync processes when the interval is less than one hour.</p>
+      <p class="p">
+         <strong class="ph b">Q: How is data sync executed when different objects in a sync group have differing values for "Last Sync Time?"</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A: </strong>Each object is synced based on the time updated in the "Last Sync Time" field of that particular object.</p>
+      <p class="p">
+         <strong class="ph b">Q: What are the values supported by the "Sync Status" field under a sync group?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A: </strong>The following are valid values for the Sync Status field:</p>
+      <ul class="ul">
+         <li class="li">Success: Shown when the last sync run was successful.</li>
+         <li class="li">Error: Shown when the last sync run failed.</li>
+         <li class="li">Running: Shown when a sync run is in-progress.</li>
+         <li class="li">Paused: Shown when a sync has been paused and will resume at the next scheduled time.</li>
+         <li class="li">PartialSuccess: Shown when some, but not all records sync successfully.</li>
+      </ul>
+      <p class="p">
+         <strong class="ph b">Q: Can this process be executed on demand?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A:</strong> This is not planned. The punch-out flow accomplishes that.</p>
+      <p class="p">
+         <strong class="ph b">Q: </strong>
+         <strong class="ph b">Is there a time maximum for sync run execution?</strong>
+      </p>
+      <p class="p">A: Yes, the sync run maximum is 2 minutes. If a sync run takes longer to process, the connector pauses and continues the sync at the next scheduled sync run. </p>
+      <p class="p">
+         <strong class="ph b">Q: Is this only for Contract Lifecycle Management (CLM) or can it also be used for CPQ?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A:</strong> Data Sync can be used for any Power application.</p>
+      <p class="p">
+         <strong class="ph b">Q: Is there an API to start sync process?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A:</strong> This is being investigated for a future release.</p>
+      <p class="p">
+         <strong class="ph b">Q: If a record fails and the issues is corrected, is the record synced again?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A: </strong>Yes, after the record has been updated at the source it is synced at the next scheduled run.</p>
+      <p class="p">
+         <strong class="ph b">Q: Suppose an object "O1" is synced from Dynamics to Power and a lookup with "O2" to "O1" relationship exists in Power. When "O2" is synced from Power to Dynamics, how does Dynamics know that "O2" needs a lookup to the appropriate object?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A: </strong>The lookup relationship is established using the Id–so the object "O2" lookup field value points to the lookup record Id.</p>
+      <p class="p">
+         <strong class="ph b">Q: Are performance numbers and governors limit published anywhere?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A:</strong> Yes. Refer to <a class="xref" href="../performance_benchmarks_vs_152572983/152572983.html">Performance Benchmarks</a>.</p>
+      <p class="p">
+         <strong class="ph b">Q: Does the customer need to buy any additional licenses to support the data sync process on Dynamics?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A:</strong> This product is included for all Power customers that use Power with Dynamics 365. </p>
+      <p class="p">
+         <strong class="ph b">Q: Why would a customer choose this product over a standard middleware?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A:</strong> While the best way to do this would be through Middleware, some customers do not have it or it adds a load on IT that they do not want to manage.</p>
+      <p class="p">
+         <strong class="ph b">Q: So Power will not provide any out-of-the-box basic sync? Every customer will build their own?</strong>
+      </p>
+      <p class="p">A: The ability to create mappings is self-service and takes about an hour to do by a trained Business Analyst. </p>
+      <p class="p">
+         <strong class="ph b">Q: Does the sync work for on-premise Dynamics?</strong>
+      </p>
+      <p class="p">
+         <strong class="ph b">A:</strong> No. The connector is not currently supported for on-premise Dynamics.</p>
+   </div>
+</article></main></body></html>

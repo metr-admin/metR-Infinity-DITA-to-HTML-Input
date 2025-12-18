@@ -1,0 +1,89 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="release-notes,connector-documentation,power-dynamics-365-connector,integration-solution-package,connector-ui-elements,sync-scheduling-components,resolve-error-messages,correct-documentation-steps,update-screenshots,revise-solution-paths,improve-troubleshooting-guidance,apply-release-fixes,release-version-history,documentation-maintenance,product-update-log,continuous-improvement-cycle,connector-release-operations,change-management-updates"><meta name="keywords" content="release-notes, connector-documentation, power-dynamics-365-connector, integration-solution-package, connector-ui-elements, sync-scheduling-components, resolve-error-messages, correct-documentation-steps, update-screenshots, revise-solution-paths, improve-troubleshooting-guidance, apply-release-fixes, release-version-history, documentation-maintenance, product-update-log, continuous-improvement-cycle, connector-release-operations, change-management-updates"><meta name="DC.relation" scheme="URI" content="../../Power-Power_Dynamics_365_Connector/appendices_143887223_143887223/143887223.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-365-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Yashshree"><meta name="DC.date.created" content="2025-11-24+05:30"><meta name="DC.date.modified" content="2025-11-24"><meta name="title" content="Troubleshooting Error Messages"><meta name="shortdesc" content="Release notes outlining corrections, fixes, and updates related to error messages, screenshots, and connector configuration instructions."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="error-message;ui-screenshot;solution-zip;sync-scheduler;configuration-step;documentation-row"><meta name="taxonomy" content="domain:revenue-operations;usecase:release-note-troubleshooting;industry:revenue-lifecycle-management"><meta name="tags" content="release,fixed,corrected,updated,troubleshooting,documentation"><meta name="usecase" content="release-note-troubleshooting"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c2486F89-BDF2-11F0-1071-09173F13E4C5"><meta name="DC.language" content="en"><title>Troubleshooting Error Messages</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="c2486F89-BDF2-11F0-1071-09173F13E4C5"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Troubleshooting Error Messages</h1>
+   
+   <div class="body conbody">
+      <p class="p">The following table defines and describes possible reasons for error messages you may receive during the data sync process. For more information that is not listed here, refer to the <a class="xref" href="../data_sync_faq_vspring_21__143899274/143899274.html">FAQ</a>.</p>
+      <div class="p">
+         <table class="table"><caption></caption><colgroup><col><col></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry" id="c2486F89-BDF2-11F0-1071-09173F13E4C5__entry__1">
+                        <p class="p">Error Message</p>
+                     </th>
+                     <th class="entry" id="c2486F89-BDF2-11F0-1071-09173F13E4C5__entry__2">
+                        <p class="p">Reason</p>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="c2486F89-BDF2-11F0-1071-09173F13E4C5__entry__1">
+                        <p class="p">Invalid Field name Apttus_ExternalId__c for Object <strong class="ph b">&lt;&lt;Object Name&gt;&gt;</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="c2486F89-BDF2-11F0-1071-09173F13E4C5__entry__2">
+                        <p class="p">This error is shown when the Id / ExternalID field does not exist for <strong class="ph b">&lt;&lt;Object Name&gt;&gt;</strong> object.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="c2486F89-BDF2-11F0-1071-09173F13E4C5__entry__1">
+                        <p class="p">StatusCode: INVALID_FIELD_FOR_INSERT_UPDATE, Message: Unable to create/update fields: <strong class="ph b">&lt;&lt;Field Names&gt;&gt;</strong>. Please check the security settings of this field and verify that it is read/write for your profile or permission set., Fields: <strong class="ph b">&lt;&lt;Field Names&gt;&gt;</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="c2486F89-BDF2-11F0-1071-09173F13E4C5__entry__2">
+                        <p class="p">This error is shown when <strong class="ph b">&lt;&lt;Field Names&gt;&gt; </strong>field is a formula field or it is not allowed to be updated by sync.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="c2486F89-BDF2-11F0-1071-09173F13E4C5__entry__1">
+                        <p class="p">One or more errors occurred. InvokeAsync failed with status code BadRequest, error Cannot deserialize instance of date from VALUE_STRING value false or request may be missing a required field at [Source: N/A; line: -1, column: -1] at [line:-1, column:-1] and stack trace</p>
+                     </td>
+                     <td class="entry" headers="c2486F89-BDF2-11F0-1071-09173F13E4C5__entry__2">
+                        <p class="p">This error is shown when a field mapping type is configured as String, but the field is not of String type.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="c2486F89-BDF2-11F0-1071-09173F13E4C5__entry__1">
+                        <p class="p">StatusCode: INVALID_FIELD_FOR_INSERT_UPDATE, Message: <strong class="ph b">&lt;&lt;Object Name&gt;&gt;</strong>: bad field names on insert/update call: Parent, Fields: <strong class="ph b">&lt;&lt;Field Name&gt;&gt;</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="c2486F89-BDF2-11F0-1071-09173F13E4C5__entry__2">
+                        <p class="p">A system field <strong class="ph b">&lt;&lt;Field Name&gt;&gt;</strong> is configured for sync (cannot be updated).</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="c2486F89-BDF2-11F0-1071-09173F13E4C5__entry__1">
+                        <p class="p">The plug-in execution failed because no Sandbox Worker processes are currently available. Please try again. System.ServiceModel.CommunicationException: The server did not provide a meaningful reply; this might be caused by a contract mismatch, a premature session shutdown or an internal server error.</p>
+                     </td>
+                     <td class="entry" headers="c2486F89-BDF2-11F0-1071-09173F13E4C5__entry__2">
+                        <p class="p">This error is shown under "System Jobs" when there is an issue with Power connection and the application is not able to establish a connection with Power.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="c2486F89-BDF2-11F0-1071-09173F13E4C5__entry__1">
+                        <p class="p">One or more errors occurred. InvokeAsync failed with status code BadRequest, error No such column <strong class="ph b">&lt;&lt;Field API Name&gt;&gt;</strong> on sobject of type <strong class="ph b">&lt;&lt;Object API Name&gt;&gt;</strong> and stack trace</p>
+                     </td>
+                     <td class="entry" headers="c2486F89-BDF2-11F0-1071-09173F13E4C5__entry__2">
+                        <p class="p">This error is shown when a field with <strong class="ph b">&lt;&lt;Field API Name&gt;&gt; </strong>under<strong class="ph b"> &lt;&lt;Object API Name&gt;&gt; </strong>does not exist in Power.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="c2486F89-BDF2-11F0-1071-09173F13E4C5__entry__1">
+                        <p class="p">One or more errors occurred. <strong class="ph b">&lt;&lt;Object API Name&gt;&gt;</strong> entity doesn't contain attribute with Name = &lt;&lt;Field API Name&gt;&gt; and NameMapping = 'Logical'. MetadataCacheDetails: ProviderType=Dynamic, StandardCache=True, IsLoadedInStagedContext = False, Timestamp=4814226, MinActiveRowVersion=4814226</p>
+                     </td>
+                     <td class="entry" headers="c2486F89-BDF2-11F0-1071-09173F13E4C5__entry__2">
+                        <p class="p">This error is shown when a field with <strong class="ph b">&lt;&lt;Field API Name&gt;&gt; </strong>under<strong class="ph b"> &lt;&lt;Object API Name&gt;&gt; </strong>does not exist in Dynamics 365.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="c2486F89-BDF2-11F0-1071-09173F13E4C5__entry__1">
+                        <p class="p">One or more errors occurred. Could not find the entity.</p>
+                     </td>
+                     <td class="entry" headers="c2486F89-BDF2-11F0-1071-09173F13E4C5__entry__2">
+                        <p class="p">This error is shown when the object name is incorrect or the object does not exist in Power or Dynamics 365.</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-Power_Dynamics_365_Connector/appendices_143887223_143887223/143887223.html">Appendices</a></div></div></nav></article></main></body></html>

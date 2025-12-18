@@ -1,0 +1,120 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metr-365-power,doc-manager,doc-migration,doc-editor,doc-publisher,gatsby,doc-conversion,metadata-enrichment,ingestion-pipeline,tagging-and-indexing,validation-workflow,sync-configuration,revenue-lifecycle-management,revenue-operations,crm-integration,billing-cycle,integration-api,portal-admin,create-sync-group,configure-objects,map-fields,permission-setup,initial-ingest,validation,production-environment,quality-assurance,api-gateway,admin-portal,update-sync-group,add-remove-objects,field-mapping,sync-execution,permission-check,maintenance-ops,add-object,sync-group-configuration,ingest-run,delete-object,cleanup-mapping,ingest-validation,data-retention-check,sync-run"><meta name="DC.subject" content="metr-365-power,doc-manager,doc-migration,doc-editor,doc-publisher,gatsby,doc-conversion,metadata-enrichment,ingestion-pipeline,tagging-and-indexing,validation-workflow,sync-configuration,revenue-lifecycle-management,revenue-operations,crm-integration,billing-cycle,integration-api,portal-admin,create-sync-group,configure-objects,map-fields,permission-setup,initial-ingest,validation,production-environment,quality-assurance,api-gateway,admin-portal,update-sync-group,add-remove-objects,field-mapping,sync-execution,permission-check,maintenance-ops,add-object,sync-group-configuration,ingest-run,delete-object,cleanup-mapping,ingest-validation,data-retention-check,sync-run"><meta name="keywords" content="metr-365-power, doc-manager, doc-migration, doc-editor, doc-publisher, gatsby, doc-conversion, metadata-enrichment, ingestion-pipeline, tagging-and-indexing, validation-workflow, sync-configuration, revenue-lifecycle-management, revenue-operations, revenue-lifecycle-management, revenue-lifecycle-management, crm-integration, billing-cycle, metr-365-power, doc-manager, doc-publisher, doc-migration, integration-api, portal-admin, create-sync-group, configure-objects, map-fields, permission-setup, initial-ingest, validation, revenue-lifecycle-management, revenue-lifecycle-management, production-environment, quality-assurance, crm-integration, billing-cycle, metr-365-power, doc-manager, doc-editor, doc-migration, api-gateway, admin-portal, update-sync-group, add-remove-objects, field-mapping, sync-execution, validation-workflow, permission-check, revenue-lifecycle-management, revenue-lifecycle-management, production-environment, quality-assurance, maintenance-ops, crm-integration, metr-365-power, doc-manager, doc-migration, doc-editor, doc-publisher, gatsby, add-object, sync-group-configuration, field-mapping, validation-workflow, ingest-run, permission-check, revenue-lifecycle-management, revenue-operations, revenue-lifecycle-management, revenue-lifecycle-management, crm-integration, billing-cycle, metr-365-power, doc-manager, doc-editor, doc-publisher, admin-portal, integration-api, delete-object, cleanup-mapping, permission-check, ingest-validation, data-retention-check, sync-run, revenue-lifecycle-management, revenue-lifecycle-management, production-environment, quality-assurance, maintenance-ops, crm-integration"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-365-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Yashshree"><meta name="DC.date.created" content="2025-11-24+05:30"><meta name="DC.date.modified" content="2025-11-24"><meta name="title" content="Updating an Existing Sync Group"><meta name="shortdesc" content="Update an existing sync group: add/remove objects and fields; subsequent runs pick up the changes."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="sync-group;object;field;power-automate;dynamics-365;document;topic;doc-manager"><meta name="taxonomy" content="domain:revenue-operations;usecase:metadata-enrichment;industry:revenue-lifecycle-management"><meta name="tags" content="sync-group,update,object,field,metadata,enrichment"><meta name="usecase" content="metadata-enrichment"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c247B04C-BDF2-11F0-2106-09173F13E4C5"><meta name="DC.language" content="en"><title>Setting up Sync Groups</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c247B04C-BDF2-11F0-2106-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Setting up Sync Groups</h1>
+   
+   <div class="body conbody">
+      <p class="p">A Sync Group is a logical group of objects that will be synced together. Each Sync Group has an associated scheduler and a connection. When the scheduler associated with the Sync Group runs, the system will use the connection parameters specified in <a class="xref" href="../configuring_data_sync_con_143899280/143899280.html">Configuring Data Sync Connections</a> associated to the Sync Group to connect with the CRM instance.</p>
+      <p class="p">To get started, create a new sync group and add objects and fields to be synced between the Dynamics 365 and Power.</p>
+      <div class="note warning note_warning"><span class="note__title">Warning:</span> <div class="note__body">
+         <p class="p">A sync group should consists of inter-related objects only. Configuring many objects with multiple lookup fields in a single sync group will impact the performance adversely.</p>
+      </div></div>
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+         <p class="p">Before setting up a sync group, make sure to verify that the PowerAutomate flow has been configured and the connection includes the flow Id — otherwise any schedule created for the sync group will not run. Refer to <a class="xref" href="../deploying_the_connector_v_154927375/154927375.html">Deploying the Connector</a> and <a class="xref" href="../configuring_data_sync_con_143899280/143899280.html">Configuring Data Sync Connections</a> for steps.</p>
+      </div></div>
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+         <p class="p">If you are configuring the connector for Power Quote-to-Cash for Dynamics 365, do not create new sync groups. Instead, refer to <a class="xref" href="143888191.html#c2482EDF-BDF2-11F0-2143-09173F13E4C5">Updating Sync Groups</a>. To add objects and fields to be synced from Power to Dynamics 365, edit the "Punch Out 1 (Read only)" sync group. To add objects and fields to be synced from Dynamics 365 to Power, edit the "Punch Out 2 (Read only)" sync group. </p>
+      </div></div>
+   </div>
+<article class="topic task nested1" aria-labelledby="ariaid-title2" lang="en" id="t24803CF-BDF2-11F0-1227-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">To create a new Sync Group</h2>
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Open the connector.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">From the left panel under Groups, select <span class="ph uicontrol">Setup Sync Group</span>. </span>
+            <div class="itemgroup stepresult">A list of existing sync groups is displayed (if this is the first time you
+               are using the tool, there will be no sync groups in the list).</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">From the top of the page, click <span class="ph uicontrol">New</span>. </span>
+            <div class="itemgroup stepresult">The New Sync Group window is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter a <span class="ph uicontrol">Name</span> for the sync group.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Specify <span class="ph uicontrol">Is Active </span>= <span class="ph uicontrol">Yes</span> to enable scheduled sync for this sync group. If <span class="ph uicontrol">No</span> is selected, sync group automation is disabled (scheduler flow remains unaffected).</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click the type ahead next to <span class="ph uicontrol">Source </span>and search-and-select the source connection (Dynamics 365 or Power).</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click the type-ahead next to <span class="ph uicontrol">Destination</span> and search-and-select the target connection (Dynamics 365 or Power).</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To configure a scheduler for executing data sync for this sync group complete the following fields:</span>
+            <ol type="a" class="ol substeps">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Click <span class="ph uicontrol">Sync Frequency </span>and select the frequency for the sync job to execute: Minute, Hour, Day, Week, or Month.</span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Click <span class="ph uicontrol"> Sync Interval </span>and enter a number to designate the interval for the frequency you selected (for example, selecting "Hour" for frequency and "6" for interval creates a scheduler to sync the objects in the sync group every 6 hours).</span>
+                  <div class="itemgroup info">
+                     <div class="note warning note_warning"><span class="note__title">Warning:</span> <div class="note__body">
+                        <ul class="ul">
+                           <li class="li">For existing customers, adding the sync frequency and interval will automatically set up scheduled data sync for that sync group. If you previously created a scheduler using a Dynamics process, you must delete that process for scheduled syncs to execute successfully.</li>
+                           <li class="li">The minimum interval allowed by Dynamics 365 is 3 minutes.</li>
+                        </ul>
+                     </div></div>
+                  </div>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save</span>. The Sync Objects table is now displayed below the form.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">New Object Sync</span>. The New Object Sync page is displayed.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter the <span class="ph uicontrol">Object</span>
+               <span class="ph uicontrol">Mapping Name</span> of the object to be added to the sync group (for example, "clm_agreement mapping"). </span>
+            <div class="itemgroup info">
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+                  <p class="p">You cannot add the same object to another Sync Group that is syncing in the same direction (for example, from Power to Dynamics 365).</p>
+               </div></div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter a number in the <span class="ph uicontrol">Sync Sequence</span> field to specify the order in which the object and its fields should be synced. This is useful when you have a master-child relationship or lookup relation and you need to sync objects in a specific order to avoid errors or missing data. Begin the Sequence by entering "1."</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter an AQL query in <span class="ph uicontrol">Source Filter Criteria</span> to apply a filter to the object data in the sync (Example filter: {"ExpressionOperator": "OR","Conditions": [{"EntityName": "apttus_apts_agreement", "FieldName": "apttus_name", "FilterOperator": "Like", "Value": "TestFilter%" }]}).</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save</span>. The sync group is created with the object mapping you selected for the source and destination. The page refreshes and the Fields Sync Information section is displayed below the form.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Add mapped fields from the sync group object by clicking on the <span class="ph uicontrol">Add </span>
+               <img class="image" src="../attachments/143888191/143888189.png" width="20">
+               icon to move Available Fields in the left column to Selected Fields to Sync in the right column. To remove a field from the sync group, click the <span class="ph uicontrol">Remove</span>
+               <img class="image" src="../attachments/143888191/143888190.png" width="20">
+               icon.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">From the top of the Fields Sync Information section, click <span class="ph uicontrol">Save</span>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Repeat steps 10 – 16  to add more mapped objects to the sync group.</span>
+         </li></ol></section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title3" lang="en" id="c248442E-BDF2-11F0-1390-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">Updating an Existing Sync Group</h2>
+   
+   <div class="body conbody">
+      <p class="p">You can update an existing sync group to add or remove objects or fields from the sync group. Objects and fields you add to an existing sync group will be synced during any subsequent runs. You cannot add an object to an existing sync group if it is already present in a sync group.</p>
+   </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title4" lang="en" id="t247D891-BDF2-11F0-1810-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title4">To add a new object to an existing Sync Group</h2>
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">From the Sync Groups page, click a sync group in the list to edit it. </span>
+            <div class="itemgroup stepresult">The Sync Group page is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">New Object Sync</span>. </span>
+            <div class="itemgroup stepresult">The New Object Sync page is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Follow steps 8 – 14 from the previous task.</span>
+         </li></ol></section>
+   </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title5" lang="en" id="t24819AB-BDF2-11F0-2503-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title5">To delete objects from a Sync Group</h2>
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step">
+            <span class="ph cmd">From the Sync Groups page, click to the left of the object you want to delete from the Sync Group to select it. You can select multiple objects in the list.</span>
+         </li><li class="li step">
+            <span class="ph cmd">At the top of the list, click the More (...) menu and select <span class="ph uicontrol">Delete Object Sync</span>. A confirmation dialog appears.</span>
+         </li><li class="li step">
+            <span class="ph cmd">Click <span class="ph uicontrol">Delete</span> to delete the object or objects from the Sync Group.</span>
+         </li></ol></section>
+   </div>
+</article></article></article></main></body></html>

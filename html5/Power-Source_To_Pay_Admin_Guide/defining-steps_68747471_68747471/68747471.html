@@ -1,0 +1,368 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metr-payag-power,wizard-engine,step-definition-module,scoring-framework,weighting-logic,evaluation-step-structure,defining-steps,configuring-step-weight,setting-step-score,creating-multi-part-workflows,structuring-evaluation-flows,designing-ordered-wizard-steps,revenue-operations,enterprise-software,workflow-automation,evaluation-design,wizard-configuration,multi-step-processes,input-control-library,rule-engine,ui-configuration-panel,survey-builder,adding-a-step,configuring-input-controls,setting-display-conditions,defining-data-validations,previewing-survey,managing-step-behavior,form-design,ui-logic-configuration,business-rule-management"><meta name="DC.subject" content="metr-payag-power,wizard-engine,step-definition-module,scoring-framework,weighting-logic,evaluation-step-structure,defining-steps,configuring-step-weight,setting-step-score,creating-multi-part-workflows,structuring-evaluation-flows,designing-ordered-wizard-steps,revenue-operations,enterprise-software,workflow-automation,evaluation-design,wizard-configuration,multi-step-processes,input-control-library,rule-engine,ui-configuration-panel,survey-builder,adding-a-step,configuring-input-controls,setting-display-conditions,defining-data-validations,previewing-survey,managing-step-behavior,form-design,ui-logic-configuration,business-rule-management"><meta name="keywords" content="metr-payag-power, wizard-engine, step-definition-module, scoring-framework, weighting-logic, evaluation-step-structure, defining-steps, configuring-step-weight, setting-step-score, creating-multi-part-workflows, structuring-evaluation-flows, designing-ordered-wizard-steps, revenue-operations, enterprise-software, workflow-automation, evaluation-design, wizard-configuration, multi-step-processes, metr-payag-power, wizard-engine, input-control-library, rule-engine, ui-configuration-panel, survey-builder, adding-a-step, configuring-input-controls, setting-display-conditions, defining-data-validations, previewing-survey, managing-step-behavior, revenue-operations, enterprise-software, workflow-automation, form-design, ui-logic-configuration, business-rule-management"><meta name="DC.relation" scheme="URI" content="../../Power-Source_To_Pay_Admin_Guide/using_the_wizard_componen_68747435/68747435.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PayAG-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Yashshree"><meta name="DC.date.created" content="2025-11-24+05:30"><meta name="DC.date.modified" content="2025-11-24"><meta name="title" content="Defining Steps"><meta name="shortdesc" content="Explains the purpose of steps within a wizard and describes how weight and score can be defined as part of the step configuration."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="step;wizard;weight;score;workflow;evaluation-structure;configuration-panel"><meta name="taxonomy" content="domain:revenue-operations, document and contract automation;usecase:step-definition;industry:revenue-lifecycle-management"><meta name="tags" content="steps,workflow-design,scoring,weighting,wizard-configuration,evaluation-framework"><meta name="usecase" content="define-and-configure-steps"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="d13aAjan691"><meta name="DC.language" content="en"><title>Defining Steps</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="d13aAjan691">
+   <h1 class="title topictitle1" id="ariaid-title1">Defining Steps</h1>
+   
+   <div class="body conbody">
+      <p class="p"></p>
+      <p class="p">
+         <strong class="ph b">Steps</strong> are used to designate the actions that occur when end-users use the wizard. Steps use common elements, like actions and rules, to define the flow of your wizard. Each step represents a screen in the wizard runtime. You can define the Weight and Score in a step as well. </p>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-Source_To_Pay_Admin_Guide/using_the_wizard_componen_68747435/68747435.html">Using the Wizard Component Library</a></div></div></nav><article class="topic task nested1" aria-labelledby="ariaid-title2" lang="en" id="DefiningSteps_Toaddastep">
+   <h2 class="title topictitle2" id="ariaid-title2">To add a step</h2>
+   
+   <div class="body taskbody">
+      <section class="section context">
+         <p class="p">Ensure that you have created one or more input controls to use in the creation of a step. </p>
+      </section>
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Click the <span class="ph uicontrol">Wizard Component Library</span> tab.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">New Step</span>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Under Step Settings tab, enter a descriptive <span class="ph uicontrol">Step Name</span>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Complete the following fields.</span>
+            <div class="itemgroup info">
+               <div class="p">
+                  <table class="table"><caption></caption><colgroup><col><col></colgroup><tbody class="tbody">
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">Field Name</p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">Description</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Step Name</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">Enter a descriptive Step Name. This field is mandatory. You cannot drag-and-drop input values from the Inputs Library to the Inputs pane.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Description</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">Enter a Description that describes the input control.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Keywords</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">Enter the Keywords that would help find this input control.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Category</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">Enter the Category of this input control. The default value is Default. Defining a Category helps you organize your questions when creating input control.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Subcategory</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">Enter the SubCategory of this input control. The default value is Default. Defining a SubCategory helps you organize your questions when creating input control.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Banner Statement</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">Enter the statement to be displayed on surveys.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Runtime Help Text</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">Enter the Runtime Help Text that will be displayed to the users when they hover over the icon.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Context Type</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <div class="p">Select the Context Type to which this step will be applicable to. The available options are.<ul class="ul">
+                                       <li class="li">All – Select this option if you want to apply this step to all the objects.</li>
+                                       <li class="li">Object – Select this option if you want to apply this step to any specific object. </li>
+                                    </ul>
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Context Object</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">Select the object that you want to apply this step to. This option will be enabled only if you have selected Object as the Context Type.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Input Group Option</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <div class="p">Select the Input Group Option for the survey. The available options are.<ul class="ul">
+                                       <li class="li">Repeatable – Select this option if you want to display all the selected input controls in a repeated manner, for each item, in the survey.</li>
+                                       <li class="li">Table Layout – Select this option if you want to display all the selected input controls in a repeated manner in a tabular form, for each item, in the survey.</li>
+                                    </ul>
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Inputs</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">Drag all the inputs from Inputs Library to this section to include the input controls in your survey.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Inputs Library</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">A repository of all the input controls that you have added to the system.</p>
+                              </td>
+                           </tr>
+                        </tbody></table>
+               </div>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><img class="image" src="../attachments/68747431/68749482.png" width="700"><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To add a new input, click <span class="ph uicontrol">New Input</span>. Clicking this button will create a Step-specific Input which will not be saved in the Inputs Library or be reusable for future Wizards. </span>
+            <div class="itemgroup info">
+               <figure class="fig fignone">
+                  <br><img class="image" src="../attachments/68747431/68749477.png" width="700"><br>
+               </figure>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Complete the fields as mentioned in step 4 of To add an input control. </span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save and Use in Step</span>.</span>
+            <div class="itemgroup info">
+               <figure class="fig fignone">
+                  <br><img class="image" src="../attachments/68747431/68749497.png" width="700"><br>
+               </figure>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">You can use existing input controls as well. Drag the input controls, to the Inputs section, that you want to add in your survey from <span class="ph uicontrol">Inputs Library</span>. </span>
+            <div class="itemgroup info">
+               <figure class="fig fignone">
+                  <br><img class="image" src="../attachments/68747431/68749481.png" width="700"><br>
+               </figure>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">On the <span class="ph uicontrol">Input Rules</span> tab, set the rule for each step.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">In order to set the weight of a Step and score for each option, you must set the custom value for each input. </span>
+            <ol type="a" class="ol substeps">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">On the Input Rules tab, click 
+                  <img class="image" src="../attachments/68747471/68749190.png" width="16">.</span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">From the Rule picklist menu, select <span class="ph uicontrol">Set Custom Value</span>. </span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">To define the value of the weight of a question, select <span class="ph uicontrol">Weight</span> from the Field picklist menu. </span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Value</span> text box, enter the value of weight for that particular question. </span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Click <span class="ph uicontrol">Save</span>.</span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">To define the value of the score of an option, click <img class="image" src="../attachments/68747471/68749190.png" width="16">.</span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">From the Rule picklist menu, select <span class="ph uicontrol">Set Custom Value</span>.</span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Select <span class="ph uicontrol">Score</span> from Field picklist menu. </span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Value</span> text box, enter the value of score of an option. </span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Click <span class="ph uicontrol">Add Another Rule</span>.</span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Select the <span class="ph uicontrol">Rule</span> for which you are entering scores. </span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Select a relevant <span class="ph uicontrol">Operator</span>. </span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Enter the <span class="ph uicontrol">Value</span> of the option for which you want to set that particular score. </span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Click <span class="ph uicontrol">Save</span>.
+               </span>
+                  <div class="itemgroup info">
+                     <div class="note warning note_warning"><span class="note__title">Warning:</span> <div class="note__body">
+                        <p class="p">You must define Weight and Score for each rule. Steps <span class="ph uicontrol">a</span> through <span class="ph uicontrol">e</span> are applicable for defining Weight of a Step. Steps <span class="ph uicontrol">f</span> through <span class="ph uicontrol">n</span> are applicable for defining score of an option. A new Input Rule must be defined for each option of a step.</p>
+                     </div></div>
+                     <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">
+                        <p class="p">For example, you want to set score for the rule - Production Employees. The following table represents the weight of the step and the score that we want to define for each option.  </p>
+                        <div class="p">
+                           <table class="table"><caption></caption><colgroup><col><col><col><col><col></colgroup><tbody class="tbody">
+                                    <tr class="row">
+                                       <td class="entry">
+                                          <p class="p">Rule</p>
+                                       </td>
+                                       <td class="entry">
+                                          <p class="p">Response Type</p>
+                                       </td>
+                                       <td class="entry">
+                                          <p class="p">Option</p>
+                                       </td>
+                                       <td class="entry">
+                                          <p class="p">Score</p>
+                                       </td>
+                                       <td class="entry">
+                                          <p class="p">Input Rule defined</p>
+                                       </td>
+                                    </tr>
+                                    <tr class="row">
+                                       <td class="entry">
+                                          <p class="p">Weight</p>
+                                       </td>
+                                       <td class="entry"></td>
+                                       <td class="entry"></td>
+                                       <td class="entry"></td>
+                                       <td class="entry">
+                                          <div class="p">
+                                             <figure class="fig fignone">
+                                                <br><img class="image" src="../attachments/68747471/68749144.png" width="500"><br>
+                                             </figure>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr class="row">
+                                       <td class="entry">
+                                          <p class="p">What is the count of Production Employees in your company?</p>
+                                       </td>
+                                       <td class="entry">
+                                          <p class="p">Picklist</p>
+                                       </td>
+                                       <td class="entry">
+                                          <p class="p">1-15</p>
+                                       </td>
+                                       <td class="entry">
+                                          <p class="p">2</p>
+                                       </td>
+                                       <td class="entry">
+                                          <div class="p">
+                                             <figure class="fig fignone">
+                                                <br><img class="image" src="../attachments/68747471/68749139.png" width="500"><br>
+                                             </figure>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr class="row">
+                                       <td class="entry"></td>
+                                       <td class="entry"></td>
+                                       <td class="entry">
+                                          <p class="p">15-30</p>
+                                       </td>
+                                       <td class="entry">
+                                          <p class="p">4</p>
+                                       </td>
+                                       <td class="entry">
+                                          <div class="p">
+                                             <figure class="fig fignone">
+                                                <br><img class="image" src="../attachments/68747471/68749151.png" width="500"><br>
+                                             </figure>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr class="row">
+                                       <td class="entry"></td>
+                                       <td class="entry"></td>
+                                       <td class="entry">
+                                          <p class="p">31-50</p>
+                                       </td>
+                                       <td class="entry">
+                                          <p class="p">6</p>
+                                       </td>
+                                       <td class="entry">
+                                          <div class="p">
+                                             <figure class="fig fignone">
+                                                <br><img class="image" src="../attachments/68747471/68749155.png" width="500"><br>
+                                             </figure>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr class="row">
+                                       <td class="entry"></td>
+                                       <td class="entry"></td>
+                                       <td class="entry">
+                                          <p class="p">more than 50</p>
+                                       </td>
+                                       <td class="entry">
+                                          <p class="p">8</p>
+                                       </td>
+                                       <td class="entry">
+                                          <div class="p">
+                                             <figure class="fig fignone">
+                                                <br><img class="image" src="../attachments/68747471/68749147.png" width="500"><br>
+                                             </figure>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                 </tbody></table>
+                        </div>
+                     </div></div>
+                  </div>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click the <span class="ph uicontrol">Step Preview</span> tab, to view the preview of the entire survey.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save</span>. </span>
+         </li></ol></section>
+   </div>
+</article></article></article></main></body></html>

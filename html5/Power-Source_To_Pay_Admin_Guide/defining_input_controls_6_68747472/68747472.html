@@ -1,0 +1,198 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metr-payag-power,input-control-library,wizard-engine,form-builder,ui-component-framework,configuration-panel,defining-input-controls,editing-input-control-properties,reusing-input-controls,creating-variant-controls,managing-control-attributes,configuring-field-behaviors,revenue-operations,enterprise-software,workflow-automation,data-capture-design,form-configuration,ui-component-management,ui-configuration-panel,attribute-definition-module,configurable-wizard,creating-input-control,configuring-control-type,defining-picklist-values,saving-input-control,setting-mandatory-fields,preparing-control-for-reuse,business-rule-management"><meta name="DC.subject" content="metr-payag-power,input-control-library,wizard-engine,form-builder,ui-component-framework,configuration-panel,defining-input-controls,editing-input-control-properties,reusing-input-controls,creating-variant-controls,managing-control-attributes,configuring-field-behaviors,revenue-operations,enterprise-software,workflow-automation,data-capture-design,form-configuration,ui-component-management,ui-configuration-panel,attribute-definition-module,configurable-wizard,creating-input-control,configuring-control-type,defining-picklist-values,saving-input-control,setting-mandatory-fields,preparing-control-for-reuse,business-rule-management"><meta name="keywords" content="metr-payag-power, input-control-library, wizard-engine, form-builder, ui-component-framework, configuration-panel, defining-input-controls, editing-input-control-properties, reusing-input-controls, creating-variant-controls, managing-control-attributes, configuring-field-behaviors, revenue-operations, enterprise-software, workflow-automation, data-capture-design, form-configuration, ui-component-management, metr-payag-power, input-control-library, wizard-engine, ui-configuration-panel, attribute-definition-module, configurable-wizard, creating-input-control, configuring-control-type, defining-picklist-values, saving-input-control, setting-mandatory-fields, preparing-control-for-reuse, revenue-operations, enterprise-software, workflow-automation, data-capture-design, form-configuration, business-rule-management"><meta name="DC.relation" scheme="URI" content="../../Power-Source_To_Pay_Admin_Guide/using_the_wizard_componen_68747435/68747435.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PayAG-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Yashshree"><meta name="DC.date.created" content="2025-11-24+05:30"><meta name="DC.date.modified" content="2025-11-24"><meta name="title" content="Defining Input Controls"><meta name="shortdesc" content="Introduces input controls, their reusability within steps, and how updating control properties enables creation of new field variations."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="input-control;control-property;ui-component;step;wizard;control-variant;configuration-field"><meta name="taxonomy" content="domain:revenue-operations, document and contract automation;usecase:input-control-management;industry:revenue-lifecycle-management"><meta name="tags" content="input-controls,control-properties,component-reuse,ui-design,form-configuration"><meta name="usecase" content="define-and-manage-input-controls"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="d13aAjan692"><meta name="DC.language" content="en"><title>Defining Input Controls</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="d13aAjan692">
+   <h1 class="title topictitle1" id="ariaid-title1">Defining Input Controls</h1>
+   
+   <div class="body conbody">
+      <p class="p">Input controls are the primary components of any wizard. They are the questions and instructions that you provide to the end users of your wizard. For example, you might create an input control that requires users to select picklist options, such as Business Function or Agreement Start and End dates. Input controls are reusable, so you can use them in as many steps as you want to.</p>
+      <p class="p">For each input control, you need to configure the context (the associated object and control type), the input properties (the question or instructional text) and the response properties (the response object and its fields). You can also clone an existing input control and change its properties to use it as a new input control.</p>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-Source_To_Pay_Admin_Guide/using_the_wizard_componen_68747435/68747435.html">Using the Wizard Component Library</a></div></div></nav><article class="topic task nested1" aria-labelledby="ariaid-title2" lang="en" id="DefiningInputControls_Tocreateaninputcontrol">
+   <h2 class="title topictitle2" id="ariaid-title2">To create an input control</h2>
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Click the <span class="ph uicontrol">Wizard Component Library</span> tab.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">New Input Control</span>. </span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">On the Input Settings tab, enter a descriptive <span class="ph uicontrol">Control Name</span>. </span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Complete the following fields. </span>
+            <div class="itemgroup info">
+               <div class="p">
+                  <table class="table"><caption></caption><colgroup><col><col></colgroup><tbody class="tbody">
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">Field Name</p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">Description</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Control Name</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">Enter a mandatory descriptive Control Name.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Description</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">Enter a Description that describes the input control.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Keywords</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">Enter the Keywords that would help find this input control.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Category</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">Enter the Category of this input control. The default value is Default. Defining a Category helps you organize your questions when creating input control.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">SubCategory</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">Enter the SubCategory of this input control. The default value is Default. Defining a SubCategory helps you organize your questions when creating input control. </p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Question/Instruction</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">Enter the Question or Instruction to be which a supplier will see in the runtime wizard and will select an appropriate response.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Runtime Help Text</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <div class="p">Enter the Runtime Help Text which appears when the user hovers over the <figure class="fig fignone">
+                                       <br><img class="image" src="../attachments/68747472/68749324.png" width="17"><br>
+                                    </figure> icon.</div>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Runtime Input</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <div class="p">Select the Runtime Input of this input control. The available options are.<ul class="ul">
+                                       <li class="li">
+                                          <strong class="ph b">Allow Comments and Attachments</strong> - Select this check box to enable the end user to add comments and/or attachments in addition to the input control value. Comments are entered into a text area field and are limited to 500 characters. There is no limit to the number of files a user can attach.<div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+                                             <p class="p">
+                                                <strong class="ph b">How Comments and Attachments are used in the Wizard</strong>
+                                             </p>
+                                             <p class="p">For any type of Wizard, all runtime comments and attachments are saved in the Wizard Runtime Input instance record under Notes &amp; Attachments. You can make use of these comments and attachments through your own implementations.</p>
+                                             <p class="p">If you design a Wizard to create a record, comments and attachments are copied to the Notes &amp; Attachments list only if the corresponding input uses an Object for the same object created by the record (e.g., Input defined as 'Field Class = Object Field,' 'Object = Agreement' when the Wizard creates as Agreement record). Notes containing comments are named after the Object Field for which they were entered (e.g., "Account Notes," or "Agreement Risk Rating Notes")</p>
+                                          </div></div>
+                                       </li>
+                                       <li class="li">
+                                          <strong class="ph b">Required</strong> – Select this check box if you want to set your question as mandatory for the suppliers to respond to.</li>
+                                       <li class="li">
+                                          <strong class="ph b">Read Only</strong> – Select this check box if you want to set your question as read only.</li>
+                                    </ul>
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Field Class</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <div class="p">Select the Field Class of this input control. This field is mandatory. The available options are.<ul class="ul">
+                                       <li class="li">
+                                          <strong class="ph b">Wizard Input Field</strong> – Select this option if you want to enter the field type in the wizard itself.</li>
+                                       <li class="li">
+                                          <strong class="ph b">Object Field</strong> – Select this option if you want to refer to the field type of an existing field.</li>
+                                    </ul>
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Input Control - Field Type</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <div class="p">Select the Field Type for this input control. This field is mandatory. The available options are.<ul class="ul">
+                                       <li class="li">Checkbox</li>
+                                       <li class="li">Date Number</li>
+                                       <li class="li">Picklist</li>
+                                       <li class="li">Radio Button Picklist</li>
+                                       <li class="li">Multi Picklist</li>
+                                       <li class="li">Text</li>
+                                       <li class="li">Text Area</li>
+                                    </ul>
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry">
+                                 <p class="p">
+                                    <strong class="ph b">Input Control - Picklist Values</strong>
+                                 </p>
+                              </td>
+                              <td class="entry">
+                                 <p class="p">Enter the values to be displayed to the supplier, separated in each line. This field is mandatory.</p>
+                              </td>
+                           </tr>
+                        </tbody></table>
+               </div>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><img class="image" src="../attachments/68747495/68749569.png" width="700"><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click the <span class="ph uicontrol">Preview</span> tab to view the preview of the question. </span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save</span>. </span>
+            <div class="itemgroup info">
+               <figure class="fig fignone">
+                  <br><img class="image" src="../attachments/68747495/68749570.png" width="700"><br>
+               </figure>
+            </div>
+         </li></ol></section>
+      <section class="section postreq">
+         <p class="p">You have successfully created an input control. This input control will be visible to an end user while the wizard is executed. The saved input control is now part of the Input Control Library.</p>
+         <p class="p">You may further create a step for the configurable wizard.</p>
+      </section>
+   </div>
+</article></article></article></main></body></html>

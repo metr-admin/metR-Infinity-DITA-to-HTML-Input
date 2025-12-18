@@ -1,0 +1,71 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="audit-trail-module,audit-logger,event-stream,file-mapping-service,rest-api,enable-audit-trail,log-events,persist-audit-records,retrieve-audit-history,configure-retention,compliance-monitoring,forensic-analysis,signature-audit,enterprise-security,traceability,setting-toggle,admin-console,permission-service,disable-audit-trail,change-permissions,confirm-impact,update-retention,notify-stakeholders,admin-operations,security-policy,compliance-assessment,risk-management,enterprise-administration,mapping-ui,api-endpoint,repository,create-mapping,validate-fields,map-to-audit-records,sync-files,test-mapping,data-integration,audit-log-collection,document-management,compliance"><meta name="DC.subject" content="audit-trail-module,audit-logger,event-stream,file-mapping-service,rest-api,enable-audit-trail,log-events,persist-audit-records,retrieve-audit-history,configure-retention,compliance-monitoring,forensic-analysis,signature-audit,enterprise-security,traceability,setting-toggle,admin-console,permission-service,disable-audit-trail,change-permissions,confirm-impact,update-retention,notify-stakeholders,admin-operations,security-policy,compliance-assessment,risk-management,enterprise-administration,mapping-ui,api-endpoint,repository,create-mapping,validate-fields,map-to-audit-records,sync-files,test-mapping,data-integration,audit-log-collection,document-management,compliance"><meta name="keywords" content="audit-trail-module, audit-logger, event-stream, file-mapping-service, rest-api, enable-audit-trail, log-events, persist-audit-records, retrieve-audit-history, configure-retention, compliance-monitoring, forensic-analysis, signature-audit, enterprise-security, traceability, audit-trail-module, setting-toggle, admin-console, rest-api, permission-service, disable-audit-trail, change-permissions, confirm-impact, update-retention, notify-stakeholders, admin-operations, security-policy, compliance-assessment, risk-management, enterprise-administration, file-mapping-service, audit-trail-module, mapping-ui, api-endpoint, repository, create-mapping, validate-fields, map-to-audit-records, sync-files, test-mapping, data-integration, audit-log-collection, document-management, compliance, traceability"><meta name="DC.relation" scheme="URI" content="../../Power-Adobe_Sign_Services/adobe_sign_services_for_a_195696054/195696054.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-Asign-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-11-24+05:30"><meta name="DC.date.modified" content="2025-11-24"><meta name="title" content="Adding the Audit Trail"><meta name="shortdesc" content="Explains how to add and configure the audit trail module to log signature and document events for compliance and traceability."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="audit-records;events;timestamps;user-actions;retention-policy;logger-service"><meta name="taxonomy" content="domain:revenue-lifecycle-management;usecase:enable-and-manage-audit-trail-for-signature-events;industry:revenue-life-cycle-management"><meta name="tags" content="audit-trail,compliance,logging,retention,traceability"><meta name="usecase" content="enable-and-manage-audit-trail-for-signature-events"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c237E9EF-BDF2-11F0-4063-09173F13E4C5"><meta name="DC.language" content="en"><title>Adding the Audit Trail</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c237E9EF-BDF2-11F0-4063-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Adding the Audit Trail</h1>
+   
+   <div class="body conbody">
+      <p class="p">
+         <span class="ph uicontrol">Audit Trail</span> is a separate document that Adobe provides when
+         generating the final signed document. Once the agreement is signed, a signed copy of the
+         PDF is stored within our application. <span class="ph uicontrol">Power Connector </span>grabs the last
+         generated document from Adobe. If the custom setting for the <span class="ph uicontrol">audit
+            trail</span> is enabled, then either the audit trail document will be generated
+         last, or the final signed document will be generated last. In either case, only the last
+         document is grabbed. </p>
+      <p class="p">To add the <span class="ph uicontrol">audit trail document</span>, you must</p>
+      <ol class="ol">
+         <li class="li">Disable <span class="ph uicontrol">Audit Trail </span>setting</li>
+         <li class="li">Set up <span class="ph uicontrol">File Mapping</span> for <span class="ph uicontrol">audit trail </span>
+         </li>
+         <li class="li">Send for Signature</li>
+      </ol>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-Adobe_Sign_Services/adobe_sign_services_for_a_195696054/195696054.html">Adobe Sign Services for Administrators</a></div></div></nav><article class="topic task nested1" aria-labelledby="ariaid-title2" lang="en" id="t2381065-BDF2-11F0-4418-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">To disable audit trail setting</h2>
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step">
+            <span class="ph cmd">Go to<span class="ph menucascade"><span class="ph uicontrol"> Setup </span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol"> Develop </span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol"> Custom Settings</span></span>.</span>
+         </li><li class="li step">
+            <span class="ph cmd">Click <span class="ph uicontrol">Manage</span> for <span class="ph uicontrol">Adobe Sign Settings</span>.</span>
+         </li><li class="li step">
+            <span class="ph cmd">Deselect <span class="ph uicontrol">Add Audit PDF to Attachment List</span> checkbox.</span>
+         </li><li class="li step">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save</span>.</span>
+         </li></ol></section>
+   </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title3" lang="en" id="t23823FF-BDF2-11F0-5120-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">To set up file mapping for audit trail</h2>
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">From the App Launcher, find and open the Power CLM app. You can perform the same action in Power CPQ app as well. </span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click the<span class="ph uicontrol"> Data Mappings</span> tab from the navigation bar.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">New</span>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter the <span class="ph uicontrol">Data Mapping Name</span>. </span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Select <span class="ph uicontrol">Default Data Mapping</span> check box.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Under the <span class="ph uicontrol">Fields Mapping</span> section, click <span class="ph uicontrol">Add Mapping</span>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Selected Object</span> link and select <span class="ph uicontrol">Agreement</span> from the picklist menu.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Select</span>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Under the <span class="ph uicontrol">File Mapping</span> section, click <span class="ph uicontrol">Add
+                  Mapping</span>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">From <span class="ph uicontrol">Which File to Add?</span> picklist menu, select <span class="ph uicontrol">Audit Trail</span>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save</span>.</span>
+            <div class="itemgroup info">
+               <p class="p">For more information on sending a document for eSignature, refer
+                     <span class="ph uicontrol">Sending for eSignature </span>topic in <span class="ph uicontrol">Adobe Sign
+                     Services on Salesforce User Guide</span>.</p>
+            </div>
+         </li></ol></section>
+   </div>
+</article></article></article></main></body></html>

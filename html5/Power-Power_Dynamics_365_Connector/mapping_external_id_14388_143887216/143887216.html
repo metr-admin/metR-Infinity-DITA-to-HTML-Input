@@ -1,0 +1,48 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="143887216,metr-365-power,config-module,sync-module,mapping-module,integration-service,export-configuration,import-configuration,mapping,synchronizing,validating,troubleshooting,revenue-lifecycle-management,revenue-operations,data-integration,cloud-environment,sync-ecosystem,to-map-the-id-field-for-object-sync,map-id-field"><meta name="DC.subject" content="143887216,metr-365-power,config-module,sync-module,mapping-module,integration-service,export-configuration,import-configuration,mapping,synchronizing,validating,troubleshooting,revenue-lifecycle-management,revenue-operations,data-integration,cloud-environment,sync-ecosystem,to-map-the-id-field-for-object-sync,map-id-field"><meta name="keywords" content="143887216, metr-365-power, config-module, sync-module, mapping-module, integration-service, export-configuration, import-configuration, mapping, synchronizing, validating, troubleshooting, revenue-lifecycle-management, revenue-lifecycle-management, revenue-operations, data-integration, cloud-environment, sync-ecosystem, to-map-the-id-field-for-object-sync, metr-365-power, mapping-module, sync-module, config-module, integration-service, mapping, map-id-field, validating, synchronizing, export-configuration, troubleshooting, revenue-lifecycle-management, revenue-lifecycle-management, revenue-operations, data-integration, cloud-environment, sync-ecosystem"><meta name="DC.relation" scheme="URI" content="../../Power-Power_Dynamics_365_Connector/mapping-fields_143887215_143887215/importing_and_exporting_field_mapping.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-365-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Yashshree"><meta name="DC.date.created" content="2025-11-24+05:30"><meta name="DC.date.modified" content="2025-11-24"><meta name="title" content="Mapping External ID"><meta name="shortdesc" content="Configure external ID mapping to ensure consistent object identification across sync systems."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="configuration;object;id-field;sync-job;error-log;mapping-table"><meta name="taxonomy" content="domain:revenue-operations;usecase:mapping-external-id;industry:revenue-lifecycle-management"><meta name="tags" content="mapping-external-id,mapping,revenue-lifecycle-management"><meta name="usecase" content="mapping-external-id"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="t2468C56-BDF2-11F0-4067-09173F13E4C5"><meta name="DC.language" content="en"><title>Mapping External Id</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="t2468C56-BDF2-11F0-4067-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Mapping External Id</h1>
+   
+   <div class="body taskbody">
+      <section class="section context">
+         <p class="p">You must create a mapping for the External Id field prior to initiating an object sync. After you have completed the <a class="xref" href="../mapping-fields_143887215_143887215/143887215.html">initial mapping</a>, perform the following tasks in order:</p>
+      </section>
+      <section><ol class="ol steps"><li class="li step">
+            <span class="ph cmd">Create a custom field named "External Id" with field type String/Text in both the <span class="ph uicontrol">source and destination system</span>.</span>
+         </li><li class="li step">
+            <span class="ph cmd">Create a mapping field record named "Id" for the object to be synced, using the API names specified in the previous step.</span>
+         </li></ol></section>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-Power_Dynamics_365_Connector/mapping-fields_143887215_143887215/importing_and_exporting_field_mapping.html">Importing and Exporting Field Mapping</a></div></div></nav><article class="topic task nested1" aria-labelledby="ariaid-title2" lang="en" id="t246B54C-BDF2-11F0-5857-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">To map the Id field for object sync</h2>
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">From the left panel under Groups, select <span class="ph uicontrol">Map Fields</span>. </span>
+            <div class="itemgroup stepresult">The Map Fields page is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">From the ribbon at the top of the page, click <span class="ph uicontrol">New</span>. </span>
+            <div class="itemgroup stepresult">The New Map Field page is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter "Id" in the <span class="ph uicontrol">Name</span> field.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter "Id" in the <span class="ph uicontrol">Display Name </span>field.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter "UniqueIdentifier" in the <span class="ph uicontrol">Type </span>field.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">In the <span class="ph uicontrol">Dynamics Field Name</span> field, enter the API name of the External Id field in Dynamics. For example, "apttus_externalid".</span>
+            <div class="itemgroup info">
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">To avoid errors, copy-and-paste the field name from Dynamics.</div></div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter the API name of the External Id field in Power in the <span class="ph uicontrol">Power Field Name</span> field. For example, "Apttus_ExternalId__c".</span>
+            <div class="itemgroup info">
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">To avoid errors, copy-and-paste the field name from Power.</div></div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Search and select the <span class="ph uicontrol">Object Mapping Name</span>. This is the mapping name of the field's object (for example "clm_agreement Mapping").</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save</span> or <span class="ph uicontrol">Save &amp; Close</span>.</span>
+         </li></ol></section>
+   </div>
+</article></article></article></main></body></html>

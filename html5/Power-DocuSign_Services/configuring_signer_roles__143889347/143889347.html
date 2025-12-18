@@ -1,0 +1,136 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metr-dsign-power,docusign-services,signer-roles,recipient-role-names,system-properties,add-recipient-ui,configure-signer-roles,control-tagging-order,select-recipient-role-name,manage-routing-order,enable-recipient-roles,disable-recipient-roles,explicit-tagging-order,implicit-tagging-order,document-signing-workflows,recipient-routing-context,tag-placement-control,enterprise-transaction-management,salesforce-platform,feature-settings,envelope-configuration,enable-recipient-role-names,access-feature-settings,toggle-role-name-feature,apply-configuration-changes,save-feature-settings,verify-role-name-availability,recipient-role-management,envelope-routing-context,salesforce-configuration-context,feature-enablement-context,envelope-roles,signing-roles,add-recipient-role-name,define-role-name,assign-role-to-recipient,update-envelope-roles,save-role-configuration,validate-role-assignment,recipient-role-configuration,signing-role-management,document-routing-context"><meta name="DC.subject" content="metr-dsign-power,docusign-services,signer-roles,recipient-role-names,system-properties,add-recipient-ui,configure-signer-roles,control-tagging-order,select-recipient-role-name,manage-routing-order,enable-recipient-roles,disable-recipient-roles,explicit-tagging-order,implicit-tagging-order,document-signing-workflows,recipient-routing-context,tag-placement-control,enterprise-transaction-management,salesforce-platform,feature-settings,envelope-configuration,enable-recipient-role-names,access-feature-settings,toggle-role-name-feature,apply-configuration-changes,save-feature-settings,verify-role-name-availability,recipient-role-management,envelope-routing-context,salesforce-configuration-context,feature-enablement-context,envelope-roles,signing-roles,add-recipient-role-name,define-role-name,assign-role-to-recipient,update-envelope-roles,save-role-configuration,validate-role-assignment,recipient-role-configuration,signing-role-management,document-routing-context"><meta name="keywords" content="metr-dsign-power, docusign-services, signer-roles, recipient-role-names, system-properties, add-recipient-ui, configure-signer-roles, control-tagging-order, select-recipient-role-name, manage-routing-order, enable-recipient-roles, disable-recipient-roles, explicit-tagging-order, implicit-tagging-order, document-signing-workflows, recipient-routing-context, tag-placement-control, enterprise-transaction-management, metr-dsign-power, docusign-services, salesforce-platform, recipient-role-names, feature-settings, envelope-configuration, enable-recipient-role-names, access-feature-settings, toggle-role-name-feature, apply-configuration-changes, save-feature-settings, verify-role-name-availability, recipient-role-management, envelope-routing-context, document-signing-workflows, salesforce-configuration-context, feature-enablement-context, enterprise-transaction-management, metr-dsign-power, docusign-services, salesforce-platform, recipient-role-names, envelope-roles, signing-roles, add-recipient-role-name, define-role-name, assign-role-to-recipient, update-envelope-roles, save-role-configuration, validate-role-assignment, recipient-role-configuration, signing-role-management, document-routing-context, salesforce-configuration-context, document-signing-workflows, enterprise-transaction-management"><meta name="DC.relation" scheme="URI" content="../../Power-DocuSign_Services/configuring_docusign_serv_143889342/143889342.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-Dsign-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-16+05:30"><meta name="DC.date.modified" content="2025-12-16"><meta name="title" content="Configuring Signer Roles"><meta name="shortdesc" content="Explains how signer roles control tagging order, recipient behavior, and role-based tag placement in DocuSign signing workflows."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="signer-roles;recipient-role-names;tagging-order;system-properties;add-recipient-ui"><meta name="taxonomy" content="domain:sales-operations;usecase:signer-role-configuration;industry:enterprise software and digital transaction management"><meta name="tags" content="signer-roles,tagging-order,recipient-roles,routing-order,docusign"><meta name="usecase" content="understand and configure signer roles to control tagging order and recipient behavior"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="d188aA"><meta name="DC.language" content="en"><title>Configuring Signer Roles</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="d188aA">
+   <h1 class="title topictitle1" id="ariaid-title1">Configuring Signer Roles</h1>
+   
+   
+   <div class="body conbody">
+      <p class="p">
+         <strong class="ph b">Signer Roles</strong> enables users to make the tagging order explicit. <strong class="ph b">Tagging order</strong> is the order in which the signer tags of the recipient will appear on the document to be signed by the signers. The users can select the recipient role name while adding a recipient. This feature is helpful when you have added recipients in a random order but you want to change the tagging order. You can change the routing order in Routing Order column. However, to change the tagging order, you must select the Role Name accordingly.</p>
+      <p class="p">For example, you add three users - Sam Cooper, Mike Hanks, and Rex Klenney - in the same order as mentioned. Now, you want the signing tag of Rex Klenney to be on top of all signers, Sam Cooper's tag to be second, and Mike Hanks as the third. For Rex Klenney, select Signer 1; for Sam Cooper, select Signer 2; and for Mike Hanks, select Signer 3. Now, in the document to be signed, the tags will be in the order as Rex Klenney, Sam Cooper, and Mike Hanks.</p>
+      <p class="p">With Signer Roles, you can skip the signing tags as well. This feature can be utilized when you have a standard document with the standard number of tags and you want to skip a signer. For example, there are three departments and you have a standard document and signer tags - one for each department - HR, Finance, and Legal. For that document, you want signatures from HR and Legal only, you can skip Signer 2 (Finance).</p>
+      <p class="p">To utilize explicit tagging order, you must enable <strong class="ph b">Recipient Roles Enabled</strong> checkbox in System Properties. You can configure the Recipient Role Names and add new Recipient Role Names as well.</p>
+      <p class="p">In implicit tagging order, the row that the recipient shows up on the Add Recipient user interface defines the tagging order - the recipient at row 1 will sign at the first signing tag, recipient at row 2 will sign at the second signing tag, and so on. Users can, however, move the recipients up and down using the arrows on the Add Recipient user interface, and thus re-arrange the tagging order.</p>
+      <p class="p">For example, you add three users - Sam Cooper, Mike Hanks, and Rex Klenney - in the same order as mentioned. Now, you want the signing tag of Rex Klenney to be on top of all signers, Sam Cooper's tag to be second, and Mike Hanks as the third. Now, using the order buttons, you can position Rex Klenney as first, Sam Cooper as second, and Mike Hanks as the third. Now, in the document to be signed, the tags will be in the order as Rex Klenney, Sam Cooper, and Mike Hanks.</p>
+      <p class="p">To utilize implicit tagging order, you must disable <strong class="ph b">Recipient Roles Enabled</strong> checkbox in System Properties.</p>
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+         <ul class="ul">
+            <li class="li">If you have added multiple recipients with the same signer role, and you have enabled Free Form Signing in DocuSign System Properties, then the first user can sign on the tag and others will use free form signing.</li>
+            <li class="li">If free form signing is not enabled, and recipients have the same role, an exception message is displayed.</li>
+         </ul>
+      </div></div>
+      <div class="note warning note_warning"><span class="note__title">Warning:</span> <div class="note__body">
+         <p class="p">You must test the Get/Set Custom tab/tag values feature and ensure that custom class logic works as per your use case with Recipient Roles enabled and make changes to Get/Set classes if needed.</p>
+      </div></div>
+      <div class="p">
+         <table class="table"><caption></caption><colgroup><col><col><col></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry" id="d188aA__entry__1">
+                        <p class="p">Scenario</p>
+                     </th>
+                     <th class="entry" id="d188aA__entry__2">
+                        <p class="p"> Implicit Tagging Order</p>
+                     </th>
+                     <th class="entry" id="d188aA__entry__3">
+                        <p class="p">Explicit Tagging Order</p>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="d188aA__entry__1">
+                        <p class="p">Recipient Roles Enabled custom setting</p>
+                     </td>
+                     <td class="entry" headers="d188aA__entry__2">
+                        <p class="p">Disabled </p>
+                     </td>
+                     <td class="entry" headers="d188aA__entry__3">
+                        <p class="p">Enabled</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d188aA__entry__1">
+                        <p class="p">Visibility of Order buttons</p>
+                     </td>
+                     <td class="entry" headers="d188aA__entry__2">
+                        <p class="p">Order buttons are visible</p>
+                     </td>
+                     <td class="entry" headers="d188aA__entry__3">
+                        <p class="p">Order buttons are not visible</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d188aA__entry__1">
+                        <p class="p">Visibility of Routing Order column</p>
+                     </td>
+                     <td class="entry" headers="d188aA__entry__2">
+                        <p class="p">Routing Order Column is visible</p>
+                     </td>
+                     <td class="entry" headers="d188aA__entry__3">
+                        <p class="p">Routing Order Column is visible</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d188aA__entry__1">
+                        <p class="p">Visibility of Role Name column</p>
+                     </td>
+                     <td class="entry" headers="d188aA__entry__2">
+                        <p class="p">Signer Roles column is not visible</p>
+                     </td>
+                     <td class="entry" headers="d188aA__entry__3">
+                        <p class="p">Signer Roles column is visible</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d188aA__entry__1">
+                        <p class="p">Tagging order of recipients</p>
+                     </td>
+                     <td class="entry" headers="d188aA__entry__2">
+                        <p class="p">Tagging order of recipients can be re-arranged using the order buttons</p>
+                     </td>
+                     <td class="entry" headers="d188aA__entry__3">
+                        <p class="p"> Tagging order of recipients can be re-arranged using the Signer Roles column</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-DocuSign_Services/configuring_docusign_serv_143889342/143889342.html">Configuring DocuSign Services</a></div></div></nav><article class="topic task nested1" aria-labelledby="ariaid-title2" lang="en" id="ConfiguringSignerRoles_Toenablerecipientrolenames">
+   <h2 class="title topictitle2" id="ariaid-title2">To enable recipient role names</h2>
+   
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step">
+            <span class="ph cmd">Go to <span class="ph uicontrol">Setup &gt; Build &gt; Develop &gt; Custom Settings</span> and click<span class="ph uicontrol"> Manage</span> for DocuSign System Properties.</span>
+         </li><li class="li step">
+            <span class="ph cmd">Click <span class="ph uicontrol">Edit</span> for System Properties.</span>
+         </li><li class="li step">
+            <span class="ph cmd">Select <span class="ph uicontrol">Recipient Role Names Enabled</span> check box.</span>
+         </li><li class="li step">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save.</span>
+            </span>
+         </li></ol></section>
+   </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title3" lang="en" id="ConfiguringSignerRoles_Toaddarecipientrolename">
+   <h2 class="title topictitle2" id="ariaid-title3">To add a recipient role name</h2>
+   
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step">
+            <span class="ph cmd">Go to <span class="ph uicontrol">Setup &gt; Build &gt; Create &gt; Objects</span> and select <span class="ph uicontrol">DocuSign Recipients.</span>
+            </span>
+         </li><li class="li step">
+            <span class="ph cmd">Under Custom Fields &amp; Relationships, select <span class="ph uicontrol">Role Name. </span>
+            </span>
+         </li><li class="li step">
+            <span class="ph cmd">Under Picklist Values, click <span class="ph uicontrol">New.</span>
+            </span>
+         </li><li class="li step">
+            <span class="ph cmd">Enter the Values as Signer 1, Signer 2, Signer 3, and Signer 4 of recipient role name. You can add the values as per your business case.</span>
+         </li><li class="li step">
+            <span class="ph cmd">Select the Record Types for which you want to enables these values.</span>
+         </li><li class="li step">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save.</span>
+            </span>
+         </li></ol></section>
+   </div>
+</article></article></article></main></body></html>

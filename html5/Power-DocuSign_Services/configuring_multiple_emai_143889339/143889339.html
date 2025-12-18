@@ -1,0 +1,156 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metr-dsign-power,docusign-services,power-docusign-integration,salesforce-platform,docusign-envelope,email-notifications,configure-email-notifications,edit-notification-content,update-recipient-messaging,apply-notification-settings,save-notification-configuration,validate-email-delivery,recipient-notification-context,esignature-communication,document-signing-workflows,salesforce-configuration-context,transaction-communication-management,enterprise-transaction-management,email-templates,notification-configuration,template-mapping,configure-multiple-email-templates,map-templates-to-workflows,assign-templates-by-context,validate-template-usage,test-notification-output,save-template-configuration,multi-template-notification-design,advanced-email-configuration,document-notification-strategy,template-metadata,unique-name,identify-email-template-unique-name,access-email-template-settings,review-template-metadata,copy-unique-identifier,use-template-reference,validate-template-selection,email-template-management,notification-configuration-context,salesforce-template-setup,document-communication-management,transaction-notification-context"><meta name="DC.subject" content="metr-dsign-power,docusign-services,power-docusign-integration,salesforce-platform,docusign-envelope,email-notifications,configure-email-notifications,edit-notification-content,update-recipient-messaging,apply-notification-settings,save-notification-configuration,validate-email-delivery,recipient-notification-context,esignature-communication,document-signing-workflows,salesforce-configuration-context,transaction-communication-management,enterprise-transaction-management,email-templates,notification-configuration,template-mapping,configure-multiple-email-templates,map-templates-to-workflows,assign-templates-by-context,validate-template-usage,test-notification-output,save-template-configuration,multi-template-notification-design,advanced-email-configuration,document-notification-strategy,template-metadata,unique-name,identify-email-template-unique-name,access-email-template-settings,review-template-metadata,copy-unique-identifier,use-template-reference,validate-template-selection,email-template-management,notification-configuration-context,salesforce-template-setup,document-communication-management,transaction-notification-context"><meta name="keywords" content="metr-dsign-power, docusign-services, power-docusign-integration, salesforce-platform, docusign-envelope, email-notifications, configure-email-notifications, edit-notification-content, update-recipient-messaging, apply-notification-settings, save-notification-configuration, validate-email-delivery, recipient-notification-context, esignature-communication, document-signing-workflows, salesforce-configuration-context, transaction-communication-management, enterprise-transaction-management, metr-dsign-power, docusign-services, salesforce-platform, email-templates, notification-configuration, template-mapping, configure-multiple-email-templates, map-templates-to-workflows, assign-templates-by-context, validate-template-usage, test-notification-output, save-template-configuration, multi-template-notification-design, advanced-email-configuration, document-notification-strategy, salesforce-configuration-context, transaction-communication-management, enterprise-transaction-management, metr-dsign-power, docusign-services, salesforce-platform, email-templates, template-metadata, unique-name, identify-email-template-unique-name, access-email-template-settings, review-template-metadata, copy-unique-identifier, use-template-reference, validate-template-selection, email-template-management, notification-configuration-context, salesforce-template-setup, document-communication-management, transaction-notification-context, enterprise-transaction-management"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-Dsign-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-16+05:30"><meta name="DC.date.modified" content="2025-12-16"><meta name="title" content="Configuring DocuSign email notifications"><meta name="shortdesc" content="Explains how to configure and manage DocuSign email notifications from Salesforce for recipients during document signing workflows."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="email-notifications;notification-content;docusign-envelope;salesforce-settings"><meta name="taxonomy" content="domain:sales-operations;usecase:notification-configuration;industry:enterprise software and digital transaction management"><meta name="tags" content="email-notifications,recipient-messaging,salesforce-setup,docusign-integration"><meta name="usecase" content="configure email notifications sent to recipients during docusign signing processes"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="d176aA"><meta name="DC.language" content="en"><title>Configuring Multiple Email Templates</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="d176aA">
+   <h1 class="title topictitle1" id="ariaid-title1">Configuring Multiple Email Templates</h1>
+   
+   
+   <div class="body conbody">
+      <p class="p">Multiple Email Templates enable you to configure specific email messages for each of your recipients so the individual recipients receive different messages. You can customize your workflow to change the message of each recipient.</p>
+      <p class="p">You can configure an email template from a field called <strong class="ph b">Email Template.</strong> This field can be accessed by selecting the appropriate user under DocuSign Users tab. For now, this feature supports the email templates of <strong class="ph b">Text</strong> type only. This includes Salesforce Merge Fields but does not support HTML type of templates. The user must enter the unique Template name in the Email Template field.</p>
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+         <p class="p">If you select a template of HTML type or you type an incorrect Email Template Unique name, then email message configured in Additional Details or the Custom Labels (EmailSubjectText and EmailBodyText) will be sent as an email to your recipients.</p>
+      </div></div>
+   </div>
+<article class="topic concept nested1" aria-labelledby="ariaid-title2" lang="en" id="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates">
+   <h2 class="title topictitle2" id="ariaid-title2">Use Case: Configuring Multiple Email Templates</h2>
+   
+   
+   <div class="body conbody">
+      <p class="p">We have an administrative user Sam Coop who wants to send an agreement for signature to three recipients - Fast Suppliers, Roxop Cleaners, and Rusty. Sam Coop would like to include different email messages to his recipients. Sam Coop can configure Templates. He defines template Test 001 for Fast Suppliers. He does not define any template for Roxop Cleaners. And, defines template Test for Rusty.</p>
+      <p class="p">To implement this scenario, Sam must have at least one recipient defined in the DocuSign Recipients related list, must have at least one document attached in Notes &amp; Attachments section, and must have configured an email template.</p>
+      <p class="p">The following table displays the scenarios where the email templates can be configured.</p>
+      <div class="p">
+         <table class="table"><caption></caption><colgroup><col><col><col><col><col><col><col></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry" id="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__1">
+                        <p class="p">Scenario</p>
+                     </th>
+                     <th class="entry" id="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__2">
+                        <p class="p">Send to Fast Suppliers / Unique Template Name defined</p>
+                     </th>
+                     <th class="entry" id="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__3">
+                        <p class="p">Send to Roxop Cleaners / Unique Template Name defined</p>
+                     </th>
+                     <th class="entry" id="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__4">
+                        <p class="p">Send to Rusty / Unique Template Name defined</p>
+                     </th>
+                     <th class="entry" id="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__5">
+                        <p class="p">Message in Custom Labels</p>
+                     </th>
+                     <th class="entry" id="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__6">
+                        <p class="p">Edited Message in Additional Details</p>
+                     </th>
+                     <th class="entry" id="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__7">
+                        <p class="p">Result</p>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__1">
+                        <p class="p">Scenario 1</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__2">
+                        <p class="p">Yes / No</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__3">
+                        <p class="p">No / No</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__4">
+                        <p class="p">No / No</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__5">
+                        <p class="p">Yes</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__6">
+                        <p class="p">Yes</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__7">
+                        <p class="p">The document will be sent to Fast Suppliers. Though we have email subject text and email body text defined in the Custom Labels, the recipient will receive the message added in Additional Details. MessageinAdditional Details will override the message that is set using Custom Labels.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__1">
+                        <p class="p">Scenario 2</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__2">
+                        <p class="p">Yes / Yes</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__3">
+                        <p class="p">Yes / No</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__4">
+                        <p class="p">No / No</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__5">
+                        <p class="p">Yes</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__6">
+                        <p class="p">No</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__7">
+                        <p class="p">The document will be first sent to Fast Suppliers. We have defined Email Subject and Email Body in Custom Labels. However, we have defined a Unique Template Name in DocuSign Recipient.FastSuppliers will receive the message defined in the template that is defined in the Unique Template Name. And, Roxop Cleaners will receive the message that has been defined as Email Subject and Email Body in the Custom Labels.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__1">
+                        <p class="p">Scenario 3</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__2">
+                        <p class="p">Yes / Yes</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__3">
+                        <p class="p">Yes / No</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__4">
+                        <p class="p">No / No</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__5">
+                        <p class="p">Yes</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__6">
+                        <p class="p">No</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__7">
+                        <p class="p">The document will be first sent to Fast Suppliers. We have defined Email Subject and Email Body in Custom Labels. However, we have defined a Unique Template Name in DocuSign Recipient.FastSuppliers will receive the message defined in the template that is defined in the Unique Template Name. And, Roxop Cleaners will receive the message that has been edited in Additional Details.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__1">
+                        <p class="p">Scenario 4</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__2">
+                        <p class="p">Yes / Yes</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__3">
+                        <p class="p">Yes / No</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__4">
+                        <p class="p">Yes / Yes</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__5">
+                        <p class="p">Yes</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__6">
+                        <p class="p">Yes (for Roxop Cleaners)</p>
+                     </td>
+                     <td class="entry" headers="ConfiguringMultipleEmailTemplates_UseCaseConfiguringMultipleEmailTemplates__entry__7">
+                        <p class="p">The document will be first sent to Fast Suppliers. This recipient will receive the message that has been defined in the Template. Then, the document is sent to Roxop Cleaners. This recipient will receive the message that has been edited in the Additional Details section. And, finally, the document is sent to Rusty. This recipient will receive the message that has been defined in the template.</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+   </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title3" lang="en" id="ConfiguringMultipleEmailTemplates_Todetermineemailtemplateuniquename">
+   <h2 class="title topictitle2" id="ariaid-title3">To determine email template unique name</h2>
+   
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step">
+            <span class="ph cmd">Go to <span class="ph uicontrol">Setup &gt; Administer &gt; Communication Templates &gt; Email Templates</span> and select the template for which you want to find the unique email template name.</span>
+         </li><li class="li step">
+            <span class="ph cmd">Copy the Template Unique Name and paste it in Template Unique Name. For more information on this step, refer to 
+<a class="xref" href="../adding_recipients_vspring_143889579/143889579.html">Adding Recipients.</a>
+            </span>
+         </li></ol></section>
+   </div>
+</article></article></article></main></body></html>

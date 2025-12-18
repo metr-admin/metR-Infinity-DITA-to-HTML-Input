@@ -1,0 +1,66 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metr-cesign-power,power-platform-integration,power-sign-connector,e-signature-integration,connector-deployment,install-power-sign,configure-connector,authenticate-provider,test-connection,enable-audit-logging,document-signing-workflow,legal-approval-flow,hr-onboarding,procurement-approvals,enterprise-automation,power-platform,power-sign-ui,oauth-client,callback-endpoint,obtain-api-credentials,contact-support,prepare-environment,collect-tenant-details,validate-permissions,integration-prerequisites,security-and-compliance,enterprise-deployment,administration,legal-acceptance,power-sign,connector-configuration,power-automate-action,login-to-power-platform,open-power-sign-configuration,add-or-edit-configuration,map-actions-to-connectors,test-configuration,workflow-automation,legal-and-hr-usecase,procurement-workflow,system-integration"><meta name="DC.subject" content="metr-cesign-power,power-platform-integration,power-sign-connector,e-signature-integration,connector-deployment,install-power-sign,configure-connector,authenticate-provider,test-connection,enable-audit-logging,document-signing-workflow,legal-approval-flow,hr-onboarding,procurement-approvals,enterprise-automation,power-platform,power-sign-ui,oauth-client,callback-endpoint,obtain-api-credentials,contact-support,prepare-environment,collect-tenant-details,validate-permissions,integration-prerequisites,security-and-compliance,enterprise-deployment,administration,legal-acceptance,power-sign,connector-configuration,power-automate-action,login-to-power-platform,open-power-sign-configuration,add-or-edit-configuration,map-actions-to-connectors,test-configuration,workflow-automation,legal-and-hr-usecase,procurement-workflow,system-integration"><meta name="keywords" content="metr-cesign-power, power-platform-integration, power-sign-connector, e-signature-integration, connector-deployment, install-power-sign, configure-connector, authenticate-provider, test-connection, enable-audit-logging, document-signing-workflow, legal-approval-flow, hr-onboarding, procurement-approvals, enterprise-automation, metr-cesign-power, power-platform, power-sign-ui, oauth-client, callback-endpoint, obtain-api-credentials, contact-support, prepare-environment, collect-tenant-details, validate-permissions, integration-prerequisites, security-and-compliance, enterprise-deployment, administration, legal-acceptance, metr-cesign-power, power-sign, power-platform, connector-configuration, power-automate-action, login-to-power-platform, open-power-sign-configuration, add-or-edit-configuration, map-actions-to-connectors, test-configuration, enterprise-deployment, workflow-automation, legal-and-hr-usecase, procurement-workflow, system-integration"><meta name="DC.relation" scheme="URI" content="../../Power-eSignature_Integration_with_Power_Platform/Power_esignature_integrat_218826510/218826510.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-Cesign-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-11-24T18:00:00+05:30"><meta name="DC.date.modified" content="2025-11-24T18:00:00+05:30"><meta name="title" content="Setting Up Power Sign"><meta name="shortdesc" content="Steps to integrate and configure Power Sign with Power Platform to enable electronic signing workflows."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="connector;signer;document;oauth-client;audit-log"><meta name="taxonomy" content="domain:electronic-signature;usecase:connector-setup;industry:enterprise-software"><meta name="tags" content="power-sign,power-platform,connector,setup,configuration"><meta name="usecase" content="setup-power-sign-connector"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c27DC734-BDF2-11F0-2215-09173F13E4C5"><meta name="DC.language" content="en"><title>Setting Up Power Sign</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c27DC734-BDF2-11F0-2215-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Setting Up Power Sign</h1>
+   
+   <div class="body conbody">
+      <p class="p">This topic explains the steps to integrate and configure Power Sign with Power
+         Platform.</p>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-eSignature_Integration_with_Power_Platform/Power_esignature_integrat_218826510/218826510.html">Power eSignature Integration with Power Platform for Administrators</a></div></div></nav><article class="topic concept nested1" aria-labelledby="ariaid-title2" lang="en" id="c27DF52D-BDF2-11F0-1194-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">Prerequisites</h2>
+   
+   
+   <div class="body conbody">
+      <p class="p">Contact Power support to get the following information for your Power Sign account:</p>
+      <ul class="ul">
+         <li class="li">Client ID</li>
+         <li class="li">Client secret</li>
+         <li class="li">Scope</li>
+         <li class="li">Grant type</li>
+         <li class="li">Auth URL</li>
+         <li class="li">Base URL</li>
+         <li class="li">Power Sign UI URL</li>
+         <li class="li">Callback key</li>
+      </ul>
+   </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title3" lang="en" id="t27E0DC2-BDF2-11F0-5731-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">To set up Power Sign</h2>
+   
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Log in to Power Platform.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click the menu icon (<img class="image" height="23" src="../attachments/208504958/208504959.png">) on the top right corner, and go
+               to <span class="ph uicontrol">Admin Settings</span>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Integrations</span>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Navigate to the eSignature API Connections tab.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Under the Action column, click <span class="ph uicontrol">Configure</span> for Power
+               Sign.</span>
+            <div class="itemgroup stepresult">The Power Sign Setup page opens.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter the client ID, scope, grant type, client secret, auth URL, base URL, Power Sign UI URL, and callback key.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Turn on the <span class="ph uicontrol">Default Option for Signature</span> toggle button to
+               make Power Sign the default option while sending documents for eSignature.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Turn on the<span class="ph uicontrol"> Active</span> toggle button to make the Power Sign
+               option available for selection while sending documents for eSignature.</span>
+            <div class="itemgroup info">
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+                  <p class="p">When the Default Option for Signature toggle button is turned on, you can not
+                     turn off the Active toggle button.</p>
+               </div></div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save</span>.</span>
+         </li></ol></section>
+      <section class="section postreq">
+         <p class="p">Power Sign is configured in your org. To edit the configuration, click <span class="ph uicontrol">Edit</span> under the Action column.  </p>
+      </section>
+   </div>
+</article></article></article></main></body></html>

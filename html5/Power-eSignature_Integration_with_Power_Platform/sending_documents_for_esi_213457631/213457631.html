@@ -1,0 +1,124 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metr-cesign-power,power-sign,contract-document-service,recipient-management-module,esignature-orchestration-engine,send-documents-for-esignature,select-supporting-documents,assign-recipients,set-signing-order,finalize-in-power-sign,enterprise-esignature-flow,contract-lifecycle-process,digital-approval-workflow,document-execution-environment,legal-document-routing,contract-status-engine,document-state-module,esignature-readiness-check,workflow-initialization-layer,check-prerequisites,validate-contract-status,review-signature-readiness,prepare-for-esignature,confirm-status-category,contract-lifecycle-management,legal-document-validation,pre-signing-verification,business-process-compliance,docusign-integration,document-selection-module,recipient-management-engine,esignature-orchestration,send-for-esignature,select-documents,add-recipients,finalize-in-docusign,contract-esignature-flow,enterprise-document-approval,digital-signature-execution,approval-process-automation"><meta name="DC.subject" content="metr-cesign-power,power-sign,contract-document-service,recipient-management-module,esignature-orchestration-engine,send-documents-for-esignature,select-supporting-documents,assign-recipients,set-signing-order,finalize-in-power-sign,enterprise-esignature-flow,contract-lifecycle-process,digital-approval-workflow,document-execution-environment,legal-document-routing,contract-status-engine,document-state-module,esignature-readiness-check,workflow-initialization-layer,check-prerequisites,validate-contract-status,review-signature-readiness,prepare-for-esignature,confirm-status-category,contract-lifecycle-management,legal-document-validation,pre-signing-verification,business-process-compliance,docusign-integration,document-selection-module,recipient-management-engine,esignature-orchestration,send-for-esignature,select-documents,add-recipients,finalize-in-docusign,contract-esignature-flow,enterprise-document-approval,digital-signature-execution,approval-process-automation"><meta name="keywords" content="metr-cesign-power, power-sign, contract-document-service, recipient-management-module, esignature-orchestration-engine, send-documents-for-esignature, select-supporting-documents, assign-recipients, set-signing-order, finalize-in-power-sign, enterprise-esignature-flow, contract-lifecycle-process, digital-approval-workflow, document-execution-environment, legal-document-routing, metr-cesign-power, contract-status-engine, document-state-module, esignature-readiness-check, workflow-initialization-layer, check-prerequisites, validate-contract-status, review-signature-readiness, prepare-for-esignature, confirm-status-category, enterprise-esignature-flow, contract-lifecycle-management, legal-document-validation, pre-signing-verification, business-process-compliance, metr-cesign-power, docusign-integration, document-selection-module, recipient-management-engine, esignature-orchestration, send-for-esignature, select-documents, add-recipients, set-signing-order, finalize-in-docusign, contract-esignature-flow, enterprise-document-approval, digital-signature-execution, approval-process-automation, legal-document-routing"><meta name="DC.relation" scheme="URI" content="../../Power-eSignature_Integration_with_Power_Platform/working_with_Power_sign_2_208505012/208505012.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-Cesign-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-11-26T17:00:00+05:30"><meta name="DC.date.modified" content="2025-11-26T17:00:00+05:30"><meta name="title" content="Sending Documents for eSignature with Power Sign"><meta name="shortdesc" content="Explains how to send contract documents and supporting files for eSignature using Power Sign, including selecting documents, choosing recipients, setting signing order, and finalizing the signing process."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="contract document;supporting documents;recipient list;signing order;email subject;email message;power sign console"><meta name="taxonomy" content="domain:e-signature;usecase:send-documents;industry:enterprise-software"><meta name="tags" content="power-sign,document-selection,recipients,signing-order,send"><meta name="usecase" content="send-documents-for-esignature"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c27C018A-BDF2-11F0-1544-09173F13E4C5"><meta name="DC.language" content="en"><title>Sending Documents for eSignature with Power Sign</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c27C018A-BDF2-11F0-1544-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Sending Documents for eSignature with Power Sign</h1>
+   
+   
+   <div class="body conbody">
+      <p class="p">After generating a contract document, you can use Cong Sign to send that document, along with any supporting documents for eSignature. In order to send documents for eSignature, you can use documents already attached to the record and select the documents from the list of available documents. You can select multiple documents for signing within a single request. Then, you select recipients, set the signing order, customize the subject and message of the email, and finalize the document in Power Sign.</p>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-eSignature_Integration_with_Power_Platform/working_with_Power_sign_2_208505012/208505012.html">Working with Power Sign</a></div></div></nav><article class="topic concept nested1" aria-labelledby="ariaid-title2" lang="en" id="c27C2F34-BDF2-11F0-4999-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">Prerequisite</h2>
+   
+   
+   <div class="body conbody">
+      <p class="p">A contract with: </p>
+      <ul class="ul">
+         <li class="li">An In Signature status category</li>
+         <li class="li">A Ready for Signature status</li>
+      </ul>
+   </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title3" lang="en" id="t27C474B-BDF2-11F0-1489-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">To send a document for eSignature</h2>
+   
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Open the Contract record.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Send for Signature</span>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Select <span class="ph uicontrol">Power SIGN</span> from the "Choose your sending option" popup.</span>
+            <div class="itemgroup info">
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+                  <ul class="ul">
+                     <li class="li">The Power Sign option is automatically selected if you checked <span class="ph uicontrol">Default Option for Signature</span> when configuring Power Sign. For more information, see 
+<a class="xref" href="../setting_up_Power_sign_208_208504958/208504958.html">Setting up Power Sign</a>.</li>
+                     <li class="li">If only Power Sign is active, the "Choose your sending option" popup does not appear, and a page opens to select the documents.</li>
+                  </ul>
+               </div></div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Next</span> to open a page to add documents.</span>
+            <ol type="a" class="ol substeps" id="t27C474B-BDF2-11F0-1489-09173F13E4C5__substeps_ewg_jw2_vcc">
+               <li class="li substep">
+                  <span class="ph cmd">Select the documents to send for eSignature from the Available Documents
+                     list. You can select multiple documents.</span>
+               </li>
+               <li class="li substep">
+                  <span class="ph cmd">To search for a document, enter the document name in the Search Documents
+                     box.</span>
+               </li>
+               <li class="li substep">
+                  <span class="ph cmd">To change the document's sequence, drag and drop them into the correct order
+                     using the Sequence icon (<img class="image" id="t27C474B-BDF2-11F0-1489-09173F13E4C5__image_fvt_kw2_vcc" height="22" src="../attachments/213457631/213457629.png">) on
+                     the left.</span>
+               </li>
+               <li class="li substep">
+                  <span class="ph cmd">To preview the document, click the More icon (<img class="image" id="t27C474B-BDF2-11F0-1489-09173F13E4C5__image_zmp_lw2_vcc" height="19" src="../attachments/213457631/213457628.png">) on document thumbnails, and then click
+                        <span class="ph uicontrol">Preview</span>.</span>
+               </li>
+               <li class="li substep">
+                  <span class="ph cmd">To delete the document, click the More icon on document thumbnails, and then
+                     click <span class="ph uicontrol">Delete</span>.</span>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Next </span>to open a page to add recipients. </span>
+            <ol type="a" class="ol substeps" id="t27C474B-BDF2-11F0-1489-09173F13E4C5__substeps_mvp_pw2_vcc">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">To add a name, search for contacts or internal users.</span>
+                  <div class="itemgroup stepresult">After selecting a name, the email is automatically
+                     populated.</div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Select <span class="ph uicontrol">Signer Type</span> from the drop-down list.</span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">To add a new signer, click <span class="ph uicontrol">Add Signer</span>.</span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">To delete a signer, click the Delete icon (<img class="image" id="t27C474B-BDF2-11F0-1489-09173F13E4C5__image_ohn_sw2_vcc" height="19" src="../attachments/213457631/213457630.png">).</span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Check <span class="ph uicontrol">Set Signing Order </span>to require recipients to sign
+                     the documents in a specific order. To change the signer's sequence, drag and
+                     drop them into the correct order using the Sequence icon (<img class="image" id="t27C474B-BDF2-11F0-1489-09173F13E4C5__image_ocs_tw2_vcc" height="22" src="../attachments/213457631/213457629.png">) on the left.</span>
+                  <div class="itemgroup info">
+                     <div class="note note note_note" id="t27C474B-BDF2-11F0-1489-09173F13E4C5__note_vjd_vw2_vcc"><span class="note__title">Note:</span> <div class="note__body">If <span class="ph uicontrol">Set Signing
+                           Order</span> is not checked, the documents can be signed in any
+                        order. </div></div>
+                  </div>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Next </span>to open a page to review and send the documents.</span>
+            <ol type="a" class="ol substeps" id="t27C474B-BDF2-11F0-1489-09173F13E4C5__substeps_k13_zw2_vcc">
+               <li class="li substep">
+                  <span class="ph cmd">Enter email subject and message for your recipients.</span>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Finalize</span>. This opens the documents inside the Power Sign Console.</span>
+            <ol type="a" class="ol substeps" id="t27C474B-BDF2-11F0-1489-09173F13E4C5__substeps_anr_2x2_vcc">
+               <li class="li substep">
+                  <span class="ph cmd">Click the name of recipient in the RECEIPIENTS section, and drag-drop the
+                     required fields from the FIELDS section into your document.</span>
+               </li>
+               <li class="li substep">
+                  <span class="ph cmd">To access any specific page of the document, scroll through it using the
+                        <span class="ph uicontrol">DOCUMENTS </span>pane to the right.</span>
+               </li>
+               <li class="li substep">
+                  <span class="ph cmd">Click <span class="ph uicontrol">SEND TO SIGN</span>.</span>
+               </li>
+               <li class="li substep">
+                  <span class="ph cmd">Click <span class="ph uicontrol">SEND </span>on the confirmation popup.</span>
+               </li>
+            </ol>
+         </li></ol></section>
+      <section class="section postreq">
+         <p class="p">After sending the document for eSignature, the contract's status category and status change to "Other Party Signatures" and "In Signatures", respectively.</p>
+      </section>
+   </div>
+</article></article></article></main></body></html>

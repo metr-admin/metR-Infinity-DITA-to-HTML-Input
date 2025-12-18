@@ -1,0 +1,121 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="metr-ichatter-power,x-author-chatter,salesforce-files,ms-office-integration,document-repository,x-author-addin,checking-out-files,ensure-latest-version,file-locking,local-edit-workflow,sync-back-changes,checkout-preconditions,version-management,enterprise-document-collaboration,revenue-lifecycle-operations,document-and-contract-automation,salesforce-integration,internal-governance,office-product-integration,check-out-files,lock-file-for-edit,open-file-in-ms-office,local-edit-and-save,check-out-validation,file-locking-workflow,collaborative-editing,document-lifecycle-management,revenue-operations-collaboration,internal-team-workflow"><meta name="DC.subject" content="metr-ichatter-power,x-author-chatter,salesforce-files,ms-office-integration,document-repository,x-author-addin,checking-out-files,ensure-latest-version,file-locking,local-edit-workflow,sync-back-changes,checkout-preconditions,version-management,enterprise-document-collaboration,revenue-lifecycle-operations,document-and-contract-automation,salesforce-integration,internal-governance,office-product-integration,check-out-files,lock-file-for-edit,open-file-in-ms-office,local-edit-and-save,check-out-validation,file-locking-workflow,collaborative-editing,document-lifecycle-management,revenue-operations-collaboration,internal-team-workflow"><meta name="keywords" content="metr-ichatter-power, x-author-chatter, salesforce-files, ms-office-integration, document-repository, x-author-addin, checking-out-files, ensure-latest-version, file-locking, local-edit-workflow, sync-back-changes, checkout-preconditions, version-management, enterprise-document-collaboration, revenue-lifecycle-operations, document-and-contract-automation, salesforce-integration, internal-governance, metr-ichatter-power, x-author-chatter, salesforce-files, ms-office-integration, x-author-addin, office-product-integration, check-out-files, lock-file-for-edit, open-file-in-ms-office, local-edit-and-save, check-out-validation, file-locking-workflow, collaborative-editing, document-lifecycle-management, revenue-operations-collaboration, document-and-contract-automation, salesforce-integration, internal-team-workflow"><meta name="DC.relation" scheme="URI" content="../../Power-X-Author_for_Chatter_Integration_Guide/working_with_x_author_cha_98670310/98670310_1.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-ichatter-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Yashshree"><meta name="DC.date.created" content="2025-12-10+05:30"><meta name="DC.date.modified" content="2025-12-10"><meta name="title" content="Checking Out Files"><meta name="shortdesc" content="Details the check-out process to ensure users are editing the most recent version of a file when using X-Author Chatter with Salesforce."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="file;version;checkout;user;salesforce;x-author-chatter"><meta name="taxonomy" content="domain:revenue-operations, document and contract automation;usecase:checking-out-files;industry:revenue-lifecycle-management"><meta name="tags" content="checking-out,version,edit,lock,latest-version,x-author"><meta name="usecase" content="ensure-editing-latest-document-version"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="d13aAjan819"><meta name="DC.language" content="en"><title>Checking Out Files</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="d13aAjan819">
+   <h1 class="title topictitle1" id="ariaid-title1">Checking Out Files</h1>
+   
+   <div class="body conbody">
+      <p class="p">Checking out files and attachments that are in Salesforce ensures that you are working on the most recent version of the file.</p>
+      <p class="p">You can check-out files that are saved in Chatter &gt; Files or those that are in the Notes and Attachments section of objects, such as Opportunities or Accounts. Multiple people can check-out the same file at the same time and subsequently check-in new separate versions. So to ensure each version of a document has the expected content in it, your organization should set up guidelines around document sharing. </p>
+      <p class="p">Whether you have access to files in Chatter or in Notes and Attachments is controlled by standard Salesforce file sharing settings and Standard Salesforce access rights to objects. There is no restriction on the number of files you can check-out. If there is an issue with documents while you are working on them, standard Microsoft Office backup and recovery functionality is used.</p>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-X-Author_for_Chatter_Integration_Guide/working_with_x_author_cha_98670310/98670310_1.html">Working with X-Author Chatter</a></div></div></nav><article class="topic task nested1" aria-labelledby="ariaid-title2" lang="en" id="CheckingOutFiles_Tocheckoutfiles">
+   <h2 class="title topictitle2" id="ariaid-title2">To check out files</h2>
+   
+   <div class="body taskbody">
+      <section class="section prereq" id="CheckingOutFiles_Tocheckoutfiles__prereq_km5_2tv_12c">
+         <p class="p">There must be files available in Salesforce that can be opened by the MS Office
+            product.</p>
+      </section>
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Check-Out</span> and from the <strong class="ph b">Objects</strong> list, select
+               Files to check out a file kept in Chatter &gt; Files and go to the next step.</span>
+            <div class="itemgroup info">
+               <p class="p">- or -</p>
+               <p class="p">Select an object, such as Opportunity or Account, if the file is kept in Notes and
+                  Attachments and go to step 4.</p>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Show Criteria</span> and select the
+                  <span class="ph uicontrol">Scope</span> option for the Chatter file:</span>
+            <div class="itemgroup info">
+               <div class="p">
+                  <table class="table"><caption></caption><colgroup><col><col></colgroup><thead class="thead">
+                           <tr class="row">
+                              <th class="entry" id="CheckingOutFiles_Tocheckoutfiles__entry__1">
+                                 <p class="p">Scope</p>
+                              </th>
+                              <th class="entry" id="CheckingOutFiles_Tocheckoutfiles__entry__2">
+                                 <p class="p">Description</p>
+                              </th>
+                           </tr>
+                        </thead><tbody class="tbody">
+                           <tr class="row">
+                              <td class="entry" headers="CheckingOutFiles_Tocheckoutfiles__entry__1">
+                                 <p class="p">Files I Own</p>
+                              </td>
+                              <td class="entry" headers="CheckingOutFiles_Tocheckoutfiles__entry__2">
+                                 <p class="p">Files you created and previously uploaded to Chatter.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry" headers="CheckingOutFiles_Tocheckoutfiles__entry__1">
+                                 <p class="p">Files Shared with Me</p>
+                              </td>
+                              <td class="entry" headers="CheckingOutFiles_Tocheckoutfiles__entry__2">
+                                 <p class="p">Files created by others, who have chosen to specifically share
+                                    them with you. If files have been shared with you via Groups,
+                                    they do not fall under this scope.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry" headers="CheckingOutFiles_Tocheckoutfiles__entry__1">
+                                 <p class="p">Files I Follow </p>
+                              </td>
+                              <td class="entry" headers="CheckingOutFiles_Tocheckoutfiles__entry__2">
+                                 <p class="p">Files you have chosen to follow from within a Chatter feed.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry" headers="CheckingOutFiles_Tocheckoutfiles__entry__1">
+                                 <p class="p">Files in My Group</p>
+                              </td>
+                              <td class="entry" headers="CheckingOutFiles_Tocheckoutfiles__entry__2">
+                                 <p class="p">Files that have been shared with a Chatter group you are a
+                                    member of.</p>
+                              </td>
+                           </tr>
+                        </tbody></table>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter a name or partial name for the file, if known, click <img class="image" id="CheckingOutFiles_Tocheckoutfiles__image_lzk_d5v_12c" height="16" src="../attachments/98670313/98671125.jpg"> and go to step 7.</span>
+            <div class="itemgroup info">
+               <p class="p">To configure the fields available for search filters, refer to <a class="xref" href="../configuring_search_criter_98672805/98672805.html">Configuring Search Criteria</a>.</p>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Show Criteria</span> and select <span class="ph uicontrol">Files</span>
+               to choose from those that have been uploaded via a Chatter feed within the object and
+               are kept as <strong class="ph b">Feed Attachment</strong> files in the Notes and Attachments section of the
+               object.</span>
+            <div class="itemgroup info">
+               <p class="p">- or -</p>
+               <p class="p">Select <strong class="ph b">Attachments</strong> to choose from files that were uploaded outside of
+                  Chatter to the <strong class="ph b">Notes and Attachments</strong> section.</p>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter a name or partial name for the object record and click <img class="image" id="CheckingOutFiles_Tocheckoutfiles__image_k42_k5v_12c" height="16" src="../attachments/98670313/98671125.jpg">.</span>
+            <div class="itemgroup info">
+               <p class="p"> To configure the fields available for search filters, refer to <a class="xref" href="../configuring_search_criter_98672805/98672805.html">Configuring Search Criteria</a>.</p>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Select</span> beside the object that contains the file you
+               want to open.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Open</span> besides the file you want to work on.</span>
+            <div class="itemgroup info">
+               <p class="p">Only files and attachments that can be opened by the MS Office product are
+                  available in the picklist. For instance, with Word .rtf, .txt, .doc, and .docx
+                  files will be displayed.</p>
+            </div>
+         </li></ol></section>
+      <section class="section result" id="CheckingOutFiles_Tocheckoutfiles__result_lbs_45v_12c">
+         <p class="p">The file is displayed and the ribbon icons are enabled. If you check-out a file that is
+            associated with an object, the <img class="image" id="CheckingOutFiles_Tocheckoutfiles__image_fpv_n5v_12c" height="16" src="../attachments/98670313/98671126.jpg"> icon is
+            displayed in the Chatter feed.</p>
+      </section>
+      <section class="section postreq">
+         <p class="p">You can edit the file as normal and also use the <strong class="ph b">X-Author Chatter</strong> ribbon option to begin
+            collaborating on the document.</p>
+      </section>
+   </div>
+</article></article></article></main></body></html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="docusign-services,metr-dsign-power,docusign-connector,agreement-record,batch-job,esignature-status,scheduling-batch-job,checking-esignature-status,manual-status-check,automatic-status-update,updating-agreement-status,adding-signed-documents,esignature-status-tracking,agreement-lifecycle-management,post-signing-processing,document-status-monitoring,enterprise-esignature-operations,digital-transaction-management,docusign-envelope,batch-job-setup,visualforce-pages,scheduled-jobs,previewing-batch-job-setup,checking-envelope-status,verifying-scheduled-jobs,running-status-reader,monitoring-job-execution,esignature-status-automation,post-send-processing,system-monitoring-context,agreement-status-tracking"><meta name="DC.subject" content="docusign-services,metr-dsign-power,docusign-connector,agreement-record,batch-job,esignature-status,scheduling-batch-job,checking-esignature-status,manual-status-check,automatic-status-update,updating-agreement-status,adding-signed-documents,esignature-status-tracking,agreement-lifecycle-management,post-signing-processing,document-status-monitoring,enterprise-esignature-operations,digital-transaction-management,docusign-envelope,batch-job-setup,visualforce-pages,scheduled-jobs,previewing-batch-job-setup,checking-envelope-status,verifying-scheduled-jobs,running-status-reader,monitoring-job-execution,esignature-status-automation,post-send-processing,system-monitoring-context,agreement-status-tracking"><meta name="keywords" content="docusign-services, metr-dsign-power, docusign-connector, agreement-record, batch-job, esignature-status, scheduling-batch-job, checking-esignature-status, manual-status-check, automatic-status-update, updating-agreement-status, adding-signed-documents, esignature-status-tracking, agreement-lifecycle-management, post-signing-processing, document-status-monitoring, enterprise-esignature-operations, digital-transaction-management, docusign-services, metr-dsign-power, docusign-envelope, batch-job-setup, visualforce-pages, scheduled-jobs, scheduling-batch-job, previewing-batch-job-setup, checking-envelope-status, verifying-scheduled-jobs, running-status-reader, monitoring-job-execution, esignature-status-automation, post-send-processing, system-monitoring-context, agreement-status-tracking, enterprise-esignature-operations, digital-transaction-management"><meta name="DC.relation" scheme="URI" content="../../Power-DocuSign_Services/post_installation_configu_143889330/143889330.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-Dsign-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-15+05:30"><meta name="DC.date.modified" content="2025-12-15"><meta name="title" content="Scheduling Batch Jobs"><meta name="shortdesc" content="Explains how scheduling a batch job enables automatic retrieval of agreement status and how users can also manually check esignature status."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="docusign-connector;batch-job;agreement-status;check-esignature-status-button;notes-and-attachments"><meta name="taxonomy" content="domain:digital-transaction-management;usecase:schedule-batch-job-for-esignature-status;industry:enterprise software and digital transaction management"><meta name="tags" content="batch-job,esignature-status,automation,manual-check,agreement-status"><meta name="usecase" content="schedule and use batch jobs to retrieve and update esignature agreement status"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="d245aA"><meta name="DC.language" content="en"><title>Scheduling Batch Jobs</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="d245aA">
+   <h1 class="title topictitle1" id="ariaid-title1">Scheduling Batch Jobs</h1>
+   
+   
+   <div class="body conbody">
+      <p class="p">Scheduling the batch job for checking the eSignature status enables the users to retrieve the Agreement Status. The DocuSign connector allows you to check eSignature status by two ways - Manual and Automatic.</p>
+      <p class="p">Manually, you click <strong class="ph b">Check eSignature Status</strong> button and retrieve the Agreement Status. If you do not click Check eSignature Status button, the system will automatically update the status if you have set up a batch job. Once the documents have been signed, you can check the status. The signed documents are added to the Notes and Attachments section. The Status is also updated to Fully Signed. The recipients must sign the agreement documents in DocuSign to further update the status. The CheckeSignature status button does not appear when the Agreement status is Fully Signed or when the Signature is declined.</p>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-DocuSign_Services/post_installation_configu_143889330/143889330.html">Post-Installation Configuration</a></div></div></nav><article class="topic task nested1" aria-labelledby="ariaid-title2" lang="en" id="SchedulingBatchJobs_Toscheduleabatchjob">
+   <h2 class="title topictitle2" id="ariaid-title2">To schedule a batch job</h2>
+   
+   
+   <div class="body taskbody">
+      <section class="section context">
+         <p class="p">You must have sent a document out for signature.</p>
+      </section>
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Go to <span class="ph uicontrol">Setup &gt; Develop &gt; Visualforce Pages.</span>
+            </span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click letter <span class="ph uicontrol">B</span> and Select <span class="ph uicontrol">Batch Job Setup</span> page.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Preview.</span>
+            </span>
+            <div class="itemgroup info">
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+                  <p class="p">Step 2 will schedule the batch job.</p>
+               </div></div>
+            </div>
+         </li></ol></section>
+      <section class="section postreq">
+         <p class="p">To ensure that you have scheduled the batch job, Go to <span class="ph uicontrol">Setup &gt; Administration &gt; Monitoring &gt; Scheduled Jobs.</span>
+         </p>
+         <p class="p">You will see the following batch jobs scheduled:</p>
+         <ul class="ul">
+            <li class="li">DocuSign Envelope Status Reader - 15</li>
+            <li class="li">DocuSign Envelope Status Reader - 30</li>
+            <li class="li">DocuSign Envelope Status Reader - 45</li>
+            <li class="li">DocuSign Envelope Status Reader - 60</li>
+         </ul>
+      </section>
+   </div>
+</article></article></article></main></body></html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="salesforce,docusign,docusign-consent-object,docusign-user-object,apex-classes,visualforce-pages,grant-permissions,configure-user-access,assign-salesforce-permissions,enable-object-access,configure-apex-class-access,configure-visualforce-access,profile-configuration,permission-setup,salesforce-security-model,user-access-control,docusign-integration-context,enterprise-application-configuration,docusign-user-consent-object,custom-field-level-security,salesforce-profiles,navigate-to-setup,open-user-profiles,configure-field-level-security,grant-read-permissions,grant-edit-permissions,assign-object-and-field-access,object-permission-setup,field-permission-configuration,salesforce-security-configuration,docusign-integration-configuration,enterprise-application-administration,salesforce-setup,docusign-visualforce-pages,enabled-profiles,open-visualforce-pages,access-security-settings,add-enabled-profiles,grant-visualforce-access,configure-profile-permissions,profile-permission-setup,visualforce-permission-management,salesforce-configuration-task,user-access-configuration,docusign-apex-classes,open-apex-classes,grant-apex-class-access,apex-class-permission-management"><meta name="DC.subject" content="salesforce,docusign,docusign-consent-object,docusign-user-object,apex-classes,visualforce-pages,grant-permissions,configure-user-access,assign-salesforce-permissions,enable-object-access,configure-apex-class-access,configure-visualforce-access,profile-configuration,permission-setup,salesforce-security-model,user-access-control,docusign-integration-context,enterprise-application-configuration,docusign-user-consent-object,custom-field-level-security,salesforce-profiles,navigate-to-setup,open-user-profiles,configure-field-level-security,grant-read-permissions,grant-edit-permissions,assign-object-and-field-access,object-permission-setup,field-permission-configuration,salesforce-security-configuration,docusign-integration-configuration,enterprise-application-administration,salesforce-setup,docusign-visualforce-pages,enabled-profiles,open-visualforce-pages,access-security-settings,add-enabled-profiles,grant-visualforce-access,configure-profile-permissions,profile-permission-setup,visualforce-permission-management,salesforce-configuration-task,user-access-configuration,docusign-apex-classes,open-apex-classes,grant-apex-class-access,apex-class-permission-management"><meta name="keywords" content="salesforce, docusign, docusign-consent-object, docusign-user-object, apex-classes, visualforce-pages, grant-permissions, configure-user-access, assign-salesforce-permissions, enable-object-access, configure-apex-class-access, configure-visualforce-access, profile-configuration, permission-setup, salesforce-security-model, user-access-control, docusign-integration-context, enterprise-application-configuration, salesforce, docusign, docusign-user-consent-object, docusign-user-object, custom-field-level-security, salesforce-profiles, navigate-to-setup, open-user-profiles, configure-field-level-security, grant-read-permissions, grant-edit-permissions, assign-object-and-field-access, object-permission-setup, field-permission-configuration, salesforce-security-configuration, docusign-integration-configuration, user-access-control, enterprise-application-administration, salesforce, docusign, visualforce-pages, salesforce-setup, docusign-visualforce-pages, enabled-profiles, navigate-to-setup, open-visualforce-pages, access-security-settings, add-enabled-profiles, grant-visualforce-access, configure-profile-permissions, profile-permission-setup, visualforce-permission-management, salesforce-configuration-task, docusign-integration-configuration, user-access-configuration, enterprise-application-administration, salesforce, docusign, apex-classes, salesforce-setup, docusign-apex-classes, enabled-profiles, navigate-to-setup, open-apex-classes, access-security-settings, add-enabled-profiles, grant-apex-class-access, configure-profile-permissions, profile-permission-setup, apex-class-permission-management, salesforce-configuration-task, docusign-integration-configuration, user-access-configuration, enterprise-application-administration"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-Dsign-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-15+05:30"><meta name="DC.date.modified" content="2025-12-15"><meta name="title" content="Profile and Permission Setup"><meta name="shortdesc" content="Explains the required Salesforce profile and permission configuration needed to provide access to DocuSign consent and user objects, Apex classes, and Visualforce pages."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="Salesforce;DocuSign;DocuSign Consent object;User object;Apex Classes;Visualforce pages"><meta name="taxonomy" content="domain:access control;usecase:profile and permission configuration;industry:enterprise software and digital transaction management"><meta name="tags" content="profile setup, permission configuration, salesforce access control, docusign integration"><meta name="usecase" content="conceptual guidance for configuring Salesforce profiles and permissions for DocuSign access"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="d93aA"><meta name="DC.language" content="en"><title>Profile and Permission Setup</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="d93aA">
+   <h1 class="title topictitle1" id="ariaid-title1">Profile and Permission Setup</h1>
+   
+   
+   <div class="body conbody">
+      <p class="p">Grant the following permissions in Salesforce to ensure users have sufficient access to DocuSign Consent and User objects and the associated Apex Classes and Visualforce pages.</p>
+   </div>
+<article class="topic task nested1" aria-labelledby="ariaid-title2" lang="en" id="id_ProfileandPermissionSetupvSeptember22_AddingDocuSignObjectandFieldPermissions">
+   <h2 class="title topictitle2" id="ariaid-title2">Adding DocuSign Object and Field Permissions:</h2>
+   
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step">
+            <span class="ph cmd">Go to Salesforce <span class="ph uicontrol">Setup </span>
+               <span class="ph uicontrol">&gt; Users &gt; Profiles</span>.</span>
+         </li><li class="li step">
+            <span class="ph cmd">Click on the Profile Name and go to <span class="ph uicontrol">Custom Field-Level Security</span>.</span>
+         </li><li class="li step">
+            <span class="ph cmd">Grant Read and Edit permissions to all the fields of the <span class="ph uicontrol">DocuSign User Consent</span> object.</span>
+         </li><li class="li step">
+            <span class="ph cmd">Grant Read and Edit permissions to the <span class="ph uicontrol">AccessToken__c</span> and <span class="ph uicontrol">AccessTokenTimeStamp__c </span>fields on the<span class="ph uicontrol"> DocuSign User</span> object.</span>
+         </li></ol></section>
+   </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title3" lang="en" id="id_ProfileandPermissionSetupvSeptember22_AddingDocuSignVisualforcePermissions">
+   <h2 class="title topictitle2" id="ariaid-title3">Adding DocuSign Visualforce Permissions:</h2>
+   
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Go to Salesforce <span class="ph uicontrol">Setup </span>&gt; <span class="ph uicontrol">Develop </span>&gt; <span class="ph uicontrol">Visualforce Pages</span>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click the <span class="ph uicontrol">Security </span>link to the left of the following Visualforce Pages:</span>
+            <div class="itemgroup info">
+               <ol class="ol" type="a">
+                  <li class="li">DocusignGrantConsentCallBack</li>
+                  <li class="li">SelectDRRecordType</li>
+                  <li class="li">ServerInfo</li>
+               </ol>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Add your desired Profiles into the <span class="ph uicontrol">Enabled Profiles</span> box.</span>
+         </li></ol></section>
+   </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title4" lang="en" id="id_ProfileandPermissionSetupvSeptember22_AddingDocuSignApexClassPermissions">
+   <h2 class="title topictitle2" id="ariaid-title4">Adding DocuSign Apex Class Permissions:</h2>
+   
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Go to Salesforce <span class="ph uicontrol">Setup </span>&gt; <span class="ph uicontrol">Develop </span>&gt; <span class="ph uicontrol">Apex Classes.</span>
+            </span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click the <span class="ph uicontrol">Security </span>link to the left of the following Apex Classes:</span>
+            <div class="itemgroup info">
+               <ol class="ol" type="a">
+                  <li class="li">DocusignGrantContentController</li>
+                  <li class="li">DocusignAuthentication</li>
+                  <li class="li">DocusignAuthenticationService</li>
+                  <li class="li">DocusignAuthenticationUtils</li>
+                  <li class="li">DocusignJWT</li>
+                  <li class="li">DocusignRefreshToken</li>
+                  <li class="li">ServerInfo</li>
+               </ol>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Add your desired Profiles into the <span class="ph uicontrol">Enabled Profiles</span> box.</span>
+         </li></ol></section>
+   </div>
+</article></article></article></main></body></html>

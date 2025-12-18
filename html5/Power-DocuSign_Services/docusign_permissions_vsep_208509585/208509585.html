@@ -1,0 +1,982 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="metr-dsign-power,docusign-services,salesforce-platform,docusign-permissions,docusign-custom-objects,docusign-apex-classes,grant-docusign-permissions,configure-user-access,assign-profile-permissions,enable-apex-class-access,configure-object-permissions,manage-tab-visibility,role-based-access-control,salesforce-security-configuration,docusign-user-setup,permission-management,enterprise-access-governance,enterprise-transaction-management"><meta name="keywords" content="metr-dsign-power, docusign-services, salesforce-platform, docusign-permissions, docusign-custom-objects, docusign-apex-classes, grant-docusign-permissions, configure-user-access, assign-profile-permissions, enable-apex-class-access, configure-object-permissions, manage-tab-visibility, role-based-access-control, salesforce-security-configuration, docusign-user-setup, permission-management, enterprise-access-governance, enterprise-transaction-management"><meta name="DC.relation" scheme="URI" content="../../Power-DocuSign_Services/post_installation_configu_143889330/143889330.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-Dsign-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-16+05:30"><meta name="DC.date.modified" content="2025-12-16"><meta name="title" content="DocuSign Permissions"><meta name="shortdesc" content="Describes the Salesforce permissions, object access, tab visibility, and Apex class access required for different user roles working with DocuSign."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="docusign-envelope;docusign-recipient;docusign-status;docusign-user;docusign-signing-groups;apex-class-access"><meta name="taxonomy" content="domain:sales-operations;usecase:docusign-permission-configuration;industry:enterprise software and digital transaction management"><meta name="tags" content="permissions,access-control,roles,salesforce-security,docusign"><meta name="usecase" content="understand and configure required permissions for users working with docusign in salesforce"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="d49aA"><meta name="DC.language" content="en"><title>DocuSign Permissions</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="d49aA"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">DocuSign Permissions</h1>
+   
+   
+   
+   <div class="body conbody">
+      <p class="p">The following permissions need to be granted for user profiles associated with users who will be working with DocuSign. If you do not grant these permissions, the DocuSign user may face issues while using and configuring DocuSign Service.</p>
+      <div class="p">
+         <table class="table"><caption></caption><colgroup><col><col><col><col><col></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry" id="d49aA__entry__1">
+                        <p class="p">Custom Object Layouts</p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__2">
+                        <p class="p">System Administrator</p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__3">
+                        <p class="p">Sales User</p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__4">
+                        <p class="p">Comply User</p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__5">
+                        <p class="p">Legal</p>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__1">
+                        <p class="p">DocuSign Account Configuration</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__2">
+                        <p class="p">Default </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__3">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__4">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__5">
+                        <p class="p">Default</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__1">
+                        <p class="p">DocuSign Callout Transient</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__2">
+                        <p class="p">Default </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__3">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__4">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__5">
+                        <p class="p">Default</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__1">
+                        <p class="p">DocuSign Default Recipient (Deprecated)</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__2">
+                        <p class="p">Default </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__3">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__4">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__5">
+                        <p class="p">Default</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__1">
+                        <p class="p">DocuSign Envelope</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__2">
+                        <p class="p">Default </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__3">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__4">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__5">
+                        <p class="p">Default</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__1">
+                        <p class="p">DocuSign Envelope Document </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__2">
+                        <p class="p">Default </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__3">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__4">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__5">
+                        <p class="p">Default</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__1">
+                        <p class="p">DocuSign Envelope Recipient</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__2">
+                        <p class="p">Default </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__3">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__4">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__5">
+                        <p class="p">Default</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__1">
+                        <p class="p">DocuSign Envelope Recipient Status</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__2">
+                        <p class="p">Default </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__3">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__4">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__5">
+                        <p class="p">Default</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__1">
+                        <p class="p">DocuSign Recipient</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__2">
+                        <p class="p">Default </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__3">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__4">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__5">
+                        <p class="p">Default</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__1">
+                        <p class="p">DocuSign Recipient Status </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__2">
+                        <p class="p">Default </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__3">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__4">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__5">
+                        <p class="p">Default</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__1">
+                        <p class="p">DocuSign Signing Group Member</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__2">
+                        <p class="p">Default </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__3">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__4">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__5">
+                        <p class="p">Default</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__1">
+                        <p class="p">DocuSign Status</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__2">
+                        <p class="p">Default </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__3">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__4">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__5">
+                        <p class="p">Default</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__1">
+                        <p class="p">DocuSign User </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__2">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__3">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__4">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__5">
+                        <p class="p">Default</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__1">
+                        <p class="p">DocuSign User Consent</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__2">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__3">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__4">
+                        <p class="p">Default</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__5">
+                        <p class="p">Default</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+      <div class="p">
+         <table class="table"><caption></caption><colgroup><col><col><col><col><col></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry" id="d49aA__entry__71">
+                        <p class="p">Custom Field Level Security</p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__72">
+                        <p class="p">System Administrator</p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__73">
+                        <p class="p">Sales User</p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__74">
+                        <p class="p">Comply User</p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__75">
+                        <p class="p">Legal</p>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__71">
+                        <p class="p">DocuSign Account Configuration</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__72">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__73">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__74">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__75">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__71">
+                        <p class="p">DocuSign Callout Transient</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__72">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__73">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__74">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__75">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__71">
+                        <p class="p">DocuSign Default Recipient (Deprecated)</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__72">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__73">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__74">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__75">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__71">
+                        <p class="p">DocuSign Envelope</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__72">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__73">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__74">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__75">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__71">
+                        <p class="p">DocuSign Envelope Document </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__72">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__73">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__74">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__75">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__71">
+                        <p class="p">DocuSign Envelope Recipient</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__72">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__73">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__74">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__75">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__71">
+                        <p class="p">DocuSign Envelope Recipient Status</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__72">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__73">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__74">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__75">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__71">
+                        <p class="p">DocuSign Signing Group</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__72">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__73">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__74">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__75">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__71">
+                        <p class="p">DocuSign Signing Group Member</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__72">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__73">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__74">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__75">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__71">
+                        <p class="p">DocuSign Status</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__72">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__73">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__74">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__75">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__71">
+                        <p class="p">DocuSign User </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__72">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__73">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__74">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__75">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__71">
+                        <p class="p">DocuSign User Consent</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__72">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__73">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__74">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__75">
+                        <p class="p">All fields enabled</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+      <div class="p">
+         <table class="table"><caption></caption><colgroup><col><col><col><col><col></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry" id="d49aA__entry__136">
+                        <p class="p">Custom Tab Settings</p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__137">
+                        <p class="p">System Administrator</p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__138">
+                        <p class="p"> Sales User </p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__139">
+                        <p class="p">Comply User</p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__140">
+                        <p class="p"> Legal</p>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__136">
+                        <p class="p">DocuSign Admin</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__137">
+                        <p class="p">Default On</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__138">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__139">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__140">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__136">
+                        <p class="p">DocuSign Configuration Home</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__137">
+                        <p class="p">Default On</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__138">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__139">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__140">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__136">
+                        <p class="p">DocuSign Demo</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__137">
+                        <p class="p">Default Off</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__138">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__139">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__140">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__136">
+                        <p class="p">DocuSign Envelope Recipient Status</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__137">
+                        <p class="p">Default On</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__138">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__139">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__140">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__136">
+                        <p class="p">DocuSign Envelopes</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__137">
+                        <p class="p">Default Off</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__138">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__139">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__140">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__136">
+                        <p class="p">DocuSign Status </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__137">
+                        <p class="p">Default Off</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__138">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__139">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__140">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__136">
+                        <p class="p">DocuSign Users</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__137">
+                        <p class="p">Default Off</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__138">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__139">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__140">
+                        <p class="p">Tab Hidden</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+      <div class="p">
+         <table class="table"><caption></caption><colgroup><col><col></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry" id="d49aA__entry__176">
+                        <p class="p">Custom Record Type Settings</p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__177">
+                        <p class="p">System Administrator</p>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__176">
+                        <p class="p">DocuSign Account Configurations</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__177">
+                        <p class="p"> NA</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__176">
+                        <p class="p">DocuSign Callout Transients</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__177">
+                        <p class="p"> NA</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__176">
+                        <p class="p">DocuSign Envelopes</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__177">
+                        <p class="p"> NA</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__176">
+                        <p class="p">DocuSign Recipients </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__177">
+                        <p class="p">Signing Group, Contact (Default), Email, User</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+      <div class="p">
+         <table class="table"><caption></caption><colgroup><col><col><col><col><col></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry" id="d49aA__entry__186">
+                        <p class="p">Custom Object Permissions</p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__187">
+                        <p class="p">System Administrator</p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__188">
+                        <p class="p">Sales User</p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__189">
+                        <p class="p">Comply User</p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__190">
+                        <p class="p">Legal</p>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__186">
+                        <p class="p">DocuSign Account Configuration</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__187">
+                        <p class="p">NA</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__188">
+                        <p class="p">NA</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__189">
+                        <p class="p">NA</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__190">
+                        <p class="p">NA</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__186">
+                        <p class="p">DocuSign Callout Transient</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__187">
+                        <p class="p">Read, Create, Edit, Delete, View All, Modify All</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__188">
+                        <p class="p">Read, Create, Edit, Delete</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__189">
+                        <p class="p">Read, Create, Edit, Delete</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__190">
+                        <p class="p">Read</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__186">
+                        <p class="p">DocuSign Default Recipient (Deprecated)</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__187">
+                        <p class="p">NA</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__188">
+                        <p class="p">NA</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__189">
+                        <p class="p">NA</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__190">
+                        <p class="p">NA</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__186">
+                        <p class="p">DocuSign Envelope</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__187">
+                        <p class="p">Read, Create, Edit, Delete, View All, Modify All</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__188">
+                        <p class="p">Read, Create, Edit, Delete</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__189">
+                        <p class="p">Read, Create, Edit, Delete</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__190">
+                        <p class="p">Read</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__186">
+                        <p class="p">DocuSign Envelope Documents</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__187">
+                        <p class="p">Read, Create, Edit, Delete, View All, Modify All</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__188">
+                        <p class="p">Read, Create, Edit, Delete</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__189">
+                        <p class="p">Read, Create, Edit, Delete</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__190">
+                        <p class="p">Read</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__186">
+                        <p class="p">DocuSign Envelope Recipient</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__187">
+                        <p class="p">Read, Create, Edit, Delete, View All, Modify All</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__188">
+                        <p class="p">Read, Create, Edit, Delete</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__189">
+                        <p class="p">Read, Create, Edit, Delete</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__190">
+                        <p class="p">Read</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__186">
+                        <p class="p">DocuSign Envelope Recipient Status</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__187">
+                        <p class="p">Read, Create, Edit, Delete, View All, Modify All</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__188">
+                        <p class="p">Read, Create, Edit, Delete</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__189">
+                        <p class="p">Read, Create, Edit, Delete</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__190">
+                        <p class="p">Read</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__186">
+                        <p class="p">DocuSign Recipients</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__187">
+                        <p class="p">NA</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__188">
+                        <p class="p">NA</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__189">
+                        <p class="p">NA</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__190">
+                        <p class="p">NA</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__186">
+                        <p class="p">DocuSign Recipient Status </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__187">
+                        <p class="p">Read, Create, Edit, Delete, View All, Modify All</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__188">
+                        <p class="p">Read, Create, Edit, Delete</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__189">
+                        <p class="p">Read, Create, Edit, Delete</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__190">
+                        <p class="p">Read</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__186">
+                        <p class="p">DocuSign Signing Groups</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__187">
+                        <p class="p">NA</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__188">
+                        <p class="p">NA</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__189">
+                        <p class="p">NA</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__190">
+                        <p class="p">NA</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__186">
+                        <p class="p">DocuSign Signing Group Members</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__187">
+                        <p class="p">NA</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__188">
+                        <p class="p">NA</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__189">
+                        <p class="p">NA</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__190">
+                        <p class="p">NA</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__186">
+                        <p class="p">DocuSign Status</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__187">
+                        <p class="p">Read, Create, Edit, Delete, View All, Modify All</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__188">
+                        <p class="p">Read, Create, Edit, Delete</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__189">
+                        <p class="p">Read, Create, Edit, Delete</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__190">
+                        <p class="p">Read</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__186">
+                        <p class="p">DocuSign User </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__187">
+                        <p class="p">Read, Create, Edit, Delete, View All, Modify All</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__188">
+                        <p class="p">Read, Create, Edit, Delete</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__189">
+                        <p class="p">Read, Create, Edit, Delete</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__190">
+                        <p class="p">Read</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+      <div class="p">
+         <table class="table"><caption></caption><colgroup><col><col><col><col><col></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry" id="d49aA__entry__256">
+                        <p class="p">Enabled Apex Class Access</p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__257">
+                        <p class="p">System Administrator</p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__258">
+                        <p class="p">Sales User</p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__259">
+                        <p class="p">Comply User</p>
+                     </th>
+                     <th class="entry" id="d49aA__entry__260">
+                        <p class="p">Legal</p>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__256">
+                        <p class="p">Apttus_CMDSign.CMDocuSignEnvelopeStatusSubscriber2</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__257">
+                        <p class="p">Enabled </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__258">
+                        <p class="p">Enabled </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__259">
+                        <p class="p">Enabled </p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__260">
+                        <p class="p">Enabled</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__256">
+                        <p class="p">Apttus_QPDSign.QPDocuSignEnvelopeStatusSubscriber2</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__257">
+                        <p class="p">Enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__258">
+                        <p class="p">Enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__259">
+                        <p class="p">Enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__260">
+                        <p class="p">Enabled</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="d49aA__entry__256">
+                        <p class="p">Apttus_DocuApi.*</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__257">
+                        <p class="p">Enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__258">
+                        <p class="p">Enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__259">
+                        <p class="p">Enabled</p>
+                     </td>
+                     <td class="entry" headers="d49aA__entry__260">
+                        <p class="p">Enabled</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-DocuSign_Services/post_installation_configu_143889330/143889330.html">Post-Installation Configuration</a></div></div></nav></article></main></body></html>

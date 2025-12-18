@@ -1,0 +1,62 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="docusign-services,metr-dsign-power,one-click-send,specific-envelopes,docusign-envelope,system-properties,sending-specific-documents,enabling-one-click-send-for-specific-envelopes,passing-url-parameter,sending-envelope-for-esignature,using-default-email-content,selecting-recipient-level-templates,esignature-single-click-workflow,url-based-envelope-triggering,default-recipient-configuration,email-notification-behavior,enterprise-esignature-operations,digital-transaction-management,agreements,proposals,salesforce-instance-url,docusign-create-envelope,single-click-send,sending-document-using-url,copying-agreement-id,copying-proposal-id,constructing-docusign-url,initiating-esignature-request,esignature-workflow,agreement-processing,proposal-processing,browser-based-execution,one-click-send-disabled,document-sending-context"><meta name="DC.subject" content="docusign-services,metr-dsign-power,one-click-send,specific-envelopes,docusign-envelope,system-properties,sending-specific-documents,enabling-one-click-send-for-specific-envelopes,passing-url-parameter,sending-envelope-for-esignature,using-default-email-content,selecting-recipient-level-templates,esignature-single-click-workflow,url-based-envelope-triggering,default-recipient-configuration,email-notification-behavior,enterprise-esignature-operations,digital-transaction-management,agreements,proposals,salesforce-instance-url,docusign-create-envelope,single-click-send,sending-document-using-url,copying-agreement-id,copying-proposal-id,constructing-docusign-url,initiating-esignature-request,esignature-workflow,agreement-processing,proposal-processing,browser-based-execution,one-click-send-disabled,document-sending-context"><meta name="keywords" content="docusign-services, metr-dsign-power, one-click-send, specific-envelopes, docusign-envelope, system-properties, sending-specific-documents, enabling-one-click-send-for-specific-envelopes, passing-url-parameter, sending-envelope-for-esignature, using-default-email-content, selecting-recipient-level-templates, esignature-single-click-workflow, url-based-envelope-triggering, default-recipient-configuration, email-notification-behavior, enterprise-esignature-operations, digital-transaction-management, docusign-services, metr-dsign-power, agreements, proposals, salesforce-instance-url, docusign-create-envelope, single-click-send, sending-document-using-url, copying-agreement-id, copying-proposal-id, constructing-docusign-url, initiating-esignature-request, esignature-workflow, agreement-processing, proposal-processing, browser-based-execution, one-click-send-disabled, document-sending-context"><meta name="DC.relation" scheme="URI" content="../../Power-DocuSign_Services/sending_documents_for_sig_143889367/143889367.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-Dsign-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-15+05:30"><meta name="DC.date.modified" content="2025-12-15"><meta name="title" content="Sending Specific Documents with Single-Click"><meta name="shortdesc" content="Explains how one click send can be enabled for specific envelopes using a URL parameter and how default recipients and email behavior are applied."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="one-click-send;specific-envelopes;docusign-envelope;system-properties;recipient-email-templates"><meta name="taxonomy" content="domain:digital-transaction-management;usecase:send-specific-documents-with-single-click;industry:enterprise software and digital transaction management"><meta name="tags" content="one-click,specific-envelopes,esignature,url-trigger,email-behavior"><meta name="usecase" content="send specific documents for esignature using a single click mechanism controlled by system settings and a URL parameter"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="d253aA"><meta name="DC.language" content="en"><title>Sending Specific Documents with Single-Click</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="d253aA">
+   <h1 class="title topictitle1" id="ariaid-title1">Sending Specific Documents with Single-Click</h1>
+   
+   
+   <div class="body conbody">
+      <p class="p">
+         <strong class="ph b">One-Click Send</strong> enables users to send an envelope for eSignature without needing to go through the various eSignature screens. You can directly send documents to default recipients or Primary Contacts with a single click without configuring additional attachments or recipients. You must have exactly one document in the Notes and Attachments section and a Primary Contact or one recipient in DocuSign Recipients related list. However, <strong class="ph b">One-Click Send for Specific Envelopes</strong> enables the users to enable One-Click Send feature for specific envelopes only. To enable this feature, the One-Click Send checkbox in the System Properties must be disabled. Also, you must pass a parameter <strong class="ph b">&amp;oneclick=true</strong> in the URL with your envelope Id. </p>
+      <p class="p">The default text of email subject for the envelopes sent using one click is<strong class="ph b"> Document Signature Required</strong>, and the email body is defaulted to DocuSign's default Email Body text. Recipient level email templates are picked, but merge fields will not be evaluated. So if templates are used to define recipient level emails, they should not contain any merge fields.</p>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-DocuSign_Services/sending_documents_for_sig_143889367/143889367.html">Sending Documents for Signature with Single-Click</a></div></div></nav><article class="topic task nested1" aria-labelledby="ariaid-title2" lang="en" id="SendingSpecificDocumentswithSingleClick_Tosendaspecificdocumentwithsingle_clickusingURL">
+   <h2 class="title topictitle2" id="ariaid-title2">To send a specific document with single-click using URL</h2>
+   
+   
+   <div class="body taskbody">
+      <section class="section context">
+         <p class="p">You must ensure that One-Click Send custom setting in System Properties is disabled. </p>
+      </section>
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Click the <span class="ph uicontrol">Agreements</span> tab.-or-</span>
+            <div class="itemgroup info">
+               <p class="p">Click the <span class="ph uicontrol">Proposals</span> tab.</p>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Select the agreement or quote/proposal that you want to send for eSignature.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Copy the Agreement ID.</span>
+            <div class="itemgroup info">
+               <p class="p">-or-</p>
+               <p class="p">Copy the Quote/Proposal ID.</p>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Paste your Agreement ID or Quote/Proposal ID in the following code. You can copy this code in any text editor. Replace your instance url and agreement or proposal id. </span>
+            <div class="itemgroup info">
+               <pre class="pre">For Agreements,
+https://&lt;your_instance_url&gt;/apex/Apttus_CMDSign__CMDocuSignCreateEnvelope?id=&lt;agreement_id&gt;&amp;oneclick=true
+ 
+For example, 
+https://na24.salesforce.com/apex/Apttus_CMDSign__CMDocuSignCreateEnvelope?id=a071a00000CDkTo&amp;oneclick=true
+
+For Proposals,
+https://&lt;your_instance_url&gt;/apex/Apttus_QPDSign__QPDocuSignCreateEnvelope?id=&lt;proposal_id&gt;&amp;oneclick=true
+ 
+For example,
+https://na24.salesforce.com/apex/Apttus_QPDSign__QPDocuSignCreateEnvelope?id=a0a1a000001unUi&amp;oneclick=true</pre>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Paste the entire URL as mentioned in step 4 in the address bar of your browser. Refer to the image below. </span>
+            <div class="itemgroup info">
+               <figure class="fig fignone">
+                  <br><img class="image" src="../attachments/143889368/143889458.png" width="900"><br>
+               </figure>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Press the Enter key. The document in the Notes &amp; Attachments section of the agreement you have selected will be sent to the Primary Contact or DocuSign Recipient. You are redirected to the Processing eSignature Request screen.</span>
+         </li></ol></section>
+      <section class="section postreq">
+         <p class="p"> After the document is sent for eSignature, you will be redirected to the Agreement or Proposal screen. </p>
+      </section>
+   </div>
+</article></article></article></main></body></html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="task"><meta name="DC.subject" content="metr-dsign-power,docusign-services,power-docusign-integration,salesforce-platform,envelope-settings,document-records,configure-envelope-settings,update-document-properties,review-envelope-options,apply-configuration-changes,validate-envelope-setup,save-envelope-configuration,envelope-configuration-context,document-preparation-workflows,esignature-setup-process,salesforce-configuration-context,transaction-preparation,enterprise-transaction-management"><meta name="keywords" content="metr-dsign-power, docusign-services, power-docusign-integration, salesforce-platform, envelope-settings, document-records, configure-envelope-settings, update-document-properties, review-envelope-options, apply-configuration-changes, validate-envelope-setup, save-envelope-configuration, envelope-configuration-context, document-preparation-workflows, esignature-setup-process, salesforce-configuration-context, transaction-preparation, enterprise-transaction-management"><meta name="DC.relation" scheme="URI" content="../../Power-DocuSign_Services/configuring_docusign_serv_143889342/143889342.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-Dsign-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-16+05:30"><meta name="DC.date.modified" content="2025-12-16"><meta name="title" content="Configuring DocuSign envelope settings"><meta name="shortdesc" content="Explains how to configure envelope-level settings for DocuSign documents from Salesforce before sending for signature."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="envelope-settings;document-records;docusign-envelope;salesforce-records"><meta name="taxonomy" content="domain:sales-operations;usecase:envelope-configuration;industry:enterprise software and digital transaction management"><meta name="tags" content="envelope-settings,document-setup,salesforce-setup,docusign-integration"><meta name="usecase" content="configure envelope options and document settings prior to sending for signature"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="d180aA"><meta name="DC.language" content="en"><title>Configuring One-Click Send for Specific Envelopes</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="d180aA"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Configuring One-Click Send for Specific Envelopes</h1>
+   
+   
+   <div class="body taskbody">
+      <section class="section context">
+         <p class="p">
+            <span class="ph uicontrol">One-Click Send</span> enables users to send an envelope for eSignature without needing to go through the various eSignature screens. You can directly send documents to default recipients or Primary Contacts with a single click without configuring additional attachments or recipients. You must have exactly one document in the Notes and Attachments section and one recipient in DocuSign Recipients related list. However, <span class="ph uicontrol">One-Click Send for Specific Envelopes</span> enables the users to enable One-Click Send feature for specific envelopes only. To enable this feature, One-Click Send checkbox in the System Properties must be disabled. Also, you must pass a parameter <span class="ph uicontrol">&amp;oneclick=true</span> in the URL with your envelope Id.</p>
+         <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+            <p class="p">Your users will be able to use this feature only if you have disabled One-Click Send system property in Custom Settings.</p>
+         </div></div>
+         <p class="p">For detailed information, refer to the following use case:</p>
+         <div class="p">
+            <table class="table"><caption></caption><colgroup><col><col><col></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry" id="d180aA__entry__1">
+                           <p class="p">One-Click Send checkbox enabled?</p>
+                        </th>
+                        <th class="entry" id="d180aA__entry__2">
+                           <p class="p">Value of &amp;oneclick= parameter </p>
+                        </th>
+                        <th class="entry" id="d180aA__entry__3">
+                           <p class="p">Result</p>
+                        </th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry" headers="d180aA__entry__1">
+                           <p class="p">Yes </p>
+                        </td>
+                        <td class="entry" headers="d180aA__entry__2"></td>
+                        <td class="entry" headers="d180aA__entry__3">
+                           <p class="p">All documents will be sent using One-Click feature, if eligible.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="d180aA__entry__1">
+                           <p class="p">No</p>
+                        </td>
+                        <td class="entry" headers="d180aA__entry__2">
+                           <p class="p">true</p>
+                        </td>
+                        <td class="entry" headers="d180aA__entry__3">
+                           <p class="p">The Document ID that you pass in the parameter will be sent using One-Click Send feature.</p>
+                        </td>
+                     </tr>
+                  </tbody></table>
+         </div>
+         <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+            <p class="p"> If One-Click Send checkbox is enabled, the &amp;oneclick= parameter is not checked by the system.</p>
+         </div></div>
+         <p class="p">
+            <span class="ph uicontrol">To disable one-click send feature checkbox</span>
+         </p>
+      </section>
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Go to <span class="ph uicontrol">Setup &gt; Build &gt; Develop</span> and select <span class="ph uicontrol">Custom Settings.</span>
+            </span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Manage</span> for DocuSign System Properties.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Edit</span> for System Properties. -or-</span>
+            <div class="itemgroup info">
+               <p class="p">Click<span class="ph uicontrol"> Edit</span> for Comply System Properties if you are using Power CLM DocuSign Integration.-or-</p>
+               <p class="p">Click <span class="ph uicontrol">Edit</span> for Proposal System Properties if you are using Power Quote DocuSign Integration.</p>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Deselect <span class="ph uicontrol">One-Click Send</span> checkbox.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save.</span>
+            </span>
+         </li></ol></section>
+      <section class="section postreq">
+         <p class="p">For more information on how to send specific documents with a single click, refer to 
+<a class="xref" href="143889350.html">Sending Specific Documents with Single-Click.</a>
+         </p>
+      </section>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-DocuSign_Services/configuring_docusign_serv_143889342/143889342.html">Configuring DocuSign Services</a></div></div></nav></article></main></body></html>

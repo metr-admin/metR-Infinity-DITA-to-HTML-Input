@@ -1,0 +1,72 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="task"><meta name="DC.subject" content="action-button,custom-action-button,agreement-object,metr-asign-power,power-ui,salesforce-integration,customize-action-button,create-custom-field,update-page-layout,configure-object-manager,add-relationship-field,ui-customization,enterprise-software,crm-configurations,revenue-lifecycle-management,digital-agreement-lifecycle,workflow-optimization,user-interface-design"><meta name="keywords" content="action-button, custom-action-button, agreement-object, metr-asign-power, power-ui, salesforce-integration, customize-action-button, create-custom-field, update-page-layout, configure-object-manager, add-relationship-field, ui-customization, enterprise-software, crm-configurations, revenue-lifecycle-management, digital-agreement-lifecycle, workflow-optimization, user-interface-design"><meta name="DC.relation" scheme="URI" content="../../Power-Adobe_Sign_Services/post_installation_configu_143887800/143887800.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-Asign-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-11-24+05:30"><meta name="DC.date.modified" content="2025-11-24"><meta name="title" content="Customizing Action Button"><meta name="shortdesc" content="Explains how to customize the Action Button by configuring fields, layouts, and settings within the Agreement object in Salesforce."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="agreement-object;action-button;custom-field;page-layout;relationship-field;object-manager;ui-component;crm-object-model"><meta name="taxonomy" content="domain:revenue-lifecycle-management;usecase:ui-customization;industry:enterprise-software"><meta name="tags" content="action-button,ui-customization,agreement-object,custom-field,page-layout,salesforce-configuration"><meta name="usecase" content="ui-customization"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="t23E1A3F-BDF2-11F0-1522-09173F13E4C5"><meta name="DC.language" content="en"><title>Customizing Action Button</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="t23E1A3F-BDF2-11F0-1522-09173F13E4C5"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Customizing Action Button</h1>
+   
+   
+   <div class="body taskbody">
+      <section class="section context">
+         <p class="p">To show the<span class="ph uicontrol"> Send For Echosign</span> custom button in the Action Panel
+            in Lightning Mode, you need to configure the <span class="ph uicontrol">SendForEchosign_Custom
+               action</span> button. For using your own customized buttons in the action panel,
+            you need to create custom formula fields with the required logic and add them to the
+            agreement layout. To create a custom formula field for action, follow the naming
+            convention outlined as under:</p>
+      </section>
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Go to <span class="ph menucascade"><span class="ph uicontrol">Setup</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol"> Object Manager</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol"> Agreement</span></span> object.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Fields and Relationships</span> from the left navigation panel.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">New </span>to create a new custom field.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Select <span class="ph uicontrol">Formula</span> data type and click <span class="ph uicontrol">Next</span>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">For <span class="ph uicontrol">Field Label</span>, enter <em class="ph i">&lt;action_name&gt;_Custom</em>.
+               For example, to create a <span class="ph uicontrol">Send For Echosign</span> button, enter
+               SendForEchosign_Custom.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">The value in the field label is automatically copied as <span class="ph uicontrol">Field Name</span> when you click anywhere outside the field.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Select the <span class="ph uicontrol">Formula Return Type</span> as Text and click
+                  <span class="ph uicontrol">Next.</span>
+            </span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter the formula for the action button as per your requirement.</span>
+            <div class="itemgroup info">
+               <p class="p">The following is an example of the formula. If you want to see the Lightning user interface when working in Lightning mode, configure the <span class="ph uicontrol">Apttus_Echosign__LightningSelectAttachment</span> page in the formula.</p>
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+                  <p class="p">
+                     <strong class="ph b">Example</strong>
+                  </p>
+                  <p class="p">IF(OR(ISPICKVAL(Apttus__Status_Category__c,"In Authoring"),
+                     AND(ISPICKVAL(Apttus__Status_Category__c,"In Signatures"),
+                     ISPICKVAL(Apttus__Status__c,"Ready for Signatures")),
+                     AND(ISPICKVAL(Apttus__Status_Category__c,"In Signatures"),
+                     ISPICKVAL(Apttus__Status__c,"Signature Declined"))),
+                        <strong class="ph b">IF(OR($User.UIThemeDisplayed == 'Theme4d', $User.UIThemeDisplayed ==
+                        'Theme4t', $User.UIThemeDisplayed == 'Theme4u'),
+                        HYPERLINK("/apex/Apttus_Echosign__LightningSelectAttachment?targetPageURL=/apex/Apttus_Echosign__EchoSignInfoEdit&amp;id="&amp;Id,
+                        IMAGE("/resource/Apttus_Echosign__eSignature","Send To Other Party For
+                        eSignatures"), "_self"),
+                        HYPERLINK("/apex/Apttus_Echosign__SelectAttachment?targetPageURL=/apex/Apttus_Echosign__EchoSignInfoEdit&amp;id="&amp;Id,
+                        IMAGE("/resource/Apttus_Echosign__eSignature","Send To Other Party For
+                        eSignatures"), "_self")</strong>), NULL)</p>
+               </div></div>
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+                  <p class="p">To display an action button in the <span class="ph uicontrol">Action Panel</span>, make
+                     sure that the formula entered for the custom formula field returns a non-null
+                     value. If the formula returns a Null value, the action button or field would be
+                     hidden in the <span class="ph uicontrol">Action Panel</span>.</p>
+               </div></div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Apply the field's access setting and page layout and click <span class="ph uicontrol">Save</span>. Your action button is created.</span>
+            <div class="itemgroup info">
+               <p class="p">To learn how to create custom fields, refer to Salesforce Help <a class="xref" href="https://help.salesforce.com/articleView?id=adding_fields.htm&amp;type=0" target="_blank" rel="external noopener">
+                     <u class="ph u">Custom Fields | Salesforce</u>
+                  </a>.</p>
+            </div>
+         </li></ol></section>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-Adobe_Sign_Services/post_installation_configu_143887800/143887800.html">Post-Installation Configuration</a></div></div></nav></article></main></body></html>

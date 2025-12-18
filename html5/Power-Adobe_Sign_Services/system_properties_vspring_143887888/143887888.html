@@ -1,0 +1,178 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="apttus-adobe-esignature-properties,apttusadobeesignatureproperties__c,apttus-echosign,apttus-qpesign,esignature-integration,metR-asign-power,system-properties-configuration,custom-setting-creation,namespace-validation,agreement-esignature-routing,quote-proposal-esign-process,record-initialization,revenue-lifecycle-management,enterprise-software,revenue-operations,salesforce-environment,digital-agreement-workflows,enterprise-esignature-governance,salesforce-custom-settings,force-selections,agreement-template,activity-history-status,system-properties-record-creation,custom-setting-management,esignature-template-validation,agreement-status-update,template-filtering-logic,related-agreements-update,esignature-governance,contract-lifecycle-management"><meta name="DC.subject" content="apttus-adobe-esignature-properties,apttusadobeesignatureproperties__c,apttus-echosign,apttus-qpesign,esignature-integration,metR-asign-power,system-properties-configuration,custom-setting-creation,namespace-validation,agreement-esignature-routing,quote-proposal-esign-process,record-initialization,revenue-lifecycle-management,enterprise-software,revenue-operations,salesforce-environment,digital-agreement-workflows,enterprise-esignature-governance,salesforce-custom-settings,force-selections,agreement-template,activity-history-status,system-properties-record-creation,custom-setting-management,esignature-template-validation,agreement-status-update,template-filtering-logic,related-agreements-update,esignature-governance,contract-lifecycle-management"><meta name="keywords" content="apttus-adobe-esignature-properties, apttusadobeesignatureproperties__c, apttus-echosign, apttus-qpesign, esignature-integration, metR-asign-power, system-properties-configuration, custom-setting-creation, namespace-validation, agreement-esignature-routing, quote-proposal-esign-process, record-initialization, revenue-lifecycle-management, enterprise-software, revenue-operations, salesforce-environment, digital-agreement-workflows, enterprise-esignature-governance, apttus-adobe-esignature-properties, metR-asign-power, salesforce-custom-settings, force-selections, agreement-template, activity-history-status, system-properties-record-creation, custom-setting-management, esignature-template-validation, agreement-status-update, template-filtering-logic, related-agreements-update, revenue-lifecycle-management, enterprise-software, salesforce-environment, digital-agreement-workflows, esignature-governance, contract-lifecycle-management"><meta name="DC.relation" scheme="URI" content="../../Power-Adobe_Sign_Services/post_installation_configu_143887800/143887800.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-Asign-Power"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-11-24+05:30"><meta name="DC.date.modified" content="2025-11-24"><meta name="title" content="System Properties"><meta name="shortdesc" content="Describes how to create and configure the Apttus-Adobe eSignature System Properties record with appropriate namespaces for agreements, quotes, and proposals."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="system-properties-record;apttus-adobe-esignature-properties;apttusadobeesignatureproperties__c;apttus-echosign-namespace;apttus-qpesign-namespace;esignature-agreement-flow"><meta name="taxonomy" content="domain:enterprise-software;usecase:esignature-configuration;industry:revenue-life-cycle-management"><meta name="tags" content="system-properties,custom-setting,namespace,esignature,apttus-adobe,agreement-flow,quote-proposal-routing"><meta name="usecase" content="configure-system-properties-for-esignature-routing"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c24043A0-BDF2-11F0-1104-09173F13E4C5"><meta name="DC.language" content="en"><title>System Properties</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c24043A0-BDF2-11F0-1104-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">System Properties</h1>
+   
+   
+   <div class="body conbody">
+      <p class="p">You must create the System Properties record under the Apttus-Adobe eSignature Properties
+         custom setting with the API Name <span class="keyword apiname">ApttusAdobeESignatureProperties__c.
+         </span>
+      </p>
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+         <p class="p">You need to configure the Apttus-Adobe eSignature Properties custom setting with Apttus_Echosign namespace when sending an agreement for eSignature. </p>
+         <p class="p">You need to configure the Apttus-Adobe eSignature Properties custom setting with Apttus_QPESign namespace when sending a quote or proposal for eSignature.</p>
+      </div></div>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Power-Adobe_Sign_Services/post_installation_configu_143887800/143887800.html">Post-Installation Configuration</a></div></div></nav><article class="topic task nested1" aria-labelledby="ariaid-title2" lang="en" id="t2406BFE-BDF2-11F0-1850-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">To create system properties record</h2>
+   
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Go to <span class="ph menucascade"><span class="ph uicontrol">Setup </span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol"> Build </span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol"> Develop </span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol"> Custom Settings</span></span> and click <span class="ph uicontrol">Manage</span> for Apttus-Adobe eSignature Properties.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">New</span>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter the <span class="ph uicontrol">Name</span> as System Properties.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Select the <span class="ph uicontrol">Force Selections</span> checkbox if you want to force your users to select Attachment(s) and a Template when available while sending a document for eSignature. </span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save</span>. </span>
+            <div class="itemgroup info">
+               <p class="p">The following managed properties are used throughout this document.</p>
+               <div class="p">
+                  <table class="table" id="t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc"><caption></caption><colgroup><col><col></colgroup><thead class="thead">
+                           <tr class="row">
+                              <th class="entry" id="t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__1" colspan="2">
+                                 <span class="ph menucascade"><span class="ph uicontrol">Setup</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Build</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Develop</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Custom Settings</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Apttus-Adobe eSignature Properties</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol"> System Properties</span></span>
+                              </th>
+                           </tr>
+                           <tr class="row">
+                              <th class="entry" id="t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__2">
+                                 <p class="p">Name</p>
+                              </th>
+                              <th class="entry" id="t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__3">
+                                 <p class="p">Description</p>
+                              </th>
+                           </tr>
+                        </thead><tbody class="tbody">
+                           <tr class="row">
+                              <td class="entry" headers="t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__1 t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__2">
+                                 <p class="p">
+                                    <span class="ph uicontrol">Force Selections</span>
+                                 </p>
+                              </td>
+                              <td class="entry" headers="t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__1 t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__3">
+                                 <p class="p">Select this option if you want to force your users to select
+                                    Attachment(s) and a Template when available while sending a
+                                    document for eSignature.</p>
+                                 <p class="p">If checked, the system throws an error if the user does not
+                                    select attachment(s) and a template, when available.</p>
+                                 <p class="p">If unchecked, the system does not throw any error, even if the
+                                    user does not select the template, when available.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry" headers="t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__1 t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__2">
+                                 <p class="p">
+                                    <span class="ph uicontrol">Don't Copy Signed Documents</span>
+                                 </p>
+                                 <p class="p">(For Power CLM and Power CPQ)</p>
+                              </td>
+                              <td class="entry" headers="t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__1 t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__3">
+                                 <p class="p">Select this option if you do not want the system to copy your
+                                    signed documents from <span class="ph uicontrol">Adobe to Agreement</span>
+                                    or <span class="ph uicontrol">Quote/Proposal record.</span>
+                                 </p>
+                                 <p class="p">If checked, the system will not copy your signed documents from
+                                       <span class="ph uicontrol">Adobe to Agreement</span> or
+                                       <span class="ph uicontrol">Quote/Proposal record</span>. And, the system
+                                    will update the record's <span class="ph uicontrol">Activity History</span>
+                                    and the <span class="ph uicontrol">Status.</span>
+                                 </p>
+                                 <p class="p">If unchecked, the system will copy your signed documents from
+                                       <span class="ph uicontrol">Adobe to Agreement</span> or
+                                       <span class="ph uicontrol">Quote/Proposal record.</span>
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry" headers="t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__1 t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__2">
+                                 <p class="p">
+                                    <span class="ph uicontrol">Hide Related Agreement Selection</span>
+                                 </p>
+                                 <p class="p">(For Power CLM)</p>
+                              </td>
+                              <td class="entry" headers="t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__1 t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__3">
+                                 <p class="p">Select this option if you want to hide the option for Related
+                                    Agreement Selection.</p>
+                                 <p class="p">If checked, the users will not see the
+                                    Related/Child/Parent/Sibling agreements on the <span class="ph uicontrol">Select
+                                       Attachment</span>user interface.</p>
+                                 <p class="p">If unchecked, the users will see the
+                                    Related/Child/Parent/Sibling Agreements on the <span class="ph uicontrol">Select
+                                       Attachment</span> user interface.</p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry" headers="t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__1 t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__2">
+                                 <p class="p">
+                                    <span class="ph uicontrol">Update Related Agreements</span>
+                                 </p>
+                                 <p class="p">(For Power CLM)</p>
+                              </td>
+                              <td class="entry" headers="t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__1 t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__3">
+                                 <p class="p">Select this checkbox if you want to update the Agreement Status
+                                    of all Related Agreements.</p>
+                                 <p class="p">If checked the status of Related/Child/Parent/Sibling agreements
+                                    will be updated if they are selected while sending for
+                                    eSignature. Also, the signed documents will be returned back to
+                                    the respective Related/Child/Parent/Sibling agreements. </p>
+                                 <p class="p">If unchecked, the status of only the <span class="ph uicontrol"> Primary
+                                       Agreement </span>will be updated and signed documents
+                                    will be returned back to the <span class="ph uicontrol"> Primary Agreement
+                                    </span> only. </p>
+                                 <div class="note note note_note" id="t2406BFE-BDF2-11F0-1850-09173F13E4C5__note_myv_k4k_rcc"><span class="note__title">Note:</span> <div class="note__body">
+                                    <p class="p">  If you select Update Related Agreements checkbox, you must
+                                       select Don't Copy Signed Documents checkbox to avoid
+                                       redundant documents through product trigger. </p>
+                                    <p class="p">If you want to ensure that the signed agreements are returned
+                                       back to their respective records, you must add custom code in
+                                       your org. For more information on returning back signed
+                                       agreements, refer to <a class="xref" href="https://documentation.Power.com/display/ESIGN/.Selecting+Attachments+and+Templates+vSpring-21" target="_blank" rel="external noopener">
+                                          <u class="ph u">Selecting Attachments and Templates</u>
+                                       </a>. </p>
+                                 </div></div>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry" headers="t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__1 t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__2">
+                                 <p class="p">
+                                    <span class="ph uicontrol">Bypass Sharing</span>
+                                 </p>
+                              </td>
+                              <td class="entry" headers="t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__1 t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__3">
+                                 <p class="p">Select this checkbox to bypass the <span class="ph uicontrol">Org Sharing
+                                       Settings </span>set for <span class="ph uicontrol">Agreement
+                                       Template</span> object. </p>
+                                 <p class="p">If you select this checkbox, all the agreement templates are
+                                    made available to the logged-in user to select while sending an
+                                    agreement for eSignature. </p>
+                                 <p class="p">If you do not select this checkbox, the availability of
+                                    templates is based on the access setting specified in the
+                                       <span class="ph uicontrol">Org Sharing Settings </span> for
+                                       <span class="ph uicontrol">Agreement Template</span> object. </p>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry" headers="t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__1 t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__2">
+                                 <p class="p">
+                                    <span class="ph uicontrol">Enable Template Filtering</span>
+                                 </p>
+                              </td>
+                              <td class="entry" headers="t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__1 t2406BFE-BDF2-11F0-1850-09173F13E4C5__table_fqf_yfk_rcc__entry__3">
+                                 <p class="p">Select this checkbox to filter the templates according to the
+                                    Agreement Type while sending an agreement for eSignature.</p>
+                                 <p class="p">If you select this checkbox, the template selection list
+                                    includes the templates for which the template's Agreement Type
+                                    matches with the <span class="ph uicontrol">Record Type</span> of the
+                                    selected agreement record.</p>
+                              </td>
+                           </tr>
+                        </tbody></table>
+               </div>
+            </div>
+         </li></ol></section>
+   </div>
+</article></article></article></main></body></html>
