@@ -1,0 +1,85 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="description" content=""><meta name="DC.subject" content="logic-block,condition-block,if-block,connector,expression-evaluator,condition-definition,rule-evaluation,connector-routing,boolean-evaluation,branch-triggering,mind-administration-guide,capital-program-management,form-builder,business-logic,ui-behaviour"><meta name="keywords" content="logic-block, condition-block, if-block, connector, expression-evaluator, condition-definition, rule-evaluation, connector-routing, boolean-evaluation, branch-triggering, mind-administration-guide, capital-program-management, form-builder, business-logic, ui-behaviour"><meta name="DC.audience.type" content="role"><meta name="prodname" content="Mind-Administration-Guide"><meta name="platform" content="web"><meta name="DC.creator" content="Yashshree"><meta name="DC.date.created" content="2025-11-20+05:30"><meta name="DC.date.modified" content="2025-11-20+05:30"><meta name="title" content="Logic"><meta name="shortdesc" content="Describes logic blocks and condition constructs used to evaluate rules, route connectors and drive branching in form logic."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="logic-block;condition-block;if-block;connector;expression"><meta name="taxonomy" content="domain:capital-program-management;usecase:condition-evaluation;industry:glass-manufacturing"><meta name="tags" content="logic,condition,if-block,connector,rule-evaluation"><meta name="usecase" content="define-and-evaluate-conditions"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="Logic"><meta name="DC.language" content="en-us"><title>Logic</title><link rel="stylesheet" type="text/css" href="../../../../commonltr.css"></head><body id="Logic"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Logic</h1>
+   
+   
+   <div class="body conbody"><p class="shortdesc"></p>
+      <p class="p">The <span class="ph uicontrol">Logic</span> blocks enable you to define any conditional logic. You can define the <span class="ph uicontrol">If</span> condition to validate if the condition passes or the <span class="ph uicontrol">Boolean</span> condition to define if a condition is true or false.</p>
+      <p class="p">
+         <span class="ph uicontrol">If Block</span>
+      </p>
+      <div class="p">The <span class="ph uicontrol">If</span> block has two connectors: one input and one output. The condition is specified under the <span class="ph uicontrol">if</span> entry point and the action if the condition passes is specified under the <span class="ph uicontrol">do</span> entry point.<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span></figcaption>
+            
+            <img class="image" src="../../../Icons/Screenshots_Icons/If_Condition_2_Point.png">
+         </figure>
+      </div>
+      <div class="p">The <span class="ph uicontrol">If</span> block has multiple additional options to define multiple conditions. You can click <img class="image" src="../../../Icons/Screenshots_Icons/Settings_If__icon.png"> to add any level of conditions by dragging either the <span class="ph uicontrol">else</span> or <span class="ph uicontrol">else if</span> block under the <span class="ph uicontrol">If</span> block.<figure class="fig fignone">
+            <img class="image" src="../../../Icons/Screenshots_Icons/Settings_Else_If_Condition.png">
+         </figure>
+      </div>
+      <div class="p">The <span class="ph uicontrol">else</span> or <span class="ph uicontrol">else if</span> blocks are used only for multiple conditions. For example, if you need to check the logged in user, you can set the conditions as follows: <ul class="ul">
+            <li class="li">if the logged in user role is <span class="ph uicontrol">Contractor</span>, then hide <span class="ph uicontrol">Amount </span>field,</li>
+            <li class="li">else if current user role is <span class="ph uicontrol">Consultant </span>, then set the <span class="ph uicontrol">Amount</span> field to <span class="ph uicontrol">Read-only</span>, and</li>
+            <li class="li">if the current user role is <span class="ph uicontrol">Project Manager</span>, then set the <span class="ph uicontrol">Amount</span> field to <span class="ph uicontrol">Mandatory</span>.</li>
+         </ul>
+      </div>
+      <p class="p">If all the above conditions fail, you can also use a generic fail-safe <span class="ph uicontrol">else</span> condition.</p>
+      <p class="p">
+         <span class="ph uicontrol">Boolean Block</span>
+      </p>
+      <div class="p">The output of a Boolean block is always either true or false, irrespective of which block you choose. There are five types of Boolean blocks:<ul class="ul">
+            <li class="li">Simple Boolean block</li>
+            <li class="li">Dual-check Boolean block</li>
+            <li class="li">Not block </li>
+            <li class="li">True/False block</li>
+            <li class="li">Null block</li>
+         </ul>
+      </div>
+      <p class="p">
+         <span class="ph uicontrol">Simple Boolean Block</span>
+      </p>
+      <div class="p">The Simple Boolean block enables you to define comparators in the conditions block. For example, if you want to check the logged in user role of <span class="ph uicontrol">Contractor</span>, then a simple Boolean block must be used and connected to the <span class="ph uicontrol">If</span> block.<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span></figcaption>
+            
+            <img class="image" src="../../../Icons/Screenshots_Icons/Simple_Boolean.png">
+         </figure>
+      </div>
+      <p class="p">The first entry of the condition check is a data operation block to check the role of the logged in user, and the second entry is a text field where you type <span class="ph uicontrol">Contractor</span>.</p>
+      <div class="p break_avoid">The configuration of this scenario is illustrated in the following image:<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 3. </span></figcaption>
+            
+            <img class="image" src="../../../Icons/Screenshots_Icons/Simple_Boolean_Configuration.png">
+         </figure>
+      </div>
+      <p class="p">
+         <span class="ph uicontrol">Dual-check Boolean Block</span>
+      </p>
+      <div class="p break_avoid">The Dual-check Boolean block is the next block in the Boolean condition category. This block has two slots that enable you to check both the conditions.<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 4. </span></figcaption>
+            
+            <img class="image" src="../../../Icons/Screenshots_Icons/DoubleCheck_Boolean.png">
+         </figure>
+      </div>
+      <p class="p">For example, if you want to check if the logged in user belongs to the <span class="ph uicontrol">Contractor</span> role and the current stage is <span class="ph uicontrol">Submitted</span>, then a simple Boolean block is added to each slot.</p>
+      <div class="p break_avoid">The configuration of this scenario is illustrated in the following image:<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 5. </span></figcaption>
+            
+            <img class="image" src="../../../Icons/Screenshots_Icons/DoubleCheck_Boolean_Configuration.png">
+         </figure>
+      </div>
+      <p class="p">
+         <span class="ph uicontrol">True/False Block</span>
+      </p>
+      <p class="p">The <span class="ph uicontrol">true</span> or <span class="ph uicontrol">false</span> block enables you to validate if the condition is true or false. </p>
+      <div class="p break_avoid">For example, if you want to check if a check box is set to <span class="ph uicontrol">true</span> or <span class="ph uicontrol">false</span> and then execute a condition based on it, you can use the <span class="ph uicontrol">true</span> or <span class="ph uicontrol">false</span> block as required. <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 6. </span></figcaption>
+            
+            <img class="image" src="../../../Icons/Screenshots_Icons/True-False_Block.jpg">
+         </figure>
+      </div>
+      <p class="p">
+         <span class="ph uicontrol">Null Block</span>
+      </p>
+      <div class="p">The <span class="ph uicontrol">null</span> block enables you to check if the information is null and perform appropriate action where information is missing. <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 7. </span></figcaption>
+            
+            <img class="image" src="../../../Icons/Screenshots_Icons/Null_block.jpg">
+         </figure>
+      </div>
+   </div>
+</article></main></body></html>

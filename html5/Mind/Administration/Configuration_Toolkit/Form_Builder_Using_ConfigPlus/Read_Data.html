@@ -1,0 +1,67 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="description" content=""><meta name="DC.subject" content="read-data-block,data-source,api-endpoint,variable-target,response-mapper,data-retrieval,api-fetch,deserialization,variable-population,error-handling,mind-administration-guide,capital-program-management,form-builder,integration-points,runtime-fetch"><meta name="keywords" content="read-data-block, data-source, api-endpoint, variable-target, response-mapper, data-retrieval, api-fetch, deserialization, variable-population, error-handling, mind-administration-guide, capital-program-management, form-builder, integration-points, runtime-fetch"><meta name="DC.audience.type" content="role"><meta name="prodname" content="Mind-Administration-Guide"><meta name="platform" content="web"><meta name="DC.creator" content="Yashshree"><meta name="DC.date.created" content="2025-11-20+05:30"><meta name="DC.date.modified" content="2025-11-20+05:30"><meta name="title" content="Read Data"><meta name="shortdesc" content="Describes the Read Data block for retrieving information from sources, mapping results to variables and handling fetch errors."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="read-data-block;api;variable;payload;datasource"><meta name="taxonomy" content="domain:capital-program-management;usecase:data-retrieval;industry:glass-manufacturing"><meta name="tags" content="read-data,api,variable,fetch,integration"><meta name="usecase" content="retrieve-and-map-data"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="ReadData"><meta name="DC.language" content="en-us"><title>Read Data</title><link rel="stylesheet" type="text/css" href="../../../../commonltr.css"></head><body id="ReadData"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Read Data</h1>
+   
+   
+   <div class="body conbody"><p class="shortdesc"></p>
+      <p class="p">The <span class="ph uicontrol">Read Data</span> block enables you to get information from any form  in  <span class="ph">Mind</span>. You can configure the source form from where the information must be retrieved and specify the destination form to which the information must be updated. All blocks under <span class="ph uicontrol">Read Data</span> block must be connected to a variable.</p>
+      <p class="p" id="ReadData__SelectBlock">
+         <span class="ph uicontrol">Select Block</span>
+      </p>
+      <div class="p">The <span class="ph uicontrol">SELECT</span> block enables you to configure the source form from where the information must be retrieved.<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span></figcaption>
+            
+            <img class="image" src="../../../Icons/Screenshots_Icons/SelectBlock.jpg">
+         </figure>
+      </div>
+      <div class="p">The first part of the <span class="ph uicontrol">SELECT</span> block enables you to specify the appropriate value for the following entities from where the information must be retrieved:<ul class="ul">
+            <li class="li">
+               <span class="ph uicontrol">Module</span>: The name of the module.</li>
+            <li class="li">
+               <span class="ph uicontrol">Form</span>: The name of the form in the selected module.</li>
+            <li class="li">
+               <span class="ph uicontrol">Select Field</span>: The name of the fields in the selected form. It is a multi-select drop-down list and the information from all the specified fields is selected. </li>
+         </ul>
+      </div>
+      <div class="p">You can also click <img class="image" src="../../../Icons/Screenshots_Icons/gear_icon.png"> to use multiple advance options within the <span class="ph uicontrol">SELECT</span> block.<ul class="ul">
+            <li class="li">
+               <span class="ph uicontrol">Group By</span>:<p class="p"> The <span class="ph uicontrol">GROUP BY</span> block enables you to group the information that is retrieved using the <span class="ph uicontrol">SELECT</span> block by a common parameter. You can choose the appropriate module and drag and drop the <span class="ph uicontrol">GROUP BY</span> block to connect it with the <span class="ph uicontrol">WHERE</span> block.</p>
+               <p class="p">Once this is done, you can specify the appropriate values in the <span class="ph uicontrol">Module</span>, <span class="ph uicontrol">Form</span> and <span class="ph uicontrol">Field</span> entities where the data must be grouped together.</p>
+            </li>
+            <li class="li">
+               <span class="ph uicontrol">Order By</span>:<p class="p">The <span class="ph uicontrol">ORDER BY</span> block enables you to sort the resulting data set in a specific order. For example, ascending, alphabetical, and so on.</p>
+            </li>
+         </ul>
+      </div>
+      <div class="p">The next part of the <span class="ph uicontrol">SELECT</span> block is the <span class="ph uicontrol">WHERE</span> block. It has two parts.<ul class="ul">
+            <li class="li">Input – In the <span class="ph uicontrol">Module</span>, <span class="ph uicontrol">Form</span>, and <span class="ph uicontrol">Select Field</span> entities, you can enter the values that act as input from which the records must be filtered. It can be based on a project or a field which has reference to a record.</li>
+            <li class="li">Output – The output is the Resolver value that is entered after the operand and is equated with respect to the input. It can be either a hard-coded text value where you can enter a text or can use a resolver from the <span class="ph uicontrol">Fields</span> drop-down list, or you can specify the module selector.</li>
+         </ul>
+      </div>
+      <p class="p">
+         <span class="ph uicontrol">Insert Block</span>
+      </p>
+      <div class="p">The <span class="ph uicontrol">INSERT</span> block enables you to get information from any module, form, or field in <span class="ph">Mind</span> and create a new record or create a new row in the dynamic grid. The <span class="ph uicontrol">INSERT</span> block must always be connected to a variable.<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span></figcaption>
+            
+            <img class="image" src="../../../Icons/Screenshots_Icons/Insert_Block.jpg">
+         </figure>
+      </div>
+      <p class="p">The first part of the <span class="ph uicontrol">INSERT</span> block is the select statement that you can configure in the same way as the <span class="ph uicontrol">SELECT</span> block. For information on configuring the <span class="ph uicontrol">SELECT</span> block, refer to <a class="xref" href="#ReadData__SelectBlock">Select Block</a>.</p>
+      <div class="p">The second part of the <span class="ph uicontrol">INSERT</span> block is the <span class="ph uicontrol">INSERT INTO</span> block that enables you to configure the destination to which the information must be inserted. You can specify the <span class="ph uicontrol">Module</span> and <span class="ph uicontrol">Form</span> and define the <span class="ph uicontrol">Field Mapping</span> for fields.<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 3. </span></figcaption>
+            
+            <img class="image" src="../../../Icons/Screenshots_Icons/Insert_Block_FiledMapping.jpg">
+         </figure>
+      </div>
+      <p class="p">You can select the fields from the <span class="ph uicontrol">Source Form</span> and <span class="ph uicontrol">Source Field</span> that is defined in the select block and <span class="ph uicontrol">Destination Field</span> to which this information must be mapped.</p>
+      <p class="p">
+         <span class="ph uicontrol">Update Block</span>
+      </p>
+      <div class="p">The <span class="ph uicontrol">UPDATE</span> blocks enable you to select information from  <span class="ph">Mind</span> and update a specific field or set of fields in another form. The <span class="ph uicontrol">UPDATE</span> blocks must always be connected to a variable.<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 4. </span></figcaption>
+            
+            <img class="image" src="../../../Icons/Screenshots_Icons/UpdateBlock.jpg">
+         </figure>
+      </div>
+      <p class="p">The first part of the <span class="ph uicontrol">UPDATE</span> block is the select statement that you can configure in the same way as the <span class="ph uicontrol">SELECT</span> block. For information on configuring the <span class="ph uicontrol">SELECT</span> block, refer to <a class="xref" href="#ReadData__SelectBlock">Select Block</a>.</p>
+      <p class="p">The second part of the <span class="ph uicontrol">UPDATE INTO</span> block is the <span class="ph uicontrol">WHERE</span> block that enables you to specify the filtering conditions. The <span class="ph uicontrol">WHERE</span> block is configured in the same way as the <span class="ph uicontrol">SELECT</span> block. For information on configuring the <span class="ph uicontrol">WHERE</span> block, refer to <a class="xref" href="#ReadData__SelectBlock">Select Block</a>.</p>
+   </div>
+</article></main></body></html>

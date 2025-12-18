@@ -1,0 +1,87 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="task"><meta name="description" content=""><meta name="DC.subject" content="planning-module,project-scoring,planning-dashboard,project-scoring-form,scoring-configuration,scoring-planned-projects,evaluating-projects,assigning-department-scores,calculating-weighted-score,submitting-scoring-record,capital-program-management,project-prioritization,infrastructure-planning,multi-department-evaluation,decision-support"><meta name="keywords" content="planning-module, project-scoring, planning-dashboard, project-scoring-form, scoring-configuration, scoring-planned-projects, evaluating-projects, assigning-department-scores, calculating-weighted-score, submitting-scoring-record, capital-program-management, project-prioritization, infrastructure-planning, multi-department-evaluation, decision-support"><meta name="DC.audience.type" content="role"><meta name="prodname" content="Mind-Administration-Guide"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-11-21+05:30"><meta name="DC.date.modified" content="2025-11-21"><meta name="title" content="Scoring a Planned Project"><meta name="shortdesc" content="Steps to score planned projects by assigning criteria-based scores across departments, calculating weighted values, and prioritizing projects for program inclusion."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="planned project;department;category;scoring criteria;weighted score;project scoring record;workflow status"><meta name="taxonomy" content="domain:capital-program-management;usecase:project-scoring;industry:glass-manufacturing"><meta name="tags" content="project-scoring,scoring-criteria,weighted-score,planned-projects,department-evaluation"><meta name="usecase" content="evaluate and score planned projects for prioritization"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="ListPage_PRJSCNG"><title>Scoring a Planned Project</title><link rel="stylesheet" type="text/css" href="../../../../commonltr.css"></head><body id="ListPage_PRJSCNG"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Scoring a Planned Project</h1>
+   
+   
+   
+   
+   <div class="body taskbody"><p class="shortdesc"></p>
+      <section class="section prereq">
+         <ul class="ul">
+            <li class="li">The role of the logged-in user should be one of the following: <div class="p">
+                  <ul class="ul">
+                     <li class="li">Engineer of Record</li>
+                     <li class="li">Director</li>
+                     <li class="li">Fund Manager</li>
+                     <li class="li">Manager</li>
+                     <li class="li">Program Manager</li>
+                     <li class="li">Project Manager</li>
+                  </ul>
+               </div>
+            </li>
+         </ul>
+      </section>
+      <section class="section context">
+         <p class="p">Project scoring enables you to evaluate and rank planned projects based on defined criteria. The planned projects are sorted from high to low priority based on the user score. This enables you to filter high-priority projects  to add them to a program.</p>
+         <p class="p">A project is scored for each of the departments, and a score is provided for each of the criteria for the selected department. <span class="ph">For information on scoring configuration, refer to<a class="xref" href="../../../Library_Management/Standard_Library_Catalogs/Planning/ScorConf.html">Scoring Configuration</a>.</span>
+         </p>
+         <p class="p">The project score (<span class="ph uicontrol">Weighted Score</span>) is calculated as:</p>
+         <p class="p">
+            <span class="ph uicontrol">Weighted Score = Round [Σ{Department Score * Department Weightage (%)}]</span>
+         </p>
+         <p class="p">where,<span class="ph uicontrol">Department Score</span>is calculated as:</p>
+         <p class="p">
+            <span class="ph uicontrol">Department Score= Round [Σ{Category Score * Category Weightage (%)</span>}]</p>
+      </section>
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">In the module menu, click <span class="ph uicontrol">Planning</span>. </span>
+            <div class="itemgroup info">The <span class="ph uicontrol">PLANNING DASHBOARD</span> page is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">In the navigation pane, click <span class="ph uicontrol">Planned Projects</span>.</span>
+            <div class="itemgroup info">The <span class="ph uicontrol">PLANNED PROJECTS</span> list page is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">In the list page, double-click the appropriate project. </span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">In the project navigation pane, expand the project folder, and then click <span class="ph uicontrol">Project Scoring</span>.</span>
+            <div class="itemgroup info">The <span class="ph uicontrol">PROJECT SCORING</span> list page is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">New</span>. </span>
+            <div class="itemgroup info">The <span class="ph uicontrol">PROJECT SCORING</span> page is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">From the <span class="ph uicontrol">Scored by</span> drop-down list, select the user creating the record. The list comprises all users invited to the project and have permissions to the project scoring form. </span>
+            <div class="itemgroup info">For information on user role permissions, refer to <a class="xref" href="../../../Administration/User_Management/Security_Roles/AssignRoletoUsr.html">Assigning a Role to Users</a>.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">From the <span class="ph uicontrol">Department</span> drop-down list, select the department to which the project is associated. </span>
+            <div class="itemgroup info">Available options are departments defined in the <span class="ph uicontrol">Department</span> catalog of the library. Based on the <span class="ph uicontrol">Department</span> selected, the associated criteria that are marked active for the selected department are displayed in the table. <span class="ph">For information on departments, categories, and criteria, referto <a class="xref" href="../../../Library_Management/Standard_Library_Catalogs/Planning/ScorConf.html">Scoring Configuration</a>.</span>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">From the <span class="ph uicontrol">Scored on</span> calendar drop-down box, select the date on which the record is created. </span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">In the <span class="ph uicontrol">Remarks</span> field, enter any additional information.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">In the <span class="ph uicontrol">PROJECT SCORING DETAILS</span> section, in the   <span class="ph uicontrol">Score </span>column, for each criteria, click and enter the score for the project.</span>
+            <div class="itemgroup info">
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body"> Ensure the score for the criteria does not exceed the value displayed in the corresponding <span class="ph uicontrol">Max Value</span> column.</div></div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save</span>.</span>
+            <div class="itemgroup info"> The <span class="ph uicontrol">Weighted Score</span> is calculated and displayed.</div>
+            <div class="itemgroup info">To perform workflow actions, refer to     <a class="xref" href="PrjScrWF.html">Project Scoring Workflow</a>. </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To submit the <span class="ph uicontrol">Project Scoring</span> record, perform the following steps:</span>
+            <div class="itemgroup info">
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">To perform this workflow action, ensure you are assigned the <span class="ph uicontrol">Fund Manager</span> or <span class="ph uicontrol">Program Manager</span> role.</div></div>
+            </div>
+            <ol type="a" class="ol substeps">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the  list page, select the appropriate record that is in the <span class="ph uicontrol">Draft</span> workflow status, and then click <span class="ph uicontrol">Select Actions</span>.</span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Click <span class="ph uicontrol">Submit</span>, and in the <span class="ph">Mind</span> dialog box, click <span class="ph uicontrol">OK</span>.</span>
+                  <div class="itemgroup info">The workflow status of the record is set to <span class="ph uicontrol">Submitted</span>.</div>
+               </li>
+            </ol>
+         </li></ol></section>
+   </div>
+</article></main></body></html>

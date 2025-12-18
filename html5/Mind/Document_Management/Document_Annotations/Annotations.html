@@ -1,0 +1,374 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="description" content=""><meta name="DC.subject" content="document-annotations,annotations-service,annotation-editor,annotation-files,annotation-storage,annotations-ui,annotation-api,document-management,create-annotation,edit-annotation,delete-annotation,search-annotations,manage-annotation-permissions,annotation-lifecycle,publish-annotation,annotate-workflow,mind-administration-guide,capital-program-management,infrastructure-software,web,enterprise-environment,collaboration,compliance"><meta name="keywords" content="document-annotations, annotations-service, annotation-editor, annotation-files, annotation-storage, annotations-ui, annotation-api, document-management, create-annotation, edit-annotation, delete-annotation, search-annotations, manage-annotation-permissions, annotation-lifecycle, publish-annotation, annotate-workflow, mind-administration-guide, capital-program-management, infrastructure-software, web, enterprise-environment, document-management, collaboration, compliance"><meta name="DC.audience.type" content="role"><meta name="prodname" content="Mind-Administration-Guide"><meta name="platform" content="web"><meta name="DC.creator" content="Yashshree"><meta name="DC.date.created" content="2025-11-21+05:30"><meta name="DC.date.modified" content="2025-11-21+05:30"><meta name="title" content="Annotations"><meta name="shortdesc" content="Overview of the annotation model, supported operations (create/edit/delete/search), and governance considerations."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="annotation;file;attribute;attachment;user;group;version;document"><meta name="taxonomy" content="domain:capital-program-management;usecase:document-annotation-management;industry:glass-manufacturing"><meta name="tags" content="document-annotations,annotation-operations,annotation-model,governance,annotation-api"><meta name="usecase" content="document-annotation-management"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="DMAnnotations"><meta name="DC.language" content="en-us"><title>Annotations</title><link rel="stylesheet" type="text/css" href="../../../commonltr.css"></head><body id="DMAnnotations"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Annotations</h1>
+   
+   
+   <div class="body conbody"><p class="shortdesc"></p>
+      <p class="p">You can add annotations to files of various formats in <span class="ph">Mind</span>. Annotations added to a file do not affect the original file. A file with annotations is saved as an annotated copy of the original file. You can also consolidate the annotations provided by multiple stakeholders into a single document.</p>
+      <p class="p">You can annotate the following files:</p>
+      <ul class="ul">
+         <li class="li">
+            <a class="xref" href="AnnotateFile.html">Files in the document folders of the Documents module</a>
+         </li>
+         <li class="li">
+            <a class="xref" href="AnnotateAtts.html">Files attached to various form records in the application</a>
+         </li>
+      </ul>
+      <p class="p">You can access the following files:</p>
+      <ul class="ul">
+         <li class="li">
+            <a class="xref" href="Accessing_Annotated_Files/AccessAnnFilesCopies.html">Annotated files</a>
+         </li>
+         <li class="li">
+            <a class="xref" href="Accessing_Annotated_Attachments/AccessAnnAtts.html">Annotated attachment files</a>
+         </li>
+      </ul>
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body"> You cannot delete or edit annotations created by other users. <span class="ph">For information on editing annotations, refer to<a class="xref" href="EditAnns.html">Editing Annotations</a>.</span>
+      </div></div>
+      <section class="section" id="DMAnnotations__Annotationlist"><h2 class="title sectiontitle">Annotations for document or image files:</h2>
+         
+         <p class="p">The table below provides a quick reference to the list of annotations that are available for annotations.</p>
+         <div class="p">
+            <table class="table"><caption></caption><colgroup><col style="width:20"><col style="width:20"><col style="width:60"></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry align-left colsep-1 rowsep-1" id="DMAnnotations__Annotationlist__entry__1">Term</th>
+                        <th class="entry align-left colsep-1 rowsep-1" id="DMAnnotations__Annotationlist__entry__2">Icon</th>
+                        <th class="entry align-left rowsep-1" id="DMAnnotations__Annotationlist__entry__3">Function</th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__1">Select</td>
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__2">
+                           <img class="image" src="../../Icons/AN_select.jpg">
+                        </td>
+                        <td class="entry align-left rowsep-1" headers="DMAnnotations__Annotationlist__entry__3">To select and manage annotation objects</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__1">Line</td>
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__2">
+                           <img class="image" src="../../Icons/AN_line.jpg">
+                        </td>
+                        <td class="entry align-left rowsep-1" headers="DMAnnotations__Annotationlist__entry__3"> To draw a simple line</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__1">Rectangle</td>
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__2">
+                           <img class="image" src="../../Icons/AN_rectangle.jpg">
+                        </td>
+                        <td class="entry align-left rowsep-1" headers="DMAnnotations__Annotationlist__entry__3">To draw a rectangle. <p class="p">To make a square annotation, hold down the Shift key and draw the rectangle.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__1">Ellipse</td>
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__2">
+                           <img class="image" src="../../Icons/AN_ellipse.jpg">
+                        </td>
+                        <td class="entry align-left rowsep-1" headers="DMAnnotations__Annotationlist__entry__3">To draw an ellipse. <p class="p">To make a circle annotation, hold down the Shift key and draw the ellipse.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__1">Polyline</td>
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__2">
+                           <img class="image" src="../../Icons/AN_polyline.jpg">
+                        </td>
+                        <td class="entry align-left rowsep-1" headers="DMAnnotations__Annotationlist__entry__3">To draw a series of points that create a sequence of lines joined </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__1">Polygon</td>
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__2">
+                           <img class="image" src="../../Icons/AN_polygon.jpg">
+                        </td>
+                        <td class="entry align-left rowsep-1" headers="DMAnnotations__Annotationlist__entry__3">To draw a series of points that create a sequence of lines joined in the shape of a polygon </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__1">Pointer</td>
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__2">
+                           <img class="image" src="../../Icons/AN_pointer.jpg">
+                        </td>
+                        <td class="entry align-left rowsep-1" headers="DMAnnotations__Annotationlist__entry__3">To draw a pointed line </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__1">Freehand</td>
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__2">
+                           <img class="image" src="../../Icons/AN_freehand.jpg">
+                        </td>
+                        <td class="entry align-left rowsep-1" headers="DMAnnotations__Annotationlist__entry__3">To draw a series of points that create a sequence of lines joined </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__1">Text</td>
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__2">
+                           <img class="image" src="../../Icons/AN_text.jpg">
+                        </td>
+                        <td class="entry align-left rowsep-1" headers="DMAnnotations__Annotationlist__entry__3">To enter text in the rectangular dialog box. <p class="p">To make a square dialog box, hold down the Shift key and draw the rectangle.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__1">Text Pointer</td>
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__2">
+                           <img class="image" src="../../Icons/AN_text_pointer.jpg">
+                        </td>
+                        <td class="entry align-left rowsep-1" headers="DMAnnotations__Annotationlist__entry__3">To enter text in the rectangular dialog box with the line pointing to the object in the viewer window. <p class="p">To make a square dialog box, hold down the Shift key and draw the rectangle.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__1">Note</td>
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__2">
+                           <img class="image" src="../../Icons/AN_note.jpg">
+                        </td>
+                        <td class="entry align-left rowsep-1" headers="DMAnnotations__Annotationlist__entry__3">To add notes in the viewer window. <p class="p">To make a square dialog box, hold down the Shift key and draw the rectangle.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__1">Stamp</td>
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__2">
+                           <img class="image" src="../../Icons/AN_stamp.jpg">
+                        </td>
+                        <td class="entry align-left rowsep-1" headers="DMAnnotations__Annotationlist__entry__3">To add stamp annotations </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__1"> Rubber Stamp</td>
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__2">
+                           <img class="image" src="../../Icons/AN_rubberstamp.jpg">
+                        </td>
+                        <td class="entry align-left rowsep-1" headers="DMAnnotations__Annotationlist__entry__3">To add a specific authentication to the viewing object </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__1"> Ruler</td>
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__2">
+                           <img class="image" src="../../Icons/AN_ruler.jpg">
+                        </td>
+                        <td class="entry align-left rowsep-1" headers="DMAnnotations__Annotationlist__entry__3">To add a line that can measure the distance between two points of the viewing object </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__1">Poly Ruler</td>
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__2">
+                           <img class="image" src="../../Icons/AN_polyruler.jpg">
+                        </td>
+                        <td class="entry align-left rowsep-1" headers="DMAnnotations__Annotationlist__entry__3">To measure the distance of an irregularly shaped object, a series of points that create a sequence of joined rulers. <p class="p">You can modify the length, add, or remove the ruler segments; a running total of the distance is displayed.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__1">Text Strikeout</td>
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__2">
+                           <img class="image" src="../../Icons/AN_textstrikeout.jpg">
+                        </td>
+                        <td class="entry align-left rowsep-1" headers="DMAnnotations__Annotationlist__entry__3">To strikeout the text annotation </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__1">Text Underline</td>
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__2">
+                           <img class="image" src="../../Icons/AN_text_underline.jpg">
+                        </td>
+                        <td class="entry align-left rowsep-1" headers="DMAnnotations__Annotationlist__entry__3">To underline the text annotation </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__1">Comment</td>
+                        <td class="entry align-left colsep-1 rowsep-1" headers="DMAnnotations__Annotationlist__entry__2">
+                           <img class="image" src="../../Icons/annotation-comment.jpg">
+                        </td>
+                        <td class="entry align-left rowsep-1" headers="DMAnnotations__Annotationlist__entry__3">
+                           <ul class="ul">
+                              <li class="li">To add comments to an annotation </li>
+                              <li class="li">To add responses to comments on an annotation </li>
+                              <li class="li">To add responses to responses on comments on an annotation </li>
+                              <li class="li">To set the status of responses to an annotation </li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry align-left colsep-1" headers="DMAnnotations__Annotationlist__entry__1">Properties</td>
+                        <td class="entry align-left colsep-1" headers="DMAnnotations__Annotationlist__entry__2">-</td>
+                        <td class="entry align-left" headers="DMAnnotations__Annotationlist__entry__3">
+                           <p class="p">Right-click an annotation to:</p>
+                           <ul class="ul">
+                              <li class="li">Format an annotation by: <ul class="ul">
+                                    <li class="li">Filling the annotation </li>
+                                    <li class="li">Striking the annotation </li>
+                                    <li class="li">Adding a hyperlink to the annotation </li>
+                                 </ul>
+                              </li>
+                              <li class="li">View and add comments and responses </li>
+                           </ul>
+                        </td>
+                     </tr>
+                  </tbody></table>
+         </div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Annotations for 2D and 3D drawing files:</h2>
+         
+         <p class="p">The table below provides a quick reference to the list of annotations that are available for annotations.</p>
+         <div class="p">
+            <table class="table"><caption></caption><colgroup><col style="width:20"><col style="width:20"><col style="width:60"></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry colsep-1 rowsep-1" id="DMAnnotations__entry__61">Term</th>
+                        <th class="entry colsep-1 rowsep-1" id="DMAnnotations__entry__62">Icon</th>
+                        <th class="entry rowsep-1" id="DMAnnotations__entry__63">Function</th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__61">Arrow</td>
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__62">
+                           <img class="image" width="23" src="../../Icons/FV-image39.png">
+                        </td>
+                        <td class="entry rowsep-1" headers="DMAnnotations__entry__63">To draw an arrow line. </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__61">Rectangle</td>
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__62">
+                           <img class="image" width="23" src="../../Icons/FV-image40.png">
+                        </td>
+                        <td class="entry rowsep-1" headers="DMAnnotations__entry__63">To draw a rectangle. </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__61">Circle</td>
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__62">
+                           <img class="image" width="23" src="../../Icons/FV-image41.png">
+                        </td>
+                        <td class="entry rowsep-1" headers="DMAnnotations__entry__63">To draw a circle. </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__61">Text</td>
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__62">
+                           <img class="image" width="23" src="../../Icons/FV-image42.png">
+                        </td>
+                        <td class="entry rowsep-1" headers="DMAnnotations__entry__63">To enter text in the rectangular dialog box. </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__61">Callout</td>
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__62">
+                           <img class="image" width="23" src="../../Icons/FV-image43.png">
+                        </td>
+                        <td class="entry rowsep-1" headers="DMAnnotations__entry__63">To add a visual cue. </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__61">Cloud</td>
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__62">
+                           <img class="image" width="23" src="../../Icons/FV-image44.png">
+                        </td>
+                        <td class="entry rowsep-1" headers="DMAnnotations__entry__63">To draw a cloud-like shape in the drawing. </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__61">Polyline</td>
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__62">
+                           <img class="image" width="23" src="../../Icons/FV-image45.png">
+                        </td>
+                        <td class="entry rowsep-1" headers="DMAnnotations__entry__63">To draw a series of points that create a sequence of lines joined together. </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__61">Poly Cloud</td>
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__62">
+                           <img class="image" width="23" src="../../Icons/FV-image46.png">
+                        </td>
+                        <td class="entry rowsep-1" headers="DMAnnotations__entry__63">To draw a series of points that create a sequence of cloud-like lines joined together. </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__61">Free Hand</td>
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__62">
+                           <img class="image" width="23" src="../../Icons/FV-image47.png">
+                        </td>
+                        <td class="entry rowsep-1" headers="DMAnnotations__entry__63">To draw a free-form line. </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__61">Highlight</td>
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__62">
+                           <img class="image" width="23" src="../../Icons/FV-image48.png">
+                        </td>
+                        <td class="entry rowsep-1" headers="DMAnnotations__entry__63">To highlight the contents in a bright color. </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__61">Dimension</td>
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__62">
+                           <img class="image" width="23" src="../../Icons/FV-image49.png">
+                        </td>
+                        <td class="entry rowsep-1" headers="DMAnnotations__entry__63">To add dimensions to the drawing. <p class="p">To edit the default dimension, double-click and enter the appropriate dimension.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry colsep-1" headers="DMAnnotations__entry__61">Properties</td>
+                        <td class="entry colsep-1" headers="DMAnnotations__entry__62">-</td>
+                        <td class="entry" headers="DMAnnotations__entry__63">Right-click an annotation to change the properties. </td>
+                     </tr>
+                  </tbody></table>
+         </div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Files in folders in the Documents module:</h2>
+         
+         <p class="p">The following tables describe the permissions required to add annotations to a file.</p>
+         <div class="p">
+            <table class="table"><caption></caption><colgroup><col style="width:30%"><col style="width:70%"></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry colsep-1 rowsep-1" id="DMAnnotations__entry__100">Permissions</th>
+                        <th class="entry rowsep-1" id="DMAnnotations__entry__101">Activity</th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__100" rowspan="2">View</td>
+                        <td class="entry rowsep-1" headers="DMAnnotations__entry__101">Create annotations.</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry rowsep-1" headers="DMAnnotations__entry__101"> View annotations created by you and other users.</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__100">Edit</td>
+                        <td class="entry rowsep-1" headers="DMAnnotations__entry__101">Edit annotations created by you.<div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body"> If a document's file type is mapped to a viewer supporting drawing files, then you cannot edit or update the annotations after the file is saved.</div></div>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry colsep-1" headers="DMAnnotations__entry__100">Delete</td>
+                        <td class="entry" headers="DMAnnotations__entry__101">Delete annotations created by you.</td>
+                     </tr>
+                  </tbody></table>
+         </div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Files as attachments in forms without workflows:</h2>
+         
+         <p class="p">The following tables describe the permissions required to add annotations to a file.</p>
+         <div class="p">
+            <table class="table"><caption></caption><colgroup><col style="width:30%"><col style="width:70%"></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry colsep-1 rowsep-1" id="DMAnnotations__entry__109">Permissions</th>
+                        <th class="entry rowsep-1" id="DMAnnotations__entry__110">Activity</th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__109">Edit</td>
+                        <td class="entry rowsep-1" headers="DMAnnotations__entry__110">Create annotations.</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__109">View</td>
+                        <td class="entry rowsep-1" headers="DMAnnotations__entry__110">View annotations created by you and other users.</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry colsep-1" headers="DMAnnotations__entry__109">Delete</td>
+                        <td class="entry" headers="DMAnnotations__entry__110">Delete annotations created by you.</td>
+                     </tr>
+                  </tbody></table>
+         </div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Files as attachments in forms with workflows:</h2>
+         
+         <p class="p">The following tables describe the permissions required to add annotations to a file.</p>
+         <div class="p">
+            <table class="table"><caption></caption><colgroup><col style="width:30%"><col style="width:70%"></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry colsep-1 rowsep-1" id="DMAnnotations__entry__117">Stakeholder Type</th>
+                        <th class="entry rowsep-1" id="DMAnnotations__entry__118">Activity</th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry colsep-1 rowsep-1" headers="DMAnnotations__entry__117" rowspan="2">Action Stakeholder</td>
+                        <td class="entry rowsep-1" headers="DMAnnotations__entry__118">Create annotations.</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry rowsep-1" headers="DMAnnotations__entry__118">View annotations created by you and other users.</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry colsep-1" headers="DMAnnotations__entry__117">View Stakeholder</td>
+                        <td class="entry" headers="DMAnnotations__entry__118">View annotations created by you and other users.</td>
+                     </tr>
+                  </tbody></table>
+         </div>
+      </section>
+   </div>
+</article></main></body></html>

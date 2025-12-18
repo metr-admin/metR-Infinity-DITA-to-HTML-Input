@@ -1,0 +1,176 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="task"><meta name="description" content=""><meta name="DC.subject" content="mind-user-management,bulk-import-module,excel-template,user-directory-sync,access-control,web-portal,create-user-accounts-in-bulk,bulk-user-import,validate-import-template,map-excel-fields,mass-provisioning,import-audit,mind-administration-guide,capital-program-management,user-provisioning,enterprise-operations,onboarding-wave,data-quality"><meta name="keywords" content="mind-user-management, bulk-import-module, excel-template, user-directory-sync, access-control, web-portal, create-user-accounts-in-bulk, bulk-user-import, validate-import-template, map-excel-fields, mass-provisioning, import-audit, mind-administration-guide, capital-program-management, user-provisioning, enterprise-operations, onboarding-wave, data-quality"><meta name="DC.relation" scheme="URI" content="../../../../../../Mind/CoSP/Administration/User_Management/User_Accounts/UserAccs.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="Mind-Administration-Guide"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-11-20+05:30"><meta name="DC.date.modified" content="2025-11-20+05:30"><meta name="title" content="Create multiple user accounts (bulk import)"><meta name="shortdesc" content="You can create multiple user accounts at once by importing a predefined Excel template; the template and import process are documented here."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="excel-template;user-account;import-engine;validation-rules;audit-log;business-unit"><meta name="taxonomy" content="domain:administration;usecase:bulk-provisioning;industry:capital-program management"><meta name="tags" content="bulk-import,excel-template,provisioning,validation,automation"><meta name="usecase" content="bulk-create-user-accounts"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="AdminCrtMulUsrAccs"><title>Creating Multiple User Accounts in Bulk</title><link rel="stylesheet" type="text/css" href="../../../../../../commonltr.css"></head><body id="AdminCrtMulUsrAccs"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Creating Multiple User Accounts in Bulk</h1>
+   
+   
+   
+   <div class="body taskbody"><p class="shortdesc"></p>
+      <section class="section context">
+         <p class="p">You can create multiple user accounts at once by importing a Microsoft Excel file that contains user details. The high-level process of bulk uploading of user account details is as follows:</p>
+         <ol class="ol">
+            <li class="li">Download the predefined Excel template from <span class="ph">Mind</span>. The Excel template contains  user information required for user account creation as columns.</li>
+            <li class="li">Enter user account details in the template workbook.</li>
+            <li class="li">Import the workbook with user details to <span class="ph">Mind</span>.</li>
+         </ol>
+         <p class="p">The password for user accounts created by importing account information using an Excel file is set to <span class="ph uicontrol">Mind@123</span>. All users with accounts created using the bulk import feature can log in to the application with their username and the default password <span class="ph uicontrol">Mind@123</span>. Users are prompted to reset their password on the first login. </p>
+      </section>
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">In the module menu, click <span class="ph uicontrol">Administration</span>.</span>
+            <div class="itemgroup info">The <span class="ph uicontrol">ADMINISTRATION</span> page is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">In the navigation pane, expand <span class="ph uicontrol">User Management</span>, and then click <span class="ph uicontrol">User Accounts</span>.</span>
+            <div class="itemgroup info">The <span class="ph uicontrol">USER ACCOUNTS</span> list page is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Excel Import / Export</span>, and then click <span class="ph uicontrol">Excel Template</span>.</span>
+            <div class="itemgroup info">The template is saved to your local storage.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Open the saved Excel template workbook.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Enter information for each of the columns, as described in the following table.</span>
+            <div class="itemgroup info">
+               <table class="table"><caption></caption><colgroup><col style="width:30%"><col style="width:70%"></colgroup><thead class="thead">
+                        <tr class="row">
+                           <th class="entry colsep-1 rowsep-1" id="AdminCrtMulUsrAccs__entry__1">Field Name</th>
+                           <th class="entry rowsep-1" id="AdminCrtMulUsrAccs__entry__2">Description</th>
+                        </tr>
+                     </thead><tbody class="tbody">
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1"> InternalID </td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2"> Do not enter information in the <span class="ph uicontrol">InternalID</span> column. <p class="p">When you import the  Excel workbook, a unique identification code for the corresponding user record is automatically generated.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1">UserName </td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2">Enter a unique alphanumeric name to identify the user. </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1"> FirstName </td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2"> Enter the first name of the user. </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1">MiddleName </td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2">Enter the middle name of the user. </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1"> LastName </td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2"> Enter the last name of the user. </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1">CompanyName </td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2">Enter the company name of the user. </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1">Address1, Address2, and Address3 </td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2">Enter the address of the user. </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1"> City </td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2"> Enter the name of the city where the user resides. </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1"> State </td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2"> Enter the name of the state where the user resides. </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1"> Country </td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2"> Enter the name of the country where the user resides. </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1"> Zipcode </td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2"> Enter the zip code for the address  where the user resides. </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1"> Telephone </td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2"> Enter the telephone number of the user. </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1">Email </td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2">Enter the email address of the user for email communication. </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1"> Fax </td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2"> Enter the fax number of the user for facsimile communication. </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1"> CertNo</td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2"> Enter the access certificate number assigned to the user. </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1">Type</td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2">Enter either of the following options: <ul class="ul">
+                                 <li class="li">
+                                    <span class="ph uicontrol">Internal</span> - Enter this option if the user belongs to the organization.</li>
+                                 <li class="li">
+                                    <span class="ph uicontrol">External</span> - Enter this option if the user belongs to a different organization. For example, contractors.</li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1">Vendor</td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2">
+                              <p class="p">If the <span class="ph uicontrol">Type</span> is <span class="ph uicontrol">External</span>, then enter the vendor associated with the user.</p>
+                              <p class="p">To view the list of vendors, refer to  the <span class="ph uicontrol">Vendors</span> catalog of the library.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1">IsActive </td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2">Enter <span class="ph uicontrol">YES</span> to specify that the user is active. <div class="p">Enter <span class="ph uicontrol">NO</span> to deny application access to the user. <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body"> To revoke application access from a user, change the status of the user to Inactive. <span class="ph">For information on changing the status of a user, refer to <a class="xref" href="../Changing_the_Status_of_a_User_Account/DeActUserAcc.html">Deactivating a User Account</a>.</span>
+                                 </div></div>
+                              </div>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1">MobileNo </td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2">Enter the mobile number of the user. </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1">AccountExpiryDate </td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2">Enter the date until which the account will be active. <p class="p">Enter the date in the format as defined in the <span class="ph">
+                                    <span class="ph uicontrol">USER SETTINGS</span>
+                                 </span>
+                                 <span class="ph">
+                                    <a class="xref" href="../../../../../Administration/User_Management/UsrAcctn_config.html">USER SETTINGS</a>
+                                 </span> page. The user is denied access to the application after this date. </p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1"> SendEmail</td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2"> Enter <span class="ph uicontrol">YES</span> for the user to receive an email notification with login details on user account creation. </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1">Roles </td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2">Enter the role names for the user separated by a comma. Ensure the role names entered here are as defined in the application. <p class="p">To view the list of role names defined in the application, in the Administration navigation pane, expand <span class="ph uicontrol">User Management</span>, and then click <span class="ph uicontrol">Security Roles</span>.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="AdminCrtMulUsrAccs__entry__1">Business Unit </td>
+                           <td class="entry rowsep-1" headers="AdminCrtMulUsrAccs__entry__2">Enter the business units to which the user belongs. Enter the business unit names separated by a comma. Ensure the business unit names entered here are as defined in the application. <p class="p">To view the list of business unit names defined in the application, in the navigation pane, expand <span class="ph uicontrol">Functional Configuration</span>, and then click <span class="ph uicontrol">Business Units</span>.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1" headers="AdminCrtMulUsrAccs__entry__1">IsADUser</td>
+                           <td class="entry" headers="AdminCrtMulUsrAccs__entry__2">
+                              <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body"> This column is available only  if the option selected in the <span class="ph uicontrol">Login Mode</span> field in the <span class="ph uicontrol">AUTHENTICATION &amp; LOGIN SETTINGS</span> page is <span class="ph uicontrol">External IDP</span> or <span class="ph uicontrol">Mixed</span>.</div></div>Enter <span class="ph uicontrol">YES</span> if the user is registered in the External Identity Provider. Else, enter <span class="ph uicontrol">No</span>.</td>
+                        </tr>
+                     </tbody></table>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To import the Excel workbook with user details, click <span class="ph uicontrol">Excel Import / Export</span>, and then click <span class="ph uicontrol">Excel Import</span>. </span>
+            <div class="itemgroup info">The <span class="ph uicontrol">IMPORT DETAILS FROM EXCEL FILE</span> page is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Choose File</span>.</span>
+            <div class="itemgroup info">The <span class="ph uicontrol">Open</span> dialog box is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Select the workbook with the updated information,and then click <span class="ph uicontrol">Open</span>
+               <strong class="ph b">.</strong>
+            </span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Upload</span>.</span>
+            <div class="itemgroup info">The information in the Excel file is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save</span>.</span>
+            <div class="itemgroup info">The information in the Excel file is imported to <span class="ph">Mind</span>.</div>
+         </li></ol></section>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../../../../../Mind/CoSP/Administration/User_Management/User_Accounts/UserAccs.html">User Accounts</a></div></div></nav></article></main></body></html>

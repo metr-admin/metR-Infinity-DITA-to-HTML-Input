@@ -1,0 +1,407 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="task"><meta name="description" content=""><meta name="DC.subject" content="workflow-management,form,form-builder,list-page,workflow-engine,create-workflow,use-template,define-basic-steps,assign-default-roles,validate-workflow,mind-administration-guide,capital-program-management,web-platform,enterprise-deployment,infrastructure-software"><meta name="keywords" content="workflow-management, form, form-builder, list-page, workflow-engine, create-workflow, use-template, define-basic-steps, assign-default-roles, validate-workflow, mind-administration-guide, capital-program-management, web-platform, enterprise-deployment, infrastructure-software"><meta name="DC.relation" scheme="URI" content="../../../../Mind/Administration/Configuration_Toolkit/Workflow_Management/WFMgmt.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="Mind-Administration-Guide"><meta name="platform" content="web"><meta name="DC.creator" content="Yashshree"><meta name="DC.date.created" content="2025-11-20+05:30"><meta name="DC.date.modified" content="2025-11-20+05:30"><meta name="title" content="CreateWFSimple"><meta name="shortdesc" content="Simple workflow creation: step-by-step guide using templates and basic role assignments."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="workflow;template;form;roles;list-page"><meta name="taxonomy" content="domain:Capital-program-management;usecase:workflow-management;industry:capital-program management"><meta name="tags" content="create-workflow,use-template,assign-default-roles"><meta name="usecase" content="create simple workflows using templates"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="task-7778"><title>Creating a Workflow Using Simple Mode</title><link rel="stylesheet" type="text/css" href="../../../../commonltr.css"></head><body id="task-7778"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Creating a Workflow Using Simple Mode</h1>
+   
+   
+   <div class="body taskbody"><p class="shortdesc"></p>
+      <section class="section prereq">
+         <ul class="ul">
+            <li class="li">The role of the logged in user has permission to create or edit a workflow.</li>
+         </ul>
+      </section>
+      <section class="section context">This procedure describes the steps to add the following controls to a workflow.<ul class="ul">
+            <li class="li">Add a stage with two actions </li>
+            <li class="li">Add a condition to the workflow using the conditions block </li>
+            <li class="li">Configure the workflow to send a standard automated email notification to stakeholders when the associated form is transitioned from one workflow stage to the next workflow stage </li>
+            <li class="li">Define conditions on the users performing a workflow action </li>
+         </ul>
+      </section>
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">
+               <a class="xref" href="CreateWF.html">Create a basic workflow.</a>
+            </span>
+            <div class="itemgroup info">Alternatively, <a class="xref" href="EditWF.html">edit a workflow</a>.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To add a stage to the workflow, perform the following steps:</span>
+            <ol type="a" class="ol substeps">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Actions</span> navigation pane, expand <span class="ph uicontrol">STAGES</span>, and then drag the <span class="ph uicontrol">Stage</span> action item to the <span class="ph uicontrol">Workflow</span> tab.</span>
+                  <div class="itemgroup info">The new stage item is displayed on the canvas.</div>
+                  <div class="itemgroup info">Alternatively, to copy a stage, perform the following steps: <ol class="ol" type="i">
+                        <li class="li">Click the intermediate stage to be copied. </li>
+                        <li class="li">Click <span class="ph uicontrol">Copy</span>.<p class="p">The selected intermediate stage is copied.</p>
+                        </li>
+                        <li class="li">Click an action element, and in the properties pane, click <span class="ph uicontrol">Delete</span>.<p class="p">Similarly, delete all the other action elements.</p>
+                        </li>
+                     </ol>
+                  </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Workflow</span> tab, click the stage.</span>
+                  <div class="itemgroup info">The stage properties are displayed in the right pane, as illustrated in the following image:<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Workflow Stage Properties</figcaption>
+                        
+                        <img class="image" src="../../Screenshots/WF5.png">
+                     </figure>
+                  </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Intermediate Stage</span> properties pane, provide the required information in the fields, as described in the following table:</span>
+                  <div class="itemgroup info">
+                     <table class="table"><caption></caption><colgroup><col style="width:20%"><col style="width:80%"></colgroup><thead class="thead">
+                              <tr class="row">
+                                 <th class="entry colsep-1 rowsep-1" id="task-7778__entry__1">Field Name</th>
+                                 <th class="entry rowsep-1" id="task-7778__entry__2">Description</th>
+                              </tr>
+                           </thead><tbody class="tbody">
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="task-7778__entry__1">Name</td>
+                                 <td class="entry rowsep-1" headers="task-7778__entry__2">Enter the name of the stage. <p class="p">For example, enter <span class="ph uicontrol">In Review</span>.</p>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="task-7778__entry__1">Days to Complete</td>
+                                 <td class="entry rowsep-1" headers="task-7778__entry__2">
+                                    <p class="p">Enter the number of days before which an action must be performed in the current workflow stage.</p>
+                                    <p class="p">If the stakeholder does not perform an action in the specified number of days, an escalation email is sent to users in the <span class="ph uicontrol">Administrator</span> role.</p>
+                                    <p class="p">By default, the number of days defined in the <span class="ph uicontrol">WORKFLOW SETTINGS</span> page is displayed. <span class="ph">For information on workflow settings, refer to <a class="xref" href="../../System_Configurations/WFSettings.html">Administration, Workflow Settings</a>.</span>
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="task-7778__entry__1">Action Stake Holders</td>
+                                 <td class="entry rowsep-1" headers="task-7778__entry__2">Select the roles with which a user can perform the workflow action for the stage. The <span class="ph uicontrol">Action Stake Holder</span> box lists all the roles that are assigned with the<span class="ph uicontrol">Edit</span> permission at the form level. <span class="ph">For information on roles, refer to <a class="xref" href="../../User_Management/Security_Roles/SecurityRoles.html">Security Roles</a>.</span>
+                                    <p class="p">Also, if <span class="ph uicontrol">Allow Workflow Action by All Stakeholders</span> is selected in the <span class="ph uicontrol">General Details</span> tab, then all stakeholders with the<span class="ph uicontrol">Edit</span> or <span class="ph uicontrol">View</span> or both permissions at the form level are listed in the <span class="ph uicontrol">Action Stake Holders</span> drop-down list.</p>
+                                    <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+                                       <ul class="ul">
+                                          <li class="li">For a role to be available in the list of action stakeholders, the <span class="ph uicontrol">Edit</span> permission must be enabled for the role at the form level. <span class="ph">To modify permissions, refer to <a class="xref" href="../../User_Management/Security_Roles/EditRoleInfo.html">Editing Role Information</a>.</span>
+                                          </li>
+                                          <li class="li">Ensure that the stakeholders selected in the <span class="ph uicontrol">Action Stake Holders</span> box are also selected in the <span class="ph uicontrol">View Stake Holders</span> box.</li>
+                                       </ul>
+                                    </div></div>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="task-7778__entry__1">View Stake Holders</td>
+                                 <td class="entry rowsep-1" headers="task-7778__entry__2">
+                                    <p class="p">Select the roles with which a user can view the records that are in the workflow stage but not perform any workflow actions.</p>
+                                    <p class="p">The <span class="ph uicontrol">View Stake Holders</span> box lists all the roles that are assigned with <span class="ph uicontrol">View</span> permission at the form level.<span class="ph"> For information on roles, refer to <a class="xref" href="../../User_Management/Security_Roles/SecurityRoles.html">Security Roles</a>.</span>
+                                    </p>
+                                    <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+                                       <ul class="ul">
+                                          <li class="li">You can view the <span class="ph uicontrol">View Stake Holders</span> box only if the <span class="ph uicontrol">Configure View Permissions</span> check box is selected in the <span class="ph uicontrol">General Details</span> tab.</li>
+                                          <li class="li">If the role is not selected in the <span class="ph uicontrol">View Stake Holders</span> box, then that role cannot view the record in the selected form list page.</li>
+                                       </ul>
+                                    </div></div>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="task-7778__entry__1">Allow Form Edit</td>
+                                 <td class="entry rowsep-1" headers="task-7778__entry__2">Click <span class="ph uicontrol">Yes</span>, to allow the user to edit the record in this stage. <p class="p">Click <span class="ph uicontrol">No</span>, to restrict the users from editing the record in this stage.</p>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="task-7778__entry__1">Select Visibility Of Form Divisions</td>
+                                 <td class="entry rowsep-1" headers="task-7778__entry__2">Sets the visibility of the various sections defined in the form. <div class="p">Click any of the following:<ul class="ul">
+                                          <li class="li">
+                                             <span class="ph uicontrol">Edit</span> - Enables stakeholders to edit the information in the section in the current workflow stage.</li>
+                                          <li class="li">
+                                             <span class="ph uicontrol">View</span> - Enables stakeholders to view information in the section in the current workflow stage.</li>
+                                          <li class="li">
+                                             <span class="ph uicontrol">Hide</span> – Hides the information in the section in the current workflow stage. Stakeholders at this workflow stage cannot view information in the section.</li>
+                                       </ul>
+                                    </div>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="task-7778__entry__1">Allow Delete</td>
+                                 <td class="entry rowsep-1" headers="task-7778__entry__2">Click either of the following options:<ul class="ul">
+                                       <li class="li">Click <span class="ph uicontrol">Yes</span>, to allow the users to delete the record in this stage.</li>
+                                       <li class="li">Click <span class="ph uicontrol">No</span>, to restrict the users from deleting the record in this stage.</li>
+                                    </ul>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="task-7778__entry__1">Send Email To Stakeholders</td>
+                                 <td class="entry rowsep-1" headers="task-7778__entry__2">Select the check box, to send a standard automated email notification to the action stakeholders of the subsequent stage whenever the workflow action is performed. <p class="p">The email template is based on the default template selected in the <span class="ph uicontrol">WORKFLOW SETTINGS</span> page. <span class="ph">For information on workflow settings, refer to <a class="xref" href="../../System_Configurations/WFSettings.html">Administration, Workflow Settings</a>.</span>
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="task-7778__entry__1">Show stage in Tasks</td>
+                                 <td class="entry rowsep-1" headers="task-7778__entry__2">Ensure the check box is selected, to list the subsequent workflow action in the <p class="p">
+                                       <span class="ph uicontrol">My Tasks</span> list of all stakeholders of the subsequent workflow stage.</p>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="task-7778__entry__1">Ball In Court Request Email Template</td>
+                                 <td class="entry rowsep-1" headers="task-7778__entry__2">Select the required email template to be used to send an automated notification to the user selected to receive form information using the <span class="ph uicontrol">Ball in Court</span> feature. <p class="p">Available templates are based on the form that is selected for the workflow.</p>
+                                    <p class="p">Available options are templates defined for the form in the <span class="ph uicontrol">Mail Body Templates</span> catalog of the Library. <span class="ph">For information on the <span class="ph uicontrol">Ball in Court</span> feature, refer to <a class="xref" href="../../../Common_Application_Features/Ball_in_Court/BIC.html">Common Application Features, Ball in Court</a>.</span>
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1" headers="task-7778__entry__1">Ball In Court Response Email Template</td>
+                                 <td class="entry" headers="task-7778__entry__2">Select the required email template to be used to send an automated response notification to the user who initiated the <span class="ph uicontrol">Ball in Court</span> notification. <p class="p">Available templates are based on the form that is selected for the workflow.</p>
+                                    <p class="p">Available options are templates defined for the form in the <span class="ph uicontrol">Mail Body Templates</span> catalog of the Library. <span class="ph">For information on the <span class="ph uicontrol">Ball in Court</span> feature, refer to <a class="xref" href="../../../Common_Application_Features/Ball_in_Court/BIC.html">Common Application Features, Ball in Court</a>.</span>
+                                    </p>
+                                 </td>
+                              </tr>
+                           </tbody></table>
+                  </div>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To add an action to the workflow stage, perform the following steps:</span>
+            <ol type="a" class="ol substeps">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the right pane, click <span class="ph uicontrol">Add Action</span>.</span>
+                  <div class="itemgroup info">Alternatively, right-click the new stage item in the canvas, and then click <span class="ph uicontrol">New Action</span>.</div>
+                  <div class="itemgroup info">The <span class="ph uicontrol">New Action</span> box is displayed below the In Review stage as illustrated in the following image:<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Workflow New Action</figcaption>
+                        
+                        <img class="image" src="../../Screenshots/WF6.png">
+                     </figure>
+                  </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Workflow</span> tab, click the <span class="ph uicontrol">New Action</span> item.</span>
+                  <div class="itemgroup info">The properties of the action item are displayed in the right pane.</div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Name</span> box, enter the name of the new action. For example, enter <span class="ph uicontrol">Review Complete</span>.</span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Select <span class="ph uicontrol">Make Comments Mandatory</span> check box to ensure comments are provided mandatorily in the <span class="ph uicontrol">Notes</span> box before performing the next workflow action.</span>
+                  <div class="itemgroup info">
+                     <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body"> To delete an action, right-click the action item, and click <span class="ph uicontrol">Delete Action</span>.</div></div>
+                  </div>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">You can add a condition to the workflow using the conditions block. To add a <span class="ph uicontrol">Simple Conditions Block</span> action item to the workflow, perform the following steps:</span>
+            <ol type="a" class="ol substeps">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">From the <span class="ph uicontrol">Actions</span> pane, expand <span class="ph uicontrol">SIMPLE ACTIVITIES</span>, and then drag the <span class="ph uicontrol">Conditions Block</span> action item to the <span class="ph uicontrol">Workflow</span> tab. </span>
+                  <div class="itemgroup info">The <span class="ph uicontrol">Conditions Block</span> item is displayed on the canvas. </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Workflow</span> tab, click the <span class="ph uicontrol">Conditions Block</span> item. </span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the right pane, click <span class="ph uicontrol">Add Condition</span>. </span>
+                  <div class="itemgroup info">Alternatively, right-click the <span class="ph uicontrol">Conditions Block</span> item in the canvas, and then click <span class="ph uicontrol">New If Else Branch</span>. </div>
+                  <div class="itemgroup info">The <span class="ph uicontrol">If Else Branch</span> is displayed below the conditions block item. </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Workflow</span> tab, click the <span class="ph uicontrol">If Else Branch</span> item. </span>
+                  <div class="itemgroup info">The <span class="ph uicontrol">If Else Branch</span> properties are displayed in the right pane, as illustrated in the following image: <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 3. </span>Workflow Conditions Block</figcaption>
+                        
+                        <img class="image" src="../../Screenshots/WF7.png">
+                     </figure>
+                  </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Name</span> box, enter the name for the condition. </span>
+                  <div class="itemgroup info">For example, enter <span class="ph uicontrol">Amount Greater than 1000</span>. </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Conditions</span> field, click <img class="image" src="../../../Icons/select.png" alt="List">.</span>
+                  <div class="itemgroup info">The <span class="ph uicontrol">RESOURCES</span> dialog box is displayed. </div>
+                  <div class="itemgroup info">In the <span class="ph uicontrol">RESOURCES</span> dialog box, two sections are displayed as illustrated in the following image: </div>
+                  <div class="itemgroup info">Using the first section, you can create workflow conditions with the fields of the form selected in the<span class="ph uicontrol"> General Details</span> tab. Using the second section, you can create workflow conditions with the fields of the <span class="ph uicontrol">Project Details</span> and <span class="ph uicontrol">Contract Details</span> forms. <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 4. </span>Form Attributes</figcaption>
+                        
+                        <img class="image" src="../../Screenshots/WF8.png">
+                     </figure>
+                  </div>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To create a rule or group of rules and define conditions for the workflow, in the <span class="ph uicontrol">RESOURCES</span> dialog box, perform the following steps:</span>
+            <ol type="a" class="ol substeps">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Click <span class="ph uicontrol">Add rule</span>. </span>
+                  <div class="itemgroup info"> A new row with a drop-down list is added. <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body"> The <span class="ph uicontrol">AND</span> and <span class="ph uicontrol">OR</span> buttons present at the top are unavailable.</div></div>
+                  </div>
+                  <div class="itemgroup info">Alternatively, to create a group of rules with a combination of multiple AND and OR conditions, click <span class="ph uicontrol">Add Group</span>. <p class="p">A new row with a drop-down list is added.</p>
+                     <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body"> The <span class="ph uicontrol">AND</span> and <span class="ph uicontrol">OR</span> present at the top are enabled.</div></div>
+                  </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">From the drop-down list, select the required form field. </span>
+                  <div class="itemgroup info">For example, select <span class="ph uicontrol">Amount in $</span>. </div>
+                  <div class="itemgroup info">Available fields are associated with the form selected in the <span class="ph uicontrol">General Details</span> tab. </div>
+                  <div class="itemgroup info">When a form field is selected, two new fields are added to the row. The second field is a drop-down list and based on the form field selected, the third field can be any of the following. <ul class="ul">
+                        <li class="li">Drop-down list </li>
+                        <li class="li">Option list</li>
+                        <li class="li">Text box</li>
+                        <li class="li">Numeric text box</li>
+                        <li class="li">Calendar drop-down box </li>
+                     </ul>
+                  </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">From the second drop-down list, select the operator. </span>
+                  <div class="itemgroup info">For example, select greater than &gt;.</div>
+                  <div class="itemgroup info">The operator creates the condition between the form field you select in the first drop-down list and the value that you enter or select in the third field. </div>
+                  <div class="itemgroup info">From the second drop-down list, if you select either between or not between, the third and the fourth fields appear, which can be one of the following: <ul class="ul">
+                        <li class="li">Numeric text box </li>
+                        <li class="li">Calendar drop-down box </li>
+                     </ul>
+                  </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Based on the form field you select in the first field, enter or select a value in the third field. For example, enter <span class="ph uicontrol">1000</span>. </span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Optionally, to add multiple rules to the workflow or group, repeat the above steps 1 to 4. </span>
+                  <div class="itemgroup info">When you add more than one rule, then the <span class="ph uicontrol">AND</span> and <span class="ph uicontrol">OR</span> buttons present at the top are enabled. Based on the workflow condition, click either of the following:<ul class="ul">
+                        <li class="li">If all the rules must be true to execute the workflow condition, click <span class="ph uicontrol">AND</span>.<p class="p">For example, <span class="ph uicontrol">Amount in $ &gt; 1000 AND Remaining Amount in $ &lt; 500</span>.</p>
+                           <p class="p">The subsequent workflow stage is<span class="ph uicontrol"> In Review</span> if the amount entered in the field <span class="ph uicontrol">Amount in $</span> is greater than <span class="ph uicontrol">1000</span> and the amount entered in the field <span class="ph uicontrol">Remaining Amount in $</span> is less than <span class="ph uicontrol">500</span>.</p>
+                        </li>
+                        <li class="li">If any one of the rules must be true to execute the workflow condition, click <span class="ph uicontrol">OR</span>.<p class="p">For example, <span class="ph uicontrol">Amount in $ &gt; 1000 OR Remaining Amount in $ &lt; 500</span>. </p>
+                           <p class="p">The subsequent workflow stage is <span class="ph uicontrol">In Review</span> if the amount entered in the field <span class="ph uicontrol">Amount in $</span> is greater than <span class="ph uicontrol">1000</span> or the amount entered in the field <span class="ph uicontrol">Remaining Amount in $</span> is less than <span class="ph uicontrol">500</span>.</p>
+                        </li>
+                     </ul>
+                  </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Optionally, in the second row, create workflow conditions using the fields of the <span class="ph uicontrol">Project</span> and <span class="ph uicontrol">Contract Details</span> forms. </span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Optionally, to delete a row, click <span class="ph uicontrol">Delete</span> corresponding to the appropriate row. </span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Click <span class="ph uicontrol">Save</span>.</span>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To add another condition, perform the following steps:</span>
+            <ol type="a" class="ol substeps">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Workflow</span> tab, click the <span class="ph uicontrol">Conditions Block</span> item. </span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the right pane, click <span class="ph uicontrol">Add Condition</span>. Alternatively, right-click the <span class="ph uicontrol">Conditions Block</span> item in the canvas, and then click <span class="ph uicontrol">New If Else Branch</span>. </span>
+                  <div class="itemgroup info">The <span class="ph uicontrol">If Else Branch</span> is displayed below the <span class="ph uicontrol">Amount Greater than 1000</span> item as illustrated in the following image:<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 5. </span>Workflow If Else Branch</figcaption>
+                        
+                        <img class="image" src="../../Screenshots/WF9.png">
+                     </figure>
+                  </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Workflow</span> tab, click the <span class="ph uicontrol">If Else Branch</span> item. </span>
+                  <div class="itemgroup info">The <span class="ph uicontrol">If Else Branch</span> properties are displayed in the right pane.</div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Name</span> box, enter the name for the condition.</span>
+                  <div class="itemgroup info">For example, enter <span class="ph uicontrol">Else</span>.</div>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">You can send a standard automated email notification to stakeholders when the associated form is transitioned from one workflow stage to the next workflow stage. To customize workflow email notifications, perform the following steps:</span>
+            <ol type="a" class="ol substeps">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Actions</span> navigation pane, expand <span class="ph uicontrol">SIMPLE ACTIVITIES</span>, and then drag the <span class="ph uicontrol">Send Email Notification</span> action item to the <span class="ph uicontrol">Workflow</span> tab.</span>
+                  <div class="itemgroup info">The <span class="ph uicontrol">Send Email Notification</span> item is displayed on the canvas.</div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Workflow</span> tab, click the <span class="ph uicontrol">Send Email Notification</span> item.</span>
+                  <div class="itemgroup info">The <span class="ph uicontrol">Send Email Notification</span> properties are displayed in the right pane, as illustrated in the following image:<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 6. </span>Workflow Email Notification</figcaption>
+                        
+                        <img class="image" src="../../Screenshots/WF10.png">
+                     </figure>
+                  </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Send Email Notification</span> properties pane, provide the required information in the fields, as described in the following table:</span>
+                  <div class="itemgroup info">
+                     <table class="table"><caption></caption><colgroup><col style="width:20%"><col style="width:80%"></colgroup><thead class="thead">
+                              <tr class="row">
+                                 <th class="entry colsep-1 rowsep-1" id="task-7778__entry__25">Field Name</th>
+                                 <th class="entry rowsep-1" id="task-7778__entry__26">Description</th>
+                              </tr>
+                           </thead><tbody class="tbody">
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="task-7778__entry__25">Name</td>
+                                 <td class="entry rowsep-1" headers="task-7778__entry__26"> Enter the name of the stage. the default stage name is displayed as <span class="ph uicontrol">Send Email Notification</span>. If required, enter a new name for the action item.</td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="task-7778__entry__25"> To </td>
+                                 <td class="entry rowsep-1" headers="task-7778__entry__26"> Select the required role the email notification will be sent to. <p class="p">Available options in the list are roles that are defined in the application with necessary permissions. </p>
+                                    <p class="p">Optionally, you can type the required email address (For example, <em class="ph i">john@Mind.com</em>). </p>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="task-7778__entry__25"> CC </td>
+                                 <td class="entry rowsep-1" headers="task-7778__entry__26"> Select the required roles a copy of the email notification will be sent to. <p class="p">Available options in the list are roles that are defined in the application with necessary permissions. </p>
+                                    <p class="p">Optionally, you can type the required email address. For example, <em class="ph i">john@Mind.com</em>. </p>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="task-7778__entry__25"> Select Mail Body Template</td>
+                                 <td class="entry rowsep-1" headers="task-7778__entry__26">Select the required mail body template that must be sent to the stakeholders. <p class="p">Available templates are based on the form that is selected for the workflow. </p>
+                                    <p class="p">Available options are templates defined for the form in the <span class="ph uicontrol">Mail Body Templates</span> catalog of the library. </p>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="task-7778__entry__25"> Attachments </td>
+                                 <td class="entry rowsep-1" headers="task-7778__entry__26">
+                                    <ul class="ul">
+                                       <li class="li">
+                                          <span class="ph uicontrol">Form Attachment(s)</span> – Select the check box to send the notification with the files that are attached to the record for which the workflow action is performed.</li>
+                                       <li class="li">
+                                          <span class="ph uicontrol">Workflow Comment Attachment(s)</span> – Select the check box to send the notification with the files that are attached to the workflow comments. </li>
+                                       <li class="li">
+                                          <span class="ph uicontrol">Mail Merge</span> – Select the required mail merge template. Available options are mail merge templates configured for the selected form. <span class="ph">For information on Mail Merge, refer to <a class="xref" href="../../../Common_Application_Features/Mail_Merge/MailMerge.html">Common Application Features, Mail Merge</a>.</span>
+                                       </li>
+                                    </ul>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1" headers="task-7778__entry__25"> Notify through Email </td>
+                                 <td class="entry" headers="task-7778__entry__26"> Click the required option:<ul class="ul">
+                                       <li class="li">Click <span class="ph uicontrol">Any user completes action</span> to specify that if any of the action stakeholders transition the record to the next workflow stage, the email notification is sent to the selected stakeholders. </li>
+                                       <li class="li">Click <span class="ph uicontrol">All user(s) complete action</span> to specify that all the action stakeholders must transition the record to the next workflow stage to send the email notification to the selected stakeholders. </li>
+                                    </ul>
+                                 </td>
+                              </tr>
+                           </tbody></table>
+                  </div>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To connect workflow items to complete the business process, click the port at the item, and drag the port to the port of the required item as illustrated in the following image:</span>
+            <div class="itemgroup info">
+               <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 7. </span>Edit Workflow</figcaption>
+                  
+                  <img class="image" src="../../Screenshots/WF11.png">
+               </figure>
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body"> By default, the port is located on the right of the box. To change the location of the port, right-click the new action item and select <span class="ph uicontrol">Reverse Port</span>.</div></div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To define conditions on the users performing a workflow action, perform the following steps:</span>
+            <ol type="a" class="ol substeps">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Click the required port.</span>
+                  <div class="itemgroup info">The <span class="ph uicontrol">Workflow Connection</span> properties are displayed on the right pane.</div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Perform Operation After</span> section, click the required option:</span>
+                  <div class="itemgroup info">
+                     <ul class="ul">
+                        <li class="li">
+                           <span class="ph uicontrol">Any user completes action</span>: To specify that if any of the action stakeholders transition the record to the next workflow stage, the record moves to the next workflow stage.</li>
+                        <li class="li">
+                           <span class="ph uicontrol">All user(s) complete action</span>: To specify that all the action stakeholders must transition the record to the next workflow stage for the record to move to the next workflow stage.</li>
+                     </ul>
+                  </div>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save</span>.</span>
+            <div class="itemgroup info">The workflow is saved and listed on the <span class="ph uicontrol">WORKFLOW LIST</span> page. </div>
+         </li></ol></section>
+      <section class="section postreq">The workflow must now be published to be made available in the application. <span class="ph">For information on publishing a workflow, refer to <a class="xref" href="PublishWF.html">Publishing a Workflow</a>.</span>
+      </section>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../../../Mind/Administration/Configuration_Toolkit/Workflow_Management/WFMgmt.html">Workflow Management</a></div></div></nav></article></main></body></html>

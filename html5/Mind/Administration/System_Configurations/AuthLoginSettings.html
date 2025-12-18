@@ -1,0 +1,177 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="task"><meta name="description" content=""><meta name="DC.subject" content="authentication-module,identity-provider-integration,login-settings,access-control,user-management,configure-login-mode,manage-user-provisioning,set-password-policies,enable-sso,audit-login-events,mind-administration-guide,capital-program-management,authentication,user-provisioning,access-control-environment"><meta name="keywords" content="authentication-module, identity-provider-integration, login-settings, access-control, user-management, configure-login-mode, manage-user-provisioning, set-password-policies, enable-sso, audit-login-events, mind-administration-guide, capital-program-management, authentication, user-provisioning, access-control-environment"><meta name="DC.relation" scheme="URI" content="../../../Mind/Administration/System_Configurations/SysConfig.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="Mind-Administration-Guide"><meta name="platform" content="web"><meta name="DC.creator" content="Yashshree"><meta name="DC.date.created" content="2025-11-20+05:30"><meta name="DC.date.modified" content="2025-11-20+05:30"><meta name="title" content="Authentication and Login Settings"><meta name="shortdesc" content="Login mode and authentication method"><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="identity-provider;login-service;user-account;authentication-token;session"><meta name="taxonomy" content="domain:capital-program-management;usecase:system-configuration;industry:software"><meta name="tags" content="authentication,login,sso,security,access-control"><meta name="usecase" content="configure and manage authentication and login settings"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="Form_AUTHSET"><title>Authentication and Login Settings</title><link rel="stylesheet" type="text/css" href="../../../commonltr.css"></head><body id="Form_AUTHSET"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Authentication and Login Settings</h1>
+   
+   
+   <div class="body taskbody"><p class="shortdesc"></p>
+      <section class="section context">The <span class="ph uicontrol">AUTHENTICATION &amp; LOGIN SETTINGS</span> page enables the Administrator to define settings and configurations around logging into the system. Most of these configurations are set before the initial use of <span class="ph">Mind</span>. The settings include defining:<ul class="ul">
+            <li class="li">
+               <p class="p">Login mode and authentication method</p>
+            </li>
+            <li class="li">
+               <p class="p">Timeout periods</p>
+            </li>
+            <li class="li">
+               <p class="p">Password configurations</p>
+            </li>
+            <li class="li">
+               <p class="p">Login attempts configurations</p>
+            </li>
+            <li class="li">
+               <p class="p">Login attempt configurations</p>
+            </li>
+         </ul>
+      </section>
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">In the module menu, click <span class="ph uicontrol">Administration</span>.</span>
+            <div class="itemgroup info">The <span class="ph uicontrol">ADMINISTRATION</span> page is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Expand <span class="ph uicontrol">System Configurations</span>, and then click <span class="ph uicontrol">Authentication &amp; Login Settings</span>.</span>
+            <div class="itemgroup info">The <span class="ph uicontrol">AUTHENTICATION &amp; LOGIN SETTINGS</span> page is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Provide the required information in the fields, as described in the following table.</span>
+            <div class="itemgroup info">
+               <table class="table"><caption></caption><colgroup><col style="width:30%"><col style="width:70%"></colgroup><thead class="thead">
+                        <tr class="row">
+                           <th class="entry colsep-1 rowsep-1" id="Form_AUTHSET__entry__1">Field</th>
+                           <th class="entry rowsep-1" id="Form_AUTHSET__entry__2">Description</th>
+                        </tr>
+                     </thead><tbody class="tbody">
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_AUTHSET__entry__1">Login Mode</td>
+                           <td class="entry rowsep-1" headers="Form_AUTHSET__entry__2">Select a login mode from the drop-down list.<div class="p">The available options are:<ul class="ul">
+                                    <li class="li">
+                                       <span class="ph uicontrol">Mind</span>: Select this option to login through the user account created in <span class="ph">Mind</span>.<p class="p">For more information on user accounts, refer to <a class="xref" href="../../CoSP/Administration/User_Management/User_Accounts/UserAccs.html">User Accounts</a>.</p>
+                                    </li>
+                                    <li class="li">
+                                       <span class="ph uicontrol">External IDP</span>: Select this option to login using the third party IDP such as ADFS, BigF5, and so on.</li>
+                                    <li class="li">
+                                       <span class="ph uicontrol">Mixed</span>: Select this option to use both the options – Local and External IDP logins.</li>
+                                 </ul>
+                              </div>
+                              <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body"> The login page is launched based on the login mode you select.</div></div>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_AUTHSET__entry__1">Authentication Method</td>
+                           <td class="entry rowsep-1" headers="Form_AUTHSET__entry__2">For <span class="ph uicontrol">External IDP</span> or <span class="ph uicontrol">Mixed</span> login modes, select the required authentication method.</td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_AUTHSET__entry__1">Reset Password Timeout</td>
+                           <td class="entry rowsep-1" headers="Form_AUTHSET__entry__2">Enter the time duration (in hours) after which the reset password link which is sent by email, expires.</td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1" headers="Form_AUTHSET__entry__1">Session Time Out notification prior (in seconds)</td>
+                           <td class="entry" headers="Form_AUTHSET__entry__2">Enter the time in seconds. The session timeout notification is displayed after the specified time duration prior to the session expiry.</td>
+                        </tr>
+                     </tbody></table>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">In the <span class="ph uicontrol">PASSWORD CONFIGURATIONS</span> section, provide the required information in the fields, as described in the following table.</span>
+            <div class="itemgroup info">
+               <table class="table"><caption></caption><colgroup><col style="width:30%"><col style="width:70%"></colgroup><thead class="thead">
+                        <tr class="row">
+                           <th class="entry colsep-1 rowsep-1" id="Form_AUTHSET__entry__11">Field</th>
+                           <th class="entry rowsep-1" id="Form_AUTHSET__entry__12">Description</th>
+                        </tr>
+                     </thead><tbody class="tbody">
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_AUTHSET__entry__11">Minimum Password Length</td>
+                           <td class="entry rowsep-1" headers="Form_AUTHSET__entry__12">Enter the number to define the minimum number of characters required in a password.</td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_AUTHSET__entry__11">Must include lower case letters</td>
+                           <td class="entry rowsep-1" headers="Form_AUTHSET__entry__12" rowspan="5">Select the check box to define the characteristics of the password.</td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_AUTHSET__entry__11">Must include upper case letters</td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_AUTHSET__entry__11">Must include numbers</td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_AUTHSET__entry__11">Must include special characters</td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_AUTHSET__entry__11">User ID or part of User ID should not be the part of password</td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_AUTHSET__entry__11" rowspan="2">Default Password expiration period (in days)</td>
+                           <td class="entry rowsep-1" headers="Form_AUTHSET__entry__12">Enter the number of days after which the default password that is set for user accounts created by bulk upload of user account information expires.<span class="ph">For information on creating user accounts in bulk, refer to <a class="xref" href="../../CoSP/Administration/User_Management/User_Accounts/Creating_User_Account/CreateUserAccsBulk.html">Creating User Accounts in Bulk</a>.</span>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry rowsep-1" headers="Form_AUTHSET__entry__12">By default, the <span class="ph uicontrol">Never Expire</span> check box is enabled, which means the password never expires.</td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_AUTHSET__entry__11">Send Email Notification prior to password expiry date</td>
+                           <td class="entry rowsep-1" headers="Form_AUTHSET__entry__12">
+                              <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">This field is not available if the <span class="ph uicontrol">Never Expire</span> check box is selected.</div></div>
+                              <p class="p">Select the check box to send email reminders to users everyday prior to password expiration date.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_AUTHSET__entry__11" rowspan="2">User Must Change the Password at First Logon</td>
+                           <td class="entry rowsep-1" headers="Form_AUTHSET__entry__12">Select the check box to notify the users to change the password at first logon.</td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry rowsep-1" headers="Form_AUTHSET__entry__12">Alternatively, clear the check box to continue using the password as set when the account is created.</td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_AUTHSET__entry__11">Number of Days</td>
+                           <td class="entry rowsep-1" headers="Form_AUTHSET__entry__12">
+                              <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">This field is displayed if the <span class="ph uicontrol">Send Email Notification Prior to Password Expiry Date</span> check box is selected.</div></div>
+                              <p class="p">Enter how many days prior to the expiry date the reminder should be sent to the users.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_AUTHSET__entry__11">Select a Template</td>
+                           <td class="entry rowsep-1" headers="Form_AUTHSET__entry__12">
+                              <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">This field is displayed if the <span class="ph uicontrol">Send Email Notification Prior to Password Expiry Date</span> check box is selected.</div></div>
+                              <p class="p">Select the appropriate mail body template to send a standard automated email notification to the users with password expiration details. ​</p>
+                              <p class="p">Available options are templates defined in the <span class="ph uicontrol">Mail Body Templates</span> catalog of the Library.</p>
+                              <p class="p">For more information on defining mail body templates, refer to <a class="xref" href="../../Library_Management/Standard_Library_Catalogs/Notifications/MailBodyTemps.html">Mail Body Templates</a>.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1" headers="Form_AUTHSET__entry__11" rowspan="2">Enforce Password History</td>
+                           <td class="entry rowsep-1" headers="Form_AUTHSET__entry__12">By default, the <span class="ph uicontrol">Not Defined</span> check box is selected.</td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry" headers="Form_AUTHSET__entry__12">To enforce password history, remove the check box and enter the number of unique new passwords that must be associated with a user account before an old password can be reused.</td>
+                        </tr>
+                     </tbody></table>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">In the <span class="ph uicontrol">LOGIN ATTEMPTS CONFIGURATIONS</span> section, provide the required information in the fields, as described in the following table.</span>
+            <div class="itemgroup info">
+               <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:30%"><col style="width:70%"></colgroup><thead class="thead">
+                        <tr class="row">
+                           <th class="entry colsep-1 rowsep-1" id="Form_AUTHSET__entry__36">Field</th>
+                           <th class="entry rowsep-1" id="Form_AUTHSET__entry__37">Description</th>
+                        </tr>
+                     </thead><tbody class="tbody">
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_AUTHSET__entry__36">Maximum Login Attempts</td>
+                           <td class="entry rowsep-1" headers="Form_AUTHSET__entry__37">
+                              <p class="p">Enter the value to set the maximum number of unsuccessful login attempts that will cause a user account to be locked.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1" headers="Form_AUTHSET__entry__36">Reset unsuccessful Login attempt counter (in mins)</td>
+                           <td class="entry" headers="Form_AUTHSET__entry__37">By default, the counter is set to 60 minutes. <p class="p">Enter the value to define the number of minutes that must pass to reset the account that is locked due to maximum number of unsuccessful login attempts.</p>
+                           </td>
+                        </tr>
+                     </tbody></table>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">The <span class="ph uicontrol">EXTERNAL IDP CONFIGURATIONS</span> section is for capturing information of AzureAD integration.</span>
+            <div class="itemgroup info">
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">Do not enter information in these fields. An integration is setup with ADFS and not with AzureAD. The details of this integration are not configurable by Administrators. Please consult Mind to make changes to the ADFS integration.</div></div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save</span>.</span>
+         </li></ol></section>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../../Mind/Administration/System_Configurations/SysConfig.html">System Configurations</a></div></div></nav></article></main></body></html>

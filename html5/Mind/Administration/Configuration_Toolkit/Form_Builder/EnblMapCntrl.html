@@ -1,0 +1,105 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="task"><meta name="description" content=""><meta name="DC.subject" content="form-builder,gis-map-control,map-widget,map-service,config-plus,enable-map-control,configure-gis-settings,bind-map-to-form,manage-map-specifications,geo-coordinate-capture,capital-program-management,geospatial-data-capture,field-data-collection,production-environment,web-platform"><meta name="keywords" content="form-builder, gis-map-control, map-widget, map-service, config-plus, enable-map-control, configure-gis-settings, bind-map-to-form, manage-map-specifications, geo-coordinate-capture, capital-program-management, geospatial-data-capture, field-data-collection, production-environment, web-platform"><meta name="DC.audience.type" content="role"><meta name="prodname" content="Mind-Administration-Guide"><meta name="platform" content="web"><meta name="DC.creator" content="Yashshree"><meta name="DC.date.created" content="2025-11-20+05:30"><meta name="DC.date.modified" content="2025-11-20+05:30"><meta name="title" content="Enabling Map Control in a Form using Form Builder"><meta name="shortdesc" content="Guidance to enable and configure GIS map-control widgets in forms built with Form Builder to capture and display geospatial data."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="gis-map;map-control;coordinate;map-layer;map-configuration"><meta name="taxonomy" content="domain:capital-program-management;usecase:map-control-in-forms;industry:software"><meta name="tags" content="gis,map-control,geolocation,form-integration,configuration"><meta name="usecase" content="enable-and-configure-gis-map-control"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="AdminEnblMapFB"><title>Enabling Map Control in a Form using Form Builder</title><link rel="stylesheet" type="text/css" href="../../../../commonltr.css"></head><body id="AdminEnblMapFB"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Enabling Map Control in a Form using Form Builder</h1>
+   
+   
+   <div class="body taskbody"><p class="shortdesc"></p>
+      <section class="section prereq">
+         <ul class="ul">
+            <li class="li">
+               <span class="ph uicontrol">GIS SETTINGS</span> page is configured. <span class="ph">To configure GIS Settings, refer to <a class="xref" href="../../System_Configurations/GIS/GIS_Settings/GIS_Configuration.html">GIS Settings</a>.</span>
+            </li>
+         </ul>
+      </section>
+      <section class="section context">The <span class="ph uicontrol">GIS Map Control</span> feature facilitates to record and view the geo-location information in a form. Using <span class="ph uicontrol">Form Builder</span>, you can enable one or more map controls in a form and manage unique specifications for each map control.</section>
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">In the <span class="ph uicontrol">DESIGN</span> tab, create a section. <span class="ph">For information on creating a section, refer to <a class="xref" href="UsingFormBuilder.html">Creating a Form Using Form Builder</a>.</span>
+            </span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">In the controls pane, expand the <span class="ph uicontrol">ADVANCED CONTROLS</span> list, drag and drop the <span class="ph uicontrol">Map</span> control into the section.The map control area is displayed.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Perform the following steps to enable the data mapping of location details in the application to ESRI Outfields:</span>
+            <ol type="a" class="ol substeps">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the controls pane, expand the <span class="ph uicontrol">ADVANCED CONTROLS</span> list, and drag and drop the <span class="ph uicontrol">GISDataMapper</span> control into the section.</span>
+                  <div class="itemgroup info">The selection dialog box is displayed.</div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">From the <span class="ph uicontrol">Layer</span> drop-down list, select the required layer. </span>
+                  <div class="itemgroup info">Available options are the editable layers that are configured in GIS Settings. <span class="ph">For information on adding layers, refer to  <a class="xref" href="../../System_Configurations/GIS/GIS_Settings/GIS_Configuration.html">Adding Layers</a>.</span>
+                  </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">From the <span class="ph uicontrol">Mapping Type</span> drop-down list, select the data type required to be mapped with the ESRI Outfields. </span>
+                  <div class="itemgroup info">
+                     <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body"> It is mandatory to map the following data types for each layer:<ul class="ul">
+                           <li class="li">PID</li>
+                           <li class="li">ParentID</li>
+                           <li class="li">InstanceID</li>
+                           <li class="li">ModuleID </li>
+                           <li class="li">MapControlName</li>
+                           <li class="li">GeometryID</li>
+                        </ul>
+                     </div></div>
+                  </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Outfield Name</span> box, enter the name of the outfield attribute as defined in ArcGIS database.</span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">From the <span class="ph uicontrol">MW Field</span> drop-down list, select the MW field name corresponding to the outfield name.</span>
+                  <div class="itemgroup info">
+                     <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body"> MW Field for the mapping types <span class="ph uicontrol">ModuleID</span> and <span class="ph uicontrol">ControlName</span> are fetched within the application. </div></div>
+                  </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">To continue mapping data for all data types, perform the following steps:</span>
+                  <div class="itemgroup info">
+                     <ol class="ol" type="i">
+                        <li class="li">Click <span class="ph uicontrol">Add</span>.<p class="p">A row is created.</p>
+                        </li>
+                        <li class="li">Repeat steps ato e.</li>
+                        <li class="li">Click <span class="ph uicontrol">Ok.</span>
+                        </li>
+                     </ol>
+                  </div>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To turn on the <span class="ph uicontrol">GIS Map View</span> control in thelist page of the form, perform the following steps:</span>
+            <ol type="a" class="ol substeps">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">DESIGN</span> tab, click the <span class="ph uicontrol">Attributes</span> tab.</span>
+                  <div class="itemgroup info">The form attributes are displayed.</div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">From the <span class="ph uicontrol">ShowGISMapView</span>drop-down list, select <span class="ph uicontrol">True.</span>
+                  </span>
+                  <div class="itemgroup info">
+                     <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body"> This functionality is applicable only to forms that havelist pages.</div></div>
+                  </div>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click the <span class="ph uicontrol">Settings</span> tab to specify form details. </span>
+            <div class="itemgroup info">The fields displayed in this pageare:<ul class="ul">
+                  <li class="li">
+                     <span class="ph uicontrol">Form Id</span>: This determines the unique ID for the form. Rename the form according torequirements.</li>
+                  <li class="li">
+                     <span class="ph uicontrol">Header</span>: This denotes the text to be displayed as header to the form after being published.</li>
+                  <li class="li">
+                     <span class="ph uicontrol">Parent Module</span>: This determines the location where the XML form will be availablein the application.</li>
+               </ul>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">In the <span class="ph uicontrol">Header</span> box, enter the name of the form.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">From the <span class="ph uicontrol">Parent Module</span> list, select the parent module.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save</span>. </span>
+            <div class="itemgroup info">The <span class="ph uicontrol">FORMS LIST</span> page is displayed.</div>
+         </li></ol></section>
+      <section class="section postreq">The form must now be published to be made available in the application. Forinformation on publishing a form, refer to<a class="xref" href="PublishForm.html">Publishing a Form</a>.</section>
+   </div>
+</article></main></body></html>

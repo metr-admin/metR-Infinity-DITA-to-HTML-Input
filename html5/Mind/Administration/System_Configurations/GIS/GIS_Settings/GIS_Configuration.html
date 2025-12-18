@@ -1,0 +1,636 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="task"><meta name="description" content=""><meta name="DC.subject" content="gis-module,gis-settings,map-service,spatial-database,arcgis-connector,configure-gis,map-service-configuration,manage-spatial-data,authorize-gis-users,deploy-gis-services,mind-administration-guide,capital-program-management,geospatial-analysis,infrastructure-planning,field-operations"><meta name="keywords" content="gis-module, gis-settings, map-service, spatial-database, arcgis-connector, configure-gis, map-service-configuration, manage-spatial-data, authorize-gis-users, deploy-gis-services, mind-administration-guide, capital-program-management, geospatial-analysis, infrastructure-planning, field-operations"><meta name="DC.relation" scheme="URI" content="../../../../../Mind/Administration/System_Configurations/GIS/GIS_Settings/GIS.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="Mind-Administration-Guide"><meta name="platform" content="web"><meta name="DC.creator" content="Yashshree"><meta name="DC.date.created" content="2025-11-20+05:30"><meta name="DC.date.modified" content="2025-11-20+05:30"><meta name="title" content="GIS Settings"><meta name="shortdesc" content="Geographic Information             System (GIS) application is an information database used to secure, store, update..."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="map-service;arcgis;spatial-database;geodata;gis-service"><meta name="taxonomy" content="domain:capital-program-management;usecase:system-configuration;industry:software"><meta name="tags" content="gis,configuration,spatial-data,arcgis,mapping"><meta name="usecase" content="configure GIS integration and manage spatial logs"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="Form_GISADCF"><title>GIS Settings</title><link rel="stylesheet" type="text/css" href="../../../../../commonltr.css"></head><body id="Form_GISADCF"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">GIS Settings</h1>
+   
+   
+   <div class="body taskbody"><p class="shortdesc"></p>
+      <section class="section context">
+         <p class="p">Geographic Information
+                System (GIS) application is an information database used to secure, store, update,
+                analyze, manage, and display all kinds of spatial and geographical information.</p>
+         <p class="p">The <span class="ph uicontrol">GIS
+                    SETTINGS</span> page allows you to configure the map controls, such as
+                Layers and Base Maps required to perform the following activities: </p>
+         <ul class="ul">
+            <li class="li">Display the geographical information of the location</li>
+            <li class="li">Mark location points and boundaries on the map</li>
+            <li class="li">View the marked location points on the map at project and
+                    Enterprise level</li>
+         </ul>
+         <p class="p">The following settings are configured using<span class="ph uicontrol">GIS Settings</span>:</p>
+         <ul class="ul">
+            <li class="li">
+               <p class="p">
+                  <span class="ph uicontrol">GIS IN
+                            MOBILE</span>
+               </p>
+               <p class="p">Enabling GIS in mobile allows you to enter location data
+                        about the site through GIS rather than entering locations using latitude and
+                        longitude or manually entering the location address.Also, you can capture
+                        location information (points, lines, or shapes) using <span class="ph">Mind</span> on mobile devices in offline mode.</p>
+            </li>
+            <li class="li">
+               <p class="p">
+                  <span class="ph uicontrol">GIS
+                            AUTHENTICATION</span>
+               </p>
+               <p class="p">OAuth is an industry-standard protocol for
+                        authorization.ArcGIS(ESRI) uses OAuth to exchange ArcGIS identity with
+                        external applications safely. You can enable OAuth for the application for
+                        enhanced security while accessing ArcGIS(ESRI).</p>
+            </li>
+            <li class="li">
+               <p class="p">
+                  <span class="ph uicontrol">BASE
+                            MAPS</span>
+               </p>
+               <p class="p">A Base Map serves as a reference map on which you overlay
+                        data from layers and visualize geographic information. The ArcGIS (ESRI)
+                        website provides several predefined base map layers for you to use in your
+                        maps.</p>
+            </li>
+            <li class="li">
+               <p class="p">
+                  <span class="ph uicontrol">LAYERS</span>
+               </p>
+               <p class="p">A layer is a database of points used to mark a location in
+                        the map. Layers can be editable or read-only. Layers are created in the
+                        ArcGIS (ESRI) website. While creating an ArcGIS(ESRI) layer, you can specify
+                        the geometry and data fields for mapping <span class="ph">Mind</span> data fields with ESRI data fields.</p>
+               <ul class="ul">
+                  <li class="li">
+                     <p class="p">
+                        <span class="ph uicontrol">Geometry</span>
+                     </p>
+                     <p class="p">A location can be marked in a map using different
+                                shapes - point, line, or polygon. When you use a form to capture the
+                                project location, the drawing tools displayed for an editable layer
+                                are based on the selected shape.</p>
+                  </li>
+                  <li class="li">
+                     <p class="p">
+                        <span class="ph uicontrol">Fields</span>
+                     </p>
+                     <div class="p">The data fields defined for GIS in <span class="ph">Mind</span> must be mapped to those in ESRI. It is
+                                mandatory to map the following data fields for each layer - PID,
+                                ParentID, InstanceID, ModuleID, MapControlName, and GeometryID.<div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body"> These 6 fields are defined in ESRI and
+                                    must be mapped for each layer used in the map control for the
+                                    Save to ESRI for any location from the map control to
+                                    succeed.</div></div>
+                     </div>
+                  </li>
+               </ul>
+            </li>
+            <li class="li">
+               <p class="p">
+                  <span class="ph uicontrol">LAYER
+                            ALIASES</span>
+               </p>
+               <p class="p">You can configure Tooltips for geometries present in each
+                        non-editable layer by creating Aliases for ArcGIS (ESRI) Outfields. The
+                        Aliases are used instead of the ArcGIS (ESRI) field names when displaying
+                        data in a tooltip in the map.</p>
+            </li>
+            <li class="li">
+               <p class="p">
+                  <span class="ph uicontrol">DEFAULT MAP
+                            LOCATION</span>
+               </p>
+               <p class="p">You can configure the default location of the map using
+                        the geographic coordinate systems.</p>
+            </li>
+            <li class="li">
+               <p class="p">
+                  <span class="ph uicontrol">SERVICE
+                            AUTHENTICATION SETTINGS</span>
+               </p>
+               <p class="p">You can configure the authentication of services.</p>
+            </li>
+            <li class="li">
+               <p class="p">
+                  <span class="ph uicontrol">GEOMETRY
+                            SERVICE SETTINGS</span>
+               </p>
+               <p class="p">The Geometry Service allows you to create and modify
+                        feature geometries.</p>
+            </li>
+            <li class="li">
+               <p class="p">
+                  <span class="ph uicontrol">OFFLINE
+                            EXTENT</span>
+               </p>
+               <p class="p">You must define the boundary or extent within which the
+                        data pertaining to the base map should be downloaded when the mobile
+                        application is offline. Defining such a rectangular extent will ensure that
+                        all Offline Base Maps imagery present within the framed area will be visible
+                        to the user.</p>
+            </li>
+            <li class="li">
+               <p class="p">
+                  <span class="ph uicontrol">OFFLINE BASE
+                            MAPS</span>
+               </p>
+               <p class="p">You can configure the URLs of Offline Base Maps and
+                        validate if they are Valid for Offline Download.</p>
+            </li>
+            <li class="li">
+               <p class="p">
+                  <span class="ph uicontrol">ESRI SAVE
+                            SETTINGS</span>
+               </p>
+               <p class="p">The location data created in <span class="ph">Mind</span> using map controls is saved in ArcGIS (ESRI).
+                        Sometimes Save to ESRI may fail due to various reasons such as interrupted
+                        network connection. The system will automatically retry to write the
+                        location data to ESRI based on the configured number of retries. Also, a
+                        failure notification is sent to the specified recipients. You can configure
+                        the maximum number of retries and the recipients of the failure notification
+                        in the ESRI Save Settings.</p>
+            </li>
+         </ul>
+      </section>
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">In the module menu, click<span class="ph uicontrol">Administration</span>.</span>
+            <div class="itemgroup info">The<span class="ph uicontrol">ADMINISTRATION</span> page is
+                    displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">In the navigation pane, expand<span class="ph uicontrol">System Configurations</span>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Expand <span class="ph uicontrol">GIS</span>, and then click
+                        <span class="ph uicontrol">GIS
+                    Settings</span>.</span>
+            <div class="itemgroup info">The <span class="ph uicontrol">GIS SETTINGS</span> page is
+                    displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To enable GIS in the <span class="ph">Mind</span> mobile application, in the <span class="ph uicontrol">GIS IN MOBILE</span> section, select
+                    the <span class="ph uicontrol">Enable GIS in
+                        Mobile</span> check box.</span>
+            <div class="itemgroup info">By enabling GIS in mobile, you can view
+                    the following forms in the <span class="ph">Mind</span> mobile application:<ul class="ul">
+                  <li class="li">Project Location form</li>
+                  <li class="li">Map Controls used in forms that are available
+                            offline</li>
+               </ul>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To enable OAuth authentication for GIS with ESRI,
+                    in the <span class="ph uicontrol">GIS
+                        AUTHENTICATION</span>section, select the <span class="ph uicontrol">Enable OAuth</span> check box.</span>
+         </li><li class="li step stepexpand" id="Form_GISADCF__Addbasemap">
+            <span class="ph cmd">To configure base maps, in the <span class="ph uicontrol">BASE MAPS</span> section, perform
+                    the following steps:</span>
+            <ol type="a" class="ol substeps">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Click <span class="ph uicontrol">Add</span>.</span>
+                  <div class="itemgroup info">The <span class="ph uicontrol">New Base Map</span> dialog
+                            box is displayed.</div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Name</span> box, enter a
+                            unique alphanumeric name for the new base map.</span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">URL</span> box, enter the
+                            URL of the of the new base map available in ArcGIS (ESRI). </span>
+                  <div class="itemgroup info">
+                     <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">In the forms using map control, you can see
+                                a view of the Base Map, accessible at the specified URL in ArcGIS
+                                (ESRI).</div></div>
+                  </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">To set the base map as the default map,
+                            select the <span class="ph uicontrol">Is
+                                Default</span> check box.</span>
+                  <div class="itemgroup info">
+                     <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body"> Only one base map can be selected as
+                                default. The default base map is displayed in the map view across
+                                the application.</div></div>
+                  </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Click <span class="ph uicontrol">Save</span> to save the new
+                            base map details.</span>
+                  <div class="itemgroup info">All the saved base maps are
+                            available for selection in the map view.</div>
+                  <div class="itemgroup info">Every base map serves as a
+                            spatial canvas for the user to view location data.</div>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand" id="Form_GISADCF__AddLayer">
+            <span class="ph cmd">To configure layers, in the <span class="ph uicontrol">LAYERS</span> section, perform the
+                    following steps:</span>
+            <ol type="a" class="ol substeps">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Transparency of Drawing tools in
+                                %</span> box, enter the appropriate value..</span>
+                  <div class="itemgroup info">The value can be between 0 to
+                            100%, where 0% is fully opaque and 100% is fully transparent.</div>
+                  <div class="itemgroup info">This value defines the
+                            transparency of the geometrical shapes created by user to clearly
+                            distinguish the overlapping boundaries.</div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">To add a new layer, perform the following
+                            steps:</span>
+                  <div class="itemgroup info">
+                     <ol class="ol" type="i">
+                        <li class="li">
+                           <p class="p">Click <span class="ph uicontrol">Add</span>.</p>
+                           <p class="p">The <span class="ph uicontrol">New Layer</span>
+                                        dialog box is displayed.</p>
+                        </li>
+                        <li class="li">
+                           <p class="p">In the <span class="ph uicontrol">Name</span> box,
+                                        enter the name of the layer.</p>
+                        </li>
+                        <li class="li">
+                           <div class="p">In the <span class="ph uicontrol">URL</span> box,
+                                        enter the URL of the layer.<div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+                                            Layers are created beforehand in ArcGIS
+                                        (ESRI).</div></div>
+                           </div>
+                        </li>
+                        <li class="li">
+                           <p class="p">To indicate that the URL is a group of
+                                        layers, select the <span class="ph uicontrol">Group URL</span>
+                                        check box.</p>
+                           <p class="p">When a group of layers is selected in a
+                                        form, the data from all the layers in the URL is visible on
+                                        the map.</p>
+                           <div class="p">
+                              <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body"> You cannot edit a group layer
+                                            after the group layer is saved.</div></div>
+                           </div>
+                        </li>
+                        <li class="li">
+                           <p class="p">Select the<span class="ph uicontrol">Enable
+                                            Editing</span>check box, to set the layer as
+                                        editable.</p>
+                           <div class="p">The<span class="ph uicontrol">Geometry</span>field is enabled.<div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body"> If <span class="ph uicontrol">Group
+                                                URL</span> is selected, then the <span class="ph uicontrol">Enable
+                                                Editing</span> check box is not available for
+                                            selection.</div></div>
+                           </div>
+                        </li>
+                        <li class="li">
+                           <p class="p">Optionally, if the layer is marked as
+                                            <span class="ph uicontrol">Private</span> in the ArcGIS (ESRI) settings,
+                                        enter the <span class="ph uicontrol">User
+                                            ID</span>, <span class="ph uicontrol">Password</span>,
+                                            and<span class="ph uicontrol">ConfirmPassword</span>to enable user
+                                        authentication to access the layer in ArcGIS (ESRI).</p>
+                        </li>
+                        <li class="li">
+                           <p class="p">In the<span class="ph uicontrol">Geometry</span>drop-down list, select the required
+                                        geometry, if the layer is enabled for editing.</p>
+                        </li>
+                        <li class="li">
+                           <p class="p">Enter the<span class="ph uicontrol">Transparency in
+                                            %</span> value.</p>
+                           <p class="p">Values can be between 0 to 100%, where 0%
+                                        is fully opaque and100% is fully transparent.</p>
+                           <p class="p">By default, transparency of the layer when
+                                        placed over the Base Map is set to 50%.</p>
+                        </li>
+                        <li class="li">
+                           <p class="p">Click<span class="ph uicontrol">Save</span>to
+                                        save the new layer details.</p>
+                           <p class="p">The<span class="ph uicontrol">ID</span>is
+                                        automatically generated on saving the new layer.</p>
+                        </li>
+                     </ol>
+                  </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">To ensure that the added layers are
+                            available for offline download in the mobile application,
+                                click<span class="ph uicontrol">Validate</span>.</span>
+                  <div class="itemgroup info">The <span class="ph uicontrol">Valid for offline
+                                Download</span>column displays one of the following
+                                options:<table class="table"><caption></caption><colgroup><col style="width:30%"><col style="width:70%"></colgroup><thead class="thead">
+                              <tr class="row">
+                                 <th class="entry colsep-1 rowsep-1" id="Form_GISADCF__AddLayer__entry__1">Option</th>
+                                 <th class="entry rowsep-1" id="Form_GISADCF__AddLayer__entry__2">Description</th>
+                              </tr>
+                           </thead><tbody class="tbody">
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="Form_GISADCF__AddLayer__entry__1">Yes</td>
+                                 <td class="entry rowsep-1" headers="Form_GISADCF__AddLayer__entry__2">Validation is successful,
+                                                the layer is available for offline download.</td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="Form_GISADCF__AddLayer__entry__1">No</td>
+                                 <td class="entry rowsep-1" headers="Form_GISADCF__AddLayer__entry__2">Validation is
+                                                unsuccessful, the layer is unavailable for offline
+                                                download.You can perform any of the the following
+                                                actions to enable the layer for offline download:<ul class="ul">
+                                       <li class="li">
+                                          <p class="p">In case the URL provided for
+                                                  the Layer is incorrect,edit it and validate
+                                                  again.</p>
+                                       </li>
+                                       <li class="li">
+                                          <p class="p">In case the Layer is not
+                                                  enabled for<span class="ph uicontrol">Offline</span> in ESRI, enable the layer
+                                                  for<span class="ph uicontrol">Offline</span> and validate again</p>
+                                       </li>
+                                    </ul>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1" headers="Form_GISADCF__AddLayer__entry__1">NA</td>
+                                 <td class="entry" headers="Form_GISADCF__AddLayer__entry__2">Layer is pending
+                                                validation.</td>
+                              </tr>
+                           </tbody></table>
+                  </div>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To configure aliases that will be displayed in the
+                    tooltips for non-editable layers, in the<span class="ph uicontrol">LAYER ALIASES</span>section, perform
+                    the following steps:</span>
+            <div class="itemgroup info">
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body"> For every Map Control being used in a form, the
+                        tooltip fields are configured in<span class="ph uicontrol">GIS Settings</span>(for
+                        non-editable layers) and in Data Mappings in<span class="ph uicontrol">Form Builder</span>(for editable
+                        layers).</div></div>
+            </div>
+            <ol type="a" class="ol substeps">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">From the<span class="ph uicontrol">Layer Name</span>drop-down
+                            list, select the appropriate layer.</span>
+                  <div class="itemgroup info">The<span class="ph uicontrol">Layer
+                            Aliases</span>information of the selected layer is displayed in the
+                            table.</div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">To create an outfield alias for a
+                            non-editable layer, perform the following steps:</span>
+                  <div class="itemgroup info">
+                     <ol class="ol" type="i">
+                        <li class="li">
+                           <p class="p">Click<span class="ph uicontrol">Add</span>.</p>
+                           <p class="p">The<span class="ph uicontrol">New
+                                        Alias</span>dialog box is displayed.</p>
+                        </li>
+                        <li class="li">
+                           <div class="p">Provide the following information:<table class="table"><caption></caption><colgroup><col style="width:30%"><col style="width:70%"></colgroup><thead class="thead">
+                                       <tr class="row">
+                                          <th class="entry colsep-1 rowsep-1" id="Form_GISADCF__entry__9">Field Name</th>
+                                          <th class="entry rowsep-1" id="Form_GISADCF__entry__10">Description</th>
+                                       </tr>
+                                    </thead><tbody class="tbody">
+                                       <tr class="row">
+                                          <td class="entry colsep-1 rowsep-1" headers="Form_GISADCF__entry__9">Layer Name</td>
+                                          <td class="entry rowsep-1" headers="Form_GISADCF__entry__10">
+                                             <p class="p">From the drop-down list,
+                                                  select the layer name.</p>
+                                             <p class="p">Available options are the
+                                                  non-editable layers configured in the<span class="ph uicontrol">LAYERS</span>section.</p>
+                                          </td>
+                                       </tr>
+                                       <tr class="row">
+                                          <td class="entry colsep-1 rowsep-1" headers="Form_GISADCF__entry__9">Sub Layer
+                                                  Name</td>
+                                          <td class="entry rowsep-1" headers="Form_GISADCF__entry__10">
+                                             <p class="p">From the drop-down list,
+                                                  select the sub-layer name.</p>
+                                             <p class="p">Available options are the
+                                                  sub layers contained within the selected group
+                                                  layer.</p>
+                                          </td>
+                                       </tr>
+                                       <tr class="row">
+                                          <td class="entry colsep-1 rowsep-1" headers="Form_GISADCF__entry__9">Outfield
+                                                  Name</td>
+                                          <td class="entry rowsep-1" headers="Form_GISADCF__entry__10">
+                                             <p class="p">Enter the name of the
+                                                  outfield attribute as defined in ArcGIS (ESRI)
+                                                  database.</p>
+                                          </td>
+                                       </tr>
+                                       <tr class="row">
+                                          <td class="entry colsep-1" headers="Form_GISADCF__entry__9">Outfield
+                                                  Alias</td>
+                                          <td class="entry" headers="Form_GISADCF__entry__10">
+                                             <p class="p">Enter the outfield alias to
+                                                  be displayed in the tooltips in the map view.</p>
+                                          </td>
+                                       </tr>
+                                    </tbody></table>
+                           </div>
+                        </li>
+                        <li class="li">
+                           <p class="p">Click<span class="ph uicontrol">Save</span>to
+                                        save the new layer aliasdetails.</p>
+                           <p class="p">Layer aliases enable you to easily
+                                        identify the outfield attribute when displayed in
+                                        thetooltipsin the map view.</p>
+                        </li>
+                     </ol>
+                  </div>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To configure the default map location, in
+                        the<span class="ph uicontrol">DEFAULT MAP
+                        LOCATION</span>section, for the<span class="ph uicontrol">Default Map Type</span>, select
+                    either of the following options: </span>
+            <div class="itemgroup info">
+               <table class="table"><caption></caption><colgroup><col style="width:30%"><col style="width:70%"></colgroup><thead class="thead">
+                        <tr class="row">
+                           <th class="entry colsep-1 rowsep-1" id="Form_GISADCF__entry__19">Field Name</th>
+                           <th class="entry rowsep-1" id="Form_GISADCF__entry__20">Description</th>
+                        </tr>
+                     </thead><tbody class="tbody">
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_GISADCF__entry__19">Zoom Level</td>
+                           <td class="entry rowsep-1" headers="Form_GISADCF__entry__20">
+                              <ol class="ol" type="a">
+                                 <li class="li">Enter the values for X and Y
+                                                Coordinates. </li>
+                                 <li class="li">Enter the zoom level. </li>
+                              </ol>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1" headers="Form_GISADCF__entry__19">Extent</td>
+                           <td class="entry" headers="Form_GISADCF__entry__20">
+                              <ol class="ol" type="a">
+                                 <li class="li">Enter the Starting X (longitude)
+                                                and Y (latitude) Coordinates. </li>
+                                 <li class="li">Enter the End X (longitude) and
+                                                Y (latitude) Coordinates. </li>
+                              </ol>
+                           </td>
+                        </tr>
+                     </tbody></table>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To configure service authentication settings, in
+                        the<span class="ph uicontrol">SERVICEAUTHENTICATION
+                        SETTINGS</span>section, provide the following details required for
+                    service authentication:</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">
+                     <p class="p">
+                        <span class="ph uicontrol">Client Login Service</span>
+                     </p>
+                     <p class="p">Enter the URL that is used to authenticate the
+                                application being integrated with ArcGIS (ESRI).</p>
+                  </li>
+                  <li class="li">
+                     <p class="p">
+                        <span class="ph uicontrol">User
+                                    Login Service</span>
+                     </p>
+                     <p class="p">Enter the URL that is used to authenticate a named
+                                user.</p>
+                  </li>
+                  <li class="li">
+                     <p class="p">
+                        <span class="ph uicontrol">Referer</span>
+                     </p>
+                     <p class="p">Enter the recipient URL to which authentication
+                                response is sent.</p>
+                  </li>
+                  <li class="li">
+                     <p class="p">
+                        <span class="ph uicontrol">Client ID</span>
+                     </p>
+                     <p class="p">Enter the client'sID that is used to authenticate
+                                the application.</p>
+                  </li>
+                  <li class="li">
+                     <p class="p">
+                        <span class="ph uicontrol">Client Secret</span>
+                     </p>
+                     <p class="p">Enter the client's password that is used to
+                                authenticate the application.</p>
+                  </li>
+               </ul>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To support the spatial reference other than the
+                    default spatial reference, in the<span class="ph uicontrol">GEOMETRY SERVICE SETTINGS</span>section,<span class="ph uicontrol">Geometry Service URL</span>box,
+                    enter the geometry serviceURL defined in ESRI.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To set a boundary or extent for the offline Base
+                    Map when displayed in the <span class="ph">Mind</span> mobile application, in the<span class="ph uicontrol">OFFLINE EXTENT</span>section,
+                    perform the following steps:</span>
+            <div class="itemgroup info">
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body"> It is recommended to set the<span class="ph uicontrol">Offline Extent</span>coordinates
+                        same as the<span class="ph uicontrol">Default Map
+                            Location</span>.</div></div>
+            </div>
+            <ol type="a" class="ol substeps">
+               <li class="li substep">
+                  <span class="ph cmd">Enter the<span class="ph uicontrol">Start Y
+                                Coordinate</span>and<span class="ph uicontrol">End Y
+                            Coordinate</span>.</span>
+               </li>
+               <li class="li substep">
+                  <span class="ph cmd">Enter the<span class="ph uicontrol">Start X Coordinate</span>and
+                                <span class="ph uicontrol">End X
+                                Coordinate</span>.</span>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Toconfigure URLs of Offline Base Maps, in
+                        the<span class="ph uicontrol">OFFLINE BASE
+                        MAPS</span>section, perform the following steps:</span>
+            <ol type="a" class="ol substeps">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Click<span class="ph uicontrol">Add</span>.</span>
+                  <div class="itemgroup info">The<span class="ph uicontrol">New Offline Base
+                            Maps</span>dialog box is displayed.</div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Name</span> box, the name of
+                            Base Map that appears for user to select in the Mobile
+                            application.</span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">URL</span> box, enter the
+                            URL of the offline Base Map.</span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">From the <span class="ph uicontrol">From Level</span> and
+                                <span class="ph uicontrol">To Level</span>
+                            drop-down lists, select the probable valueof levels of base map that can
+                            be downloaded to the Mobile application. </span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Select the <span class="ph uicontrol">Is Default</span> to make
+                            the map the default base map for map controls.</span>
+                  <div class="itemgroup info">
+                     <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">Only one offline Base Map can be selected as
+                                default.</div></div>
+                  </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Click<span class="ph uicontrol">Save</span>.</span>
+                  <div class="itemgroup info">The new offline base maps details
+                            are saved.</div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">To validate that the base maps are
+                            available for offline download in the mobile application,
+                                click<span class="ph uicontrol">Validate</span>.</span>
+                  <div class="itemgroup info">The<span class="ph uicontrol">Valid for Offline
+                                Download</span>column displays any of the options described
+                                below:<ul class="ul">
+                        <li class="li">
+                           <span class="ph uicontrol">Yes</span>–Validation is successful, the layer is
+                                    available for offline download.</li>
+                        <li class="li">
+                           <span class="ph uicontrol">No</span>–
+                                    Validation is unsuccessful, the layer is unavailable for offline
+                                    download.You can perform any of the the following actions to
+                                    enable the layer for offline download:<ul class="ul">
+                              <li class="li">
+                                 <p class="p">In case the Layer is not enabled
+                                                  for<span class="ph uicontrol">Offline</span> in ESRI, enable the layer
+                                                  for<span class="ph uicontrol">Offline</span> and validate again.</p>
+                              </li>
+                              <li class="li">
+                                 <p class="p">In case the URL provided for the
+                                                Layer is incorrect,edit it and validate again.</p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li class="li">
+                           <span class="ph uicontrol">NA</span> –Base Map
+                                    is pending validation.</li>
+                     </ul>
+                  </div>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To configure additional settings for Feature Layer
+                    writing, in the<span class="ph uicontrol">ESRI SAVE
+                        SETTINGS</span>section, perform the following steps:</span>
+            <ol type="a" class="ol substeps">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the<span class="ph uicontrol">Maximum Number of
+                                Retries</span>box, enter the maximum number of attempts to be
+                            made by the system to write location data on to the feature layer in
+                            ArcGIS (ESRI) after the first failed attempt.</span>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the<span class="ph uicontrol">Failure Notification recipient
+                                Email(s)</span> box ,select the users to whom the notification
+                            of failure must be sent. </span>
+                  <div class="itemgroup info">Available options are user
+                            accounts available in <span class="ph">Mind</span>.</div>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click <span class="ph uicontrol">Save</span> to save the
+                    changes.</span>
+         </li></ol></section>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../../../../Mind/Administration/System_Configurations/GIS/GIS_Settings/GIS.html">GIS</a></div></div></nav></article></main></body></html>

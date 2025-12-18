@@ -1,0 +1,266 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="task"><meta name="description" content=""><meta name="DC.subject" content="capital-programme-management-application,planned-projects-module,location-management-module,map-interface,esri-integration,gis-settings,creating-project-location,associating-contract-with-location,saving-map-markers,editing-location-details,saving-to-esri-geodatabase,reviewing-esri-save-status,capital-programme-management,planned-projects-workflow,programme-office-operations,enterprise-software-dashboard,geospatial-integration,glass-manufacturing-industry"><meta name="keywords" content="capital-programme-management-application, planned-projects-module, location-management-module, map-interface, esri-integration, gis-settings, creating-project-location, associating-contract-with-location, saving-map-markers, editing-location-details, saving-to-esri-geodatabase, reviewing-esri-save-status, capital-programme-management, planned-projects-workflow, programme-office-operations, enterprise-software-dashboard, geospatial-integration, glass-manufacturing-industry"><meta name="DC.audience.type" content="role"><meta name="prodname" content="Mind-Administration-Guide"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-11-20+05:30"><meta name="DC.date.modified" content="2025-11-20"><meta name="title" content="Managing Project Location Details on a Map"><meta name="shortdesc" content="Steps to add, edit and save project location details on the map and persist geometry to ESRI (ArcGIS)."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="project location;project;contract;map marker;location geometry;ESRI geodatabase;planned project"><meta name="taxonomy" content="domain:capital-programme-management;usecase:manage-project-location-on-map;industry:glass-manufacturing"><meta name="tags" content="project-location,map,gis,esri,location-management,planned-projects,save-status"><meta name="usecase" content="manage-project-location-on-map"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="Form_PRJLOCN"><title>Managing Project Location Details on a Map</title><link rel="stylesheet" type="text/css" href="../../../../commonltr.css"></head><body id="Form_PRJLOCN"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Managing Project Location Details on a Map</h1>
+   
+   
+   
+   <div class="body taskbody"><p class="shortdesc"></p>
+      <section class="section prereq">
+         <ul class="ul">
+            <li class="li">The role of the logged-in user should be one of the following:<div class="p">
+                  <ul class="ul">
+                     <li class="li">Administrative Support</li>
+                     <li class="li">Construction Inspector</li>
+                     <li class="li">Construction Manager</li>
+                     <li class="li">Engineer of Record</li>
+                     <li class="li">Engineering Director</li>
+                     <li class="li">Field Supervisor</li>
+                     <li class="li">Fund Manager</li>
+                     <li class="li">Manager</li>
+                     <li class="li">Program Manager</li>
+                     <li class="li">Project Manager</li>
+                     <li class="li">Support Services</li>
+                  </ul>
+               </div>
+            </li>
+         </ul>
+      </section>
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">In the module menu, click <span class="ph uicontrol">Planning</span>. </span>
+            <div class="itemgroup info">The <span class="ph uicontrol">PLANNING DASHBOARD</span> page is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">In the navigation pane, click <span class="ph uicontrol">Planned Projects</span>.</span>
+            <div class="itemgroup info">The <span class="ph uicontrol">PLANNED PROJECTS</span> list page is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">In the list page, double-click the appropriate project.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">In the navigation pane, expand the project folder, and then click<span class="ph uicontrol">Location</span>.</span>
+            <div class="itemgroup info">The<span class="ph uicontrol">LOCATION</span> list page is displayed.</div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click<span class="ph uicontrol">New</span>.</span>
+            <div class="itemgroup info">
+               <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Location Page</figcaption>
+                  
+                  <img class="image" src="../../../Icons/Screenshots_Icons/Location.jpg">
+               </figure>
+            </div>
+            <div class="itemgroup info">The<span class="ph uicontrol">LOCATION</span> page displays the following non-editable fields:<table class="table"><caption></caption><colgroup><col style="width:30%"><col style="width:70%"></colgroup><thead class="thead">
+                        <tr class="row">
+                           <th class="entry colsep-1 rowsep-1" id="Form_PRJLOCN__entry__1">Field Name</th>
+                           <th class="entry rowsep-1" id="Form_PRJLOCN__entry__2">Description</th>
+                        </tr>
+                     </thead><tbody class="tbody">
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_PRJLOCN__entry__1">Location ID</td>
+                           <td class="entry rowsep-1" headers="Form_PRJLOCN__entry__2">On saving the record, a unique identification code is automatically generated.</td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_PRJLOCN__entry__1">PWA Project Number</td>
+                           <td class="entry rowsep-1" headers="Form_PRJLOCN__entry__2">When the project workflow status moves to <span class="ph uicontrol">In-Progress</span>, a unique identification number is automatically generated for the project.</td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_PRJLOCN__entry__1">Project Name</td>
+                           <td class="entry rowsep-1" headers="Form_PRJLOCN__entry__2">The name of the associated project.</td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_PRJLOCN__entry__1">Project Type</td>
+                           <td class="entry rowsep-1" headers="Form_PRJLOCN__entry__2">The type of the associated project.</td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_PRJLOCN__entry__1">
+        
+        
+        
+        Project Manager</td>
+                           <td class="entry rowsep-1" headers="Form_PRJLOCN__entry__2">The name of the project manager. </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_PRJLOCN__entry__1">Project Budget ($)</td>
+                           <td class="entry rowsep-1" headers="Form_PRJLOCN__entry__2">The budget of the associated project.</td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_PRJLOCN__entry__1">Start Date</td>
+                           <td class="entry rowsep-1" headers="Form_PRJLOCN__entry__2">The date the project begins.</td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_PRJLOCN__entry__1">End Date</td>
+                           <td class="entry rowsep-1" headers="Form_PRJLOCN__entry__2">The date the project ends.</td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1" headers="Form_PRJLOCN__entry__1">Description</td>
+                           <td class="entry" headers="Form_PRJLOCN__entry__2">The description of the project. </td>
+                        </tr>
+                     </tbody></table>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To associate a contract with the location, from the<span class="ph uicontrol">Contract</span>drop-down list, click and select the appropriate contract.</span>
+            <div class="itemgroup info">Alternatively, type the name of the contract, and then select the contract.<p class="p">Available contracts are all the contracts the user is invited to in the project.</p>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">In the<span class="ph uicontrol">Title</span> box, enter the title for the project location.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">In the<span class="ph uicontrol">Description</span>box, enter a detailed description of the project location.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To find the appropriate location and draw the location geometries on the map, perform  the following steps:</span>
+            <ol type="a" class="ol substeps" id="Form_PRJLOCN__Location_SubStepsOnly">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">To find the appropriate location on the map, perform  the following steps:</span>
+                  <div class="itemgroup info">
+                     <ol class="ol" type="i">
+                        <li class="li">
+                           <p class="p">Drag the map in the required direction.</p>
+                        </li>
+                        <li class="li">
+                           <p class="p">In the <span class="ph uicontrol">Find address or place</span> box, enter the name of the location, click <img class="image" src="../../../../Warehouse/Task_Warehouse/../../Mind/Icons/Loc-Search.png" alt="Search">, and then click the appropriate location.</p>
+                           <p class="p">The map of the area is displayed.</p>
+                        </li>
+                        <li class="li">
+                           <p class="p">Use <img class="image" src="../../../../Warehouse/Task_Warehouse/../../Mind/Icons/Loc-Zoomout.png" alt="Zoom Out"> or <img class="image" src="../../../../Warehouse/Task_Warehouse/../../Mind/Icons/Loc-Zoomin.png" alt="Zoom In"> to zoom in or out on the map.</p>
+                        </li>
+                        <li class="li">
+                           <p class="p">Select the appropriate base map from the <span class="ph uicontrol">Base Map </span>drop-down list.</p>
+                           <p class="p">Available options are base maps defined in the <span class="ph uicontrol">BASE MAPS</span> section in the <span class="ph uicontrol">GIS Settings</span> page of the <span class="ph uicontrol">Administration </span>module. <span class="ph">For more information, refer to <a class="xref" href="../../../../Warehouse/Task_Warehouse/../../Mind/Administration/System_Configurations/GIS/GIS_Settings/GIS_Configuration.html">Adding Base Maps</a>.</span>
+                           </p>
+                        </li>
+                        <li class="li">
+                           <p class="p">To view layers such as stations or transit centers, select the required layers in the <span class="ph uicontrol">Layer(s)</span> section.</p>
+                           <p class="p">The <span class="ph uicontrol">Layer(s) </span>displayed in blue will only display features added in other records of this form.</p>
+                           <p class="p">Available options are base maps defined in the <span class="ph uicontrol">LAYERS </span>section in the <span class="ph uicontrol">GIS Settings</span> page of the <span class="ph uicontrol">Administration</span> module. <span class="ph">For more information, refer to <a class="xref" href="../../../../Warehouse/Task_Warehouse/../../Mind/Administration/System_Configurations/GIS/GIS_Settings/GIS_Configuration.html">Adding Layers</a>.</span>
+                           </p>
+                        </li>
+                     </ol>
+                  </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Add Feature</span> drop-down list, select the required feature to mark on the map.</span>
+                  <div class="itemgroup info">The drawing toolset will display options based on the configured geometry corresponding to the selected feature.</div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">To draw the location geometries, perform the following steps:</span>
+                  <div class="itemgroup info">
+                     <ul class="ul">
+                        <li class="li">To mark a point on the map, click <img class="image" width="19" src="../../../../Warehouse/Task_Warehouse/../../Mind/Icons/Loc-Point.png" alt="Location Point">, and then click on the map at the required location.
+                        </li>
+                        <li class="li">To draw a polyline, click <img class="image" src="../../../../Warehouse/Task_Warehouse/../../Mind/Icons/Loc-PolyLine1.png" alt="Polyline">, and then click on the map. To complete the boundary, follow the instructions as displayed on the map.
+                        </li>
+                        <li class="li">To draw a freehand polyline, click <img class="image" src="../../../../Warehouse/Task_Warehouse/../../Mind/Icons/Loc-PolyLine2.png" alt="Freehand Polyline">, and then click on the map. To complete the boundary, follow the instructions as displayed on the map.
+                        </li>
+                        <li class="li">To draw a triangle, rectangle, or a circle, click <img class="image" src="../../../../Warehouse/Task_Warehouse/../../Mind/Icons/Loc-Triangle.png" alt="Triangle">, <img class="image" src="../../../../Warehouse/Task_Warehouse/../../Mind/Icons/Loc-Rectangle.png" alt="Rectangle">, or <img class="image" src="../../../../Warehouse/Task_Warehouse/../../Mind/Icons/Loc-Circle.png" alt="Circle">, click on the map, and drag to size the map marker.
+                        </li>
+                        <li class="li">To mark a boundary, click <img class="image" src="../../../../Warehouse/Task_Warehouse/../../Mind/Icons/Loc-Polygon.png" alt="Polygon"> or <img class="image" src="../../../../Warehouse/Task_Warehouse/../../Mind/Icons/Loc-FreehandPoly.png" alt="Freehand Polygon">, and then click on the map.
+                            <p class="p">To complete the boundary, follow the instructions as displayed on the map.</p>
+                        </li>
+                        <li class="li">To draw an arrow mark, click <img class="image" src="../../../../Warehouse/Task_Warehouse/../../Mind/Icons/Loc-Arrow.png" alt="Arrow">, and then click on the map and drag to size the map marker.
+                        </li>
+                     </ul>
+                  </div>
+               </li>
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Optionally, to update the location geometries drawn on the map, perform the appropriate actions, as described in the following table.</span>
+                  <div class="itemgroup info">
+                     <table class="table"><caption></caption><colgroup><col style="width:25%"><col style="width:75%"></colgroup><thead class="thead">
+                              <tr class="row">
+                                 <th class="entry colsep-1 rowsep-1" id="Form_PRJLOCN__Location_SubStepsOnly__entry__1">Action</th>
+                                 <th class="entry rowsep-1" id="Form_PRJLOCN__Location_SubStepsOnly__entry__2">Steps</th>
+                              </tr>
+                           </thead><tbody class="tbody">
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="Form_PRJLOCN__Location_SubStepsOnly__entry__1">Edit</td>
+                                 <td class="entry rowsep-1" headers="Form_PRJLOCN__Location_SubStepsOnly__entry__2">
+                                    <ol class="ol" type="i">
+                                       <li class="li">Right-click in a boundary or on a line, and then click <span class="ph uicontrol">Edit</span>.
+                                    <p class="p">Points that are editable are displayed.</p>
+                                       </li>
+                                       <li class="li">Click a point and drag to edit the marker.
+                                </li>
+                                    </ol>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="Form_PRJLOCN__Location_SubStepsOnly__entry__1">Move</td>
+                                 <td class="entry rowsep-1" headers="Form_PRJLOCN__Location_SubStepsOnly__entry__2">
+                                    <ol class="ol" type="i">
+                                       <li class="li">Right-click in a boundary or on a line, and then click <span class="ph uicontrol">Move</span>.
+                                </li>
+                                       <li class="li">Click and drag the map marker to the required location on the map.
+                                </li>
+                                    </ol>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="Form_PRJLOCN__Location_SubStepsOnly__entry__1">Rotate</td>
+                                 <td class="entry rowsep-1" headers="Form_PRJLOCN__Location_SubStepsOnly__entry__2">
+                                    <ol class="ol" type="i">
+                                       <li class="li">Right-click in a boundary or on a line, and then click <span class="ph uicontrol">Rotate</span>.
+                                </li>
+                                       <li class="li">Click <img class="image" src="../../../../Warehouse/Task_Warehouse/../../Mind/Icons/Loc-Rotate.jpg" alt="Rotate">, and drag to rotate the marker.
+                                </li>
+                                    </ol>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1 rowsep-1" headers="Form_PRJLOCN__Location_SubStepsOnly__entry__1">Scale</td>
+                                 <td class="entry rowsep-1" headers="Form_PRJLOCN__Location_SubStepsOnly__entry__2">
+                                    <ol class="ol" type="i">
+                                       <li class="li">Right-click in a boundary or on a line, and then click <span class="ph uicontrol">Scale</span>.
+                                </li>
+                                       <li class="li">Click a point and drag to adjust the marker boundary.
+                                </li>
+                                    </ol>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry colsep-1" headers="Form_PRJLOCN__Location_SubStepsOnly__entry__1">Delete</td>
+                                 <td class="entry" headers="Form_PRJLOCN__Location_SubStepsOnly__entry__2">
+                                    <ol class="ol" type="i">
+                                       <li class="li">Right-click in a boundary or on a line to be deleted.
+                                </li>
+                                       <li class="li">Click <span class="ph uicontrol">Delete</span>.
+                                    <p class="p">A confirmation message is displayed.</p>
+                                       </li>
+                                       <li class="li">Click <span class="ph uicontrol">OK</span>.
+                                </li>
+                                    </ol>
+                                 </td>
+                              </tr>
+                           </tbody></table>
+                  </div>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">
+               <span class="ph">Click <span class="ph uicontrol">Save &amp; Exit</span> to save the record and return to the list page. Optionally, click <span class="ph uicontrol">Save &amp; Continue</span> to save the record and continue on the same page.</span>
+            </span>
+            <div class="itemgroup info">The map markers are saved on the map.<p class="p">The project location data created in the <span class="ph">Mind</span> application is automatically saved in the external system ESRI (ArcGIS). In the list page, the ESRI Save Status column displays the current status of saving data to ESRI.</p>
+               <p class="p">The following are the different statuses:</p>
+               <table class="table"><caption></caption><colgroup><col style="width:30%"><col style="width:70%"></colgroup><thead class="thead">
+                        <tr class="row">
+                           <th class="entry colsep-1 rowsep-1" id="Form_PRJLOCN__entry__33">Status</th>
+                           <th class="entry rowsep-1" id="Form_PRJLOCN__entry__34">Description</th>
+                        </tr>
+                     </thead><tbody class="tbody">
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_PRJLOCN__entry__33">Completed</td>
+                           <td class="entry rowsep-1" headers="Form_PRJLOCN__entry__34">The location geometry is successfully saved from the application to the ESRI geodatabase.<div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body"> Once the geometry drawn on the map is successfully saved to theESRIgeodatabase, the updated or edited geometry will override the current geometry present in ESRI. The changes will not be merged.</div></div>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_PRJLOCN__entry__33">In Progress</td>
+                           <td class="entry rowsep-1" headers="Form_PRJLOCN__entry__34">Saving location data from the application to the ESRI geodatabase is in progress. If the first attempt of saving location data fails, then the system automatically attempts to save the location data, based on the number of tries defined in the <span class="ph uicontrol">ESRI SAVE SETTINGS</span> section in the <span class="ph uicontrol">GIS Settings</span> page of the <span class="ph uicontrol">Administration</span> module. <span class="ph">For information ESRI save settings, refer to<a class="xref" href="../../../Administration/System_Configurations/GIS/GIS_Settings/GIS_Configuration.html">Configuring the ESRI Save Settings</a>.</span>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1 rowsep-1" headers="Form_PRJLOCN__entry__33">Pending</td>
+                           <td class="entry rowsep-1" headers="Form_PRJLOCN__entry__34">Saving of location data to the ESRI geodatabase is pending.</td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry colsep-1" headers="Form_PRJLOCN__entry__33">Failed</td>
+                           <td class="entry" headers="Form_PRJLOCN__entry__34">Saving location data from the application to the ESRI geodatabase has failed despite retrying after the configured number of retries defined in the <span class="ph uicontrol">ESRI SAVE SETTINGS</span> section in the <span class="ph uicontrol">GIS Settings</span> page of the <span class="ph uicontrol">Administration</span> module.<span class="ph">For information ESRI save settings, refer to<a class="xref" href="../../../Administration/System_Configurations/GIS/GIS_Settings/GIS_Configuration.html">Configuring the ESRI Save Settings</a>.The following are the different statuses:</span>
+                           </td>
+                        </tr>
+                     </tbody></table>
+            </div>
+         </li></ol></section>
+   </div>
+</article></main></body></html>
