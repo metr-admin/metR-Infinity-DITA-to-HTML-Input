@@ -1,0 +1,652 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="batch-charger,batch-system,melter-scada,drive-assembly,control-panel,failure-analysis,root-cause-analysis,repair,inspection,maintenance,glass-manufacturing,randd,pilot-line,process-development,testing,procedure-document,melter-system,control-system,guideline,objective-statement,scope-definition,application-guidelines,operational-criteria,limitations,industrial-engineering,process-control,quality-assurance,production,safety-glasses,heat-resistant-gloves,hard-hat,steel-toe-boots,flame-resistant-clothing,personal-protection,donning-doffing,ppe-inspection,safety-checks,training,high-temperature-areas,furnace-access,maintenance-activities,hazardous-areas,protective-equipment,thermal-hazard,mechanical-hazard,electrical-hazard,chemical-hazard,fall-hazard,hazard-identification,risk-assessment,mitigation,reporting,monitoring,work-at-height,furnace-area,plant-floor,hazard-communication,safety-controls,interlocks,guarding,emergency-shutdown,ppe,hazard-assessment,control-implementation,permit-to-work,lockout-tagout,emergency-procedures,health-and-safety,operational-excellence,ehs,plant-safety,high-temperature-operations,melter-scada-operator-station,hand-tools,lifting-equipment,diagnostic-toolkit,safety-equipment,equipment-preparation,tool-checklist,setup,calibration,maintenance-bay,work-platform,service-area,shutdown-window,operator-station,work-instruction,procedure-doc,pre-start-checks,read-through,communication,shift-handovers,safety-review,production-readiness,operator-training,reference-documents,schematics,maintenance-manual,spare-parts-list,training-materials,reference,cross-reference,further-reading,document-links,resource-lookup,knowledge-base,document-repository,engineering-library,training-portal,vendor-resources,drive-chain,drive-shaft,bearing,conveyor,diagnosis,troubleshooting,fault-isolation,preventive-maintenance,component-replacement,cold-end-operations,process-automation,production-line,safety-compliance,approval-records,sign-off,authorization,soul-approval-team,approver-roles,approval-process,sign-off-procedure,stakeholder-review,escalation,documentation,governance,regulatory-compliance,management-oversight,revision-history,change-log,document-control,issue-history,versioning,review,change-management,publishing,document-management,configuration-control,audit-trail"><meta name="DC.subject" content="batch-charger,batch-system,melter-scada,drive-assembly,control-panel,failure-analysis,root-cause-analysis,repair,inspection,maintenance,glass-manufacturing,randd,pilot-line,process-development,testing,procedure-document,melter-system,control-system,guideline,objective-statement,scope-definition,application-guidelines,operational-criteria,limitations,industrial-engineering,process-control,quality-assurance,production,safety-glasses,heat-resistant-gloves,hard-hat,steel-toe-boots,flame-resistant-clothing,personal-protection,donning-doffing,ppe-inspection,safety-checks,training,high-temperature-areas,furnace-access,maintenance-activities,hazardous-areas,protective-equipment,thermal-hazard,mechanical-hazard,electrical-hazard,chemical-hazard,fall-hazard,hazard-identification,risk-assessment,mitigation,reporting,monitoring,work-at-height,furnace-area,plant-floor,hazard-communication,safety-controls,interlocks,guarding,emergency-shutdown,ppe,hazard-assessment,control-implementation,permit-to-work,lockout-tagout,emergency-procedures,health-and-safety,operational-excellence,ehs,plant-safety,high-temperature-operations,melter-scada-operator-station,hand-tools,lifting-equipment,diagnostic-toolkit,safety-equipment,equipment-preparation,tool-checklist,setup,calibration,maintenance-bay,work-platform,service-area,shutdown-window,operator-station,work-instruction,procedure-doc,pre-start-checks,read-through,communication,shift-handovers,safety-review,production-readiness,operator-training,reference-documents,schematics,maintenance-manual,spare-parts-list,training-materials,reference,cross-reference,further-reading,document-links,resource-lookup,knowledge-base,document-repository,engineering-library,training-portal,vendor-resources,drive-chain,drive-shaft,bearing,conveyor,diagnosis,troubleshooting,fault-isolation,preventive-maintenance,component-replacement,cold-end-operations,process-automation,production-line,safety-compliance,approval-records,sign-off,authorization,soul-approval-team,approver-roles,approval-process,sign-off-procedure,stakeholder-review,escalation,documentation,governance,regulatory-compliance,management-oversight,revision-history,change-log,document-control,issue-history,versioning,review,change-management,publishing,document-management,configuration-control,audit-trail"><meta name="keywords" content="batch-charger, batch-system, melter-scada, drive-assembly, control-panel, failure-analysis, root-cause-analysis, repair, inspection, maintenance, glass-manufacturing, randd, pilot-line, process-development, testing, procedure-document, batch-charger, melter-system, control-system, guideline, objective-statement, scope-definition, application-guidelines, operational-criteria, limitations, glass-manufacturing, industrial-engineering, process-control, quality-assurance, production, safety-glasses, heat-resistant-gloves, hard-hat, steel-toe-boots, flame-resistant-clothing, personal-protection, donning-doffing, ppe-inspection, safety-checks, training, high-temperature-areas, furnace-access, maintenance-activities, hazardous-areas, protective-equipment, thermal-hazard, mechanical-hazard, electrical-hazard, chemical-hazard, fall-hazard, hazard-identification, risk-assessment, mitigation, reporting, monitoring, work-at-height, furnace-area, maintenance-activities, plant-floor, hazard-communication, safety-controls, interlocks, guarding, emergency-shutdown, ppe, hazard-assessment, control-implementation, permit-to-work, lockout-tagout, emergency-procedures, health-and-safety, operational-excellence, ehs, plant-safety, high-temperature-operations, melter-scada-operator-station, hand-tools, lifting-equipment, diagnostic-toolkit, safety-equipment, equipment-preparation, tool-checklist, setup, calibration, inspection, maintenance-bay, work-platform, plant-floor, service-area, shutdown-window, operator-station, control-system, work-instruction, procedure-doc, pre-start-checks, training, read-through, permit-to-work, communication, plant-floor, shift-handovers, safety-review, production-readiness, operator-training, reference-documents, schematics, maintenance-manual, spare-parts-list, training-materials, reference, cross-reference, further-reading, document-links, resource-lookup, knowledge-base, document-repository, engineering-library, training-portal, vendor-resources, batch-charger, batch-system, melter-scada, drive-chain, drive-shaft, bearing, conveyor, diagnosis, troubleshooting, fault-isolation, preventive-maintenance, component-replacement, glass-manufacturing, cold-end-operations, process-automation, production-line, safety-compliance, approval-records, sign-off, authorization, soul-approval-team, approver-roles, approval-process, sign-off-procedure, stakeholder-review, escalation, documentation, governance, operational-excellence, quality-assurance, regulatory-compliance, management-oversight, revision-history, change-log, document-control, approval-records, issue-history, versioning, approval-process, review, change-management, publishing, document-management, configuration-control, quality-assurance, regulatory-compliance, audit-trail"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-BAT-Soul"><meta name="platform" content="web"><meta name="DC.creator" content="Yashshree"><meta name="DC.date.created" content="2025-12-02+05:30"><meta name="DC.date.modified" content="2025-12-02"><meta name="RevisionDate" content="2023-02-26"><meta name="DocumentNumber" content="BAT-ET-101C"><meta name="title" content="Batch Charger Failure"><meta name="shortdesc" content="BAT-ET-101C Revised: 2023-02-26."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="BAT-ET-101C Revised;2023-02-26"><meta name="taxonomy" content="domain:industrial-engineering;usecase:maintenance-troubleshooting;industry:glass-manufacturing"><meta name="tags" content="batch-charger-failure,batch-charger_failure_"><meta name="usecase" content="diagnose-and-resolve-equipment-failure"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c3D157C4-CAB3-11F0-6901-09173F13E4C5"><meta name="DC.language" content="en-us"><title>Batch Charger Failure</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c3D157C4-CAB3-11F0-6901-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Batch Charger Failure </h1>
+   
+   <div class="body conbody">
+      <p class="p">BAT-ET-101C</p>
+      <p class="p">Revised: 2023-02-26</p>
+   </div>
+<article class="topic concept nested1" aria-labelledby="ariaid-title2" lang="en-us" id="c3D1AFCB-CAB3-11F0-1989-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">Purpose/Application</h2>
+   
+   <div class="body conbody">
+      <p class="p">Defines a reaction plan for a charger failure in the batch system. </p>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title3" lang="en-us" id="c3D19B7B-CAB3-11F0-1033-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">PPE Required</h2>
+   
+   <div class="body conbody">
+      <section class="section" id="c3D19B7B-CAB3-11F0-1033-09173F13E4C5__section_im2_1bq_rcc"><h3 class="title sectiontitle">General</h3>
+         
+         <p class="p">Bump cap / hard hat, safety glasses with foam liner, proper hearing protection,
+        fire-resistant long-sleeved shirt, safety toe boots.</p>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title4" lang="en-us" id="c3D20597-CAB3-11F0-2039-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title4">Safety Hazards</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="table" id="c3D20597-CAB3-11F0-2039-09173F13E4C5__table_atl_ngw_rcc"><caption></caption><colgroup><col style="width:25%"><col style="width:25%"><col style="width:25%"><col style="width:25%"></colgroup><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry"></td>
+                     <td class="entry"></td>
+                     <td class="entry"></td>
+                     <td class="entry"></td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry"></td>
+                     <td class="entry"></td>
+                     <td class="entry"></td>
+                     <td class="entry"></td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry"></td>
+                     <td class="entry"></td>
+                     <td class="entry"></td>
+                     <td class="entry"></td>
+                  </tr>
+               </tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title5" lang="en-us" id="c3D1EE7D-CAB3-11F0-7983-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title5">Safety Controls</h2>
+   
+   <div class="body conbody">
+      <ul class="ul">
+         <li class="li">
+            <strong class="ph b">Exposure to heat can cause illness and death.</strong> The most serious heat illness is heat stroke. Other heat illnesses include heat exhaustion, heat cramps, and heat rash. Take precautions to avoid heat illness any time temperatures are high, and the job involves physical work.</li>
+         <li class="li">
+            <strong class="ph b">The Hazard Communication Standard (HCS) requires chemicals to have Safety Data Sheets (SDS).</strong> Use the SDS for chemicals listed in this SOP for additional hazards, first aid measures, toxicological information, accidental release measures, and handling/storage of the chemical. </li>
+         <li class="li">
+            <strong class="ph b">Work/rest ratios are based on the heat index inside/outside the plant.</strong> Notify leadership immediately if someone is showing signs of heat stress. </li>
+         <li class="li">
+            <strong class="ph b">Hot surfaces are present in areas where molten glass is produced.</strong> Use caution and proper hand and body protection.</li>
+         <li class="li">If a task causes exposure to hot molten glass, <strong class="ph b">wear the appropriate shaded eyewear to decrease exposure to infrared radiation</strong>.</li>
+         <li class="li">
+            <strong class="ph b">Use the buddy system. </strong>
+         </li>
+         <li class="li">
+            <strong class="ph b">Stay hydrated.</strong>
+         </li>
+         <li class="li">
+            <strong class="ph b">Some tasks in this document require additional PPE and tools/equipment</strong> to perform tasks and may have specific safety hazards.</li>
+         <li class="li">
+            <strong class="ph b">Review the Emergency Action Plan before performing work.</strong>
+         </li>
+      </ul>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title6" lang="en-us" id="c3D18579-CAB3-11F0-2097-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title6">Equipment Needed</h2>
+   
+   <div class="body conbody">
+      <p class="p">Melter SCADA Operator Station</p>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title7" lang="en-us" id="c3D16ECF-CAB3-11F0-1918-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title7">Comments</h2>
+   
+   <div class="body conbody">
+      <p class="p">Before starting work:</p>
+      <ul class="ul" id="c3D16ECF-CAB3-11F0-1918-09173F13E4C5__ul_dj3_tww_rcc">
+         <li class="li">Read this document thoroughly. </li>
+         <li class="li">Complete the required training.</li>
+         <li class="li">Wear the required PPE.</li>
+      </ul>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title8" lang="en-us" id="c3D1C377-CAB3-11F0-5148-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title8">Related Resources</h2>
+   
+   <div class="body conbody">
+      <ul class="ul">
+         <li class="li">BAT-ET-101E Surge Hopper Not Filling or Over Filling</li>
+         <li class="li">MLT-ET-101F Frozen Throat</li>
+         <li class="li">MLT-ET-103H Variable Frequency Drive (VFD) Setpoint Deviation</li>
+         <li class="li">MLT-OP-101H Setting the Melter to a Hot Hold</li>
+      </ul>
+   </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title9" lang="en-us" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title9">Batch Charger Failure</h2>
+   
+   <div class="body taskbody">
+      <section class="section context">
+         <p class="p">See the following to diagnose and resolve a batch charger failure:</p>
+      </section>
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Common symptoms of charger failure:</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">A sudden decrease in melter weight</li>
+                  <li class="li">A sudden increase in melter temperature</li>
+               </ul>
+               <p class="p">The charger can fail in multiple ways:</p>
+               <ul class="ul" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__ul_un4_trw_rcc">
+                  <li class="li">Motor failure </li>
+                  <li class="li">Gearbox failure</li>
+                  <li class="li">Drive chain failure</li>
+                  <li class="li">Drive shaft failure</li>
+                  <li class="li">Bearing failure</li>
+                  <li class="li">Screw failure</li>
+                  <li class="li">Water jacket failure</li>
+                  <li class="li">VFD fault or deviation</li>
+               </ul>
+            </div>
+         </li><li class="li step stepexpand">
+            <div class="note note note_note" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__note_ar3_zgw_rcc"><span class="note__title">Note:</span> <div class="note__body">
+               <table class="table" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__table_bbv_zgw_rcc"><caption></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody class="tbody">
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">
+                                 <strong class="ph b">PPE Required</strong>: Respirator or PAPR.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Dust hazard.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Toxic materials.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Pinch hazard.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Fall hazard. Utilize 3 points of contact on ladders.</p>
+                           </td>
+                        </tr>
+                     </tbody></table>
+            </div></div>
+            <span class="ph cmd">Inspect the charger surge hopper.</span>
+            <div class="itemgroup info">If the surge hopper is empty,<ul class="ul">
+                  <li class="li">Check the SBS for alarms or faults.</li>
+                  <li class="li">Clean buildup off the sides of the surge hopper. Buildup can interfere with
+                     the surge hopper level sensor.</li>
+               </ul>
+               <p class="p">im</p>
+               <p class="p">If the surge hopper is full,</p>
+               <ul class="ul" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__ul_kwc_wrw_rcc">
+                  <li class="li">There might be an issue with the charger or the batch inlet could be
+                     clogged.</li>
+               </ul>
+               <div class="note note note_note" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__note_lsv_wrw_rcc"><span class="note__title">Note:</span> <div class="note__body">
+                  <p class="p">Do not damage nearby instruments such as the moisture analyzer.</p>
+               </div></div>
+               <div class="p">
+                  <figure class="fig fignone" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__fig_csn_c3w_rcc">
+                     <br><div class="imagecenter"><img class="image imagecenter" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__image_cdz_dsw_rcc" src="media/image1.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <div class="note note note_note" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__note_lk4_ghw_rcc"><span class="note__title">Note:</span> <div class="note__body">
+               <table class="table" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__table_hmg_hhw_rcc"><caption></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody class="tbody">
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">
+                                 <strong class="ph b">PPE Required</strong>: Respirator or PAPR, fire-resistant jacket,
+                                 heat-resistant gloves, face shield with IR shade 5.0 lens.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Dust hazard.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Caution: Hot surfaces.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Bright molten glass.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Trip hazard. Use caution near pipes and wires.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Falling hot objects.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Heat Stress. Use the buddy system.</p>
+                           </td>
+                        </tr>
+                     </tbody></table>
+            </div></div>
+            <span class="ph cmd">Inspect the inlet tube.</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">Remove the outer top cover from the inlet tube.</li>
+                  <li class="li">The cover weighs approximately 7 kg (15 lbs) and has a handle.</li>
+                  <li class="li">Leave the inner perforated cover on to contain any splashing glass.</li>
+               </ul>
+               <div class="p">
+                  <figure class="fig fignone" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__fig_rvj_f3w_rcc">
+                     <br><div class="imagecenter"><img class="image imagecenter" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__image_b1l_qtw_rcc" src="media/image2.jpg"></div><br>
+                  </figure>
+               </div>
+               <div class="p">
+                  <figure class="fig fignone" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__fig_x1d_stw_rcc">
+                     <br><div class="imagecenter"><img class="image imagecenter" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__image_vvn_stw_rcc" src="media/image3.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">If the inlet tube is dark:</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">The batch inlet is clogged.</li>
+                  <li class="li">Complete all the steps in BAT-ET-101A Clearning Plugs from the Batch System.</li>
+               </ul>
+               <p class="p">If the inlet tube is bright:</p>
+               <ul class="ul" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__ul_qv3_wtw_rcc">
+                  <li class="li">The batch inlet is clear.</li>
+                  <li class="li">There might be an issue with the charger.</li>
+               </ul>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">At the operator station, go to the <span class="ph uicontrol">Overview</span> tab.</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">Check if <strong class="ph b">CH1SPD</strong> is operating at the expected speed.</li>
+               </ul>
+               <div class="p">
+                  <figure class="fig fignone" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__fig_utt_g3w_rcc">
+                     <br><div class="imagecenter"><img class="image imagecenter" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__image_qls_b5w_rcc" src="media/image4.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Physically inspect the Batch Charger VFD.</span>
+            <div class="itemgroup info">Check the current reading, displayed at the bottom of the screen.<ul class="ul">
+                  <li class="li">If the current is 0, the motor fuses might be blown.</li>
+                  <li class="li">If the VFD shows an overcurrent fault, the charger might be jammed.</li>
+                  <li class="li">If the VFD shows that the motor is running at a normal current (between 1-7
+                     amps), the drive chain might be broken.</li>
+               </ul>
+               <div class="note note note_note" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__note_fr3_25w_rcc"><span class="note__title">Note:</span> <div class="note__body">
+                  <p class="p">The issue must be resolved before resetting any faults.</p>
+               </div></div>
+               <div class="p">
+                  <figure class="fig fignone" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__fig_abd_33w_rcc"><figcaption><span class="fig--title-label">Figure 1. </span>Streator VFD Shown</figcaption>
+                     
+                     <br><div class="imagecenter"><img class="image imagecenter" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__image_l14_35w_rcc" src="media/image5.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">If the VFD values are not the same as the operator station values:</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">Run the charger off of the VFD.</li>
+                  <li class="li">Tell the Tech 5 there is a discrepancy between the operator station and VFD.</li>
+               </ul>
+               <div class="p">
+                  <figure class="fig fignone" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__fig_qpq_m3w_rcc">
+                     <br><div class="imagecenter"><img class="image imagecenter" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__image_unf_p5w_rcc" src="media/image6.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <div class="note note note_note" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__note_rdh_n3w_rcc"><span class="note__title">Note:</span> <div class="note__body">
+               <table class="table" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__table_ydz_n3w_rcc"><caption></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody class="tbody">
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Lockout tagout.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Electric shock.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Rotating parts.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Pinch hazard.</p>
+                           </td>
+                        </tr>
+                     </tbody></table>
+            </div></div>
+            <span class="ph cmd">If the VFD shows 0 “zero” current or an overcurrent fault: </span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">LO/TO the charger.</li>
+                  <li class="li">Remove any large obstructions in the discharge of the charger surge
+                     hopper.</li>
+                  <li class="li">Contact the line leader.</li>
+                  <li class="li">The Tech 5 can briefly reverse the screw to clear small clogs.</li>
+                  <li class="li">The Tech 5 replaces fuses if necessary.</li>
+               </ul>
+               <div class="p">
+                  <figure class="fig fignone" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__fig_t2f_s5w_rcc">
+                     <br><div class="imagecenter"><img class="image imagecenter" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__image_wb3_t5w_rcc" src="media/image7.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">If the VFD shows that the motor is running at a normal current, physically inspect the charger.</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">Check if the fan of the motor is spinning.</li>
+                  <li class="li">Check if the drive chain is broken.</li>
+               </ul>
+               <p class="p">If the fan of the motor is spinning but the drive chain is not moving</p>
+               <ul class="ul" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__ul_rzr_w5w_rcc">
+                  <li class="li">The gearbox might have failed.</li>
+               </ul>
+               <p class="p">If the fan of the motor is spinning and the drive chain is moving:</p>
+               <ul class="ul" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__ul_bzz_y5w_rcc">
+                  <li class="li">The screw might have failed.</li>
+               </ul>
+               <div class="p">
+                  <figure class="fig fignone" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__fig_fyw_s3w_rcc"><figcaption><span class="fig--title-label">Figure 2. </span>Holzminden Charger Shown</figcaption>
+                     
+                     <br><div class="imagecenter"><img class="image imagecenter" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__image_hxs_bvw_rcc" src="media/image8.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">If the obstruction cannot be removed from the charger or the motor, gearbox, drive chain, or the screw has failed:</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">Inform the Tech 5 that the charger requires service.</li>
+                  <li class="li">The melter needs to be put in a Hot Hold until the fault can be resolved.</li>
+               </ul>
+               <div class="p">
+                  <figure class="fig fignone" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__fig_ddp_t3w_rcc">
+                     <br><div class="imagecenter"><img class="image imagecenter" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__image_yvg_gvw_rcc" src="media/image9.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Complete all steps in MLT-OP-101H to set the melter to a Hot Hold.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">To confirm that the screw has failed:</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">Remove the heat shield wrap around the charger barrel.</li>
+                  <li class="li">Loosen and remove any bolts if needed.</li>
+                  <li class="li">Remove any straps if needed.</li>
+               </ul>
+               <div class="p">
+                  <figure class="fig fignone" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__fig_tln_53w_rcc"><figcaption><span class="fig--title-label">Figure 3. </span>Streator Charger Barrel Shown</figcaption>
+                     
+                     <br><div class="imagecenter"><img class="image imagecenter" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__image_lnw_qvw_rcc" src="media/image10.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <div class="note note note_note" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__note_j4v_v3w_rcc"><span class="note__title">Note:</span> <div class="note__body">
+               <table class="table" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__table_eb4_w3w_rcc"><caption></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody class="tbody">
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">
+                                 <strong class="ph b">PPE Required: </strong>Respirator or PAPR.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Lockout tagout. </p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Dust hazard.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Toxic materials</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Pinch hazard.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Fall hazard. Utilize 3 points of contact on ladders.</p>
+                           </td>
+                        </tr>
+                     </tbody></table>
+               <strong class="ph b">Tools Required</strong>: Rubber mallet, pry bar, vacuum, screwdriver.</div></div>
+            <span class="ph cmd"></span><br>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">Close the surge hopper gate.</li>
+                  <li class="li">LO/TO the charger.</li>
+                  <li class="li">Disconnect the charger from the chopper.</li>
+                  <li class="li">Remove the retaining nut on the front left leg of the charger.</li>
+               </ul>
+               <div class="note note note_note" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__note_y1m_1ww_rcc"><span class="note__title">Note:</span> <div class="note__body">
+                  <p class="p">Do not damage nearby instruments, such as the moisture analyzer.</p>
+               </div></div>
+               <div class="p">
+                  <figure class="fig fignone" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__fig_lls_fww_rcc"><figcaption><span class="fig--title-label">Figure 4. </span>Streator Shown</figcaption>
+                     
+                     <br><div class="imagecenter"><img class="image imagecenter" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__image_vwg_gww_rcc" src="media/image11.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+            <ol type="a" class="ol substeps" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__substeps_q33_cww_rcc">
+               <li class="li substep substepexpand">
+                  <div class="note note note_note" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__note_tzt_pjw_rcc"><span class="note__title">Note:</span> <div class="note__body">
+                     <table class="table" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__table_rck_qjw_rcc"><caption></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody class="tbody">
+                              <tr class="row">
+                                 <td class="entry"></td>
+                                 <td class="entry">
+                                    <p class="p">
+                                       <strong class="ph b">PPE Required</strong>: Respirator or PAPR.</p>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry"></td>
+                                 <td class="entry">
+                                    <p class="p">Dust hazard.</p>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry"></td>
+                                 <td class="entry">
+                                    <p class="p">Toxic materials.</p>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry"></td>
+                                 <td class="entry">
+                                    <p class="p">Pinch hazard.</p>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry"></td>
+                                 <td class="entry">
+                                    <p class="p">Fall hazard. Utilize 3 points of contact on ladders.</p>
+                                 </td>
+                              </tr>
+                           </tbody></table>
+                  </div></div>
+                  <span class="ph cmd"></span><br>
+                  <div class="itemgroup info">
+                     <ul class="ul" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__ul_ery_dww_rcc">
+                        <li class="li">Remove the brakes from the rear wheels.</li>
+                        <li class="li">Pull the charger fully away from the melter so the screw is
+                           exposed.</li>
+                        <li class="li">Reinstall the charger brakes once the screw is exposed.</li>
+                        <li class="li">Cover the melter opening with fiber board.</li>
+                     </ul>
+                  </div>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <div class="note note note_note" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__note_d3s_mww_rcc"><span class="note__title">Note:</span> <div class="note__body">
+               <table class="table" id="t3D141E2-CAB3-11F0-9641-09173F13E4C5__table_g15_nww_rcc"><caption></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody class="tbody">
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">
+                                 <strong class="ph b">PPE Required</strong>: Respirator or PAPR.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Dust hazard.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Toxic materials.</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Pinch hazard.</p>
+                           </td>
+                        </tr>
+                     </tbody></table>
+            </div></div>
+            <span class="ph cmd">Inspect the charger screw.</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">Check if the screw is damaged or out of position.</li>
+                  <li class="li">Repair and replace as needed.</li>
+               </ul>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">If the chopper failed:</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">See BAT-ET-101F.</li>
+               </ul>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">If the inlet is clogged:</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">See BAT-ET-101G.</li>
+               </ul>
+            </div>
+         </li></ol></section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title10" lang="en-us" id="c3D129E3-CAB3-11F0-8190-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title10">Approval</h2>
+   
+   <div class="body conbody">
+      <div class="p">Representatives of the Soul Approval Team<table class="table" id="c3D129E3-CAB3-11F0-8190-09173F13E4C5__table_mbt_rww_rcc"><caption></caption><colgroup><col style="width:25.2%"><col style="width:64.8%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry" id="c3D129E3-CAB3-11F0-8190-09173F13E4C5__table_mbt_rww_rcc__entry__1">
+                        <p class="p">Person</p>
+                     </th>
+                     <th class="entry" id="c3D129E3-CAB3-11F0-8190-09173F13E4C5__table_mbt_rww_rcc__entry__2">
+                        <p class="p">Role</p>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="c3D129E3-CAB3-11F0-8190-09173F13E4C5__table_mbt_rww_rcc__entry__1">
+                        <p class="p">David Jepsen</p>
+                     </td>
+                     <td class="entry" headers="c3D129E3-CAB3-11F0-8190-09173F13E4C5__table_mbt_rww_rcc__entry__2">
+                        <p class="p">Operational Specialist</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="c3D129E3-CAB3-11F0-8190-09173F13E4C5__table_mbt_rww_rcc__entry__1">
+                        <p class="p">Johnathan Fisher</p>
+                     </td>
+                     <td class="entry" headers="c3D129E3-CAB3-11F0-8190-09173F13E4C5__table_mbt_rww_rcc__entry__2">
+                        <p class="p">Process Analyst</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="c3D129E3-CAB3-11F0-8190-09173F13E4C5__table_mbt_rww_rcc__entry__1">
+                        <p class="p">Tyler Loy</p>
+                     </td>
+                     <td class="entry" headers="c3D129E3-CAB3-11F0-8190-09173F13E4C5__table_mbt_rww_rcc__entry__2">
+                        <p class="p">Production Development Squad Lead</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="c3D129E3-CAB3-11F0-8190-09173F13E4C5__table_mbt_rww_rcc__entry__1">
+                        <p class="p">Michael Hu</p>
+                     </td>
+                     <td class="entry" headers="c3D129E3-CAB3-11F0-8190-09173F13E4C5__table_mbt_rww_rcc__entry__2">
+                        <p class="p">Process Development Squad Lead</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="c3D129E3-CAB3-11F0-8190-09173F13E4C5__table_mbt_rww_rcc__entry__1">
+                        <p class="p">Phillip Wilson</p>
+                     </td>
+                     <td class="entry" headers="c3D129E3-CAB3-11F0-8190-09173F13E4C5__table_mbt_rww_rcc__entry__2">
+                        <p class="p">EHS Operational Excellence Manager</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title11" lang="en-us" id="c3D1D996-CAB3-11F0-1171-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title11">Revision History </h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="table" id="c3D1D996-CAB3-11F0-1171-09173F13E4C5__table_rgw_w2q_rcc"><caption></caption><colgroup><col style="width:45.08%"><col style="width:45.08%"></colgroup><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" rowspan="2">
+                        <p class="p">2023-02-26</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">Approved by Michael Hu, Process Development Squad Leader– R&amp;D </p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Original Issue</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+   </div>
+</article></article></article></main></body></html>

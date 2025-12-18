@@ -1,0 +1,573 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="agv-drive-system,navigation-module,battery-carriage,hmi-control-interface,agv-obstacle-sensors,agv-startup-sequence,agv-shutdown-procedure,manual-override-activation,route-selection,load-handling-procedure,material-transport-pathways,production-floor-operations,automated-material-movement,operational-safety-zones,glass-manufacturing-process,agv-system,hmi-interface,navigation-control-unit,material-transport-equipment,operational-safety-system,scope-definition,usecase-clarification,system-application-boundary,procedure-intent-mapping,functional-overview,glass-manufacturing,cold-end-operations,industrial-automation,material-flow-management,production-logistics,ppe-kit,hi-vis-vest,safety-helmet,protective-gloves,safety-glasses,ppe-inspection,donning-and-doffing,ppe-fit-check,ppe-storage-routine,ppe-cleaning-procedure,hazardous-zones,material-handling-areas,industrial-safety-protocols,moving-parts-hazard,electrical-panel-risk,pinch-point-area,slip-and-trip-zone,load-handling-equipment,hazard-identification-process,risk-evaluation,hazard-signalling,incident-reporting-procedure,mitigation-measure-implementation,plant-floor-hazards,human-machine-interaction-zones,material-handling-environment,workplace-safety-culture,glass-production-facility,silica-monitoring-device,dust-extraction-system,respirator-ppe,air-quality-sensors,sampling-cartridge,silica-exposure-assessment,air-sampling-procedure,respirator-fit-testing,hazard-mitigation-routine,contamination-control-process,respirable-crystalline-silica-risk,high-dust-zones,health-and-safety-management,industrial-hygiene-compliance,glass-manufacturing-environment,safety-interlock-system,safety-relay-module,emergency-stop-circuit,agv-braking-system,redundant-control-channel,safety-interlock-validation,failure-mitigation-checks,lockout-tagout-procedure,safety-system-reset,hazard-response-activation,machine-safety-regulations,plant-risk-management,critical-control-operations,industrial-safety-compliance,agv-unit,battery-pack,charging-station,fork-adapter-tools,hmi-terminal,equipment-precheck,battery-inspection,pallet-handling-prep,tool-verification,equipment-staging,material-transfer-zones,plant-safety-regulations,industrial-engineering,comment-log,document-feedback-tool,issue-tracker,change-request-form,metR-sbs-soul,logging-comments,feedback-capture,action-item-creation,comment-resolution,document-update-process,plant-floor-communication,continuous-improvement,quality-assurance,operational-review,training-and-handover,manuals-and-guides,training-material,regulatory-documents,equipment-specifications,safety-standards,cross-referencing,resource-navigation,support-documentation-review,knowledge-linking,standard-compliance-checks,glass-production-support,plant-documentation-library,regulatory-compliance-environment,training-ecosystem,agv-safety-laser,proximity-sensor-array,warning-light-system,emergency-stop-button,visual-alert-indicators,establishing-exclusion-zones,agv-traffic-management,pedestrian-routing,emergency-stop-procedure,hazard-notification-process,high-traffic-areas,shared-workspaces,operational-risk-zones,plant-floor-safety,glass-production-environment,hmi-main-screen,manual-operation-screen,status-overview-display,alarm-log-screen,operator-input-panel,navigating-hmi-menus,viewing-status-details,accessing-alarms,manual-drive-activation,screen-switching,plant-floor-monitoring,agv-operations-environment,operator-training,hmi-operating-screen,operator-console,status-indicator-panel,control-dashboard,touchscreen-display,screen-navigation,manual-operation-menu,alarm-acknowledgement,status-monitoring,operator-login,plant-floor-operations,operator-handover,control-room-interface,material-handling,document-management-system,approval-form,sign-off-portal,metadata-repository,approval-workflow,review-and-signoff,revision-control,document-review-process,approval-tracking,plant-documentation,compliance-and-qa,internal-governance,operational-procedures,revision-record,version-control-log,change-history-table,documentation-repository,update-metadata,change-tracking,document-updating,revision-logging,approval-recording,procedural-update-cycle,compliance-documentation,internal-quality-records,manufacturing-document-lifecycle,standard-operating-procedures,industrial-governance"><meta name="DC.subject" content="agv-drive-system,navigation-module,battery-carriage,hmi-control-interface,agv-obstacle-sensors,agv-startup-sequence,agv-shutdown-procedure,manual-override-activation,route-selection,load-handling-procedure,material-transport-pathways,production-floor-operations,automated-material-movement,operational-safety-zones,glass-manufacturing-process,agv-system,hmi-interface,navigation-control-unit,material-transport-equipment,operational-safety-system,scope-definition,usecase-clarification,system-application-boundary,procedure-intent-mapping,functional-overview,glass-manufacturing,cold-end-operations,industrial-automation,material-flow-management,production-logistics,ppe-kit,hi-vis-vest,safety-helmet,protective-gloves,safety-glasses,ppe-inspection,donning-and-doffing,ppe-fit-check,ppe-storage-routine,ppe-cleaning-procedure,hazardous-zones,material-handling-areas,industrial-safety-protocols,moving-parts-hazard,electrical-panel-risk,pinch-point-area,slip-and-trip-zone,load-handling-equipment,hazard-identification-process,risk-evaluation,hazard-signalling,incident-reporting-procedure,mitigation-measure-implementation,plant-floor-hazards,human-machine-interaction-zones,material-handling-environment,workplace-safety-culture,glass-production-facility,silica-monitoring-device,dust-extraction-system,respirator-ppe,air-quality-sensors,sampling-cartridge,silica-exposure-assessment,air-sampling-procedure,respirator-fit-testing,hazard-mitigation-routine,contamination-control-process,respirable-crystalline-silica-risk,high-dust-zones,health-and-safety-management,industrial-hygiene-compliance,glass-manufacturing-environment,safety-interlock-system,safety-relay-module,emergency-stop-circuit,agv-braking-system,redundant-control-channel,safety-interlock-validation,failure-mitigation-checks,lockout-tagout-procedure,safety-system-reset,hazard-response-activation,machine-safety-regulations,plant-risk-management,critical-control-operations,industrial-safety-compliance,agv-unit,battery-pack,charging-station,fork-adapter-tools,hmi-terminal,equipment-precheck,battery-inspection,pallet-handling-prep,tool-verification,equipment-staging,material-transfer-zones,plant-safety-regulations,industrial-engineering,comment-log,document-feedback-tool,issue-tracker,change-request-form,metR-sbs-soul,logging-comments,feedback-capture,action-item-creation,comment-resolution,document-update-process,plant-floor-communication,continuous-improvement,quality-assurance,operational-review,training-and-handover,manuals-and-guides,training-material,regulatory-documents,equipment-specifications,safety-standards,cross-referencing,resource-navigation,support-documentation-review,knowledge-linking,standard-compliance-checks,glass-production-support,plant-documentation-library,regulatory-compliance-environment,training-ecosystem,agv-safety-laser,proximity-sensor-array,warning-light-system,emergency-stop-button,visual-alert-indicators,establishing-exclusion-zones,agv-traffic-management,pedestrian-routing,emergency-stop-procedure,hazard-notification-process,high-traffic-areas,shared-workspaces,operational-risk-zones,plant-floor-safety,glass-production-environment,hmi-main-screen,manual-operation-screen,status-overview-display,alarm-log-screen,operator-input-panel,navigating-hmi-menus,viewing-status-details,accessing-alarms,manual-drive-activation,screen-switching,plant-floor-monitoring,agv-operations-environment,operator-training,hmi-operating-screen,operator-console,status-indicator-panel,control-dashboard,touchscreen-display,screen-navigation,manual-operation-menu,alarm-acknowledgement,status-monitoring,operator-login,plant-floor-operations,operator-handover,control-room-interface,material-handling,document-management-system,approval-form,sign-off-portal,metadata-repository,approval-workflow,review-and-signoff,revision-control,document-review-process,approval-tracking,plant-documentation,compliance-and-qa,internal-governance,operational-procedures,revision-record,version-control-log,change-history-table,documentation-repository,update-metadata,change-tracking,document-updating,revision-logging,approval-recording,procedural-update-cycle,compliance-documentation,internal-quality-records,manufacturing-document-lifecycle,standard-operating-procedures,industrial-governance"><meta name="keywords" content="agv-drive-system, navigation-module, battery-carriage, hmi-control-interface, agv-obstacle-sensors, agv-startup-sequence, agv-shutdown-procedure, manual-override-activation, route-selection, load-handling-procedure, material-transport-pathways, production-floor-operations, automated-material-movement, operational-safety-zones, glass-manufacturing-process, agv-system, hmi-interface, navigation-control-unit, material-transport-equipment, operational-safety-system, scope-definition, usecase-clarification, system-application-boundary, procedure-intent-mapping, functional-overview, glass-manufacturing, cold-end-operations, industrial-automation, material-flow-management, production-logistics, ppe-kit, hi-vis-vest, safety-helmet, protective-gloves, safety-glasses, ppe-inspection, donning-and-doffing, ppe-fit-check, ppe-storage-routine, ppe-cleaning-procedure, cold-end-operations, hazardous-zones, material-handling-areas, industrial-safety-protocols, glass-manufacturing, moving-parts-hazard, electrical-panel-risk, pinch-point-area, slip-and-trip-zone, load-handling-equipment, hazard-identification-process, risk-evaluation, hazard-signalling, incident-reporting-procedure, mitigation-measure-implementation, plant-floor-hazards, human-machine-interaction-zones, material-handling-environment, workplace-safety-culture, glass-production-facility, silica-monitoring-device, dust-extraction-system, respirator-ppe, air-quality-sensors, sampling-cartridge, silica-exposure-assessment, air-sampling-procedure, respirator-fit-testing, hazard-mitigation-routine, contamination-control-process, respirable-crystalline-silica-risk, high-dust-zones, health-and-safety-management, industrial-hygiene-compliance, glass-manufacturing-environment, safety-interlock-system, safety-relay-module, emergency-stop-circuit, agv-braking-system, redundant-control-channel, safety-interlock-validation, failure-mitigation-checks, lockout-tagout-procedure, safety-system-reset, hazard-response-activation, machine-safety-regulations, plant-risk-management, critical-control-operations, industrial-safety-compliance, glass-manufacturing-environment, agv-unit, battery-pack, charging-station, fork-adapter-tools, hmi-terminal, equipment-precheck, battery-inspection, pallet-handling-prep, tool-verification, equipment-staging, cold-end-operations, material-transfer-zones, plant-safety-regulations, industrial-engineering, glass-manufacturing-environment, comment-log, document-feedback-tool, issue-tracker, change-request-form, metR-sbs-soul, logging-comments, feedback-capture, action-item-creation, comment-resolution, document-update-process, plant-floor-communication, continuous-improvement, quality-assurance, operational-review, training-and-handover, manuals-and-guides, training-material, regulatory-documents, equipment-specifications, safety-standards, cross-referencing, resource-navigation, support-documentation-review, knowledge-linking, standard-compliance-checks, industrial-engineering, glass-production-support, plant-documentation-library, regulatory-compliance-environment, training-ecosystem, agv-safety-laser, proximity-sensor-array, warning-light-system, emergency-stop-button, visual-alert-indicators, establishing-exclusion-zones, agv-traffic-management, pedestrian-routing, emergency-stop-procedure, hazard-notification-process, high-traffic-areas, shared-workspaces, operational-risk-zones, plant-floor-safety, glass-production-environment, hmi-main-screen, manual-operation-screen, status-overview-display, alarm-log-screen, operator-input-panel, navigating-hmi-menus, viewing-status-details, accessing-alarms, manual-drive-activation, screen-switching, plant-floor-monitoring, agv-operations-environment, operator-training, cold-end-operations, industrial-engineering, hmi-operating-screen, operator-console, status-indicator-panel, control-dashboard, touchscreen-display, screen-navigation, manual-operation-menu, alarm-acknowledgement, status-monitoring, operator-login, glass-manufacturing, plant-floor-operations, operator-handover, control-room-interface, material-handling, document-management-system, approval-form, sign-off-portal, metadata-repository, metR-sbs-soul, approval-workflow, review-and-signoff, revision-control, document-review-process, approval-tracking, glass-manufacturing, plant-documentation, compliance-and-qa, internal-governance, operational-procedures, revision-record, version-control-log, change-history-table, documentation-repository, update-metadata, change-tracking, document-updating, revision-logging, approval-recording, procedural-update-cycle, compliance-documentation, internal-quality-records, manufacturing-document-lifecycle, standard-operating-procedures, industrial-governance"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-SBS-Soul"><meta name="platform" content="web"><meta name="DC.creator" content="Yashshree"><meta name="DC.date.created" content="2025-12-02+05:30"><meta name="DC.date.modified" content="2025-12-02"><meta name="RevisionDate" content="2024-02-13"><meta name="DocumentNumber" content="SBS-OP-121"><meta name="title" content="Operating the AGV"><meta name="shortdesc" content="Describes the complete AGV operating workflow including start, drive, load handling and shutdown procedures."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="agv-drive-system;navigation-module;obstacle-sensors;battery-carriage"><meta name="taxonomy" content="domain:glass-manufacturing;usecase:agv-operation;industry:industrial-engineering"><meta name="tags" content="agv operation, manual override, route selection, load handling, startup sequence"><meta name="usecase" content="agv-operation"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="c3DC5FB9-CAB3-11F0-1549-09173F13E4C5"><meta name="DC.language" content="en-us"><title>Operating the AGV</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c3DC5FB9-CAB3-11F0-1549-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Operating the AGV</h1>
+   
+   <div class="body conbody">
+      <p class="p">SBS-OP-121</p>
+      <p class="p">Revised: 2024-02-13</p>
+   </div>
+<article class="topic concept nested1" aria-labelledby="ariaid-title2" lang="en-us" id="c3DC8A6F-CAB3-11F0-9711-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">Purpose/Application</h2>
+   
+   <div class="body conbody">
+      <p class="p">Describes the procedures for using the operating screens for the AGV.</p>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title3" lang="en-us" id="c3DC6D9C-CAB3-11F0-1779-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">PPE Required</h2>
+   
+   <div class="body conbody">
+      <section class="section"><h3 class="title sectiontitle">General</h3>
+         
+         <p class="p">Bump cap/hard hat, safety glasses with foam liner, proper hearing protection,
+            fire-resistant long-sleeved shirt, safety toe boots.</p>
+      </section>
+      <section class="section"><h3 class="title sectiontitle">Additional Equipment</h3>
+         
+         <p class="p">Respirator or PAPR in case of a toxic batch material spill.</p>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title4" lang="en-us" id="c3DD2542-CAB3-11F0-2044-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title4">Safety Hazards</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="table"><caption></caption><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry"></td>
+                     <td class="entry"></td>
+                     <td class="entry"></td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry"></td>
+                     <td class="entry"></td>
+                     <td class="entry"></td>
+                  </tr>
+               </tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title5" lang="en-us" id="c3DCBC84-CAB3-11F0-1560-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title5">Respirable Crystalline Silica</h2>
+   
+   <div class="body conbody">
+      <p class="p">
+         <strong class="ph b">Crystalline silica has been classified as a human lung carcinogen.</strong> Breathing crystalline silica dust can cause silicosis, which in severe cases can be disabling, or even fatal.</p>
+      <div class="p">
+         <figure class="fig fignone">
+            <br><div class="imagecenter"><img class="image imagecenter" src="media/image25.jpg"></div><br>
+         </figure>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title6" lang="en-us" id="c3DD0924-CAB3-11F0-1825-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title6">Safety Controls</h2>
+   
+   <div class="body conbody">
+      <ul class="ul">
+         <li class="li">
+            <strong class="ph b">Do not ride on the AGV or step onto it</strong>.</li>
+         <li class="li">
+            <strong class="ph b">LO/TO the power before performing work.</strong> Follow plant procedures.</li>
+         <li class="li">
+            <strong class="ph b">The Hazard Communication Standard (HCS) requires chemicals to have Safety Data Sheets (SDS)</strong>. Use the SDS for chemicals listed in this SOP for additional hazards, first aid measures, toxicological information, accidental release measures, and handling/storage of the chemical. </li>
+         <li class="li">
+            <strong class="ph b">Review the Emergency Action Plan before performing work.</strong>
+         </li>
+      </ul>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title7" lang="en-us" id="c3DC2EB0-CAB3-11F0-4550-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title7">Equipment Needed</h2>
+   
+   <div class="body conbody">
+      <ul class="ul">
+         <li class="li">Access to the SCADA SBS operating system.</li>
+         <li class="li">Fire extinguisher in the cage.</li>
+      </ul>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title8" lang="en-us" id="c3DBFA2F-CAB3-11F0-2121-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title8">Comments</h2>
+   
+   <div class="body conbody">
+      <p class="p">Before starting work:</p>
+      <ul class="ul">
+         <li class="li">Read this document thoroughly.  </li>
+         <li class="li">Complete the required training.</li>
+         <li class="li">Wear the required PPE. </li>
+      </ul>
+      <div class="note note note_note" id="c3DBFA2F-CAB3-11F0-2121-09173F13E4C5__note_grt_1sm_vcc"><span class="note__title">Note:</span> <div class="note__body">
+         <p class="p">
+            <strong class="ph b"> This SOP uses Streator screens and images.</strong>
+         </p>
+      </div></div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title9" lang="en-us" id="c3DCA2A9-CAB3-11F0-5288-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title9">Related Resources</h2>
+   
+   <div class="body conbody">
+      <ul class="ul">
+         <li class="li">SBS-ET-121 Troubleshooting the AGV</li>
+         <li class="li">SBS-MR-121 AGV General Maintenance&nbsp;</li>
+         <li class="li">SBS-MR-122 Changing the Oil in the AGV Gear Unit</li>
+      </ul>
+   </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title10" lang="en-us" id="t3DCF037-CAB3-11F0-1111-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title10">Safety Around the AGV</h2>
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+               <table class="table"><caption></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody class="tbody">
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Electric Shock Hazard</p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Hot Surfaces </p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">Battery and Materials Inside Fence Can Be Toxic </p>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry"></td>
+                           <td class="entry">
+                              <p class="p">
+                                 <strong class="ph b">Avoid injury during startup. </strong>
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody></table>
+            </div></div>
+            <span class="ph cmd"></span><br>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Only authorized and trained personnel can enter the fenced area and work on the AGV.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Personnel must wear the appropriate PPE around the AGV.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">The AGV must be stopped before personnel can enter the fenced area where the AGV operates.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Observe all plant and equipment safety requirements.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Turn the AGV off if a safety or operational issue occurs.  Open the door to the fenced area to break the circuit.</span>
+            <div class="itemgroup info">
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+                  <p class="p">The AGV has an <strong class="ph b">E-Stop</strong> button on the left side, with an indicator light.</p>
+               </div></div>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image1.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Turn off power to the AGV before working on it.  Then lockout-tagout-verify the power.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">When working on high-voltage assemblies:</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">Ground the supply cable after disconnecting the voltage.</li>
+                  <li class="li">Short-circuit the components, e.g., capacitors by means of a ground rod.</li>
+               </ul>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Only install original or Hegla-approved spare parts.</span>
+         </li></ol></section>
+   </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title11" lang="en-us" id="t3DC496A-CAB3-11F0-1967-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title11">Navigating the Operating Screens</h2>
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+               <p class="p">The AGV has two travel modes</p>
+            </div></div>
+            <span class="ph cmd"></span><br>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">Manual mode is mainly used for setup and troubleshooting. In manual operation,
+                     the AGV is controlled via a wired remote control. The trained operator is
+                     responsible for the travel. Travel can take place with or without load.</li>
+                  <li class="li">In automatic operation, the AGV receives its travel orders from a master
+                     computer (travel to position X, fetch load Y, and bring it to position Z),
+                     which are processed along the specified route. In automatic mode, the AGV can
+                     travel both with and without a load.</li>
+                  <li class="li">There is also a semi-automatic mode that allows the operator to specify the
+                     AGV target position.</li>
+               </ul>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">The control screen and the main power switch are located on the AGV.</span>
+            <div class="itemgroup info">
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+                  <p class="p">Use this power switch to turn the AGV on or off.</p>
+               </div></div>
+               <ul class="ul">
+                  <li class="li">This switch must always be in the "O" position during maintenance work.</li>
+                  <li class="li">Follow plant lockout-tagout procedures.</li>
+               </ul>
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+                  <p class="p">If any <strong class="ph b">E-Stop</strong> in the SBS system is pressed, the AGV and the rest of the
+                     system will stop.</p>
+               </div></div>
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+                  <p class="p">The operator can use the SBS screens to stop operation, in which case the AGV
+                     completes its current order before stopping.</p>
+               </div></div>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image2.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">The main screen is shown on the right. To display the main screen when another
+               screen is showing, click the<span class="ph uicontrol"> Home</span>button in the lower left
+               corner of the screen.</span>
+            <div class="itemgroup info">
+               <p class="p">The following information is displayed:</p>
+               <ul class="ul">
+                  <li class="li">Current load</li>
+                  <li class="li">Current job</li>
+                  <li class="li">Current origin and target position</li>
+                  <li class="li">Status of battery, drives, temperature, network, WLAN</li>
+                  <li class="li">OnTrack, MasterLinkUp (connection to Kollmorgen PC) </li>
+               </ul>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image3.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">The top section of the main screen displays:</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">Name of the AGV (on the left)</li>
+                  <li class="li">Battery charge state, shown with a battery and percent charge.  A lightning symbol appears if the AGV is currently charging.</li>
+                  <li class="li">Stop symbol, which appears only when the vehicle has been stopped by the controller. (The reason for the stop is listed on the detail screen.)</li>
+                  <li class="li">HEGLA logo</li>
+               </ul>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Use the buttons on the bottom of the screen to navigate between the various operating screens.  From left to right, the buttons are:</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">Back to Main Screen/Menu</li>
+                  <li class="li">Manual Operation</li>
+                  <li class="li">Carriage Details</li>
+                  <li class="li">Battery</li>
+                  <li class="li">Information Details</li>
+                  <li class="li">Maintenance</li>
+                  <li class="li">User </li>
+               </ul>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image4.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Status Indicators are displayed using four colors in the top right box, behind the
+               images:</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">Green = All OK</li>
+                  <li class="li">Yellow = Warning</li>
+                  <li class="li">Red = Error alarm</li>
+                  <li class="li">Purple = Serious error (prevents movement of the AGV)</li>
+               </ul>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Messages are also provided in four colors to indicate the type of message.  They are displayed on the alarm screen (3rd screen from left of the user log in button). </span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">Black = Message</li>
+                  <li class="li">Yellow = Warning</li>
+                  <li class="li">Red = Error alarm</li>
+                  <li class="li">Purple = Serious error that prevents movement of the AGV </li>
+               </ul>
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+                  <p class="p">The last active fault messages are displayed with "Alarm” on the Information
+                     Details screen on the AGV, and usually on the top of the screen.</p>
+               </div></div>
+            </div>
+         </li></ol></section>
+   </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title12" lang="en-us" id="t3DC14C5-CAB3-11F0-1141-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title12">Description of the Operating Screens</h2>
+   
+   <div class="body taskbody">
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Click the <span class="ph uicontrol">Manual </span>button on the bottom of the screen to
+               display the Manual Operation menu.</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">The Safety Override bar turns green when the controller is in use.   </li>
+               </ul>
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+                  <p class="p">AP means anti-parallel mode. Diff means differential (free movement).</p>
+               </div></div>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image5.jpg"></div><br>
+                  </figure>
+               </div>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image6.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click the <span class="ph uicontrol">Carriage</span> button on the bottom of the screen to
+               display the <strong class="ph b">Carriage</strong> menu, which shows details about the carriage itself, but
+               not the battery.</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">The System Status on the upper left shows the status of the CVC controller,
+                     SICK controller, CAN bus, and WLAN.</li>
+                  <li class="li">There are also details about the AGV position and whether the AGV is
+                     stopped.</li>
+                  <li class="li">In the upper center of the screen, the driver status for travel and lift are
+                     displayed. </li>
+               </ul>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image7.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click the <span class="ph uicontrol">Battery </span>button on the bottom of the screen to
+               display the main <strong class="ph b">Battery</strong> menu, which shows the charge level and the status of
+               the battery.</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">Click the upper right arrow on the right side of the screen to display the
+                     Battery Status menu, shown to the right.</li>
+                  <li class="li">Click the lower right arrow to display the Charger Status General menu.</li>
+                  <li class="li">Click the left arrow to return to the main Battery menu.  </li>
+               </ul>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image8.jpg"></div><br>
+                  </figure>
+               </div>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image9.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">There are three <strong class="ph b">Charger Status</strong> screens.  Navigate between these screens using the gray arrow next to the buttons.</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">The <strong class="ph b">General</strong> screen displays general charging information.</li>
+                  <li class="li">The <strong class="ph b">Error/Warnings</strong> screen displays the status of any warnings.</li>
+                  <li class="li">The <strong class="ph b">Electronics</strong> screen provides additional data.</li>
+                  <li class="li">Click the left arrow to return to the main <strong class="ph b">Battery</strong> menu.   </li>
+               </ul>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image10.jpg"></div><br>
+                  </figure>
+               </div>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image11.jpg"></div><br>
+                  </figure>
+               </div>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image12.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">There are five <strong class="ph b">Information Details</strong> screens. Navigate between these screens using the gray arrows next to the buttons.</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">The first three screens provide various operational data. See the three screens
+                     on the right.   </li>
+               </ul>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image13.jpg"></div><br>
+                  </figure>
+               </div>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image14.jpg"></div><br>
+                  </figure>
+               </div>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image15.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">The fourth Details screen provides information about the four laser scanners/sensors.</span>
+            <div class="itemgroup info">
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image16.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">The fifth Details screen provides E-Stop information.</span>
+            <div class="itemgroup info">
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image17.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click the<span class="ph uicontrol"> Maintenance</span> button on the bottom of the screen to
+               display the Main <strong class="ph b">Maintenance</strong> screen.</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">Navigate between the two screens using the gray arrows next to the
+                     buttons.</li>
+                  <li class="li">The <strong class="ph b">Drives Control</strong> screen provides the following information:<p class="p">1 =
+                        Sets the lift position to zero</p>
+                     <p class="p">2 = Lifts and lowers the lift without limits</p>
+                     <p class="p">3 = Sets the steer angle to zero</p>
+                     <p class="p">4 = Graphical and numerical lift position</p>
+                  </li>
+               </ul>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image18.jpg"></div><br>
+                  </figure>
+               </div>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image19.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">An oil change must be performed on the lifting spindle drives after 500 operating hours.</span>
+            <div class="itemgroup info">
+               <ul class="ul">
+                  <li class="li">If this value is exceeded, an oil symbol will appear in the top section of every
+                     menu/screen. </li>
+               </ul>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image20.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Pop-up windows are displayed as an additional safety query to allow the lift, steering angles, or operating hours counter of the lift to be set to 0.</span>
+            <div class="itemgroup info">
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image21.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click the <span class="ph uicontrol">User</span> button on the bottom of the screen to display
+               the Main <strong class="ph b">User</strong> screen, where users and administrators can log in and out, and
+               set the language and units.</span>
+            <div class="itemgroup info">
+               <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+                  <p class="p">Parameters can only be changed with the highest user level. Settings in the
+                     system area of the control panel are reserved for HEGLA service technicians or
+                     specially trained and instructed specialist personnel. </p>
+               </div></div>
+               <p class="p">(See also the screen on the next page.)</p>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image22.jpg"></div><br>
+                  </figure>
+               </div>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image23.jpg"></div><br>
+                  </figure>
+               </div>
+               <div class="p">
+                  <figure class="fig fignone">
+                     <br><div class="imagecenter"><img class="image imagecenter" src="media/image24.jpg"></div><br>
+                  </figure>
+               </div>
+            </div>
+         </li></ol></section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title13" lang="en-us" id="c3DBE2F1-CAB3-11F0-2096-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title13">Approval</h2>
+   
+   <div class="body conbody">
+      <div class="p">Representatives of the Soul Approval Team<table class="table" id="c3DBE2F1-CAB3-11F0-2096-09173F13E4C5__table_a2d_5fn_vcc"><caption></caption><colgroup><col style="width:25.2%"><col style="width:64.8%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry" id="c3DBE2F1-CAB3-11F0-2096-09173F13E4C5__table_a2d_5fn_vcc__entry__1">
+                        <p class="p">Person</p>
+                     </th>
+                     <th class="entry" id="c3DBE2F1-CAB3-11F0-2096-09173F13E4C5__table_a2d_5fn_vcc__entry__2">
+                        <p class="p">Role</p>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="c3DBE2F1-CAB3-11F0-2096-09173F13E4C5__table_a2d_5fn_vcc__entry__1">
+                        <p class="p">Michael Hu</p>
+                     </td>
+                     <td class="entry" headers="c3DBE2F1-CAB3-11F0-2096-09173F13E4C5__table_a2d_5fn_vcc__entry__2">
+                        <p class="p">Process Development Squad Lead</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="c3DBE2F1-CAB3-11F0-2096-09173F13E4C5__table_a2d_5fn_vcc__entry__1">
+                        <p class="p">David Jepsen</p>
+                     </td>
+                     <td class="entry" headers="c3DBE2F1-CAB3-11F0-2096-09173F13E4C5__table_a2d_5fn_vcc__entry__2">
+                        <p class="p">Melter Training Specialist</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="c3DBE2F1-CAB3-11F0-2096-09173F13E4C5__table_a2d_5fn_vcc__entry__1">
+                        <p class="p">Phillip Wilson</p>
+                     </td>
+                     <td class="entry" headers="c3DBE2F1-CAB3-11F0-2096-09173F13E4C5__table_a2d_5fn_vcc__entry__2">
+                        <p class="p">EHS Continuous Improvement Manager</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title14" lang="en-us" id="c3DCD534-CAB3-11F0-1536-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title14">Revision History</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="table" id="c3DCD534-CAB3-11F0-1536-09173F13E4C5__table_vb1_vfn_vcc"><caption></caption><colgroup><col style="width:45.08%"><col style="width:45.08%"></colgroup><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" rowspan="2">
+                        <p class="p">2024-02-13</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">Approved by Michael Hu, Process Development Squad Lead</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Original Issue</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+   </div>
+</article></article></article></main></body></html>

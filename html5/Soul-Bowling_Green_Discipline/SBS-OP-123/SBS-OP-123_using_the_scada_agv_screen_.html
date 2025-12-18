@@ -1,0 +1,509 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="scada-agv-screen,scada,hmi,agv-controller,status-screen,using-scada,navigate-screen,monitor-agv,acknowledge-alarms,configure-agv,operator-training,control-room,production-line,agv-operations,system-configuration,ppe-equipment,protective-gloves,safety-glasses,helmets,ear-protection,donning-ppe,ppe-inspection,ppe-maintenance,personal-protection,ppe-compliance,workshop-floor,glass-manufacturing,hazard-assessment,maintenance-task,safety-policy,hazard-signage,safety-guards,ventilation-system,dust-removal-system,temperature-sensor,hazard-identification,risk-assessment,mitigation,incident-reporting,emergency-response,high-temperature-areas,handling-hot-glass,workplace-safety,safety-interlock,emergency-stop,agv,belt-conveyor,safety-controls,lockout-tagout,emergency-stop-testing,safety-inspection,production-floor,operator-safety,regulatory-compliance,plant-environment,sensors,calibration-tools,prepare-equipment,equipment-checklist,pre-start-inspection,setup-equipment,calibration,production-prep,workshop,safety,commenting-system,review-panel,doc-review,annotation-tool,discussion-thread,add-comment,resolve-comment,review-feedback,comment-threading,stakeholder-collaboration,peer-review,technical-communication,documentation-workflow,engineering-review,knowledge-capture,resource-links,manuals,sops,schematics,wiring-diagrams,access-resources,reference-documentation,download-manuals,consult-sop,training,knowledge-base,onboarding,maintenance,engineering,fleet-management-system,agv-sensors,fleet-monitoring,route-management,battery-checks,diagnostics,logistics,production-flow,automation,status-agv-screen,upper-area-panel,alarm-panel,battery-indicator,route-map,view-route,view-alerts,set-priority,pause-agv,operator,scada-popup-window,position-parameters-panel,ui-popup-window,view-position-details,select-position,acknowledge-position,update-position-parameters,navigate-popup,operator-console,monitoring,workstation,parameter-panel,control-panel,set-parameters,calibrate-position,save-settings,restore-defaults,tune-controls,production,precision-alignment,lower-area-panel,display-status,acknowledge-alerts,monitor-battery,update-route,shift-handovers,approval-workflow,doc-management-system,sign-off-system,change-request-tool,approval-process,sign-off,review,validate,release,change-control,configuration-management,production-release,compliance,metr-sbs-soul,document-management-system,doc-publisher,doc-manager,git-repository,revision-history,document-control,versioning,change-log,approval,engineering-documentation,traceability"><meta name="DC.subject" content="scada-agv-screen,scada,hmi,agv-controller,status-screen,using-scada,navigate-screen,monitor-agv,acknowledge-alarms,configure-agv,operator-training,control-room,production-line,agv-operations,system-configuration,ppe-equipment,protective-gloves,safety-glasses,helmets,ear-protection,donning-ppe,ppe-inspection,ppe-maintenance,personal-protection,ppe-compliance,workshop-floor,glass-manufacturing,hazard-assessment,maintenance-task,safety-policy,hazard-signage,safety-guards,ventilation-system,dust-removal-system,temperature-sensor,hazard-identification,risk-assessment,mitigation,incident-reporting,emergency-response,high-temperature-areas,handling-hot-glass,workplace-safety,safety-interlock,emergency-stop,agv,belt-conveyor,safety-controls,lockout-tagout,emergency-stop-testing,safety-inspection,production-floor,operator-safety,regulatory-compliance,plant-environment,sensors,calibration-tools,prepare-equipment,equipment-checklist,pre-start-inspection,setup-equipment,calibration,production-prep,workshop,safety,commenting-system,review-panel,doc-review,annotation-tool,discussion-thread,add-comment,resolve-comment,review-feedback,comment-threading,stakeholder-collaboration,peer-review,technical-communication,documentation-workflow,engineering-review,knowledge-capture,resource-links,manuals,sops,schematics,wiring-diagrams,access-resources,reference-documentation,download-manuals,consult-sop,training,knowledge-base,onboarding,maintenance,engineering,fleet-management-system,agv-sensors,fleet-monitoring,route-management,battery-checks,diagnostics,logistics,production-flow,automation,status-agv-screen,upper-area-panel,alarm-panel,battery-indicator,route-map,view-route,view-alerts,set-priority,pause-agv,operator,scada-popup-window,position-parameters-panel,ui-popup-window,view-position-details,select-position,acknowledge-position,update-position-parameters,navigate-popup,operator-console,monitoring,workstation,parameter-panel,control-panel,set-parameters,calibrate-position,save-settings,restore-defaults,tune-controls,production,precision-alignment,lower-area-panel,display-status,acknowledge-alerts,monitor-battery,update-route,shift-handovers,approval-workflow,doc-management-system,sign-off-system,change-request-tool,approval-process,sign-off,review,validate,release,change-control,configuration-management,production-release,compliance,metr-sbs-soul,document-management-system,doc-publisher,doc-manager,git-repository,revision-history,document-control,versioning,change-log,approval,engineering-documentation,traceability"><meta name="keywords" content="scada-agv-screen, scada, hmi, agv-controller, status-screen, using-scada, navigate-screen, monitor-agv, acknowledge-alarms, configure-agv, operator-training, control-room, production-line, agv-operations, system-configuration, ppe-equipment, protective-gloves, safety-glasses, helmets, ear-protection, donning-ppe, ppe-inspection, ppe-maintenance, personal-protection, ppe-compliance, workshop-floor, glass-manufacturing, hazard-assessment, maintenance-task, safety-policy, hazard-signage, safety-guards, ventilation-system, dust-removal-system, temperature-sensor, hazard-identification, risk-assessment, mitigation, incident-reporting, emergency-response, glass-manufacturing, high-temperature-areas, handling-hot-glass, workplace-safety, operator-training, safety-interlock, emergency-stop, scada, agv, belt-conveyor, safety-controls, lockout-tagout, emergency-stop-testing, hazard-assessment, safety-inspection, glass-manufacturing, production-floor, operator-safety, regulatory-compliance, plant-environment, agv, scada, belt-conveyor, sensors, calibration-tools, prepare-equipment, equipment-checklist, pre-start-inspection, setup-equipment, calibration, maintenance-task, production-prep, workshop, safety, glass-manufacturing, commenting-system, review-panel, doc-review, annotation-tool, discussion-thread, add-comment, resolve-comment, review-feedback, comment-threading, stakeholder-collaboration, peer-review, technical-communication, documentation-workflow, engineering-review, knowledge-capture, resource-links, manuals, sops, schematics, wiring-diagrams, access-resources, reference-documentation, download-manuals, consult-sop, training, knowledge-base, onboarding, maintenance, engineering, training, agv, fleet-management-system, scada, status-screen, agv-sensors, monitor-agv, fleet-monitoring, route-management, battery-checks, diagnostics, logistics, production-flow, automation, maintenance, glass-manufacturing, status-agv-screen, upper-area-panel, alarm-panel, battery-indicator, route-map, view-route, view-alerts, set-priority, pause-agv, emergency-stop, control-room, operator, production-floor, safety, maintenance, scada-popup-window, status-agv-screen, position-parameters-panel, hmi, ui-popup-window, view-position-details, select-position, acknowledge-position, update-position-parameters, navigate-popup, control-room, operator-console, monitoring, production-line, workstation, position-parameters-panel, parameter-panel, hmi, scada, control-panel, set-parameters, calibrate-position, save-settings, restore-defaults, tune-controls, calibration, maintenance, operator-console, production, precision-alignment, status-agv-screen, lower-area-panel, scada, agv, hmi, display-status, acknowledge-alerts, set-parameters, monitor-battery, update-route, control-room, production-floor, agv-operations, maintenance, shift-handovers, approval-workflow, doc-management-system, review-panel, sign-off-system, change-request-tool, approval-process, sign-off, review, validate, release, change-control, configuration-management, engineering-review, production-release, compliance, metr-sbs-soul, document-management-system, doc-publisher, doc-manager, git-repository, revision-history, document-control, versioning, change-log, approval, engineering-documentation, compliance, configuration-management, production-release, traceability"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-SBS-Soul"><meta name="platform" content="web"><meta name="DC.creator" content="Yashshree"><meta name="DC.date.created" content="2025-11-11+05:30"><meta name="DC.date.modified" content="2025-11-11"><meta name="RevisionDate" content="2024-02-15"><meta name="DocumentNumber" content="SBS-OP-123"><meta name="title" content="SBS-OP-123 using the scada agv screen"><meta name="shortdesc" content="Topic about SBS-OP-123 using the scada agv screen."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="hmi;menu;alarm list;agv controls;navigation map"><meta name="taxonomy" content="domain:industrial-engineering;usecase:using-scada-agv-screen;industry:glass-manufacturing"><meta name="tags" content="scada, hmi, agv, training, monitoring"><meta name="usecase" content="using-scada-agv-screen"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="cC6018F9-BB9C-11F0-1946-09173F13E4C5"><meta name="DC.language" content="en-us"><title>Using the SCADA AGV Screen</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="cC6018F9-BB9C-11F0-1946-09173F13E4C5">
+   <h1 class="title topictitle1" id="ariaid-title1">Using the SCADA AGV Screen </h1>
+   
+   <div class="body conbody">
+      <p class="p">SBS-OP-123</p>
+      <p class="p">Revised: 2024-02-15</p>
+   </div>
+<article class="topic concept nested1" aria-labelledby="ariaid-title2" lang="en-us" id="cC5F9431-BB9C-11F0-3201-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title2">Purpose/Application</h2>
+   
+   <div class="body conbody">
+      <p class="p">Describes the procedure for how to use the SCADA AGV screen.</p>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title3" lang="en-us" id="cC5F7D3D-BB9C-11F0-1023-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title3">PPE Required</h2>
+   
+   <div class="body conbody">
+      <section class="section"><h3 class="title sectiontitle">General</h3>
+         
+         <p class="p">Bump cap/hard hat, safety glasses with foam liner, proper hearing protection,
+            fire-resistant long-sleeved shirt, safety toe boots.</p>
+      </section>
+      <section class="section"><h3 class="title sectiontitle">Additional Equipment</h3>
+         
+         <p class="p">Have a respirator or PAPR available in the event of silica release.</p>
+      </section>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title4" lang="en-us" id="cC5FECAA-BB9C-11F0-1247-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title4">Safety Hazards</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="table"><caption></caption><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry"></td>
+                     <td class="entry"></td>
+                     <td class="entry"></td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry"></td>
+                     <td class="entry"></td>
+                     <td class="entry"></td>
+                  </tr>
+               </tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title5" lang="en-us" id="cC5FD574-BB9C-11F0-2101-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title5">Safety Controls</h2>
+   
+   <div class="body conbody">
+      <ul class="ul">
+         <li class="li">
+            <strong class="ph b">The Hazard Communication Standard (HCS) requires chemicals to have Safety Data Sheets (SDS).</strong>  Use the SDS for chemicals listed in this SOP for additional hazards, first aid measures, toxicological information, accidental release measures, and handling/storage of the chemical. </li>
+         <li class="li">
+            <strong class="ph b">Review the Emergency Action Plan before performing work.</strong>
+         </li>
+      </ul>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title6" lang="en-us" id="cC5F0F73-BB9C-11F0-6681-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title6">Equipment Needed</h2>
+   
+   <div class="body conbody">
+      <ul class="ul">
+         <li class="li">Access to the SCADA SBS workstation.</li>
+      </ul>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title7" lang="en-us" id="cC5EF778-BB9C-11F0-1975-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title7">Comments</h2>
+   
+   <div class="body conbody">
+      <p class="p">Before starting work:</p>
+      <ul class="ul">
+         <li class="li">Read this document thoroughly.  </li>
+         <li class="li">Complete the required training.</li>
+         <li class="li">Wear the required PPE. </li>
+      </ul>
+      <div class="note note note_note" id="cC5EF778-BB9C-11F0-1975-09173F13E4C5__note_zhl_bwg_vcc"><span class="note__title">Note:</span> <div class="note__body">
+         <p class="p">
+            <strong class="ph b">This SOP uses Streator screens and images.</strong>
+         </p>
+      </div></div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title8" lang="en-us" id="cC5FA9F7-BB9C-11F0-3886-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title8">Related Resources</h2>
+   
+   <div class="body conbody">
+      <ul class="ul">
+         <li class="li">SBS-OP-121 Operating the AGV</li>
+      </ul>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title9" lang="en-us" id="cC5F3ADA-BB9C-11F0-1734-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title9">Monitoring the AGV</h2>
+   
+   <div class="body conbody">
+      <p class="p">At the “Batch System - Status AGV” screen, the operator can check the status and position of the AGV devices.</p>
+      <div class="p">
+         <figure class="fig fignone">
+            <br><div class="imagecenter"><img class="image imagecenter" src="media/image1.jpg"></div><br>
+         </figure>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title10" lang="en-us" id="cC600341-BB9C-11F0-6117-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title10">Upper Area of the Status AGV Screen</h2>
+   
+   <div class="body conbody">
+      <p class="p">In the upper area of the screen is a top-view of the AGV fenced area, and the current position of the AGV (under one of the 10 silos, at the Lifting Station, or parked).  This makes it possible to know the exact location of the AGV as it moves.</p>
+      <ul class="ul">
+         <li class="li">Each position shows the amount of time the AGV stood there for the last cycle.<br><div class="imagecenter"><img class="image imagecenter" src="media/image2.jpg"></div><br>
+         </li>
+         <li class="li">The current AGV position is shown in blue.<br><div class="imagecenter"><img class="image imagecenter" src="media/image3.jpg"></div><br>
+         </li>
+         <li class="li">Green means a position is blocked by a scale/weighing frame, but the AGV can pass
+               <br><div class="imagecenter"><img class="image imagecenter" src="media/image4.jpg"></div><br> under it.</li>
+         <li class="li">A red X means that a parking position is blocked.<br><div class="imagecenter"><img class="image imagecenter" src="media/image5.jpg"></div><br>
+         </li>
+      </ul>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title11" lang="en-us" id="cC5F5088-BB9C-11F0-6329-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title11">Popup Window for Each Position</h2>
+   
+   <div class="body conbody">
+      <p class="p">Press on a position to display a popup window that provides additional position information.</p>
+      <div class="p">
+         <figure class="fig fignone" id="cC5F5088-BB9C-11F0-6329-09173F13E4C5__fig_c11_vxg_vcc">
+            <br><div class="imagecenter"><img class="image imagecenter" id="cC5F5088-BB9C-11F0-6329-09173F13E4C5__image_d11_vxg_vcc" src="media/image6.jpg"></div><br>
+         </figure>
+      </div>
+      <table class="table"><caption></caption><colgroup><col style="width:27.2%"><col style="width:63.42%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry" id="cC5F5088-BB9C-11F0-6329-09173F13E4C5__entry__1">
+                     <p class="p">Position Status – Color shown on the popup</p>
+                  </th>
+                  <th class="entry" id="cC5F5088-BB9C-11F0-6329-09173F13E4C5__entry__2">
+                     <p class="p">Description (Note that these colors do not match the colors used for the AGV
+                        screen itself)</p>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="cC5F5088-BB9C-11F0-6329-09173F13E4C5__entry__1">
+                     <div class="p">
+                        <figure class="fig fignone">
+                           <br><div class="imagecenter"><img class="image imagecenter" id="cC5F5088-BB9C-11F0-6329-09173F13E4C5__image_nc4_hyg_vcc" src="media/image7.jpg"></div><br>
+                        </figure>
+                     </div>
+                  </td>
+                  <td class="entry" headers="cC5F5088-BB9C-11F0-6329-09173F13E4C5__entry__2">
+                     <p class="p">The position is free and the AGV (with a scale container) can move to this position.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="cC5F5088-BB9C-11F0-6329-09173F13E4C5__entry__1">
+                     <div class="p">
+                        <figure class="fig fignone">
+                           <br><div class="imagecenter"><img class="image imagecenter" id="cC5F5088-BB9C-11F0-6329-09173F13E4C5__image_qyj_hyg_vcc" src="media/image8.jpg"></div><br>
+                        </figure>
+                     </div>
+                  </td>
+                  <td class="entry" headers="cC5F5088-BB9C-11F0-6329-09173F13E4C5__entry__2">
+                     <p class="p">The position is blocked by the operator. The AGV (with a scale container) cannot go to this position.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="cC5F5088-BB9C-11F0-6329-09173F13E4C5__entry__1">
+                     <div class="p">
+                        <figure class="fig fignone">
+                           <br><div class="imagecenter"><img class="image imagecenter" id="cC5F5088-BB9C-11F0-6329-09173F13E4C5__image_ygh_hyg_vcc" src="media/image9.jpg"></div><br>
+                        </figure>
+                     </div>
+                  </td>
+                  <td class="entry" headers="cC5F5088-BB9C-11F0-6329-09173F13E4C5__entry__2">
+                     <p class="p">The docking station for this position is not in the upper position, and  the AGV (with a scale container) cannot pass this position.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="cC5F5088-BB9C-11F0-6329-09173F13E4C5__entry__1">
+                     <div class="p">
+                        <figure class="fig fignone">
+                           <br><div class="imagecenter"><img class="image imagecenter" id="cC5F5088-BB9C-11F0-6329-09173F13E4C5__image_nk2_hyg_vcc" src="media/image10.jpg"></div><br>
+                        </figure>
+                     </div>
+                  </td>
+                  <td class="entry" headers="cC5F5088-BB9C-11F0-6329-09173F13E4C5__entry__2">
+                     <p class="p">This position is blocked for the AGV, and the AGV cannot go to this position.</p>
+                  </td>
+               </tr>
+            </tbody></table>
+      <p class="p">The three buttons at the top of the popup are explained below.</p>
+      <table class="table"><caption></caption><colgroup><col style="width:8.1%"><col style="width:72.9%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry" id="cC5F5088-BB9C-11F0-6329-09173F13E4C5__entry__11">
+                     <p class="p">Button</p>
+                  </th>
+                  <th class="entry" id="cC5F5088-BB9C-11F0-6329-09173F13E4C5__entry__12">
+                     <p class="p">Function</p>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="cC5F5088-BB9C-11F0-6329-09173F13E4C5__entry__11">
+                     <div class="p">
+                        <figure class="fig fignone">
+                           <br><div class="imagecenter"><img class="image imagecenter" id="cC5F5088-BB9C-11F0-6329-09173F13E4C5__image_zzy_gyg_vcc" src="media/image11.jpg"></div><br>
+                        </figure>
+                     </div>
+                  </td>
+                  <td class="entry" headers="cC5F5088-BB9C-11F0-6329-09173F13E4C5__entry__12">
+                     <p class="p">The standard popup window is shown, without the parameters panel.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="cC5F5088-BB9C-11F0-6329-09173F13E4C5__entry__11">
+                     <div class="p">
+                        <figure class="fig fignone">
+                           <br><div class="imagecenter"><img class="image imagecenter" id="cC5F5088-BB9C-11F0-6329-09173F13E4C5__image_kft_gyg_vcc" src="media/image12.jpg"></div><br>
+                        </figure>
+                     </div>
+                  </td>
+                  <td class="entry" headers="cC5F5088-BB9C-11F0-6329-09173F13E4C5__entry__12">
+                     <p class="p">The position parameters panel is displayed.  (See details below.)</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="cC5F5088-BB9C-11F0-6329-09173F13E4C5__entry__11">
+                     <div class="p">
+                        <figure class="fig fignone">
+                           <br><div class="imagecenter"><img class="image imagecenter" id="cC5F5088-BB9C-11F0-6329-09173F13E4C5__image_gwk_gyg_vcc" src="media/image13.jpg"></div><br>
+                        </figure>
+                     </div>
+                  </td>
+                  <td class="entry" headers="cC5F5088-BB9C-11F0-6329-09173F13E4C5__entry__12">
+                     <p class="p">Alarms and messages for this position can be viewed.</p>
+                  </td>
+               </tr>
+            </tbody></table>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title12" lang="en-us" id="cC5F6789-BB9C-11F0-1068-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title12">Position Parameters Panel</h2>
+   
+   <div class="body conbody">
+      <p class="p">When the Position Parameters button is pressed on the popup window, two parameters can be set.</p>
+      <ul class="ul">
+         <li class="li">The operator can “block” or “free” the position by pressing the appropriate button.</li>
+         <li class="li">The “stay time” parameter allows the operator to enter a time for the maximum stay of
+            the AGV at this position. If the AGV needs longer at this position than the defined
+            maximum stay time, a warning message is displayed.</li>
+      </ul>
+      <div class="p">
+         <figure class="fig fignone" id="cC5F6789-BB9C-11F0-1068-09173F13E4C5__fig_t3h_lyg_vcc">
+            <br><div class="imagecenter"><img class="image imagecenter" id="cC5F6789-BB9C-11F0-1068-09173F13E4C5__image_kqj_myg_vcc" src="media/image14.jpg"></div><br>
+         </figure>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title13" lang="en-us" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title13">Lower Area of the Status AGV Screen.</h2>
+   
+   <div class="body conbody">
+      <p class="p">The lower area is described in three parts. The left part, the middle part and the right
+         part</p>
+      <div class="p">
+         <figure class="fig fignone" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__fig_dj4_jsl_vcc">
+            <br><div class="imagecenter"><img class="image imagecenter" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__image_dyn_lsl_vcc" src="media/image15.jpg"></div><br>
+         </figure>
+      </div>
+      <p class="p">
+         <strong class="ph b"> Left Part</strong>: The operator can change the AGV operation mode by pressing Manual or
+         Auto. The icon above the buttons indicates whether the AGV is operating in Manual or Auto
+         mode.</p>
+      <div class="p">
+         <figure class="fig fignone" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__fig_pnn_zxl_vcc">
+            <br><div class="imagecenter"><img class="image imagecenter" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__image_r25_1yl_vcc" src="media/image16.jpg"></div><br>
+         </figure>
+      </div>
+      <ul class="ul">
+         <li class="li">
+            <br><div class="imagecenter"><img class="image imagecenter" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__image_mmj_kvl_vcc" src="media/image17.jpg"></div><br> In Automatic mode, the PLC program controls the movement of the AGV.</li>
+         <li class="li">
+            <br><div class="imagecenter"><img class="image imagecenter" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__image_fzz_jvl_vcc" src="media/image18.jpg"></div><br> In Manual mode, the operator moves the AGV.</li>
+      </ul>
+      <div class="note note note_note" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__note_int_n1m_vcc"><span class="note__title">Note:</span> <div class="note__body">
+         <div class="p"> When changing modes, a popup window appears asking if you are sure. <br><div class="imagecenter"><img class="image imagecenter" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__image_bgn_3vl_vcc" src="media/image19.jpg"></div><br>
+            Press <span class="ph uicontrol">yes</span> to confirm. </div>
+      </div></div>
+      <p class="p">In Manual mode, the operator can direct the AGV to move scale 1 and scale 2 to a specific
+         position.</p>
+      <ul class="ul">
+         <li class="li">To do this, press the “<span class="ph uicontrol">down</span> button on the right of the scale
+            name. A dropdown box opens. (See left image below.)</li>
+         <li class="li">When a destination is selected, the dropdown box closes and the selection appears in
+            the text box. To send the AGV and scale to its destination, press the<span class="ph uicontrol"> “Scale
+               ‘x’ to Pos ‘y’ ”</span> button. The AGV then waits there for its next command.
+            (See the right image below.)</li>
+      </ul>
+      <div class="p">
+         <figure class="fig fignone" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__fig_l1t_gdm_vcc">
+            <br><div class="imagecenter"><img class="image imagecenter" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__image_kdt_hdm_vcc" src="media/image20.jpg"></div><br>
+         </figure>
+      </div>
+      <p class="p">
+         <strong class="ph b">Middle Part:</strong> In the middle part, the current or last executed command for the AGV is
+         displayed, assigned to scale 1 or scale 2.</p>
+      <div class="p">
+         <figure class="fig fignone" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__fig_kcr_jdm_vcc">
+            <br><div class="imagecenter"><img class="image imagecenter" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__image_mpk_kdm_vcc" src="media/image21.jpg"></div><br>
+         </figure>
+      </div>
+      <table class="table" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc"><caption></caption><colgroup><col style="width:21.22%"><col style="width:69.4%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc__entry__1">
+                     <p class="p">Section</p>
+                  </th>
+                  <th class="entry" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc__entry__2">
+                     <p class="p">Description</p>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc__entry__1">
+                     <p class="p">ID</p>
+                  </td>
+                  <td class="entry" headers="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc__entry__2">
+                     <p class="p">Shows the ID of the order.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc__entry__1">
+                     <p class="p">Scale</p>
+                  </td>
+                  <td class="entry" headers="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc__entry__2">
+                     <p class="p">Shows which scale is processing the order.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc__entry__1">
+                     <p class="p">Dest.</p>
+                  </td>
+                  <td class="entry" headers="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc__entry__2">
+                     <p class="p">The destination position of the order.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc__entry__1">
+                     <p class="p">AGV</p>
+                  </td>
+                  <td class="entry" headers="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc__entry__2">
+                     <p class="p">The number of the used AGV for this order.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc__entry__1">
+                     <p class="p">Status</p>
+                  </td>
+                  <td class="entry" headers="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc__entry__2">
+                     <p class="p">Shows the order status as text.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc__entry__1">
+                     <p class="p">Error-Code</p>
+                  </td>
+                  <td class="entry" headers="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc__entry__2">
+                     <p class="p">If the AGV reports an error to the system, the specific error number is
+                        shown here.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc__entry__1">
+                     <p class="p">Time</p>
+                  </td>
+                  <td class="entry" headers="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc__entry__2">
+                     <p class="p">The time where the AGV processed the status.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc__entry__1">
+                     <div class="p">
+                        <figure class="fig fignone" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__fig_lsn_z1m_vcc">
+                           <br><div class="imagecenter"><img class="image imagecenter" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__image_ocr_1vl_vcc" src="media/image22.jpg"></div><br>
+                        </figure>
+                     </div>
+                  </td>
+                  <td class="entry" headers="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc__entry__2">
+                     <p class="p">With this button the order on the left side can be deleted. When the order
+                        is deleted the AGV will not do this order.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc__entry__1">
+                     <div class="p">
+                        <figure class="fig fignone" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__fig_msn_z1m_vcc">
+                           <br><div class="imagecenter"><img class="image imagecenter" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__image_k2y_bvl_vcc" src="media/image23.jpg"></div><br>
+                        </figure>
+                     </div>
+                  </td>
+                  <td class="entry" headers="cC5F251E-BB9C-11F0-2134-09173F13E4C5__table_ksn_z1m_vcc__entry__2">
+                     <div class="p">By pressing the <span class="ph uicontrol">“History”</span>-Button, a popup appears,
+                        showing table of the last order-ID’s. This view can be extended by pressing
+                        the <span class="ph uicontrol">“Extend” </span>button<br><div class="imagecenter"><img class="image imagecenter" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__image_fh5_2vl_vcc" src="media/image24.jpg"></div><br>
+                     </div>
+                  </td>
+               </tr>
+            </tbody></table>
+      <div class="p">
+         <strong class="ph b">Right Part:</strong> The X/Y coordinates of the AGV are shown in mm. Also, this <br><div class="imagecenter"><img class="image imagecenter" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__image_k1j_ndm_vcc" src="media/image25.jpg"></div><br>
+         segment has two buttons.</div>
+      <ul class="ul" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__ul_usc_4dm_vcc">
+         <li class="li">Press the “<span class="ph uicontrol">History”</span> button to display a graphic chart of the
+            X/Ycoordinates (lower left image).</li>
+         <li class="li">Thehistorical movement (position) of the AGV is stored, and can be used to check the
+            positioning accuracy.</li>
+         <li class="li">Press the <span class="ph uicontrol">“clock”</span> button to open the “Time- Selection” dialog
+               <br><div class="imagecenter"><img class="image imagecenter" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__image_trl_qdm_vcc" src="media/image26.jpg"></div><br> box to select a specific time range (lower right image).</li>
+      </ul>
+      <div class="p">
+         <figure class="fig fignone" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__fig_kjt_rdm_vcc">
+            <br><div class="imagecenter"><img class="image imagecenter" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__image_alf_tdm_vcc" src="media/image27.jpg"></div><br>
+         </figure>
+      </div>
+      <div class="p">Below the <span class="ph uicontrol">“History”</span> button is the<span class="ph uicontrol"> “Status
+            message”</span> button. When this button is <br><div class="imagecenter"><img class="image imagecenter" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__image_dpx_vdm_vcc" src="media/image28.jpg"></div><br> pressed, the following popup
+         window is opened.</div>
+      <ul class="ul" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__ul_unx_wdm_vcc">
+         <li class="li">On the left side of the popup is a list with the latest status messages of the
+            AGV.</li>
+         <li class="li">On the right side is a table with the latest AGV alarms.</li>
+      </ul>
+      <div class="p">
+         <figure class="fig fignone" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__fig_wx3_ydm_vcc">
+            <br><div class="imagecenter"><img class="image imagecenter" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__image_dmx_ydm_vcc" src="media/image29.jpg"></div><br>
+         </figure>
+      </div>
+      <div class="note note note_note" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__note_hvt_zdm_vcc"><span class="note__title">Note:</span> <div class="note__body">
+         <p class="p">For further information regarding the operation system for AGV, refer to documents:</p>
+      </div></div>
+      <ul class="ul" id="cC5F251E-BB9C-11F0-2134-09173F13E4C5__ul_gdv_12m_vcc">
+         <li class="li">“AGVProcess-diagram_rev2.pptx”“HEGLA HANIC DOCUMENTATION AGV_englisch.pdf”.</li>
+         <li class="li">GLA HANIC DOCUMENTATION AGV_englisch.pdf”.</li>
+      </ul>
+      <p class="p">
+         <strong class="ph b">ATTENTION: DO NOTCHANGE ANY VALUES IN THE HEGLA HANIC SYSTEM WITHOUT CONSULTING
+            ZIPPE</strong>. This is only for better understanding of the system. Any modifications in
+         this program may risk process safety</p>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title14" lang="en-us" id="cC5EE1AF-BB9C-11F0-1188-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title14">Approval</h2>
+   
+   <div class="body conbody">
+      <div class="p">Representatives of the Soul Approval Team<table class="table" id="cC5EE1AF-BB9C-11F0-1188-09173F13E4C5__table_t2c_1zg_vcc"><caption></caption><colgroup><col style="width:25.2%"><col style="width:64.8%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry" id="cC5EE1AF-BB9C-11F0-1188-09173F13E4C5__table_t2c_1zg_vcc__entry__1">
+                        <p class="p">Person</p>
+                     </th>
+                     <th class="entry" id="cC5EE1AF-BB9C-11F0-1188-09173F13E4C5__table_t2c_1zg_vcc__entry__2">
+                        <p class="p">Role</p>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="cC5EE1AF-BB9C-11F0-1188-09173F13E4C5__table_t2c_1zg_vcc__entry__1">
+                        <p class="p">Michael Hu</p>
+                     </td>
+                     <td class="entry" headers="cC5EE1AF-BB9C-11F0-1188-09173F13E4C5__table_t2c_1zg_vcc__entry__2">
+                        <p class="p">Process Development Squad Lead</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="cC5EE1AF-BB9C-11F0-1188-09173F13E4C5__table_t2c_1zg_vcc__entry__1">
+                        <p class="p">David Jepsen</p>
+                     </td>
+                     <td class="entry" headers="cC5EE1AF-BB9C-11F0-1188-09173F13E4C5__table_t2c_1zg_vcc__entry__2">
+                        <p class="p">Melter Training Specialist</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="cC5EE1AF-BB9C-11F0-1188-09173F13E4C5__table_t2c_1zg_vcc__entry__1">
+                        <p class="p">Phillip Wilson</p>
+                     </td>
+                     <td class="entry" headers="cC5EE1AF-BB9C-11F0-1188-09173F13E4C5__table_t2c_1zg_vcc__entry__2">
+                        <p class="p">EHS Continuous Improvement Manager</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title15" lang="en-us" id="cC5FBFCB-BB9C-11F0-4648-09173F13E4C5">
+   <h2 class="title topictitle2" id="ariaid-title15">Revision History</h2>
+   
+   <div class="body conbody">
+      <div class="p">
+         <table class="table"><caption></caption><colgroup><col style="width:45.08%"><col style="width:45.08%"></colgroup><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" rowspan="2">
+                        <p class="p">2024-02-15</p>
+                     </td>
+                     <td class="entry">
+                        <p class="p">Approved by Michael Hu, Process Development Squad Lead</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry">
+                        <p class="p">Original Issue</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+   </div>
+</article></article></article></main></body></html>
