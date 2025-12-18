@@ -1,0 +1,277 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="metr-pxc-reality,snmpv3-agent,user-based-security,network-management-card,mib-access,security-module,snmpv3-configuration,usm-user-creation,auth-and-priv-setup,encryption-configuration,access-listing,snmpv3-troubleshooting,secure-monitoring,management-plane,telemetry-security,remote-operations,compliance,ups-network-management"><meta name="keywords" content="metr-pxc-reality, snmpv3-agent, user-based-security, network-management-card, mib-access, security-module, snmpv3-configuration, usm-user-creation, auth-and-priv-setup, encryption-configuration, access-listing, snmpv3-troubleshooting, secure-monitoring, management-plane, telemetry-security, remote-operations, compliance, ups-network-management"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_SNMP_Access_to_the_Network_Management_Card_CPT_0000334031.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_SNMP_Access_to_the_Network_Management_Card_CPT_0000334031.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_SNMP_Access_to_the_Network_Management_Card_CPT_0000334031.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_SNMP_Access_to_the_Network_Management_Card_CPT_0000334031.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_SNMP_Access_to_the_Network_Management_Card_CPT_0000334031.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-05+05:30"><meta name="DC.date.modified" content="2025-12-05"><meta name="title" content="NMC SNMPv3 Access"><meta name="shortdesc" content="Instructions for configuring SNMPv3 access to the Network Management Card, including USM user setup, authentication and privacy parameters."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="snmpv3-user; auth-protocol; priv-protocol; mib-access; agent-port; access-list"><meta name="taxonomy" content="domain:industrial-engineering;usecase:snmpv3-secure-access-configuration;industry: uninterruptible power supply (UPS) systems"><meta name="tags" content="snmpv3,security,usm,authentication,encryption,monitoring"><meta name="usecase" content="configure and secure SNMPv3 access for protected monitoring and MIB retrieval"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="SNMPv3Access-80A504FD"><meta name="DC.language" content="en"><title>SNMPv3 Access</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="SNMPv3Access-80A504FD"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">SNMPv3 Access</h1>
+   
+   
+   <div class="body conbody">
+      <p class="p">SNMPv3 uses user profiles to define what IP addresses on the network
+has access to the SNMP communication from the NMC. The settings for
+SNMPv3 can be configured from the CLI or the web interface.</p>
+      <section class="section"><h2 class="title sectiontitle">SNMPv3 User Profiles</h2>
+         
+         <p class="p">To use SNMPv3 a user
+profile needs to be defined. Each user profile has a user name, authentication
+setting and encryption setting. It is possible to defined up to four
+different user profiles.</p>
+         <ul class="ul">
+            <li class="li">
+               <p class="p">
+                  <span class="ph uicontrol">The user name:</span> Used to
+identify the user profile. SNMPv3 checks that the user name is the
+same in the user profile and the data package being transmitted. The
+maximum length of a user name is 32 ASCII characters.</p>
+            </li>
+            <li class="li">
+               <p class="p">
+                  <span class="ph uicontrol">Authentication passphrase:</span> Provides the SNMPv3 communication with authentication. Checks that
+the NMS that communicates with the device is the NMS it claims to
+be. The authentication passphrase verifies that the message has not
+been changed during transmission. It also verifies that the transmission
+was not delayed, copied and then sent again. The length of a passphrase
+can be between 15-32 ASCII characters.</p>
+            </li>
+            <li class="li">
+               <p class="p">
+                  <span class="ph uicontrol">Privacy passphrase:</span> 
+Provides the SNMPv3 communication with encryption. Ensures the privacy
+of the data sent with to and from an NMS. The length of a privacy
+passphrase can be between 15-32 ASCII characters.</p>
+            </li>
+            <li class="li">
+               <p class="p">
+                  <span class="ph uicontrol">Authentication protocol:</span> Use either SHA or MD5 as an authentication protocol.</p>
+            </li>
+            <li class="li">
+               <p class="p">
+                  <span class="ph uicontrol">Privacy protocol:</span> Use
+either AES or DES as a privacy protocol. For encryption of the SNMPv3
+requests it is required to use both an authentication and a privacy
+protocol. To set a privacy protocol an authentication protocol must
+be selected.</p>
+            </li>
+         </ul>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Configure SNMPv3 from the CLI</h2>
+         
+         <div class="sectiondiv">
+            <ol class="ol">
+               <li class="li">
+                  <p class="p">Log in to the CLI.</p>
+               </li>
+               <li class="li">
+                  <div class="p">To see the configuration options type <code class="ph codeph">snmpV3 ?</code>.<div class="note note note_note"><span class="note__title">Note:</span> In the table <code class="ph codeph">[n]</code> is the user name number 1, 2, 3 or 4.</div>
+                     <table class="table"><caption></caption><colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:40%"></colgroup><thead class="thead">
+                              <tr class="row">
+                                 <th class="entry valign-top" id="SNMPv3Access-80A504FD__entry__1">
+                                    <span class="ph">Setting</span>
+                                 </th>
+                                 <th class="entry valign-top" id="SNMPv3Access-80A504FD__entry__2">
+                                    <span class="ph">Command</span>
+                                 </th>
+                                 <th class="entry valign-top" id="SNMPv3Access-80A504FD__entry__3">
+                                    <span class="ph">Argument</span>
+                                 </th>
+                                 <th class="entry valign-top" id="SNMPv3Access-80A504FD__entry__4">
+                                    <span class="ph">Description</span>
+                                 </th>
+                              </tr>
+                           </thead><tbody class="tbody">
+                              <tr class="row">
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__1">
+                                    <span class="ph">Help</span>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__2">
+                                    <code class="ph codeph">?</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__3">
+                                    <code class="ph codeph"></code>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__4">
+                                    <span class="ph">Shows the command help.</span>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__1">
+                                    <span class="ph">SNMPv3 access</span>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__2">
+                                    <code class="ph codeph">–S</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__3">
+                                    <code class="ph codeph">enable | disable</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__4">
+                                    <span class="ph">Enables or disables SNMP version 3.</span>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__1">
+                                    <span class="ph">User name</span>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__2">
+                                    <code class="ph codeph">–u[n]</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__3">
+                                    <code class="ph codeph">&lt;User Name&gt;</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__4">
+                                    <span class="ph">Set a user name.</span>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__1">
+                                    <span class="ph">Authentication phrase</span>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__2">
+                                    <code class="ph codeph">–a[n]</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__3">
+                                    <code class="ph codeph">&lt;Authentication Phrase&gt;</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__4">
+                                    <span class="ph">Set an authentication phrase.</span>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__1">
+                                    <span class="ph">Encryption phrase</span>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__2">
+                                    <code class="ph codeph">–c[n]</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__3">
+                                    <code class="ph codeph">&lt;Crypt Phrase&gt;</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__4">
+                                    <span class="ph">Set an encryption phrase.</span>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__1">
+                                    <span class="ph">Authentication protocol</span>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__2">
+                                    <code class="ph codeph">–ap[n]</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__3">
+                                    <code class="ph codeph">sha | md5 | none</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__4">
+                                    <span class="ph">Set the type of authentication protocol.</span>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__1">
+                                    <span class="ph"> Privacy (encryption) protocol</span>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__2">
+                                    <code class="ph codeph">–pp[n]</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__3">
+                                    <code class="ph codeph">eas | des | none</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__4">
+                                    <span class="ph">Set the privacy (encryption) protocol.</span>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__1">
+                                    <span class="ph">Slave address</span>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__2">
+                                    <code class="ph codeph">–ac[n]</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__3">
+                                    <code class="ph codeph">enable | disable</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__4">
+                                    <span class="ph">Enable or disable access.</span>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__1">
+                                    <span class="ph">User access</span>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__2">
+                                    <code class="ph codeph">–au[n]</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__3">
+                                    <code class="ph codeph">&lt;User Name&gt;</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__4">
+                                    <span class="ph">Give access to a user.</span>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__1">
+                                    <span class="ph">Set IPv4/IPv6 address or host name</span>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__2">
+                                    <code class="ph codeph">–n[n]</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__3">
+                                    <code class="ph codeph">&lt;IP address&gt; | &lt;Host Name&gt;</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPv3Access-80A504FD__entry__4">
+                                    <span class="ph">Set the IPv4/IPv6
+address or the host name of the network management station.</span>
+                                 </td>
+                              </tr>
+                           </tbody></table>
+                  </div>
+               </li>
+            </ol>
+         </div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Configure SNMPv3 from the Web Interface</h2>
+         
+         <ol class="ol">
+            <li class="li">
+               <p class="p">Log in to the web interface.</p>
+            </li>
+            <li class="li">
+               <p class="p">Navigate to <span class="ph uicontrol">Configuration &gt; Network
+&gt; SNMPv3 &gt; User Profile</span>.</p>
+            </li>
+            <li class="li">
+               <p class="p">Click on a user name to view the settings for it.</p>
+            </li>
+            <li class="li">
+               <p class="p">Here it is possible to configure the <span class="ph uicontrol">User Name</span>, <span class="ph uicontrol">Authentication Passphrase</span>, <span class="ph uicontrol">Authentication Protocol</span>, <span class="ph uicontrol">Privacy Passphrase</span> and <span class="ph uicontrol">Privacy Protocol</span>.</p>
+               <figure class="fig fignone">
+                  <img class="image" src="../Images/NMC_Configuration_Network_SNMPv3_Access-Control_Configure-user_access_0000337185.png">
+               </figure>
+            </li>
+            <li class="li">
+               <div class="p">Click <span class="ph uicontrol">Apply</span> to save any
+changes.<div class="note note note_note"><span class="note__title">Note:</span> Reboot the NMC to apply changes. From
+the web interface select <span class="ph uicontrol">Control &gt; Network
+&gt; Reset/Reboot</span> for options.</div>
+               </div>
+            </li>
+            <li class="li">
+               <p class="p">Navigate to <span class="ph uicontrol">Configuration &gt; Network
+&gt; SNMPv3 &gt; Access Control</span>.</p>
+            </li>
+            <li class="li">
+               <p class="p">Click on a user name to view the settings for it.</p>
+            </li>
+            <li class="li">
+               <p class="p">Here it is possible to enable <span class="ph uicontrol">Access</span> and configure the <span class="ph uicontrol">NMS IP/Host Name</span> for the selected <span class="ph uicontrol">User Name</span>. Use the drop-down menu to change <span class="ph uicontrol">User
+Name</span> to configure.</p>
+               <figure class="fig fignone">
+                  <img class="image" src="../Images/NMC_Configuration_Network_SNMPv3_Access-Control_Configure-user_0000337184.png">
+               </figure>
+            </li>
+            <li class="li">
+               <div class="p">Click <span class="ph uicontrol">Apply</span> to save any
+changes.<div class="note note note_note"><span class="note__title">Note:</span> Reboot the NMC to apply changes. From
+the web interface select <span class="ph uicontrol">Control &gt; Network
+&gt; Reset/Reboot</span> for options.</div>
+               </div>
+            </li>
+         </ol>
+      </section>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Reality-Batch_3/Topics/NMC_SNMP_Access_to_the_Network_Management_Card_CPT_0000334031.html">SNMP Access to the Network Management Card</a></div></div></nav></article></main></body></html>

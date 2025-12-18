@@ -1,0 +1,125 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="task"><meta name="description" content="Reality EMEA"><meta name="DC.subject" content="metr-pxc-reality,independent-static-bypass-switch-controller,bypass-module,control-board,interface-board,ups-system,update-firmware,firmware-flash,controller-upgrade,validate-firmware-version,rollback-procedure,verify-operational-status,maintenance-procedures,field-service,firmware-management,ups-troubleshooting,production-operations,industrial-engineering"><meta name="keywords" content="metr-pxc-reality, independent-static-bypass-switch-controller, bypass-module, control-board, interface-board, ups-system, update-firmware, firmware-flash, controller-upgrade, validate-firmware-version, rollback-procedure, verify-operational-status, maintenance-procedures, field-service, firmware-management, ups-troubleshooting, production-operations, industrial-engineering"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-11-19+05:30"><meta name="DC.date.modified" content="2025-11-19"><meta name="title" content="Update the Firmware for the Independent Static Bypass Switch Controller "><meta name="shortdesc" content="Procedure to update and verify firmware on the independent static bypass switch controller, including validation and rollback guidance."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="independent static bypass switch controller; bypass module; control board; interface board; UPS; firmware image; programming cable"><meta name="taxonomy" content="domain:industrial-engineering;usecase:firmware-update;industry: uninterruptible power supply (UPS) systems"><meta name="tags" content="firmware-update,controller,rollback,validation,maintenance"><meta name="usecase" content="firmware-update"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="UpdateTheFirmwareForTheIndependentS-CE72B1DE"><meta name="DC.language" content="en"><title>Update the Firmware for the Independent Static Bypass Switch Controller Board</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="UpdateTheFirmwareForTheIndependentS-CE72B1DE"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Update the Firmware for the Independent Static Bypass Switch
+Controller Board</h1>
+   
+   
+   
+   <div class="body taskbody"><p class="shortdesc">
+      <span class="keyword">Reality EMEA</span>
+   </p>
+      <section class="section prereq">
+          Tools: PICkit 3 in-circuit debugger.<figure class="fig fignone">
+            <img class="image" src="../Images/pickit_programmer_0000147210.jpg">
+         </figure>
+      </section>
+      <section><ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Turn OFF the UPS system. See <a class="xref" href="Turn_off_the_UPS_TSK_0000060296.html">Turn off the UPS</a>.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Connect the computer to the independent static bypass switch
+controller board with the PICkit 3 in-circuit debugger. Do not connect
+the PICkit 3 in-circuit debugger directly to the independent static
+bypass switch controller board, but use a cable in between. Only connect
+to six of the seven pins – see image.</span>
+            <div class="itemgroup stepxmp">
+               <figure class="fig fignone">
+                  <img class="image" src="../Images/pickit3_connect_to_only_6_pins_0000149716.jpg">
+               </figure>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Close the static bypass input breaker Q528. The independent
+static bypass switch controller board turns ON (onboard LEDs illuminate).</span>
+            <div class="itemgroup stepxmp">
+               <figure class="fig fignone"></figure>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Launch the <span class="ph uicontrol">MPlab8.73a</span> software on
+your computer.</span>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click on <span class="ph menucascade"><span class="ph uicontrol">Configure</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Select Device</span></span>.</span>
+            <div class="itemgroup stepxmp">
+               <figure class="fig fignone">
+                  <img class="image" src="../Images/mplab_screen1_0000147209.jpg">
+               </figure>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Select the chip model used on the  independent static bypass
+switch controller board: <span class="ph uicontrol">PIC16F876</span>.</span>
+            <div class="itemgroup stepxmp">
+               <figure class="fig fignone">
+                  <img class="image" src="../Images/isbs_controller_chip_model_0000147208.jpg">
+                  <img class="image" src="../Images/mplab_screen2_0000147207.jpg">
+               </figure>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Select <span class="ph menucascade"><span class="ph uicontrol">Programme</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Select Programmer</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">PICkit 3</span></span> (first time).</span>
+            <div class="itemgroup stepxmp">
+               <figure class="fig fignone">
+                  <img class="image" src="../Images/pick3_0000152212.jpg">
+               </figure>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">The <span class="ph uicontrol">Mplab</span> software will perform
+a verification of the chip selection.</span>
+            <div class="itemgroup stepxmp">
+               <figure class="fig fignone">
+                  <img class="image" src="../Images/mplab_screen3_0000147206.jpg">
+               </figure>
+            </div>
+            <ol type="a" class="ol substeps">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">If the correct chip <span class="ph uicontrol">PIC16F876</span> is selected, the following screen will appeared without any error
+message.</span>
+                  <div class="itemgroup stepxmp">
+                     <figure class="fig fignone">
+                        <img class="image" src="../Images/mplab_screen4_0000147205.jpg">
+                     </figure>
+                  </div>
+               </li>
+            </ol>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click on <span class="ph menucascade"><span class="ph uicontrol">File</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Import</span></span> and browse to the latest firmware
+file. Select the latest independent static bypass switch controller
+board firmware that matches the independent static bypass switch controller
+board part number.</span>
+            <div class="itemgroup stepxmp">
+               <figure class="fig fignone">
+                  <img class="image" src="../Images/mplab_screen5_0000147234.jpg">
+                  <img class="image" src="../Images/mplab_screen6_0000147233.jpg">
+                  <img class="image" src="../Images/mplab_screen7_0000147232.jpg">
+               </figure>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click on the <span class="ph uicontrol">Erase Flash Device</span> icon
+to empty the <span class="ph uicontrol">PIC16F876</span> chip memory.</span>
+            <div class="itemgroup stepxmp">
+               <figure class="fig fignone">
+                  <img class="image" src="../Images/mplab_screen8_0000147231.jpg">
+                  <img class="image" src="../Images/mplab_screen9_0000147230.jpg">
+               </figure>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click on the <span class="ph uicontrol">Blank Check All</span> icon
+to verify that the <span class="ph uicontrol">PIC16F876</span> chip is empty.</span>
+            <div class="itemgroup stepxmp">
+               <figure class="fig fignone">
+                  <img class="image" src="../Images/mplab_screen10_0000147229.jpg">
+                  <img class="image" src="../Images/mplab_screen11_0000147228.jpg">
+               </figure>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd">Click on the <span class="ph uicontrol">Program</span> icon to write
+the latest firmware into the <span class="ph uicontrol">PIC16F876</span> chip.</span>
+            <div class="itemgroup stepxmp">
+               <figure class="fig fignone">
+                  <img class="image" src="../Images/mplab_screen12_0000147227.jpg">
+               </figure>
+            </div>
+         </li><li class="li step stepexpand">
+            <span class="ph cmd"> The independent static bypass switch controller board
+firmware update is complete. Open the static bypass input breaker
+Q528 to restart the  independent static bypass switch controller board.</span>
+         </li></ol></section>
+   </div>
+</article></main></body></html>

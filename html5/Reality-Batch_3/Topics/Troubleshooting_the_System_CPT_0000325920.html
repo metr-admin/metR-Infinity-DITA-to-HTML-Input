@@ -1,0 +1,1405 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="system troubleshooting,UPS system faults,error conditions,alarm indicators,fault logs,power electronic modules,control system diagnostics,fault isolation workflow,system-level diagnostics,root cause analysis procedure,corrective action steps,parameter verification,system recovery workflow,preventive action identification,industrial reliability domain,critical load environment,facility-wide UPS monitoring,operational continuity context,electrical infrastructure systems,maintenance and service environment,system-level diagnostics environment"><meta name="keywords" content="system troubleshooting, UPS system faults, error conditions, alarm indicators, fault logs, power electronic modules, control system diagnostics, fault isolation workflow, system-level diagnostics, root cause analysis procedure, corrective action steps, parameter verification, system recovery workflow, preventive action identification, industrial reliability domain, critical load environment, facility-wide UPS monitoring, operational continuity context, electrical infrastructure systems, maintenance and service environment, system-level diagnostics environment"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Troubleshoot_the_System_CPT_0000463004.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Troubleshoot_the_System_CPT_0000463004.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Troubleshoot_the_System_CPT_0000463004.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Troubleshoot_the_System_CPT_0000463004.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Troubleshoot_the_System_CPT_0000463004.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-03+05:30"><meta name="DC.date.modified" content="2025-12-03"><meta name="title" content="Troubleshooting the System"><meta name="shortdesc" content="Provides detailed steps for troubleshooting system-level UPS faults, including diagnostics, alarm evaluation, corrective actions, and verification after repair."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="event logs; system controller; inverter; rectifier; sensors; alarm panel; power modules"><meta name="taxonomy" content="domain:system diagnostics;usecase:system-wide-UPS-troubleshooting;industry:uninterruptible power supply (UPS) systems"><meta name="tags" content="system troubleshooting,UPS diagnostics,alarms,fault isolation,error codes,corrective actions"><meta name="usecase" content="Help operators and technicians identify, analyze, and correct system-wide UPS faults"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="Troubleshooting-555BE1D4"><meta name="DC.language" content="en"><title>Troubleshoot from the Alarm Panel</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="Troubleshooting-555BE1D4"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Troubleshoot from the Alarm Panel</h1>
+   
+   
+   <div class="body conbody">
+      <figure class="fig fignone">
+         <img class="image" src="../Images/PxW_Alarm_Display_0000352230.svg">
+         <div class="note note note_note"><span class="note__title">Note:</span> Not all LEDs are
+used in all system types or configurations.</div>
+         <div class="note note note_note"><span class="note__title">Note:</span> The alarm text is only displayed in English even if another
+system language is used.</div>
+      </figure>
+      <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:20%"><col style="width:40%"><col style="width:40%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="Troubleshooting-555BE1D4__entry__1">
+                     <span class="ph" id="Troubleshooting-555BE1D4__AlarmIndicator-0F3E4262">Alarm Indicator</span>
+                  </th>
+                  <th class="entry valign-top" id="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph" id="Troubleshooting-555BE1D4__AlarmNumberAndText-0F3E43BD">Alarm
+Number and Text</span>
+                  </th>
+                  <th class="entry valign-top" id="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph" id="Troubleshooting-555BE1D4__PossibleSource-0F3E4780">Possible
+Source</span>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1" rowspan="5">
+                     <span class="ph">
+                        <strong class="ph b">(A) </strong>Rectifier mains fault[30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">26: Rectifier not
+synchronized</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">Unstable rectifier
+mains input</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">27: Mains voltage
+out of tolerance</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">The input voltage
+(average) is out of tolerance</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">28: Mains freq out
+of tolerance</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">The input frequency
+is out of tolerance</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">29: Mains phase missing</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">At least one
+phase is not connected</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">30: Mains phase order
+incorrect</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">Wiring at the
+rectifier mains input terminal</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(A) </strong>—</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">—</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">—</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1" rowspan="2">
+                     <span class="ph">
+                        <strong class="ph b">(B) </strong>Rectifier failure[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">47: Rectifier UI deviation warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">and “Rectifier mains fault” is not active</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">Unstable rectifier mains input</li>
+                        <li class="sli">Rectifier parameter setting</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">106: Charger 30° temp shutdown</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">104: Charger 0° temp shutdown</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">Charger module
+A030 / A031</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(B) </strong>—</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">—</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">—</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1" rowspan="2">
+                     <span class="ph">
+                        <strong class="ph b">(C) </strong>DC out of tolerance[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">35: Low DC warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">36: Low DC shutdown</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The DC is below the low DC warning/shutdown level</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Rectifier inoperable</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Battery is discharged or disconnected</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The DC power input is out of
+tolerance or unavailable.</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">37: High DC warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">38: High DC shutdown</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The DC is above the high DC warning/shutdown level</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">High load variation</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Rectifier parameter setting</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(D) </strong>Rectifier fuse blown[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">46: Rectifier fuse
+blown</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The fuse trip indicator is not connected</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Rectifier output fuse F026 (F027) blown</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(D) </strong>—</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">—</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">—</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(E) </strong>Battery operation[30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">163: Battery operation</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Rectifier inoperable</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Inverter supplied by the battery</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Inverter supplied by the battery
+in the external DC UPS system</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1" rowspan="2">
+                     <span class="ph">
+                        <strong class="ph b">(F) </strong>Battery discharged[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">35: Low DC warning</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">The DC is below
+the low DC warning level</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">57: Battery monitor
+alarm</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">Battery is
+discharged or disconnected</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(F) </strong>DC low warning[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">35: Low DC warning</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">The DC is below the low DC warning
+level</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(G) </strong>Batt. disconnected[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">51: Battery breaker open</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">60: External battery breaker open</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">Switch open
+or auxiliary contact not connected</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(H) </strong>DC earth fault [5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">58: Earth- leak warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">59: Earth+ leak warning</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">One of the battery poles is connected
+to earth</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1" rowspan="2">
+                     <span class="ph">
+                        <strong class="ph b">(I) </strong>Inverter fault[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">67: Inverter volt out of tolerance</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">and no current overload (&lt; 105%)</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Inverter fuse blown</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">DC input too low</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Inverter inoperable</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">116-139: Power module
+temperature shutdown</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">The inverter power unit temperature
+is too high</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(J) </strong>Overload inv./bypass[30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">76: OVERLOAD: load
+is &gt; 100%</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">The load current
+is higher than the nominal current of the system</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(K) </strong>Inverter fuse blown[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">68: Inverter fuse
+blown</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Power fuse F021 (F022... F023)</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Inverter input switch Q020 is open</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(L) </strong>Asynchronous[30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">66: Inverter not synchronized</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The bypass mains frequency is out of tolerance or unstable</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The inverter is off</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1" rowspan="2">
+                     <span class="ph">
+                        <strong class="ph b">(M) </strong>Bypass mains fault[30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">87: Bypass avg out of tolerance</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">88: Bypass fast out of tolerance</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">89: Bypass freq out of tolerance</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">The bypass
+mains voltage or the frequency is out of tolerance</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">93: Bypass phase order
+incorrect</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">Wiring at the
+bypass mains input terminal</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(N) </strong>Manual bypass on[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">90: System set in
+manual bypass</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">Manual bypass
+switch Q050 is not at position <strong class="ph b">Auto</strong>
+                     </span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1" rowspan="2">
+                     <span class="ph">
+                        <strong class="ph b">(O) </strong>EN inhibited[30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">87: Bypass avg out of tolerance</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">88: Bypass fast out of tolerance</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">89: Bypass freq out of tolerance</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">The bypass
+mains voltage or the frequency is out of tolerance</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">114: SSW EN temp shutdown</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">The static
+switch EN temperature is too high</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(P) </strong>EA inhibited [5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">112: SSW EA temp shutdown</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The inverter is off</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The static switch EA temperature is too high</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(Q) </strong>Overtemperature [5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">103-106: Charger
+temperature warning or shutdown</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">107-110: Magnetics temperature warning or
+shutdown</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">111-114: Static switches temperature warning
+or shutdown</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">116-139: Power module temperature warning
+or shutdown</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Obstructed air inlet</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Too high ambient temperature </span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The winding material is too hot </span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The heat-sink of the power components is too hot</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(R) </strong>Fan failure [30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">82: Fan inoperable</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Fans</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Fan monitoring board (A055 / A056)</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Fan transformer (T051 / T052)</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Power supply for the fans</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(S) </strong>Power supply fault [5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">6: PSU AC or DC not working </span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">7: AC power supply for parallel inverter fault </span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">8: DC power supply for parallel inverter fault</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Power supply units : PSU A201 / A202</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">AC or DC power supply sources</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Interface A071</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(T) </strong>Parallel cable interrupted [5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__2">
+                     <span class="ph">96: At least one parallel
+cable interrupted</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__3">
+                     <span class="ph">At least one
+of the parallel cables are inoperable or disconnected</span>
+                  </td>
+               </tr>
+            </tbody></table>
+      <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:20%"><col style="width:40%"><col style="width:40%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="Troubleshooting-555BE1D4__entry__96">
+                     <span class="ph">Alarm Indicator</span>
+                  </th>
+                  <th class="entry valign-top" id="Troubleshooting-555BE1D4__entry__97">
+                     <span class="ph">Alarm
+Number and Text</span>
+                  </th>
+                  <th class="entry valign-top" id="Troubleshooting-555BE1D4__entry__98">
+                     <span class="ph">Possible
+Source</span>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__96" rowspan="5">
+                     <span class="ph">
+                        <strong class="ph b">(A)</strong> Rectifier mains fault[30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__97">
+                     <span class="ph">16: Charger not synchronized</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__98">
+                     <span class="ph">Unstable rectifier mains input</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__97">
+                     <span class="ph">17: Mains phase missing</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__98">
+                     <span class="ph">At least one phase is not connected</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__97">
+                     <span class="ph">18: Mains phase order
+incorrect</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__98">
+                     <span class="ph">Wiring at the rectifier mains input
+terminal</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__97">
+                     <span class="ph">19: Mains freq out
+of range</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__98">
+                     <span class="ph">The input frequency is out of tolerance</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__97">
+                     <span class="ph">20: Mains voltage
+out of range</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__98">
+                     <span class="ph">The input voltage is out of tolerance</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__96">
+                     <span class="ph">
+                        <strong class="ph b">(B)</strong> Rectifier failure[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__97">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">32: UI-deviation warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">52: Charger 0° temp shutdown</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">54: Charger 30° temp shutdown</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">and “Rectifier mains fault” is not active</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__98">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The load current is higher than the nominal current of the
+system</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The Input voltage is low but in tolerance</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The system is turned off or in standby</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The rectifier or PSU is inoperable</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__96">
+                     <span class="ph">
+                        <strong class="ph b">(E)</strong> DC out of tolerance[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__97">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">22: Low Vdc warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">23: Low Vdc shutdown</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">24: High Vdc warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">25: High2 Vdc shutdown</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">26: Low Vaux warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">27: Low Vaux shutdown</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">28: High Vaux warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">29: High Vaux shutdown</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__98">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The load current is higher than the nominal current of the
+system</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Short-circuit</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The system is turned off or in standby</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The rectifier or PSU is inoperable</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The battery is discharged or disconnected during battery
+operation</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__96">
+                     <span class="ph">
+                        <strong class="ph b">(F)</strong> DC Fuse blown[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__97">
+                     <span class="ph">31: Charger fuse blown</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__98">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The fuse trip indicator is not connected</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The load current is higher than the nominal current of the
+system</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Short-circuit</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Rectifier output fuse F026 (F027) blown</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__96">
+                     <span class="ph">
+                        <strong class="ph b">(G)</strong> Rect. Overcurrent[30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__97">
+                     <span class="ph">30: Total DC current
+limit</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__98">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The load current is higher than the nominal current of the
+system</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Short-circuit</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__96">
+                     <span class="ph">
+                        <strong class="ph b">(H)</strong> Load sharing fault[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__97">
+                     <span class="ph">48: Loadsharing incorrect</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__98">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The output voltage is calibrated incorrectly</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The temperature compensation is incorrect</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__96" rowspan="2">
+                     <span class="ph">
+                        <strong class="ph b">(I)</strong> Battery discharged[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__97">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">22: Low Vdc warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">26: Low Vaux warning</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__98">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">One or more battery cells are defective</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The battery is discharged</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The system is turned off or in standby</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__97">
+                     <span class="ph">42: Battery defective</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__98">
+                     <span class="ph">The battery monitor not reset after
+installation of new battery</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__96">
+                     <span class="ph">
+                        <strong class="ph b">(J)</strong> Battery disconnected[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__97">
+                     <span class="ph">35: Battery breaker
+open</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__98">
+                     <span class="ph">Battery breaker open or auxiliary
+contact not connected</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__96">
+                     <span class="ph">
+                        <strong class="ph b">(K)</strong> DC earth fault[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__97">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">43: Earth + leak warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">44: Earth - leak warning</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__98">
+                     <span class="ph">One of the battery poles is connected
+to earth</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__96">
+                     <span class="ph">
+                        <strong class="ph b">(M)</strong> Control power fault[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__97">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">5: AC PSU not working</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">6: DC PSU not working</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__98">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Connector cable is missing to at least one of the PSUs</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The rectifier mains is not available or the rectifier mains
+input breaker is open</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The battery is disconnected or a battery breaker is open</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__96" rowspan="4">
+                     <span class="ph">
+                        <strong class="ph b">(N)</strong> Overtemperature[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__97">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">51: Charger 0° temp warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">52: Charger 0° temp shutdown</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">53: Charger 30° temp warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">54: Charger 30° temp shutdown</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__98">
+                     <span class="ph">Overtemperature on the rectifier
+power components</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__97">
+                     <span class="ph">55: Transformer temp
+warning</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__98">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Air inlet obstructed</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The fans are inoperable</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__97">
+                     <span class="ph">56: Choke temp warning</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__98">
+                     <span class="ph">The ambient temperature is too high</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__97">
+                     <span class="ph">57: Diode temp warning</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__98">
+                     <span class="ph">The sensor contacts are not connected</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__96">
+                     <span class="ph">
+                        <strong class="ph b">(O)</strong> Fan failure [30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__97">
+                     <span class="ph">61-68: Fan 1-8 inoperable</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__98">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">One or more fans are blocked, rotating too slow or disconnected</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Fan supply missing</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+            </tbody></table>
+      <p class="p">There are multiple LED’s on the display that can be used
+for optional alarms. Here are information on how to troubleshoot some
+of the standard options:</p>
+      <div class="note note note_note"><span class="note__title">Note:</span> Not all alarms are possible for all system configurations.</div>
+      <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:20%"><col style="width:40%"><col style="width:40%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="Troubleshooting-555BE1D4__entry__151">
+                     <span class="ph">Alarm Indicator</span>
+                  </th>
+                  <th class="entry valign-top" id="Troubleshooting-555BE1D4__entry__152">
+                     <span class="ph">Alarm
+Number and Text</span>
+                  </th>
+                  <th class="entry valign-top" id="Troubleshooting-555BE1D4__entry__153">
+                     <span class="ph">Possible
+Source</span>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__151" rowspan="1" colspan="1">
+                     <span class="ph">Rectifier
+output switch Q003 open [5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__152" rowspan="1" colspan="1">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">25: Mains breaker open</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">140–145: Option x</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__153" rowspan="1" colspan="1">
+                     <span class="ph">The rectifier
+output switch Q003 is open. The battery and the load are disconnected
+from the rectifier. The load can only be supplied by the bypass mains
+or from the battery. The rectifier is turned off.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__151" rowspan="1" colspan="1">
+                     <span class="ph">Inverter
+input switch Q020 open [5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__152" rowspan="1" colspan="1">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">65: Inverter breaker open</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">140–145: Option x</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__153" rowspan="1" colspan="1">
+                     <span class="ph">The inverter input switch Q020 has automatically or
+manually been opened. The inverter is disconnected from the rectifier
+and battery. The load can only be supplied by the bypass mains. The
+alarm Inv. fuse blown will be activated.</span>
+                     <span class="ph">The
+inverter input switch Q020 has automatically or manually been opened.
+The inverter is disconnected from the DC input power. The load can
+only be supplied by the bypass mains. The alarm Inv. fuse blown will
+be activated.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__151" rowspan="1" colspan="1">
+                     <span class="ph">Inverter
+output switch Q030 open[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__152" rowspan="1" colspan="1">
+                     <span class="ph">140–145: Option x</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__153" rowspan="1" colspan="1">
+                     <span class="ph">The inverter
+output switch Q030 is open. The load can only be supplied via the
+static switch EN or from the bypass mains via the manual bypass switch
+Q050 at position <strong class="ph b">Bypass</strong>.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__151" rowspan="1" colspan="1">
+                     <span class="ph">Distribution
+input Q100 open [5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__152" rowspan="1" colspan="1">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">71: Output breaker open</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">140–145: Option x</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__153" rowspan="1" colspan="1">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The load output switch Q100 is open.</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The system output is disconnected from the inverter. </span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The load is no longer supplied.</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__151" rowspan="1" colspan="1">
+                     <span class="ph">Distribution
+MCB tripped [5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__152" rowspan="1" colspan="1">
+                     <span class="ph">140–145: Option x</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__153" rowspan="1" colspan="1">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">One or more of the outgoing feeders in the AC distribution
+has tripped.</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Overload or short-circuit on one of the outgoing feeders.</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__151" rowspan="1" colspan="1">
+                     <span class="ph">Distribution
+MCB open [5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__152" rowspan="1" colspan="1">
+                     <span class="ph">140–145: Option x</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__153" rowspan="1" colspan="1">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">One or more of the outgoing feeders in the AC distribution
+are open. </span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Overload or short-circuit on one of the outgoing feeders.</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__151" rowspan="1" colspan="1">
+                     <span class="ph">Distribution
+AC earth fault [5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__152" rowspan="1" colspan="1">
+                     <span class="ph">140–145: Option x</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__153" rowspan="1" colspan="1">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Earth fault on the AC output.</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The insulation resistance to earth is below set point.</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+            </tbody></table>
+      <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:20%"><col style="width:40%"><col style="width:40%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="Troubleshooting-555BE1D4__entry__175">
+                     <span class="ph">Alarm Indicator</span>
+                  </th>
+                  <th class="entry valign-top" id="Troubleshooting-555BE1D4__entry__176">
+                     <span class="ph">Alarm
+Number and Text</span>
+                  </th>
+                  <th class="entry valign-top" id="Troubleshooting-555BE1D4__entry__177">
+                     <span class="ph">Possible
+Source</span>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__175">
+                     <span class="ph">Q003 open[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__176">
+                     <span class="ph">45: Load breaker open</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__177">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Q003 is open or auxiliary contact is not connected</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Q003 auxiliary contact is not connected to its input on the
+interface</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Q003 auxiliary contact is only connected to an option input</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__175">
+                     <span class="ph">Q100 open[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__176">
+                     <span class="ph">71-78: Option 1-8</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__177">
+                     <span class="ph">Distribution input switch Q100 is
+open or auxiliary contact is not connected</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__175">
+                     <span class="ph">High DC
+warning[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__176">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">24: High Vdc warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">28: High Vaux warning</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__177">
+                     <span class="ph">DC voltage output from the rectifier
+is too high</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__175">
+                     <span class="ph">Low DC
+warning[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__176">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">22: Low Vdc warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">26: Low Vaux warning</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__177">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The load current is higher than the nominal current of the
+system</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Short-circuit</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The system is turned off or in standby</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The rectifier or PSU is inoperable</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The battery is disconnected or a battery breaker is open</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__175">
+                     <span class="ph">Dropper
+voltage out of tolerance[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__176">
+                     <span class="ph">71-78: Option 1-8</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__177">
+                     <span class="ph">The dropper voltage is outside the
+tolerance window</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__175">
+                     <span class="ph">Dropper
+fan failure[30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__176">
+                     <span class="ph">71-78: Option 1-8</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__177">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The dropper fans are inoperable or too slow.</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Supply to the fans are missing</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__175">
+                     <span class="ph">Distribution
+MCB tripped[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__176">
+                     <span class="ph">71-78: Option 1-8</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__177">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">One or more of the outgoing feeders in the DC distribution
+has tripped</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Overload or short-circuit on one of the outgoing feeders</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__175">
+                     <span class="ph">Distribution
+MCB open[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__176">
+                     <span class="ph">71-78: Option 1-8</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__177">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">One or more of the outgoing feeders in the DC distribution
+are open</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Overload or short-circuit on one of the outgoing feeders</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__175">
+                     <span class="ph">Distribution DC earth fault[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__176">
+                     <span class="ph">71-78: Option 1-8</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-555BE1D4__entry__177">
+                     <span class="ph">Earth fault
+on the DC output in the distribution</span>
+                  </td>
+               </tr>
+            </tbody></table>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Reality-Batch_3/Topics/Troubleshoot_the_System_CPT_0000463004.html">Troubleshoot the System</a></div></div></nav></article></main></body></html>

@@ -1,0 +1,1227 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="dita"><meta name="DC.subject" content="modbus-func-03,modbus-func-04,holding-register,input-register,modbus-client,read-holding-register,read-input-register,function-call-sequence,error-handling,retry-policy,data-acquisition,scada-poller,telemetry,serial-over-tcp,commissioning,modbus-register-map,holding-registers,input-registers,coil-registers,g.bms-communication,register-addressing-schema,read-write-procedures,data-scaling-and-units,polling-interval-recommendations,error-handling-and-timeouts,scada-and-nms-integration,industrial-protocol-conversion,data-centre-power-monitoring,utility-substation-monitoring,manufacturing-floor-control,battery-string-modbus-registers,battery-monitoring-communication,bms-communication-parameters,register-address-list,read-modbus-register,configure-modbus-mapping,validate-communication,map-parameter-to-register,telemetry-integration,scada-and-telemetry-integration,industrial-battery-management,data-center-monitoring,commissioning-communication-links,remote-monitoring-and-diagnostics,modbus-registers,gbms-module,modbus-map,read-register,write-register,configure-modbus,map-registers,polling-interval-configuration,scada-integration,telemetry-collection,network-monitoring,remote-diagnostics,gxr-aux-module,modbus-alarm-registers,register-map,alarm-register-decoding,modbus-polling-configuration,alarm-threshold-mapping,register-read-and-interpretation,alarm-clearing-procedure,site-commissioning-and-testing,emergency-power-systems,data-centre-alarm-management,industrial-control-room,power-plant-monitoring,modbus-output-registers,analog-output,digital-output,output-register-interpretation,configure-output-mapping,scaling-and-calibration,output-test-sequence,diagnostic-readings,field-testing-and-commissioning,control-system-integration,power-generation-control-loop,industrial-automation-panels,data-logging-and-telemetry"><meta name="keywords" content="modbus-func-03, modbus-func-04, holding-register, input-register, modbus-client, read-holding-register, read-input-register, function-call-sequence, error-handling, retry-policy, data-acquisition, scada-poller, telemetry, serial-over-tcp, commissioning, modbus-register-map, holding-registers, input-registers, coil-registers, g.bms-communication, register-addressing-schema, read-write-procedures, data-scaling-and-units, polling-interval-recommendations, error-handling-and-timeouts, scada-and-nms-integration, industrial-protocol-conversion, data-centre-power-monitoring, utility-substation-monitoring, manufacturing-floor-control, battery-string-modbus-registers, battery-monitoring-communication, bms-communication-parameters, register-address-list, read-modbus-register, configure-modbus-mapping, validate-communication, map-parameter-to-register, telemetry-integration, scada-and-telemetry-integration, industrial-battery-management, data-center-monitoring, commissioning-communication-links, remote-monitoring-and-diagnostics, modbus-registers, gbms-module, modbus-map, read-register, write-register, configure-modbus, map-registers, polling-interval-configuration, scada-integration, telemetry-collection, network-monitoring, remote-diagnostics, gxr-aux-module, modbus-alarm-registers, register-map, alarm-register-decoding, modbus-polling-configuration, alarm-threshold-mapping, register-read-and-interpretation, alarm-clearing-procedure, site-commissioning-and-testing, emergency-power-systems, data-centre-alarm-management, industrial-control-room, power-plant-monitoring, modbus-output-registers, analog-output, digital-output, output-register-interpretation, configure-output-mapping, scaling-and-calibration, output-test-sequence, diagnostic-readings, field-testing-and-commissioning, control-system-integration, power-generation-control-loop, industrial-automation-panels, data-logging-and-telemetry"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-12-06T15:00:00+05:30"><meta name="DC.date.modified" content="2025-12-06T15:00:00+05:30"><meta name="title" content="Modbus read registers function calls 03 and 04"><meta name="shortdesc" content="Behavior and usage examples for Modbus function 03 and 04 read operations against GBMS modules."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="modbus-func-03;modbus-func-04;holding-register;input-register;modbus-transaction"><meta name="taxonomy" content="domain:ups;usecase:modbus-communication; industry: uninterruptible power supply (UPS) systems"><meta name="tags" content="modbus,read-operations,function-03,function-04"><meta name="usecase" content="explain modbus read function usage for telemetry and integration"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="ModbusReadRegistersFunctionCalls030-7B62395C"><meta name="DC.language" content="en"><title>Modbus Read Registers (Function Calls 03/04)</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="ModbusReadRegistersFunctionCalls030-7B62395C">
+   <h1 class="title topictitle1" id="ariaid-title1">Modbus Read Registers (Function Calls 03/04)</h1>
+   
+   
+   <div class="body conbody">
+      <p class="p">The read holding register contains analog information, the measured
+values of several parameters.</p>
+      <p class="p">The data is stored as 16-bit signed or unsigned integer, with the
+hexadecimal format FFFF of 4 digits.</p>
+   </div>
+<article class="topic concept nested1" aria-labelledby="ariaid-title2" lang="en" id="GeneralModbusRegisters-800684AE">
+   <h2 class="title topictitle2" id="ariaid-title2">General Modbus Registers</h2>
+   
+   
+   <div class="body conbody">
+      <p class="p">These registers are in <u class="ph u">0 base</u> and are <u class="ph u">unsigned</u>.</p>
+      <table class="table"><caption></caption><colgroup><col style="width:16.666666666666664%"><col style="width:33.33333333333333%"><col style="width:50%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="GeneralModbusRegisters-800684AE__entry__1">
+                     <span class="ph">Register </span>
+                  </th>
+                  <th class="entry valign-top" id="GeneralModbusRegisters-800684AE__entry__2">
+                     <span class="ph">Name</span>
+                  </th>
+                  <th class="entry valign-top" id="GeneralModbusRegisters-800684AE__entry__3">
+                     <span class="ph">Description</span>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="GeneralModbusRegisters-800684AE__entry__1">
+                     <span class="ph">1000 </span>
+                  </td>
+                  <td class="entry" headers="GeneralModbusRegisters-800684AE__entry__2">
+                     <span class="ph">BACS_ALARM</span>
+                  </td>
+                  <td class="entry" headers="GeneralModbusRegisters-800684AE__entry__3">
+                     <span class="ph">This register contains multiple flags.
+For information about the flags see <a class="xref" href="GBMS_Alarm_Flag_Descriptions_CPT_0000566828.html#AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46">Table 1</a>.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="GeneralModbusRegisters-800684AE__entry__1">
+                     <span class="ph">1001</span>
+                  </td>
+                  <td class="entry" headers="GeneralModbusRegisters-800684AE__entry__2">
+                     <span class="ph">BACS_ALARM</span>
+                  </td>
+                  <td class="entry" headers="GeneralModbusRegisters-800684AE__entry__3">
+                     <span class="ph">This register contains multiple flags.
+For information about the flags see <a class="xref" href="GBMS_Alarm_Flag_Descriptions_CPT_0000566828.html#AlarmFlagDescriptions-80086A12__BatteryStatusFlagsDescription-7B646215">Table 2</a>.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="GeneralModbusRegisters-800684AE__entry__1">
+                     <span class="ph">1002</span>
+                  </td>
+                  <td class="entry" headers="GeneralModbusRegisters-800684AE__entry__2">
+                     <span class="ph">BACS_ALARM</span>
+                  </td>
+                  <td class="entry" headers="GeneralModbusRegisters-800684AE__entry__3">
+                     <span class="ph">This register contains multiple flags.
+For information about the flags see <a class="xref" href="GBMS_Alarm_Flag_Descriptions_CPT_0000566828.html#AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A">Table 3</a>.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="GeneralModbusRegisters-800684AE__entry__1">
+                     <span class="ph">1003</span>
+                  </td>
+                  <td class="entry" headers="GeneralModbusRegisters-800684AE__entry__2">
+                     <span class="ph">BACS_NUMSTRINGS</span>
+                  </td>
+                  <td class="entry" headers="GeneralModbusRegisters-800684AE__entry__3">
+                     <span class="ph">The number of strings in the setup.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="GeneralModbusRegisters-800684AE__entry__1">
+                     <span class="ph">1004</span>
+                  </td>
+                  <td class="entry" headers="GeneralModbusRegisters-800684AE__entry__2">
+                     <span class="ph">BACS_NUMMODULES </span>
+                  </td>
+                  <td class="entry" headers="GeneralModbusRegisters-800684AE__entry__3">
+                     <span class="ph">The total number of modules in the
+setup.</span>
+                  </td>
+               </tr>
+            </tbody></table>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title3" lang="en" id="BatteryStringModbusRegisters-800774EF">
+   <h2 class="title topictitle2" id="ariaid-title3">Battery String Modbus Registers</h2>
+   
+   
+   <div class="body conbody">
+      <div class="div">
+         <p class="p">There are five registers for each battery string. There are
+two register sections reserved for the strings.</p>
+         <div class="note note note_note"><span class="note__title">Note:</span> The fifth
+register for each string is reserved and not used.</div>
+         <p class="p">The main
+section is reserved for strings 1-10. Both current and voltage measurements
+are registered.</p>
+         <p class="p">These registers are in <u class="ph u">0 base</u> and are <u class="ph u">signed</u>.</p>
+         <table class="table"><caption><span class="table--title-label">Table 1. </span><span class="title">Main Register Section for Strings</span></caption><colgroup><col style="width:16.666666666666664%"><col style="width:33.33333333333333%"><col style="width:50%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="BatteryStringModbusRegisters-800774EF__entry__1">
+                        <span class="ph">Register</span>
+                     </th>
+                     <th class="entry valign-top" id="BatteryStringModbusRegisters-800774EF__entry__2">
+                        <span class="ph">Name</span>
+                     </th>
+                     <th class="entry valign-top" id="BatteryStringModbusRegisters-800774EF__entry__3">
+                        <span class="ph">Description[Unit of
+measure]</span>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__1">
+                        <span class="ph">1010</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__2">
+                        <span class="ph">STRING_01_CUR</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__3">
+                        <span class="ph">The DC current in string 1 [A]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__1">
+                        <span class="ph">1011</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__2">
+                        <span class="ph">BACS_StrSumVolt</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__3">
+                        <span class="ph">The total voltage in string 1 [V]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__1">
+                        <span class="ph">1012</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__2">
+                        <span class="ph">BACS_StrAvgVolt</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__3">
+                        <span class="ph">The average voltage in string 1 [V]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__1">
+                        <span class="ph">1013</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__2">
+                        <span class="ph">BACS_Str_CurrAC</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__3">
+                        <span class="ph">The AC current (RMS value) in string
+1 [A]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__1">
+                        <span class="ph">1015</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__2">
+                        <span class="ph">STRING_02_CUR</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__3">
+                        <span class="ph">The DC current in string 2 [A]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__1">
+                        <span class="ph">1016</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__2">
+                        <span class="ph">BACS_StrSumVolt</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__3">
+                        <span class="ph">The total voltage in string 2 [V]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__1">
+                        <span class="ph">1017</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__2">
+                        <span class="ph">BACS_StrAvgVolt</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__3">
+                        <span class="ph">The average voltage in string 2 [V]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__1">
+                        <span class="ph">1018</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__2">
+                        <span class="ph">BACS_Str_CurrAC</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__3">
+                        <span class="ph">The AC current (RMS value) in string
+2 [A]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__1">
+                        <span class="ph">.....</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__2">
+                        <span class="ph">.....</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__3">
+                        <span class="ph">.....</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__1">
+                        <span class="ph">1055</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__2">
+                        <span class="ph">STRING_10_CUR</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__3">
+                        <span class="ph">The DC current in string 10 [A]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__1">
+                        <span class="ph">1056</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__2">
+                        <span class="ph">BACS_StrSumVolt</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__3">
+                        <span class="ph">The total voltage in string 10 [V]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__1">
+                        <span class="ph">1057</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__2">
+                        <span class="ph">BACS_StrAvgVolt</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__3">
+                        <span class="ph">The average voltage in string 10
+[V]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__1">
+                        <span class="ph">1058</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__2">
+                        <span class="ph">BACS_Str_CurrAC</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__3">
+                        <span class="ph">The AC current
+(RMS value) in string 10 [A]</span>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+      <div class="div">
+         <div class="p">The second section is reserved for strings 11-16. For these
+strings only the current measurements are registered.<div class="note note note_note"><span class="note__title">Note:</span> For strings
+11–16, the second, third and fifth register for each string
+is reserved and not used.</div>
+         </div>
+         <p class="p">These registers are in <u class="ph u">0
+base</u> and are <u class="ph u">signed</u>.</p>
+         <table class="table"><caption><span class="table--title-label">Table 2. </span><span class="title">Secondary Register Section for Strings</span></caption><colgroup><col style="width:16.666666666666664%"><col style="width:33.33333333333333%"><col style="width:50%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="BatteryStringModbusRegisters-800774EF__entry__43">
+                        <span class="ph">Register</span>
+                     </th>
+                     <th class="entry valign-top" id="BatteryStringModbusRegisters-800774EF__entry__44">
+                        <span class="ph">Name</span>
+                     </th>
+                     <th class="entry valign-top" id="BatteryStringModbusRegisters-800774EF__entry__45">
+                        <span class="ph">Description[Unit of
+measurement]</span>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__43">
+                        <span class="ph">2710</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__44">
+                        <span class="ph">STRING_11_CUR</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__45">
+                        <span class="ph">The DC current in string 11 [A]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__43">
+                        <span class="ph">2713</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__44">
+                        <span class="ph">BACS_Str_CurrAC</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__45">
+                        <span class="ph">The AC current (RMS value) in string
+11 [A]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__43">
+                        <span class="ph">2715</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__44">
+                        <span class="ph">STRING_12_CUR</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__45">
+                        <span class="ph">The DC current in string 12 [A]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__43">
+                        <span class="ph">2718</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__44">
+                        <span class="ph">BACS_Str_CurrAC</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__45">
+                        <span class="ph">The AC current (RMS value) in string
+12 [A]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__43">
+                        <span class="ph">.....</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__44">
+                        <span class="ph">.....</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__45">
+                        <span class="ph">.....</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__43">
+                        <span class="ph">2735</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__44">
+                        <span class="ph">STRING_16_CUR</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__45">
+                        <span class="ph">The DC current in string 16 [A]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__43">
+                        <span class="ph">2738</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__44">
+                        <span class="ph">BACS_Str_CurrAC</span>
+                     </td>
+                     <td class="entry" headers="BatteryStringModbusRegisters-800774EF__entry__45">
+                        <span class="ph">The AC current
+(RMS value) in string 16 [A]</span>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title4" lang="en" id="ModuleModbusRegisters-8007C50E">
+   <h2 class="title topictitle2" id="ariaid-title4">Module Modbus Registers</h2>
+   
+   
+   <div class="body conbody">
+      <div class="div">
+         <p class="p">There are five registers for each module. There are two register
+sections reserved for the modules.</p>
+         <p class="p">The temperature is shifted
+to allow for negative values. To calculate the temperature in Celsius
+for the read value use the formula <em class="ph i">T = (x – 78) / 2</em>.
+For example, the decimal reading 127 corresponds to the temperature <em class="ph i">(127 – 78) / 2 = 24.5°C</em>.</p>
+         <p class="p">The voltage is measured
+in V and has a factor of 1000. For example, the reading 12825 corresponds
+to a voltage of <em class="ph i">12825 / 1000 = 12.825 V</em>.</p>
+         <p class="p">The impedance
+is measured in mΩ has a factor of 100. For example, the reading
+4372 corresponds to an impedance of <em class="ph i">4372 / 100 = 43.72 mΩ</em>.</p>
+         <p class="p">The percentage of the equalizing that is active. The total
+is either the maximum possible for one module or depends on the battery
+size. The method used for the equalizing is passive.</p>
+         <p class="p">The main
+section is reserved for modules 1-330. These registers are in <u class="ph u">0
+base</u>. The <span class="ph">ALARM</span> registers are <u class="ph u">unsigned</u> and all others are <u class="ph u">signed</u>, see description.</p>
+      </div>
+      <table class="table"><caption><span class="table--title-label">Table 3. </span><span class="title">Main Register Section for Modules</span></caption><colgroup><col style="width:16.666666666666664%"><col style="width:33.33333333333333%"><col style="width:50%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="ModuleModbusRegisters-8007C50E__entry__1">
+                     <span class="ph">Register</span>
+                  </th>
+                  <th class="entry valign-top" id="ModuleModbusRegisters-8007C50E__entry__2">
+                     <span class="ph">Name</span>
+                  </th>
+                  <th class="entry valign-top" id="ModuleModbusRegisters-8007C50E__entry__3">
+                     <span class="ph">Description[Unit of
+measure, formula and/or factor]</span>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__1">
+                     <span class="ph">1060</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__2">
+                     <span class="ph">MODULE_001_ TEMP</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__3">
+                     <span class="ph">The battery temperature measured
+by module 1 (signed) [T(°C) = (x – 78)
+/ 2]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__1">
+                     <span class="ph">1061</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__2">
+                     <span class="ph">MODULE_001_ VOLT</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__3">
+                     <span class="ph">The battery voltage measured by module
+1 (signed) [V, factor 1000]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__1">
+                     <span class="ph">1062</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__2">
+                     <span class="ph">MODULE_001_ IMPC</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__3">
+                     <span class="ph">The battery impedance measured by
+module 1 (signed) [mΩ, factor 100]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__1">
+                     <span class="ph">1063</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__2">
+                     <span class="ph">MODULE_001_ ALARM</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__3">
+                     <span class="ph">Alarms and status for module 1 (unsigned).
+This register contains multiple flags. For information about the flags
+see <a class="xref" href="GBMS_Alarm_Flag_Descriptions_CPT_0000566828.html#AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A">Table 3</a>.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__1">
+                     <span class="ph">1064</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__2">
+                     <span class="ph">Module_001_ModBypVoltPc</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__3">
+                     <span class="ph">How much of the equalizing is active
+for module 1 (signed) [%]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__1">
+                     <span class="ph">1065</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__2">
+                     <span class="ph">MODULE_002_ TEMP</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__3">
+                     <span class="ph">The battery temperature measured
+by module 2 (signed) [T(°C) = (x – 78)
+/ 2]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__1">
+                     <span class="ph">1066</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__2">
+                     <span class="ph">MODULE_002_ VOLT</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__3">
+                     <span class="ph">The battery voltage measured by module
+2 (signed) [V, factor 1000]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__1">
+                     <span class="ph">1067</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__2">
+                     <span class="ph">MODULE_002_ IMPC</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__3">
+                     <span class="ph">The battery impedance measured by
+module 2 (signed) [mΩ, factor 100]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__1">
+                     <span class="ph">1068</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__2">
+                     <span class="ph">MODULE_002_ ALARM</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__3">
+                     <span class="ph">Alarms and status for module 2 (unsigned).
+This register contains multiple flags. For information about the flags
+see <a class="xref" href="GBMS_Alarm_Flag_Descriptions_CPT_0000566828.html#AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A">Table 3</a>. </span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__1">
+                     <span class="ph">1069</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__2">
+                     <span class="ph">Module_002_ModBypVoltPc</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__3">
+                     <span class="ph">How much of the equalizing is active
+for module 2 (signed) [%]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__1">
+                     <span class="ph">.....</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__2">
+                     <span class="ph">.....</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__3">
+                     <span class="ph">.....</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__1">
+                     <span class="ph">2705</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__2">
+                     <span class="ph">MODULE_330_ TEMP</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__3">
+                     <span class="ph">The battery temperature measured
+by module 330 (signed) [T(°C) = (x – 78)
+/ 2]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__1">
+                     <span class="ph">2706</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__2">
+                     <span class="ph">MODULE_330_ VOLT</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__3">
+                     <span class="ph">The battery voltage measured by module
+330 (signed) [V, factor 1000]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__1">
+                     <span class="ph">2707</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__2">
+                     <span class="ph">MODULE_330_ IMPC</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__3">
+                     <span class="ph">The battery impedance measured by
+module 330 (signed) [mΩ, factor 100]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__1">
+                     <span class="ph">2708</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__2">
+                     <span class="ph">MODULE_330_ ALARM</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__3">
+                     <span class="ph">Alarms and status for module 330
+(unsigned). This register contains multiple flags. For information
+about the flags see <a class="xref" href="GBMS_Alarm_Flag_Descriptions_CPT_0000566828.html#AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A">Table 3</a>.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__1">
+                     <span class="ph">2709</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__2">
+                     <span class="ph">Module_330_ModBypVoltPc</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__3">
+                     <span class="ph">How much of the equalizing is active
+for module 330 (signed) [%]</span>
+                  </td>
+               </tr>
+            </tbody></table>
+      <p class="p">The second section is reserved for modules 331-520.</p>
+      <p class="p">These registers are in <u class="ph u">0 base</u>. The ALARM registers are <u class="ph u">unsigned</u> and all others are <u class="ph u">signed</u>, see description.</p>
+      <table class="table"><caption><span class="table--title-label">Table 4. </span><span class="title">Secondary Register Section for Modules</span></caption><colgroup><col style="width:16.666666666666664%"><col style="width:33.33333333333333%"><col style="width:50%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="ModuleModbusRegisters-8007C50E__entry__52">
+                     <span class="ph">Register </span>
+                  </th>
+                  <th class="entry valign-top" id="ModuleModbusRegisters-8007C50E__entry__53">
+                     <span class="ph">Name</span>
+                  </th>
+                  <th class="entry valign-top" id="ModuleModbusRegisters-8007C50E__entry__54">
+                     <span class="ph">Description[Unit of
+measurement, formula and/or factor]</span>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__52">
+                     <span class="ph">2740</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__53">
+                     <span class="ph">MODULE_331_ TEMP</span>
+                     <span class="ph"></span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__54">
+                     <span class="ph">The battery temperature measured
+by module 331 (signed) [T(°C) = (x – 78)
+/ 2]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__52">
+                     <span class="ph">2741</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__53">
+                     <span class="ph">MODULE_331_ VOLT</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__54">
+                     <span class="ph">The battery voltage measured by module
+331 (signed) [V, factor 1000]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__52">
+                     <span class="ph">2742</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__53">
+                     <span class="ph">MODULE_331_ IMPC</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__54">
+                     <span class="ph">The battery impedance measured by
+module 331 (signed) [mΩ, factor 100]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__52">
+                     <span class="ph">2743</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__53">
+                     <span class="ph">MODULE_331_ ALARM</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__54">
+                     <span class="ph">Alarms and status for module 331
+(unsigned). This register contains multiple flags. For information
+about the flags see <a class="xref" href="GBMS_Alarm_Flag_Descriptions_CPT_0000566828.html#AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A">Table 3</a>.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__52">
+                     <span class="ph">2744</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__53">
+                     <span class="ph">Module_331_ModBypVoltPc</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__54">
+                     <span class="ph">How much of the equalizing is active
+for module 331 (signed) [%]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__52">
+                     <span class="ph">2745</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__53">
+                     <span class="ph">MODULE_332_ TEMP</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__54">
+                     <span class="ph">The battery temperature measured
+by module 332 (signed) [T(°C) = (x – 78)
+/ 2]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__52">
+                     <span class="ph">2746</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__53">
+                     <span class="ph">MODULE_332_ VOLT</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__54">
+                     <span class="ph">The battery voltage measured by module
+332 (signed) [V, factor 1000]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__52">
+                     <span class="ph">2747</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__53">
+                     <span class="ph">MODULE_332_ IMPC</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__54">
+                     <span class="ph">The battery impedance measured by
+module 332 (signed) [mΩ, factor 100]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__52">
+                     <span class="ph">2748</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__53">
+                     <span class="ph">MODULE_332_ ALARM</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__54">
+                     <span class="ph">Alarms and status for module 332
+(unsigned). This register contains multiple flags. For information
+about the flags see <a class="xref" href="GBMS_Alarm_Flag_Descriptions_CPT_0000566828.html#AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A">Table 3</a>.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__52">
+                     <span class="ph">2749</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__53">
+                     <span class="ph">Module_332_ModBypVoltPc</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__54">
+                     <span class="ph">How much of the equalizing is active
+for module 332 (signed) [%]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__52">
+                     <span class="ph">.....</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__53">
+                     <span class="ph">.....</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__54">
+                     <span class="ph">.....</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__52">
+                     <span class="ph">3645</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__53">
+                     <span class="ph">MODULE_520_ TEMP</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__54">
+                     <span class="ph">The battery temperature measured
+by module 520 (signed) [T(°C) = (x – 78)
+/ 2]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__52">
+                     <span class="ph">3646</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__53">
+                     <span class="ph">MODULE_520_ VOLT</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__54">
+                     <span class="ph">The battery voltage measured by module
+520 (signed) [V, factor 1000]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__52">
+                     <span class="ph">3647</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__53">
+                     <span class="ph">MODULE_520_ IMPC</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__54">
+                     <span class="ph">The battery impedance measured by
+module 520 (signed) [mΩ, factor 100]</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__52">
+                     <span class="ph">3648</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__53">
+                     <span class="ph">MODULE_520_ ALARM</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__54">
+                     <span class="ph">Alarms and status for module 520
+(unsigned). This register contains multiple flags. For information
+about the flags see <a class="xref" href="GBMS_Alarm_Flag_Descriptions_CPT_0000566828.html#AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A">Table 3</a>.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__52">
+                     <span class="ph">3649</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__53">
+                     <span class="ph">Module_520_ModBypVoltPc</span>
+                  </td>
+                  <td class="entry" headers="ModuleModbusRegisters-8007C50E__entry__54">
+                     <span class="ph">How much of the equalizing is active
+for module 520 (signed) [%]</span>
+                  </td>
+               </tr>
+            </tbody></table>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title5" lang="en" id="GXR_AUXAlarmModbusRegisters-8008F5FB">
+   <h2 class="title topictitle2" id="ariaid-title5">GXR_AUX Alarm Modbus Registers</h2>
+   
+   
+   <div class="body conbody">
+      <div class="div">
+         <p class="p">These registers are in <u class="ph u">0 base</u> and are <u class="ph u">signed</u>.</p>
+         <table class="table"><caption></caption><colgroup><col style="width:16.666666666666664%"><col style="width:33.33333333333333%"><col style="width:50%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__1">
+                        <span class="ph">Register</span>
+                     </th>
+                     <th class="entry valign-top" id="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__2">
+                        <span class="ph">Name</span>
+                     </th>
+                     <th class="entry valign-top" id="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__3">
+                        <span class="ph">Description</span>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__1">
+                        <span class="ph">3650</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__2">
+                        <span class="ph">BACSGXRAuxAlarm(0)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__3">
+                        <span class="ph">Status of input 1 on GX_R_AUX 1.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__1">
+                        <span class="ph">3651</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__2">
+                        <span class="ph">BACSGXRAuxAlarm(1)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__3">
+                        <span class="ph">Status of input 2 on GX_R_AUX 1.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__1">
+                        <span class="ph">3652</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__2">
+                        <span class="ph">BACSGXRAuxAlarm(2)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__3">
+                        <span class="ph">Status of input 3 on GX_R_AUX 1.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__1">
+                        <span class="ph">3653</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__2">
+                        <span class="ph">BACSGXRAuxAlarm(3)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__3">
+                        <span class="ph">Status of input 4 on GX_R_AUX 1.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__1">
+                        <span class="ph">3654</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__2">
+                        <span class="ph">BACSGXRAuxAlarm(4)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__3">
+                        <span class="ph">Status of input 1 on GX_R_AUX 2.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__1">
+                        <span class="ph">3655</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__2">
+                        <span class="ph">BACSGXRAuxAlarm(5)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__3">
+                        <span class="ph">Status of input 2 on GX_R_AUX 2.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__1">
+                        <span class="ph">3656</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__2">
+                        <span class="ph">BACSGXRAuxAlarm(6)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__3">
+                        <span class="ph">Status of input 3 on GX_R_AUX 2.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__1">
+                        <span class="ph">3657</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__2">
+                        <span class="ph">BACSGXRAuxAlarm(7)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__3">
+                        <span class="ph">Status of input 4 on GX_R_AUX 2.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__1">
+                        <span class="ph">3658</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__2">
+                        <span class="ph">BACSGXRAuxAlarm(8)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__3">
+                        <span class="ph">Status of input 1 on GX_R_AUX 3.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__1">
+                        <span class="ph">3659</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__2">
+                        <span class="ph">BACSGXRAuxAlarm(9)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__3">
+                        <span class="ph">Status of input 2 on GX_R_AUX 3.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__1">
+                        <span class="ph">3660</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__2">
+                        <span class="ph">BACSGXRAuxAlarm(10)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__3">
+                        <span class="ph">Status of input 3 on GX_R_AUX 3.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__1">
+                        <span class="ph">3661</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__2">
+                        <span class="ph">BACSGXRAuxAlarm(11)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__3">
+                        <span class="ph">Status of input 4 on GX_R_AUX 3.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__1">
+                        <span class="ph">3662</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__2">
+                        <span class="ph">BACSGXRAuxAlarm(12)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__3">
+                        <span class="ph">Status of input 1 on GX_R_AUX 4.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__1">
+                        <span class="ph">3663</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__2">
+                        <span class="ph">BACSGXRAuxAlarm(13)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__3">
+                        <span class="ph">Status of input 2 on GX_R_AUX 4.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__1">
+                        <span class="ph">3664</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__2">
+                        <span class="ph">BACSGXRAuxAlarm(14)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__3">
+                        <span class="ph">Status of input 3 on GX_R_AUX 4.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__1">
+                        <span class="ph">3665</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__2">
+                        <span class="ph">BACSGXRAuxAlarm(15)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXAlarmModbusRegisters-8008F5FB__entry__3">
+                        <span class="ph">Status of input 4 on GX_R_AUX 4.</span>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+   </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title6" lang="en" id="GXR_AUXOutputModbusRegisters-800933A2">
+   <h2 class="title topictitle2" id="ariaid-title6">GXR_AUX Output Modbus Registers</h2>
+   
+   
+   <div class="body conbody">
+      <div class="div">
+         <p class="p">These registers are in <u class="ph u">0 base</u> and are <u class="ph u">signed</u>.</p>
+         <table class="table"><caption></caption><colgroup><col style="width:16.666666666666664%"><col style="width:33.33333333333333%"><col style="width:50%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="GXR_AUXOutputModbusRegisters-800933A2__entry__1">
+                        <span class="ph">Register</span>
+                     </th>
+                     <th class="entry valign-top" id="GXR_AUXOutputModbusRegisters-800933A2__entry__2">
+                        <span class="ph">Name</span>
+                     </th>
+                     <th class="entry valign-top" id="GXR_AUXOutputModbusRegisters-800933A2__entry__3">
+                        <span class="ph">Description[Unit of
+measure]</span>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__1">
+                        <span class="ph">3666</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__2">
+                        <span class="ph">BACSGXRAuxOutputStatus(0)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__3">
+                        <span class="ph">Status of output 1 on GX_R_AUX 1.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__1">
+                        <span class="ph">3667</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__2">
+                        <span class="ph">BACSGXRAuxOutputStatus(1)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__3">
+                        <span class="ph">Status of output 2 on GX_R_AUX 1.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__1">
+                        <span class="ph">3668</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__2">
+                        <span class="ph">BACSGXRAuxOutputStatus(2)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__3">
+                        <span class="ph">Status of output 3 on GX_R_AUX 1.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__1">
+                        <span class="ph">3669</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__2">
+                        <span class="ph">BACSGXRAuxOutputStatus(3)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__3">
+                        <span class="ph">Status of output 4 on GX_R_AUX 1.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__1">
+                        <span class="ph">3670</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__2">
+                        <span class="ph">BACSGXRAuxOutputStatus(4)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__3">
+                        <span class="ph">Status of output 1 on GX_R_AUX 2.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__1">
+                        <span class="ph">3671</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__2">
+                        <span class="ph">BACSGXRAuxOutputStatus(5)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__3">
+                        <span class="ph">Status of output 2 on GX_R_AUX 2.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__1">
+                        <span class="ph">3672</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__2">
+                        <span class="ph">BACSGXRAuxOutputStatus(6)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__3">
+                        <span class="ph">Status of output 3 on GX_R_AUX 2.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__1">
+                        <span class="ph">3673</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__2">
+                        <span class="ph">BACSGXRAuxOutputStatus(7)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__3">
+                        <span class="ph">Status of output 4 on GX_R_AUX 2.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__1">
+                        <span class="ph">3674</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__2">
+                        <span class="ph">BACSGXRAuxOutputStatus(8)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__3">
+                        <span class="ph">Status of output 1 on GX_R_AUX 3.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__1">
+                        <span class="ph">3675</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__2">
+                        <span class="ph">BACSGXRAuxOutputStatus(9)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__3">
+                        <span class="ph">Status of output 2 on GX_R_AUX 3.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__1">
+                        <span class="ph">3676</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__2">
+                        <span class="ph">BACSGXRAuxOutputStatus(10)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__3">
+                        <span class="ph">Status of output 3 on GX_R_AUX 3.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__1">
+                        <span class="ph">3677</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__2">
+                        <span class="ph">BACSGXRAuxOutputStatus(11)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__3">
+                        <span class="ph">Status of output 4 on GX_R_AUX 3.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__1">
+                        <span class="ph">3678</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__2">
+                        <span class="ph">BACSGXRAuxOutputStatus(12)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__3">
+                        <span class="ph">Status of output 1 on GX_R_AUX 4.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__1">
+                        <span class="ph">3679</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__2">
+                        <span class="ph">BACSGXRAuxOutputStatus(13)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__3">
+                        <span class="ph">Status of output 2 on GX_R_AUX 4.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__1">
+                        <span class="ph">3680</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__2">
+                        <span class="ph">BACSGXRAuxOutputStatus(14)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__3">
+                        <span class="ph">Status of output 3 on GX_R_AUX 4.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__1">
+                        <span class="ph">3681</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__2">
+                        <span class="ph">BACSGXRAuxOutputStatus(15)</span>
+                     </td>
+                     <td class="entry" headers="GXR_AUXOutputModbusRegisters-800933A2__entry__3">
+                        <span class="ph">Status of output 4 on GX_R_AUX 4.</span>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+   </div>
+</article></article></article></main></body></html>

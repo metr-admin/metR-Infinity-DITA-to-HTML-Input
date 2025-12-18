@@ -1,0 +1,216 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="metr-pxc-reality,nmc-firmware,firmware-image,mfiletransfer,firmware-agent,bootloader,firmware-upgrade,image-transfer,upgrade-verification,rollback-procedure,firmware-recovery,checksum-validation,maintenance-window,remote-update,service-packaging,compatibility-testing,field-service,ups-network-management"><meta name="keywords" content="metr-pxc-reality, nmc-firmware, firmware-image, mfiletransfer, firmware-agent, bootloader, firmware-upgrade, image-transfer, upgrade-verification, rollback-procedure, firmware-recovery, checksum-validation, maintenance-window, remote-update, service-packaging, compatibility-testing, field-service, ups-network-management"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_File_Transfer_CPT_0000333223.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_File_Transfer_CPT_0000333223.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_File_Transfer_CPT_0000333223.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_File_Transfer_CPT_0000333223.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_File_Transfer_CPT_0000333223.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-05+05:30"><meta name="DC.date.modified" content="2025-12-05"><meta name="title" content="NMC Firmware"><meta name="shortdesc" content="Details on the firmware used by the Network Management Card, including upgrade mechanics, transfer statuses and recovery actions."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="firmware-image; mfiletransfer-status; checksum; transfer-log; boot-sequence; recovery-mode"><meta name="taxonomy" content="domain:industrial-engineering;usecase:nmc-firmware-management-and-upgrade;industry: uninterruptible power supply (UPS) systems"><meta name="tags" content="firmware,upgrade,transfer,recovery,checksum,bootloader"><meta name="usecase" content="manage and upgrade NMC firmware, validate transfers and perform recovery if required"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="NMCFirmware-68EE261B"><meta name="DC.language" content="en"><title>NMC Firmware</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="NMCFirmware-68EE261B"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">NMC Firmware</h1>
+   
+   
+   <div class="body conbody">
+      <section class="section">
+         <div class="sectiondiv">
+            <div class="p">The firmware for the NMC card in a Reality system
+consists of three modules:<table class="table"><caption></caption><colgroup><col><col><col></colgroup><thead class="thead">
+                        <tr class="row">
+                           <th class="entry valign-top" id="NMCFirmware-68EE261B__entry__1">
+                              <p class="p">Module Name</p>
+                           </th>
+                           <th class="entry valign-top" id="NMCFirmware-68EE261B__entry__2">
+                              <p class="p">Description</p>
+                           </th>
+                           <th class="entry valign-top" id="NMCFirmware-68EE261B__entry__3">
+                              <p class="p">Example
+File Name</p>
+                           </th>
+                        </tr>
+                     </thead><tbody class="tbody">
+                        <tr class="row">
+                           <td class="entry" headers="NMCFirmware-68EE261B__entry__1">
+                              <p class="p">Application module (APP)</p>
+                           </td>
+                           <td class="entry" headers="NMCFirmware-68EE261B__entry__2">
+                              <p class="p">The Reality specific application for Reality systems</p>
+                           </td>
+                           <td class="entry" headers="NMCFirmware-68EE261B__entry__3">
+                              <code class="ph codeph">apc_hw5_sxw_692.bin</code>
+                              <code class="ph codeph">apc_hw5_pxc_692.bin</code>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry" headers="NMCFirmware-68EE261B__entry__1">
+                              <p class="p">APC operating system (AOS)</p>
+                           </td>
+                           <td class="entry" headers="NMCFirmware-68EE261B__entry__2">
+                              <p class="p">Can be thought of as the operating system of the NMC</p>
+                           </td>
+                           <td class="entry" headers="NMCFirmware-68EE261B__entry__3">
+                              <code class="ph codeph">apc_hw5_aos_692.bin</code>
+                           </td>
+                        </tr>
+                        <tr class="row">
+                           <td class="entry" headers="NMCFirmware-68EE261B__entry__1">
+                              <p class="p">Boot monitor (BM)</p>
+                           </td>
+                           <td class="entry" headers="NMCFirmware-68EE261B__entry__2">
+                              <p class="p">Can be thought of as the BIOS of the NMC</p>
+                           </td>
+                           <td class="entry" headers="NMCFirmware-68EE261B__entry__3">
+                              <code class="ph codeph">apc_hw5_bootmon_108.bin</code>
+                           </td>
+                        </tr>
+                     </tbody></table>
+            </div>
+            <div class="note important note_important"><span class="note__title">Important:</span> To update the firmware correctly
+always update the BM first, then the AOS and the APP last.</div>
+         </div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Update the NMC Firmware with FTP</h2>
+         
+         <p class="p">To update
+the firmware using FTP the NMC needs to have FTP enabled and an IP
+address, subnet mask and default gateway configured. The NMC and the
+computer also needs to be on the same network.</p>
+         <div class="p">
+            <ol class="ol">
+               <li class="li">
+                  <p class="p">From a computer on the same network as the NMC open a command
+prompt window.</p>
+               </li>
+               <li class="li">
+                  <p class="p">Go to the directory that contains the firmware files and list
+the files:<code class="ph codeph">C:\&gt;cd apc</code>
+                     <code class="ph codeph">C:\apc&gt;dir</code>
+                  </p>
+               </li>
+               <li class="li">
+                  <p class="p">First update the BM:</p>
+                  <ol class="ol" type="a">
+                     <li class="li">
+                        <p class="p">Type <code class="ph codeph">C:\apc&gt;ftp</code> to open an
+FTP session.</p>
+                     </li>
+                     <li class="li">
+                        <div class="p">Type <code class="ph codeph">ftp&gt; open xxx.xxx.xxx.xxx:xxxx</code> and press <span class="ph uicontrol">Enter</span> to confirm.<div class="note note note_note"><span class="note__title">Note:</span> Where <code class="ph codeph">xxx.xxx.xxx.xxx</code> is the IP address
+of the NMC and <code class="ph codeph">:xxxx</code> is the specified
+port if used. Some FTP clients might use a space instead of a colon.</div>
+                        </div>
+                     </li>
+                     <li class="li">
+                        <p class="p">Log on as a super-user or administrator.</p>
+                     </li>
+                     <li class="li">
+                        <p class="p">Type <code class="ph codeph">ftp&gt; bin</code> and press <span class="ph uicontrol">Enter</span>
+                        </p>
+                     </li>
+                     <li class="li">
+                        <div class="p">Type <code class="ph codeph">ftp&gt; put apc_hw05_bm_<em class="ph i">nnn</em>.bin</code>
+                           <div class="note note note_note"><span class="note__title">Note:</span> Where <code class="ph codeph">
+                                 <em class="ph i">nnn</em>
+                              </code> is the version number.</div>
+                        </div>
+                     </li>
+                     <li class="li">
+                        <p class="p">Wait until there is a confirmation that the transfer is complete.</p>
+                     </li>
+                     <li class="li">
+                        <p class="p">Type <code class="ph codeph">quit</code> to exit from the
+FTP session.</p>
+                     </li>
+                     <li class="li">
+                        <p class="p">Wait 20 seconds while the card is rebooting before proceeding
+with the AOS update.</p>
+                     </li>
+                  </ol>
+               </li>
+               <li class="li">
+                  <p class="p">Then update the AOS:</p>
+                  <ol class="ol" type="a">
+                     <li class="li">
+                        <p class="p">Type <code class="ph codeph">C:\apc&gt;ftp</code> to open an
+FTP session.</p>
+                     </li>
+                     <li class="li">
+                        <div class="p">Type <code class="ph codeph">ftp&gt; open xxx.xxx.xxx.xxx:xxxx</code> and press <span class="ph uicontrol">Enter</span> to confirm.<div class="note note note_note"><span class="note__title">Note:</span> Where <code class="ph codeph">xxx.xxx.xxx.xxx</code> is the IP address
+of the NMC and <code class="ph codeph">:xxxx</code> is the specified
+port if used. Some FTP clients might use a space instead of a colon.</div>
+                        </div>
+                     </li>
+                     <li class="li">
+                        <p class="p">Log on as a super-user or administrator.</p>
+                     </li>
+                     <li class="li">
+                        <p class="p">Type <code class="ph codeph">ftp&gt; bin</code> and press <span class="ph uicontrol">Enter</span>.</p>
+                     </li>
+                     <li class="li">
+                        <div class="p">Type <code class="ph codeph">ftp&gt; put apc_hw05_aos_<em class="ph i">nnn</em>.bin</code>
+                           <div class="note note note_note"><span class="note__title">Note:</span> Where <code class="ph codeph">
+                                 <em class="ph i">nnn</em>
+                              </code> is the version number.</div>
+                        </div>
+                     </li>
+                     <li class="li">
+                        <p class="p">Type <code class="ph codeph">quit</code> to exit from the
+FTP session.</p>
+                     </li>
+                     <li class="li">
+                        <p class="p">Wait 20 seconds while the card is rebooting with the APP update.</p>
+                     </li>
+                  </ol>
+               </li>
+               <li class="li">
+                  <p class="p">Lastly update the APP:</p>
+                  <ol class="ol" type="a">
+                     <li class="li">
+                        <p class="p">Type <code class="ph codeph">C:\apc&gt;ftp</code> to open an
+FTP session.</p>
+                     </li>
+                     <li class="li">
+                        <div class="p">Type <code class="ph codeph">ftp&gt; open xxx.xxx.xxx.xxx:xxxx</code> and press <span class="ph uicontrol">Enter</span> to confirm.<div class="note note note_note"><span class="note__title">Note:</span> Where <code class="ph codeph">xxx.xxx.xxx.xxx</code> is the IP address
+of the NMC and <code class="ph codeph">:xxxx</code> is the specified
+port if used. Some FTP clients might use a space instead of a colon.</div>
+                        </div>
+                     </li>
+                     <li class="li">
+                        <p class="p">Log in using the user name <code class="ph codeph">apc</code> and the password <code class="ph codeph">Reality</code>.</p>
+                        <div class="note note note_note"><span class="note__title">Note:</span> The AOS update have reset the user name to <code class="ph codeph">apc</code> and the password to <code class="ph codeph">Reality</code>.</div>
+                     </li>
+                     <li class="li">
+                        <p class="p">Type <code class="ph codeph">ftp&gt; bin</code> and press <span class="ph uicontrol">Enter</span>.</p>
+                     </li>
+                     <li class="li">
+                        <div class="p">Type <code class="ph codeph">ftp&gt; put
+apc_hw05_sxw_<em class="ph i">nnn</em>.bin</code>
+                           <code class="ph codeph">ftp&gt; put apc_hw05_pxc_<em class="ph i">nnn</em>.bin</code>.<div class="note note note_note"><span class="note__title">Note:</span> Where <code class="ph codeph">
+                                 <em class="ph i">nnn</em>
+                              </code> is the version
+number.</div>
+                        </div>
+                     </li>
+                     <li class="li">
+                        <p class="p">Type <code class="ph codeph">quit</code> to exit from the
+FTP session.</p>
+                     </li>
+                     <li class="li">
+                        <p class="p">Wait 20 seconds while the card is rebooting.</p>
+                     </li>
+                  </ol>
+               </li>
+            </ol>
+         </div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Verify Firmware Update</h2>
+         
+         <div class="sectiondiv">
+            <div class="p">To verify
+that the firmware update succeeded, and no error occurred it is possible
+to:<ul class="ul">
+                  <li class="li">
+                     <p class="p">Type <code class="ph codeph">xferStatus</code> in the CLI.</p>
+                  </li>
+                  <li class="li">
+                     <p class="p">Use a SNMP GET to the <code class="ph codeph">mfiletransferStatusLastTransferResult</code> OID.</p>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </section>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Reality-Batch_3/Topics/NMC_File_Transfer_CPT_0000333223.html">File Transfer</a></div></div></nav></article></main></body></html>

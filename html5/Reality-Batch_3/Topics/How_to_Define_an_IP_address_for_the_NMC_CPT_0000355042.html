@@ -1,0 +1,47 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="nmc-network-management-card,hu250-network-interface,ethernet-port-configuration,snmp-agent-board,network-communication-module,define-ip-address,configure-subnet-mask,set-default-gateway,enable-ssh-access,manage-dns-settings,nmc-commissioning,plant-network-integration,remote-monitoring-setup,cybersecurity-baseline,data-centre-networking"><meta name="keywords" content="nmc-network-management-card, hu250-network-interface, ethernet-port-configuration, snmp-agent-board, network-communication-module, define-ip-address, configure-subnet-mask, set-default-gateway, enable-ssh-access, manage-dns-settings, nmc-commissioning, plant-network-integration, remote-monitoring-setup, cybersecurity-baseline, data-centre-networking"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_Command_Line_Interface_CPT_0000332536.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_Command_Line_Interface_CPT_0000332536.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_Command_Line_Interface_CPT_0000332536.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_Command_Line_Interface_CPT_0000332536.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_Command_Line_Interface_CPT_0000332536.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-12-06T16:00:00+05:30"><meta name="DC.date.modified" content="2025-12-06T16:00:00+05:30"><meta name="title" content="How to define an IP address for the NMC"><meta name="shortdesc" content="Step by step procedure to assign IPv4 settings to the Network Management Card used for remote monitoring"><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="Network Management Card;ip address;subnet mask;default gateway;dns server;ssh credentials"><meta name="taxonomy" content="domain:networking;usecase:commissioning-and-monitoring;industry:uninterruptible power supply"><meta name="tags" content="nmc,ip-configuration,remote-monitoring,network-security"><meta name="usecase" content="configure-nmc-network-settings-for-commissioning"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="HowToDefineAnIPAddressForTheNMC-808BF7B1"><meta name="DC.language" content="en"><title>How to Change the IP Address of the NMC Over a Network</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="HowToDefineAnIPAddressForTheNMC-808BF7B1"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">How to Change the IP Address of the NMC Over a Network</h1>
+   
+   
+   <div class="body conbody">
+      <section class="section">
+         <div class="sectiondiv">
+            <p class="p">To change the IP address over the network
+the NMC needs the MAC address of the NMC is needed. The MAC address
+can be found on a label on the bottom of the card. The MAC address
+consists of 12 characters (only letters and numbers).</p>
+            <div class="note note note_note"><span class="note__title">Note:</span> Make
+sure to select a unique IP address for each NMC on the same network.</div>
+            <div class="p">
+               <ol class="ol">
+                  <li class="li">
+                     <p class="p">Check that the Ethernet cable is connected from the NMC is
+connected to the network.</p>
+                  </li>
+                  <li class="li">
+                     <p class="p">Start a command prompt window from a computer on the same network.</p>
+                  </li>
+                  <li class="li">
+                     <p class="p">Type <code class="ph codeph">arp –s xxx.xxx.xxx.xxx yy-yy-yy-yy-yy-yy</code>
+                     </p>. Where <code class="ph codeph">xxx.xxx.xxx.xxx</code> is the
+IPv4 address that you want to assign to the NMC card with a MAC address
+of <code class="ph codeph">yyyyyyyyyyyy</code>.<div class="note note note_note"><span class="note__title">Note:</span> Linux uses colon
+instead dashes in the MAC address, for Linux write the MAC address
+as <code class="ph codeph">yy:yy:yy:yy:yy:yy</code>
+                     </div>
+                  </li>
+                  <li class="li">
+                     <p class="p">Type <code class="ph codeph">ping xxx.xxx.xxx.xxx –l
+113</code> to ping 113 bytes to check that the new IPv4 address
+for the NMC is working.</p>
+                     <div class="note note note_note"><span class="note__title">Note:</span> For Linux write -s instead of -l.</div>
+                  </li>
+               </ol>
+               <div class="note note note_note"><span class="note__title">Note:</span> To assign an IPv6 address, choose an IPv6 address in the
+above example instead of an IPv4 address.</div>
+            </div>
+         </div>
+      </section>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Reality-Batch_3/Topics/NMC_Command_Line_Interface_CPT_0000332536.html" title="The command line interface (CLI) is one of the interfaces used to connect to the NMC.">Command Line Interface</a></div></div></nav></article></main></body></html>

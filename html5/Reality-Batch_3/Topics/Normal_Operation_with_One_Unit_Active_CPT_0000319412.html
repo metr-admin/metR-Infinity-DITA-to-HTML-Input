@@ -1,0 +1,214 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="metr-pxc-reality,single-unit-operation,inverter-module,bypass-unit,control-board,monitoring-sensors,one-unit-active-mode,failover-procedure,load-transfer,maintenance-mode,manual-switch-over,isolation-procedure,redundancy-reduced,maintenance-window,degraded-mode,emergency-operation,test-environment,commissioning"><meta name="keywords" content="metr-pxc-reality, single-unit-operation, inverter-module, bypass-unit, control-board, monitoring-sensors, one-unit-active-mode, failover-procedure, load-transfer, maintenance-mode, manual-switch-over, isolation-procedure, redundancy-reduced, maintenance-window, degraded-mode, emergency-operation, test-environment, commissioning"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/General_Description_of_Operating_and_System_Modes_CPT_0000319414.html#OperatingModes-502E48FC"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/General_Description_of_Operating_and_System_Modes_CPT_0000319414.html#OperatingModes-502E48FC"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/General_Description_of_Operating_and_System_Modes_CPT_0000319414.html#OperatingModes-502E48FC"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/General_Description_of_Operating_and_System_Modes_CPT_0000319414.html#OperatingModes-502E48FC"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/General_Description_of_Operating_and_System_Modes_CPT_0000319414.html#OperatingModes-502E48FC"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-05+05:30"><meta name="DC.date.modified" content="2025-12-05"><meta name="title" content="Normal Operation with One Unit Active"><meta name="shortdesc" content="Guidance for operating the system when only one unit is active, including load transfer and failover considerations."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="active-unit; standby-unit; transfer-switch; control-logic; measurement-sensors; alarms"><meta name="taxonomy" content="domain:industrial-engineering;usecase:single-unit-operation-and-failover;industry: uninterruptible power supply (UPS) systems"><meta name="tags" content="single-unit,failover,load-transfer,maintenance,degraded-mode,commissioning"><meta name="usecase" content="operate and manage the system when only one unit is active, including safe load transfer"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="NormalOperationWithOneUnitActive-502E5668"><meta name="DC.language" content="en"><title>Operation with One Unit Active (Redundant Systems)</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="NormalOperationWithOneUnitActive-502E5668"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Operation with One Unit Active (Redundant Systems)</h1>
+   
+   
+   <div class="body conbody">
+      <div class="div">
+         <div class="p">Only one unit might be in operation because:<ul class="ul">
+               <li class="li">
+                  <p class="p">One unit is in <a class="xref" href="Hot_Standby_CPT_0000358503.html">Hot Standby (Redundant Systems)</a>.</p>
+               </li>
+               <li class="li">
+                  <p class="p">One unit is isolated.</p>
+               </li>
+               <li class="li">
+                  <p class="p">One unit is inoperable.</p>
+               </li>
+            </ul>
+         </div>
+         <p class="p">As an example, the active unit is shown in <span class="ph">normal operation</span>
+            <span class="ph">float charge</span> mode.</p>
+         <div class="note note note_note"><span class="note__title">Note:</span> The status of the parts and energized paths will
+depend on the status of in the inactive unit and on the operation
+mode of the active unit. </div>
+         <figure class="fig fignone">
+            <img class="image" src="../Images/FD_PxW_Operating_Modes_R_One_Unit_Active_0000355457.svg">
+         </figure>
+         <figure class="fig fignone">
+            <img class="image" src="../Images/FD_WxW_Operating_Modes_R_One_Unit_Active_0000478966.svg">
+         </figure>
+         <figure class="fig fignone">
+            <img class="image" src="../Images/FD_SDC_Operating_Modes_R_One_Unit_Active_0000510870.svg">
+         </figure>
+      </div>
+      <table class="table"><caption></caption><colgroup><col style="width:40.00mm"><col style="width:50%"><col style="width:50%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="NormalOperationWithOneUnitActive-502E5668__entry__1">
+                     <p class="p">Part</p>
+                  </th>
+                  <th class="entry valign-top" id="NormalOperationWithOneUnitActive-502E5668__entry__2">
+                     <p class="p">Status (Active
+Unit)</p>
+                  </th>
+                  <th class="entry valign-top" id="NormalOperationWithOneUnitActive-502E5668__entry__3">
+                     <p class="p">Status (Inactive
+Unit)</p>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__1">
+                     <p class="p">Rectifier mains</p>
+                     <p class="p">DC input power</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__2">
+                     <p class="p">Available and
+within the tolerance range.</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__3">
+                     <p class="p">May be unavailable or outside the tolerance range.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__1">
+                     <p class="p">Rectifier mains breaker(s)</p>
+                     <p class="p">Inverter input switch(es)</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__2">
+                     <p class="p">Closed</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__3">
+                     <p class="p">Closed</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__1">
+                     <p class="p">Bypass mains</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__2">
+                     <p class="p">Available and
+can be either within or outside the tolerance range.</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__3">
+                     <p class="p">Available and can be either within or outside the tolerance range.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__1">
+                     <p class="p">Bypass mains breaker(s)</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__2">
+                     <p class="p">Closed</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__3">
+                     <p class="p">Closed</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__1">
+                     <p class="p">Bypass isolation switches</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__2">
+                     <p class="p">Closed</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__3">
+                     <p class="p">Closed</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__1">
+                     <p class="p">Manual bypass switch</p>
+                  </td>
+                  <td class="entry align-center" headers="NormalOperationWithOneUnitActive-502E5668__entry__2 NormalOperationWithOneUnitActive-502E5668__entry__3" colspan="2">
+                     <p class="p">In <strong class="ph b">Auto</strong> position.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__1">
+                     <p class="p">Battery</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__2">
+                     <p class="p">If charged, available and within the tolerance range.</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__3">
+                     <p class="p">If charged, available and within the tolerance range.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__1">
+                     <p class="p">Battery breaker(s)</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__2">
+                     <p class="p">Closed</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__3">
+                     <p class="p">Closed</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__1">
+                     <p class="p">Rectifier</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__2">
+                     <p class="p">On</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__3">
+                     <p class="p">On/Off, depends on cause.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__1">
+                     <p class="p">Inverter</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__2">
+                     <p class="p">On</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__3">
+                     <p class="p">
+                        <strong class="ph b">For systems with EA: </strong>On/Off, depends on cause.</p>
+                     <p class="p">
+                        <strong class="ph b">For
+systems without EA: </strong>Off<a name="fnsrc_1" href="#fntarg_1"><sup>1</sup></a>
+                     </p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__1">
+                     <p class="p">Static switch EN</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__2">
+                     <p class="p">Off, but available.</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__3">
+                     <p class="p">Off</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__1">
+                     <p class="p">Static switch EA</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__2">
+                     <p class="p">On</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__3">
+                     <p class="p">Off</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__1">
+                     <p class="p">Output isolation
+switches</p>
+                     <p class="p">Rectifier output switches</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__2">
+                     <p class="p">Closed</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__3">
+                     <p class="p">Closed</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__1">
+                     <p class="p">Output</p>
+                  </td>
+                  <td class="entry" headers="NormalOperationWithOneUnitActive-502E5668__entry__2 NormalOperationWithOneUnitActive-502E5668__entry__3" colspan="2">
+                     <p class="p">Available and within the tolerance
+range. The load is supplied by the active unit.</p>
+                  </td>
+               </tr>
+            </tbody></table>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Reality-Batch_3/Topics/General_Description_of_Operating_and_System_Modes_CPT_0000319414.html#OperatingModes-502E48FC">General Description of Operating and System Modes</a></div></div></nav><div class="fn"><a name="fntarg_1" href="#fnsrc_1"><sup>1</sup></a>   Path will be energized up to the inverter
+on the output side.</div></article></main></body></html>

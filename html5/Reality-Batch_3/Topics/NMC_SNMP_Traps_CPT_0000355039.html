@@ -1,0 +1,200 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="metr-pxc-reality,network-management-card,snmp-agent,trap-handler,management-server,snmp-service-module,snmp-trap-configuration,trap-formatting,trap-routing,trap-filtering,trap-subscription,trap-verification,network-monitoring,remote-alerting,data-centre-telemetry,event-notification,alarm-integration,ups-network-management"><meta name="keywords" content="metr-pxc-reality, network-management-card, snmp-agent, trap-handler, management-server, snmp-service-module, snmp-trap-configuration, trap-formatting, trap-routing, trap-filtering, trap-subscription, trap-verification, network-monitoring, remote-alerting, data-centre-telemetry, event-notification, alarm-integration, ups-network-management"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_SNMP_Access_to_the_Network_Management_Card_CPT_0000334031.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_SNMP_Access_to_the_Network_Management_Card_CPT_0000334031.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_SNMP_Access_to_the_Network_Management_Card_CPT_0000334031.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_SNMP_Access_to_the_Network_Management_Card_CPT_0000334031.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_SNMP_Access_to_the_Network_Management_Card_CPT_0000334031.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-05+05:30"><meta name="DC.date.modified" content="2025-12-05"><meta name="title" content="NMC SNMP Traps"><meta name="shortdesc" content="Describes SNMP trap types, configuration and handling for the Network Management Card to enable event notifications to management systems."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="snmp-trap; snmp-manager; oid-list; trap-destination; trap-filter; network-management-card"><meta name="taxonomy" content="domain:industrial-engineering;usecase:snmp-event-notification-configuration;industry: uninterruptible power supply (UPS) systems"><meta name="tags" content="snmp,traps,alerts,event-notification,monitoring,network-management"><meta name="usecase" content="configure and manage SNMP traps from the Network Management Card for event notification"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="SNMPTraps-80A5F685"><meta name="DC.language" content="en"><title>SNMP Trap Receiver</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="SNMPTraps-80A5F685"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">SNMP Trap Receiver</h1>
+   
+   
+   <div class="body conbody">
+      <p class="p">A SNMP trap receiver needs to be configured to receive the SNMP
+traps from the NMC in a Reality system. Up to six trap receivers can
+be added for each NMC.</p>
+      <p class="p">Super users, administrators and device users can add and configure
+SNMP traps from the CLI and the web interface.</p>
+      <section class="section"><h2 class="title sectiontitle">Add and Configure SNMP Trap Receivers from the CLI</h2>
+         
+         <div class="sectiondiv">
+            <ol class="ol">
+               <li class="li">
+                  <p class="p">Log in to the CLI.</p>
+               </li>
+               <li class="li">
+                  <div class="p">To see the configuration options type <code class="ph codeph">snmptrap ?</code>.<div class="note note note_note"><span class="note__title">Note:</span> In the table <code class="ph codeph">[n]</code> is the number of the trap receiver (1–6).</div>
+                     <table class="table"><caption></caption><colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:40%"></colgroup><thead class="thead">
+                              <tr class="row">
+                                 <th class="entry valign-top" id="SNMPTraps-80A5F685__entry__1">
+                                    <span class="ph">Setting</span>
+                                 </th>
+                                 <th class="entry valign-top" id="SNMPTraps-80A5F685__entry__2">
+                                    <span class="ph">Command</span>
+                                 </th>
+                                 <th class="entry valign-top" id="SNMPTraps-80A5F685__entry__3">
+                                    <span class="ph">Argument</span>
+                                 </th>
+                                 <th class="entry valign-top" id="SNMPTraps-80A5F685__entry__4">
+                                    <span class="ph">Description</span>
+                                 </th>
+                              </tr>
+                           </thead><tbody class="tbody">
+                              <tr class="row">
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__1">
+                                    <span class="ph">Community</span>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__2">
+                                    <code class="ph codeph">-c[n]</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__3">
+                                    <code class="ph codeph">&lt;Community Name&gt;</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__4">
+                                    <span class="ph">Select what SNMPv1 community name to use.</span>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__1">
+                                    <span class="ph">Receiver NMS IP</span>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__2">
+                                    <code class="ph codeph">-r[n]</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__3">
+                                    <code class="ph codeph">&lt;IP address&gt;</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__4">
+                                    <span class="ph">Set the IP address for the trap receiver.</span>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__1">
+                                    <span class="ph">Language</span>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__2">
+                                    <code class="ph codeph">-l[n]</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__3">
+                                    <code class="ph codeph">&lt;Language&gt;</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__4">
+                                    <span class="ph">Select language code.</span>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__1">
+                                    <span class="ph">Trap Type</span>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__2">
+                                    <code class="ph codeph">-t[n]</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__3">
+                                    <code class="ph codeph">snmpV3 | snmpV1</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__4">
+                                    <span class="ph">Select if the trap receiver should use SNMPv3 or SNMPv1.</span>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__1">
+                                    <span class="ph">Generation</span>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__2">
+                                    <code class="ph codeph">-g[n]</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__3">
+                                    <code class="ph codeph">enable | disable</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__4">
+                                    <span class="ph">Enable or disable trap generation.</span>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__1">
+                                    <span class="ph">Auth Traps</span>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__2">
+                                    <code class="ph codeph">-a[n]</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__3">
+                                    <code class="ph codeph">enable | disable</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__4">
+                                    <span class="ph">Enable or disable
+trap authentication for SNMPv1.</span>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__1">
+                                    <span class="ph">User Name</span>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__2">
+                                    <code class="ph codeph">-u[n]</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__3">
+                                    <code class="ph codeph">profile1 | profile2 | profile3 | profile4</code>
+                                 </td>
+                                 <td class="entry" headers="SNMPTraps-80A5F685__entry__4">
+                                    <span class="ph">Select what SNMPv3 user name to use.</span>
+                                 </td>
+                              </tr>
+                           </tbody></table>
+                  </div>
+               </li>
+               <li class="li">
+                  <p class="p">For example, to set the trap receiver number 1 to an IP address
+of 255.255.255.255 using SNMPv3 and the user name for profile1 type: <code class="ph codeph">snmptrap -r1 255.255.255.255 -t1 snmpV3 -u1 profile1
+-g1 enable</code> and press <span class="ph uicontrol">Enter</span>.</p>
+               </li>
+               <li class="li">
+                  <p class="p">If the SNMP trap command was entered correctly a <code class="ph codeph">Success</code> response is displayed, indicating
+that the SNMP trap was created with the chosen settings.</p>
+               </li>
+            </ol>
+         </div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Add and Configure SNMP Trap Receivers from the Web
+Interface</h2>
+         
+         <div class="sectiondiv">
+            <ol class="ol">
+               <li class="li">
+                  <p class="p">Log in to the web interface.</p>
+               </li>
+               <li class="li">
+                  <p class="p">Navigate to <span class="ph uicontrol">Configuration &gt; Notification
+&gt; SNMP Traps &gt; Trap Receivers</span>.</p>
+               </li>
+               <li class="li">
+                  <p class="p">Here a list of the current trap receivers is displayed, if
+there are any. To configure an existing trap receiver, click on the
+NMS IP/host name.</p>
+               </li>
+               <li class="li">
+                  <div class="p">To add a new trap receiver:<ol class="ol" type="a">
+                        <li class="li">
+                           <p class="p">Click <span class="ph uicontrol">Add Trap Receiver</span>. Here the settings for the SNMP trap can be configured.</p>
+                           <figure class="fig fignone">
+                              <img class="image" src="../Images/NMC_Configuration_Network_SNMP-Traps_0000375536.png">
+                           </figure>
+                        </li>
+                        <li class="li">
+                           <p class="p">Check the <span class="ph uicontrol">Enable</span> box
+under trap generation.</p>
+                        </li>
+                        <li class="li">
+                           <p class="p">Specify the IP address of the trap receiver under <span class="ph uicontrol">NMS IP/Host Name</span>.</p>
+                        </li>
+                        <li class="li">
+                           <p class="p">Select either SNMPv3 or SNMPv1 to use. For SNMPv3 select the
+user name that should be used. For SNMPv1 select the community name
+to use and select if the traps should use authentication.</p>
+                        </li>
+                        <li class="li">
+                           <p class="p">Click <span class="ph uicontrol">Apply</span> to save any
+changes.</p>
+                        </li>
+                     </ol>
+                  </div>
+               </li>
+            </ol>
+         </div>
+      </section>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Reality-Batch_3/Topics/NMC_SNMP_Access_to_the_Network_Management_Card_CPT_0000334031.html">SNMP Access to the Network Management Card</a></div></div></nav></article></main></body></html>

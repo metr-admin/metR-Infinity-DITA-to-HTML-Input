@@ -1,0 +1,612 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="Reality SDC,alarm panel,SDC indicators,sensor inputs,relay outputs,I/O controller,status LEDs,SDC alarm interpretation,alarm-panel-based troubleshooting,step-by-step diagnostic workflow,fault confirmation procedure,alarm-driven corrective actions,clearing fault conditions,reset and validation steps,SDC monitoring environment,critical UPS/Switchgear systems,operational diagnostic context,real-time monitoring domain,fault triage environment,control room alert management,equipment protection environment"><meta name="keywords" content="Reality SDC, alarm panel, SDC indicators, sensor inputs, relay outputs, I/O controller, status LEDs, SDC alarm interpretation, alarm-panel-based troubleshooting, step-by-step diagnostic workflow, fault confirmation procedure, alarm-driven corrective actions, clearing fault conditions, reset and validation steps, SDC monitoring environment, critical UPS/Switchgear systems, operational diagnostic context, real-time monitoring domain, fault triage environment, control room alert management, equipment protection environment"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-01+05:30"><meta name="DC.date.modified" content="2025-12-01"><meta name="title" content="Troubleshoot SDC from the Alarm Panel"><meta name="shortdesc" content="Explains how to troubleshoot Reality SDC system issues using the alarm panel, including alarm interpretation, diagnostic evaluation, and corrective procedures."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="SDC controller; alarm panel; LEDs; error messages; sensors; relay outputs; diagnostic tools"><meta name="taxonomy" content="domain:industrial diagnostics;usecase:alarm-driven-SDC-troubleshooting;industry:uninterruptible power supply (UPS) systems"><meta name="tags" content="SDC,alarm panel,troubleshooting,diagnostics,alerts"><meta name="usecase" content="Guide operators in diagnosing SDC issues directly through the alarm panel interface"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="TroubleshootSDCFromTheAlarmPanel-6D572FC9"><meta name="DC.language" content="en"><title>Troubleshoot SDC from the Alarm Panel</title><link rel="stylesheet" type="text/css" href="../../../commonltr.css"></head><body id="TroubleshootSDCFromTheAlarmPanel-6D572FC9"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Troubleshoot SDC from the Alarm Panel</h1>
+   
+   
+   <div class="body conbody">
+      <figure class="fig fignone">
+         <img class="image" src="../../Images/PxW_Alarm_Display_0000352230.svg">
+         <div class="note note note_note"><span class="note__title">Note:</span> Not all LEDs are used.</div>
+         <div class="note note note_note"><span class="note__title">Note:</span> The alarm text is only displayed in English even if another
+system language is used.</div>
+      </figure>
+      <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:20%"><col style="width:40%"><col style="width:40%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph" id="TroubleshootSDCFromTheAlarmPanel-6D572FC9__AlarmIndicator-0F3E4262">Alarm Indicator</span>
+                  </th>
+                  <th class="entry valign-top" id="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph" id="TroubleshootSDCFromTheAlarmPanel-6D572FC9__AlarmNumberAndText-0F3E43BD">Alarm
+Number and Text</span>
+                  </th>
+                  <th class="entry valign-top" id="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <span class="ph" id="TroubleshootSDCFromTheAlarmPanel-6D572FC9__PossibleSource-0F3E4780">Possible
+Source</span>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1" rowspan="5">
+                     <span class="ph">
+                        <strong class="ph b">(A)</strong> Rectifier mains fault[30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">16: Charger not synchronized</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <span class="ph">Unstable rectifier mains input</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">17: Mains phase missing</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <span class="ph">At least one phase is not connected</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">18: Mains phase order
+incorrect</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <span class="ph">Wiring at the rectifier mains input
+terminal</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">19: Mains freq out
+of range</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <span class="ph">The input frequency is out of tolerance</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">20: Mains voltage
+out of range</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <span class="ph">The input voltage is out of tolerance</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(B)</strong> Rectifier failure[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">32: UI-deviation warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">52: Charger 0° temp shutdown</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">54: Charger 30° temp shutdown</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">and “Rectifier mains fault” is not active</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The load current is higher than the nominal current of the
+system</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The Input voltage is low but in tolerance</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The system is turned off or in standby</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The rectifier or PSU is inoperable</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(C)</strong>—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <span class="ph">—</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(D)</strong>—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <span class="ph">—</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(E)</strong> DC out of tolerance[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">22: Low Vdc warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">23: Low Vdc shutdown</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">24: High Vdc warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">25: High2 Vdc shutdown</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">26: Low Vaux warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">27: Low Vaux shutdown</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">28: High Vaux warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">29: High Vaux shutdown</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The load current is higher than the nominal current of the
+system</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Short-circuit</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The system is turned off or in standby</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The rectifier or PSU is inoperable</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The battery is discharged or disconnected during battery
+operation</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(F)</strong> DC Fuse blown[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">31: Charger fuse blown</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The fuse trip indicator is not connected</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The load current is higher than the nominal current of the
+system</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Short-circuit</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Rectifier output fuse F026 (F027) blown</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(G)</strong> Rect. Overcurrent[30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">30: Total DC current
+limit</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The load current is higher than the nominal current of the
+system</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Short-circuit</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(H)</strong>—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <span class="ph">—</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1" rowspan="2">
+                     <span class="ph">
+                        <strong class="ph b">(I)</strong> Battery discharged[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">22: Low Vdc warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">26: Low Vaux warning</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">One or more battery cells are defective</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The battery is discharged</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The system is turned off or in standby</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">42: Battery defective</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <span class="ph">The battery monitor not reset after
+installation of new battery</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(J)</strong> Battery disconnected[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">35: Battery breaker
+open</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <span class="ph">Battery breaker open or auxiliary
+contact not connected</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(K)</strong> DC earth fault[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">43: Earth + leak warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">44: Earth - leak warning</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <span class="ph">One of the battery poles is connected
+to earth</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(L)</strong>—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <span class="ph">—</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(M)</strong> Control power fault[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">5: AC PSU not working</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">6: DC PSU not working</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Connector cable is missing to at least one of the PSUs</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The rectifier mains is not available or the rectifier mains
+input breaker is open</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The battery is disconnected or a battery breaker is open</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1" rowspan="4">
+                     <span class="ph">
+                        <strong class="ph b">(N)</strong> Overtemperature[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">51: Charger 0° temp warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">52: Charger 0° temp shutdown</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">53: Charger 30° temp warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">54: Charger 30° temp shutdown</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <span class="ph">Overtemperature on the rectifier
+power components</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">55: Transformer temp
+warning</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Air inlet obstructed</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The fans are inoperable</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">56: Choke temp warning</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <span class="ph">The ambient temperature is too high</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">57: Diode temp warning</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <span class="ph">The sensor contacts are not connected</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(O)</strong> Fan failure [30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">61-68: Fan 1-8 inoperable</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">One or more fans are blocked, rotating too slow or disconnected</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Fan supply missing</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(P)</strong>—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <span class="ph">—</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(Q)</strong> Option 1 : Surge protection
+fault [30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">71: Option 1</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(R)</strong>Option 2 : Temperature
+high around capacitor bank [30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">72: Option 2</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(S)</strong>—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <span class="ph">—</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(T)</strong>—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <span class="ph">—</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(U)</strong>Option 5 : Battery operation [30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">75: Option 5</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(V)</strong> Option 6 : High DC voltage [30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">76: Option 6</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(W)</strong> Option 7 : Q006 Closed [30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">77: Option 7</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(X)</strong> Option 8 : Battery Bank
+B common alarm [30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__2">
+                     <span class="ph">78: Option 8</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootSDCFromTheAlarmPanel-6D572FC9__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+            </tbody></table>
+   </div>
+</article></main></body></html>

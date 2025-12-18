@@ -1,0 +1,76 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="reality-troubleshooting-guide,ups-diagnostics,communication-debug-tools,bms-troubleshooting,inverter-diagnostics,identify-fault,collect-logs,run-self-test,isolate-fault-domain,escalate-to-service,field-service,plant-maintenance,emergency-response,preventive-maintenance,continuous-availability"><meta name="keywords" content="reality-troubleshooting-guide, ups-diagnostics, communication-debug-tools, bms-troubleshooting, inverter-diagnostics, identify-fault, collect-logs, run-self-test, isolate-fault-domain, escalate-to-service, field-service, plant-maintenance, emergency-response, preventive-maintenance, continuous-availability"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-12-04T14:00:00+05:30"><meta name="DC.date.modified" content="2025-12-04T14:00:00+05:30"><meta name="title" content="Troubleshooting"><meta name="shortdesc" content="Structured troubleshooting procedures for Reality UPS, inverters, and battery systems including diagnostics and escalation steps."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="fault-code; event-log; battery-string; inverter; bms"><meta name="taxonomy" content="domain:service-and-support;usecase:troubleshooting;industry: uninterruptible power supply (UPS) systems"><meta name="tags" content="diagnostics,troubleshooting,service"><meta name="usecase" content="fault-identification-and-remediation"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="Troubleshooting-9D7F8019"><meta name="DC.language" content="en"><title>Troubleshooting the Gateway</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="Troubleshooting-9D7F8019"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Troubleshooting the Gateway</h1>
+   
+   
+   <div class="body conbody">
+      <table class="table"><caption></caption><colgroup><col><col></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="Troubleshooting-9D7F8019__entry__1">
+                     <span class="ph">Problem</span>
+                  </th>
+                  <th class="entry valign-top" id="Troubleshooting-9D7F8019__entry__2">
+                     <span class="ph">Check</span>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-9D7F8019__entry__1">
+                     <span class="ph">LED(s) not illuminated</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-9D7F8019__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">Check the status and connection of the power supply.</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-9D7F8019__entry__1">
+                     <span class="ph">Can’t connect with a PC to the gateway.</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-9D7F8019__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">Check that the correct cable (straight Ethernet cable (RJ45 connection))
+is used.</li>
+                        <li class="sli">Check the Ethernet link 1 &amp; 2 LEDs (<strong class="ph b">LA1</strong> &amp; <strong class="ph b">LA2</strong>), see <a class="xref" href="AB900x_LEDs_CPT_0000588219.html">AB9001 LEDs AB9006 LEDs</a>.</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-9D7F8019__entry__1">
+                     <span class="ph">No Modbus TCP/IP communication from the NMC.</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-9D7F8019__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">Check the status of the analog and digital transactions in the
+live list (Byte 8).</li>
+                        <li class="sli">Check the status of the NMC card.</li>
+                        <li class="sli">Check that the correct cable (straight Ethernet cable (RJ45 connection))
+is used.</li>
+                        <li class="sli">Check the Modbus-TCP status LED (<strong class="ph b">MTCP</strong>), see <a class="xref" href="AB900x_LEDs_CPT_0000588219.html">AB9001 LEDs AB9006 LEDs</a>.</li>
+                        <li class="sli">Check the IP configuration is correct in the gateway.</li>
+                        <li class="sli">Check the Modbus-TCP port configuration in the gateway.</li>
+                        <li class="sli">Check that the cable is connected to correct Modbus-TCP port
+on the gateway, see <a class="xref" href="AB900x_Ports_CPT_0000588218.html">AB9001 Ports AB9006 Ports</a>.</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="Troubleshooting-9D7F8019__entry__1">
+                     <span class="ph">No ProfibusDP communication</span>
+                     <span class="ph">No Ethernet/IP communication</span>
+                  </td>
+                  <td class="entry" headers="Troubleshooting-9D7F8019__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">Check the Modbus TCP/IP communication from the NMC.</li>
+                        <li class="sli">Check the Profibus DP-V1 Network Status LED
+(<strong class="ph b">OP</strong>), see <a class="xref" href="AB900x_LEDs_CPT_0000588219.html">AB9001 LEDs AB9006 LEDs</a>. </li>
+                        <li class="sli">Check the EtherNet/IP Network Status LED
+(<strong class="ph b">NS</strong>), see <a class="xref" href="AB900x_LEDs_CPT_0000588219.html">AB9001 LEDs AB9006 LEDs</a>.</li>
+                     </ul>
+                  </td>
+               </tr>
+            </tbody></table>
+   </div>
+</article></main></body></html>

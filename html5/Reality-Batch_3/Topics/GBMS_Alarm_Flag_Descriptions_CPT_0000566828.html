@@ -1,0 +1,555 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="alarm-flag,gbms-software,bms-diagnostic,scada-integration-alarms,snmp-trap-mapping,alarm-classification,flag-interpretation,operator-response-procedure,alarm-logging,alarm-escalation,commissioning-checklist,preventive-maintenance,remote-monitoring,industrial-control-room,critical-power-systems"><meta name="keywords" content="alarm-flag, gbms-software, bms-diagnostic, scada-integration-alarms, snmp-trap-mapping, alarm-classification, flag-interpretation, operator-response-procedure, alarm-logging, alarm-escalation, commissioning-checklist, preventive-maintenance, remote-monitoring, industrial-control-room, critical-power-systems"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-12-05T11:00:00+05:30"><meta name="DC.date.modified" content="2025-12-05T11:00:00+05:30"><meta name="title" content="GBMS alarm flag descriptions"><meta name="shortdesc" content="Definitions and operational meaning for GBMS alarm flags used in diagnostics and monitoring."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="alarm-flag; gbms-controller; scada; snmp; log-server"><meta name="taxonomy" content="monitoring:diagnostics:ups-systems"><meta name="tags" content="alarms,diagnostics,monitoring,operator-guidance,flag-definitions"><meta name="usecase" content="troubleshooting-and-operator-training"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="AlarmFlagDescriptions-80086A12"><meta name="DC.language" content="en"><title>Alarm Flag Descriptions</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="AlarmFlagDescriptions-80086A12"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Alarm Flag Descriptions</h1>
+   
+   
+   <div class="body conbody">
+      <p class="p">For example, the hexadecimal reading of <code class="ph codeph">0x0041</code> for a general status flag means that the G.BMS is running as intended <code class="ph codeph">(0x0001)</code> and the batteries are charging in
+float charge <code class="ph codeph">(0x0040)</code>.</p>
+      <table class="table" id="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46"><caption><span class="table--title-label">Table 1. </span><span class="title">General Status Flags Description</span></caption><colgroup><col style="width:40%"><col style="width:20%"><col style="width:40%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__1">
+                     <span class="ph">Flag Name</span>
+                  </th>
+                  <th class="entry valign-top" id="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__2">
+                     <span class="ph">Hexadecimal / (Decimal)</span>
+                  </th>
+                  <th class="entry valign-top" id="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__3">
+                     <span class="ph">Description</span>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__1">
+                     <span class="ph">BACS_STATE_NONE</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__2">
+                     <span class="ph">0x0000 / (0)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__3">
+                     <span class="ph">The internal communication in the
+webmanager is interrupted.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__1">
+                     <span class="ph">BACS_STATE_RUNNING</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__2">
+                     <span class="ph">0x0001/ (1)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__3">
+                     <span class="ph">The webmanager is running as intended.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__1">
+                     <span class="ph">BACS_STATE_CONNECTED</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__2">
+                     <span class="ph">0x0002/ (2)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__3">
+                     <span class="ph">The webmanager is connecting and
+starting up.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__1">
+                     <span class="ph">BACS_ STATE_MODULE_LOST</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__2">
+                     <span class="ph">0x0004/ (4)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__3">
+                     <span class="ph">Communication between the modules
+and the webmanager is lost.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__1">
+                     <span class="ph">BACS_STATE_DISCHARGING</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__2">
+                     <span class="ph">0x0008/ (8)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__3">
+                     <span class="ph">The batteries are being discharged,
+detected by the modules.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__1">
+                     <span class="ph">BACS_STATE_CHARGING</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__2">
+                     <span class="ph">0x0010/ (16)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__3">
+                     <span class="ph">The batteries are being charged,
+detected by the modules.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__1">
+                     <span class="ph">BACS_STATE_DISCHARGING_STOPPED</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__2">
+                     <span class="ph">0x0020/ (32)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__3">
+                     <span class="ph">The batteries are no longer being
+discharged, detected by the modules.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__1">
+                     <span class="ph">BACS_STATE_FLOAT_CHARGING</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__2">
+                     <span class="ph">0x0040/ (64)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__3">
+                     <span class="ph">The batteries are in float charge,
+detected by the modules.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__1">
+                     <span class="ph">BACS_STATE_EQUALISATION</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__2">
+                     <span class="ph">0x0080/ (128)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__3">
+                     <span class="ph">One or more battery cell charges
+are being equalized.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__1">
+                     <span class="ph">BACS_STATE_SYSTEM_FAILURE</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__2">
+                     <span class="ph">0x0100/ (256)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__3">
+                     <span class="ph">One or more parts in the G.BMS are
+inoperable.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__1">
+                     <span class="ph">BACS_STATE_VOLTAGE_OUTOFRANGE</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__2">
+                     <span class="ph">0x0200/ (512)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__3">
+                     <span class="ph">A battery voltage level is out of
+range, measured by the module. The voltage range is defined in the
+webmanager settings.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__1">
+                     <span class="ph">BACS_STATE_TEMPERATURE_OUTOFRANGE</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__2">
+                     <span class="ph">0x0400/ (1024)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__3">
+                     <span class="ph">A battery temperature is out of range,
+measured by the module. The temperature range is defined in the webmanager
+settings.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__1">
+                     <span class="ph">BACS_STATE_RESISTOR-OUTOFRANGE</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__2">
+                     <span class="ph">0x0800/ (2048)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__3">
+                     <span class="ph">A battery impedance is out of range,
+measured by the module. The impedance range and measurement interval
+is defined in the webmanager settings.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__1">
+                     <span class="ph">BACS_STATE_MODULE-ADDRESSING</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__2">
+                     <span class="ph">0x1000/ (4096)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__3">
+                     <span class="ph">Modules on the BACS bus are being
+addressed.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__1">
+                     <span class="ph">BACS_STATE_MODULE-SEARCHING</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__2">
+                     <span class="ph">0x2000/ (8192)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__3">
+                     <span class="ph">Searching for a specific module address
+on the BACS bus.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__1">
+                     <span class="ph">BACS_STATE_MODULE-INITIALIZING</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__2">
+                     <span class="ph">0x4000/ (16384)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__3">
+                     <span class="ph">Modules are initializing and starting
+up. Checking that all connected modules on the BACS bus are compatible
+(same type and revision).</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__1">
+                     <span class="ph">BACS_STATE_MODULE-POLLING</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__2">
+                     <span class="ph">0x8000/ (32768)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__GeneralStatusFlagsDescription-7B645E46__entry__3">
+                     <span class="ph">A Modbus poll is active.</span>
+                  </td>
+               </tr>
+            </tbody></table>
+      <div class="div">
+         <table class="table" id="AlarmFlagDescriptions-80086A12__BatteryStatusFlagsDescription-7B646215"><caption><span class="table--title-label">Table 2. </span><span class="title">Battery Status Flags Description</span></caption><colgroup><col style="width:40%"><col style="width:20%"><col style="width:40%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="AlarmFlagDescriptions-80086A12__BatteryStatusFlagsDescription-7B646215__entry__1">
+                        <span class="ph">Flag Name</span>
+                     </th>
+                     <th class="entry valign-top" id="AlarmFlagDescriptions-80086A12__BatteryStatusFlagsDescription-7B646215__entry__2">
+                        <span class="ph">Hexadecimal/ (Decimal)</span>
+                     </th>
+                     <th class="entry valign-top" id="AlarmFlagDescriptions-80086A12__BatteryStatusFlagsDescription-7B646215__entry__3">
+                        <span class="ph">Description</span>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="AlarmFlagDescriptions-80086A12__BatteryStatusFlagsDescription-7B646215__entry__1">
+                        <span class="ph">BACS_STATE-GENERAL-ALARM</span>
+                     </td>
+                     <td class="entry" headers="AlarmFlagDescriptions-80086A12__BatteryStatusFlagsDescription-7B646215__entry__2">
+                        <span class="ph">0x0001/ (1)</span>
+                     </td>
+                     <td class="entry" headers="AlarmFlagDescriptions-80086A12__BatteryStatusFlagsDescription-7B646215__entry__3">
+                        <span class="ph">The general alarm is active. The
+audible alarm also activates.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmFlagDescriptions-80086A12__BatteryStatusFlagsDescription-7B646215__entry__1">
+                        <span class="ph">BACS_STATE-VOLTAGE-DIFF-HIGH </span>
+                     </td>
+                     <td class="entry" headers="AlarmFlagDescriptions-80086A12__BatteryStatusFlagsDescription-7B646215__entry__2">
+                        <span class="ph">0x0002/ (2)</span>
+                     </td>
+                     <td class="entry" headers="AlarmFlagDescriptions-80086A12__BatteryStatusFlagsDescription-7B646215__entry__3">
+                        <span class="ph">The measured voltage for one or more
+batteries are further from the target average voltage than the set
+maximum difference. Can only be active if the option <strong class="ph b">Max. Voltage
+Difference</strong> is enabled and defined in the web interface. </span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmFlagDescriptions-80086A12__BatteryStatusFlagsDescription-7B646215__entry__1">
+                        <span class="ph">BACS_STATE-BATTERY-BREAKER-OPEN</span>
+                     </td>
+                     <td class="entry" headers="AlarmFlagDescriptions-80086A12__BatteryStatusFlagsDescription-7B646215__entry__2">
+                        <span class="ph">0x0004/ (4)</span>
+                     </td>
+                     <td class="entry" headers="AlarmFlagDescriptions-80086A12__BatteryStatusFlagsDescription-7B646215__entry__3">
+                        <span class="ph">A battery breaker was opened by the
+GX_R_AUX. Optional, only if the battery breaker control is wired to
+the GX_R_AUX.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmFlagDescriptions-80086A12__BatteryStatusFlagsDescription-7B646215__entry__1">
+                        <span class="ph">BACS_STATE_THERMAL_RUNAWAY</span>
+                     </td>
+                     <td class="entry" headers="AlarmFlagDescriptions-80086A12__BatteryStatusFlagsDescription-7B646215__entry__2">
+                        <span class="ph">0x0008/ (8)</span>
+                     </td>
+                     <td class="entry" headers="AlarmFlagDescriptions-80086A12__BatteryStatusFlagsDescription-7B646215__entry__3">
+                        <span class="ph">Thermal runaway detected. How the
+signal triggers depends on how it is configured in <strong class="ph b">Devices &gt; BACS
+&gt; Thermal Runaway</strong>. As an option, it can also trigger other actions.</span>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+      <table class="table" id="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A"><caption><span class="table--title-label">Table 3. </span><span class="title">Alarm Flags Description</span></caption><colgroup><col style="width:40%"><col style="width:20%"><col style="width:40%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__1">
+                     <span class="ph">Alarm Flag
+Name</span>
+                  </th>
+                  <th class="entry valign-top" id="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__2">
+                     <span class="ph">Hexadecimal/ (Decimal)</span>
+                  </th>
+                  <th class="entry valign-top" id="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__3">
+                     <span class="ph">Description</span>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__1">
+                     <span class="ph">BACS_ALARM_NONE</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__2">
+                     <span class="ph">0x0000 / (0)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__3">
+                     <span class="ph">No alarm of this type is active.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__1">
+                     <span class="ph">BACS_ALARM_GENERAL_ALARM</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__2">
+                     <span class="ph">0x0001/ (1)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__3">
+                     <span class="ph">The general alarm is active. The
+audible alarm also activates.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__1">
+                     <span class="ph">BACS_ALARM_COMMUNICATION_LOST</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__2">
+                     <span class="ph">0x0002/ (2)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__3">
+                     <span class="ph">Communication between the modules
+and the webmanager is lost.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__1">
+                     <span class="ph">BACS_ALARM_VOLTAGE_HIGH</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__2">
+                     <span class="ph">0x0004/ (4)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__3">
+                     <span class="ph">One or more batteries are above the
+configured high voltage alarm threshold.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__1">
+                     <span class="ph">BACS_ALARM_VOLTAGE_LOW </span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__2">
+                     <span class="ph">0x0008/ (8)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__3">
+                     <span class="ph">One or more batteries are below the
+configured low voltage alarm threshold.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__1">
+                     <span class="ph">BACS_ALARM_TEMPERATURE_HIGH</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__2">
+                     <span class="ph">0x0010/ (16)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__3">
+                     <span class="ph">One or more batteries are above the
+configured high temperature alarm threshold.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__1">
+                     <span class="ph">BACS_ALARM_TEMPERATURE_LOW</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__2">
+                     <span class="ph">0x0020/ (32)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__3">
+                     <span class="ph">One or more batteries are below the
+configured low temperature alarm threshold.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__1">
+                     <span class="ph">BACS_ALARM_RESISTOR_HIGH</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__2">
+                     <span class="ph">0x0040/ (64)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__3">
+                     <span class="ph">One or more batteries are above the
+configured high impedance alarm threshold.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__1">
+                     <span class="ph">BACS_ALARM_RESISTOR_LOW</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__2">
+                     <span class="ph">0x0080/ (128)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__AlarmFlagsDescription-7B64646A__entry__3">
+                     <span class="ph">One or more batteries are below the
+configured low impedance alarm threshold.</span>
+                  </td>
+               </tr>
+            </tbody></table>
+      <table class="table" id="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA"><caption><span class="table--title-label">Table 4. </span><span class="title">Battery String Alarm Flags Description</span></caption><colgroup><col style="width:40%"><col style="width:20%"><col style="width:40%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__1">
+                     <span class="ph">Alarm Flag
+Name</span>
+                  </th>
+                  <th class="entry valign-top" id="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__2">
+                     <span class="ph">Hexadecimal/ (Decimal)</span>
+                  </th>
+                  <th class="entry valign-top" id="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__3">
+                     <span class="ph">Description</span>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__1">
+                     <span class="ph">No Alarm</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__2">
+                     <span class="ph">0x0000 / (0)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__3">
+                     <span class="ph">No alarm of this type is active.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__1">
+                     <span class="ph">Current Sensor High</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__2">
+                     <span class="ph">0x0001/ (1)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__3">
+                     <span class="ph">One or more strings are above the
+configured high current alarm threshold.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__1">
+                     <span class="ph">Current Sensor Low</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__2">
+                     <span class="ph">0x0002/ (2)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__3">
+                     <span class="ph">One or more strings are below the
+configured low current alarm threshold.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__1">
+                     <span class="ph">Current Sensor High Warning</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__2">
+                     <span class="ph">0x0004/ (4)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__3">
+                     <span class="ph">One or more strings are above the
+configured high current warning threshold.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__1">
+                     <span class="ph">Current Sensor Low Warning</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__2">
+                     <span class="ph">0x0008/ (8)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__3">
+                     <span class="ph">One or more strings are below the
+configured low current warning threshold.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__1">
+                     <span class="ph">Equalizing Cut Off</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__2">
+                     <span class="ph">0x0010/ (16)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__3">
+                     <span class="ph">The equalizing is no longer operable
+in one or more strings.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__1">
+                     <span class="ph">Current Deviation Discharge</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__2">
+                     <span class="ph">0x0020/ (32)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__3">
+                     <span class="ph">One or more strings are above the
+configured current deviation discharge alarm threshold.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__1">
+                     <span class="ph">Current Deviation Charge</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__2">
+                     <span class="ph">0x0040/ (64)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__3">
+                     <span class="ph">One or more strings are below the
+configured current deviation charge alarm threshold.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__1">
+                     <span class="ph">Current Deviation Discharge Warning</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__2">
+                     <span class="ph">0x0080/ (128)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__3">
+                     <span class="ph">One or more strings are above the
+configured current deviation discharge warning threshold.</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__1">
+                     <span class="ph">Current Deviation Charge Warning</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__2">
+                     <span class="ph">0x1000/ (4096)</span>
+                  </td>
+                  <td class="entry" headers="AlarmFlagDescriptions-80086A12__StringAlarmFlagsDescription-8D91B1CA__entry__3">
+                     <span class="ph">One or more strings are below the
+configured current deviation charge warning threshold.</span>
+                  </td>
+               </tr>
+            </tbody></table>
+   </div>
+</article></main></body></html>

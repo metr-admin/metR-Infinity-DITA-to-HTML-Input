@@ -1,0 +1,124 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="metr-pxc-reality,user-management,access-control,authentication-module,role-based-access,nmc-user-db,account-creation,password-reset,role-assignment,privilege-management,session-termination,audit-trail-review,operator-administration,security-compliance,authorized-access,shift-handover,remote-administration,ups-network-management"><meta name="keywords" content="metr-pxc-reality, user-management, access-control, authentication-module, role-based-access, nmc-user-db, account-creation, password-reset, role-assignment, privilege-management, session-termination, audit-trail-review, operator-administration, security-compliance, authorized-access, shift-handover, remote-administration, ups-network-management"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Default_User_and_Network_Settings_CPT_0000404938.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Change_User_Settings_CPT_0000404937.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Reset_Password_CPT_0000404936.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Default_User_and_Network_Settings_CPT_0000404938.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Change_User_Settings_CPT_0000404937.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Reset_Password_CPT_0000404936.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Default_User_and_Network_Settings_CPT_0000404938.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Change_User_Settings_CPT_0000404937.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Reset_Password_CPT_0000404936.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Default_User_and_Network_Settings_CPT_0000404938.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Change_User_Settings_CPT_0000404937.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Reset_Password_CPT_0000404936.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Default_User_and_Network_Settings_CPT_0000404938.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Change_User_Settings_CPT_0000404937.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Reset_Password_CPT_0000404936.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-05+05:30"><meta name="DC.date.modified" content="2025-12-05"><meta name="title" content="NMC User Accounts and Access"><meta name="shortdesc" content="Instructions for creating and managing user accounts, role assignments and access control for the Network Management Card."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="user-account; role; authentication-token; password-policy; audit-log; access-policy"><meta name="taxonomy" content="domain:industrial-engineering;usecase:user-account-and-access-management;industry: uninterruptible power supply (UPS) systems"><meta name="tags" content="users,accounts,access-control,authentication,roles,audit"><meta name="usecase" content="manage user accounts and access roles on the Network Management Card for secure administration"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="UserAccountsAndAccess-5E2E507C"><meta name="DC.language" content="en"><title>User Accounts</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="UserAccountsAndAccess-5E2E507C"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">User Accounts</h1>
+   
+   
+   <div class="body conbody">
+      <section class="section">
+         <div class="sectiondiv">
+            <p class="p">To access the NMC, a login with a user name
+and a password is always required. Both the user name and the password
+are case sensitive and can consist of maximum 64 characters.</p>
+            <div class="p">There are different user types with different access levels: <ul class="ul">
+                  <li class="li">
+                     <p class="p">
+                        <strong class="ph b">Super user:</strong> Both CLI and GUI access. Full access to
+all menus and options. Can add new users and manage other users.</p>
+                  </li>
+                  <li class="li">
+                     <p class="p">
+                        <strong class="ph b">Administrator:</strong> Both CLI and GUI access. Full access
+to all menus and options. Can add new users.</p>
+                  </li>
+                  <li class="li">
+                     <p class="p">
+                        <strong class="ph b">Device manager:</strong> Both CLI and GUI access. Can only access
+the log options, event and system menu.</p>
+                  </li>
+                  <li class="li">
+                     <p class="p">
+                        <strong class="ph b">Read-only user:</strong> Only GUI access. Can view the same menus
+as the device manager but cannot configure, delete data, or use FTP
+options.</p>
+                  </li>
+                  <li class="li">
+                     <p class="p">
+                        <strong class="ph b">Network-only user:</strong> Only remote access to the CLI and
+GUI. Can only access the network settings.</p>
+                  </li>
+               </ul>
+               <div class="note note note_note"><span class="note__title">Note:</span> Menus and options that a user does not have access to will
+appear grayed out.</div>
+            </div>
+         </div>
+      </section>
+      <section class="section">
+         <div class="sectiondiv">
+            <table class="table" id="UserAccountsAndAccess-5E2E507C__DefaultUserAndPasswordSettings-AAE2F9B2"><caption><span class="table--title-label">Table 1. </span><span class="title">Default User and Password Settings</span></caption><colgroup><col><col><col></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry valign-top" id="UserAccountsAndAccess-5E2E507C__DefaultUserAndPasswordSettings-AAE2F9B2__entry__1">
+                           <span class="ph">User Types</span>
+                        </th>
+                        <th class="entry valign-top" id="UserAccountsAndAccess-5E2E507C__DefaultUserAndPasswordSettings-AAE2F9B2__entry__2">
+                           <span class="ph">Default
+User Name</span>
+                        </th>
+                        <th class="entry valign-top" id="UserAccountsAndAccess-5E2E507C__DefaultUserAndPasswordSettings-AAE2F9B2__entry__3">
+                           <span class="ph">Default
+Password</span>
+                        </th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry" headers="UserAccountsAndAccess-5E2E507C__DefaultUserAndPasswordSettings-AAE2F9B2__entry__1">
+                           <span class="ph">Super user</span>
+                        </td>
+                        <td class="entry" headers="UserAccountsAndAccess-5E2E507C__DefaultUserAndPasswordSettings-AAE2F9B2__entry__2">
+                           <span class="ph">apc</span>
+                        </td>
+                        <td class="entry" headers="UserAccountsAndAccess-5E2E507C__DefaultUserAndPasswordSettings-AAE2F9B2__entry__3">
+                           <span class="ph">apc</span>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="UserAccountsAndAccess-5E2E507C__DefaultUserAndPasswordSettings-AAE2F9B2__entry__1">
+                           <span class="ph">Administrator</span>
+                        </td>
+                        <td class="entry" headers="UserAccountsAndAccess-5E2E507C__DefaultUserAndPasswordSettings-AAE2F9B2__entry__2">
+                           <span class="ph">apc</span>
+                        </td>
+                        <td class="entry" headers="UserAccountsAndAccess-5E2E507C__DefaultUserAndPasswordSettings-AAE2F9B2__entry__3">
+                           <span class="ph">apc</span>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="UserAccountsAndAccess-5E2E507C__DefaultUserAndPasswordSettings-AAE2F9B2__entry__1">
+                           <span class="ph">Device manager</span>
+                        </td>
+                        <td class="entry" headers="UserAccountsAndAccess-5E2E507C__DefaultUserAndPasswordSettings-AAE2F9B2__entry__2">
+                           <span class="ph">device</span>
+                        </td>
+                        <td class="entry" headers="UserAccountsAndAccess-5E2E507C__DefaultUserAndPasswordSettings-AAE2F9B2__entry__3">
+                           <span class="ph">apc</span>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="UserAccountsAndAccess-5E2E507C__DefaultUserAndPasswordSettings-AAE2F9B2__entry__1">
+                           <span class="ph">Read-only user</span>
+                        </td>
+                        <td class="entry" headers="UserAccountsAndAccess-5E2E507C__DefaultUserAndPasswordSettings-AAE2F9B2__entry__2">
+                           <span class="ph">readonly</span>
+                        </td>
+                        <td class="entry" headers="UserAccountsAndAccess-5E2E507C__DefaultUserAndPasswordSettings-AAE2F9B2__entry__3">
+                           <span class="ph">apc</span>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="UserAccountsAndAccess-5E2E507C__DefaultUserAndPasswordSettings-AAE2F9B2__entry__1">
+                           <span class="ph">Network-only user</span>
+                        </td>
+                        <td class="entry" headers="UserAccountsAndAccess-5E2E507C__DefaultUserAndPasswordSettings-AAE2F9B2__entry__2">
+                           <span class="ph">–</span>
+                        </td>
+                        <td class="entry" headers="UserAccountsAndAccess-5E2E507C__DefaultUserAndPasswordSettings-AAE2F9B2__entry__3">
+                           <span class="ph">–</span>
+                        </td>
+                     </tr>
+                  </tbody></table>
+            <div class="note note note_note"><span class="note__title">Note:</span> A user is automatically logged out after 3 minutes (default
+setting) of inactivity, this can be changed from the user settings.</div>
+         </div>
+      </section>
+   </div>
+<nav role="navigation" class="related-links"><ul class="ullinks"><li class="link ulchildlink"><strong><a href="../../Reality-Batch_3/Topics/Default_User_and_Network_Settings_CPT_0000404938.html">Default User and Network Settings</a></strong><br></li><li class="link ulchildlink"><strong><a href="../../Reality-Batch_3/Topics/Change_User_Settings_CPT_0000404937.html">Change User Settings</a></strong><br></li><li class="link ulchildlink"><strong><a href="../../Reality-Batch_3/Topics/Reset_Password_CPT_0000404936.html">Reset Password</a></strong><br></li></ul></nav></article></main></body></html>

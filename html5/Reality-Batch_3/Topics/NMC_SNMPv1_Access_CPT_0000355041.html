@@ -1,0 +1,204 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="metr-pxc-reality,snmpv1-agent,network-management-card,snmp-mib,trap-destination,community-string,snmpv1-configuration,community-string-setup,snmp-get-and-set,mib-query,trap-enabling,port-configuration,legacy-monitoring,management-network,data-centre-telemetry,monitoring-integration,remote-operations,ups-network-management"><meta name="keywords" content="metr-pxc-reality, snmpv1-agent, network-management-card, snmp-mib, trap-destination, community-string, snmpv1-configuration, community-string-setup, snmp-get-and-set, mib-query, trap-enabling, port-configuration, legacy-monitoring, management-network, data-centre-telemetry, monitoring-integration, remote-operations, ups-network-management"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_SNMP_Access_to_the_Network_Management_Card_CPT_0000334031.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_SNMP_Access_to_the_Network_Management_Card_CPT_0000334031.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_SNMP_Access_to_the_Network_Management_Card_CPT_0000334031.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_SNMP_Access_to_the_Network_Management_Card_CPT_0000334031.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_SNMP_Access_to_the_Network_Management_Card_CPT_0000334031.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-05+05:30"><meta name="DC.date.modified" content="2025-12-05"><meta name="title" content="NMC SNMPv1 Access"><meta name="shortdesc" content="Guidance on configuring SNMPv1 access to the Network Management Card including community string setup and MIB queries."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="snmpv1; community-string; oid; trap-destination; agent-port; mib-file"><meta name="taxonomy" content="domain:industrial-engineering;usecase:snmpv1-access-configuration;industry: uninterruptible power supply (UPS) systems"><meta name="tags" content="snmpv1,community,mib,traps,monitoring,legacy"><meta name="usecase" content="configure SNMPv1 access for monitoring integration and trap notifications"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="SNMPv1Access-80A305E2"><meta name="DC.language" content="en"><title>SNMPv1 Access</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="SNMPv1Access-80A305E2"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">SNMPv1 Access</h1>
+   
+   
+   <div class="body conbody">
+      <p class="p">SNMPv1 uses access communities to define what IP addresses on the
+network have access to the SNMP communication from the NMC.</p>
+      <section class="section"><h2 class="title sectiontitle">SNMPv1 Access Communities</h2>
+         
+         <div class="sectiondiv">
+            <p class="p">To
+use SNMPv1 an access community is used. Each access community has
+a community name, an IP name or a host name and an access type. It
+is possible to defined up to four different access communities.</p>
+            <ul class="ul">
+               <li class="li">
+                  <p class="p">
+                     <span class="ph uicontrol">The community name:</span> Used
+for access by a network management station (NMS). The maximum length
+of a community name is 15 ASCII characters. </p>
+               </li>
+               <li class="li">
+                  <div class="p">
+                     <span class="ph uicontrol">The NMS IP/host name:</span> The IPv4 or IPv6 address, IP address mask, or host name that controls
+access by NMSs. A host name or a specific IP address (for example,
+149.225.12.1) allows access only by the NMS at that location. IP addresses
+that contain 255 restrict access as follows:<ul class="ul">
+                        <li class="li">
+                           <p class="p">149.225.12.255: Access by NMS on the 149.225.12 segment.</p>
+                        </li>
+                        <li class="li">
+                           <p class="p">149.225.255.255: Access by NMS on the 149.225 segment.</p>
+                        </li>
+                        <li class="li">
+                           <p class="p">149.255.255.255: Access by NMS on the 149 segment.</p>
+                        </li>
+                        <li class="li">
+                           <p class="p">0.0.0.0 (the default setting) which can also be expressed as
+255.255.255.255: Access by NMS on any segment.</p>
+                        </li>
+                     </ul>
+                  </div>
+               </li>
+               <li class="li">
+                  <div class="p">
+                     <span class="ph uicontrol">The access type:</span> There
+are four different access types:<ul class="ul">
+                        <li class="li">
+                           <p class="p">Read: GETS only, at any time</p>
+                        </li>
+                        <li class="li">
+                           <p class="p">Write: GETS at any time, and SETS when no user is logged onto
+the UI or command line interface.</p>
+                        </li>
+                        <li class="li">
+                           <p class="p">Write+: GETS and SETS at any time.</p>
+                        </li>
+                        <li class="li">
+                           <p class="p">Disable: No GETS or SETS at any time.</p>
+                        </li>
+                     </ul>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Configure SNMPv1 from the CLI</h2>
+         
+         <div class="sectiondiv">
+            <ol class="ol">
+               <li class="li">
+                  <p class="p">Log in to the CLI.</p>
+               </li>
+               <li class="li">
+                  <div class="p">To see the configuration options type <code class="ph codeph">snmp ?</code>
+                     <div class="note note note_note"><span class="note__title">Note:</span> In the table <code class="ph codeph">[n]</code> is the access community number 1, 2, 3 or 4.</div>
+                  </div>
+                  <table class="table"><caption></caption><colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:40%"></colgroup><thead class="thead">
+                           <tr class="row">
+                              <th class="entry valign-top" id="SNMPv1Access-80A305E2__entry__1">
+                                 <span class="ph">Setting</span>
+                              </th>
+                              <th class="entry valign-top" id="SNMPv1Access-80A305E2__entry__2">
+                                 <span class="ph">Command</span>
+                              </th>
+                              <th class="entry valign-top" id="SNMPv1Access-80A305E2__entry__3">
+                                 <span class="ph">Argument</span>
+                              </th>
+                              <th class="entry valign-top" id="SNMPv1Access-80A305E2__entry__4">
+                                 <span class="ph">Description</span>
+                              </th>
+                           </tr>
+                        </thead><tbody class="tbody">
+                           <tr class="row">
+                              <td class="entry" headers="SNMPv1Access-80A305E2__entry__1">
+                                 <span class="ph">Help</span>
+                              </td>
+                              <td class="entry" headers="SNMPv1Access-80A305E2__entry__2">
+                                 <code class="ph codeph">?</code>
+                              </td>
+                              <td class="entry" headers="SNMPv1Access-80A305E2__entry__3"></td>
+                              <td class="entry" headers="SNMPv1Access-80A305E2__entry__4">
+                                 <span class="ph">Shows the command help.</span>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry" headers="SNMPv1Access-80A305E2__entry__1">
+                                 <span class="ph">SNMPv1
+access</span>
+                              </td>
+                              <td class="entry" headers="SNMPv1Access-80A305E2__entry__2">
+                                 <code class="ph codeph">–S</code>
+                              </td>
+                              <td class="entry" headers="SNMPv1Access-80A305E2__entry__3">
+                                 <code class="ph codeph">enable | disable</code>
+                              </td>
+                              <td class="entry" headers="SNMPv1Access-80A305E2__entry__4">
+                                 <span class="ph">Enables or disables SNMP version
+1.</span>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry" headers="SNMPv1Access-80A305E2__entry__1">
+                                 <span class="ph">Community
+name</span>
+                              </td>
+                              <td class="entry" headers="SNMPv1Access-80A305E2__entry__2">
+                                 <code class="ph codeph">–c[n]</code>
+                              </td>
+                              <td class="entry" headers="SNMPv1Access-80A305E2__entry__3">
+                                 <code class="ph codeph">&lt;Community
+Name&gt;</code>
+                              </td>
+                              <td class="entry" headers="SNMPv1Access-80A305E2__entry__4">
+                                 <span class="ph">Specify a community name.</span>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry" headers="SNMPv1Access-80A305E2__entry__1">
+                                 <span class="ph">Community
+access type</span>
+                              </td>
+                              <td class="entry" headers="SNMPv1Access-80A305E2__entry__2">
+                                 <code class="ph codeph">–a[n]</code>
+                              </td>
+                              <td class="entry" headers="SNMPv1Access-80A305E2__entry__3">
+                                 <code class="ph codeph">read | write |
+writeplus | disable</code>
+                              </td>
+                              <td class="entry" headers="SNMPv1Access-80A305E2__entry__4">
+                                 <span class="ph">Set the access type of a community.</span>
+                              </td>
+                           </tr>
+                           <tr class="row">
+                              <td class="entry" headers="SNMPv1Access-80A305E2__entry__1">
+                                 <span class="ph">Community IPv4/IPv6 address or host
+name</span>
+                              </td>
+                              <td class="entry" headers="SNMPv1Access-80A305E2__entry__2">
+                                 <code class="ph codeph">–n[n]</code>
+                              </td>
+                              <td class="entry" headers="SNMPv1Access-80A305E2__entry__3">
+                                 <code class="ph codeph">&lt;IP address&gt; | &lt;Host Name&gt;</code>
+                              </td>
+                              <td class="entry" headers="SNMPv1Access-80A305E2__entry__4">
+                                 <span class="ph">Specify the
+IPv4/IPv6 address or the host name of community.</span>
+                              </td>
+                           </tr>
+                        </tbody></table>
+               </li>
+            </ol>
+         </div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Configure SNMPv1 from the Web Interface</h2>
+         
+         <div class="sectiondiv">
+            <ol class="ol">
+               <li class="li">
+                  <p class="p">Log in to the web interface.</p>
+               </li>
+               <li class="li">
+                  <p class="p">Navigate to <span class="ph uicontrol">Configuration &gt; Network
+&gt; SNMPv1 &gt; Access Control</span>.</p>
+               </li>
+               <li class="li">
+                  <p class="p">Click on a community name to configure <span class="ph uicontrol">Community Name</span>, <span class="ph uicontrol">NMS IP/Host
+Name</span> and <span class="ph uicontrol">Access Type</span>.</p>
+               </li>
+               <li class="li">
+                  <p class="p">Click <span class="ph uicontrol">Apply</span> to save any
+changes.</p>
+                  <div class="note note note_note"><span class="note__title">Note:</span> Reboot the NMC to apply changes. From
+the web interface select <span class="ph uicontrol">Control &gt; Network
+&gt; Reset/Reboot</span> for options.</div>
+               </li>
+            </ol>
+            <img class="image" src="../Images/NMC_Configuration_Network_SNMPv1_Access-Control_Configure-Comunity_0000337186.png">
+         </div>
+      </section>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Reality-Batch_3/Topics/NMC_SNMP_Access_to_the_Network_Management_Card_CPT_0000334031.html">SNMP Access to the Network Management Card</a></div></div></nav></article></main></body></html>

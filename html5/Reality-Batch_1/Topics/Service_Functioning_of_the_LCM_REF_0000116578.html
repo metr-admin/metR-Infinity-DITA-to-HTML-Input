@@ -1,0 +1,49 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="reference"><meta name="description" content="Reality EMEA"><meta name="DC.subject" content="metr-pxc-reality,local-control-module-lcm,display-and-control-unit,status-indicator-panel,control-firmware,sensor-interface,normal-operation,status-monitoring,alarm-detection,parameter-adjustment,data-logging,diagnostic-readouts,operational-dashboard,plant-operations,operator-handover,control-room-monitoring,process-visibility,maintenance-feedback-loop"><meta name="keywords" content="metr-pxc-reality, local-control-module-lcm, display-and-control-unit, status-indicator-panel, control-firmware, sensor-interface, normal-operation, status-monitoring, alarm-detection, parameter-adjustment, data-logging, diagnostic-readouts, operational-dashboard, plant-operations, operator-handover, control-room-monitoring, process-visibility, maintenance-feedback-loop"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-11-18+05:30"><meta name="DC.date.modified" content="2025-11-18"><meta name="title" content="Functioning of the LCM"><meta name="shortdesc" content="Explains LCM behaviour during normal operation, indicators, and how to interpret diagnostic messages for troubleshooting."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="local-control-module;lcm-display;status-leds;sensor-interfaces;diagnostic-codes;event-log"><meta name="taxonomy" content="domain:industrial-engineering;usecase:operation-and-diagnostics;industry: uninterruptible power supply (UPS) systems"><meta name="tags" content="operation,diagnostics,lcm,status,monitoring"><meta name="usecase" content="operation-and-diagnostics"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="FunctioningOfTheLCM-90C15C05"><meta name="DC.language" content="en"><title>Functioning of the LCM</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="FunctioningOfTheLCM-90C15C05"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Functioning of the LCM</h1>
+   
+   
+   <div class="body refbody"><p class="shortdesc">
+      <span class="keyword">Reality EMEA</span>
+   </p>
+      <section class="section"><h2 class="title sectiontitle">LCM at System Start-Up</h2>
+         
+         <p class="p">During system start-up,
+the LCM module checks if the counters have already been started.</p>
+         <p class="p">If the counters have been started before the actual start-up date,
+the actual LCM status is reloaded from the Flash memory.</p>
+         <div class="p">If
+the counters have not been started before the start-up, the actual
+date is stored in RAM and will be used as the system start-up date.<ul class="ul">
+               <li class="li">
+                  <p class="p">Once the system has been running (at least in standby) for
+5 consecutive days without interruption, the LCM module considers
+the system to be commissioned and automatically stores the initial
+start-up date in the Flash memory as the UPS start-up date. This date
+is also stored as the start date for each of the five LCM counters.</p>
+               </li>
+               <li class="li">
+                  <p class="p">If during these first five days, the LCM action <span class="ph uicontrol">Start counters now</span> is performed by the FSR, the actual
+date is stored as the UPS start-up date and as start date for each
+of the five LCM counters.</p>
+               </li>
+            </ul>
+         </div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">LCM During Runtime</h2>
+         
+         <p class="p">After the counters have
+been started, the LCM module checks once per day if a counter has
+reached its elapse date. If the elapse date has been reached, the
+corresponding counter elapse flags this and the number of remaining
+pop-up repeats are set in RAM and Flash. An entry is added to the
+event log.</p>
+         <p class="p">Once per minute, the LCM module checks if there is
+a pop-up message to be displayed on the display. A pop-up will be
+displayed if the elapse flag of a counter is set, there are remaining
+repeats, and the repeat period is over. If another LCM pop-up is already
+shown on the display, this will not be overwritten.</p>
+      </section>
+   </div>
+</article></main></body></html>

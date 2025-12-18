@@ -1,0 +1,1293 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="system components,UPS architecture,rectifier module,inverter module,static bypass switch,battery subsystem,control electronics,front panel interface,component identification workflow,system overview analysis,module interaction mapping,power path evaluation,functional block understanding,component verification steps,system operational flow review,UPS operational environment,critical power infrastructure,industrial electrical system,facility backup power architecture,system design domain,power electronics integration,component-level interaction context"><meta name="keywords" content="system components, UPS architecture, rectifier module, inverter module, static bypass switch, battery subsystem, control electronics, front panel interface, component identification workflow, system overview analysis, module interaction mapping, power path evaluation, functional block understanding, component verification steps, system operational flow review, UPS operational environment, critical power infrastructure, industrial electrical system, facility backup power architecture, system design domain, power electronics integration, component-level interaction context"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Function_Description_CPT_0000325924.html#FunctionDescription-555BC2EA"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Function_Description_CPT_0000325924.html#FunctionDescription-555BC2EA"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Function_Description_CPT_0000325924.html#FunctionDescription-555BC2EA"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Function_Description_CPT_0000325924.html#FunctionDescription-555BC2EA"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Function_Description_CPT_0000325924.html#FunctionDescription-555BC2EA"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-03+05:30"><meta name="DC.date.modified" content="2025-12-03"><meta name="title" content="System Components Overview"><meta name="shortdesc" content="Provides an overview of the main UPS system components, including rectifier, inverter, static bypass, battery modules, and control electronics, and explains how they function together."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="rectifier; inverter; static bypass; battery modules; control panel; power distribution board; communication interface; sensors"><meta name="taxonomy" content="domain:system architecture;usecase:component-overview;industry:uninterruptible power supply (UPS) systems"><meta name="tags" content="system components,rectifier,inverter,bypass,battery modules,UPS architecture"><meta name="usecase" content="Help engineers, technicians, and operators understand the main UPS components and their functional relationships"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="SystemComponentsOverview-8A601714"><meta name="DC.language" content="en"><title>System Components Description</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="SystemComponentsOverview-8A601714"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">System Components Description</h1>
+   
+   
+   <div class="body conbody">
+      <section class="section">
+         <div class="sectiondiv">
+            <p class="p">The image shows an example and a simplification
+of a system configuration with optional components intended as a reference
+for the description of the system components. See the <em class="ph i">Single Line
+Diagram</em> for the configuration of your system.</p>
+            <div class="note note note_note"><span class="note__title">Note:</span> Optional
+parts are marked with a star.</div>
+            <figure class="fig fignone">
+               <img class="image" src="../Images/General-System-Principle-Diagram_PxW_BB_ISBS_0000360285.svg">
+            </figure>
+            <figure class="fig fignone">
+               <img class="image" src="../Images/General-System-Principle-Diagram_WxW_BB_ISBS_0000424870.svg">
+            </figure>
+            <figure class="fig fignone">
+               <img class="image" src="../Images/General-System-Principle-Diagram_SDC_0000510869.svg">
+            </figure>
+            <div class="p">The system components are divided into
+three sections:<ul class="sl simple">
+                  <li class="sli">
+                     <strong class="ph b">(A)</strong> The connection field. Located in the bypass, distribution
+or incoming.</li>
+                  <li class="sli">
+                     <strong class="ph b">(B)</strong> The system part. Located in the system cabinet behind
+the main protection cover.</li>
+                  <li class="sli">
+                     <strong class="ph b">(C)</strong> The low voltage section. Located in the system cabinet
+in front of the main protection cover.</li>
+               </ul>The sections are divided to make maintenance and service easier.
+The connection field and system part physically isolated<a name="fnsrc_1" href="#fntarg_1"><sup>1</sup></a> from each other (different
+cabinets).</div>
+            <div class="p">The system components are divided
+into two sections:<ul class="sl simple">
+                  <li class="sli">
+                     <strong class="ph b">(A)</strong> The system part. Located in the system cabinet behind
+the main protection cover.</li>
+                  <li class="sli">
+                     <strong class="ph b">(B)</strong> The low voltage section. Located in the system cabinet
+in front of the main protection cover.</li>
+               </ul>
+            </div>
+            <div class="note note note_note"><span class="note__title">Note:</span> The breakers in the diagram can be switch-disconnectors,
+fuse switch-disconnectors or circuit breakers.</div>
+            <div class="note note note_note"><span class="note__title">Note:</span> The standard
+alphanumeric designations are shown and might be different on some
+systems.</div>
+         </div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Components in the Connection Field</h2>
+         
+         <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:11.76470588235294%"><col style="width:17.647058823529413%"><col style="width:70.58823529411765%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="SystemComponentsOverview-8A601714__entry__1">
+                        <span class="ph" id="SystemComponentsOverview-8A601714__Designator-05E095CC">Designator</span>
+                     </th>
+                     <th class="entry valign-top" id="SystemComponentsOverview-8A601714__entry__2">
+                        <span class="ph" id="SystemComponentsOverview-8A601714__Component-05E0975F">Component</span>
+                     </th>
+                     <th class="entry valign-top" id="SystemComponentsOverview-8A601714__entry__3">
+                        <span class="ph" id="SystemComponentsOverview-8A601714__Description-05E09A27">Description</span>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__1">
+                        <span class="ph">X090</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__2">
+                        <span class="ph">Bypass mains terminals</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__3">
+                        <span class="ph">Connection terminal for the bypass mains input. The bypass
+mains input requires an external protective device. A fuse or molded
+case circuit breaker (MCCB) according to the technical specification.
+L, N, PE for single phase systems. L1, L2, L3 and PE (and N if there
+is no isolation bypass transformer) for three phase systems. For specifications
+always refer to the <em class="ph i">Drawings</em> for your system.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__1">
+                        <span class="ph">Q090</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__2">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>Bypass
+circuit breaker or Switch-disconnector</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__3">
+                        <span class="ph">Breaker for the bypass mains input. The bypass mains input
+requires an external protective device. A fuse or MCCB according to
+the technical specification.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__1">
+                        <span class="ph">T090</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__2">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>Bypass
+transformer or stabilizer</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__3">
+                        <span class="ph">Galvanic isolation between bypass mains input and load.
+Used if the required output is different from the available input.
+Either a transformer or stabilizer can be used.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__1">
+                        <span class="ph">Q050</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__2">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>3-position
+manual bypass switch</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__3">
+                        <span class="ph">Makes it possible to isolate the system for maintenance
+and test the system without interruption. Positions are <strong class="ph b">Auto</strong>, <strong class="ph b">Test</strong> and <strong class="ph b">Bypass</strong>. For more information see <a class="xref" href="Manual_Bypass_Switch_CPT_0000449942.html">Manual Bypass Switch</a>.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__1">
+                        <span class="ph">Q050</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__2">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>2-position
+manual bypass switch</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__3">
+                        <span class="ph">Makes it possible to isolate the system for maintenance.
+Positions are <strong class="ph b">Auto</strong> and <strong class="ph b">Bypass</strong>. For more information
+see <a class="xref" href="Manual_Bypass_Switch_CPT_0000449942.html">Manual Bypass Switch</a>.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__1">
+                        <span class="ph">Q028</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__2">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>Switch-disconnector</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__3">
+                        <span class="ph">Always used with 2-position manual bypass switches. Needed
+to isolates the static switch EN when the 2-position manual bypass
+switch is in <strong class="ph b">Bypass</strong> position. This functionality is integrated
+in 3-position manual bypass switches.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__1">
+                        <span class="ph">X001</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__2">
+                        <span class="ph">Rectifier mains input
+terminals</span>
+                        <span class="ph">DC power input terminals</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__3">
+                        <span class="ph">Connection terminal for the <span class="ph">rectifier
+mains</span>
+                           <span class="ph">DC power</span> input. The <span class="ph">rectifier mains</span>
+                           <span class="ph">DC power</span> input requires
+an external protective device. A fuse or MCCB according to the technical
+specification.<span class="ph"> Always L1, L2, L3, and PE.</span>
+                        </span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__1">
+                        <span class="ph">Q001</span>
+                        <span class="ph">Q020</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__2">
+                        <span class="ph">Rectifier input circuit
+breaker or switch-disconnector</span>
+                        <span class="ph">DC power input
+isolation</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__3">
+                        <span class="ph">Breaker for the rectifier mains input. The
+rectifier mains input requires an external protective device. A fuse
+or MCCB according to the technical specification.</span>
+                        <span class="ph">Provides isolation for the DC power input. No trip function.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__1">
+                        <span class="ph">X002</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__2">
+                        <span class="ph">Battery terminals</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__3">
+                        <span class="ph" id="SystemComponentsOverview-8A601714__X002-Desc">Connection terminal for the battery connection.
+The battery connection requires an external protective device. A fuse
+or MCCB according to the technical specification.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__1">
+                        <span class="ph">Q004</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__2">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>Battery
+circuit breaker</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__3">
+                        <span class="ph" id="SystemComponentsOverview-8A601714__Q004-Desc">Breaker for the battery
+connection. Can be a battery protection device. If Q004 is not selected,
+Q005 has to be selected. It is possible to have both options.The battery
+connection, protection and breakers can also be part of the customers
+scope.
+                        </span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__1">
+                        <span class="ph">Q005</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__2">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>Battery
+protection device</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__3">External battery protection
+device for the battery connection, must be installed according to
+the technical specification. If Q005 is not selected, Q004 has to
+be selected and Q004 must be a battery protection device. It is possible
+to have both options.
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__1">
+                        <span class="ph">X004</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__2">
+                        <span class="ph">Load terminals</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__3">
+                        <span class="ph">Connection terminal for the load. L, N, PE for single phase
+systems. L1, L2, L3, N and PE for three phase systems.</span>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Components in the System Part</h2>
+         
+         <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:11.76470588235294%"><col style="width:17.647058823529413%"><col style="width:70.58823529411765%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">Designator</span>
+                     </th>
+                     <th class="entry valign-top" id="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">Component</span>
+                     </th>
+                     <th class="entry valign-top" id="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph">Description</span>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">T001</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">Rectifier input isolation transformer</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph" id="SystemComponentsOverview-8A601714__T001-Desc">Galvanic isolation between mains input and
+rectifier. Transforms the mains input to the correct value for the
+rectifier.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">A030</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">6-pulse thyristor rectifier-bridge</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph" id="SystemComponentsOverview-8A601714__A030-Desc">Converts the AC voltage from the mains to
+DC voltage.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">A031</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>Additional
+6-pulse thyristor rectifier-bridge</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph" id="SystemComponentsOverview-8A601714__A031-Desc">To create a 12-pulse
+thyristor rectifier-bridge an additional 6-pulse thyristor rectifier-bridge
+(with a 30 degree phase shift) can be used. This reduces the repercussion
+of the rectifier back to the mains.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">F026</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>Fuse</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph" id="SystemComponentsOverview-8A601714__F026-Desc">Power fuse at the output of the thyristor
+rectifier-bridge.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">L001</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">Smoothing choke</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph" id="SystemComponentsOverview-8A601714__L001-Desc">Filters the DC current together with CB02.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">L005</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">Battery choke</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph">Reduces the AC ripple to the battery generated by the single
+phase inverter.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">CB02</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">DC capacitor module</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph" id="SystemComponentsOverview-8A601714__CB02-Desc">Filters the DC current together with L001.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">A032</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">Pulse width modulated (PWM) inverter</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph">Power module with insulated-gate bipolar transistor (IGBT).
+Converts the DC voltage from the <span class="ph">rectifier back</span>
+                           <span class="ph">DC power supply</span> to AC voltage.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">L002</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">Smoothing choke</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph">Filters the AC output and removes distortions together
+with the CB03.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">T002</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">Inverter power transformer</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph">Galvanic isolation
+between the load and the DC. Transforms the AC output to the correct
+value for the load.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40" rowspan="2">
+                        <span class="ph">CB03</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">AC capacitor module</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph">Filters the AC output and removes
+distortions together with the L002. Subdivided into several sections.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>Fuse</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph">Protects each section of CB03. If
+one section has a failure that section will be isolated.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">F021</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">Inverter output fuse</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph">Protection at the inverter output.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">A035</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">Static switch EN</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph">The static
+switch consists of antiparallel-switched power thyristors. It is used
+to automatically transfer the load to bypass without interruption.
+Can only be transferred if the bypass mains voltage is within tolerance.
+Transfer can occur when:</span>
+                        <ul class="ul">
+                           <li class="li">
+                              <span class="ph">The system is heavily overload.</span>
+                           </li>
+                           <li class="li">
+                              <span class="ph">The inverter cannot keep the output voltage within tolerance.</span>
+                           </li>
+                           <li class="li">
+                              <span class="ph">The battery is discharged during battery
+operation.</span>
+                           </li>
+                           <li class="li">
+                              <span class="ph">DC input power is unavailable or out of tolerance.</span>
+                           </li>
+                           <li class="li">
+                              <span class="ph">The system has been switched to static bypass operation from
+the front panel.</span>
+                           </li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">F028</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">Fuse</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph">Protects the static switch EN A035.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">A036</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>Static
+switch EA</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph">The static switch EA is an option
+at the inverter output. It can make the switch over between operating
+modes more reliable. Especially in redundant systems it can make the
+switch back to normal operation easier for one system. With EA one
+unit can keep the inverter running in no-load operation, instead of
+switching it off. This additional mode is called either Standby+ or
+Hot standby depending on the redundant configuration. For more information
+see chapter <a class="xref" href="Hot_Standby_CPT_0000358503.html">Hot Standby (Redundant Systems)</a>.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">A201</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">Internal power supply</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph">Supplied by <span class="ph">the
+rectifier mains or </span>the bypass mains. Part of the redundant internal
+power supply together with A202. One of the two supplies can supply
+the system alone. In case of one of the supplies stops suppling the
+system an alarm is generated on the front panel.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">A202</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">Internal power supply</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph">Supplied from the internal DC bus.
+Part of the redundant internal power supply together with A201. One
+of the two supplies can supply the system alone. In case of one of
+the supplies stops suppling the system an alarm is generated on the
+front panel.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">A055</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41" rowspan="2">
+                        <span class="ph">Fan
+system</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42" rowspan="2">
+                        <span class="ph">Consist
+of:</span>
+                        <ul class="ul">
+                           <li class="li">
+                              <span class="ph">Fan-transformer that transforms the voltage to the correct
+voltage to the fans.</span>
+                           </li>
+                           <li class="li">
+                              <span class="ph">Fans with internal hall sensor for monitoring the number of
+revolutions.</span>
+                           </li>
+                           <li class="li">
+                              <span class="ph">Fan monitor that monitors the number of revolutions of each
+fan. If the number of revolutions falls below the preset value an
+alarm is generated.</span>
+                           </li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">E00X</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">A070</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">Main controller board</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph">Controls the main parts (<span class="ph">rectifier,</span> inverter, static switch(es)) of the
+system and the alarm relays. Monitors the voltages, the currents and
+the alarms. Communicates with the front panel, the serial connections
+and between multiple units in redundant systems.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">A071</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">Interface board</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph">Contains control fuses and distributes
+power to auxiliary circuits and different modules. Converts AC and
+DC voltages to lower standard values for the controller. Secures galvanic
+isolation for the controller.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">A073</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">Front panel</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph" id="SystemComponentsOverview-8A601714__A073-Desc">The human machine
+interface (HMI) of the system. Contains a display, operating status
+indications, alarm indications, operating buttons and numpad. For
+more information see <a class="xref" href="Front_Panel_CPT_0000333861.html">Front Panel</a>.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">A703</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>ISBS
+Controller</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph">The ISBS controller controls the
+static switch EN A035 based on the control signal from the controller
+board A070. It can independently switch the system to independent
+static bypass (ISBS) operation. The ISBS controller has an independent
+power supply and independent supervision of the output voltage. It
+is connected to the two relays K701 and K702.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">A024</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>Parallel
+operation board</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph">Used for communication between two
+units in a redundant system. The board is located in the system parts
+and the connections are located in the low-voltage section.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">A068</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">Adapter board</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph">Connection interface to the controller
+board A070.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">K701</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>1
+relay</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph">Indicates the status of the complete
+ISBS controller. If the relay is activated, the controller is fully
+operational and ready to react on the control signal from the controller
+board.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__40">
+                        <span class="ph">K702</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__41">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>1
+relay</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__42">
+                        <span class="ph">Indicates that the ISBS controller
+has switched the system to ISBS operation.</span>
+                     </td>
+                  </tr>
+               </tbody></table>
+         <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:11.76470588235294%"><col style="width:17.647058823529413%"><col style="width:70.58823529411765%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="SystemComponentsOverview-8A601714__entry__124">
+                        <span class="ph">Designator</span>
+                     </th>
+                     <th class="entry valign-top" id="SystemComponentsOverview-8A601714__entry__125">
+                        <span class="ph">Component</span>
+                     </th>
+                     <th class="entry valign-top" id="SystemComponentsOverview-8A601714__entry__126">
+                        <span class="ph">Description</span>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__124">
+                        <span class="ph">X001</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__125">
+                        <span class="ph">Rectifier mains input terminals</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__126">
+                        <span class="ph">Connection terminal for the rectifier
+mains input. The rectifier mains input requires an external protective
+device. A fuse or MCCB according to the technical specification. Always
+L1, L2, L3, and PE.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__124">
+                        <span class="ph">Q001</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__125">
+                        <span class="ph">Rectifier input circuit breaker or
+switch-disconnector</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__126">
+                        <span class="ph">Breaker for the rectifier mains input.
+The rectifier mains input requires an external protective device.
+A fuse or MCCB according to the technical specification.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__124">
+                        <span class="ph">T001</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__125">
+                        <span class="ph">Rectifier input isolation transformer</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__126">
+                        <span class="ph">Galvanic isolation between mains input and
+rectifier. Transforms the mains input to the correct value for the
+rectifier.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__124">
+                        <span class="ph">A030</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__125">
+                        <span class="ph">6-pulse thyristor rectifier-bridge</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__126">
+                        <span class="ph">Converts the AC voltage from the mains to
+DC voltage.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__124">
+                        <span class="ph">A031</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__125">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>Additional
+6-pulse thyristor rectifier-bridge</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__126">
+                        <span class="ph">To create a 12-pulse
+thyristor rectifier-bridge an additional 6-pulse thyristor rectifier-bridge
+(with a 30 degree phase shift) can be used. This reduces the repercussion
+of the rectifier back to the mains.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__124">
+                        <span class="ph">F026</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__125">
+                        <span class="ph">Fuse</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__126">
+                        <span class="ph">Power fuse at the output of the thyristor
+rectifier-bridge.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__124">
+                        <span class="ph">L001</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__125">
+                        <span class="ph">Smoothing choke</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__126">
+                        <span class="ph">Filters the DC current together with CB02.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__124">
+                        <span class="ph">CB02</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__125">
+                        <span class="ph">DC capacitor module</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__126">
+                        <span class="ph">Filters the DC current together with L001.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__124">
+                        <span class="ph">V015</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__125">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>Blocking
+diode</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__126">
+                        <span class="ph">Only optional in single systems.
+Always used in redundant systems.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__124">
+                        <span class="ph">A070</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__125">
+                        <span class="ph">Main controller board</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__126">
+                        <span class="ph">Controls the rectifier and the alarm
+relays. Monitors voltages, currents and alarms. Communicates with
+the front panel, the serial connections and between multiple units
+in redundant systems.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__124">
+                        <span class="ph">A071</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__125">
+                        <span class="ph">Interface board</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__126">
+                        <span class="ph">Contains control fuses and distributes
+power to auxiliary circuits and different modules. Converts AC and
+DC voltages to lower standard values for the controller. Secures galvanic
+isolation for the controller.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__124">
+                        <span class="ph">A073</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__125">
+                        <span class="ph">Front panel</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__126">
+                        <span class="ph">The human machine
+interface (HMI) of the system. Contains a display, operating status
+indications, alarm indications, operating buttons and numpad. For
+more information see <a class="xref" href="Front_Panel_CPT_0000333861.html">Front Panel</a>.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__124">
+                        <span class="ph">E001-E008</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__125">
+                        <span class="ph">Fans</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__126">
+                        <span class="ph">Fans with internal hall sensor for
+monitoring the number of revolutions. Not needed in systems with low
+power. </span>
+                        <span class="ph">Part of A060, A061</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__124">
+                        <span class="ph">A050-A057</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__125">
+                        <span class="ph">Fan control</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__126">
+                        <span class="ph">Interface between the fans and the
+interface board. Controls the fan speed. </span>
+                        <span class="ph">Part of A060, A061</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__124">
+                        <span class="ph">X002</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__125">
+                        <span class="ph">Battery terminals</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__126">
+                        <span class="ph">Connection terminal for the battery connection.
+The battery connection requires an external protective device. A fuse
+or MCCB according to the technical specification.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__124">
+                        <span class="ph">Q004</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__125">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>Battery
+circuit breaker</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__126">
+                        <span class="ph">Breaker for the battery
+connection. Can be a battery protection device. If Q004 is not selected,
+Q005 has to be selected. It is possible to have both options.The battery
+connection, protection and breakers can also be part of the customers
+scope.
+                        </span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__124">
+                        <span class="ph">Q005</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__125">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>Battery
+protection device</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__126">
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__124">
+                        <span class="ph">Q003</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__125">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>Rectifier
+output switch-disconnector</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__126">
+                        <span class="ph">Can either provide isolation for
+the load from the rectifier or both the rectifier and the battery.
+Only optional in single systems. Always used in redundant systems.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__124">
+                        <span class="ph">X004</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__125">
+                        <span class="ph">Load terminals</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__126">
+                        <span class="ph">Connection terminal
+for the load (L+) and (L-).</span>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Components in the Low-Voltage Section</h2>
+         
+         <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:11.76470588235294%"><col style="width:17.647058823529413%"><col style="width:35.294117647058826%"><col style="width:35.294117647058826%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="SystemComponentsOverview-8A601714__entry__184">
+                        <span class="ph">Designator</span>
+                     </th>
+                     <th class="entry valign-top" id="SystemComponentsOverview-8A601714__entry__185">
+                        <span class="ph">Component</span>
+                     </th>
+                     <th class="entry valign-top" id="SystemComponentsOverview-8A601714__entry__186" colspan="2">
+                        <span class="ph">Description</span>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__184" rowspan="2">
+                        <span class="ph">A025</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__185" rowspan="2">
+                        <span class="ph">External
+connection board</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__186" colspan="2">
+                        <span class="ph">An interface board with status relays
+and input terminals. For more information see the chapter <a class="xref" href="External_Connection_Board_CPT_0000388794.html">External Connection Board</a>.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__186">
+                        <strong class="ph b">Outputs:</strong>
+                        <ul class="ul">
+                           <li class="li">
+                              <span class="ph">Two common alarm relays with a programmable delay between
+0-327 seconds (default value is 5 seconds)</span>
+                           </li>
+                           <li class="li">
+                              <span class="ph">A battery operation relay with a 30 seconds delay<a name="fnsrc_2" href="#fntarg_2"><sup>2</sup></a>
+                              </span>
+                           </li>
+                           <li class="li">
+                              <span class="ph">A bypass operation relay (static switch EN active)</span>
+                           </li>
+                        </ul>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__186">
+                        <strong class="ph b">Inputs:</strong>
+                        <ul class="ul">
+                           <li class="li">
+                              <span class="ph">Battery temperature sensor</span>
+                           </li>
+                           <li class="li">
+                              <span class="ph">Remote start/stop</span>
+                           </li>
+                           <li class="li">
+                              <span class="ph">Emergency power off (EPO)</span>
+                           </li>
+                           <li class="li">
+                              <span class="ph">Boost charge blocked</span>
+                           </li>
+                           <li class="li">
+                              <span class="ph">Battery breaker status</span>
+                           </li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__184">
+                        <span class="ph">A076</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__185">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>Communication
+interface</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__186" colspan="2">
+                        <span class="ph">Used for communication to the smart
+slot translator and then to the NMC. Contains one serial output (RS-232).
+For more information see the <em class="ph i">Network Monitoring System</em> user
+guide.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__184" rowspan="2">
+                        <span class="ph">A077</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__185" rowspan="2">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>Relay board</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__186" colspan="2">
+                        <span class="ph">16 change-over relays for alarms
+from the alarm panel. If the alarm is active the relay is in the volt
+free position. For more information see the chapter <a class="xref" href="Relay_Boards_CPT_0000362487.html">Relay Boards</a>.The available relays are:</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__186">
+                        <ul class="sl simple">
+                           <li class="sli">K001 – <span class="ph">Rectifier mains fault</span>
+                              <span class="ph">(Not used)</span>
+                           </li>
+                           <li class="sli">K002 – DC out of tolerance</li>
+                           <li class="sli">K003 – <span class="ph">Rectifier fuse blown</span>
+                              <span class="ph">(Not used)</span>
+                           </li>
+                           <li class="sli">K004 – <span class="ph">Battery discharged</span>
+                              <span class="ph">DC low warning</span>
+                           </li>
+                           <li class="sli">K005 – DC earth fault</li>
+                           <li class="sli">K006 – Inverter fuse blown</li>
+                           <li class="sli">K007 – Bypass mains fault</li>
+                           <li class="sli">K008 – Overtemperature</li>
+                        </ul>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__186">
+                        <ul class="sl simple">
+                           <li class="sli">K009 – Fan failure</li>
+                           <li class="sli">K010 – Power supply fault</li>
+                           <li class="sli">K011 – Optional alarm</li>
+                           <li class="sli">K012 – Optional alarm</li>
+                           <li class="sli">K013 – Optional alarm</li>
+                           <li class="sli">K014 – Optional alarm</li>
+                           <li class="sli">K015 – Optional alarm</li>
+                           <li class="sli">K016 – (Not used)</li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__184" rowspan="2">
+                        <span class="ph">A078</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__185" rowspan="2">
+                        <span class="ph">
+                           <em class="ph i">Optional</em>Relay board</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__186" colspan="2">
+                        <span class="ph">16 change-over relays for alarms
+from the alarm panel, status indications from the mimic diagram and
+an indication if there are alarms that are not confirmed. If the alarm
+is active the relay is in the volt free position. For more information
+see the chapter <a class="xref" href="Relay_Boards_CPT_0000362487.html">Relay Boards</a>.The available
+relays are:</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__186">
+                        <ul class="sl simple">
+                           <li class="sli">K001 – EA inhibited</li>
+                           <li class="sli">K002 – EN inhibited</li>
+                           <li class="sli">K003 – Manual bypass on</li>
+                           <li class="sli">K004 – Asynchronous</li>
+                           <li class="sli">K005 – Overload inv./bypass</li>
+                           <li class="sli">K006 – Inverter fault</li>
+                           <li class="sli">K007 – Batt. disconnected</li>
+                           <li class="sli">K008 – Battery operation</li>
+                        </ul>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__186">
+                        <ul class="sl simple">
+                           <li class="sli">K009 – <span class="ph">Rectifier failure</span>
+                              <span class="ph">(Not used)</span>
+                           </li>
+                           <li class="sli">K010 – The static switch EN is on</li>
+                           <li class="sli">K011 – The static switch EA is on</li>
+                           <li class="sli">K012 – The inverter is on</li>
+                           <li class="sli">K013 – <span class="ph">Boost charge is enabled</span>
+                              <span class="ph">(Not used)</span>
+                           </li>
+                           <li class="sli">K014 – <span class="ph">The rectifier is on</span>
+                              <span class="ph">(Not used)</span>
+                           </li>
+                           <li class="sli">K015 – <span class="ph">Parallel operation</span>
+                              <span class="ph">(Not used)</span>
+                           </li>
+                           <li class="sli">K016 – External horn (indicates that there are alarms
+that have not been acknowledged)</li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__184">
+                        <span class="ph">A091</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__185">
+                        <span class="ph">NMC backplane</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__186" colspan="2">
+                        <span class="ph" id="SystemComponentsOverview-8A601714__A091-Desc">Interface between
+the controller and the network management card.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__184">
+                        <span class="ph">A092A093</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__185">
+                        <span class="ph">Network management card</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__186" colspan="2">
+                        <span class="ph" id="SystemComponentsOverview-8A601714__A092-A093-Desc">Network management
+card (NMC) used to monitor measurements, events and alarms locally
+or remotely. For more information see the chapter <a class="xref" href="Network_Management_Card_NMC_and_Communication_CPT_0000451778.html">Network Management Card (NMC) and Communication</a> or the <em class="ph i">Network Management
+System</em> user guide.</span>
+                     </td>
+                  </tr>
+               </tbody></table>
+         <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:11.76470588235294%"><col style="width:17.647058823529413%"><col style="width:35.294117647058826%"><col style="width:35.294117647058826%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="SystemComponentsOverview-8A601714__entry__211">
+                        <span class="ph">Designator</span>
+                     </th>
+                     <th class="entry valign-top" id="SystemComponentsOverview-8A601714__entry__212">
+                        <span class="ph">Component</span>
+                     </th>
+                     <th class="entry valign-top" id="SystemComponentsOverview-8A601714__entry__213">
+                        <span class="ph">Description</span>
+                     </th>
+                     <th class="entry" id="SystemComponentsOverview-8A601714__entry__214"></th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__211" rowspan="2">
+                        <span class="ph">A025</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__212" rowspan="2">
+                        <span class="ph">External
+connection board</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__213 SystemComponentsOverview-8A601714__entry__214" colspan="2">
+                        <span class="ph">An interface board with status relays
+and input terminals. For more information see the chapter <a class="xref" href="External_Connection_Board_CPT_0000388794.html">External Connection Board</a>.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__213">
+                        <strong class="ph b">Outputs:</strong>
+                        <ul class="ul">
+                           <li class="li">
+                              <span class="ph">Two common alarm relays with a programmable delay between
+0-327 seconds (default value is 5 seconds)</span>
+                           </li>
+                           <li class="li">
+                              <span class="ph">A battery operation relay with a 30 seconds delay</span>
+                           </li>
+                        </ul>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__214">
+                        <strong class="ph b">Inputs:</strong>
+                        <ul class="ul">
+                           <li class="li">
+                              <span class="ph">Battery temperature sensor</span>
+                           </li>
+                           <li class="li">
+                              <span class="ph">Remote start/stop</span>
+                           </li>
+                           <li class="li">
+                              <span class="ph">Emergency power off (EPO)</span>
+                           </li>
+                           <li class="li">
+                              <span class="ph">Boost charge and initial charge blocked</span>
+                           </li>
+                           <li class="li">
+                              <span class="ph">Boost charge ON &amp; initial charge ON</span>
+                           </li>
+                           <li class="li">
+                              <span class="ph">Battery breaker status</span>
+                           </li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__211" rowspan="2">
+                        <span class="ph">A077</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__212" rowspan="2">
+                        <span class="ph">Relay
+board</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__213 SystemComponentsOverview-8A601714__entry__214" colspan="2">
+                        <span class="ph">16 change-over relays for status
+indications and alarms from the alarm panel. If the alarm/status is
+active the relay is in the volt free position (default). For more
+information see the chapter <a class="xref" href="Relay_Boards_CPT_0000362487.html">Relay Boards</a>.The available relays are:</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__213">
+                        <ul class="sl simple">
+                           <li class="sli">K001 – Charger on</li>
+                           <li class="sli">K002 – Boost charge on</li>
+                           <li class="sli">K003 – Mains failure</li>
+                           <li class="sli">K004 – DC out of tolerance</li>
+                           <li class="sli">K005 – Battery disconnected</li>
+                           <li class="sli">K006 – Battery discharged</li>
+                           <li class="sli">K007 – DC fuse</li>
+                           <li class="sli">K008 – Overtemperature</li>
+                        </ul>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__214">
+                        <ul class="sl simple">
+                           <li class="sli">K009 – DC earth fault (Optional)</li>
+                           <li class="sli">K010 – Internal PSU fault</li>
+                           <li class="sli">K011 – DC current overload</li>
+                           <li class="sli">K012 – Fan fault</li>
+                           <li class="sli">K013 – Optional alarm/indication</li>
+                           <li class="sli">K014 – Optional alarm/indication</li>
+                           <li class="sli">K015 – Optional alarm/indication</li>
+                           <li class="sli">K016 – Optional alarm/indication</li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__211">
+                        <span class="ph">A091</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__212">
+                        <span class="ph">NMC backplane</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__213 SystemComponentsOverview-8A601714__entry__214" colspan="2">
+                        <span class="ph">Interface between
+the controller and the network management card.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__211">
+                        <span class="ph">A092A093</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__212">
+                        <span class="ph">Network management
+card</span>
+                     </td>
+                     <td class="entry" headers="SystemComponentsOverview-8A601714__entry__213 SystemComponentsOverview-8A601714__entry__214" colspan="2">
+                        <span class="ph">Network management
+card (NMC) used to monitor measurements, events and alarms locally
+or remotely. For more information see the chapter <a class="xref" href="Network_Management_Card_NMC_and_Communication_CPT_0000451778.html">Network Management Card (NMC) and Communication</a> or the <em class="ph i">Network Management
+System</em> user guide.</span>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </section>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Reality-Batch_3/Topics/Function_Description_CPT_0000325924.html#FunctionDescription-555BC2EA">Function Description</a></div></div></nav><div class="fn"><a name="fntarg_1" href="#fnsrc_1"><sup>1</sup></a>   Not possible
+with integrated incoming section.</div><div class="fn"><a name="fntarg_2" href="#fnsrc_2"><sup>2</sup></a>   Indication from the upstream rectifier.</div></article></main></body></html>

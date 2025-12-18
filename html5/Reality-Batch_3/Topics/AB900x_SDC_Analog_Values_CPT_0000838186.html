@@ -1,0 +1,930 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="AB900x gateway,SDC module,AB900x SDC analog values,metR-PXC-Reality,UPS monitoring interfaces,Modbus-based analog parameters,industrial data acquisition,analog value interpretation,Modbus register mapping,data scaling and conversion,measurement extraction,parameter monitoring workflow,byte-level data decoding,sensor value validation,UPS sensor data,power system monitoring,industrial telemetry,analog measurement systems,register-based communication,real-time monitoring environment,electrical system diagnostics"><meta name="keywords" content="AB900x gateway, SDC module, AB900x SDC analog values, metR-PXC-Reality, UPS monitoring interfaces, Modbus-based analog parameters, industrial data acquisition, analog value interpretation, Modbus register mapping, data scaling and conversion, measurement extraction, parameter monitoring workflow, byte-level data decoding, sensor value validation, UPS sensor data, power system monitoring, industrial telemetry, analog measurement systems, register-based communication, real-time monitoring environment, electrical system diagnostics"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-11-28+05:30"><meta name="DC.date.modified" content="2025-11-28"><meta name="title" content="SDC – Analog Values"><meta name="shortdesc" content="Lists the SDC analog values available on the AB900x gateway, including Modbus register addresses, byte positions, and associated measurement parameters."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="Modbus registers; analog measurement fields; byte offsets; SDC sensor values; electrical parameters; load data; operational telemetry"><meta name="taxonomy" content="domain:industrial automation; usecase:data-monitoring; industry:uninterruptible power supply (UPS) systems"><meta name="tags" content="analog values,Modbus registers,SDC data,byte mapping,electrical measurements,telemetry"><meta name="usecase" content="Provide reference for analog measurement registers used for reading SDC values on the AB900x gateway"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="AnalogValues-3C1A6430"><meta name="DC.language" content="en"><title>Analog Values</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="AnalogValues-3C1A6430"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Analog Values</h1>
+   
+   
+   <div class="body conbody">
+      <div class="div">
+         <p class="p">Each Modbus register is represented
+by two bytes. The first byte is the high byte (HB) and the second
+byte is the low byte (LB). </p>
+         <p class="p">The decimal value is calculated
+from <em class="ph i">HB * 256 + LB</em>. For example, if the first two bytes in
+the analog list (byte 18 and 19) reads 1 and 224, then the output
+voltage L1 is 1*256 + 224 = 480 V.</p>
+      </div>
+      <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:20%"><col style="width:10%"><col style="width:20%"><col style="width:50%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte (Decimal)</span>
+                  </th>
+                  <th class="entry valign-top" id="AnalogValues-3C1A6430__entry__2">
+                     <span class="ph">Modbus
+Register</span>
+                  </th>
+                  <th class="entry valign-top" id="AnalogValues-3C1A6430__entry__3">
+                     <span class="ph">Name</span>
+                  </th>
+                  <th class="entry valign-top" id="AnalogValues-3C1A6430__entry__4">
+                     <span class="ph">Description</span>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 17 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40001</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph" id="AnalogValues-3C1A6430__ph-121179512-26722BE1Q">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 18 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 19 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40002</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 20 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 21 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40003</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 22 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 23 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40004</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">signals/40004_Name</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">signals/40004_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 24 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 25 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40005</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">signals/40005_Name</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">signals/40005_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 26 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 27 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40006</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">signals/40006_Name</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">signals/40006_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 28 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 29 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40007</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 30 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 31 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40008</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 32 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 33 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40009</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 34 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 35 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40010</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">signals/40010_Name</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">signals/40010_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 36 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 37 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40011</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">signals/40011_Name</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">signals/40011_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 38 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 39 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40012</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">signals/40012_Name</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">signals/40012_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 40 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 41 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40013</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 42 (HB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 43 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40014</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 44 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 45 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40015</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 46 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 47 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40016</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 48 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 49 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40017</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 50 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 51 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40018</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 52 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 53 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40019</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">signals/40019_Name</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">signals/40019_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 54 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 55 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40020</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">signals/40020_Name</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">signals/40020_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 56 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 57 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40021</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 58 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 59 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40022</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">signals/40022_Name</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">signals/40022_Description</span>
+                     
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 60 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 61 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40023</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 62 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 63 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40024</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 64 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 65 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40025</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 66 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 67 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40026</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 68 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 69 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40027</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 70 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 71 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40028</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 72 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 73 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40029</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">signals/40029_Name</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">signals/40029_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 74 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 75 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40030</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 76 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 77 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40031</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">signals/40031_Name</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">signals/40031_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 78 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 79 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40032</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 80 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 81 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40033</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">signals/40033_Name</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">signals/40033_Name</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 82 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 83 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40034</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 84 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 85 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40035</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">signals/40035_Name</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">signals/40035_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 86 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 87 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40036</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 88 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 89 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40037</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 90 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 91 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40038</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 92 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 93 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40039</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 94 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 95 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40040</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">signals/40040_Name</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">signals/40040_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 96 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 97 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40041</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">signals/40041_Name</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">signals/40041_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 98 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 99 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40042</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 100 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 101 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40043</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 102 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 103 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40044</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 104 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 105 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40045</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">signals/40045_Name</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">signals/40045_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 106 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 107 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40046</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">signals/40046_Name</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">signals/40046_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 108 (LB)</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 109 (HB)</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__2" rowspan="2">
+                     <span class="ph">40047</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__3" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__4" rowspan="2">
+                     <span class="ph">–</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="AnalogValues-3C1A6430__entry__1">
+                     <span class="ph">Byte 110 (LB)</span>
+                  </td>
+               </tr>
+            </tbody></table>
+   </div>
+</article></main></body></html>

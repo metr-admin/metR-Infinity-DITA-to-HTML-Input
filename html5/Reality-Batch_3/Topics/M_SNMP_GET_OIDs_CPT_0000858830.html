@@ -1,0 +1,933 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="description" content="There are several object identifiers (OID) available from the system via SNMP from the network management card (NMC). The OIDs needs to be requested with a GET from a MIB browser with correctly configured access to the NMC. The OIDs can show both analog and digital values, see respective section."><meta name="DC.subject" content="ups-system,network-management-card,snmp-agent,snmp-mib,battery-management-system,rectifier-module,inverter-module,snmp-get-request,oid-value-retrieval,system-monitoring,parameter-measurement,fault-diagnostics,battery-status-evaluation,environment-sensor-monitoring,ups-telemetry,remote-monitoring,industrial-ups-management,network-operations,maintenance-inspection,snmp-integrated-supervision,environmental-conditions-monitoring"><meta name="keywords" content="ups-system, network-management-card, snmp-agent, snmp-mib, battery-management-system, rectifier-module, inverter-module, snmp-get-request, oid-value-retrieval, system-monitoring, parameter-measurement, fault-diagnostics, battery-status-evaluation, environment-sensor-monitoring, ups-telemetry, remote-monitoring, industrial-ups-management, network-operations, maintenance-inspection, snmp-integrated-supervision, environmental-conditions-monitoring"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-06+05:30"><meta name="DC.date.modified" content="2025-12-06"><meta name="title" content="SNMP GET OIDs"><meta name="shortdesc" content="Describes available SNMP GET-based OIDs from the UPS system for monitoring model identity, firmware, battery status, power parameters, environmental sensors and modular subsystem diagnostics."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="snmp-oid;ups-system-controller;network-management-card;battery-status-signals;rectifier-input-phase;inverter-output-readings;environment-sensor-unit;g-bms-telemetry;system-alarms;temperature-sensor"><meta name="taxonomy" content="domain:ups-telemetry;usecase:snmp-parameter-retrieval;industry:uninterruptible-power-supply-systems"><meta name="tags" content="snmp,get-oids,system-monitoring,ups-telemetry,battery-status,input-output-measurements,environment-sensor-data,network-management-card"><meta name="usecase" content="retrieve-system-parameters-through-snmp-get-operations"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="SNMPGETOIDs-4D19C88F"><meta name="DC.language" content="en"><title>SNMP GET OIDs</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="SNMPGETOIDs-4D19C88F"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">SNMP GET OIDs</h1>
+   
+   
+   
+   <div class="body conbody"><p class="shortdesc">There are several object identifiers (OID) available from
+the system via SNMP from the network management card (NMC). The OIDs
+needs to be requested with a GET from a MIB browser with correctly
+configured access to the NMC. The OIDs can show both analog and digital
+values, see respective section.</p>
+      <section class="section"><h2 class="title sectiontitle">Analog Values from OIDs</h2>
+         
+         <p class="p">The following table
+shows the analog values that are available as GET requests. </p>
+         <div class="note note note_note"><span class="note__title">Note:</span> Base OID Address for APC / Reality: .1.3.6.1.4.1.318.</div>
+         <div class="note note note_note"><span class="note__title">Note:</span> If
+an OID is not supported it will return “No data available in
+this sub-tree” or “There is no such object in this MIB”.</div>
+         <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:16.666666666666664%"><col style="width:33.33333333333333%"><col style="width:50%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">APC / Reality
+OID Address</span>
+                     </th>
+                     <th class="entry valign-top" id="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">SNMP OID
+Name</span>
+                     </th>
+                     <th class="entry valign-top" id="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">Description</span>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.1.1.1</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsBasicIdentModel</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The system model name.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.1.1.4</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsBasicIdentModelType</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The detailed model information of the system used by the NMC.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.1.2.1</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvIdentFirmwareRevision</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The firmware revision of the system controller (MCU).</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.1.2.2</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvIdentDateOfManufacture</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The date when the system was manufactured. In the format mm/dd/yy
+or yyyy.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.1.2.3</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvIdentSerialNumber</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">A unique identifying number for the system controller (MCU) set at
+the factory, the number is not related to any number on the system
+rating plate.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.2.1.1</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsBasicBatteryStatus</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">Indicates the status of the battery.</span>
+                        <ul class="sl simple">
+                           <li class="sli">1 = Unknown</li>
+                           <li class="sli">2 = Normal</li>
+                           <li class="sli">3 = Low capacity</li>
+                           <li class="sli">4 = Fault condition</li>
+                           <li class="sli">5 = Battery not present</li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.2.1.3</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsBasicBatteryLastReplaceDate</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The date when the battery were last replaced. In the format mm/dd/yy
+or mm/dd/yyyy.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.2.2.1</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvBatteryCapacity</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">signals/F4_5177_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.2.2.2</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvBatteryTemperature</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">signals/F4_5115_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.2.2.8</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvBatteryActualVoltage</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The battery bus voltage. [V]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.2.2.9</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvBatteryCurrent</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The battery current. [A]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.2.2.27</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvBatteryBreakerStatus</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">Indicates the status of the battery breaker(s) in the system.</span>
+                        <ul class="sl simple">
+                           <li class="sli">1 = All battery breakers are open</li>
+                           <li class="sli">2 = At least one of the battery breakers are closed</li>
+                           <li class="sli">3 = Breaker status is not present</li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.2.3.2</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsHighPrecBatteryTemperature</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured battery temperature by the system’s battery temperature
+sensor. The temperature unit depends on the NMC setting. Value is
+with one decimal (tenths), temperatures below zero reads as 0. [°C
+/ °F]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.2.3.5</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsHighPrecBatteryCurrent</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured battery current with one decimal (tenths). [A]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.2.3.7.1.3.1</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsHighPrecBatteryVoltage</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured battery bus voltage with one decimal (tenths). [V]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.3.2.4</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvInputFrequency</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured frequency of the system input. [Hz]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.3.2.12</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvInputTotalActivePower</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The total active input power (sum of all three phases) of the system.
+[kW]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.3.2.18</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvInputNominalDCVoltage</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured voltage of the system input. [V]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.3.3.4</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsHighPrecInputFrequency</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured frequency with one decimal (tenths). [Hz]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.3.3.6</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsHighPrecInputBypassVoltage</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured bypass voltage with one decimal (tenths). [V]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.3.3.8</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsHighPrecInputDCVoltage</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured voltage with one decimal (tenths). [V]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.4.2.1</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvOutputVoltage</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured voltage of the system output. [V]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.4.2.2</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvOutputFrequency</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured frequency of the system output. [Hz]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.4.2.4</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvOutputCurrent</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured current of the system output. [A]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.4.2.8</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvOutputActivePower</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The total active output power (sum of all three phases) of the system.
+[W]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.4.2.9</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvOutputApparentPower</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The total apparent output power (sum of all three phases) of the
+system. [W]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.4.2.15</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvOutputInverterLoad</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured inverter load of the system output.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.4.2.16</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvOutputPercentPower</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The total percent output power (sum of all three phases) of the system.
+[%]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.4.2.17</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvOutputInverterActivePower</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The total active inverter output power of the system. [W]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.4.2.18</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvOutputPercentLoad</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured percent load of the system output.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.4.2.19</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvOutputInverterCurrent</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured inverter current of the system output.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.4.2.20</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvOutputReactivePower</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured reactive power of the system output.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.4.2.21</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvOutputInverterVoltage</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured inverter voltage of the system voltage.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.4.3.1</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsHighPrecOutputVoltage</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured output voltage with one decimal (tenths). [V]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.4.3.2</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsHighPrecOutputFrequency</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured output frequency with one decimal (tenths). [Hz]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.4.3.4</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsHighPrecOutputCurrent</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured output current with one decimal (tenths). [A]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.5.2.17</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvConfigBattCabAmpHour</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The configured maximum ampere hours of the battery bank. The value
+shows the maximum battery capacity configured for the system regardless
+of the breaker positions. [Ah]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.7.2.13</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvTestBatteryLastDate</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The date of the latest performed battery diagnostic test. In the
+format YYYY-MM-DD.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.7.2.14</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvTestBatteryProcessStatus</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The result of the latest performed battery discharge test.</span>
+                        <ul class="sl simple">
+                           <li class="sli">1 = Successful</li>
+                           <li class="sli">2 = Precondition not meet</li>
+                           <li class="sli">3 = In progress</li>
+                           <li class="sli">4 = Refused</li>
+                           <li class="sli">5 = Manually/Automatically cancelled</li>
+                           <li class="sli">6 = Pending</li>
+                           <li class="sli">7 = Unknown</li>
+                           <li class="sli">8 = No battery present</li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.7.2.15</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvTestBatteryConditionStatus</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The result of the latest successful battery discharge test.</span>
+                        <ul class="sl simple">
+                           <li class="sli">1 = Unknown</li>
+                           <li class="sli">2 = Battery OK</li>
+                           <li class="sli">3 = Battery capacity lower</li>
+                           <li class="sli">4 = Battery defect</li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.8.1.0</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsCommStatus</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The status of the communication from the SNMP agent to the system.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.11.2.16</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsAdvStateRealityModularSpecificFaults</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">An ASCII string containing the 64 flags representing the active specific
+alarms for Reality Modular. For more information about the flags see
+the chapter <a class="xref" href="M_SNMP_Flags_CPT_0000939061.html">SNMP Flags</a>.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.13.4.26.1.2</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsDiagSubSysNetworkComCardModelNumber</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">signals/F4_1_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.13.4.26.1.3</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsDiagSubSysNetworkComCardSerialNumber</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">signals/F4_10_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.13.4.26.1.4</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsDiagSubSysNetworkComCardDateOfManufacture</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">signals/F4_36_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.13.4.26.1.5</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsDiagSubSysNetworkComCardHardwareRev</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The hardware revision of the NMC.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.13.4.26.1.6</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsDiagSubSysNetworkComCardFirmwareAppRev</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">signals/F4_18_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.17.1.2.1.2</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsDCOutputStatusVoltageNominal</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The set nominal DC output voltage of the system with one decimal
+(tenths). [V]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.17.1.2.1.3</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsDCOutputStatusCurrentRating</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The set output current rating of the system with one decimal (tenths).
+[A]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.17.1.2.1.4</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsDCOutputStatusVoltage</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured DC output voltage of the system with one decimal (tenths).
+[V]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.1.17.1.2.1.5</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">upsDCOutputStatusCurrent</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured output current of the system with one decimal (tenths).
+[A]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.25.1.2.1.1</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">uioSensorStatusPortID</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The assigned ID of the port on the NMC where the temperature (or
+temperature and humidity) sensor is attached.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.25.1.2.1.2</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">uioSensorStatusSensorID</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The assigned ID of the temperature (or temperature and humidity)
+sensor connected to the NMC.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.25.1.2.1.3</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">uioSensorStatusSensorName</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The entered name of the temperature (or temperature and humidity)
+sensor connected to the NMC. Can be changed from the NMC interface.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.25.1.2.1.4</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">uioSensorStatusSensorLocation</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The entered location of the temperature (or temperature and humidity)
+sensor connected to the NMC. Can be changed from the NMC interface.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.25.1.2.1.5</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">uioSensorStatusTemperatureDegF</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured temperature by the temperature (or temperature and humidity)
+sensor in Fahrenheit. [°F]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.25.1.2.1.6</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">uioSensorStatusTemperatureDegC</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured temperature by the temperature (or temperature and humidity)
+sensor in Celsius. [°C]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.25.1.2.1.7</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">uioSensorStatusHumidity</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The measured relative humidity by the temperature and humidity sensor
+in percent. [%]</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.25.1.2.1.8</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">uioSensorStatusViolationStatus</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">Indicates the reason for why an alarm is active for the sensor. Should
+be read as a bit map, where each bit represents if the alarm condition
+is active = 1 or inactive = 0.</span>
+                        <ul class="sl simple">
+                           <li class="sli">Bit 1 =  Maximum temperature exceeded</li>
+                           <li class="sli">Bit 2 = High temperature exceeded</li>
+                           <li class="sli">Bit 3 = Low temperature exceeded</li>
+                           <li class="sli">Bit 4 = Minimum temperature exceeded</li>
+                           <li class="sli">Bit 5 – Bit 8 = (Not used)</li>
+                           <li class="sli">Bit 9 = Maximum humidity exceeded</li>
+                           <li class="sli">Bit 10 = High humidity exceeded</li>
+                           <li class="sli">Bit 11 = Low humidity exceeded</li>
+                           <li class="sli">Bit 12 = Minimum humidity exceeded.</li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.25.1.2.1.9</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">uioSensorStatusAlarmStatus</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The alarm status of the temperature (or temperature and humidity)
+sensor connected to the NMC.</span>
+                        <ul class="sl simple">
+                           <li class="sli">1 = Normal</li>
+                           <li class="sli">2 = Warning</li>
+                           <li class="sli">3 = Critical</li>
+                           <li class="sli">4 = N/A</li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.25.1.2.1.10</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">uioSensorStatusCommStatus</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The status of the communication between the NMC and the connected
+temperature or temperature and humidity sensor.</span>
+                        <ul class="sl simple">
+                           <li class="sli">1 = Not installed</li>
+                           <li class="sli">2 = Communication OK</li>
+                           <li class="sli">3 = Communication lost</li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.29.1.1</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">chargerIdentModel</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">signals/F4_108_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.29.1.3</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">chargerIdentSerialNumber</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">signals/F4_140_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.29.1.4</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">chargerIdentModelType</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">signals/F4_124_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.29.2.1.1.1.1</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">chargerInputPhaseTableIndex</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">Index for the first phase (L1) for the rectifier input.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.29.2.1.1.1.2 </span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">chargerInputPhaseTableIndex</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">Index for the first phase (L2) for the rectifier input.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.29.2.1.1.1.3</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">chargerInputPhaseTableIndex</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">Index for the first phase (L3) for the rectifier input.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.29.2.1.1.2.1</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">chargerInputPhaseVoltage</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">signals/F4_5021_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.29.2.1.1.2.2</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">chargerInputPhaseVoltage</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">signals/F4_5023_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.29.2.1.1.2.3</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">chargerInputPhaseVoltage</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">signals/F4_5025_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.29.3.1</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">chargerOutputStatus</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">The current state or operation mode of the system.</span>
+                        <ul class="sl simple">
+                           <li class="sli">1 = Unknown</li>
+                           <li class="sli">2 = Initializing</li>
+                           <li class="sli">3 = Standby</li>
+                           <li class="sli">4 = Battery operation</li>
+                           <li class="sli">5 = Float charge</li>
+                           <li class="sli">6 = Boost charge</li>
+                           <li class="sli">7 = Equalizing (initial) charge</li>
+                           <li class="sli">8 = Direct feed</li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.29.3.3</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">chargerOutputTotalCurrent</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">signals/F4_5011_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__1">
+                        <span class="ph">1.1.29.3.4</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__2">
+                        <span class="ph">chargerOutputLoad</span>
+                     </td>
+                     <td class="entry" headers="SNMPGETOIDs-4D19C88F__entry__3">
+                        <span class="ph">signals/F4_5017_Description</span>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </section>
+   </div>
+</article></main></body></html>

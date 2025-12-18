@@ -1,0 +1,3653 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="description" content=""><meta name="DC.subject" content="ac-ups-modbus-map,modbus-register-layout,scada-commander,protocol-bridge,register-address-table,read-register,write-register,polling-interval-configuration,register-scaling-and-units,diagnose-communication-errors,integration-with-scada,remote-telemetry,industrial-protocol-compliance,power-plant-monitoring,water-treatment-monitoring"><meta name="keywords" content="ac-ups-modbus-map, modbus-register-layout, scada-commander, protocol-bridge, register-address-table, read-register, write-register, polling-interval-configuration, register-scaling-and-units, diagnose-communication-errors, integration-with-scada, remote-telemetry, industrial-protocol-compliance, power-plant-monitoring, water-treatment-monitoring"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-12-06T18:00:00+05:30"><meta name="DC.date.modified" content="2025-12-06T18:00:00+05:30"><meta name="title" content="M AC-UPS Modbus Register List DD00501389"><meta name="shortdesc" content="Register map for AC UPS Modbus communications including addresses, data types and scaling."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="modbus register;address;datatype;scaling;unit"><meta name="taxonomy" content="domain:industrial-power/usecase:integration;industry: uninterruptible power supply (UPS) systems"><meta name="tags" content="modbus,registers,scada,integration"><meta name="usecase" content="protocol-integration-and-register-reference"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="ModbusRegisterList-332AE41B"><meta name="DC.language" content="en"><title>Modbus Register List</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="ModbusRegisterList-332AE41B"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Modbus Register List</h1>
+   
+   
+   
+   <div class="body conbody"><p class="shortdesc"></p>
+      <div class="div" id="ModbusRegisterList-332AE41B__div-132-338DEF72">
+         <p class="p">The Modbus register is supported both
+on function call 2 and function call 4. The data is stored as either:</p>
+         <div class="p">
+            <ul class="ul">
+               <li class="li">
+                  <p class="p">UINT32 (unsigned 32–bit integer), most significant word
+in n+0, least significant word in n+1, also known as big-endian.</p>
+               </li>
+               <li class="li">
+                  <p class="p">UINT16 (unsigned 16–bit integer), registers are transmitted
+as with the most significant bit (MSB) first, also known as big-endian.</p>
+               </li>
+               <li class="li">
+                  <p class="p">ASCII (the printable ASCII subset from 0x20 – 0x7E),
+strings with unused characters (length less than maximum) are filled
+with nulls. Strings are two characters per register, first character
+in high-order byte, second character in low-order byte.</p>
+               </li>
+               <li class="li">
+                  <p class="p">Boolean (a single bit, 0 or 1), 1 = alarm active, reserved
+or undefined registers will return an error. Blocked reads which begin
+with a valid register will not return an error but will return zeros
+for undefined registers.</p>
+               </li>
+               <li class="li">
+                  <p class="p">FP (floating point)</p>
+               </li>
+            </ul>
+         </div>
+         <p class="p">All registers are read only (RO). Bit 0 is the least significant
+bit.</p>
+         <div class="note note note_note"><span class="note__title">Note:</span> For the Modbus register the absolute starting register
+address is 0, this is equivalent to 40001 in Modicon terminology (address
+zero when transmitted over the wire).</div>
+      </div>
+      <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:10.08991008991009%"><col style="width:19.980019980019982%"><col style="width:9.990009990009991%"><col style="width:59.94005994005994%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">Modbus
+Register</span>
+                  </th>
+                  <th class="entry valign-top" id="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">Name</span>
+                  </th>
+                  <th class="entry valign-top" id="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Data Type
+(Length / Number of Registers)</span>
+                  </th>
+                  <th class="entry valign-top" id="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">Description [Unit of Measurement]</span>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1 ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="4">
+                     <span class="ph">
+                        <strong class="ph b">General
+status</strong>
+                     </span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">ASCII (9)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">10</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_10_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">ASCII (8)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_10_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">18</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_18_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">ASCII (9)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_18_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">27</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_27_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">ASCII (9)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_27_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">36</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_36_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">ASCII (6)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_36_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">42</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_42_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">ASCII (4)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_42_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">46</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_46_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">ASCII (5)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_46_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">51</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_51_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">ASCII (40)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_51_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">91</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_91_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">UINT16 (1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_91_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">92</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_92_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">UINT16 (1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_92_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">108</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_108_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">ASCII (16)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_108_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">124</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_124_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">ASCII (16)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_124_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">140</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_140_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">ASCII (8)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_140_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">148</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_148_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">ASCII (6)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_148_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">201</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_201_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">UINT16 (1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_201_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">202</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_202_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">UINT32 (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_202_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">204</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_204_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">UINT16 (1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_204_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">206</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_206_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">UINT16 (1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_206_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">207</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_207_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">UINT16 (1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_207_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">208</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_208_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">UINT16 (1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_208_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">209</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_209_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">UINT16 (1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_209_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1000</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1000_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1000 (Bit 0)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1000-0_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1000-0_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1000 (Bit 1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1000-1_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1000-1_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1000 (Bit 2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1000-2_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1000-2_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1000 (Bit 3)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1000-3_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1000-3_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <strong class="ph b">
+                        <span class="ph">1001</span>
+                     </strong>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1001_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1001 (Bit 0)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1001-0_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1001-0_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1001 (Bit 1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1001-1_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1001-1_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1001 (Bit 2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1001-2_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1001-2_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1001 (Bit 3)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1001-3_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1001-3_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1001 (Bit 4)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1001-4_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1001-4_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1001 (Bit 5)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1001-5_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1001-5_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1001 (Bit 6)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1001-6_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1001-6_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1001 (Bit 7)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1001-7_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1001-7_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1001 (Bit 8)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1001-8_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1001-8_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <strong class="ph b">
+                        <span class="ph">1002</span>
+                     </strong>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1002_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1002 (Bit 0)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1002-0_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1002-0_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1002 (Bit 1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1002-1_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1002-1_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1002 (Bit 2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1002-2_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1002-2_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1002 (Bit 3)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1002-3_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1002-3_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1002 (Bit 4)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1002-4_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1002-4_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1002 (Bit 5)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1002-5_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1002-5_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1002 (Bit 6)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1002-6_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1002-6_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1002 (Bit 7)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1002-7_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1002-7_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1002 (Bit 8)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1002-8_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1002-8_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1002 (Bit 9)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1002-9_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1002-9_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1002 (Bit 10)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1002-10_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1002-10_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1002 (Bit 11)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1002-11_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1002-11_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1002 (Bit 12)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1002-12_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1002-12_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1002 (Bit 13)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1002-13_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1002-13_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1002 (Bit 14)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1002-14_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1002-14_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1002 (Bit 15)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1002-15_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1002-15_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <strong class="ph b">
+                        <span class="ph">1004</span>
+                     </strong>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1004_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1004 (Bit 1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1004-1_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1004-1_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1004 (Bit 2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1004-2_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1004-2_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1004 (Bit 3)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1004-3_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1004-3_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1004 (Bit 4)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1004-4_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1004-4_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <strong class="ph b">
+                        <span class="ph">1005</span>
+                     </strong>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1005_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1005 (Bit 1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1005-1_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1005-1_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1005 (Bit 2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1005-2_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1005-2_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1005 (Bit 3)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1005-3_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1005-3_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1005 (Bit 4)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1005-4_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1005-4_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1005 (Bit 5)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1005-5_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1005-5_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1005 (Bit 9)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1005-9_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1005-9_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1005 (Bit 10)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1005-10_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1005-10_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1005 (Bit 11)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1005-11_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1005-11_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1005 (Bit 14)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1005-14_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1005-14_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1005 (Bit 15)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1005-15_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1005-15_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <strong class="ph b">
+                        <span class="ph">1006</span>
+                     </strong>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1006_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1006 (Bit 10)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1006-0_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1006-0_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <strong class="ph b">
+                        <span class="ph">1007</span>
+                     </strong>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1007_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1007 (Bit 0)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1007-0_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1007-0_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1007 (Bit 1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1007-1_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1007-1_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1007 (Bit 2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1007-2_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1007-2_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1007 (Bit 3)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1007-3_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1007-3_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1007 (Bit 4)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1007-4_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1007-4_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1007 (Bit 5)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1007-5_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1007-5_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1007 (Bit 6)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1007-6_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1007-6_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1007 (Bit 7)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1007-7_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1007-7_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <strong class="ph b">
+                        <span class="ph">1009</span>
+                     </strong>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1009_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1009 (Bit 0)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1009-0_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1009-0_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1009 (Bit 1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1009-1_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1009-1_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1009 (Bit 2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1009-2_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1009-2_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1009 (Bit 3)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1009-3_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1009-3_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <strong class="ph b">
+                        <span class="ph">1012</span>
+                     </strong>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1012_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1012 (Bit 0)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1012-0_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1012-0_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1012 (Bit 1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1012-1_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1012-1_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1012 (Bit 2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1012-2_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1012-2_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1012 (Bit 3)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1012-3_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1012-3_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1012 (Bit 6)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1012-6_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1012-6_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1012 (Bit 7)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1012-7_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1012-7_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1012 (Bit 8)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1012-8_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1012-8_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <strong class="ph b">
+                        <span class="ph">1014</span>
+                     </strong>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1014_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1014 (Bit 0)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1014-0_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1014-0_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1014 (Bit 1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1014-1_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1014-1_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1014 (Bit 2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1014-2_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1014-2_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1014 (Bit 3)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1014-3_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1014-3_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1014 (Bit 4)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1014-4_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1014-4_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1014 (Bit 5)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1014-5_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1014-5_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1014 (Bit 6)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1014-6_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1014-6_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <strong class="ph b">
+                        <span class="ph">1016</span>
+                     </strong>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1016_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1016 (Bit 0)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1016-0_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1016-0_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1016 (Bit 1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1016-1_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1016-1_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1016 (Bit 2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1016-2_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1016-2_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1016 (Bit 3)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1016-3_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1016-3_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1016 (Bit 4)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1016-4_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1016-4_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1016 (Bit 5)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1016-5_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1016-5_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1016 (Bit 6)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1016-6_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1016-6_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1016 (Bit 7)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1016-7_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1016-7_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1016 (Bit 8)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1016-8_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1016-8_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1016 (Bit 9)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1016-9_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1016-9_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1016 (Bit 10)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1016-10_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1016-10_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1016 (Bit 11)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1016-11_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1016-11_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1016 (Bit 12)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1016-12_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1016-12_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1016 (Bit 13)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1016-13_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1016-13_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1016 (Bit 15)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1016-15_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1016-15_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <strong class="ph b">
+                        <span class="ph">1018</span>
+                     </strong>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1018_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1018 (Bit 0)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1018-0_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1018-0_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1018 (Bit 1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1018-1_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1018-1_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1018 (Bit 2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1018-2_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1018-2_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1018 (Bit 3)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1018-3_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1018-3_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1018 (Bit 4)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1018-4_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1018-4_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1018 (Bit 5)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1018-5_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1018-5_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1018 (Bit 6)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1018-6_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1018-6_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1018 (Bit 7)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1018-7_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1018-7_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <strong class="ph b">
+                        <span class="ph">1020</span>
+                     </strong>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1020_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1020 (Bit 0)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1020-0_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1020-0_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1020 (Bit 4)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1020-4_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1020-4_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1020 (Bit 5)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1020-5_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1020-5_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1020 (Bit 6)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1020-6_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1020-6_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1020 (Bit 7)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1020-7_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1020-7_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1020 (Bit 8)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1020-8_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1020-8_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1020 (Bit 9)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1020-9_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1020-9_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1020 (Bit 10)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1020-10_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1020-10_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1020 (Bit 12)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1020-12_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1020-12_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1020 (Bit 14)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1020-14_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1020-14_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1020 (Bit 15)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1020-15_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1020-15_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <strong class="ph b">
+                        <span class="ph">1021</span>
+                     </strong>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1021_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1021 (Bit 0)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1021-0_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1021-0_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1021 (Bit 1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1021-1_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1021-1_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1021 (Bit 2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1021-2_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1021-2_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1021 (Bit 3)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1021-3_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1021-3_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1021 (Bit 4)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1021-4_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1021-4_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1021 (Bit 5)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1021-5_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1021-5_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <strong class="ph b">
+                        <span class="ph">1026</span>
+                     </strong>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1026_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1026 (Bit 0)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1026-0_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1026-0_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1026 (Bit 1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1026-1_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1026-1_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1026 (Bit 2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1026-2_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1026-2_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <strong class="ph b">
+                        <span class="ph">1027</span>
+                     </strong>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1027_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1027 (Bit 0)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1027-0_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1027-0_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <strong class="ph b">
+                        <span class="ph">1028</span>
+                     </strong>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1028_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1028 (Bit 0)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1028-0_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1028-0_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1028 (Bit 1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1028-1_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1028-1_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1028 (Bit 2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1028-2_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1028-2_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <strong class="ph b">
+                        <span class="ph">1029</span>
+                     </strong>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1029_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1029 (Bit 0)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1029-0_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1029-0_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1029 (Bit 1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1029-1_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1029-1_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1029 (Bit 2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1029-2_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1029-2_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1029 (Bit 3)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1029-3_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1029-3_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <strong class="ph b">
+                        <span class="ph">1031</span>
+                     </strong>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1031_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1031 (Bit 0)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1031-0_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1031-0_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1031 (Bit 1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1031-1_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1031-1_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1031 (Bit 2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1031-2_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1031-2_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1031 (Bit 3)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1031-3_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1031-3_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1031 (Bit 4)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1031-4_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1031-4_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <strong class="ph b">
+                        <span class="ph">1033</span>
+                     </strong>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1033_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1033 (Bit 0)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1033-0_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1033-0_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1033 (Bit 1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1033-1_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1033-1_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1033 (Bit 2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1033-2_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1033-2_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <strong class="ph b">
+                        <span class="ph">1035</span>
+                     </strong>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="3">
+                     <strong class="ph b">
+                        <span class="ph">signals/F4_1035_Name</span>
+                     </strong>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1035 (Bit 0)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1035-0_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1035-0_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1035 (Bit 1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1035-1_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1035-1_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1035 (Bit 2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1035-2_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1035-2_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1035 (Bit 3)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1035-3_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1035-3_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1035 (Bit 4)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1035-4_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1035-4_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1035 (Bit 5)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1035-5_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1035-5_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1035 (Bit 6)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1035-6_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1035-6_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1035 (Bit 7)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1035-7_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1035-7_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1035 (Bit 8)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1035-8_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1035-8_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1035 (Bit 9)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1035-9_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1035-9_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1035 (Bit 10)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1035-10_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1035-10_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">1035 (Bit 11)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_1035-11_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">Boolean</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_1035-11_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1 ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="4">
+                     <span class="ph">
+                        <strong class="ph b">Charger
+- Dynamic data register 1</strong>
+                     </span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5000</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5000_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5000_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5002</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5002_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5002_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5004</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5004_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">UINT16 (1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5004_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5005</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5005_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">UINT16 (1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5005_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5006</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5006_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">UINT16 (1)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5006_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5009</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5009_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5009_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5011</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5011_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5011_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5013</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5013_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5013_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5015</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5015_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5015_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5017</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5017_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5017_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5019</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5019_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5019_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5021</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5021_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5021_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5023</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5023_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5023_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5025</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5025_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5025_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5027</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5027_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5027_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1 ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="4">
+                     <span class="ph">
+                        <strong class="ph b">Battery
+- Dynamic data register 1</strong>
+                     </span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5095</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5095_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5095_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5097</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5097_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5097_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5099</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5099_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5099_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5101</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5101_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5101_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5103</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5103_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5103_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5115</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5115_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5115_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5117</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5117_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5117_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5119</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5119_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">UINT32 (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5119_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5121</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5121_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">UINT32 (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5121_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5123</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5123_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">UINT32 (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5123_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1 ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="4">
+                     <span class="ph">
+                        <strong class="ph b">Charger
+algebra - Dynamic data register 1</strong>
+                     </span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5157</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5157_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5157_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5165</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5165_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5165_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5167</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5167_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5167_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5169</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5169_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5169_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5171</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5171_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5171_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5173</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5173_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5173_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5175</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5175_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5175_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5177</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5177_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5177_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5179</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5179_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5179_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1 ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="4">
+                     <span class="ph">
+                        <strong class="ph b">Dc
+Voltage/CurrentTemperature measurement card - Dynamic data register
+1</strong>
+                     </span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5221</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5221_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5221_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5223</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5223_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5223_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5225</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5225_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5225_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5227</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5227_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5227_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1 ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="4">
+                     <span class="ph">
+                        <strong class="ph b">Earth
+fault monitoring module measurement (ESU) - Dynamic data register
+1</strong>
+                     </span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5285</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5285_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5285_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5287</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5287_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5287_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5289</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5289_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5289_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1 ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="4">
+                     <span class="ph">
+                        <strong class="ph b">Battery
+supervision module measurement (BATT60) - Dynamic data register 1</strong>
+                     </span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5349</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5349_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5349_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5351</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5351_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5351_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5353</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5353_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5353_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5355</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5355_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5355_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5357</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5357_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5357_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1 ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="4">
+                     <span class="ph">
+                        <strong class="ph b">Battery
+supervision module measurement (BATT300) - Dynamic data register 1</strong>
+                     </span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5413</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5413_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5413_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5415</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5415_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5415_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5417</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5417_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5417_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1 ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="4">
+                     <span class="ph">
+                        <strong class="ph b">Inverter
+- Dynamic data register 1</strong>
+                     </span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5477</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5477_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5477_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5479</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5479_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5479_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5481</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5481_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5481_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5485</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5485_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5485_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5487</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5487_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5487_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5489</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5489_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5489_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1 ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="4">
+                     <span class="ph">
+                        <strong class="ph b">Inverter
+Algebra - Dynamic data register 1</strong>
+                     </span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5541</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5541_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5541_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5543</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5543_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5543_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5545</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5545_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5545_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5547</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5547_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5547_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1 ModbusRegisterList-332AE41B__entry__2 ModbusRegisterList-332AE41B__entry__3 ModbusRegisterList-332AE41B__entry__4" colspan="4">
+                     <span class="ph">
+                        <strong class="ph b">Inverter
+Algebra - Dynamic data register 1</strong>
+                     </span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5573</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5573_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5573_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5575</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5575_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5575_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5577</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5577_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5577_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5579</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5579_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5579_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5581</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5581_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5581_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5583</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5583_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5583_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5585</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5585_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5585_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5587</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5587_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5587_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5589</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5589_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5589_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5591</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5591_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5591_Description</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__1">
+                     <span class="ph">5593</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__2">
+                     <span class="ph">signals/F4_5593_Name</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__3">
+                     <span class="ph">FP (2)</span>
+                  </td>
+                  <td class="entry" headers="ModbusRegisterList-332AE41B__entry__4">
+                     <span class="ph">signals/F4_5593_Description</span>
+                  </td>
+               </tr>
+            </tbody></table>
+   </div>
+</article></main></body></html>

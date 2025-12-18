@@ -1,0 +1,93 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="dcconverter-configuration,redundant-dc-input,input-failover,nn-configuration,controller-logic,configure-redundancy,handle-input-unavailable,failover-test,alarm-and-event-handling,parameter-adjustment,high-availability-power,data-center-continuity,plant-operations,field-troubleshooting,service-restoration"><meta name="keywords" content="dcconverter-configuration, redundant-dc-input, input-failover, nn-configuration, controller-logic, configure-redundancy, handle-input-unavailable, failover-test, alarm-and-event-handling, parameter-adjustment, high-availability-power, data-center-continuity, plant-operations, field-troubleshooting, service-restoration"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-12-06T19:00:00+05:30"><meta name="DC.date.modified" content="2025-12-06T19:00:00+05:30"><meta name="title" content="DCConverter NN Configuration with One of the DC Input Unavailable"><meta name="shortdesc" content="Guidance for configuring DC converter redundancy and handling scenarios where one DC input is unavailable"><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="dc-converter;redundant-input;controller;alarm-system;failover-mechanism"><meta name="taxonomy" content="domain:industrial-power;usecase:redundancy-configuration;industry: uninterruptible power supply (UPS) systems"><meta name="tags" content="redundancy,failover,configuration,troubleshooting,availability"><meta name="usecase" content="configure-and-test-dcconverter-redundancy-when-a-dc-input-is-unavailable"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="NConfigurationWithOneOfTheDCInputUn-BC8C677C"><meta name="DC.language" content="en"><title>2N Configuration with One of the DC Input Unavailable</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="NConfigurationWithOneOfTheDCInputUn-BC8C677C"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">2N Configuration with One of the DC Input Unavailable</h1>
+   
+   
+   <div class="body conbody">
+      <div class="div">
+         <p class="p">If one of the DC input becomes unavailable in a system with
+a 2N configuration, the other dc input will still supply one group
+of modules. One group modules is enough to supply the full load. The
+group modules can be N, N+1, N+x or N+N.</p>
+         <figure class="fig fignone">
+            <img class="image" src="../Images/Modular-DCConverter_Operating_Modes_NN_1DCinputmissing_DD00670105.svg">
+         </figure>
+         <table class="table"><caption></caption><colgroup><col style="width:25%"><col style="width:75%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="NConfigurationWithOneOfTheDCInputUn-BC8C677C__entry__1">
+                        <span class="ph">Part</span>
+                     </th>
+                     <th class="entry valign-top" id="NConfigurationWithOneOfTheDCInputUn-BC8C677C__entry__2">
+                        <span class="ph">Status</span>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="NConfigurationWithOneOfTheDCInputUn-BC8C677C__entry__1">
+                        <span class="ph">DC Input 1</span>
+                     </td>
+                     <td class="entry" headers="NConfigurationWithOneOfTheDCInputUn-BC8C677C__entry__2">
+                        <span class="ph">Available
+and within the tolerance range.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="NConfigurationWithOneOfTheDCInputUn-BC8C677C__entry__1">
+                        <span class="ph">DC Input 2</span>
+                     </td>
+                     <td class="entry" headers="NConfigurationWithOneOfTheDCInputUn-BC8C677C__entry__2">
+                        <span class="ph" id="NConfigurationWithOneOfTheDCInputUn-BC8C677C__UnavailableUnknown-01D2B763">Unavailable / Unknown</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="NConfigurationWithOneOfTheDCInputUn-BC8C677C__entry__1">
+                        <span class="ph">Converter DC
+Input 1 breaker</span>
+                     </td>
+                     <td class="entry" headers="NConfigurationWithOneOfTheDCInputUn-BC8C677C__entry__2">
+                        <span class="ph">Closed</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="NConfigurationWithOneOfTheDCInputUn-BC8C677C__entry__1">
+                        <span class="ph">Converter DC Input 2 breaker</span>
+                     </td>
+                     <td class="entry" headers="NConfigurationWithOneOfTheDCInputUn-BC8C677C__entry__2">
+                        <span class="ph" id="NConfigurationWithOneOfTheDCInputUn-BC8C677C__ClosedOpen-01D2B815">Closed / Open</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="NConfigurationWithOneOfTheDCInputUn-BC8C677C__entry__1">
+                        <span class="ph">DC/DC converter modules</span>
+                     </td>
+                     <td class="entry" headers="NConfigurationWithOneOfTheDCInputUn-BC8C677C__entry__2">
+                        <span class="ph">Half of the modules connected to the dc input that is still available
+are running and suppling the load. The other half is ready to operate
+when the unavailable dc input return.</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="NConfigurationWithOneOfTheDCInputUn-BC8C677C__entry__1">
+                        <span class="ph">DC Output</span>
+                     </td>
+                     <td class="entry" headers="NConfigurationWithOneOfTheDCInputUn-BC8C677C__entry__2">
+                        <span class="ph">
+                        <span class="ph">Available and within the tolerance range. The load is supplied.</span>
+                        <span class="ph">Available and within the tolerance range.
+The inverter modules and any DC load are supplied.</span>
+                     </span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="NConfigurationWithOneOfTheDCInputUn-BC8C677C__entry__1">
+                        <span class="ph">Converter DC output breaker</span>
+                     </td>
+                     <td class="entry" headers="NConfigurationWithOneOfTheDCInputUn-BC8C677C__entry__2">
+                        <span class="ph">Closed</span>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+   </div>
+</article></main></body></html>

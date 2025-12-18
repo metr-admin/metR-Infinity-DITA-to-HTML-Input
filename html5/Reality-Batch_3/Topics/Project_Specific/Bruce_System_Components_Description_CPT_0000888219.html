@@ -1,0 +1,911 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="Bruce UPS system,inverter module,rectifier module,battery subsystem,Independent Static Bypass Switch (ISBS),control panel,power distribution unit,system component identification,functional block analysis,module description,component-level mapping,system architecture evaluation,power path analysis,interface interpretation,UPS architecture,electrical power conversion,industrial backup systems,redundant power environments,load protection topology,energy storage systems,system interaction overview"><meta name="keywords" content="Bruce UPS system, inverter module, rectifier module, battery subsystem, Independent Static Bypass Switch (ISBS), control panel, power distribution unit, system component identification, functional block analysis, module description, component-level mapping, system architecture evaluation, power path analysis, interface interpretation, UPS architecture, electrical power conversion, industrial backup systems, redundant power environments, load protection topology, energy storage systems, system interaction overview"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-11-28+05:30"><meta name="DC.date.modified" content="2025-11-28"><meta name="title" content="Bruce UPS – System Components Description"><meta name="shortdesc" content="Provides a functional overview of all Bruce UPS components including inverter, rectifier, ISBS, battery subsystem, and control interfaces."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="inverter; rectifier; battery bank; ISBS; control electronics; sensors; power distribution paths"><meta name="taxonomy" content="domain:industrial automation;usecase:system-overview;industry:uninterruptible power supply (UPS) systems)"><meta name="tags" content="UPS components,inverter,rectifier,battery,ISBS,system architecture"><meta name="usecase" content="Provide a descriptive overview of all hardware components within the Bruce UPS system"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="SystemComponentsDescription-602230C4"><meta name="DC.language" content="en"><title>System Components Description</title><link rel="stylesheet" type="text/css" href="../../../commonltr.css"></head><body id="SystemComponentsDescription-602230C4"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">System Components Description</h1>
+   
+   
+   <div class="body conbody">
+      <section class="section">
+         <div class="sectiondiv">
+            <p class="p">The image shows
+a simplification of the system configuration intended as a reference
+for the description of the system components. See the <em class="ph i">Single Line
+Diagram</em> for more details.</p>
+            <figure class="fig fignone">
+               <img class="image" src="../../Images/Bruce_WEW-noByp_General-System-Principle-Diagram_0000938512.svg">
+            </figure>
+            <figure class="fig fignone">
+               <img class="image" src="../../Images/Bruce_SDC_General-System-Principle-Diagram_SDC_0000944651.svg">
+            </figure>
+            <div class="p">The system components are divided into
+three sections:<ul class="sl simple">
+                  <li class="sli">
+                     <strong class="ph b">(A)</strong> The connection field. Located in the bypass or incoming.</li>
+                  <li class="sli">
+                     <strong class="ph b">(B)</strong> The system part. Located in the system cabinet behind
+the main protection cover.</li>
+                  <li class="sli">
+                     <strong class="ph b">(C)</strong> The low voltage section. Located in the system cabinet
+in front of the main protection cover.</li>
+               </ul>The sections are divided to make maintenance and service easier.
+The connection field and system part are physically isolated from
+each other (different cabinets).</div>
+            <div class="note note note_note"><span class="note__title">Note:</span> The battery
+breaker is only monitored in 250 V DC systems, see the mimic diagram
+on the front panel of the system.</div>
+            <div class="p">The system
+components are divided into two sections:<ul class="sl simple">
+                  <li class="sli">
+                     <strong class="ph b">(A)</strong> The system part. Located in the system cabinet behind
+the main protection cover.</li>
+                  <li class="sli">
+                     <strong class="ph b">(B)</strong> The low voltage section. Located in the system cabinet
+in front of the main protection cover.</li>
+               </ul>The sections are divided to make maintenance and service easier.</div>
+            <div class="note note note_note"><span class="note__title">Note:</span> The breakers in the diagram can be switch-disconnectors, fuse
+switch-disconnectors or circuit breakers.</div>
+         </div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Components in the Connection Field</h2>
+         
+         <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:20.00mm"><col style="width:30.00mm"><col style="width:100%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="SystemComponentsDescription-602230C4__entry__1">
+                        <p class="p">Designator</p>
+                     </th>
+                     <th class="entry valign-top" id="SystemComponentsDescription-602230C4__entry__2">
+                        <p class="p">Component</p>
+                     </th>
+                     <th class="entry valign-top" id="SystemComponentsDescription-602230C4__entry__3">
+                        <p class="p">Description</p>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__1">
+                        <p class="p">X090</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__2">
+                        <p class="p">Bypass mains terminals</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__3">
+                        <p class="p">Connection terminal for the bypass mains input. The bypass
+mains input requires an external protective device. A fuse or molded
+case circuit breaker (MCCB) according to the technical specification.
+L, N, PE for single phase systems. L1, L2, L3 and PE (and N if there
+is no isolation bypass transformer) for three phase systems. For specifications
+always refer to the <em class="ph i">Drawings</em> for your system.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__1">
+                        <p class="p">Q090</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__2">
+                        <p class="p">Bypass circuit breaker or Switch-disconnector</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__3">
+                        <p class="p">Breaker for the bypass mains input. The bypass mains input
+requires an external protective device. A fuse or MCCB according to
+the technical specification.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__1">
+                        <p class="p">T090</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__2">
+                        <p class="p">Bypass transformer or stabilizer</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__3">
+                        <p class="p">Galvanic isolation
+between bypass mains input and load. Used if the required output is
+different from the available input. Either a transformer or stabilizer
+can be used.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__1">
+                        <p class="p">Q050</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__2">
+                        <p class="p">2-position manual bypass switch</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__3">
+                        <p class="p">Makes it possible to isolate the system for maintenance. Positions
+are <strong class="ph b">Normal</strong> and <strong class="ph b">Bypass</strong>. For more information see <a class="xref" href="Bruce_Redundant_System_with_2p_Manual_Bypass_Switch_and_both_Static_Switches__0000911080.html">Redundant System with 2p Manual Bypass Switch and both Static Switches</a>.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__1">
+                        <p class="p">Q050</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__2">
+                        <p class="p">3-position manual bypass switch</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__3">
+                        <p class="p">Makes it possible to isolate the system for maintenance
+and test the system without interruption. Positions are <strong class="ph b">Normal</strong>, <strong class="ph b">Test</strong> and <strong class="ph b">Bypass</strong>. For more information see <a class="xref" href="Bruce_Redundant_System_with_2p_Manual_Bypass_Switch_and_both_Static_Switches__0000911080.html">Redundant System with 2p Manual Bypass Switch and both Static Switches</a>.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__1">
+                        <p class="p">Q028</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__2">
+                        <p class="p">Switch-disconnector</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__3">
+                        <p class="p">Always used with 2-position manual bypass switches. Needed
+to isolates the static switch EN when the 2-position manual bypass
+switch is in <strong class="ph b">Bypass</strong> position. This functionality is integrated
+in 3-position manual bypass switches.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__1">
+                        <p class="p">X001</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__2">
+                        <p class="p">Rectifier mains input terminals</p>
+                        <p class="p">DC power input terminals</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__3">
+                        <p class="p">Connection terminal for the <span class="ph">rectifier
+mains</span>
+                           <span class="ph">DC power</span> input. The <span class="ph">rectifier mains</span>
+                           <span class="ph">DC power</span> input requires
+an external protective device. A fuse or MCCB according to the technical
+specification.<span class="ph"> Always L1, L2, L3, and PE.</span>
+                        </p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__1">
+                        <p class="p">Q001</p>
+                        <p class="p">Q020</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__2">
+                        <p class="p">Rectifier input circuit breaker or switch-disconnector</p>
+                        <p class="p">DC power input isolation</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__3">
+                        <p class="p">Breaker for the rectifier mains input. The
+rectifier mains input requires an external protective device. A fuse
+or MCCB according to the technical specification.</p>
+                        <p class="p">Provides isolation for the DC power input. No trip function.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__1">
+                        <p class="p">X002</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__2">
+                        <p class="p">Battery terminals</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__3">
+                        <p class="p" id="SystemComponentsDescription-602230C4__X002-Desc">Connection terminal for the battery connection.
+The battery connection requires an external protective device. A fuse
+or MCCB according to the technical specification.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__1">
+                        <p class="p">Q004</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__2">
+                        <p class="p">Battery circuit breaker</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__3">
+                        <p class="p" id="SystemComponentsDescription-602230C4__Q004-Desc">Breaker for the battery connection.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__1">
+                        <p class="p">F005</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__2">
+                        <p class="p">Battery protection device</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__3">
+                        <p class="p" id="SystemComponentsDescription-602230C4__Q005-Desc">External battery protection device for the battery
+connection, must be installed according to the technical specification.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__1">
+                        <p class="p">X004</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__2">
+                        <p class="p">Load terminals</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__3">
+                        <p class="p">Connection terminal for the load. L, N, PE for single phase
+systems.</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Components in the System Part</h2>
+         
+         <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:20.00mm"><col style="width:30.00mm"><col style="width:100%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">Number</p>
+                     </th>
+                     <th class="entry valign-top" id="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">Component</p>
+                     </th>
+                     <th class="entry valign-top" id="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p">Description</p>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">T001</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">Rectifier input isolation transformer</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p" id="SystemComponentsDescription-602230C4__T001-Desc">Galvanic isolation between mains input and
+rectifier. Transforms the mains input to the correct value for the
+rectifier.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">A030</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">6-pulse thyristor rectifier-bridge</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p" id="SystemComponentsDescription-602230C4__A030-Desc">Converts the AC voltage from the mains to
+DC voltage.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">A031</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">Additional 6-pulse thyristor rectifier-bridge</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p" id="SystemComponentsDescription-602230C4__A031-Desc">To create a 12-pulse thyristor rectifier-bridge an
+additional 6-pulse thyristor rectifier-bridge (with a 30 degree phase
+shift) is used. This reduces the repercussion of the rectifier back
+to the mains.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">F026</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">Fuse</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p" id="SystemComponentsDescription-602230C4__F026-Desc">Power fuse at the output of the thyristor
+rectifier-bridge.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">L001</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">Smoothing choke</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p" id="SystemComponentsDescription-602230C4__L001-Desc">Filters the DC current together with CB02.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">CB02</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">DC capacitor module</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p" id="SystemComponentsDescription-602230C4__CB02-Desc">Filters the DC current together with L001.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">A032</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">Pulse width modulated (PWM) inverter</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p">Power module with insulated-gate bipolar transistor (IGBT).
+Converts the DC voltage from the <span class="ph">rectifier back</span>
+                           <span class="ph">DC power supply</span> to AC voltage.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">L002</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">Smoothing choke</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p">Filters the AC output and removes distortions together with
+the CB03.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">T002</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">Inverter power transformer</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p">Galvanic isolation
+between the load and the DC. Transforms the AC output to the correct
+value for the load.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40" rowspan="2">
+                        <p class="p">CB03</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">AC capacitor module</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p">Filters the AC output and removes distortions together with the L002.
+Subdivided into several sections.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">Fuse</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p">Protects each section of CB03. If one section has a failure the other
+sections will be isolated.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">F021</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">Inverter output fuse</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p">Protection at the inverter output.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">A035</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">Static switch EN</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <div class="p">The static switch
+consists of antiparallel-switched power thyristors. It is used to
+automatically transfer the load to bypass without interruption. Can
+only be transferred if the bypass mains voltage is within tolerance.
+Transfer can occur when:<ul class="ul">
+                              <li class="li">
+                                 <p class="p">The system is heavily overload.</p>
+                              </li>
+                              <li class="li">
+                                 <p class="p">The inverter cannot keep the output voltage within tolerance.</p>
+                              </li>
+                              <li class="li">
+                                 <p class="p">The battery is discharged during battery
+operation.</p>
+                              </li>
+                              <li class="li">
+                                 <p class="p">DC input power is unavailable or out of tolerance.</p>
+                              </li>
+                              <li class="li">
+                                 <p class="p">The system has been switched to static bypass operation from
+the front panel.</p>
+                              </li>
+                           </ul>
+                        </div>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">F028</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">Fuse</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p">Protects the static switch EN A035.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">A036</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">Static switch EA</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p">The static switch EA is an option at the inverter output. It can
+make the switch over between operating modes more reliable.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">A201</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">Internal power supply</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p">Supplied by <span class="ph">the rectifier mains or </span>the bypass
+mains. Part of the redundant internal power supply together with A202.
+One of the two supplies can supply the system alone. In case of one
+of the supplies stops suppling the system an alarm is generated on
+the front panel.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">A202</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">Internal power supply</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p">Supplied from the internal DC bus. Part of the redundant internal
+power supply together with A201. One of the two supplies can supply
+the system alone. In case of one of the supplies stops suppling the
+system an alarm is generated on the front panel.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">A055</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41" rowspan="2">
+                        <p class="p">Fan system</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42" rowspan="2">
+                        <div class="p">Consist of:<ul class="ul">
+                              <li class="li">
+                                 <p class="p">Fan-transformer that transforms the voltage to the correct
+voltage to the fans.</p>
+                              </li>
+                              <li class="li">
+                                 <p class="p">Fans with internal hall sensor for monitoring the number of
+revolutions.</p>
+                              </li>
+                              <li class="li">
+                                 <p class="p">Fan monitor that monitors the number of revolutions of each
+fan. If the number of revolutions falls below the preset value an
+alarm is generated.</p>
+                              </li>
+                           </ul>
+                        </div>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">E00X</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">A070</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">Main controller board (Blackird)</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p">Controls the main parts (<span class="ph">rectifier, </span>inverter,
+static switch<span class="ph">es</span>) of the system and the
+alarm relays. Monitors the voltages, the currents and the alarms.
+Communicates with the front panel and the serial connections.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">A071</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">Interface board</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p">Contains control fuses and distributes power to auxiliary circuits
+and different modules. Converts AC and DC voltages to lower standard
+values for the controller. Secures galvanic isolation for the controller.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">A073</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">Front panel</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p" id="SystemComponentsDescription-602230C4__A073-Desc">The human machine interface (HMI) of the system. Contains
+a display, operating status indications, alarm indications, operating
+buttons and numpad. For more information see <a class="xref" href="Bruce_Front_Panel_CPT_0000887508.html">Front Panel</a>.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">A703</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">ISBS Controller</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p">The ISBS controller controls the static switch EN A035 based on the
+control signal from the controller board A070. It can independently
+switch the system to independent static bypass (ISBS) operation. The
+ISBS controller has an independent power supply and independent supervision
+of the output voltage. It is connected to the two relays K701 and
+K702.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">A068</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">Adapter board</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p">Connection interface to the controller board A070.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">K701</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">1 relay</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p">Indicates the status of the complete ISBS controller. If the relay
+is activated, the controller is fully operational and ready to react
+on the control signal from the controller board.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__40">
+                        <p class="p">K702</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__41">
+                        <p class="p">1 relay</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__42">
+                        <p class="p">Indicates that the ISBS controller has switched the system to ISBS
+operation.</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+         <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:20.00mm"><col style="width:30.00mm"><col style="width:100%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="SystemComponentsDescription-602230C4__entry__118">
+                        <p class="p">Number</p>
+                     </th>
+                     <th class="entry valign-top" id="SystemComponentsDescription-602230C4__entry__119">
+                        <p class="p">Component</p>
+                     </th>
+                     <th class="entry valign-top" id="SystemComponentsDescription-602230C4__entry__120">
+                        <p class="p">Description</p>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__118">
+                        <p class="p">X001</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__119">
+                        <p class="p">Rectifier mains input terminals</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__120">
+                        <p class="p">Connection terminal for the rectifier mains input. The rectifier
+mains input requires an external protective device. A fuse or MCCB
+according to the technical specification. Always L1, L2, L3, and PE.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__118">
+                        <p class="p">Q001</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__119">
+                        <p class="p">Rectifier input circuit breaker or switch-disconnector</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__120">
+                        <p class="p">Breaker for the rectifier mains input. The rectifier mains input
+requires an external protective device. A fuse or MCCB according to
+the technical specification.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__118">
+                        <p class="p">T001</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__119">
+                        <p class="p">Rectifier input isolation transformer</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__120">
+                        <p class="p">Galvanic isolation between mains input and
+rectifier. Transforms the mains input to the correct value for the
+rectifier.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__118">
+                        <p class="p">A030</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__119">
+                        <p class="p">6-pulse thyristor rectifier-bridge</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__120">
+                        <p class="p">Converts the AC voltage from the mains to
+DC voltage.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__118">
+                        <p class="p">A031</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__119">
+                        <p class="p">
+                           <em class="ph i">Optional</em>Additional 6-pulse thyristor rectifier-bridge</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__120">
+                        <p class="p">To create a 12-pulse thyristor rectifier-bridge an
+additional 6-pulse thyristor rectifier-bridge (with a 30 degree phase
+shift) is used. This reduces the repercussion of the rectifier back
+to the mains.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__118">
+                        <p class="p">F026</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__119">
+                        <p class="p">Fuse</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__120">
+                        <p class="p">Power fuse at the output of the thyristor
+rectifier-bridge.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__118">
+                        <p class="p">L001</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__119">
+                        <p class="p">Smoothing choke</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__120">
+                        <p class="p">Filters the DC current together with CB02.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__118">
+                        <p class="p">CB02</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__119">
+                        <p class="p">DC capacitor module</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__120">
+                        <p class="p">Filters the DC current together with L001.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__118">
+                        <p class="p">V015</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__119">
+                        <p class="p">Blocking diode</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__120">
+                        <p class="p">Blocking diode between system output and rectifier output.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__118">
+                        <p class="p">A070</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__119">
+                        <p class="p">Main controller board (Blackbird)</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__120">
+                        <p class="p">Controls the rectifier and the alarm relays. Monitors voltages, currents
+and alarms. Communicates with the front panel, the serial connections
+and between multiple units in redundant systems.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__118">
+                        <p class="p">A071</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__119">
+                        <p class="p">Interface board</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__120">
+                        <p class="p">Contains control fuses and distributes power to auxiliary circuits
+and different modules. Converts AC and DC voltages to lower standard
+values for the controller. Secures galvanic isolation for the controller.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__118">
+                        <p class="p">A073</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__119">
+                        <p class="p">Front panel</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__120">
+                        <p class="p">The human machine interface (HMI) of the system. Contains
+a display, operating status indications, alarm indications, operating
+buttons and numpad. For more information see <a class="xref" href="Bruce_Front_Panel_CPT_0000887508.html">Front Panel</a>.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__118">
+                        <p class="p">E001-E008</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__119">
+                        <p class="p">Fans</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__120">
+                        <p class="p">Fans with internal hall sensor for monitoring the number of revolutions.
+Not needed in systems with low power.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__118">
+                        <p class="p">A050-A057</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__119">
+                        <p class="p">Fan control</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__120">
+                        <p class="p">Interface between the fans and the interface board. Controls the
+fan speed.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__118">
+                        <p class="p">Q101</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__119">
+                        <p class="p">
+                           <em class="ph i">Optional</em>Output breaker</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__120">
+                        <p class="p">
+                           <strong class="ph b">For 48 V DC systems: </strong>Breaker to isolation the rectifier from
+the load and the battery.</p>
+                        <p class="p">
+                           <strong class="ph b">For 250 V DC systems: </strong>Not used.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__118">
+                        <p class="p">X004</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__119">
+                        <p class="p">Load terminals</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__120">
+                        <p class="p">Connection terminal
+for the load (L+) and (L-).</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Components in the Low-Voltage Section</h2>
+         
+         <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:20.00mm"><col style="width:30.00mm"><col style="width:50%"><col style="width:50%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="SystemComponentsDescription-602230C4__entry__169">
+                        <p class="p">Number</p>
+                     </th>
+                     <th class="entry valign-top" id="SystemComponentsDescription-602230C4__entry__170">
+                        <p class="p">Component</p>
+                     </th>
+                     <th class="entry valign-top" id="SystemComponentsDescription-602230C4__entry__171" colspan="2">
+                        <p class="p">Description</p>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__169">
+                        <p class="p">A025</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__170">
+                        <p class="p">External connection board</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__171" colspan="2">
+                        <p class="p">An interface board with status relays
+and input terminals. For more information see the chapter <a class="xref" href="Bruce_External_Connection_Board_CPT_0000917822.html">External Connection Board</a>.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__169">
+                        <p class="p">A077</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__170">
+                        <p class="p">Relay board</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__171" colspan="2">
+                        <p class="p">16 change-over relays for alarms from
+the alarm panel. If the alarm is active the relay is in the volt free
+position. For more information see the chapter <a class="xref" href="Bruce_Relay_Boards_CPT_0000916512.html">Relay Boards</a>
+                        </p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__169">
+                        <p class="p">A078</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__170">
+                        <p class="p">Relay board</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__171" colspan="2">
+                        <p class="p">16 change-over relays for alarms from the alarm panel, status indications
+from the mimic diagram and an indication if there are alarms that
+are not confirmed. If the alarm is active the relay is in the volt
+free position. For more information see the chapter <a class="xref" href="Bruce_Relay_Boards_CPT_0000916512.html">Relay Boards</a>.</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+         <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:20.00mm"><col style="width:30.01mm"><col style="width:50%"><col style="width:50%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="SystemComponentsDescription-602230C4__entry__181">
+                        <p class="p">Number</p>
+                     </th>
+                     <th class="entry valign-top" id="SystemComponentsDescription-602230C4__entry__182">
+                        <p class="p">Component</p>
+                     </th>
+                     <th class="entry valign-top" id="SystemComponentsDescription-602230C4__entry__183" colspan="2">
+                        <p class="p">Description</p>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__181">
+                        <p class="p">A025</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__182">
+                        <p class="p">External connection board</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__183" colspan="2">
+                        <p class="p">An interface board with status relays
+and input terminals. For more information see the chapter <a class="xref" href="Bruce_External_Connection_Board_CPT_0000917822.html">External Connection Board</a>.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__181">
+                        <p class="p">A077</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__182">
+                        <p class="p">Relay board</p>
+                     </td>
+                     <td class="entry" headers="SystemComponentsDescription-602230C4__entry__183" colspan="2">
+                        <p class="p">16 change-over relays for status indications and alarms from the
+alarm panel. If the alarm/status is active the relay is in the volt
+free position (default). For more information see the chapter <a class="xref" href="Bruce_Relay_Boards_CPT_0000916512.html">Relay Boards</a>.The available relays are:</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </section>
+   </div>
+</article></main></body></html>

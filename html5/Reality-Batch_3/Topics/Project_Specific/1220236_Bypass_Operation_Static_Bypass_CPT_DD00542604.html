@@ -1,0 +1,139 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="static bypass,bypass operation,static switch,bypass line,inverter subsystem,rectifier subsystem,load bus interface,bypass mode workflow,automatic transfer sequence,fault transfer behavior,synchronization checks,bypass condition validation,alarm and status monitoring,bypass recovery procedure,critical load environment,UPS operation modes,fault tolerance conditions,industrial backup systems,high-availability power architectures,electrical protection systems,system continuity assurance"><meta name="keywords" content="static bypass, bypass operation, static switch, bypass line, inverter subsystem, rectifier subsystem, load bus interface, bypass mode workflow, automatic transfer sequence, fault transfer behavior, synchronization checks, bypass condition validation, alarm and status monitoring, bypass recovery procedure, critical load environment, UPS operation modes, fault tolerance conditions, industrial backup systems, high-availability power architectures, electrical protection systems, system continuity assurance"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-01+05:30"><meta name="DC.date.modified" content="2025-12-01"><meta name="title" content="Bypass Operation — Static Bypass"><meta name="shortdesc" content="Describes static bypass operation, including automatic transfer, synchronization checks, load protection, and inverter bypass conditions."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="static switch; bypass line; inverter; rectifier; synchronization circuits; load bus; monitoring panel"><meta name="taxonomy" content="domain:industrial automation;usecase:static-bypass-operation;industry:uninterruptible power supply (UPS) systems"><meta name="tags" content="static bypass,bypass operation,automatic transfer,inverter bypass,fault transfer"><meta name="usecase" content="Explain behavior, triggers, and safety implications of static bypass operation"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="BypassOperationStaticBypass-5744EA15"><meta name="DC.language" content="en"><title>Bypass Operation (Static Bypass)</title><link rel="stylesheet" type="text/css" href="../../../commonltr.css"></head><body id="BypassOperationStaticBypass-5744EA15"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Bypass Operation (Static Bypass)</h1>
+   
+   
+   <div class="body conbody">
+      <div class="div">
+         <div class="p">A system might be in bypass operation because:<ul class="ul">
+               <li class="li">
+                  <p class="p">The power supply to the inverter is unavailable.</p>
+               </li>
+               <li class="li">
+                  <p class="p">The system was manually switched to bypass operation from the
+display panel without interruption. See chapter <a class="xref" href="1220236_How_to_Switch_from_Normal_Operation_to_Bypass_Operation_CPT_DD00545782.html">How to Switch from Normal Operation to Bypass Operation</a>.</p>
+               </li>
+            </ul>
+            <div class="note note note_note"><span class="note__title">Note:</span> Bypass operation is also called static bypass because the
+bypass is supplied over the static switch.</div>
+         </div>
+         <p class="p">A switch to
+bypass operation without interruption is only possible if the bypass
+mains is available and within the tolerance range.</p>
+         <p class="p">The system
+can be configured to switch over to bypass operation even if the inverter
+is not synchronized to the bypass mains. However, this will result
+in a 10–20 ms interruption to the output.</p>
+         <p class="p">If the bypass
+mains becomes unavailable in bypass operation, the system will try
+to switch over to normal operation.</p>
+         <p class="p">When the load is supplied
+over the static switch EN in bypass operation, the manual bypass switch
+is in <strong class="ph b">UPS</strong> position.</p>
+         <figure class="fig fignone">
+            <img class="image" src="../../Images/1220236_FD_WxW_Configuration-Options_BOP_DD00542594.svg">
+         </figure>
+      </div>
+      <table class="table"><caption></caption><colgroup><col style="width:40.00mm"><col style="width:100%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="BypassOperationStaticBypass-5744EA15__entry__1">
+                     <p class="p">Part</p>
+                  </th>
+                  <th class="entry valign-top" id="BypassOperationStaticBypass-5744EA15__entry__2">
+                     <p class="p">Status</p>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__1">
+                     <p class="p">DC input power</p>
+                  </td>
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__2">
+                     <p class="p">Unavailable and/or outside the tolerance range.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__1">
+                     <p class="p">Inverter input switch</p>
+                  </td>
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__2">
+                     <p class="p">Closed</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__1">
+                     <p class="p">Bypass mains</p>
+                  </td>
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__2">
+                     <p class="p">Available and
+within the tolerance range.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__1">
+                     <p class="p">External bypass input switch</p>
+                  </td>
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__2">
+                     <p class="p">Closed</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__1">
+                     <p class="p">EN (BYP SSW) input switch</p>
+                  </td>
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__2">
+                     <p class="p">Closed</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__1">
+                     <p class="p">External manual bypass switch</p>
+                  </td>
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__2">
+                     <p class="p">In <strong class="ph b">UPS</strong> position.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__1">
+                     <p class="p">Inverter</p>
+                  </td>
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__2">
+                     <p class="p">On/Off, depends on why the system is not in normal operation.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__1">
+                     <p class="p">Static switch EN (BYP SSW) </p>
+                  </td>
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__2">
+                     <p class="p">On</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__1">
+                     <p class="p">Static switch EA (INV SSW) </p>
+                  </td>
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__2">
+                     <p class="p">Off</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__1">
+                     <p class="p">Output</p>
+                  </td>
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__2">
+                     <p class="p">Within the tolerance range. The load is supplied.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__1">
+                     <p class="p">Output breaker</p>
+                  </td>
+                  <td class="entry" headers="BypassOperationStaticBypass-5744EA15__entry__2">
+                     <p class="p">Closed</p>
+                  </td>
+               </tr>
+            </tbody></table>
+   </div>
+</article></main></body></html>

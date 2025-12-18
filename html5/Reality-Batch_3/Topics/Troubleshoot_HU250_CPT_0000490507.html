@@ -1,0 +1,96 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="HU250,HU250 controller,UPS control module,alarm indicators,status LEDs,system diagnostics,control electronics,HU250 troubleshooting,fault isolation steps,controller reset procedure,wiring verification workflow,firmware status checks,module replacement evaluation,error code interpretation,controller-level diagnostics,UPS monitoring environment,power electronics subsystem,fault response environment,equipment service domain,industrial reliability systems,operational continuity environment"><meta name="keywords" content="HU250, HU250 controller, UPS control module, alarm indicators, status LEDs, system diagnostics, control electronics, HU250 troubleshooting, fault isolation steps, controller reset procedure, wiring verification workflow, firmware status checks, module replacement evaluation, error code interpretation, controller-level diagnostics, UPS monitoring environment, power electronics subsystem, fault response environment, equipment service domain, industrial reliability systems, operational continuity environment"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-02+05:30"><meta name="DC.date.modified" content="2025-12-02"><meta name="title" content="Troubleshoot the HU250"><meta name="shortdesc" content="Provides diagnostic guidance for the HU250 controller, including error interpretation, wiring checks, LED indications, controller resets, and module-level troubleshooting."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="HU250 controller; control board; status LEDs; wiring harness; fault logs; firmware; reset controls"><meta name="taxonomy" content="domain:controller diagnostics;usecase:HU250-troubleshooting;industry:uninterruptible power supply (UPS) systems"><meta name="tags" content="HU250,troubleshooting,controller,LED indicators,diagnostics,error codes"><meta name="usecase" content="Help technicians diagnose and repair issues related to the HU250 UPS controller"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="TroubleshootHU250-2C1C7A96"><meta name="DC.language" content="en"><title>Troubleshooting the HU250 Gateway</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="TroubleshootHU250-2C1C7A96"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Troubleshooting the HU250 Gateway</h1>
+   
+   
+   <div class="body conbody">
+      <div class="div">
+         <table class="table"><caption></caption><colgroup><col><col></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="TroubleshootHU250-2C1C7A96__entry__1">
+                        <span class="ph">Problem</span>
+                     </th>
+                     <th class="entry valign-top" id="TroubleshootHU250-2C1C7A96__entry__2">
+                        <span class="ph">Check</span>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="TroubleshootHU250-2C1C7A96__entry__1">
+                        <span class="ph">LED(s)
+not illuminated</span>
+                     </td>
+                     <td class="entry" headers="TroubleshootHU250-2C1C7A96__entry__2">
+                        <ul class="sl simple">
+                           <li class="sli">Check the status and connection of the power supply.</li>
+                           <li class="sli">Test the LEDs by pressing the <strong class="ph b">Indicator test button</strong> on
+the front panel to check if they illuminate.</li>
+                           <li class="sli">Check status of the device, see <a class="xref" href="HU250_Device_Overview_CPT_0000493476.html">Device Overview</a>.</li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="TroubleshootHU250-2C1C7A96__entry__1">
+                        <span class="ph">Can’t connect with a PC to the HU250</span>
+                     </td>
+                     <td class="entry" headers="TroubleshootHU250-2C1C7A96__entry__2">
+                        <ul class="sl simple">
+                           <li class="sli">Check that the correct cable (straight Ethernet cable (RJ45 connection))
+is used.</li>
+                           <li class="sli">Check that the cable is connected to the right LAN port (<strong class="ph b">LAN right</strong>).</li>
+                           <li class="sli">Check that the local mode is enabled on the HU250.</li>
+                           <li class="sli">Check that the <strong class="ph b">LAN right</strong> port is active,
+see <a class="xref" href="HU250_Network_Settings_CPT_0000493163.html">Network Ports Settings</a>.</li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="TroubleshootHU250-2C1C7A96__entry__1">
+                        <span class="ph">No Modbus TCP/IP communication from the
+NMC</span>
+                        <span class="ph">No Modbus
+TCP/IP communication from the Modular controller</span>
+                     </td>
+                     <td class="entry" headers="TroubleshootHU250-2C1C7A96__entry__2">
+                        <ul class="sl simple">
+                           <li class="sli">Check the status of the NMC card.</li>
+                           <li class="sli">Check that the correct cable (straight Ethernet cable (RJ45 connection))
+is used.</li>
+                           <li class="sli">Check that the cable is connected to the right WAN port (<strong class="ph b">ETH1</strong>).</li>
+                           <li class="sli">Check that the <strong class="ph b">ETH1</strong> port is active, see <a class="xref" href="HU250_Network_Settings_CPT_0000493163.html">Network Ports Settings</a>.</li>
+                           <li class="sli">Check the IP configuration for the
+WAN connection to the NMC, see <a class="xref" href="HU250_WAN_Settings_CPT_0000493473.html">WAN Settings</a>.</li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="TroubleshootHU250-2C1C7A96__entry__1">
+                        <span class="ph">No IEC communication</span>
+                        <span class="ph">No DNP communication</span>
+                     </td>
+                     <td class="entry" headers="TroubleshootHU250-2C1C7A96__entry__2">
+                        <ul class="sl simple">
+                           <li class="sli">Check the status of the device, see <a class="xref" href="HU250_Device_Overview_CPT_0000493476.html">Device Overview</a>.</li>
+                           <li class="sli">Check the status of the Modbus communication, see the customized
+LED <strong class="ph b">Modbus status</strong>.</li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="TroubleshootHU250-2C1C7A96__entry__1">
+                        <span class="ph">No Modbus RTU
+over RS485 communication from the Prime controller</span>
+                     </td>
+                     <td class="entry" headers="TroubleshootHU250-2C1C7A96__entry__2">
+                        <ul class="sl simple">
+                           <li class="sli">Check that the correct cable (straight Ethernet cable (RJ45 connection))
+is used.</li>
+                           <li class="sli">Check that the <strong class="ph b">ETH1</strong> port is active, see <a class="xref" href="HU250_Network_Settings_CPT_0000493163.html">Network Ports Settings</a>.</li>
+                        </ul>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </div>
+   </div>
+</article></main></body></html>

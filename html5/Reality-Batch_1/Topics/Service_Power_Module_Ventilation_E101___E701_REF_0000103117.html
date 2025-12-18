@@ -1,0 +1,280 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="reference"><meta name="description" content="Reality EMEA"><meta name="DC.subject" content="metr-pxc-reality,fan-module-e101,fan-module-e701,fan-monitor-board-0p2554,ventilation-duct,fan-assembly,ventilation-check,fan-replacement,airflow-measurement,monitor-board-test,filter-cleaning,thermal-management,cooling-system,operating-environment,preventive-maintenance,service-area,production-operations"><meta name="keywords" content="metr-pxc-reality, fan-module-e101, fan-module-e701, fan-monitor-board-0p2554, ventilation-duct, fan-assembly, ventilation-check, fan-replacement, airflow-measurement, monitor-board-test, filter-cleaning, thermal-management, cooling-system, operating-environment, preventive-maintenance, service-area, production-operations"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-11-18+05:30"><meta name="DC.date.modified" content="2025-11-18"><meta name="title" content="Power Module Ventilation (E101/E701)"><meta name="shortdesc" content="Details about fan modules E101/E701, fan-monitor board and ventilation checks for effective cooling of power modules."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="E101; E701; fan-monitor-board-0p2554; ventilation-duct; fan-assembly"><meta name="taxonomy" content="domain:industrial-engineering;usecase:ventilation-and-cooling;industry: uninterruptible power supply (UPS) systems"><meta name="tags" content="ventilation, fans, fan-monitor, airflow, cooling-maintenance"><meta name="usecase" content="cooling-and-maintenance"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="PowerModuleVentilationE101E701-4CB0A7B9"><meta name="DC.language" content="en"><title>Power Module Ventilation (E101/E701)</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="PowerModuleVentilationE101E701-4CB0A7B9"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Power Module Ventilation (E101/E701)</h1>
+   
+   
+   
+   <div class="body refbody"><p class="shortdesc">
+      <span class="keyword">Reality EMEA</span>
+   </p>
+      <section class="section">
+         <p class="p">The fan module E101 (E102) cools the power module T101
+(T102) by forced cooling. The fan module consists of three fans and
+one fan monitor board (0P2554). For one power module within the block
+there are only three fans mounted. For two power modules within the
+block there are six fans mounted. The fan monitoring board can be
+configured by DIP-switches to enable/disable fans that are not present.</p>
+         <p class="p">As the fans are monitored individually, it is easy to identify
+and replace inoperable fans. Because of N + 1 fan redundancy, the
+fan function continues even if a fan becomes inoperable.</p>
+         <p class="p">One
+power module requires three fans. 24/15 VDC ELV fan supply is generated
+by the PSU from the power module. The fan speed can be increased by
+increasing the fan supply voltage to 24 VDC.</p>
+         <p class="p">24 VDC SELV voltage
+supplies the fan monitoring board.</p>
+         <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Principle diagram of power module ventilation</figcaption>
+            
+            <img class="image" src="../Images/principle_diagram_of_power_module_ventilation_0000149866.svg">
+         </figure>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Fan Assembly with Fan Monitoring</h2>
+         
+         <div class="p">Fan box
+for power module:<ul class="ul">
+               <li class="li">
+                  <p class="p">8 status LEDs on the front of the fan subassembly</p>
+               </li>
+               <li class="li">
+                  <p class="p">3 or 6 fans powered with max. 60 W at 24 V (dual fan speed)</p>
+               </li>
+            </ul>
+         </div>
+         <div class="p">The fan box has 8 status LEDs on the front indicating
+the status of the fans.<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Fan box status LEDs</figcaption>
+               
+               <img lang="en" class="image" src="../Images/fanbox_statusleds_0000125681.svg">
+               <div class="note note note_note"><span class="note__title">Note:</span> On a fan box with 3 fans, only the four LEDs in the top row
+can be illuminated.</div>
+            </figure>
+            <table class="table"><caption></caption><colgroup><col style="width:25%"><col style="width:25%"><col></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry valign-top" id="PowerModuleVentilationE101E701-4CB0A7B9__entry__1">LED</th>
+                        <th class="entry valign-top" id="PowerModuleVentilationE101E701-4CB0A7B9__entry__2">Color</th>
+                        <th class="entry valign-top" id="PowerModuleVentilationE101E701-4CB0A7B9__entry__3">Status</th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__1">1</td>
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__2">Green</td>
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__3">Supply 1 OK</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__1">2</td>
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__2">Red</td>
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__3">Fan 1 inoperable</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__1">3</td>
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__2">Red</td>
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__3">Fan 2 inoperable</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__1">4</td>
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__2">Red</td>
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__3">Fan 3 inoperable</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__1">5</td>
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__2">Green</td>
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__3">Supply 2 OK</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__1">6</td>
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__2">Red</td>
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__3">Fan 4 inoperable</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__1">7</td>
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__2">Red</td>
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__3">Fan 5 inoperable</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__1">8</td>
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__2">Red</td>
+                        <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__3">Fan 6 inoperable</td>
+                     </tr>
+                  </tbody></table>
+         </div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Power Module Ventilation 10–40 kVA</h2>
+         
+         <p class="p">Additional cooling is required for systems with transformers (T001/T401/T501).</p>
+         <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 3. </span>Ventilation of power modules and transformer 10–20 kVA</figcaption>
+            
+            <img class="image" src="../Images/ventilation_of_power_modules_and_transformer_10-20kva_0000149865.svg">
+         </figure>
+         <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 4. </span>Ventilation of power modules and transformer 30–40 kVA</figcaption>
+            
+            <img class="image" src="../Images/ventilation_of_power_modules_and_transformer_30-40kva_0000149864.svg">
+         </figure>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Power Module Ventilation 50–80 kVA</h2>
+         
+         <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 5. </span>Ventilation of power modules and transformer 50–60 kVA</figcaption>
+            
+            <img class="image" src="../Images/ventilation_of_power_modules_and_transformer_50-60kva_0000149863.svg">
+         </figure>
+         <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 6. </span>Ventilation of power modules and transformer 50–60 kVA
+(with input and output transformers)</figcaption>
+            
+            <img class="image" src="../Images/v-of-PM-nT_50-60kva__with_input_n_output_transformer__0000149862.svg">
+         </figure>
+         <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 7. </span>Ventilation of power modules and transformer 50–60 kVA
+(with bypass transformer)</figcaption>
+            
+            <img class="image" src="../Images/v-of-PM-nT_50-60kva__with_t501_bypass_transformer__0000149861.svg">
+         </figure>
+         <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 8. </span>Ventilation of power modules and transformer 80 kVA</figcaption>
+            
+            <img class="image" src="../Images/ventilation_of_power_modules_and_transformer_80kva_0000149860.svg">
+         </figure>
+         <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 9. </span>Ventilation of power modules and transformer 80 kVA (with bypass
+transformer)</figcaption>
+            
+            <img class="image" src="../Images/v-of-PM-nT_80kva__with_t501_bypass_transformer__0000149859.svg">
+         </figure>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Fan Monitoring Board</h2>
+         
+         <p class="p">All fan modules are
+equipped with a speed monitoring board. The fan monitoring board monitors
+the fan speed and can supply up to six fans. The input signals generated
+by hall sensors on the connected fans are monitored. These are square
+wave signals with a duty cycle of 50%. When the fans are operable,
+the red status LEDs are OFF. If the frequency of an input signal falls
+below 46 Hz or rises above 167 Hz, the corresponding red status LED
+is illuminated and the optocoupler output becomes high (inactive).</p>
+         <div class="p">There are three DIP switches placed on the fan monitoring board:<ul class="ul">
+               <li class="li">
+                  <p class="p">SW1000 consisting of two switches where the output signals
+of the two fan groups can be either combined or separated.</p>
+               </li>
+               <li class="li">
+                  <p class="p">SW1001 and SW1002, each consisting of three switches where
+the individual fan signals can be either enabled or disabled.</p>
+               </li>
+            </ul>
+            <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 10. </span>Board layout</figcaption>
+               
+               <img lang="en" class="image" src="../Images/fanmonitorboardlayout_120mm_0000116654.svg">
+            </figure>
+         </div>
+         <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 11. </span>Circuit diagram for fan monitoring board</figcaption>
+            
+            <img lang="en" class="image" src="../Images/circuitdiagram_fanmonitorboard_0000117156.png">
+         </figure>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">DIP Switch Settings</h2>
+         
+         <table class="table"><caption><span class="table--title-label">Table 1. </span><span class="title">Settings for SW1000</span></caption><colgroup><col><col><col></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="PowerModuleVentilationE101E701-4CB0A7B9__entry__28">SW1000:1</th>
+                     <th class="entry valign-top" id="PowerModuleVentilationE101E701-4CB0A7B9__entry__29">SW1000:2</th>
+                     <th class="entry valign-top" id="PowerModuleVentilationE101E701-4CB0A7B9__entry__30">Setting</th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__28">OFF</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__29">OFF</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__30">Enabled fans of group 1 and group 2 are monitored<a name="fnsrc_1" href="#fntarg_1"><sup>1</sup></a>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__28">OFF</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__29">ON</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__30">Enabled fans of group 1 are monitored<a name="fnsrc_2" href="#fntarg_2"><sup>2</sup></a>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__28">ON</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__29">OFF</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__30">Enabled fans of group 2 are monitored<a name="fnsrc_3" href="#fntarg_3"><sup>3</sup></a>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__28">ON</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__29">ON</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__30">No alarm signal can be generated (this setting is not to be
+used)</td>
+                  </tr>
+               </tbody></table>
+         <table class="table"><caption><span class="table--title-label">Table 2. </span><span class="title">Settings for SW1001</span></caption><colgroup><col><col><col><col></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="PowerModuleVentilationE101E701-4CB0A7B9__entry__43">DIP
+switch</th>
+                     <th class="entry valign-top" id="PowerModuleVentilationE101E701-4CB0A7B9__entry__44">SW1001:1</th>
+                     <th class="entry valign-top" id="PowerModuleVentilationE101E701-4CB0A7B9__entry__45">SW1001:2</th>
+                     <th class="entry valign-top" id="PowerModuleVentilationE101E701-4CB0A7B9__entry__46">SW1001:3</th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__43">ON</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__44">enable</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__45">enable</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__46">enable</td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__43">OFF</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__44">disable</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__45">disable</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__46">disable</td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__43">Affected fan</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__44">Fan 1 group 1</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__45">Fan 2 group 1</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__46">Fan 3 group 1</td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__43">Affected connector</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__44">J1007:3</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__45">J1007:2</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__46">J1007:1</td>
+                  </tr>
+               </tbody></table>
+         <table class="table"><caption><span class="table--title-label">Table 3. </span><span class="title">Settings for SW1002</span></caption><colgroup><col><col><col><col></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="PowerModuleVentilationE101E701-4CB0A7B9__entry__63">DIP
+switch</th>
+                     <th class="entry valign-top" id="PowerModuleVentilationE101E701-4CB0A7B9__entry__64">SW1002:1</th>
+                     <th class="entry valign-top" id="PowerModuleVentilationE101E701-4CB0A7B9__entry__65">SW1002:2</th>
+                     <th class="entry valign-top" id="PowerModuleVentilationE101E701-4CB0A7B9__entry__66">SW1002:3</th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__63">ON</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__64">enable</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__65">enable</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__66">enable</td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__63">OFF</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__64">disable</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__65">disable</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__66">disable</td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__63">Affected fan</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__64">Fan
+1 group 2</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__65">Fan
+2 group 2</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__66">Fan
+3 group 2</td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__63">Affected
+connector</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__64">J1009:1</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__65">J1009:2</td>
+                     <td class="entry" headers="PowerModuleVentilationE101E701-4CB0A7B9__entry__66">J1009:3</td>
+                  </tr>
+               </tbody></table>
+      </section>
+   </div>
+<div class="fn"><a name="fntarg_1" href="#fnsrc_1"><sup>1</sup></a>  Monitored
+fans can generate the alarm signal</div><div class="fn"><a name="fntarg_2" href="#fnsrc_2"><sup>2</sup></a>  Monitored fans can
+generate the alarm signal</div><div class="fn"><a name="fntarg_3" href="#fnsrc_3"><sup>3</sup></a>  Monitored fans can
+generate the alarm signal</div></article></main></body></html>

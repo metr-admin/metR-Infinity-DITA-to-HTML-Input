@@ -1,0 +1,2060 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="metr-pxc-reality,modbus-coil-register,modbus-protocol,nmc-modbus,function-01,digital-input-map,read-coil-register,modbus-request,pdu-construction,response-parsing,register-mapping,diagnostic-codes,field-telemetry,controller-integration,hardware-interfacing,measurement-systems,commissioning,ups-network-management"><meta name="keywords" content="metr-pxc-reality, modbus-coil-register, modbus-protocol, nmc-modbus, function-01, digital-input-map, read-coil-register, modbus-request, pdu-construction, response-parsing, register-mapping, diagnostic-codes, field-telemetry, controller-integration, hardware-interfacing, measurement-systems, commissioning, ups-network-management"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_Modbus_Access_to_the_Network_Management_Card_CPT_0000334032.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_Modbus_Access_to_the_Network_Management_Card_CPT_0000334032.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_Modbus_Access_to_the_Network_Management_Card_CPT_0000334032.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_Modbus_Access_to_the_Network_Management_Card_CPT_0000334032.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_Modbus_Access_to_the_Network_Management_Card_CPT_0000334032.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-05+05:30"><meta name="DC.date.modified" content="2025-12-05"><meta name="title" content="Modbus Read Coil Register (Function Call 01)"><meta name="shortdesc" content="Reference for Modbus Read Coil (function 01) showing coil addresses, usage and typical responses used for digital status monitoring."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="coil-register; modbus-pdu; slave-address; function-code; status-bit; diagnostic-code"><meta name="taxonomy" content="domain:industrial-engineering;usecase:modbus-coil-read-and-integration;industry: uninterruptible power supply (UPS) systems"><meta name="tags" content="modbus,coil,read,function-01,telemetry,register"><meta name="usecase" content="use Modbus function 01 to read digital coil status for monitoring and integration"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="ReadCoilRegisterFunctionCall01-8032D385"><meta name="DC.language" content="en"><title>Modbus Read Coil Register (Function Call 01)</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="ReadCoilRegisterFunctionCall01-8032D385"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Modbus Read Coil Register (Function Call 01)</h1>
+   
+   
+   <div class="body conbody">
+      <p class="p">The read coil register contains digital information, the parameters
+are either 1 (true) or 0 (false). True indicates that the alarm/indication
+is active and present in the system.</p>
+      <p class="p">The data is stored as Boolean. This information can be used to
+trigger alarms, actions or other events.</p>
+      <div class="note note note_note"><span class="note__title">Note:</span> It is recommended that the delay poll is more than 10 seconds
+because the refresh rate of the register is about 10 seconds.</div>
+      <div class="note note note_note"><span class="note__title">Note:</span> All coil registers between 00001-00071
+are reserved even if not listed in the table.</div>
+      <table class="table table--pgwide-1"><caption><span class="table--title-label">Table 1. </span><span class="title">Modbus Read Coil Register List</span></caption><colgroup><col style="width:20.00mm"><col style="width:40.00mm"><col style="width:100%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="ReadCoilRegisterFunctionCall01-8032D385__entry__1">
+                     <p class="p">Coil Register</p>
+                  </th>
+                  <th class="entry valign-top" id="ReadCoilRegisterFunctionCall01-8032D385__entry__2">
+                     <p class="p">Parameter</p>
+                  </th>
+                  <th class="entry valign-top" id="ReadCoilRegisterFunctionCall01-8032D385__entry__3">
+                     <p class="p">Description</p>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00001</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Output is
+out of tolerance detected</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">Indicates
+that the output voltage of the UPS is out of tolerance. The system
+will transfer to bypass if the bypass mains is within tolerance, if
+not the system will shut down.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00002</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Battery
+operation</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">The system
+is in battery operation mode.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00003</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Bypass operation</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">The system
+is in static bypass operation mode.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00004</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Low DC shutdown</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">The supply
+to the inverter is too low and the inverter will turn off. The system
+will transfer to bypass if the bypass mains is within tolerance, if
+not the system will shut down.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00005</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">High DC
+shutdown</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">The output
+of the rectifier is too high, and the rectifier will turn off. The
+system will transfer to battery operation if possible. Else the system
+will transfer to bypass if the bypass mains is within tolerance, if
+not the system will shut down.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00006</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Common alarm</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">The common
+alarm is active in the system.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00007</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Overload
+&gt; 100%</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">The system
+is overloaded. After some time, the system will transfer to bypass
+if the bypass mains is within tolerance, if not the system will shut
+down.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00008</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">SSW temp
+warning/shutdown</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">One of the
+static switches are overheated. The system will transfer to an operating
+mode that does not use the overheated static switch if possible, or
+it will shut down.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00009</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">System pushed
+on</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">Indicates
+that the <strong class="ph b">ON button</strong> was pushed.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00010</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Inverter
+out of tolerance</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00011</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Inverter
+not synchronized to bypass</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00012</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Battery
+charge current is being limited by UPS</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">The battery
+current limiter is active. Does not trigger the common alarm.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00016</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Battery
+test active</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">A battery
+monitor test or a battery capacity test is running.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00021</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Low DC warning</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">Warning
+signal that shut down is imminent when running in battery operation.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00023</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Inverter
+or output overload</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">The inverter
+is overloaded, the current limiter is active.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00025</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Bypass voltage
+(average) is out of tolerance </p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00027</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Digital
+input 1</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">Restored
+the local network management interface-to-integrated environmental
+monitor (Universal I/O at Port 1) communication.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00028</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Digital
+input 2</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">Restored
+the local network management interface-to-integrated environmental
+monitor (Universal I/O at Port 1) communication.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00035</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Inverter
+fuse blown</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">One or more
+of the inverter fuses have blown (F021 on A071: X003:1). The inverter
+turns off. The system switches to bypass if possible or it shuts down.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00037</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Aux 1 Error</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">Possibly
+one or more of the following: rectifier fuse blown, battery breaker
+(Q004) disconnected, DC earth fault (Option 1), Option 2..6, manual
+bypass switch.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00038</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Fan inoperable</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">One or more
+fans are inoperable.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00039</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">High DC
+warning</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">The DC is
+above the high DC warning level.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00040</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Inverter
+voltage out of tolerance</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">The inverter
+voltage before the static switch EA is about &lt;85% of the reference
+voltage. If the inverter turns on or if system is in bypass operation
+the static switch EA is blocked.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00043</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">PSU1 AC/DC
+not working</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">A fault
+is detected in one of the two internal power supplies.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00048</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Rectifier
+magnetics temp warning</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">The charger
+magnetic temperature is too high.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1">
+                     <p class="p">00049</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2">
+                     <p class="p">High battery temperature</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3">
+                     <p class="p">The battery temperature is too high.
+Only available if optional battery temperature sensor is installed
+at the battery</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1">
+                     <p class="p">00050</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2">
+                     <p class="p">Battery monitor warning</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3">
+                     <p class="p">Only available if optional Reality battery
+ABM is installed in the system.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00051</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Battery
+monitor alarm</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">Only available
+if optional Reality battery ABM is installed in the system.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00052</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">System locked
+in operation mode</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">The system
+is locked in an operation mode. The system was changing operation
+mode too frequently.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00054</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Calibration
+stack entered by user</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">A login
+to the level 2 (configuration stack) occurred. Will not trigger a
+common alarm.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00055</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Inverter
+PM block 1 (L1, L2, L3) temperature shutdown</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">A temperature
+shutdown alarm is active in one of the system inverter power modules.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00056</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Charger
+temperature warning</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">A temperature
+warning is active in one of the system charger modules.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00057</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Charger
+temperature shutdown</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">A temperature
+shutdown alarm is active in one of the system charger modules.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00058</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Output voltage is out of tolerance</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00059</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Static switch EA temperature warning
+or static switch EN temperature warning detected</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">One of the system static switch modules
+(EA or EN) has a temperature warning signal pending.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00060</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Total DC
+current limit</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">The system
+charger operates in total DC current limit mode.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00061</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">AC capacitors
+CB03 current warning</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">The current
+in the AC capacitors is below the low warning limit value.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00063</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">No redundancy
+operation</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">Only available
+for redundant systems.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00065</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">AC capacitors
+CB03 current shutdown</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">The current
+in the AC capacitors is below the low shutdown limit value.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00066</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Mains out
+of tolerance</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p">The rectifier
+mains is out of tolerance.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__1" rowspan="1" colspan="1">
+                     <p class="p">00069</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Charger
+temperature warning or shutdown</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__3" rowspan="1" colspan="1">
+                     <p class="p"> The temperature
+is to high in one of the system charger modules.</p>
+                  </td>
+               </tr>
+            </tbody></table>
+      <table class="table table--pgwide-1"><caption><span class="table--title-label">Table 2. </span><span class="title">Modbus Read Coil Register List</span></caption><colgroup><col style="width:20.00mm"><col style="width:40.00mm"><col style="width:100%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="ReadCoilRegisterFunctionCall01-8032D385__entry__127">
+                     <p class="p">Coil Register</p>
+                  </th>
+                  <th class="entry valign-top" id="ReadCoilRegisterFunctionCall01-8032D385__entry__128">
+                     <p class="p">Parameter</p>
+                  </th>
+                  <th class="entry valign-top" id="ReadCoilRegisterFunctionCall01-8032D385__entry__129">
+                     <p class="p">Description</p>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00001</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">High DC
+warning</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1">
+                     <p class="p">The rectifier
+output DC voltage is above the high DC warning level.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00002</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Battery
+operation</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1">
+                     <p class="p">The system
+is running on batteries.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00004</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Low DC warning</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1">
+                     <p class="p">The DC output
+voltage after the serial diode is below DC warning level.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00005</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">High DC
+warning</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1">
+                     <p class="p">The rectifier
+output DC voltage is above the high DC warning/shutdown level.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00006</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Common alarm</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1">
+                     <p class="p">The common
+alarm is active in the system.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00017</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Battery
+breaker open</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00018</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Battery
+temperature warning</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1">
+                     <p class="p">Battery
+temperature out of range or sensor fault.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00021</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Low DC warning</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1">
+                     <p class="p">The rectifier
+output DC is below low DC warning level.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00027</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Digital
+input 1</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1">
+                     <p class="p">Restored
+the local network management interface-to-integrated Environmental
+Monitor (Universal I/O at Port 1) communication.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00028</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Digital
+input 2</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1">
+                     <p class="p">Restored
+the local network management interface-to-integrated Environmental
+Monitor (Universal I/O at Port 1) communication.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00035</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Rectifier
+mains failure</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1">
+                     <p class="p">Phase order
+not correct, or mains voltage is out of tolerance window, or mains
+is out of frequency window, or at least one phase is missing. Charger
+will shut down.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00036</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Load breaker
+open</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00037</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Mains input
+breaker open</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00040</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">DC fuse
+blown</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1">
+                     <p class="p">The rectifier
+DC fuse has blown.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00041</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Total DC
+current limit</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1">
+                     <p class="p">Current
+limiter for the total DC current is active.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00042</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Parallel
+error</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1">
+                     <p class="p">Load sharing
+differs more than ± 10%. Only available for redundant systems.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00043</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Battery
+defective</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1">
+                     <p class="p">Only available
+if optional Reality battery ABM is installed in the system.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00044</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Battery
+breaker open</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00045</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Earth fault
+on positive pole</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1">
+                     <p class="p">Earth current
+is running to positive pole or earth current is running to ground
+pole.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00047</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Internal
+PSU fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1">
+                     <p class="p">The DC or
+AC circuit of the redundant PSU is inoperable.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00048</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">High temp
+transformer</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1">
+                     <p class="p">The temperature
+is too high at the transformer.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00049</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Fan inoperable</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1">
+                     <p class="p">Fan 1,2,3,4,5,6,7
+or 8 is rotating to slowly, the tan pulse signal is less than 20 Hz.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00051</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Option 1
+fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00052</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Option 2
+fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00053</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Option 3
+fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00054</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Option 4
+fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00055</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Option 5
+fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00056</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Option 6
+fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00057</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Option 7
+fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00058</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Option 8
+fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00059</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Battery
+symmetry fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1">
+                     <p class="p">Half of
+the battery voltage is outside of the tolerance window. Only available
+if an advances battery monitor (ABM) is installed.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__127" rowspan="1" colspan="1">
+                     <p class="p">00060</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__128" rowspan="1" colspan="1">
+                     <p class="p">Battery
+weak</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__129" rowspan="1" colspan="1">
+                     <p class="p">Only available
+if an advances battery monitor (ABM) is installed.</p>
+                  </td>
+               </tr>
+            </tbody></table>
+      <table class="table table--pgwide-1"><caption><span class="table--title-label">Table 3. </span><span class="title">Modbus Read Coil Register List</span></caption><colgroup><col style="width:20.00mm"><col style="width:40.00mm"><col style="width:100%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="ReadCoilRegisterFunctionCall01-8032D385__entry__226">
+                     <p class="p">Coil Register</p>
+                  </th>
+                  <th class="entry valign-top" id="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Parameter</p>
+                  </th>
+                  <th class="entry valign-top" id="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">Description</p>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00023</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">System switched on</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The system is switched on.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00024</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Standby</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">1 = the system is in standby operation.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00025</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Normal operation</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">1 = the system is in normal operation.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00026</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Battery operation</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">1 = the system is in battery operation.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00027</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Bypass operation</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">Static bypass is switched on.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00028</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Initial charge</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The battery charger has been set to
+initial charge mode. The batteries are charged with an initial charge
+voltage.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00029</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Float charge</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The battery charger has been set to
+float charge state. The batteries are charged with a float charge
+voltage.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00030</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Boost charge</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The battery charger has been set to
+boost charge mode. The batteries are charged with a boost charge voltage.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00031</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Cyclic charge</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The battery charger has been set to
+cyclic charge mode. The batteries are charged with a cyclic charge
+voltage.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00039</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Temporary static bypass</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The system is in static bypass operation
+due to a fault.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00040</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Requested static bypass</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The system is in static bypass operation
+due to a user request.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00041</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">SBS inoperable</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">SBS inoperable.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00054</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Q001 closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The rectifier mains input switch Q001
+is closed.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00056</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Q201 closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The battery switch Q201 is closed.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00057</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Q501 closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The bypass mains input switch Q501
+is closed.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00058</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Q502 closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The bypass transformer output switch
+Q502 is closed.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00060</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Q611 closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The load output switch Q611 is closed.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00062</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Q691 closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The SBS input switch Q691 is closed.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00063</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Q692 closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The UPS output switch Q692 is closed.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00065</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">MBS: TEST</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The manual bypass switch Q601 in the
+test position.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00066</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">MBS: BYPASS</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The manual bypass switch Q601 in the
+bypass position.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00067</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">MBS: AUTO</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The manual bypass switch Q601 in the
+auto position.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00068</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Overtemperature</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">An overtemperature at a PM or a transformer
+is detected (if available).</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00071</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">T001 overtemperature</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">An overtemperature at the rectifier
+mains transformer is detected.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00072</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">T401 overtemperature</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">An overtemperature at the output transformer
+is detected.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00073</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">T501 overtemperature</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">An overtemperature at the bypass transformer
+is detected.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00074</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Battery temperature warning</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The battery temperature exceeds the
+programmed warning level.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00075</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Battery temperature shutdown</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The battery temperature exceeds the
+programmed shutdown level.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00076</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Temperature 1 warning</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The temperature sensor, connected
+to the external connection board, is over the temperature warning
+level.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00077</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Temperature 2 warning</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The temperature sensor, connected
+to the external connection board, is over the temperature warning
+level.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00078</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Temperature 3 warning</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The temperature sensor, connected
+to the external connection board, is over the temperature warning
+level.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00079</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">T001 temperature sensor fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The mains input transformer temperature
+sensor PT100 is not connected or shorted.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00080</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">T401 temperature sensor fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The output transformer temperature
+sensor PT100 is not connected or shorted.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00081</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">T501 temperature sensor fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The bypass transformer temperature
+sensor PT100 is not connected or shorted.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00082</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Fan inoperable</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The transformer, SBS or power module
+fan is inoperable.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00089</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Emergency power off (EPO)</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The digital input of emergency power
+off (EPO) is activated (contact open) or the EPO wiring is disconnected.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00091</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">PSU fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">One or more PSU faults are detected.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00092</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">General mains fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">One or more mains faults are detected.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00093</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Mains RMS fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The rectifier mains voltage is out
+of tolerance.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00094</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Mains input RMS fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The rectifier mains voltage on primary
+side of the input transformer is out of tolerance. This event is only
+active if a transformer is installed.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00101</p>
+                     <p class="p"></p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">General bypass fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">One or more bypass faults are detected.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00102</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Bypass RMS fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The bypass voltage is out of tolerance.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00103</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Bypass input RMS fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The bypass mains voltage on the primary
+side of bypass transformer is out of tolerance. This event is only
+active if a transformer and the bypass measurement is installed.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00108</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">General output fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">One or more output faults are detected.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00109</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Output RMS fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The output voltage on the secondary
+side of the output transformer is out of tolerance.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00110</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Inverter output RMS fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The UPS output voltage is out of tolerance.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00116</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Output overloaded</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The UPS output is overloaded (&gt;100%)
+or the inverter current limiter is active.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00119</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Battery current positive</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">0 = the battery is discharged.1 = the battery is charged.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00121</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Battery warning or error</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The battery voltage is out of tolerance
+or the runtime is too short.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00122</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Battery earth fault</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The interface has detected a battery
+earth fault (if available).</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00123</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">High battery shutdown</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">Battery voltage above the high battery
+shutdown level.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00124</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">High battery warning</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">Battery voltage above the high battery
+warning level (no warning in battery operation).</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00125</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Low battery warning voltage</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">Battery voltage below the low battery
+warning level.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00126</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Battery discharged (Low battery shutdown
+voltage)</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">Battery voltage below low battery
+shutdown level.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00127</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Battery earth fault positive</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The interface has detected a battery
+positive earth fault (if available).</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00128</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Battery earth fault negative</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The interface has detected a battery
+negative earth fault (if available).</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00140</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Rectifier fault / error</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The rectifier turned off because a
+fault was detected.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00141</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Inverter fault / error</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228">
+                     <p class="p">The inverter turned off because a
+fault was detected.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00154</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Input closed Ecb 1</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00155</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">Input closed Ecb 2</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00156</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB1.1 input closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00157</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB1.2 input closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00158</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB1.3 input closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00159</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB1.4 input closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00160</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB1.5 input closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00161</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB1.6 input closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00162</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB1.7 input closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00163</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB1.8 input closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00172</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">HMI alarm LED 1 active</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00173</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">HMI alarm LED 2 active</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00174</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">HMI alarm LED 3 active</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00175</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">HMI alarm LED 4 active</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00176</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">HMI alarm LED 5 active</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00177</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">HMI alarm LED 6 active</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00178</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">HMI alarm LED 7 active</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00179</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">HMI alarm LED 8 active</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00180</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">HMI alarm LED 9 active</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00181</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">HMI alarm LED 10 active</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00182</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">HMI alarm LED 11 active</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00183</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">HMI alarm LED 12 active</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00184</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">HMI alarm LED 13 active</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00185</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">HMI alarm LED 14 active</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00186</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">HMI alarm LED 15 active</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00187</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">ECB common alarm active</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00188</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">ECB output 1 closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00189</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">ECB output 2 closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00190</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB1.1 output closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00191</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB 1.2 output closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00192</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB 1.3 output closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00193</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB 1.4 output closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00194</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB 1.5 output closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00195</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB 1.6 output closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00196</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB 1.7 output closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00197</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB 1.8 output closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00198</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB 1.9 output closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00199</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB 1.10 output closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00200</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB 1.11 output closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00201</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB 1.12 output closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00202</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB 1.13 output closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00203</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB 1.14 output closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00204</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB 1.15 output closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__226" rowspan="1" colspan="1">
+                     <p class="p">00205</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__227">
+                     <p class="p">RB 1.16 output closed</p>
+                  </td>
+                  <td class="entry" headers="ReadCoilRegisterFunctionCall01-8032D385__entry__228"></td>
+               </tr>
+            </tbody></table>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Reality-Batch_3/Topics/NMC_Modbus_Access_to_the_Network_Management_Card_CPT_0000334032.html">Modbus Access to the Network Management Card</a></div></div></nav></article></main></body></html>

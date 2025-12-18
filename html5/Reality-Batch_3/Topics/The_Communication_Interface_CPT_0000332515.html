@@ -1,0 +1,247 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="communication interface,interface ports,communication modules,protocol support,data exchange interface,signal connectors,UPS network communication,interface configuration workflow,communication setup steps,port assignment procedures,protocol selection,data monitoring process,troubleshooting communication links,connectivity verification,industrial communication environment,facility automation systems,remote monitoring context,SCADA integration,building management systems,network interoperability domain,control system interface architecture"><meta name="keywords" content="communication interface, interface ports, communication modules, protocol support, data exchange interface, signal connectors, UPS network communication, interface configuration workflow, communication setup steps, port assignment procedures, protocol selection, data monitoring process, troubleshooting communication links, connectivity verification, industrial communication environment, facility automation systems, remote monitoring context, SCADA integration, building management systems, network interoperability domain, control system interface architecture"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Overview_of_Network_Management_System_CPT_0000352859.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Overview_of_Network_Management_System_CPT_0000352859.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Overview_of_Network_Management_System_CPT_0000352859.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Overview_of_Network_Management_System_CPT_0000352859.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Overview_of_Network_Management_System_CPT_0000352859.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-03+05:30"><meta name="DC.date.modified" content="2025-12-03"><meta name="title" content="The Communication Interface"><meta name="shortdesc" content="Describes the UPS communication interfaces, including supported ports, protocols, connectors, configuration workflow, and integration with monitoring and automation systems."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="RS-485 port; Ethernet interface; Modbus; Profibus; signal connectors; communication board; network cables"><meta name="taxonomy" content="domain:industrial communication;usecase:UPS-interface-configuration;industry:uninterruptible power supply (UPS) systems"><meta name="tags" content="communication interface,protocols,connectors,networking,Modbus,Profibus,integration"><meta name="usecase" content="Help integrators and technicians configure and use the UPS communication interfaces for monitoring and automation"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="TheCommunicationInterface-5E20EE4E"><meta name="DC.language" content="en"><title>Connections on the Communication Interface External Connection Board</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="TheCommunicationInterface-5E20EE4E"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Connections on the <span class="ph">Communication
+Interface</span>
+      <span class="ph">External Connection Board</span>
+   </h1>
+   
+   
+   <div class="body conbody">
+      <section class="section">
+         <div class="sectiondiv">
+            <p class="p">The communication interface
+makes it possible to connect the controller board to the smart slot
+translator. The communication interface has two RS-232 ports with
+DB-25 connector <strong class="ph b">J1</strong> and <strong class="ph b">J2</strong> and one RS-232 port with a
+34 pin IDC-connector <strong class="ph b">J5</strong> using the Silcon protocol.</p>
+            <p class="p">The
+Silcon protocol uses a Block Check Character (BCC) to acknowledge
+requests and to make sure the status messages does not contain any
+errors. Any other communication is ignored by the controller board
+without leading to any reaction from the system. </p>
+            <p class="p">The connection
+between the communication interface and the smart slot translator
+is an extension of the one-way communication from the controller board.
+No conversion of the signal is done on the communication interface.</p>
+            <figure class="fig fignone">
+               <img class="image" src="../Images/OM_Communication-Interface-Ports_0000352798.png">
+            </figure>
+            <table class="table"><caption></caption><colgroup><col><col><col><col></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry valign-top" id="TheCommunicationInterface-5E20EE4E__entry__1">
+                           <p class="p">Ports</p>
+                        </th>
+                        <th class="entry valign-top" id="TheCommunicationInterface-5E20EE4E__entry__2">
+                           <p class="p">Port Standard</p>
+                        </th>
+                        <th class="entry valign-top" id="TheCommunicationInterface-5E20EE4E__entry__3">
+                           <p class="p">Connector</p>
+                        </th>
+                        <th class="entry valign-top" id="TheCommunicationInterface-5E20EE4E__entry__4">
+                           <p class="p">Communication
+Protocol</p>
+                        </th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__1">
+                           <p class="p">
+                              <strong class="ph b">J1</strong>, <strong class="ph b">J2</strong> (outputs)</p>
+                        </td>
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__2">
+                           <p class="p">RS-232</p>
+                        </td>
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__3">
+                           <p class="p">DB-25 (male)</p>
+                        </td>
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__4">
+                           <p class="p">Silcon</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__1">
+                           <p class="p">
+                              <strong class="ph b">J5</strong> (input)</p>
+                        </td>
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__2">
+                           <p class="p">RS-232</p>
+                        </td>
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__3">
+                           <p class="p">34 pin IDC (male)</p>
+                        </td>
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__4">
+                           <p class="p">Silcon</p>
+                        </td>
+                     </tr>
+                  </tbody></table>
+            <div class="p">Pinout of <strong class="ph b">J1</strong> and <strong class="ph b">J2</strong>:<ul class="ul">
+                  <li class="li">
+                     <p class="p">Pin 2: RS-232 Tx</p>
+                  </li>
+                  <li class="li">
+                     <p class="p">Pin 3: RS-232 Rx </p>
+                  </li>
+                  <li class="li">
+                     <p class="p">Pin 9: 10 V (DC)</p>
+                  </li>
+                  <li class="li">
+                     <p class="p">Pin 7: GND</p>
+                  </li>
+               </ul>Other pins are not connected.</div>
+         </div>
+      </section>
+      <section class="section">
+         <div class="sectiondiv">
+            <p class="p">The external connection board
+makes it possible to connect the controller board to the smart slot
+translator. On the external connection board two ports are used, one
+RS-232 port with DB-25 connector <strong class="ph b">X2</strong> and one RS-232 port with
+a 34 pin IDC-connector <strong class="ph b">X5</strong>, and uses the Silcon<a name="fnsrc_2" href="#fntarg_2"><sup>2</sup></a> protocol.</p>
+            <p class="p">The Silcon protocol uses a Block Check Character (BCC) to acknowledge
+requests and to make sure the status messages does not contain any
+errors. Any other communication is ignored by the controller board
+without leading to any reaction from the system. </p>
+            <p class="p">The connection
+between the communication interface and the smart slot translator
+is an extension of the one-way communication from the controller board.
+No conversion of the signal is done on the communication interface.</p>
+            <figure class="fig fignone">
+               <img class="image" src="../Images/OM_Communication-Interface-Ports_SDC_0000392209.svg">
+            </figure>
+            <table class="table"><caption></caption><colgroup><col><col><col><col></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry valign-top" id="TheCommunicationInterface-5E20EE4E__entry__13">
+                           <p class="p">Ports</p>
+                        </th>
+                        <th class="entry valign-top" id="TheCommunicationInterface-5E20EE4E__entry__14">
+                           <p class="p">Port Standard</p>
+                        </th>
+                        <th class="entry valign-top" id="TheCommunicationInterface-5E20EE4E__entry__15">
+                           <p class="p">Connector</p>
+                        </th>
+                        <th class="entry valign-top" id="TheCommunicationInterface-5E20EE4E__entry__16">
+                           <p class="p">Communication
+Protocol</p>
+                        </th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__13">
+                           <p class="p">
+                              <strong class="ph b">X2</strong> (outputs)</p>
+                        </td>
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__14">
+                           <p class="p">RS-232</p>
+                        </td>
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__15">
+                           <p class="p">DB-25 (male)</p>
+                        </td>
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__16">
+                           <p class="p">Silcon</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__13">
+                           <p class="p">
+                              <strong class="ph b">X5</strong> (input)</p>
+                        </td>
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__14">
+                           <p class="p">RS-232</p>
+                        </td>
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__15">
+                           <p class="p">34 pin IDC (male)</p>
+                        </td>
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__16">
+                           <p class="p">Silcon</p>
+                        </td>
+                     </tr>
+                  </tbody></table>
+            <div class="p">Pinout of <strong class="ph b">X2</strong>:<ul class="ul">
+                  <li class="li">
+                     <p class="p">Pin 2: RS-232 Tx</p>
+                  </li>
+                  <li class="li">
+                     <p class="p">Pin 3: RS-232 Rx </p>
+                  </li>
+                  <li class="li">
+                     <p class="p">Pin 9: 10 V (DC)</p>
+                  </li>
+                  <li class="li">
+                     <p class="p">Pin 7: GND</p>
+                  </li>
+               </ul>Other pins are not connected.</div>
+         </div>
+         <div class="sectiondiv">
+            <p class="p">The communication interface makes it possible to
+connect the controller box to the network management cards. The communication
+interface has two edge connector slots <strong class="ph b">(J2501)</strong> and <strong class="ph b">(J2502)</strong> where the NMC edge connector <strong class="ph b">(GF1)</strong> can be inserted.</p>
+            <p class="p">The input port <strong class="ph b">(J2500)</strong> connects to the port <strong class="ph b">(J224)</strong> on
+the controller box <strong class="ph b">(A102)</strong> with a 8P8C. Both the incoming and
+outgoing communication is according to the RS-232 standard using the
+UPS-Link protocol.</p>
+            <figure class="fig fignone">
+               <img class="image" src="../Images/PXP_Communication-Interface_0000392547.svg">
+            </figure>
+            <table class="table"><caption></caption><colgroup><col><col><col><col></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry valign-top" id="TheCommunicationInterface-5E20EE4E__entry__25">
+                           <p class="p">Ports</p>
+                        </th>
+                        <th class="entry valign-top" id="TheCommunicationInterface-5E20EE4E__entry__26">
+                           <p class="p">Port Standard</p>
+                        </th>
+                        <th class="entry valign-top" id="TheCommunicationInterface-5E20EE4E__entry__27">
+                           <p class="p">Connector</p>
+                        </th>
+                        <th class="entry valign-top" id="TheCommunicationInterface-5E20EE4E__entry__28">
+                           <p class="p">Communication
+Protocol</p>
+                        </th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__25">
+                           <p class="p">
+                              <strong class="ph b">J2501, J2502</strong> (outputs)</p>
+                        </td>
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__26">
+                           <p class="p">RS-232</p>
+                        </td>
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__27">
+                           <p class="p">Edge connector</p>
+                        </td>
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__28">
+                           <p class="p">UPS-Link<a name="fnsrc_3" href="#fntarg_3"><sup>3</sup></a>
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__25">
+                           <p class="p">
+                              <strong class="ph b">J2500</strong> (input)</p>
+                        </td>
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__26">
+                           <p class="p">RS-232</p>
+                        </td>
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__27">
+                           <p class="p">8P8C</p>
+                        </td>
+                        <td class="entry" headers="TheCommunicationInterface-5E20EE4E__entry__28">
+                           <p class="p">UPS-Link<a name="fnsrc_4" href="#fntarg_4"><sup>4</sup></a>
+                           </p>
+                        </td>
+                     </tr>
+                  </tbody></table>
+         </div>
+      </section>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Reality-Batch_3/Topics/Overview_of_Network_Management_System_CPT_0000352859.html" title="An overview of the connection options and available ports on the cards used in the network management system.">Hardware of the Network Management System</a></div></div></nav><div class="fn"><sup>1</sup>   The Silcon protocol
+is an internal Schneider Electric protocol.</div><div class="fn"><a name="fntarg_2" href="#fnsrc_2"><sup>2</sup></a>   The Silcon
+protocol is an Internal Schneider Electric protocol.</div><div class="fn"><a name="fntarg_3" href="#fnsrc_3"><sup>3</sup></a>   For more information about the UPS-link protocol
+see <a class="xref" href="https://www.se.com/ww/en/faqs/FA276164/" target="_blank" rel="external noopener">How to download and use the APC UPS-Link Protocol
+Language</a>
+                              </div><div class="fn"><a name="fntarg_4" href="#fnsrc_4"><sup>4</sup></a>   For more information about the UPS-link protocol
+see <a class="xref" href="https://www.se.com/ww/en/faqs/FA276164/" target="_blank" rel="external noopener">How to download and use the APC UPS-Link Protocol
+Language</a>
+                              </div></article></main></body></html>

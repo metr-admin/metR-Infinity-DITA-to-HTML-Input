@@ -1,0 +1,1263 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="metr-pxc-reality,modbus-holding-register,modbus-protocol,function-03,analog-measures,register-map,read-holding-register,pdu-construction,value-scaling,register-mapping,response-validation,diagnostic-interpretation,telemetry-acquisition,scada-integration,measurement-systems,commissioning,plant-monitoring,ups-network-management"><meta name="keywords" content="metr-pxc-reality, modbus-holding-register, modbus-protocol, function-03, analog-measures, register-map, read-holding-register, pdu-construction, value-scaling, register-mapping, response-validation, diagnostic-interpretation, telemetry-acquisition, scada-integration, measurement-systems, commissioning, plant-monitoring, ups-network-management"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_Modbus_Access_to_the_Network_Management_Card_CPT_0000334032.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_Modbus_Access_to_the_Network_Management_Card_CPT_0000334032.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_Modbus_Access_to_the_Network_Management_Card_CPT_0000334032.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_Modbus_Access_to_the_Network_Management_Card_CPT_0000334032.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/NMC_Modbus_Access_to_the_Network_Management_Card_CPT_0000334032.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-05+05:30"><meta name="DC.date.modified" content="2025-12-05"><meta name="title" content="Modbus Read Holding Register (Function Call 03)"><meta name="shortdesc" content="Reference for Modbus Read Holding Register (function 03) with addresses and mapping for analog values such as voltages and frequencies."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="holding-register; modbus-pdu; scaled-value; register-address; analog-sensor; measurement-unit"><meta name="taxonomy" content="domain:industrial-engineering;usecase:modbus-holding-register-read-and-scaling;industry: uninterruptible power supply (UPS) systems"><meta name="tags" content="modbus,function-03,holding-register,telemetry,analog,scada"><meta name="usecase" content="read analog measured values via Modbus function 03 for telemetry and SCADA integration"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="ReadHoldingRegisterFunctionCall03-8032EA76"><meta name="DC.language" content="en"><title>Modbus Read Holding Register (Function Call 03)</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="ReadHoldingRegisterFunctionCall03-8032EA76"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Modbus Read Holding Register (Function Call 03)</h1>
+   
+   
+   <div class="body conbody">
+      <p class="p">The read holding register contains analog information, the measured
+value from the parameters.</p>
+      <p class="p">The data is stored as 16-bit unsigned integer, with the hexadecimal
+format FFFF of 4 digits. This corresponds to a numeric value between
+0-65535.</p>
+      <p class="p">
+         <span class="ph">The factor for all values is 1. </span>This information can be used to trigger alarms, actions or other
+events.</p>
+      <div class="note note note_note"><span class="note__title">Note:</span> It is recommended that the delay poll is more than 10 seconds
+because the refresh rate of the register is about 10 seconds.</div>
+      <div class="note note note_note"><span class="note__title">Note:</span> All holding registers between 40001-40047
+are reserved even if not listed in the table.</div>
+      <table class="table table--pgwide-1"><caption><span class="table--title-label">Table 1. </span><span class="title">Modbus Read Holding Register List</span></caption><colgroup><col style="width:20.00mm"><col style="width:70.00mm"><col style="width:100%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1">
+                     <p class="p">Holding Register</p>
+                  </th>
+                  <th class="entry valign-top" id="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2">
+                     <p class="p">Parameter
+[Unit of Measure]</p>
+                  </th>
+                  <th class="entry valign-top" id="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3">
+                     <p class="p">Description</p>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="2" colspan="1">
+                     <p class="p">40001</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">
+                        <strong class="ph b">1–phase:</strong> Output voltage L1 [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <p class="p">
+                        <strong class="ph b">1–phase:</strong> Phase L1 to neutral.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2">
+                     <p class="p">
+                        <strong class="ph b">3–phase: </strong>Output voltage L1 [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3">
+                     <p class="p">
+                        <strong class="ph b">3–phase: </strong>Phase L1 to phase L2.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40002</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">
+                        <strong class="ph b">3–phase: </strong> Output voltage L2 [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <p class="p">
+                        <strong class="ph b">3–phase: </strong> Phase L2 to phase L3. Only for three phase systems.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40003</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">
+                        <strong class="ph b">3–phase: </strong> Output voltage L3 [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <p class="p">
+                        <strong class="ph b">3–phase: </strong> Phase L3 to phase L1. Only for three phase systems.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40004</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Input voltage
+L1 [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <p class="p">Phase L1
+to phase L2.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40005</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Input voltage
+L2 [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <p class="p">Phase L2
+to phase L3.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40006</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Input voltage
+L3 [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <p class="p">Phase L3
+to phase L1.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="2" colspan="1">
+                     <p class="p">40007</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">
+                        <strong class="ph b">1–phase: </strong> Bypass voltage L1 [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <p class="p">
+                        <strong class="ph b">1–phase: </strong> Phase L1 to neutral.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2">
+                     <p class="p">
+                        <strong class="ph b">3–phase: </strong> Bypass voltage L1 [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3">
+                     <p class="p">
+                        <strong class="ph b">3–phase: </strong> Phase L1 to phase L2.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40008</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">
+                        <strong class="ph b">3–phase: </strong> Bypass voltage L2 [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <p class="p">
+                        <strong class="ph b">3–phase: </strong> Phase L2 to phase L3. Only for three phase systems.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40009</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">
+                        <strong class="ph b">3–phase: </strong> Bypass voltage L3 [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <p class="p">
+                        <strong class="ph b">3–phase: </strong> Phase L3 to phase L1. Only for three phase systems.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40010</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Input current
+L1 [A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40011</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Input current
+L2 [A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40012</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Input current
+L3 [A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40013</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Output current
+L1 [A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40014</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">
+                        <strong class="ph b">3–phase: </strong> Output current L2 [A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <p class="p">Only for
+three phase systems.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40015</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">
+                        <strong class="ph b">3–phase: </strong> Output current L3 [A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <p class="p">Only for
+three phase systems.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40016</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Output peak
+current L1 [A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40017</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">
+                        <strong class="ph b">3–phase: </strong> Output peak current L2 [A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <p class="p">Only for
+three phase systems.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40018</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">
+                        <strong class="ph b">3–phase: </strong> Output peak current L3 [A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <p class="p">Only for
+three phase systems.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40019</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Total DC
+current [A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40020</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Battery current [A]</p>
+                     <p class="p">DC current
+[A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40022</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">System operation
+mode</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <p class="p">Value reflects
+the actual operation mode of the system: </p>
+                     <ul class="sl simple">
+                        <li class="sli">1 = Standby.</li>
+                        <li class="sli">2 = Charger only.</li>
+                        <li class="sli">3 = Normal operation.</li>
+                        <li class="sli">4 = Battery operation.</li>
+                        <li class="sli">5 = Bypass operation.</li>
+                        <li class="sli">6 = Hot standby.</li>
+                        <li class="sli">7 = Economy operation.</li>
+                        <li class="sli">8 = Battery test active.</li>
+                     </ul>
+                     <ul class="sl simple">
+                        <li class="sli">1 = Initializing after reset.</li>
+                        <li class="sli">2 = Standby.</li>
+                        <li class="sli">3 = Battery operation.</li>
+                        <li class="sli">4 = Float charge.</li>
+                        <li class="sli">5 = Boost charge.</li>
+                        <li class="sli">6 = Initial charge.</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40029</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Battery voltage [V]</p>
+                     <p class="p">DC voltage
+[V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40031</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Active systems</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <ul class="sl simple">
+                        <li class="sli">1 = Single.</li>
+                        <li class="sli">2 = Parallel.</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1">
+                     <p class="p">40033</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2">
+                     <p class="p">DC Vaux. voltage [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40035</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Battery
+temperature [°C or °F]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <p class="p">Only available
+if optional battery temperature sensor is installed at the battery.
+Shows Fahrenheit or Celsius value depending on firmware setting. If
+the temperature sensor is not installed this field will show a default
+value (around 226).</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40038</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Output frequency
+[Hz]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <p class="p">The phase
+output frequency of the system.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40040</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">System load
+[%]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <p class="p">Percent
+of the output power capacity currently used.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40041</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">Battery
+time left [minutes]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <p class="p" id="ReadHoldingRegisterFunctionCall03-8032EA76__OnlyAvailableIfOptionalRealityBattery-2F36DB11">Only available if
+optional Reality battery ABM is installed in the system.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40045</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">NMC AOS
+firmware version</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <p class="p">The APP
+firmware version for the NMC.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__1" rowspan="1" colspan="1">
+                     <p class="p">40046</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__2" rowspan="1" colspan="1">
+                     <p class="p">NMC APP
+firmware version</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__3" rowspan="1" colspan="1">
+                     <p class="p">The AOS
+firmware version for the NMC.</p>
+                  </td>
+               </tr>
+            </tbody></table>
+      <table class="table table--pgwide-1"><caption><span class="table--title-label">Table 2. </span><span class="title">Modbus Read Holding Register List</span></caption><colgroup><col style="width:20.00mm"><col style="width:70.00mm"><col style="width:20.00mm"><col style="width:100%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">Holding
+Register</p>
+                  </th>
+                  <th class="entry valign-top" id="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Parameter [Unit of Measure]</p>
+                  </th>
+                  <th class="entry valign-top" id="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">Factor<a name="fnsrc_1" href="#fntarg_1"><sup>1</sup></a>
+                     </p>
+                  </th>
+                  <th class="entry valign-top" id="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101">
+                     <p class="p">Description</p>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40001</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">System load [% of VA]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40002</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">System load [% of W]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40003</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Apparent system load [kVA]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40004</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Real system load [kW]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40005</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Output apparent power L1 [kVA]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40006</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Output apparent power L2 [kVA]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40007</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Output apparent power L3 [kVA]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40008</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Output real power L1 [kW]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40009</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Output real power L2 [kW]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40010</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Output real power L3 [kW]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40011</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Output power factor L1</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">100</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40012</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Output power factor L2</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">100</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40013</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Output power factor L3</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">100</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40015</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Total output load [% of VA]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1">
+                     <p class="p">Only for
+redundant systems.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40016</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Total output load [% of W]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1">
+                     <p class="p">Only for
+redundant systems.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40017</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Total output load [VA]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1">
+                     <p class="p">Only for
+redundant systems.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40018</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Total Output load [W]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1">
+                     <p class="p">Only for
+redundant systems.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40019</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Output frequency [Hz]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40020</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Output voltage L1 [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40021</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Output voltage L2 [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40022</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Output voltage L3 [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40023</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Output current L1 [A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40024</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Output current L2 [A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40025</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Output current L3 [A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40035</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Input frequency [Hz]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40036</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Input voltage L1 [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40037</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Input voltage L2 [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40038</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Input voltage L3 [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98" rowspan="1" colspan="1">
+                     <p class="p">40045</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99" rowspan="1" colspan="1">
+                     <p class="p">Input current L1 [A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101" rowspan="1" colspan="1"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40046</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Input current L2 [A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40047</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Input current L3 [A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40057</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Input bypass frequency [Hz]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40058</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Input bypass voltage L1 [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101">
+                     <p class="p">Phase L1 to Phase L2. 0 if not available.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40059</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Input bypass voltage L2 [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101">
+                     <p class="p">Phase L2 to Phase L3. 0 if not available.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40060</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Input bypass voltage L3 [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101">
+                     <p class="p">Phase L3 to Phase L1. 0 if not available.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40061</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Input bypass current L1 [A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101">
+                     <p class="p">Measured before the bypass transformer.
+0 if not available.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40062</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Input bypass current L2 [A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101">
+                     <p class="p">Measured before the bypass transformer.
+0 if not available.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40063</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Input bypass current L3 [A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101">
+                     <p class="p">Measured before the bypass transformer.
+0 if not available.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40071</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Battery current [A]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40072</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Battery voltage [V]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40075</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Battery temperature [°C or °F]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">1</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101">
+                     <p class="p">Only available if
+optional Reality battery ABM is installed in the system.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40076</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Expected battery runtime [minutes]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">1</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101">
+                     <p class="p">Only available if
+optional Reality battery ABM is installed in the system.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40077</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Percentage of battery capacity [%]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">10</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101">
+                     <p class="p">Only available if
+optional Reality battery ABM is installed in the system.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40090</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Temperature sensor 1 [°C or °F]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">1</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101">
+                     <p class="p">The temperature sensor needs to be
+installed.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40091</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Temperature sensor 2 [°C or °F]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">1</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101">
+                     <p class="p">The temperature sensor needs to be
+installed.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40092</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Temperature sensor 3 [°C or °F]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">1</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101">
+                     <p class="p">The temperature sensor needs to be
+installed.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40093</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Temperature T001 [°C or °F]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">1</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101">
+                     <p class="p">The temperature sensor needs to be
+installed.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40094</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Temperature T401 [°C or °F]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">1</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101">
+                     <p class="p">The temperature sensor needs to be
+installed.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40095</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Temperature T501 [°C or °F]</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">1</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101">
+                     <p class="p">The temperature sensor needs to be
+installed.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40245</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Read coil register 001-016</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">—</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101">
+                     <p class="p">The registers are lined up the following
+way: 16-13 12-9 8-5 4-1.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40246</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Read coil register 017-032</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">—</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40247</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Read coil register 033-048</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">—</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40248</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Read coil register 049-064</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">—</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40249</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Read coil register 065-080</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">—</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40250</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Read coil register 081-096</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">—</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40251</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Read coil register 097-112</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">—</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40252</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Read coil register 113-128</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">—</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40253</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Read coil register 129-144</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">—</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40254</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Read coil register 145-160</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">—</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40255</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Read coil register 161-176</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">—</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40256</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Read coil register 177-192</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">—</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101"></td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__98">
+                     <p class="p">40257</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__99">
+                     <p class="p">Read coil register 193-208</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__100">
+                     <p class="p">—</p>
+                  </td>
+                  <td class="entry" headers="ReadHoldingRegisterFunctionCall03-8032EA76__entry__101"></td>
+               </tr>
+            </tbody></table>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Reality-Batch_3/Topics/NMC_Modbus_Access_to_the_Network_Management_Card_CPT_0000334032.html">Modbus Access to the Network Management Card</a></div></div></nav><div class="fn"><a name="fntarg_1" href="#fnsrc_1"><sup>1</sup></a>   The actual measured value
+is multiplied with a factor.</div></article></main></body></html>

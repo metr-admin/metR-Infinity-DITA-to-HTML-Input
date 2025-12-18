@@ -1,0 +1,1166 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="alarm-panel,visual-audio-indicator,event-display-unit,alarm-logger,notification-interface,alarm-configuration,alarm-priority-mapping,event-acknowledgement,log-export,repeat-notification-setup,control-room-operations,site-safety-procedures,critical-event-escalation,building-management-integration,remote-monitoring-centre"><meta name="keywords" content="alarm-panel, visual-audio-indicator, event-display-unit, alarm-logger, notification-interface, alarm-configuration, alarm-priority-mapping, event-acknowledgement, log-export, repeat-notification-setup, control-room-operations, site-safety-procedures, critical-event-escalation, building-management-integration, remote-monitoring-centre"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Front_Panel_CPT_0000333861.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Front_Panel_CPT_0000333861.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Front_Panel_CPT_0000333861.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Front_Panel_CPT_0000333861.html"><meta name="DC.relation" scheme="URI" content="../../Reality-Batch_3/Topics/Front_Panel_CPT_0000333861.html"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Suchitra"><meta name="DC.date.created" content="2025-12-04T14:00:00+05:30"><meta name="DC.date.modified" content="2025-12-04T14:00:00+05:30"><meta name="title" content="Alarm Panel"><meta name="shortdesc" content="Details for configuring and operating the alarm panel including event display, acknowledgement, and logging."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="alarm-relays;panel-wiring;event-log-db;notification-scripts;acknowledge-buttons"><meta name="taxonomy" content="domain:operations-monitoring;usecase:alarm-management;industry:uninterruptible power supply"><meta name="tags" content="alarm,events,acknowledgement,logging"><meta name="usecase" content="guide operators to configure and respond to alarms on the alarm panel"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="AlarmPanel-83C303AF"><meta name="DC.language" content="en"><title>Alarm Panel</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="AlarmPanel-83C303AF"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Alarm Panel</h1>
+   
+   
+   <div class="body conbody">
+      <div class="p">The alarm panel has 24 LEDs that are used for standard indications
+and selectable options.<div class="note note note_note" id="AlarmPanel-83C303AF__NotAllAlarmsAreUsedInAllSystemTypes-04605A90"><span class="note__title">Note:</span> Not all LEDs are
+used in all system types or configurations.</div>
+      </div>
+      <section class="section"><h2 class="title sectiontitle">Alarm Indication</h2>
+         
+         <div class="sectiondiv">
+            <p class="p">When an alarm
+is activated in the system the corresponding LED is activated on the
+alarm panel. The status of the LED indicates what alarm is the newest
+and if the alarms are unconfirmed or confirmed.</p>
+            <table class="table"><caption></caption><colgroup><col style="width:40.00mm"><col style="width:100%"></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry valign-top" id="AlarmPanel-83C303AF__entry__1">
+                           <p class="p">LED Status</p>
+                        </th>
+                        <th class="entry valign-top" id="AlarmPanel-83C303AF__entry__2">
+                           <p class="p">Description</p>
+                        </th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__1">
+                           <p class="p">Off</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__2">
+                           <p class="p">The alarm is
+not active</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__1">
+                           <p class="p">Fast flashing</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__2">
+                           <p class="p">The first (initial)
+unconfirmed alarm</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__1">
+                           <p class="p">Slow flashing</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__2">
+                           <p class="p">Unconfirmed alarm</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__1">
+                           <p class="p">Constant</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__2">
+                           <p class="p">Confirmed present alarm</p>
+                        </td>
+                     </tr>
+                  </tbody></table>
+            <p class="p">Unconfirmed alarm will not be cleared even if the alarm
+is not active in the system anymore. Only confirmed alarms will be
+cleared when they are no longer present in the system.</p>
+         </div>
+      </section>
+      <section class="section" id="AlarmPanel-83C303AF__AlarmConfirmationReset-D39B4898"><h2 class="title sectiontitle">Confirm/Clear
+Alarms</h2>
+         
+         <div class="sectiondiv">
+            <p class="p">To mute the audible alarm, press the <strong class="ph b">Mute key</strong>.</p>
+            <div class="p">Press the <strong class="ph b">C key</strong> one time to:<ul class="ul">
+                  <li class="li">
+                     <p class="p">Confirm any unconfirmed alarms. The LED will stay on but stop
+flashing.</p>
+                  </li>
+                  <li class="li">
+                     <p class="p">Clear any confirmed and unconfirmed alarms that are resolved.
+The LED will extinguish.</p>
+                  </li>
+                  <li class="li">
+                     <p class="p">Mute the audible alarm (if not already muted).</p>
+                  </li>
+               </ul>
+               <div class="note note note_note"><span class="note__title">Note:</span> The fast flashing LED (the first unconfirmed alarm) will
+stay the same after pressing the <strong class="ph b">C key</strong> only once.</div>
+            </div>
+         </div>
+         <div class="sectiondiv">
+            <div class="p">Press the <strong class="ph b">C key</strong> a second time
+to:<ul class="ul">
+                  <li class="li">
+                     <p class="p">Confirm the newest unconfirmed alarm. The LED will stay on
+but stop flashing.</p>
+                  </li>
+                  <li class="li">
+                     <p class="p">Clear any confirmed and unconfirmed alarms that are resolved.
+The LED will extinguish.</p>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Alarm Descriptions</h2>
+         
+         <div class="sectiondiv">
+            <img class="image" src="../Images/PxW_Alarm_Display_0000352230.svg">
+            <div class="note note note_note"><span class="note__title">Note:</span> Not all LEDs are
+used in all system types or configurations.</div>
+            <div class="note note note_note"><span class="note__title">Note:</span> For a more details and troubleshooting see chapter <a class="xref" href="Troubleshooting_the_System_CPT_0000325920.html">Troubleshoot from the Alarm Panel</a>.</div>
+         </div>
+         <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:20.00mm"><col style="width:40.00mm"><col style="width:19.55mm"><col style="width:100%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">Position</p>
+                     </th>
+                     <th class="entry valign-top" id="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">Name</p>
+                     </th>
+                     <th class="entry valign-top" id="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">Time delay
+(seconds)</p>
+                     </th>
+                     <th class="entry valign-top" id="AlarmPanel-83C303AF__entry__14">
+                        <p class="p">Description</p>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">
+                           <strong class="ph b">(A)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">Rectifier mains fault</p>
+                        <p class="p">—</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">30</p>
+                        <p class="p">—</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__14">
+                        <p class="p">The rectifier mains is unavailable or out of tolerance.
+For tolerances see the technical data<a name="fnsrc_1" href="#fntarg_1"><sup>1</sup></a>.</p>
+                        <p class="p">(Not used)</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">
+                           <strong class="ph b">(B)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">Rectifier failure<a name="fnsrc_2" href="#fntarg_2"><sup>2</sup></a>
+                        </p>
+                        <p class="p">—</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">5</p>
+                        <p class="p">—</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__14">
+                        <p class="p">The DC output is too low, the rectifier cannot synchronize
+or the rectifier is overheated.</p>
+                        <p class="p">(Not used)</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">
+                           <strong class="ph b">(C)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">DC out of tolerance</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">5</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__14">
+                        <p class="p">The inverter will turn off because the DC voltage is out of tolerance.
+For tolerances see the technical data<a name="fnsrc_3" href="#fntarg_3"><sup>3</sup></a>.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">
+                           <strong class="ph b">(D)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">Rectifier fuse blown
+                        </p>
+                        <p class="p">—</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">5</p>
+                        <p class="p">—</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__14">
+                        <p class="p">The rectifier fuse is blown. </p>
+                        <p class="p">(Not used)</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">
+                           <strong class="ph b">(E)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">Battery operation<a name="fnsrc_5" href="#fntarg_5"><sup>5</sup></a>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">30</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__14">
+                        <p class="p">The system is in battery operation and the battery
+is supplying the load.</p>
+                        <p class="p">The inverter is supplied
+by the batteries in the external DC UPS system.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">
+                           <strong class="ph b">(F)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">Battery discharged</p>
+                        <p class="p">DC low warning</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">5</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__14">
+                        <p class="p">The battery voltage is below the set DC low alarm level.</p>
+                        <p class="p">The DC voltage is below the set DC low alarm level.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">
+                           <strong class="ph b">(G)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">Batt. disconnected<a name="fnsrc_6" href="#fntarg_6"><sup>6</sup></a>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">5</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__14">
+                        <p class="p">The battery is disconnected from the system.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">
+                           <strong class="ph b">(H)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">DC earth fault<a name="fnsrc_7" href="#fntarg_7"><sup>7</sup></a>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">5</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__14">
+                        <p class="p">The DC earth fault current (positive or negative) for the battery
+is outside the alarm level. For tolerances see the technical data<a name="fnsrc_8" href="#fntarg_8"><sup>8</sup></a>.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">
+                           <strong class="ph b">(I)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">Inverter fault</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">5</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__14">
+                        <p class="p">The inverter output is out of tolerance or the inverter is overheated.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">
+                           <strong class="ph b">(J)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">Overload inv./Bypass</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">30</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__14">
+                        <p class="p">The inverter or bypass is overloaded.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">
+                           <strong class="ph b">(K)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">Inverter fuse blown</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">5</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__14">
+                        <p class="p">One or more inverter fuses are blown.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">
+                           <strong class="ph b">(L)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">Asynchronous</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">30</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__14">
+                        <p class="p">The inverter is not synchronized to the bypass mains.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">
+                           <strong class="ph b">(M)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">Bypass mains fault</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">30</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__14">
+                        <p class="p">The bypass mains is out of tolerance measured at the input of static
+switch EN. For tolerances see the technical data<a name="fnsrc_9" href="#fntarg_9"><sup>9</sup></a>.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">
+                           <strong class="ph b">(N)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">Manual Bypass ON</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">5</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__14">
+                        <p class="p">
+                           <strong class="ph b">For 2-position manual bypass switches:</strong> The
+manual bypass switch is the <strong class="ph b">Bypass</strong> position.</p>
+                        <p class="p">
+                           <strong class="ph b">For 3-position
+manual bypass switches:</strong> The manual bypass switch is the <strong class="ph b">Bypass</strong> or <strong class="ph b">Test</strong> position.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">
+                           <strong class="ph b">(O)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">EN inhibited</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">30</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__14">
+                        <p class="p">The input to the static switch EN is out of tolerance or the static
+switch EN is overheated. For tolerances see the technical data<a name="fnsrc_10" href="#fntarg_10"><sup>10</sup></a>.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">
+                           <strong class="ph b">(P)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">EA inhibited<a name="fnsrc_11" href="#fntarg_11"><sup>11</sup></a>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">5</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__14">
+                        <p class="p">The input to the static switch EA is out of tolerance or the static
+switch EA is overheated. For tolerances see the technical data<a name="fnsrc_12" href="#fntarg_12"><sup>12</sup></a>.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">
+                           <strong class="ph b">(Q)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">Overtemperature</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">5</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__14">
+                        <div class="p">One or more of the following parts are overheated:<ul class="ul">
+                              <li class="li">
+                                 <p class="p">Rectifier bridge</p>
+                              </li>
+                              <li class="li">
+                                 <p class="p">Rectifier transformer</p>
+                              </li>
+                              <li class="li">
+                                 <p class="p">DC choke</p>
+                              </li>
+                              <li class="li">
+                                 <p class="p">Power module</p>
+                              </li>
+                              <li class="li">
+                                 <p class="p">Inverter transformer</p>
+                              </li>
+                              <li class="li">
+                                 <p class="p">AC choke</p>
+                              </li>
+                              <li class="li">
+                                 <p class="p">Static switch EN</p>
+                              </li>
+                              <li class="li">
+                                 <p class="p">Static switch EA</p>
+                              </li>
+                           </ul>
+                        </div>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">
+                           <strong class="ph b">(R)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">Fan failure</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">30</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__14">
+                        <p class="p">One or more fans are inoperable.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">
+                           <strong class="ph b">(S)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">Power supply fault</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">5</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__14">
+                        <p class="p">The output is out of tolerance or one of the inputs (<span class="ph">rectifier,</span> bypass or DC) are missing for at least one of the
+internal power supplies (+5 V / ±12 V / +20 V).</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__11">
+                        <p class="p">
+                           <strong class="ph b">(T)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__12">
+                        <p class="p">Parallel cable interrupted<a name="fnsrc_13" href="#fntarg_13"><sup>13</sup></a>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__13">
+                        <p class="p">5</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__14">
+                        <p class="p">At least one of the parallel cables have lost communication.</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+         <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:20.00mm"><col style="width:40.00mm"><col style="width:19.55mm"><col style="width:100%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="AlarmPanel-83C303AF__entry__95">
+                        <p class="p">Position</p>
+                     </th>
+                     <th class="entry valign-top" id="AlarmPanel-83C303AF__entry__96">
+                        <p class="p">Name</p>
+                     </th>
+                     <th class="entry valign-top" id="AlarmPanel-83C303AF__entry__97">
+                        <p class="p">Time delay
+(seconds)</p>
+                     </th>
+                     <th class="entry valign-top" id="AlarmPanel-83C303AF__entry__98">
+                        <p class="p">Description</p>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__95">
+                        <p class="p">
+                           <strong class="ph b">(A)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__96">
+                        <p class="p">Rectifier mains fault</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__97">
+                        <p class="p">30</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__98">
+                        <p class="p">The rectifier mains is unavailable or out of tolerance. For tolerances
+see the technical data.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__95">
+                        <p class="p">
+                           <strong class="ph b">(B)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__96">
+                        <p class="p">Rectifier failure</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__97">
+                        <p class="p">5</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__98">
+                        <p class="p">The rectifier voltage is out of tolerance, but the rectifier mains
+is within tolerance and the current limiter is not active.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__95">
+                        <p class="p">
+                           <strong class="ph b">(C)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__96">
+                        <p class="p">—</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__97">
+                        <p class="p">—</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__98">
+                        <p class="p">(Not used)</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__95">
+                        <p class="p">
+                           <strong class="ph b">(D)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__96">
+                        <p class="p">—</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__97">
+                        <p class="p">—</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__98">
+                        <p class="p">(Not used)</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__95">
+                        <p class="p">
+                           <strong class="ph b">(E)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__96">
+                        <p class="p">DC out of tolerance</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__97">
+                        <p class="p">5</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__98">
+                        <p class="p">The DC voltage is below the set low DC/DC Vaux level. For alarm level
+settings see the technical data<a name="fnsrc_15" href="#fntarg_15"><sup>15</sup></a>.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__95">
+                        <p class="p">
+                           <strong class="ph b">(F)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__96">
+                        <p class="p">DC Fuse blown</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__97">
+                        <p class="p">5</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__98">
+                        <p class="p">The rectifier output fuse is blown.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__95">
+                        <p class="p">
+                           <strong class="ph b">(G)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__96">
+                        <p class="p">Rect. overcurrent</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__97">
+                        <p class="p">30</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__98">
+                        <p class="p">The rectifier output exceeds the current limit. For limit setting
+see the technical data<a name="fnsrc_16" href="#fntarg_16"><sup>16</sup></a>.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__95">
+                        <p class="p">
+                           <strong class="ph b">(H)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__96">
+                        <p class="p">Load sharing fault<a name="fnsrc_17" href="#fntarg_17"><sup>17</sup></a>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__97">
+                        <p class="p">5</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__98">
+                        <p class="p">The units in a redundant system are not sharing the load equally.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__95">
+                        <p class="p">
+                           <strong class="ph b">(I)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__96">
+                        <p class="p">Battery discharged</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__97">
+                        <p class="p">5</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__98">
+                        <p class="p">The battery voltage is below the set DC low alarm level.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__95">
+                        <p class="p">
+                           <strong class="ph b">(J)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__96">
+                        <p class="p">Battery disconnected</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__97">
+                        <p class="p">5</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__98">
+                        <p class="p">The battery is disconnected from the system.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__95">
+                        <p class="p">
+                           <strong class="ph b">(K)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__96">
+                        <p class="p">DC earth fault<a name="fnsrc_18" href="#fntarg_18"><sup>18</sup></a>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__97">
+                        <p class="p">5</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__98">
+                        <p class="p">The DC earth fault current (positive or negative) for the battery
+is outside the alarm level. For tolerances see the technical data<a name="fnsrc_19" href="#fntarg_19"><sup>19</sup></a>.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__95">
+                        <p class="p">
+                           <strong class="ph b">(L)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__96">
+                        <p class="p">—</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__97">
+                        <p class="p">—</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__98">
+                        <p class="p">(Not used)</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__95">
+                        <p class="p">
+                           <strong class="ph b">(M)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__96">
+                        <p class="p">Control power fault</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__97">
+                        <p class="p">5</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__98">
+                        <p class="p">One or more of the internal power supplies (+5 V / ±15 V) are
+unavailable or out of tolerance.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__95">
+                        <p class="p">
+                           <strong class="ph b">(N)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__96">
+                        <p class="p">Overtemperature</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__97">
+                        <p class="p">5</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__98">
+                        <div class="p">One or more of the following parts are overheated:<ul class="ul">
+                              <li class="li">
+                                 <p class="p">Rectifier bridge</p>
+                              </li>
+                              <li class="li">
+                                 <p class="p">Rectifier transformer</p>
+                              </li>
+                              <li class="li">
+                                 <p class="p">Blocking diode</p>
+                              </li>
+                              <li class="li">
+                                 <p class="p">DC choke</p>
+                              </li>
+                           </ul>
+                        </div>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__95">
+                        <p class="p">
+                           <strong class="ph b">(O)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__96">
+                        <p class="p">Fan failure<a name="fnsrc_20" href="#fntarg_20"><sup>20</sup></a>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__97">
+                        <p class="p">30</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__98">
+                        <p class="p">One or more fans are inoperable.</p>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__95">
+                        <p class="p">
+                           <strong class="ph b">(P)</strong>
+                        </p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__96">
+                        <p class="p">—</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__97">
+                        <p class="p">—</p>
+                     </td>
+                     <td class="entry" headers="AlarmPanel-83C303AF__entry__98">
+                        <p class="p">(Not used)</p>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </section>
+      <section class="section">
+         <div class="sectiondiv">
+            <p class="p">The four LEDs <span class="ph">
+                  <strong class="ph b">(U)</strong>, <strong class="ph b">(V)</strong>, <strong class="ph b">(X)</strong>, <strong class="ph b">(Y)</strong>
+               </span>
+               <span class="ph">
+                  <strong class="ph b">(Q)</strong>, <strong class="ph b">(R)</strong>, <strong class="ph b">(S)</strong>, <strong class="ph b">(T)</strong>
+               </span> are used for optional alarms.
+A selection of some optional alarms is shown in the table. Refer to
+the specific system <em class="ph i">Drawings</em> for any selected optional alarms.</p>
+            <div class="note note note_note"><span class="note__title">Note:</span> Additional optional alarms are available on request.</div>
+            <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:40.00mm"><col style="width:20.00mm"><col style="width:100%"></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry valign-top" id="AlarmPanel-83C303AF__entry__163">
+                           <p class="p">Name</p>
+                        </th>
+                        <th class="entry valign-top" id="AlarmPanel-83C303AF__entry__164">
+                           <p class="p">Time delay
+(seconds)</p>
+                        </th>
+                        <th class="entry valign-top" id="AlarmPanel-83C303AF__entry__165">
+                           <p class="p">Description</p>
+                        </th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__163">
+                           <p class="p">Q003 open
+                           </p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__164">
+                           <p class="p">5</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__165">
+                           <p class="p">Rectifier output switch Q003 is open and the rectifier output
+is disconnected from the battery and the inverter. The
+rectifier will turn off.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__163">
+                           <p class="p">Q020 open<a name="fnsrc_22" href="#fntarg_22"><sup>22</sup></a>
+                           </p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__164">
+                           <p class="p">5</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__165">
+                           <p class="p">Inverter input switch Q020 is open and the inverter is disconnected
+from the <span class="ph">rectifier and battery</span>
+                              <span class="ph">DC input power</span>. The alarm “Inverter fuse blown”
+will activate.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__163">
+                           <p class="p">Q030 open<a name="fnsrc_23" href="#fntarg_23"><sup>23</sup></a>
+                           </p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__164">
+                           <p class="p">5</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__165">
+                           <p class="p">Inverter output switch Q030 is open and the inverter is
+disconnected from the load.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__163">
+                           <p class="p">Q100 open<a name="fnsrc_24" href="#fntarg_24"><sup>24</sup></a>
+                           </p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__164">
+                           <p class="p">5</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__165">
+                           <p class="p">Distribution input Q100 is open and the system output is
+disconnected from the inverter<span class="ph"> and the battery</span>.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__163">
+                           <p class="p">Distribution MCB tripped<a name="fnsrc_25" href="#fntarg_25"><sup>25</sup></a>
+                           </p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__164">
+                           <p class="p">5</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__165">
+                           <p class="p">One or more of the feeders Q101-Q1xx have tripped because
+of an overload or a short-circuit.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__163">
+                           <p class="p">Distribution MCB open<a name="fnsrc_26" href="#fntarg_26"><sup>26</sup></a>
+                           </p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__164">
+                           <p class="p">5</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__165">
+                           <p class="p">One or more of the feeders Q101-Q1xx have been manually
+opened or have tripped because of an overload or a short-circuit.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__163">
+                           <p class="p">Distribution AC earth fault<a name="fnsrc_27" href="#fntarg_27"><sup>27</sup></a>
+                           </p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__164">
+                           <p class="p">5</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__165">
+                           <p class="p">An earth fault on the AC output is detected. The isolation
+resistance to the earth on one or more of the outputs are below the
+alarm level.</p>
+                        </td>
+                     </tr>
+                  </tbody></table>
+            <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:40.00mm"><col style="width:20.00mm"><col style="width:100%"></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry valign-top" id="AlarmPanel-83C303AF__entry__187">
+                           <p class="p">Name</p>
+                        </th>
+                        <th class="entry valign-top" id="AlarmPanel-83C303AF__entry__188">
+                           <p class="p">Time delay
+(seconds)</p>
+                        </th>
+                        <th class="entry valign-top" id="AlarmPanel-83C303AF__entry__189">
+                           <p class="p">Description</p>
+                        </th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__187">
+                           <p class="p">Q003 open<a name="fnsrc_28" href="#fntarg_28"><sup>28</sup></a>
+                           </p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__188">
+                           <p class="p">5</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__189">
+                           <p class="p">Rectifier output switch Q003 is open and the rectifier output
+is disconnected from the output.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__187">
+                           <p class="p">Q100 open<a name="fnsrc_29" href="#fntarg_29"><sup>29</sup></a>
+                           </p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__188">
+                           <p class="p">5</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__189">
+                           <p class="p">Distribution input Q100 is open and the system output is
+disconnected from the rectifier and the battery.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__187">
+                           <p class="p">High DC warning<a name="fnsrc_30" href="#fntarg_30"><sup>30</sup></a>
+                           </p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__188">
+                           <p class="p">5</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__189">
+                           <p class="p">The DC voltage is above the upper alarm level. For level value see
+the technical data<a name="fnsrc_31" href="#fntarg_31"><sup>31</sup></a>.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__187">
+                           <p class="p">Low DC warning<a name="fnsrc_32" href="#fntarg_32"><sup>32</sup></a>
+                           </p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__188">
+                           <p class="p">5</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__189">
+                           <p class="p">The DC voltage is below the lower alarm level. For level value see
+the technical data<a name="fnsrc_33" href="#fntarg_33"><sup>33</sup></a>.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__187">
+                           <p class="p">Dropper voltage out of tolerance<a name="fnsrc_34" href="#fntarg_34"><sup>34</sup></a>
+                           </p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__188">
+                           <p class="p">5</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__189">
+                           <p class="p">The output voltage of the voltage dropper is out of tolerance. For
+tolerance levels see the technical data<a name="fnsrc_35" href="#fntarg_35"><sup>35</sup></a>.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__187">
+                           <p class="p">Dropper fan failure<a name="fnsrc_36" href="#fntarg_36"><sup>36</sup></a>
+                           </p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__188">
+                           <p class="p">30</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__189">
+                           <p class="p">One or more fans in the voltage dropper cubicle are inoperable.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__187">
+                           <p class="p">Distribution MCB tripped<a name="fnsrc_37" href="#fntarg_37"><sup>37</sup></a>
+                           </p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__188">
+                           <p class="p">5</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__189">
+                           <p class="p">One or more of the feeders Q101-Q1xx are tripped because
+of an overload or a short-circuit.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__187">
+                           <p class="p">Distribution MCB open<a name="fnsrc_38" href="#fntarg_38"><sup>38</sup></a>
+                           </p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__188">
+                           <p class="p">5</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__189">
+                           <p class="p">One or more of the feeders Q101-Q1xx are manually opened
+or tripped because of an overload or a short-circuit.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__187">
+                           <p class="p">Distribution DC earth fault<a name="fnsrc_39" href="#fntarg_39"><sup>39</sup></a>
+                           </p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__188">
+                           <p class="p">5</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__189">
+                           <p class="p">An earth fault on the DC output is detected. The isolation
+resistance to the earth on one or more of the outputs are below the
+alarm level.</p>
+                        </td>
+                     </tr>
+                  </tbody></table>
+         </div>
+         <div class="sectiondiv">
+            <p class="p">The four LEDs <strong class="ph b">(U)</strong>, <strong class="ph b">(V)</strong>, <strong class="ph b">(X)</strong>, <strong class="ph b">(Y)</strong> are used for programmable
+relays on the relay board (K013-K016). The programmable options are
+shown in table. Refer to the specific system <em class="ph i">Drawings</em> if any
+programmable options are used.</p>
+            <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:40.00mm"><col style="width:20.00mm"><col style="width:100%"></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry valign-top" id="AlarmPanel-83C303AF__entry__217">
+                           <p class="p">Name</p>
+                        </th>
+                        <th class="entry valign-top" id="AlarmPanel-83C303AF__entry__218">
+                           <p class="p">Time delay
+(seconds)</p>
+                        </th>
+                        <th class="entry valign-top" id="AlarmPanel-83C303AF__entry__219">
+                           <p class="p">Description</p>
+                        </th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__217">
+                           <p class="p">Float reduce</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__218">
+                           <p class="p">5</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__219">
+                           <p class="p">The float voltage is reduced by a set amount.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__217">
+                           <p class="p">Battery charge active</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__218">
+                           <p class="p">5</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__219">
+                           <p class="p">The total current limitation is changed to the battery current
+limitation level.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__217">
+                           <p class="p">External synchronization</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__218">
+                           <p class="p">5</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__219">
+                           <p class="p">The internal clock is set to a default time, used for synchronization.</p>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__217">
+                           <p class="p">DC bus connection</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__218">
+                           <p class="p">5</p>
+                        </td>
+                        <td class="entry" headers="AlarmPanel-83C303AF__entry__219">
+                           <p class="p">Indicates the
+status of the output couple breaker. Only available for redundant
+systems with individual batteries.</p>
+                        </td>
+                     </tr>
+                  </tbody></table>
+         </div>
+      </section>
+   </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../../Reality-Batch_3/Topics/Front_Panel_CPT_0000333861.html">Front Panel</a></div></div></nav><div class="fn"><a name="fntarg_1" href="#fnsrc_1"><sup>1</sup></a>   The technical data for the
+system can be found in the manufacturing record book and depends on
+customer specification.</div><div class="fn"><a name="fntarg_2" href="#fnsrc_2"><sup>2</sup></a>   Will not be active if the current
+limiter is active or if the alarm for rectifier mains fault is active.</div><div class="fn"><a name="fntarg_3" href="#fnsrc_3"><sup>3</sup></a>   The technical data for the
+system can be found in the manufacturing record book and depends on
+customer specification.</div><div class="fn"><sup>4</sup>   This alarm depends
+on configuration and might not be present.</div><div class="fn"><a name="fntarg_5" href="#fnsrc_5"><sup>5</sup></a>   This alarm depends
+on configuration and might not be present.</div><div class="fn"><a name="fntarg_6" href="#fnsrc_6"><sup>6</sup></a>   This alarm depends
+on configuration and might not be present.</div><div class="fn"><a name="fntarg_7" href="#fnsrc_7"><sup>7</sup></a>   This alarm depends
+on configuration and might not be present.</div><div class="fn"><a name="fntarg_8" href="#fnsrc_8"><sup>8</sup></a>   The technical data for the system can be found in the manufacturing
+record book and depends on customer specification.</div><div class="fn"><a name="fntarg_9" href="#fnsrc_9"><sup>9</sup></a>   The technical
+data for the system can be found in the manufacturing record book
+and depends on customer specification.</div><div class="fn"><a name="fntarg_10" href="#fnsrc_10"><sup>10</sup></a>   The technical data for the system can be found in the manufacturing
+record book and depends on customer specification.</div><div class="fn"><a name="fntarg_11" href="#fnsrc_11"><sup>11</sup></a>   This alarm depends
+on configuration and might not be present.</div><div class="fn"><a name="fntarg_12" href="#fnsrc_12"><sup>12</sup></a>   The technical data for the system can be found in the manufacturing
+record book and depends on customer specification.</div><div class="fn"><a name="fntarg_13" href="#fnsrc_13"><sup>13</sup></a>   This alarm depends
+on configuration and might not be present.</div><div class="fn"><sup>14</sup>   The technical data
+for the system can be found in the manufacturing record book and depends
+on customer specification.</div><div class="fn"><a name="fntarg_15" href="#fnsrc_15"><sup>15</sup></a>   The technical data
+for the system can be found in the manufacturing record book and depends
+on customer specification.</div><div class="fn"><a name="fntarg_16" href="#fnsrc_16"><sup>16</sup></a>   The technical data
+for the system can be found in the manufacturing record book and depends
+on customer specification.</div><div class="fn"><a name="fntarg_17" href="#fnsrc_17"><sup>17</sup></a>   This alarm depends
+on configuration and might not be present.</div><div class="fn"><a name="fntarg_18" href="#fnsrc_18"><sup>18</sup></a>   This alarm depends
+on configuration and might not be present.</div><div class="fn"><a name="fntarg_19" href="#fnsrc_19"><sup>19</sup></a>   The technical data for the system can be found in the manufacturing
+record book and depends on customer specification.</div><div class="fn"><a name="fntarg_20" href="#fnsrc_20"><sup>20</sup></a>   This alarm depends
+on configuration and might not be present.</div><div class="fn"><sup>21</sup>   This alarm is optional and might and might not be present.</div><div class="fn"><a name="fntarg_22" href="#fnsrc_22"><sup>22</sup></a>   This alarm is optional and might and might not be present.</div><div class="fn"><a name="fntarg_23" href="#fnsrc_23"><sup>23</sup></a>   This alarm is optional and might and might not be present.</div><div class="fn"><a name="fntarg_24" href="#fnsrc_24"><sup>24</sup></a>   This alarm is optional and might and might not be present.</div><div class="fn"><a name="fntarg_25" href="#fnsrc_25"><sup>25</sup></a>   This alarm is optional and might and might not be present.</div><div class="fn"><a name="fntarg_26" href="#fnsrc_26"><sup>26</sup></a>   This alarm is optional and might and might not be present.</div><div class="fn"><a name="fntarg_27" href="#fnsrc_27"><sup>27</sup></a>   This alarm is optional and might and might not be present.</div><div class="fn"><a name="fntarg_28" href="#fnsrc_28"><sup>28</sup></a>   This alarm is optional and might and might not be present.</div><div class="fn"><a name="fntarg_29" href="#fnsrc_29"><sup>29</sup></a>   This alarm is optional and might and might not be present.</div><div class="fn"><a name="fntarg_30" href="#fnsrc_30"><sup>30</sup></a>   This alarm is optional and might and might not be present.</div><div class="fn"><a name="fntarg_31" href="#fnsrc_31"><sup>31</sup></a>   The technical data
+for the system can be found in the manufacturing record book and depends
+on customer specification.</div><div class="fn"><a name="fntarg_32" href="#fnsrc_32"><sup>32</sup></a>   This alarm is optional and might and might not be present.</div><div class="fn"><a name="fntarg_33" href="#fnsrc_33"><sup>33</sup></a>   The technical data
+for the system can be found in the manufacturing record book and depends
+on customer specification.</div><div class="fn"><a name="fntarg_34" href="#fnsrc_34"><sup>34</sup></a>   This alarm is optional and might and might not be present.</div><div class="fn"><a name="fntarg_35" href="#fnsrc_35"><sup>35</sup></a>   The technical data
+for the system can be found in the manufacturing record book and depends
+on customer specification.</div><div class="fn"><a name="fntarg_36" href="#fnsrc_36"><sup>36</sup></a>   This alarm is optional and might and might not be present.</div><div class="fn"><a name="fntarg_37" href="#fnsrc_37"><sup>37</sup></a>   This alarm is optional and might and might not be present.</div><div class="fn"><a name="fntarg_38" href="#fnsrc_38"><sup>38</sup></a>   This alarm is optional and might and might not be present.</div><div class="fn"><a name="fntarg_39" href="#fnsrc_39"><sup>39</sup></a>   This alarm is optional and might and might not be present.</div></article></main></body></html>

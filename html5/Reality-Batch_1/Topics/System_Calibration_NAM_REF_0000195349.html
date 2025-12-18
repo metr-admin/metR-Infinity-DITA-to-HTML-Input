@@ -1,0 +1,395 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="reference"><meta name="description" content=""><meta name="DC.subject" content="system-calibration,calibration-tool,sensor-array,measurement-unit,control-firmware,calibrate-system,adjust-parameters,zero-offset-measurement,verify-calibration,generate-calibration-report,factory-calibration,field-calibration,quality-assurance,preventive-maintenance,commissioning"><meta name="keywords" content="system-calibration, calibration-tool, sensor-array, measurement-unit, control-firmware, calibrate-system, adjust-parameters, zero-offset-measurement, verify-calibration, generate-calibration-report, factory-calibration, field-calibration, quality-assurance, preventive-maintenance, commissioning"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-11-18+05:30"><meta name="DC.date.modified" content="2025-11-18"><meta name="title" content="System Calibration — NAM Reference"><meta name="shortdesc" content="Calibration procedures and verification steps for sensors and control systems (NAM region reference)."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="calibration tool;sensor array;measurement unit;control firmware;test rig"><meta name="taxonomy" content="domain:factory-calibration;usecase:ensure-sensor-and-system-accuracy;industry: uninterruptible power supply (UPS) systems"><meta name="tags" content="calibration,verification,accuracy,measurement,qa"><meta name="usecase" content="ensure-sensor-and-system-accuracy"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="SystemCalibration-787FC12B"><meta name="DC.language" content="en"><title>System Calibration</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="SystemCalibration-787FC12B"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">System Calibration</h1>
+   
+   
+   
+   <div class="body refbody"><p class="shortdesc"></p>
+      <section class="section">
+         <div class="p">You must check all measurements and calibrate as needed.
+Take extra care to calibrate the transformer and the output current:<ul class="ul">
+               <li class="li">
+                  <p class="p">Transformer output voltage calibration: The characteristics
+of the output transformer must be compensated to guarantee the 1%
+output accuracy independent of the load.</p>
+               </li>
+               <li class="li">
+                  <p class="p">Output current calibration: For a correct indication of the
+load percentage and for the correct detection of an overload situation
+and the transformer compensation.</p>
+               </li>
+            </ul>
+         </div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Voltage Calibration</h2>
+         
+         <div class="p">
+            <table class="table font:10 table--pgwide-1"><caption></caption><colgroup><col><col></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry valign-top" id="SystemCalibration-787FC12B__entry__1">Setting </th>
+                        <th class="entry valign-top" id="SystemCalibration-787FC12B__entry__2">Description</th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__1">373</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__2">VSB Value InVoltage
+L12</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__1">374</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__2">VSB Value InVoltage
+L23</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__1">375</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__2">VSB Value InVoltage
+L31</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__1">376</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__2">VSB Value BypVoltage
+L12 / L1-N</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__1">377</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__2">VSB Value BypVoltage
+L23 / L1-N</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__1">378</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__2">VSB Value BypVoltage
+L31 / L1-N</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__1">379</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__2">VSB Value OutVoltage
+L12 / L1-N</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__1">380</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__2">VSB Value OutVoltage
+L23 / L1-N</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__1">381</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__2">VSB Value OutVoltage
+L31 / L1-N</td>
+                     </tr>
+                  </tbody></table>The correct value of the voltage selection PCBs can be checked
+by the BOM.<div class="note note note_note"><span class="note__title">Note:</span> The values entered are factors, so if the voltage
+displayed is too small, increase the factor. This means if in a 208
+V system a voltage of 204 V is displayed instead of 208 a value of
+208/204*240 = 245 must be entered (for small changes the voltage difference
+value can be added resp. substracted from to resp. from the standard
+settings value).</div>
+         </div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Current Calibration</h2>
+         
+         <div class="p">
+            <table class="table font:10 table--pgwide-1"><caption></caption><colgroup><col><col></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry valign-top" id="SystemCalibration-787FC12B__entry__21">Setting </th>
+                        <th class="entry valign-top" id="SystemCalibration-787FC12B__entry__22">Description</th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__21">382</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__22">CVB Value InCurrent
+L1</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__21">383</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__22">CVB Value InCurrent
+L2</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__21">384</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__22">CVB Value InCurrent
+L3</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__21">385</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__22">CVB Value BypCurrent
+L1</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__21">386</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__22">CVB Value BypCurrent
+L2</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__21">387</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__22">CVB Value BypCurrent
+L3</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__21">388</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__22">CVB Value OutCurrent
+L1</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__21">389</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__22">CVB Value OutCurrent
+L2</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__21">390</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__22">CVB Value OutCurrent
+L3</td>
+                     </tr>
+                  </tbody></table>The correct values of the current selection PCBs can be checked
+by the BOM.<div class="note note note_note"><span class="note__title">Note:</span> The values entered are dividers, so if the current
+displayed is too low, reduce the factor. This means if with a 30 A
+nominal input current a current of 27 A is displayed a value of 27/30*5880
+= 5292 must be entered.</div>
+            <table class="table font:10 table--pgwide-1"><caption></caption><colgroup><col><col><col><col><col><col><col><col><col></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry valign-top" id="SystemCalibration-787FC12B__entry__41"></th>
+                        <th class="entry valign-top" id="SystemCalibration-787FC12B__entry__42" colspan="2">V input 208</th>
+                        <th class="entry valign-top" id="SystemCalibration-787FC12B__entry__43" colspan="2">V input 480</th>
+                        <th class="entry valign-top" id="SystemCalibration-787FC12B__entry__44" colspan="2">V input 600</th>
+                        <th class="entry valign-top" id="SystemCalibration-787FC12B__entry__45" colspan="2">V output 208</th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__41">
+                           <strong class="ph b">Power kVA</strong>
+                        </td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__42">
+                           <strong class="ph b">V input selector PCA</strong>
+                        </td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__42">
+                           <strong class="ph b">I input selector
+PCA</strong>
+                        </td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__43">
+                           <strong class="ph b">V input selector PCA</strong>
+                        </td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__43">
+                           <strong class="ph b">I input selector PCA</strong>
+                        </td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__44">
+                           <strong class="ph b">V input selector PCA</strong>
+                        </td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__44">
+                           <strong class="ph b">I input selector PCA</strong>
+                        </td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__45">
+                           <strong class="ph b">V input selector PCA</strong>
+                        </td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__45">
+                           <strong class="ph b">I input selector PCA</strong>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__41">25</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__42">0P2563-003</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__42">0P2562A-014</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__43">0P2563-008</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__43">0P2562A-011</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__44">0P2563-009</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__44">0P2562A-010</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__45">0P2563-003</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__45">0P2562A-014</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__41">37.5</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__42">0P2563-003</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__42">0P2562A-015</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__43">0P2563-008</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__43">0P2562A-013</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__44">0P2563-009</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__44">0P2562A-011</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__45">0P2563-003</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__45">0P2562A-015</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__41">50</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__42">0P2563-003</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__42">0P2562A-016</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__43">0P2563-008</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__43">0P2562A-013</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__44">0P2563-009</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__44">0P2562A-013</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__45">0P2563-003</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__45">0P2562A-016</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__41">75</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__42">0P2563-003</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__42">0P2562A-011</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__43">0P2563-008</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__43">0P2562A-015</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__44">0P2563-009</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__44">0P2562A-014</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__45">0P2563-003</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__45">0P2562A-011</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__41">100</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__42">0P2563-003</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__42">0P2562A-013</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__43">0P2563-008</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__43">0P2562A-016</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__44">0P2563-009</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__44">0P2562A-015</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__45">0P2563-003</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__45">0P2562A-013</td>
+                     </tr>
+                  </tbody></table>
+         </div>
+         <div class="p">It is very important that current transformer ratio
+is included in the system. Please check the BOM.<table class="table font:10 table--pgwide-1"><caption></caption><colgroup><col><col></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry valign-top" id="SystemCalibration-787FC12B__entry__100">Setting </th>
+                        <th class="entry valign-top" id="SystemCalibration-787FC12B__entry__101">Description</th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__100">404</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__101">CT Ratio Input<a name="fnsrc_1" href="#fntarg_1"><sup>1</sup></a>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__100">405</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__101">CT Ration Bypass</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__100">406</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__101">CT Ratio Output</td>
+                     </tr>
+                  </tbody></table>Two values are standardized: 300 and 2000.</div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Transformer Output Voltage Calibration</h2>
+         
+         <div class="p">The
+transformer is feedforward controlled. This means that the output
+on the secondary side of the transformer is calculated based on the
+actual measured current and compensated based on a stored characteristic
+of the output transformer. The second regulator is the feedback controlled
+outer control loop. This control loop is very slow and compensates
+slow changes (temperature, ageing etc) to guarantee the 1% output
+voltage tolerance. The transformer output voltage can be configured
+as follows.<ol class="ol">
+               <li class="li">
+                  <p class="p">Set the UPS system in ‘standby state’. </p>
+               </li>
+               <li class="li">
+                  <div class="p">Disable the outer control loop via the service port menu <span class="ph menucascade"><span class="ph uicontrol">System calibration</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">System test function</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Disable output transformer compensation</span></span>.<div class="note note note_note"><span class="note__title">Note:</span> Type two characters in: To activate function
+two type in “02”.</div>
+                  </div>
+               </li>
+               <li class="li">
+                  <div class="p">After disabling the outer control loop, the system can be set
+on. Configure the settings for the transformer output voltage as per
+the table. If there is only resistive load available the 140% must
+interpolated or the battery must be applied to help the input. Be
+sure that the output current is already calibrated, so that the load
+percentage is displayed correctly:<table class="table font:10 table--pgwide-1"><caption></caption><colgroup><col><col></colgroup><thead class="thead">
+                              <tr class="row">
+                                 <th class="entry valign-top" id="SystemCalibration-787FC12B__entry__108">Setting </th>
+                                 <th class="entry valign-top" id="SystemCalibration-787FC12B__entry__109">Description</th>
+                              </tr>
+                           </thead><tbody class="tbody">
+                              <tr class="row">
+                                 <td class="entry" headers="SystemCalibration-787FC12B__entry__108">329</td>
+                                 <td class="entry" headers="SystemCalibration-787FC12B__entry__109">TransformerOut
+Volt at 20% load<a name="fnsrc_2" href="#fntarg_2"><sup>2</sup></a>
+                                 </td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry" headers="SystemCalibration-787FC12B__entry__108">330</td>
+                                 <td class="entry" headers="SystemCalibration-787FC12B__entry__109">TransformerOut
+Volt at 60% load</td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry" headers="SystemCalibration-787FC12B__entry__108">331</td>
+                                 <td class="entry" headers="SystemCalibration-787FC12B__entry__109">TransformerOut
+Volt at 80% load</td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry" headers="SystemCalibration-787FC12B__entry__108">332</td>
+                                 <td class="entry" headers="SystemCalibration-787FC12B__entry__109">TransformerOut
+Volt at 100% load</td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry" headers="SystemCalibration-787FC12B__entry__108">333</td>
+                                 <td class="entry" headers="SystemCalibration-787FC12B__entry__109">TransformerOut
+Volt at 120% load</td>
+                              </tr>
+                              <tr class="row">
+                                 <td class="entry" headers="SystemCalibration-787FC12B__entry__108">334</td>
+                                 <td class="entry" headers="SystemCalibration-787FC12B__entry__109">TransformerOut Volt at 140% load<a name="fnsrc_3" href="#fntarg_3"><sup>3</sup></a>
+                                 </td>
+                              </tr>
+                           </tbody></table> It is independent if the load is resistive or has also an
+inductive part. The relevant value to compensate the transformer is
+the current and therefor the displayed load.</div>
+               </li>
+               <li class="li">
+                  <p class="p">After calibration, restart the system to enable the outer control
+loop and activate the new settings.</p>
+               </li>
+            </ol>
+         </div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Outer Control Loop Calibration</h2>
+         
+         <div class="p">
+            <div class="note note note_note"><span class="note__title">Note:</span> Schneider
+Electric does not recommend calibrating the outer control loop. Instead
+It is preferred to do the transformer calibration very precisely.</div>The following settings are used for the outer control loop. For one
+phase system the Ph-N voltage x 10 must be entered. For three phase
+systems the Ph-Ph voltage x 10 must be entered.<table class="table font:10 table--pgwide-1"><caption></caption><colgroup><col><col></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry valign-top" id="SystemCalibration-787FC12B__entry__122">Setting </th>
+                        <th class="entry valign-top" id="SystemCalibration-787FC12B__entry__123">Description</th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__122">398</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__123">Calibration OutVoltage
+L12 / L1-N<a name="fnsrc_4" href="#fntarg_4"><sup>4</sup></a>
+                        </td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__122">399</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__123">Calibration OutVoltage
+L23 / L1-N</td>
+                     </tr>
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__122">400</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__123">Calibration OutVoltage L31 / L1-N</td>
+                     </tr>
+                  </tbody></table>Three phase systems have standard values of 2080, 4800 and
+6000 with 1:1 transformer. With all different transformers values
+from 1000 to 7000 (100V to 700V) are possible. The outer control loop
+is activated 5 seconds after turning on the system to avoid regulation
+during startup ramp of output voltage. Too low voltages can be set
+higher if the value in the outer control loop is set a bit higher.</div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Charge Current Calibration</h2>
+         
+         <div class="p">The UPS system
+uses two chargers to charge the batteries. These two chargers must
+be calibrated to work together and share their load. Only one setting
+is needed:<table class="table font:10 table--pgwide-1"><caption></caption><colgroup><col><col></colgroup><thead class="thead">
+                     <tr class="row">
+                        <th class="entry valign-top" id="SystemCalibration-787FC12B__entry__130">Setting </th>
+                        <th class="entry valign-top" id="SystemCalibration-787FC12B__entry__131">Description</th>
+                     </tr>
+                  </thead><tbody class="tbody">
+                     <tr class="row">
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__130">21</td>
+                        <td class="entry" headers="SystemCalibration-787FC12B__entry__131">Charger offset<a name="fnsrc_5" href="#fntarg_5"><sup>5</sup></a>
+                        </td>
+                     </tr>
+                  </tbody></table>If the charge current measured is higher than the displayed
+current value the setting must also be lowered. A difference of 10
+means approximately 0.7 A.</div>
+      </section>
+   </div>
+<div class="fn"><a name="fntarg_1" href="#fnsrc_1"><sup>1</sup></a>  300 means 1 A is transformed to 1/3000 A</div><div class="fn"><a name="fntarg_2" href="#fnsrc_2"><sup>2</sup></a>  Transformer voltage at 20% of nominal output current</div><div class="fn"><a name="fntarg_3" href="#fnsrc_3"><sup>3</sup></a>  To measure this value please
+add a DC source otherwise it is not possible to support this load.</div><div class="fn"><a name="fntarg_4" href="#fnsrc_4"><sup>4</sup></a>  Output voltage x 10</div><div class="fn"><a name="fntarg_5" href="#fnsrc_5"><sup>5</sup></a>  100 means no offset</div></article></main></body></html>

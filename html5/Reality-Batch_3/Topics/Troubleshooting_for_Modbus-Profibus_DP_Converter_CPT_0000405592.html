@@ -1,0 +1,133 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="Modbus-Profibus DP converter,protocol converter,communication interface module,serial communication gateway,bus interface terminals,status LEDs,communication module wiring,converter troubleshooting,protocol diagnostics,signal integrity testing,bus addressing validation,fault isolation workflow,communication link verification,EMC interference assessment,industrial automation networks,fieldbus communication environment,UPS monitoring integration,distributed control systems,facility communication infrastructure,protocol interoperability domain,real-time monitoring systems"><meta name="keywords" content="Modbus-Profibus DP converter, protocol converter, communication interface module, serial communication gateway, bus interface terminals, status LEDs, communication module wiring, converter troubleshooting, protocol diagnostics, signal integrity testing, bus addressing validation, fault isolation workflow, communication link verification, EMC interference assessment, industrial automation networks, fieldbus communication environment, UPS monitoring integration, distributed control systems, facility communication infrastructure, protocol interoperability domain, real-time monitoring systems"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-02+05:30"><meta name="DC.date.modified" content="2025-12-02"><meta name="title" content="Troubleshooting for Modbus–Profibus DP Converter"><meta name="shortdesc" content="Provides troubleshooting steps for the Modbus–Profibus DP converter, including diagnostics for communication issues, wiring checks, addressing problems, and LED indicator interpretations."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="Modbus interface; Profibus DP interface; converter module; bus lines; shielding components; status LEDs; communication cables"><meta name="taxonomy" content="domain:industrial communication;usecase:DP-converter-troubleshooting;industry:uninterruptible power supply (UPS) systems"><meta name="tags" content="Modbus,Profibus,DP converter,troubleshooting,communication fault,protocol issues"><meta name="usecase" content="Support technicians and integrators in diagnosing and resolving issues with the Modbus–Profibus DP converter"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="TroubleshootingForModbus-ProfibusDP-B52F8A38"><meta name="DC.language" content="en"><title>Troubleshooting for the LUFP7 Gateway</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="TroubleshootingForModbus-ProfibusDP-B52F8A38"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Troubleshooting for the LUFP7 Gateway</h1>
+   
+   
+   <div class="body conbody">
+      <img class="image" src="../Images/Profibus_Parts_LEDs_0000411656.svg">
+      <table class="table"><caption></caption><colgroup><col><col><col></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__1">
+                     <p class="p">Issue</p>
+                  </th>
+                  <th class="entry valign-top" id="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__2">
+                     <p class="p">Check</p>
+                  </th>
+                  <th class="entry valign-top" id="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__3">
+                     <p class="p">Action</p>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__1">
+                     <p class="p">No LEDs are active on the LUFP7 gateway.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__2">
+                     <div class="p">
+                        <ul class="sl simple">
+                           <li class="sli">Check the health status of the DC supply </li>
+                           <li class="sli">Check the polarity of the gateway DC supply</li>
+                        </ul>
+                     </div>
+                  </td>
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__3">
+                     <p class="p">If the DC voltage supply is OK and the polarity is correct
+and no LED is active, the device needs to be checked by a maintenance
+engineer.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__1" rowspan="2">
+                     <p class="p">No communication
+on the Profibus bus.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__2">
+                     <p class="p">That the RJ45 cable from the Ethernet patch panel is connected to
+the right port on the gateway.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__3">
+                     <p class="p">Change the cable to the Modbus port on the gateway.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__2">
+                     <p class="p">Incorrect gateway address.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__3">
+                     <p class="p">Set the gateway address to the correct default value according to
+the table in chapter <a class="xref" href="Default_Address_for_the_Gateways_CPT_0000414788.html">Default Profibus-DP Addresses</a>.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__1" rowspan="5">
+                     <p class="p">No signal
+on the Modbus network, the LED <strong class="ph b">(5)</strong> is red.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__2">
+                     <p class="p">Check the addresses for the secondary devices on the Modbus RTU network.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__3">
+                     <p class="p">Set the device Modbus address to the correct default value according
+to the tables in chapter <a class="xref" href="Modbus_RTU_Device_Address_CPT_0000419180.html">Default Modbus RTU Addresses</a>
+                     </p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__2">
+                     <p class="p">Check that the wiring between the secondary Modbus devices and the
+Ethernet patch panel.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__3" rowspan="2">Correct wiring according to the electrical
+drawings and the specifications in the chapter <a class="xref" href="Modbus_Wiring_for_Modbus-Porfibus_DP_Converter_CPT_0000405596.html">Modbus Wiring Between Devices</a>.</td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__2">
+                     <p class="p">Check the Modbus wiring between components (IM400, IFL12MC).</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__2">
+                     <p class="p">Check if any of the secondary Modbus devices (IM400, IFL12MC) are
+inoperative. If the Reality status LED is red on any device.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__3">
+                     <p class="p">If the Reality status LED is red, the device needs to be checked
+by a maintenance engineer.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__2">
+                     <p class="p">Check that the gateway is using the correct config file depending
+on solution type (PEW/SDC). For PEW solutions also check that the
+config file has the correct setup order (A060/A062/A064).</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__3">
+                     <p class="p">Replace the config file with the correct config file.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__1" rowspan="2">
+                     <p class="p">No communication
+with the config port of the LUFP7 gateway.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__2">
+                     <p class="p">Check that the straight PowerSuite cable (VW3 A8 106) is connected
+to the config port and not the Modbus port.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__3">
+                     <p class="p">Connect the straight PowerSuite cable (VW3 A8 106) to the config
+port of the gateway.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__2">
+                     <p class="p">Check the correct COM port number.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootingForModbus-ProfibusDP-B52F8A38__entry__3">
+                     <p class="p">Set the correct COM port number.</p>
+                  </td>
+               </tr>
+            </tbody></table>
+   </div>
+</article></main></body></html>

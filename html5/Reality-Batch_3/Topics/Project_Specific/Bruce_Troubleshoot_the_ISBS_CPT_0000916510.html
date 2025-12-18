@@ -1,0 +1,238 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="Bruce UPS system,Independent Static Bypass Switch (ISBS),Bruce bypass subsystem,UPS power conversion system,Bruce control electronics,Bruce alarm/monitoring interfaces,metR-PXC-Reality monitoring,ISBS troubleshooting,bypass fault diagnosis,ISBS status evaluation,error state interpretation,bypass isolation procedure,corrective action workflow,recovery verification,UPS bypass operation,critical load protection environment,redundant power paths,industrial system resilience,power continuity operations,emergency switchover scenarios,fault-tolerant electrical systems"><meta name="keywords" content="Bruce UPS system, Independent Static Bypass Switch (ISBS), Bruce bypass subsystem, UPS power conversion system, Bruce control electronics, Bruce alarm/monitoring interfaces, metR-PXC-Reality monitoring, ISBS troubleshooting, bypass fault diagnosis, ISBS status evaluation, error state interpretation, bypass isolation procedure, corrective action workflow, recovery verification, UPS bypass operation, critical load protection environment, redundant power paths, industrial system resilience, power continuity operations, emergency switchover scenarios, fault-tolerant electrical systems"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-11-28+05:30"><meta name="DC.date.modified" content="2025-11-28"><meta name="title" content="Troubleshooting the ISBS"><meta name="shortdesc" content="Explains how to troubleshoot the Independent Static Bypass Switch (ISBS) in the Bruce UPS system, including diagnosing bypass faults, reviewing error states, and performing corrective actions."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="ISBS module; bypass switch; bypass path; error codes; switching components; load transfer signals; control electronics"><meta name="taxonomy" content="domain:industrial automation;usecase:bypass-diagnostics;industry:uninterruptible power supply (UPS) systems"><meta name="tags" content="ISBS,bypass switch,troubleshooting,bypass faults,error states,UPS diagnostics"><meta name="usecase" content="Guide technicians in diagnosing and resolving issues with the ISBS in the Bruce UPS system"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="TroubleshootTheISBS-74C3163D"><meta name="DC.language" content="en"><title>Troubleshoot the ISBS</title><link rel="stylesheet" type="text/css" href="../../../commonltr.css"></head><body id="TroubleshootTheISBS-74C3163D"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Troubleshoot the ISBS</h1>
+   
+
+   <div class="body conbody">
+      <figure class="fig fignone">
+         <img class="image" src="../../Images/A703_SBS_Controller_Board_LED_ZOOM_0000356099.png">
+      </figure>
+      <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:20.00mm"><col style="width:20.00mm"><col style="width:20.00mm"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="TroubleshootTheISBS-74C3163D__entry__1">
+                     <p class="p">Position</p>
+                  </th>
+                  <th class="entry valign-top" id="TroubleshootTheISBS-74C3163D__entry__2">
+                     <p class="p">Name on Board</p>
+                  </th>
+                  <th class="entry valign-top" id="TroubleshootTheISBS-74C3163D__entry__3">
+                     <p class="p">Name Description</p>
+                  </th>
+                  <th class="entry valign-top" id="TroubleshootTheISBS-74C3163D__entry__4">
+                     <p class="p">Normal Status and Description</p>
+                  </th>
+                  <th class="entry valign-top" id="TroubleshootTheISBS-74C3163D__entry__5">
+                     <p class="p">Abnormal Status and Description</p>
+                  </th>
+                  <th class="entry valign-top" id="TroubleshootTheISBS-74C3163D__entry__6">
+                     <p class="p">Corrective Action for Abnormal Status</p>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__1">
+                     <p class="p">
+                        <strong class="ph b">(A)</strong>
+                     </p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__2">
+                     <p class="p">15V(D1237)</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__3">
+                     <p class="p">15V supply ok</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__4">
+                     <p class="p">
+                        <strong class="ph b">On:</strong> The internal 15V power supply is ok.
+                        Delivered from the bypass mains.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__5">
+                     <p class="p">
+                        <strong class="ph b">Off:</strong> Bypass mains not available or there
+                        is a hardware issue present</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__6">
+                     <p class="p">Check bypass mains power supply and connection.</p>
+                     <p class="p">Contact <a class="xref" href="https://Reality.com/contact-us/">Reality Service Center</a>.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__1">
+                     <p class="p">
+                        <strong class="ph b">(B)</strong>
+                     </p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__2">
+                     <p class="p">5V(D1238)</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__3">
+                     <p class="p">5V supply ok</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__4">
+                     <p class="p">
+                        <strong class="ph b">On:</strong> The internal 5V power supply is ok.
+                        Delivered from the internal 15V power supply.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__5">
+                     <p class="p">
+                        <strong class="ph b">Off:</strong> Bypass mains not available or there
+                        is a hardware issue present.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__6">
+                     <p class="p">Check bypass mains power supply and connection.</p>
+                     <p class="p">Contact <a class="xref" href="https://Reality.com/contact-us/">Reality Service Center</a>.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__1">
+                     <p class="p">
+                        <strong class="ph b">(C)</strong>
+                     </p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__2">
+                     <p class="p">15V FAN(D1239)</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__3 TroubleshootTheISBS-74C3163D__entry__4 TroubleshootTheISBS-74C3163D__entry__5 TroubleshootTheISBS-74C3163D__entry__6" colspan="4">
+                     <p class="p"> Not used</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__1">
+                     <p class="p">
+                        <strong class="ph b">(D)</strong>
+                     </p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__2">
+                     <p class="p">24V FAN(D1240)</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__3">
+                     <p class="p">20V supply for EN &amp; fan ok</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__4">
+                     <p class="p">
+                        <strong class="ph b">On:</strong> The 20V power supply used to power
+                        supply the static bypass switch EN and the fans is ok. Delivered from the
+                        bypass mains.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__5">
+                     <p class="p">
+                        <strong class="ph b">Off:</strong> Bypass mains not available or there
+                        is a hardware issue present.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__6">
+                     <p class="p">Check bypass mains power supply and connection.</p>
+                     <p class="p">Contact <a class="xref" href="https://Reality.com/contact-us/">Reality Service Center</a>.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__1" rowspan="3">
+                     <p class="p">
+                        <strong class="ph b">(E)</strong>
+                     </p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__2" rowspan="3">
+                     <p class="p">STATUS_1(D1242)</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__3" rowspan="3">
+                     <p class="p">System firmware status indication</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__4">
+                     <p class="p"> System firmware status indication. Shows what mode the
+                        system is in:<strong class="ph b">On:</strong> System is in <span class="ph">standby</span>
+                        <span class="ph">charger only (standby)</span>
+                     </p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__5">
+                     <p class="p">
+                        <strong class="ph b">Off:</strong> Bypass mains not available or there
+                        is a firmware or wiring issue present.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__6">
+                     <p class="p">Check bypass mains power supply and connection.</p>
+                     <p class="p">Contact <a class="xref" href="https://Reality.com/contact-us/">Reality Service Center</a>.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__4">
+                     <p class="p">
+                        <strong class="ph b">Slow flashing (0.5Hz):</strong> System is in normal
+                        operation.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__5" rowspan="2">
+                     <p class="p">
+                        <strong class="ph b">Very fast flashing (4Hz):</strong> The system is in
+                        ISBS operation. There is an issue present with the main controller, or the
+                        main controller was manually reset during operation.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__6" rowspan="2">
+                     <p class="p">Transfer the system to manual bypass, for details see
+                        chapter <a class="xref" href="Bruce_How_to_Switch_from_ISBS_Operation_to_Normal_Operation_CPT_0000916382.html">How to Switch from ISS or ISBS Operation to Normal Operation</a>.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__4">
+                     <p class="p">
+                        <strong class="ph b">Fast flashing (2Hz):</strong> System is in bypass
+                        operation (over the static switch), switched over by the main
+                        controller.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__1">
+                     <p class="p">
+                        <strong class="ph b">(F)</strong>
+                     </p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__2">
+                     <p class="p">STATUS_2(D1243)</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__3">
+                     <p class="p">ISBS status ok</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__4">
+                     <p class="p">
+                        <strong class="ph b">On:</strong> The ISBS system is ok and ready
+                        transfer to ISBS operation if needed.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__5">
+                     <p class="p">
+                        <strong class="ph b">Off:</strong> Bypass mains not available or there
+                        is a firmware or wiring issue present.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__6">
+                     <p class="p">Check bypass mains power supply and connection.</p>
+                     <p class="p">Contact <a class="xref" href="https://Reality.com/contact-us/">Reality Service Center</a>.</p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__1">
+                     <p class="p">
+                        <strong class="ph b">(G)</strong>
+                     </p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__2">
+                     <p class="p">STATUS_3(D1283)</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__3">
+                     <p class="p">ISBS operation active</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__4">
+                     <p class="p">
+                        <strong class="ph b">Off:</strong> Indicated that the controller has not
+                        switched to ISBS.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__5">
+                     <p class="p">
+                        <strong class="ph b">On:</strong> The system is in ISBS operation. There
+                        is an issue present with the main controller, or the main controller was
+                        manually reset during operation.</p>
+                  </td>
+                  <td class="entry" headers="TroubleshootTheISBS-74C3163D__entry__6">
+                     <p class="p">Transfer the system to manual bypass, for details see
+                        chapter <a class="xref" href="Bruce_How_to_Switch_from_ISBS_Operation_to_Normal_Operation_CPT_0000916382.html">How to Switch from ISS or ISBS Operation to Normal Operation</a>.</p>
+                  </td>
+               </tr>
+            </tbody></table>
+   </div>
+</article></main></body></html>

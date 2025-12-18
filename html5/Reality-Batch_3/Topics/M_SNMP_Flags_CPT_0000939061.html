@@ -1,0 +1,386 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="snmp-flags,snmp-alarm-flags,snmp-status-flags,snmp-ascii-flag-string,snmp-flag-interpreter,network-management-card,nmc-alarm-flags,nmc-monitoring,system-alarms,alarm-diagnostics,alarm-mapping,fault-indication-signals,signal-reference-table,digital-diagnostic-flags,modular-ac-system-flags,modular-dc-system-flags,charger-flags,breaker-flags,module-flags,flag-status-unknown,flag-status-not-supported,system-to-nmc-communication-loss,remote-monitoring,event-correlation,condition-detection,alarm-escalation,mib-integration"><meta name="keywords" content="snmp-flags, snmp-alarm-flags, snmp-status-flags, snmp-ascii-flag-string, snmp-flag-interpreter, network-management-card, nmc-alarm-flags, nmc-monitoring, system-alarms, alarm-diagnostics, alarm-mapping, fault-indication-signals, signal-reference-table, digital-diagnostic-flags, modular-ac-system-flags, modular-dc-system-flags, charger-flags, breaker-flags, module-flags, flag-status-unknown, flag-status-not-supported, system-to-nmc-communication-loss, remote-monitoring, event-correlation, condition-detection, alarm-escalation, mib-integration"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-05+05:30"><meta name="DC.date.modified" content="2025-12-05"><meta name="title" content="SNMP Flags"><meta name="shortdesc" content="Describes the 64 SNMP alarm flags used for interpreting modular system alarms, breaker states, module conditions, and charger events via NMC."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="snmp-flag; alarm-flag; breaker-flag; module-flag; charger-flag; signals-keyref; unknown-flag; unsupported-flag; ascii-flag-string; diagnostic-flag"><meta name="taxonomy" content="domain:network-monitoring; subdomain:snmp-alarm-interpretation; usecase:remote-diagnostics; industry:critical-power-systems"><meta name="tags" content="monitoring, diagnostics, alarms, snmp, nmc, flags, system-status, modular-systems"><meta name="usecase" content="interpret-snmp-flags-for-modular-system-diagnostics"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="SNMPFlags-86B01615"><meta name="DC.language" content="en"><title>SNMP Flags</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="SNMPFlags-86B01615"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">SNMP Flags</h1>
+   
+   
+   <div class="body conbody">
+      <p class="p">There are 64 flags representing active specific alarms for Reality
+Modular. The ASCII string is read from left to right.</p>
+      <div class="note note note_note"><span class="note__title">Note:</span> Flags that are not listed are reserved. If the NMC can’t
+get the value for a flag from the system it is set to “UNKNOWN”.
+If the connected system does not use a specific flag it is set to
+“NOT SUPPORTED”.</div>
+      <section class="section"><h2 class="title sectiontitle">Breaker Flags (1–16)</h2>
+         
+         <table class="table"><caption></caption><colgroup><col style="width:14.285714285714285%"><col style="width:28.57142857142857%"><col style="width:57.14285714285714%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="SNMPFlags-86B01615__entry__1">
+                        <span class="ph" id="SNMPFlags-86B01615__FlagNumber-86B28DF4">Flag Number</span>
+                     </th>
+                     <th class="entry valign-top" id="SNMPFlags-86B01615__entry__2">
+                        <span class="ph" id="SNMPFlags-86B01615__FlagName-86B28F65">Flag Name</span>
+                     </th>
+                     <th class="entry valign-top" id="SNMPFlags-86B01615__entry__3">
+                        <span class="ph" id="SNMPFlags-86B01615__FlagDescription-86B290FE">Flag Description</span>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__1">
+                        <span class="ph">Flag 1</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__2">
+                        <span class="ph">signals/F4_1016-0_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__3">
+                        <span class="ph">signals/F4_1016-0_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__1">
+                        <span class="ph">Flag 2</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__2">
+                        <span class="ph">signals/F4_1016-1_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__3">
+                        <span class="ph">signals/F4_1016-1_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__1">
+                        <span class="ph">Flag 3</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__2">
+                        <span class="ph">signals/F4_1016-2_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__3">
+                        <span class="ph">signals/F4_1016-2_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__1">
+                        <span class="ph">Flag 4</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__2">
+                        <span class="ph">signals/F4_1016-4_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__3">
+                        <span class="ph">signals/F4_1016-4_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__1">
+                        <span class="ph">Flag 6</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__2">
+                        <span class="ph">signals/F4_1016-5_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__3">
+                        <span class="ph">signals/F4_1016-5_Description</span>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Module Flags (17–32)</h2>
+         
+         <table class="table"><caption></caption><colgroup><col style="width:14.285714285714285%"><col style="width:28.57142857142857%"><col style="width:57.14285714285714%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="SNMPFlags-86B01615__entry__19">
+                        <span class="ph">Flag Number</span>
+                     </th>
+                     <th class="entry valign-top" id="SNMPFlags-86B01615__entry__20">
+                        <span class="ph">Flag Name</span>
+                     </th>
+                     <th class="entry valign-top" id="SNMPFlags-86B01615__entry__21">
+                        <span class="ph">Flag Description</span>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__19">
+                        <span class="ph">Flag 18</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__20">
+                        <span class="ph">signals/F4_1021-0_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__21">
+                        <span class="ph">signals/F4_1021-0_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__19">
+                        <span class="ph">Flag 19</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__20">
+                        <span class="ph">signals/F4_1021-2_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__21">
+                        <span class="ph">signals/F4_1021-2_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__19">
+                        <span class="ph">Flag 20</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__20">
+                        <span class="ph">signals/F4_1021-4_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__21">
+                        <span class="ph">signals/F4_1021-4_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__19">
+                        <span class="ph">Flag 21</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__20">
+                        <span class="ph">signals/F4_1021-3_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__21">
+                        <span class="ph">signals/F4_1021-3_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__19">
+                        <span class="ph">Flag 23</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__20">
+                        <span class="ph">signals/F4_1002-11_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__21">
+                        <span class="ph">signals/F4_1002-11_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__19">
+                        <span class="ph">Flag 24</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__20">
+                        <span class="ph">signals/F4_1002-12_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__21">
+                        <span class="ph">signals/F4_1002-12_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__19">
+                        <span class="ph">Flag 25</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__20">
+                        <span class="ph">signals/F4_1002-13_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__21">
+                        <span class="ph">signals/F4_1002-13_Description</span>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Charger Flags (33–44)</h2>
+         
+         <table class="table"><caption></caption><colgroup><col style="width:14.285714285714285%"><col style="width:28.57142857142857%"><col style="width:57.14285714285714%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="SNMPFlags-86B01615__entry__43">
+                        <span class="ph">Flag Number</span>
+                     </th>
+                     <th class="entry valign-top" id="SNMPFlags-86B01615__entry__44">
+                        <span class="ph">Flag Name</span>
+                     </th>
+                     <th class="entry valign-top" id="SNMPFlags-86B01615__entry__45">
+                        <span class="ph">Flag Description</span>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__43">
+                        <span class="ph">Flag 33</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__44">
+                        <span class="ph">signals/F4_1002-0_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__45">
+                        <span class="ph">signals/F4_1002-0_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__43">
+                        <span class="ph">Flag 34</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__44">
+                        <span class="ph">signals/F4_1002-1_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__45">
+                        <span class="ph">signals/F4_1002-1_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__43">
+                        <span class="ph">Flag 35</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__44">
+                        <span class="ph">signals/F4_1002-2_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__45">
+                        <span class="ph">signals/F4_1002-2_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__43">
+                        <span class="ph">Flag 36</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__44">
+                        <span class="ph">signals/F4_1002-3_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__45">
+                        <span class="ph">signals/F4_1002-3_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__43">
+                        <span class="ph">Flag 37</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__44">
+                        <span class="ph">signals/F4_1012-8_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__45">
+                        <span class="ph">signals/F4_1012-8_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__43">
+                        <span class="ph">Flag 38</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__44">
+                        <span class="ph">signals/F4_1012-1_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__45">
+                        <span class="ph">signals/F4_1012-1_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__43">
+                        <span class="ph">Flag 39</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__44">
+                        <span class="ph">signals/F4_1002-7_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__45">
+                        <span class="ph">signals/F4_1002-7_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__43">
+                        <span class="ph">Flag 40</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__44">
+                        <span class="ph">signals/F4_1002-8_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__45">
+                        <span class="ph">signals/F4_1002-8_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__43">
+                        <span class="ph">Flag 41</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__44">
+                        <span class="ph">signals/F4_1002-9_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__45">
+                        <span class="ph">signals/F4_1002-9_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__43">
+                        <span class="ph">Flag 42</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__44">
+                        <span class="ph">signals/F4_1002-10_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__45">
+                        <span class="ph">signals/F4_1002-10_Description</span>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Charger Flags (45–54)</h2>
+         
+         <table class="table"><caption></caption><colgroup><col style="width:14.285714285714285%"><col style="width:28.57142857142857%"><col style="width:57.14285714285714%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="SNMPFlags-86B01615__entry__76">
+                        <span class="ph">Flag Number</span>
+                     </th>
+                     <th class="entry valign-top" id="SNMPFlags-86B01615__entry__77">
+                        <span class="ph">Flag Name</span>
+                     </th>
+                     <th class="entry valign-top" id="SNMPFlags-86B01615__entry__78">
+                        <span class="ph">Flag Description</span>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__76">
+                        <span class="ph">Flag 45</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__77">
+                        <span class="ph">signals/F4_1002-5_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__78">
+                        <span class="ph">signals/F4_1002-5_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__76">
+                        <span class="ph">Flag 46</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__77">
+                        <span class="ph">signals/F4_1002-6_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__78">
+                        <span class="ph">signals/F4_1002-6_Description</span>
+                     </td>
+                  </tr>
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__76">
+                        <span class="ph">Flag 48</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__77">
+                        <span class="ph">signals/F4_1018-6_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__78">
+                        <span class="ph">signals/F4_1018-6_Description</span>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Charger Flags (55–64)</h2>
+         
+         <table class="table"><caption></caption><colgroup><col style="width:14.285714285714285%"><col style="width:28.57142857142857%"><col style="width:57.14285714285714%"></colgroup><thead class="thead">
+                  <tr class="row">
+                     <th class="entry valign-top" id="SNMPFlags-86B01615__entry__88">
+                        <span class="ph">Flag Number</span>
+                     </th>
+                     <th class="entry valign-top" id="SNMPFlags-86B01615__entry__89">
+                        <span class="ph">Flag Name</span>
+                     </th>
+                     <th class="entry valign-top" id="SNMPFlags-86B01615__entry__90">
+                        <span class="ph">Flag Description</span>
+                     </th>
+                  </tr>
+               </thead><tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__88">
+                        <span class="ph">Flag 55</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__89">
+                        <span class="ph">signals/F4_1007-7_Name</span>
+                     </td>
+                     <td class="entry" headers="SNMPFlags-86B01615__entry__90">
+                        <span class="ph">signals/F4_1007-7_Description</span>
+                     </td>
+                  </tr>
+               </tbody></table>
+      </section>
+   </div>
+</article></main></body></html>

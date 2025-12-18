@@ -1,0 +1,559 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2025"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="DC.subject" content="WxW system,alarm panel,WxW status indicators,relay interfaces,signal lines,I/O module,system display,alarm-panel WxW troubleshooting,alarm interpretation workflow,signal correlation process,fault resolution steps,alarm clearing procedure,diagnostic reset workflow,step-by-step fault evaluation,real-time monitoring environment,industrial fault-handling domain,critical alert processing,equipment diagnostics context,control room operations,UPS/WxW integration zone,high-availability infrastructure"><meta name="keywords" content="WxW system, alarm panel, WxW status indicators, relay interfaces, signal lines, I/O module, system display, alarm-panel WxW troubleshooting, alarm interpretation workflow, signal correlation process, fault resolution steps, alarm clearing procedure, diagnostic reset workflow, step-by-step fault evaluation, real-time monitoring environment, industrial fault-handling domain, critical alert processing, equipment diagnostics context, control room operations, UPS/WxW integration zone, high-availability infrastructure"><meta name="DC.audience.type" content="role"><meta name="prodname" content="metR-PXC-Reality"><meta name="platform" content="web"><meta name="DC.creator" content="Pallavi"><meta name="DC.date.created" content="2025-12-01+05:30"><meta name="DC.date.modified" content="2025-12-01"><meta name="title" content="Troubleshoot WxW from the Alarm Panel"><meta name="shortdesc" content="Explains how to troubleshoot WxW issues using the alarm panel, including alarm interpretation, signal tracing, and corrective procedures."><meta name="language" content="en-GB"><meta name="version" content="1.0.0"><meta name="docStage" content="approved"><meta name="access.role" content="internal"><meta name="data.classification" content="non-sensitive"><meta name="retention.policy" content="standard-36m"><meta name="entities" content="alarm panel; WxW controller; I/O module; LEDs; signal lines; diagnostic tools; status messages"><meta name="taxonomy" content="domain:industrial diagnostics;usecase:alarm-panel-WxW-troubleshooting;industry:uninterruptible power supply (UPS) systems"><meta name="tags" content="WxW,alarm panel,troubleshooting,diagnostics,fault handling"><meta name="usecase" content="Guide operators in resolving WxW faults using alarm panel indicators and messages"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="TroubleshootWxWFromTheAlarmPanel-6D55C05D"><meta name="DC.language" content="en"><title>Troubleshoot WxW from the Alarm Panel</title><link rel="stylesheet" type="text/css" href="../../../commonltr.css"></head><body id="TroubleshootWxWFromTheAlarmPanel-6D55C05D"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Troubleshoot WxW from the Alarm Panel</h1>
+   
+   
+   <div class="body conbody">
+      <figure class="fig fignone">
+         <img class="image" src="../../Images/PxW_Alarm_Display_0000352230.svg">
+         <div class="note note note_note"><span class="note__title">Note:</span> Not all LEDs are used.</div>
+         <div class="note note note_note"><span class="note__title">Note:</span> The alarm text is only displayed in English even if another
+system language is used.</div>
+      </figure>
+      <table class="table table--pgwide-1"><caption></caption><colgroup><col style="width:20%"><col style="width:40%"><col style="width:40%"></colgroup><thead class="thead">
+               <tr class="row">
+                  <th class="entry valign-top" id="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph" id="TroubleshootWxWFromTheAlarmPanel-6D55C05D__AlarmIndicator-0F3E4262">Alarm Indicator</span>
+                  </th>
+                  <th class="entry valign-top" id="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph" id="TroubleshootWxWFromTheAlarmPanel-6D55C05D__AlarmNumberAndText-0F3E43BD">Alarm
+Number and Text</span>
+                  </th>
+                  <th class="entry valign-top" id="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <span class="ph" id="TroubleshootWxWFromTheAlarmPanel-6D55C05D__PossibleSource-0F3E4780">Possible
+Source</span>
+                  </th>
+               </tr>
+            </thead><tbody class="tbody">
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(A) </strong>—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <span class="ph">—</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(B) </strong>—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <span class="ph">—</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1" rowspan="2">
+                     <span class="ph">
+                        <strong class="ph b">(C) </strong>DC out of tolerance[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">35: Low DC warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">36: Low DC shutdown</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The DC is below the low DC warning/shutdown level</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Battery is discharged or disconnected</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The DC power input is out of
+tolerance or unavailable.</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">37: High DC warning</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">38: High DC shutdown</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The DC is above the high DC warning/shutdown level</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">High load variation</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(D) </strong>—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <span class="ph">—</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(E) </strong>Battery operation[30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">163: Battery operation</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Inverter supplied by the battery
+in the external DC UPS system</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(F) </strong>DC low warning[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">35: Low DC warning</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <span class="ph">The DC is below the low DC warning
+level</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(G) </strong>—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <span class="ph">—</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(H) </strong>—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <span class="ph">—</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1" rowspan="2">
+                     <span class="ph">
+                        <strong class="ph b">(I) </strong>Inverter fault[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">67: Inverter volt out of tolerance</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">and no current overload (&lt; 105%)</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Inverter fuse blown</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">DC input too low</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Inverter inoperable</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">116-139: Power module
+temperature shutdown</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <span class="ph">The inverter power unit temperature
+is too high</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(J) </strong>Overload inv./bypass[30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">76: OVERLOAD: load
+is &gt; 100%</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <span class="ph">The load current
+is higher than the nominal current of the system</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(K) </strong>Inverter fuse blown[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">68: Inverter fuse
+blown</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Power fuse F021 (F022... F023)</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Inverter input switch Q020 is open</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(L) </strong>Asynchronous[30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">66: Inverter not synchronized</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The bypass mains frequency is out of tolerance or unstable</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The inverter is off</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1" rowspan="2">
+                     <span class="ph">
+                        <strong class="ph b">(M) </strong>Bypass mains fault[30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">87: Bypass avg out of tolerance</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">88: Bypass fast out of tolerance</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">89: Bypass freq out of tolerance</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <span class="ph">The bypass
+mains voltage or the frequency is out of tolerance</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">93: Bypass phase order
+incorrect</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <span class="ph">Wiring at the
+bypass mains input terminal</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(N) </strong>Manual bypass on[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">90: System set in
+manual bypass</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <span class="ph">Manual bypass
+switch Q050 is not at position <strong class="ph b">Auto</strong>
+                     </span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1" rowspan="2">
+                     <span class="ph">
+                        <strong class="ph b">(O) </strong>EN inhibited[30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">87: Bypass avg out of tolerance</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">88: Bypass fast out of tolerance</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">89: Bypass freq out of tolerance</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <span class="ph">The bypass
+mains voltage or the frequency is out of tolerance</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">114: SSW EN temp shutdown</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <span class="ph">The static
+switch EN temperature is too high</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(P) </strong>EA inhibited [5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">112: SSW EA temp shutdown</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">The inverter is off</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The static switch EA temperature is too high</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(Q) </strong>Overtemperature [5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">107-110: Magnetics temperature warning or
+shutdown</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">111-114: Static switches temperature warning
+or shutdown</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">116-139: Power module temperature warning
+or shutdown</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Obstructed air inlet</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Too high ambient temperature </span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The winding material is too hot </span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">The heat-sink of the power components is too hot</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(R) </strong>Fan failure [30 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">82: Fan inoperable</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Fans</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Fan monitoring board (A055 / A056)</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Fan transformer (T051 / T052)</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Power supply for the fans</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(S) </strong>Power supply fault [5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">6: PSU AC or DC not working </span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">7: AC power supply for parallel inverter fault </span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">8: DC power supply for parallel inverter fault</span>
+                        </li>
+                     </ul>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Power supply units : PSU A201 / A202</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">AC or DC power supply sources</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Interface A071</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(T) </strong>—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">—</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <span class="ph">—</span>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(U) </strong>Option 3 : Distribution
+feeders tripped[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">142: Option 3</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(V) </strong>Option 4 : Bypass surge
+protection fault[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">143: Option 4</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(W) </strong>Option 5 : UPS imminent
+shutdown[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">144: Option 5</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__1">
+                     <span class="ph">
+                        <strong class="ph b">(X) </strong>Option 6 : Temperature
+high around capacitor bank[5 seconds]</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__2">
+                     <span class="ph">145: Option 6</span>
+                  </td>
+                  <td class="entry" headers="TroubleshootWxWFromTheAlarmPanel-6D55C05D__entry__3">
+                     <ul class="sl simple">
+                        <li class="sli">
+                           <span class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </li>
+                        <li class="sli">
+                           <span class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </li>
+                     </ul>
+                  </td>
+               </tr>
+            </tbody></table>
+   </div>
+</article></main></body></html>
